@@ -1,0 +1,4 @@
+# Ignore all user-uploaded files.
+# The directory itself is kept in the repository via this file.
+*
+!.gitignore
