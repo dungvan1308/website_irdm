@@ -31,6 +31,24 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Shared
+    "apps.common.apps.CommonConfig",
+    "apps.core.apps.CoreConfig",
+    # Website
+    "apps.website.apps.WebsiteConfig",
+    "apps.home.apps.HomeConfig",
+    "apps.about.apps.AboutConfig",
+    "apps.solution.apps.SolutionConfig",
+    "apps.capability.apps.CapabilityConfig",
+    "apps.expert.apps.ExpertConfig",
+    "apps.insight.apps.InsightConfig",
+    "apps.event.apps.EventConfig",
+    "apps.resource.apps.ResourceConfig",
+    "apps.contact.apps.ContactConfig",
+    # CMS
+    "apps.cms.apps.CmsConfig",
+    # Administration
+    "apps.administration.apps.AdministrationConfig",
 ]
 
 MIDDLEWARE = [

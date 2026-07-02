@@ -23,8 +23,6 @@ staticfiles/
 # Environment
 .env
 
-# Personal notes
-command_python.txt
 
 # IDE
 .vscode/
