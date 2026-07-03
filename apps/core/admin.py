@@ -14,7 +14,7 @@ class SiteSettingsAdmin(admin.ModelAdmin):
         ),
         (
             "Contact",
-            {"fields": ("email", "phone", "address")},
+            {"fields": ("email", "phone", "address", "operating_hours", "map_embed_url")},
         ),
         (
             "Social Media",

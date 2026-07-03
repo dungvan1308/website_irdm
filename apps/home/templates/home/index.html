@@ -6,22 +6,28 @@
 
 {% block content %}
 
-  {# Hero Section #}
+  {# 1. Hero #}
   {% include "home/sections/hero.html" %}
 
-  {# Statistics Section #}
-  {% if statistics %}
-    {% include "home/sections/statistics.html" %}
-  {% endif %}
+  {# 2. Audience — IRDM đồng hành với ai? #}
+  {% include "home/sections/audience.html" %}
 
-  {# Partner Logos Section #}
-  {% if partner_logos %}
-    {% include "home/sections/partners.html" %}
-  {% endif %}
+  {# 3. Methodology — Cách IRDM tạo ra tác động #}
+  {% include "home/sections/methodology.html" %}
 
-  {# Featured Sections (Solutions, Capabilities, Experts, Insights, Events, Resources) #}
-  {% for section_config in featured_sections %}
-    {% include "home/sections/featured_section.html" with config=section_config %}
-  {% endfor %}
+  {# 4. Core Capabilities — Năng lực cốt lõi #}
+  {% include "home/sections/capabilities.html" %}
+
+  {# 5. Philosophy — Hướng tiếp cận đặc biệt #}
+  {% include "home/sections/philosophy.html" %}
+
+  {# 6. Evidence — Partners + Statistics #}
+  {% include "home/sections/evidence.html" %}
+
+  {# 7. Knowledge — Tri thức & Diễn đàn #}
+  {% include "home/sections/knowledge.html" %}
+
+  {# 8. CTA Banner — Kết nối với IRDM #}
+  {% include "home/sections/cta_banner.html" %}
 
 {% endblock %}

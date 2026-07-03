@@ -9,6 +9,10 @@ from apps.common.models import BaseModel
 class HeroSection(BaseModel):
     """CMS-editable homepage hero banner section."""
 
+    eyebrow_text = models.CharField(
+        _("eyebrow text"), max_length=300, blank=True,
+        help_text=_("Small label shown above the heading (e.g. institute type)")
+    )
     heading = models.CharField(_("heading"), max_length=300)
     subheading = models.CharField(_("subheading"), max_length=300, blank=True)
     description = models.TextField(_("description"), blank=True)
@@ -19,6 +23,10 @@ class HeroSection(BaseModel):
     background_image = models.ImageField(
         _("background image"), upload_to="home/hero/", blank=True
     )
+    quote_strip_text = models.CharField(
+        _("quote strip text"), max_length=300, blank=True,
+        help_text=_("Quote shown in the dark strip at the bottom of the hero")
+    )
 
     class Meta(BaseModel.Meta):
         verbose_name = _("hero section")
@@ -26,6 +34,25 @@ class HeroSection(BaseModel):
 
     def __str__(self) -> str:
         return self.heading
+
+
+class HeroPillTag(BaseModel):
+    """A pill tag displayed below the hero CTA buttons."""
+
+    hero = models.ForeignKey(
+        HeroSection,
+        on_delete=models.CASCADE,
+        related_name="pill_tags",
+        verbose_name=_("hero section"),
+    )
+    label = models.CharField(_("label"), max_length=100)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("hero pill tag")
+        verbose_name_plural = _("hero pill tags")
+
+    def __str__(self) -> str:
+        return self.label
 
 
 class StatisticItem(BaseModel):
@@ -102,3 +129,262 @@ class FeaturedSectionConfig(BaseModel):
 
     def __str__(self) -> str:
         return self.get_section_key_display()
+
+
+# ─── Audience Section ─────────────────────────────────────────────────────────
+
+class AudienceSegment(BaseModel):
+    """An audience type card in the 'IRDM đồng hành với ai?' section."""
+
+    icon = models.CharField(
+        _("icon"), max_length=100, blank=True,
+        help_text=_("Heroicon name, e.g. building-office")
+    )
+    title = models.CharField(_("title"), max_length=200)
+    description = models.TextField(_("description"), blank=True)
+    cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
+    cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("audience segment")
+        verbose_name_plural = _("audience segments")
+
+    def __str__(self) -> str:
+        return self.title
+
+
+class AudienceTag(BaseModel):
+    """A keyword tag displayed on an audience segment card."""
+
+    segment = models.ForeignKey(
+        AudienceSegment,
+        on_delete=models.CASCADE,
+        related_name="tags",
+        verbose_name=_("segment"),
+    )
+    label = models.CharField(_("label"), max_length=100)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("audience tag")
+        verbose_name_plural = _("audience tags")
+
+    def __str__(self) -> str:
+        return f"{self.segment.title} — {self.label}"
+
+
+# ─── Audience Section Header ───────────────────────────────────────────────────
+
+class AudienceSectionHeader(BaseModel):
+    """CMS-editable header for the 'IRDM đồng hành với ai?' section."""
+
+    section_label = models.CharField(_("section label"), max_length=200, blank=True)
+    heading = models.CharField(_("heading"), max_length=300)
+    description = models.TextField(_("description"), blank=True)
+    cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
+    cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("audience section header")
+        verbose_name_plural = _("audience section headers")
+
+    def __str__(self) -> str:
+        return self.heading
+
+
+# ─── Methodology Section ──────────────────────────────────────────────────────
+
+class MethodologySectionHeader(BaseModel):
+    """CMS-editable header for the methodology / working approach section."""
+
+    section_label = models.CharField(_("section label"), max_length=200, blank=True)
+    heading = models.CharField(_("heading"), max_length=300)
+    description = models.TextField(_("description"), blank=True)
+    cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
+    cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("methodology section header")
+        verbose_name_plural = _("methodology section headers")
+
+    def __str__(self) -> str:
+        return self.heading
+
+
+class MethodologyStep(BaseModel):
+    """A single step in the IRDM working methodology (5-step process)."""
+
+    step_number = models.PositiveSmallIntegerField(_("step number"))
+    icon = models.CharField(
+        _("icon"), max_length=100, blank=True,
+        help_text=_("Heroicon name, e.g. magnifying-glass")
+    )
+    title = models.CharField(_("title"), max_length=200)
+    body = models.TextField(_("body"), blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("methodology step")
+        verbose_name_plural = _("methodology steps")
+
+    def __str__(self) -> str:
+        return f"{self.step_number}. {self.title}"
+
+
+# ─── Core Capabilities Section ────────────────────────────────────────────────
+
+class CapabilitiesSectionHeader(BaseModel):
+    """CMS-editable header for the core capabilities section."""
+
+    section_label = models.CharField(_("section label"), max_length=200, blank=True)
+    heading = models.CharField(_("heading"), max_length=300)
+    description = models.TextField(_("description"), blank=True)
+    cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
+    cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("capabilities section header")
+        verbose_name_plural = _("capabilities section headers")
+
+    def __str__(self) -> str:
+        return self.heading
+
+
+class CoreCapability(BaseModel):
+    """A core capability card displayed in the capabilities section."""
+
+    icon = models.CharField(
+        _("icon"), max_length=100, blank=True,
+        help_text=_("Heroicon name, e.g. cpu-chip")
+    )
+    title = models.CharField(_("title"), max_length=200)
+    description = models.TextField(_("description"), blank=True)
+    background_image = models.ImageField(
+        _("background image"), upload_to="home/capabilities/", blank=True
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("core capability")
+        verbose_name_plural = _("core capabilities")
+
+    def __str__(self) -> str:
+        return self.title
+
+
+# ─── Philosophy Section ───────────────────────────────────────────────────────
+
+class PhilosophySectionHeader(BaseModel):
+    """CMS-editable header for the philosophy & approach section."""
+
+    section_label = models.CharField(_("section label"), max_length=200, blank=True)
+    heading = models.CharField(_("heading"), max_length=300)
+    description = models.TextField(_("description"), blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("philosophy section header")
+        verbose_name_plural = _("philosophy section headers")
+
+    def __str__(self) -> str:
+        return self.heading
+
+
+class PhilosophyPrinciple(BaseModel):
+    """A single principle card in the philosophy & approach section."""
+
+    number = models.PositiveSmallIntegerField(_("number"))
+    icon = models.CharField(
+        _("icon"), max_length=100, blank=True,
+        help_text=_("Heroicon name, e.g. link")
+    )
+    title = models.CharField(_("title"), max_length=200)
+    body = models.TextField(_("body"), blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("philosophy principle")
+        verbose_name_plural = _("philosophy principles")
+
+    def __str__(self) -> str:
+        return f"{self.number:02d}. {self.title}"
+
+
+# ─── Evidence / Partners Section ─────────────────────────────────────────────
+
+class EvidenceSectionHeader(BaseModel):
+    """CMS-editable header for the partners/evidence section."""
+
+    section_label = models.CharField(_("section label"), max_length=200, blank=True)
+    heading = models.CharField(_("heading"), max_length=300)
+    description = models.TextField(_("description"), blank=True)
+    cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
+    cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+    partners_label = models.CharField(
+        _("featured partners label"), max_length=100, blank=True,
+        default="ĐỐI TÁC TIÊU BIỂU"
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("evidence section header")
+        verbose_name_plural = _("evidence section headers")
+
+    def __str__(self) -> str:
+        return self.heading
+
+
+# ─── Knowledge Section ────────────────────────────────────────────────────────
+
+class KnowledgeSectionHeader(BaseModel):
+    """CMS-editable header for the knowledge & forums section."""
+
+    section_label = models.CharField(_("section label"), max_length=200, blank=True)
+    heading = models.CharField(_("heading"), max_length=300)
+    description = models.TextField(_("description"), blank=True)
+    cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
+    cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("knowledge section header")
+        verbose_name_plural = _("knowledge section headers")
+
+    def __str__(self) -> str:
+        return self.heading
+
+
+class KnowledgeCategory(BaseModel):
+    """A content category card in the knowledge section."""
+
+    icon = models.CharField(
+        _("icon"), max_length=100, blank=True,
+        help_text=_("Heroicon name, e.g. document-text")
+    )
+    category_label = models.CharField(_("category label"), max_length=100)
+    title = models.CharField(_("title"), max_length=200)
+    cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
+    cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("knowledge category")
+        verbose_name_plural = _("knowledge categories")
+
+    def __str__(self) -> str:
+        return self.category_label
+
+
+# ─── CTA Banner Section ───────────────────────────────────────────────────────
+
+class CTABanner(BaseModel):
+    """Full-width call-to-action banner section."""
+
+    section_label = models.CharField(_("section label"), max_length=200, blank=True)
+    heading = models.CharField(_("heading"), max_length=400)
+    description = models.TextField(_("description"), blank=True)
+    cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
+    cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+    background_image = models.ImageField(
+        _("background image"), upload_to="home/cta/", blank=True
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("CTA banner")
+        verbose_name_plural = _("CTA banners")
+
+    def __str__(self) -> str:
+        return self.heading
+

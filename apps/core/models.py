@@ -20,6 +20,8 @@ class SiteSettings(BaseModel):
     email = models.EmailField(_("email"), blank=True)
     phone = models.CharField(_("phone"), max_length=50, blank=True)
     address = models.CharField(_("address"), max_length=400, blank=True)
+    operating_hours = models.CharField(_("operating hours"), max_length=200, blank=True)
+    map_embed_url = models.URLField(_("map embed URL"), max_length=1000, blank=True)
 
     # Social media
     linkedin_url = models.URLField(_("LinkedIn URL"), blank=True)

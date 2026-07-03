@@ -1,38 +1,34 @@
-{% load i18n %}
-{#
-  Partner Logos Section
-  Horizontal scrolling strip of partner / client logos.
-#}
-<section
-  class="bg-gray-50 border-y border-gray-100 py-14"
-  aria-label="{% trans 'Partners and clients' %}"
->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p class="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-10">
-      {% trans "Trusted by leading organisations" %}
-    </p>
-    <div class="flex flex-wrap items-center justify-center gap-10 lg:gap-16">
-      {% for partner in partner_logos %}
-        <div class="flex items-center">
-          {% if partner.website_url %}
-            <a href="{{ partner.website_url }}"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="{{ partner.name }}"
-               class="opacity-50 hover:opacity-100 transition-opacity duration-200 grayscale hover:grayscale-0">
-              <img src="{{ partner.logo.url }}"
-                   alt="{{ partner.name }}"
-                   class="h-10 w-auto max-w-[120px] object-contain"
-                   loading="lazy" />
-            </a>
-          {% else %}
-            <img src="{{ partner.logo.url }}"
-                 alt="{{ partner.name }}"
-                 class="h-10 w-auto max-w-[120px] object-contain opacity-50 grayscale"
-                 loading="lazy" />
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+{% load i18n %}
+<section
+  class="bg-gray-50 border-y border-gray-100 py-14"
+  aria-label="{% trans 'Partners and clients' %}"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-10">
+      {% trans "Trusted by leading organisations" %}
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-10 lg:gap-16">
+      {% for partner in partner_logos %}
+        <div class="flex items-center">
+          {% if partner.website_url %}
+            <a href="{{ partner.website_url }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="{{ partner.name }}"
+               class="opacity-50 hover:opacity-100 transition-opacity duration-200 grayscale hover:grayscale-0">
+              <img src="{{ partner.logo.url }}"
+                   alt="{{ partner.name }}"
+                   class="h-10 w-auto max-w-[120px] object-contain"
+                   loading="lazy" />
+            </a>
+          {% else %}
+            <img src="{{ partner.logo.url }}"
+                 alt="{{ partner.name }}"
+                 class="h-10 w-auto max-w-[120px] object-contain opacity-50 grayscale"
+                 loading="lazy" />
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

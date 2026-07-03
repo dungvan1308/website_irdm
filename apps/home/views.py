@@ -1,6 +1,5 @@
 """Homepage views."""
 
-from django.http import HttpRequest, HttpResponse
 from django.views.generic import TemplateView
 
 from .models import FeaturedSectionConfig
@@ -14,11 +13,21 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs: object) -> dict:
         context = super().get_context_data(**kwargs)
-        service = HomeService()
         context["hero"] = HomeService.get_hero()
-        context["statistics"] = HomeService.get_statistics()
+        context["audience_header"] = HomeService.get_audience_header()
+        context["audience_segments"] = HomeService.get_audience_segments()
+        context["methodology_header"] = HomeService.get_methodology_header()
+        context["methodology_steps"] = HomeService.get_methodology_steps()
+        context["capabilities_header"] = HomeService.get_capabilities_header()
+        context["core_capabilities"] = HomeService.get_core_capabilities()
+        context["philosophy_header"] = HomeService.get_philosophy_header()
+        context["philosophy_principles"] = HomeService.get_philosophy_principles()
+        context["evidence_header"] = HomeService.get_evidence_header()
         context["partner_logos"] = HomeService.get_partner_logos()
-        context["featured_sections"] = HomeService.get_all_featured_sections()
+        context["statistics"] = HomeService.get_statistics()
+        context["knowledge_header"] = HomeService.get_knowledge_header()
+        context["knowledge_categories"] = HomeService.get_knowledge_categories()
+        context["cta_banner"] = HomeService.get_cta_banner()
         return context
 
 
@@ -31,7 +40,6 @@ class FeaturedSectionView(TemplateView):
         context = super().get_context_data(**kwargs)
         section_key = self.kwargs.get("section_key", "")
         context["section_key"] = section_key
-        # Items from other modules will be wired here as those modules are implemented.
         context["items"] = []
         return context
 
