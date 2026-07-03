@@ -1,0 +1,157 @@
+
+Mở PowerShell hoặc CMD:
+python --version
+
+Trên Windows, bạn tạo Python virtual environment (venv) như sau:
+
+1. Kiểm tra Python đã cài chưa
+
+Mở PowerShell hoặc CMD:
+
+python --version
+
+Nếu không nhận, thử:
+
+py --version
+2. Tạo virtual environment
+
+Di chuyển vào thư mục project:
+
+cd duong_dan_project
+
+Ví dụ:
+
+cd C:\Users\dungnv126\Documents\04.Source\HRPSolution\backend
+
+Tạo env:
+
+python -m venv venv
+
+Xóa venv hiện tại
+
+deactivate
+Remove-Item -Recurse -Force .\venv
+
+
+
+py -3.13 -m venv .venv ( Chi ro dung version nao, khi may cai nhieu version)
+
+
+Hoặc nếu dùng py:
+
+py -m venv venv
+
+Sau khi chạy xong sẽ có thư mục:
+
+venv/
+3. Active env
+
+PowerShell:
+
+.\venv\Scripts\Activate.ps1
+
+( Báo lỗi , chạy lệnh này : Set-ExecutionPolicy -Scope CurrentUser RemoteSigned)
+
+
+CMD:
+
+venv\Scripts\activate.bat
+
+Khi active thành công sẽ thấy:
+
+(venv) PS C:\...
+4. Nếu bị lỗi Execution Policy
+
+Chạy PowerShell bằng quyền Administrator:
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+Sau đó bấm:
+
+Y
+
+Rồi active lại env.
+
+5. Cài package
+
+Ví dụ:
+
+pip install django
+
+Hoặc:
+
+pip install -r requirements.txt
+6. Thoát env
+deactivate
+
+Nếu trước đó máy bạn báo:
+
+Python was not found
+
+thì cần dùng đúng đường dẫn Python đã cài, ví dụ:
+
+"C:\Python313\python.exe" -m venv venv
+
+hoặc:
+
+& "C:\Users\...\Python\Python313\python.exe" -m venv venv
+
+4. Kiểm tra Django đã cài chưa
+python -m django --version
+
+Nếu lỗi thì cài:
+
+pip install django
+5. Chạy migrate database
+python manage.py migrate
+6. Tạo admin user (optional)
+python manage.py createsuperuser
+7. Run server Django
+python manage.py runserver
+
+Mặc định chạy tại:
+
+http://127.0.0.1:8000
+8. Run với IP hoặc port khác
+
+Ví dụ:
+
+python manage.py runserver 0.0.0.0:8000
+
+Hoặc:
+
+python manage.py runserver 9000
+9. Nếu gặp lỗi thường gặp
+Thiếu package
+ModuleNotFoundError
+
+=> cài package thiếu:
+
+pip install ten-package
+Chưa migrate
+no such table
+
+=> chạy:
+
+python manage.py migrate
+Port bị chiếm
+That port is already in use
+
+=> đổi port:
+
+python manage.py runserver 8001
+Không nhận python
+
+Dùng full path:
+
+& "C:\Python313\python.exe" manage.py runserver
+
+
+
+D:\07.Dungnv\01.Projects\HRPSolution\OOT-HRPSolution\venv\Scripts\python.exe D:\07.Dungnv\01.Projects\HRPSolution\OOT-HRPSolution\backend\manage.py runserver
+
+# Trong terminal, cd vào đúng thư mục trước
+cd D:\07.Dungnv\01.Projects\HRPSolution\OOT-HRPSolution
+.\venv\Scripts\Activate.ps1
+cd backend
+python manage.py runserver

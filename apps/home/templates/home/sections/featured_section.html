@@ -1,0 +1,59 @@
+{% load i18n %}
+{#
+  Generic Featured Content Section
+  Used for Solutions, Capabilities, Experts, Insights, Events, Resources.
+  Receives `config` (FeaturedSectionConfig) and `items` (queryset) in context.
+  When the respective modules are implemented, the `items` variable will be
+  populated by the HomeService and rendered via per-section card partials.
+#}
+<section
+  class="py-20 {% cycle 'bg-white' 'bg-gray-50' %}"
+  id="section-{{ config.section_key }}"
+  aria-labelledby="section-heading-{{ config.section_key }}"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {# Section header #}
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+      <div>
+        <h2
+          id="section-heading-{{ config.section_key }}"
+          class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3"
+        >
+          {{ config.title }}
+        </h2>
+        {% if config.subtitle %}
+          <p class="text-lg text-gray-500 max-w-2xl">{{ config.subtitle }}</p>
+        {% endif %}
+      </div>
+      {% if config.cta_label and config.cta_url %}
+        <a href="{{ config.cta_url }}"
+           class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-800 font-semibold text-sm flex-shrink-0 transition-colors group">
+          {{ config.cta_label }}
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+
+    {# Items grid — rendered per-section when modules are implemented #}
+    <div
+      hx-get="{% url 'home:featured_section' config.section_key %}"
+      hx-trigger="revealed"
+      hx-swap="innerHTML"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      aria-live="polite"
+    >
+      {# Loading skeleton #}
+      {% for _ in "123" %}
+        <div class="animate-pulse">
+          <div class="bg-gray-200 rounded-2xl aspect-video mb-4"></div>
+          <div class="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+          <div class="h-3 bg-gray-200 rounded w-1/2"></div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

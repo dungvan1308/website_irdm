@@ -1,0 +1,21 @@
+{% load i18n %}
+{#
+  HTMX partial — returns the grid content for a featured section.
+  This template is rendered in response to the HTMX request from featured_section.html.
+  When the respective module is implemented, `items` will be populated.
+#}
+{% if items %}
+  {% for item in items %}
+    {% include "home/partials/content_card.html" with item=item %}
+  {% endfor %}
+{% else %}
+  {# Empty state — content will be available once the {{ section_key }} module is implemented #}
+  <div class="col-span-full flex flex-col items-center justify-center py-16 text-center">
+    <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+      <svg class="w-8 h-8 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+      </svg>
+    </div>
+    <p class="text-gray-400 text-sm">{% trans "Content coming soon." %}</p>
+  </div>
+{% endif %}

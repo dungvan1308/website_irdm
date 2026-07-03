@@ -1,0 +1,152 @@
+{% load i18n static %}
+{#
+  Global Header — sticky, transparent on top / solid on scroll.
+  Uses Alpine.js for scroll-aware class toggling and mobile menu toggle.
+#}
+<header
+  x-data="{ scrolled: false, mobileOpen: false }"
+  x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })"
+  :class="scrolled ? 'bg-primary-950 shadow-lg' : 'bg-transparent'"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  role="banner"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      {# Logo #}
+      <a href="{% url 'home:index' %}" class="flex items-center gap-3 flex-shrink-0" aria-label="{% trans 'Go to homepage' %}">
+        {% if site_settings and site_settings.logo_white %}
+          <img src="{{ site_settings.logo_white.url }}"
+               alt="{{ site_settings.site_name }}"
+               class="h-10 w-auto" />
+        {% else %}
+          <span class="text-white font-bold text-xl tracking-wide">
+            {% if site_settings %}{{ site_settings.site_name }}{% else %}IRDM{% endif %}
+          </span>
+        {% endif %}
+      </a>
+
+      {# Desktop Navigation #}
+      <nav class="hidden lg:flex items-center gap-1" role="navigation" aria-label="{% trans 'Primary navigation' %}">
+        {% for item in header_menu %}
+          {% if item.children.all %}
+            {# Dropdown item #}
+            <div class="relative" x-data="{ open: false }">
+              <button
+                @click="open = !open"
+                @click.outside="open = false"
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/90 hover:text-white rounded-md transition-colors duration-150"
+                :aria-expanded="open.toString()"
+              >
+                {{ item.label }}
+                <svg class="w-4 h-4 transition-transform duration-200" :class="{'rotate-180': open}" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div
+                x-show="open"
+                x-transition:enter="transition ease-out duration-100"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-75"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+                class="absolute left-0 mt-2 w-52 bg-white rounded-xl shadow-xl ring-1 ring-black/5 py-2 z-10"
+                role="menu"
+              >
+                {% for child in item.children.all %}
+                  <a href="{{ child.url }}"
+                     {% if child.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                     role="menuitem">
+                    {{ child.label }}
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            <a href="{{ item.url }}"
+               {% if item.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+               class="px-4 py-2 text-sm font-medium text-white/90 hover:text-white rounded-md transition-colors duration-150">
+              {{ item.label }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+
+      {# Right-side actions #}
+      <div class="hidden lg:flex items-center gap-4">
+        {# Language switch #}
+        <form action="{% url 'set_language' %}" method="post" class="flex items-center">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.path }}" />
+          <select name="language"
+                  onchange="this.form.submit()"
+                  class="bg-transparent text-white/80 text-sm font-medium cursor-pointer border border-white/30 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  aria-label="{% trans 'Select language' %}">
+            {% get_current_language as CURRENT_LANGUAGE %}
+            {% get_available_languages as LANGUAGES %}
+            {% for lang_code, lang_name in LANGUAGES %}
+              <option value="{{ lang_code }}" {% if lang_code == CURRENT_LANGUAGE %}selected{% endif %}
+                      class="bg-primary-950 text-white">
+                {{ lang_code|upper }}
+              </option>
+            {% endfor %}
+          </select>
+        </form>
+
+        {# Contact CTA #}
+        <a href="/contact/"
+           class="inline-flex items-center px-5 py-2.5 bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold rounded-lg transition-colors duration-150">
+          {% trans "Contact Us" %}
+        </a>
+      </div>
+
+      {# Mobile menu toggle #}
+      <button
+        @click="mobileOpen = !mobileOpen"
+        class="lg:hidden p-2 rounded-md text-white/90 hover:text-white hover:bg-white/10 transition-colors"
+        :aria-expanded="mobileOpen.toString()"
+        aria-label="{% trans 'Toggle mobile menu' %}"
+      >
+        <svg x-show="!mobileOpen" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg x-show="mobileOpen" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  {# Mobile Navigation Drawer #}
+  <div
+    x-show="mobileOpen"
+    x-transition:enter="transition ease-out duration-200"
+    x-transition:enter-start="opacity-0 -translate-y-2"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-150"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-2"
+    class="lg:hidden bg-primary-950 border-t border-white/10"
+    role="navigation"
+    aria-label="{% trans 'Mobile navigation' %}"
+  >
+    <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+      {% for item in header_menu %}
+        <a href="{{ item.url }}"
+           {% if item.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+           class="block px-4 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+          {{ item.label }}
+        </a>
+      {% endfor %}
+      <div class="pt-4 border-t border-white/10">
+        <a href="/contact/"
+           class="block text-center px-5 py-3 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-lg transition-colors">
+          {% trans "Contact Us" %}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

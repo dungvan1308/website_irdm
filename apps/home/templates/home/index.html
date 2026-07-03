@@ -1,0 +1,27 @@
+{% extends "layouts/base.html" %}
+{% load i18n %}
+
+{% block title %}{% if site_settings %}{{ site_settings.site_name }}{% else %}IRDM{% endif %}{% endblock %}
+{% block meta_description %}{% if site_settings %}{{ site_settings.site_description }}{% endif %}{% endblock %}
+
+{% block content %}
+
+  {# Hero Section #}
+  {% include "home/sections/hero.html" %}
+
+  {# Statistics Section #}
+  {% if statistics %}
+    {% include "home/sections/statistics.html" %}
+  {% endif %}
+
+  {# Partner Logos Section #}
+  {% if partner_logos %}
+    {% include "home/sections/partners.html" %}
+  {% endif %}
+
+  {# Featured Sections (Solutions, Capabilities, Experts, Insights, Events, Resources) #}
+  {% for section_config in featured_sections %}
+    {% include "home/sections/featured_section.html" with config=section_config %}
+  {% endfor %}
+
+{% endblock %}
