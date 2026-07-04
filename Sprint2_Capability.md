@@ -472,6 +472,147 @@ Do NOT break project architecture.
 
 Do NOT modify completed Sprint 1 functionality except when improving reusable shared components.
 
+
+==========================================================
+STEP 11
+SEED DATA & DEMO CONTENT
+==========================================================
+
+The Capability module is NOT considered complete if the website displays empty pages after migration.
+
+The approved Figma PDF serves as BOTH:
+
+• Visual Source of Truth
+• Demo Content Source
+
+Read the approved Figma PDF again and extract all meaningful business content.
+
+Generate production-quality Vietnamese demonstration data that closely matches the approved design.
+
+----------------------------------------------------------
+IMPLEMENT SEED DATA
+----------------------------------------------------------
+
+Create a Django management command.
+
+Example:
+
+management/
+    commands/
+        seed_capability.py
+
+The command must be idempotent.
+
+Running multiple times must never create duplicate records.
+
+Use:
+
+- update_or_create()
+
+or
+
+- get_or_create()
+
+where appropriate.
+
+----------------------------------------------------------
+POPULATE DATABASE
+----------------------------------------------------------
+
+Populate every model created in Sprint 2.
+
+Including:
+
+• Capability Listing Page
+
+• Capability
+
+• Capability Features
+
+• Capability Need Items
+
+• Capability Methodology Steps
+
+• Capability Outputs
+
+• Capability Case Studies
+
+• Capability Case Study Tags
+
+• CTA Banner
+
+• Section Headers
+
+• Navigation Labels
+
+• Breadcrumb Labels
+
+----------------------------------------------------------
+CONTENT REQUIREMENTS
+----------------------------------------------------------
+
+Extract content from the approved Figma PDF.
+
+Reuse wording whenever possible.
+
+If some text cannot be extracted from the PDF, generate professional Vietnamese content consistent with:
+
+• IRDM business domain
+
+• Product Specification
+
+• Existing Homepage terminology
+
+Never use:
+
+Lorem Ipsum
+
+Dummy Text
+
+Placeholder Text
+
+Random Generated Content
+
+----------------------------------------------------------
+IMAGES
+----------------------------------------------------------
+
+Do NOT use external image URLs.
+
+If original images are unavailable:
+
+• leave ImageFields empty
+
+or
+
+• use local placeholder assets already available in the project.
+
+Images must remain editable from Django CMS.
+
+----------------------------------------------------------
+VALIDATION
+----------------------------------------------------------
+
+After executing:
+
+python manage.py migrate
+
+python manage.py seed_capability
+
+The website should immediately display:
+
+• Capability Listing Page
+
+• Capability Detail Pages
+
+• Complete demonstration content
+
+without requiring manual CMS data entry.
+
+The displayed content should closely match the approved Figma PDF.
+
+
+
 ==========================================================
 EXPECTED RESULT
 ==========================================================
@@ -496,6 +637,18 @@ Sprint 2 is complete only when the project contains:
 
 ✓ Dynamic Content from PostgreSQL
 
+✓ Seed Data Command
+
+✓ Demo Content Generated
+
+✓ Website automatically populated after:
+
+    python manage.py migrate
+
+    python manage.py seed_capability
+
+✓ No manual CMS data entry required
+
 ✓ SEO Support
 
 ✓ Responsive Design
@@ -512,6 +665,40 @@ Subpage - v2.pdf
 
 ✓ Clean Architecture
 
-Capability must be implemented as a reusable Core Business Domain that will later be referenced by Solution, Knowledge, Expert, Partner, Publication and Event modules.
+✓ Ready for Business Demonstration
 
-After implementation is completed, perform a final UI review against the supplied PDF and refine the interface until it closely matches the approved Figma design.
+Capability must be implemented as a reusable Core Business Domain that will later be referenced by:
+
+• Solution
+
+• Knowledge
+
+• Expert
+
+• Partner
+
+• Publication
+
+• Event
+
+The approved Figma PDF is BOTH:
+
+• the Visual Source of Truth
+
+• the Demo Content Source
+
+After implementation is completed:
+
+1. Perform a complete architecture review.
+
+2. Perform a complete database review.
+
+3. Perform a complete CMS review.
+
+4. Perform a complete frontend review.
+
+5. Perform a complete seed data review.
+
+6. Perform a complete pixel-perfect comparison against the approved Figma PDF.
+
+Continue refining until both the interface and the demonstration content closely match the approved Figma design.

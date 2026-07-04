@@ -103,7 +103,7 @@ Nếu lỗi thì cài:
 
 pip install django
 5. Chạy migrate database
-python manage.py migratels
+python manage.py migrate
 
 6. Tạo admin user (optional)
 python manage.py createsuperuser
