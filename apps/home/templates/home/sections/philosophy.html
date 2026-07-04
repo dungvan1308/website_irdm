@@ -1,5 +1,5 @@
 {% load i18n %}
-<section class="bg-gray-50 py-20" aria-labelledby="philosophy-heading">
+<section class="bg-white py-20" aria-labelledby="philosophy-heading">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div class="mb-12">
@@ -9,20 +9,20 @@
           {{ philosophy_header.section_label }}
         </p>
       {% endif %}
-      <h2 id="philosophy-heading" class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+      <h2 id="philosophy-heading" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-900 uppercase tracking-tight mb-3">
         {% if philosophy_header %}{{ philosophy_header.heading }}{% else %}{% trans "IRDM's Special Approach" %}{% endif %}
       </h2>
       {% if philosophy_header and philosophy_header.description %}
-        <p class="text-base text-gray-500 max-w-2xl leading-relaxed">{{ philosophy_header.description }}</p>
+        <p class="text-base text-slate-500 max-w-2xl leading-relaxed">{{ philosophy_header.description }}</p>
       {% endif %}
     </div>
 
     {% if philosophy_principles %}
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {% for principle in philosophy_principles %}
-          <div class="bg-white rounded-2xl border border-gray-200 p-8 hover:border-primary-200 hover:shadow-sm transition-all duration-200">
-            <div class="flex items-center gap-4 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center flex-shrink-0">
+          <div class="bg-gray-50 rounded-2xl border border-gray-100 p-7 hover:border-primary-100 hover:shadow-md transition-all duration-200">
+            <div class="flex gap-4 mb-3">
+              <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <svg class="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   {% if principle.icon == "link" %}
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/>
@@ -35,11 +35,13 @@
                   {% endif %}
                 </svg>
               </div>
-              <span class="text-3xl font-black text-primary-100 select-none">{{ principle.number|stringformat:"02d" }}</span>
+              <div>
+                <span class="text-xs font-bold text-primary-500 uppercase tracking-widest mb-0.5 block">{{ principle.number|stringformat:"02d" }}</span>
+                <h3 class="text-base font-bold text-primary-700 leading-snug">{{ principle.title }}</h3>
+              </div>
             </div>
-            <h3 class="text-base font-bold text-gray-900 mb-2">{{ principle.title }}</h3>
             {% if principle.body %}
-              <p class="text-sm text-gray-500 leading-relaxed">{{ principle.body }}</p>
+              <p class="text-sm text-slate-500 leading-relaxed pl-14">{{ principle.body }}</p>
             {% endif %}
           </div>
         {% endfor %}
