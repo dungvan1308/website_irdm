@@ -1,160 +1,244 @@
-# Sprint 3 - Solution Module
+You are a Principal Software Architect, Senior Django Architect, Senior PostgreSQL Architect, Senior CMS Architect, Senior Frontend Engineer and Senior UI/UX Engineer.
 
-# Implementation Guide
+Sprint 3 has already been implemented.
 
-Version: 2.0
+Your task is NOT to rebuild the Solution module.
 
----
+Your task is to review, refine, complete and improve the existing implementation until it fully complies with the approved project architecture and closely matches the approved Figma design.
 
-# Objective
+Reuse existing code whenever possible.
 
-Implement the Solution module according to the project architecture, Product Specification and approved design.
+Do not duplicate functionality.
 
-Do not redesign the page.
+==================================================
+READ PROJECT DOCUMENTATION
+==================================================
 
-Do not simplify the design.
+Read and understand the project documentation in the following order.
 
-Do not hardcode business content.
-
----
-
-# Read Before Implementation
-
-Read the following documents in order.
-
-## Project Rules
-
+1.
 .github/copilot-instructions.md
 
----
-
-## Project Architecture
-
+2.
 docs/01_foundation/
 
+3.
 docs/02_architecture/
-
+4.
 docs/03_database/
-
+5.
 docs/04_design_system/
-
+6.
 docs/05_shared_components/
-
+7.
 docs/06_admin/
-
+8.
 docs/07_backend/
-
+9.
 docs/08_frontend/
-
----
-
-## Product Specification
-
-docs/11_product_spec/001_global_layout.md
-
+10.
 docs/11_product_spec/004_solution.md
 
----
+The Architecture documents define platform rules.
 
-## Approved Design
+The Product Specification defines the Solution business domain.
 
-Read the approved design.
+Both must be respected.
+==================================================
+READ APPROVED DESIGN
+==================================================
+Read completely:
+figmapng/solution/giaiphap.png
 
-```text
-figmapng/
-└── solution/
-    └── GiaiPhap.png
-```
+Treat the PNG as both:
+• UI Source of Truth
+• Demonstration Content Reference
+Analyse completely:
+- Header
+- Footer
+- Hero
+- Audience Selector
+- Methodology
+- Audience Sections
+- Focus Topics
+- IRDM Actions
+- Capability Cards
+- Output Cards
+- CTA
+- Typography
+- Images
+- Icons
+- Illustrations
+- Background Images
+- Decorative Graphics
+- Responsive Layout
 
-The PNG is the visual source of truth.
+==================================================
+STEP 1
+Architecture Review
+==================================================
 
----
+Review the existing implementation.
 
-# Architecture Priority
+Verify compliance with:
 
-Always follow this order.
-
-1. Project Architecture
-
-2. Product Specification
-
-3. Approved PNG
-
-4. Existing Shared Components
-
-5. Existing Source Code
-
-Never break the project architecture to match a visual detail.
-
----
-
-# Review Existing Implementation
-
-Before writing code:
-
-Review:
-
-- Models
-- Migrations
-- Admin
-- CMS
-- Service Layer
-- Templates
+- Architecture
+- Product Specification
+- CMS First
 - Shared Components
-- Existing Solution module
+- Service Layer
+- Dynamic Rendering
 
 Reuse existing implementation whenever possible.
 
-Do not duplicate code.
+==================================================
+STEP 2
+Global Website Components
+==================================================
 
----
+Review whether reusable Website components already exist.
 
-# Database
+If missing, implement a reusable Website Settings module.
 
-Implement all models defined in:
+The Website module shall manage:
+
+Header
+
+- Logo
+- Primary Navigation
+- Search
+- Language
+- Primary CTA
+
+Footer
+
+- Logo
+- Organization Information
+- Contact
+- Quick Links
+- Search
+- Google Map
+- Social Links
+- Copyright
+
+These components are shared by the entire website.
+
+They must NOT belong to the Solution module.
+
+==================================================
+STEP 3
+Solution Review
+==================================================
+
+Review the Solution module against:
 
 docs/11_product_spec/004_solution.md
 
-Generate:
+Verify:
 
-- Models
-- Migrations
-- Relationships
-- Constraints
-- Display Order
-- Publish Status
-- SEO Fields
-- ImageField
-
----
-
-# CMS
-
-Implement a complete Django CMS.
-
-Editors must manage:
-
-- Landing Page
-- Solution Sections
 - Hero
-- Overview
-- Related Capabilities
-- Outputs
-- CTA
-- Images
-- SEO
-- Display Order
-- Publish Status
+- Audience Selector
+- Methodology
+- Audience Sections
+- Focus Topics
+- IRDM Actions
+- Capability Collection
+- Output Collection
+- CTA Banner
 
-No business content may remain hardcoded.
+Verify that every business block is CMS-driven.
 
----
+==================================================
+STEP 4
+Visual & Content Mapping
+==================================================
 
-# Media
+Compare the implementation against:
 
-Implement complete media support.
+figmapng/solution/giaiphap.png
 
-Review and implement if missing:
+Treat the PNG as both:
+
+• Visual Source of Truth
+
+• Demonstration Content Reference
+
+Review every visible element.
+
+For every section identify:
+
+- Layout
+- Heading
+- Paragraph
+- Button
+- Card
+- Image
+- Icon
+- Illustration
+- Background
+- Decorative Graphics
+
+If a visible element exists in the PNG but not in the implementation:
+
+- Extend the CMS
+- Extend the Data Model if required
+- Extend the Frontend
+- Extend the Seed Commands
+
+Every visible business element shall have a CMS representation.
+
+==================================================
+STEP 5
+Asset & Content Extraction
+==================================================
+
+Analyse the approved PNG.
+
+Extract reusable assets whenever possible.
+
+Including:
+
+- Logo
+- Hero Images
+- Navigation Images
+- Card Images
+- Icons
+- Illustrations
+- Background Images
+- Decorative Graphics
+
+Store reusable assets under:
+
+figmapng/solution/extracted_assets/
+
+Use meaningful filenames.
+
+Review all visible business text.
+
+If curated business content already exists:
+
+Reuse it.
+
+Otherwise:
+
+Generate equivalent demonstration content matching the approved design.
+
+==================================================
+STEP 6
+CMS & Media Review
+==================================================
+
+Verify that every visible business element has a CMS representation.
+
+Every text block shall map to editable CMS fields.
+
+Every visible image shall map to an ImageField.
+
+Every visible card shall map to a CMS entity.
+
+Review media support.
+
+Implement if missing:
 
 - MEDIA_ROOT
 - MEDIA_URL
@@ -163,211 +247,175 @@ Review and implement if missing:
 - Image Preview
 - Dynamic Image Rendering
 
-Images shall be managed through Django CMS.
+No business content shall remain hardcoded.
 
-Demo images may be extracted from:
+==================================================
+STEP 7
+Seed Review
+==================================================
 
-```text
-figmapng/
-└── solution/
-    └── GiaiPhap.png
-```
+Review:
 
----
+apps/website/management/commands/seed_website.py
 
-# Service Layer
+apps/solution/management/commands/seed_solution.py
 
-Views must never access models directly.
+If missing, create them.
 
-Implement reusable services.
+Populate complete demonstration data.
 
-Business logic belongs inside the Service Layer.
+Populate complete demonstration media.
 
-Prepare the module for future REST API and Headless CMS support.
+Populate complete relationships.
 
----
+Seed Website:
 
-# Frontend
-
-Implement:
-
-- Landing Page
-- Hero
-- Solution Navigator
-- Value Proposition
-- Solution Sections
-- Related Capabilities
-- Outputs
-- CTA
+- Header
 - Footer
+- Logo
+- Navigation
+- Contact
+- Search
+- Google Map
+- Social Links
 
-Reuse existing shared components.
+Seed Solution:
 
-Do not duplicate templates.
+- Hero
+- Methodology
+- Audience Sections
+- Navigation Information
+- Focus Topics
+- IRDM Actions
+- Capability Cards
+- Output Cards
+- CTA Banner
+- Relationships
+- SEO
+- Images
 
----
+Every ImageField shall reference a corresponding extracted asset.
 
-# Dynamic Rendering
+The generated website shall contain:
 
-Render the Landing Page dynamically.
+- Complete business text
+- Complete images
+- Complete relationships
+- No empty titles
+- No empty descriptions
+- No missing images
+- No placeholder cards
+- No broken media
 
-Pseudo flow:
-
-```text
-Landing
-
-↓
-
-Load Published Solution Sections
-
-↓
-
-Loop
-
-    Hero
-
-    Overview
-
-    Related Capabilities
-
-    Outputs
-
-    CTA
-
-End Loop
-
-↓
-
-Footer
-```
-
-Never hardcode:
-
-Government
-
-Healthcare
-
-Education
-
-Enterprise
-
-NGO
-
-The frontend must support unlimited Solution Sections.
-
----
-
-# Seed Data
-
-Implement:
-
-management/commands/seed_solution.py
-
-The command shall:
-
-- Create Landing Page
-- Create Solution Sections
-- Create Related Capabilities
-- Create Outputs
-- Create CTA
-- Register Demo Images
-- Populate ImageField
-
-The command must remain idempotent.
+Seed commands must be idempotent.
 
 Running:
 
 python manage.py migrate
 
+python manage.py seed_website
+
 python manage.py seed_solution
 
-must generate a complete demonstration website.
+shall generate a complete demonstration website.
 
----
+==================================================
+STEP 8
+Gap Analysis
+==================================================
 
-# UI Synchronization
+Identify every remaining gap.
 
-Compare the rendered website with:
+Examples:
 
-```text
-figmapng/
-└── solution/
-    └── GiaiPhap.png
-```
+- Missing CMS
+- Missing Images
+- Missing Text
+- Missing Relationships
+- Missing Layout
+- Missing Components
+- Missing Responsive Behaviour
+- Missing Demo Data
 
-Review every section.
+Fix only missing functionality.
 
-Adjust:
+Reuse existing implementation whenever possible.
 
-- Layout
-- Typography
-- Spacing
-- Grid
-- Hero
-- Images
-- Card Layout
-- CTA
-- Responsive Behaviour
+==================================================
+STEP 9
+Final Review
+==================================================
 
-Continue refining until the implementation closely matches the approved design.
+Compare the final website against:
 
----
+figmapng/solution/giaiphap.png
 
-# Implementation Rules
+Review:
 
-Always:
+- Every section
+- Every card
+- Every heading
+- Every paragraph
+- Every image
+- Every icon
+- Every illustration
+- Every CTA
+- Every layout
+- Every spacing
+- Every responsive breakpoint
 
-- Reuse shared components.
-- Reuse existing templates.
-- Reuse existing services.
-- Preserve project architecture.
-- Keep business content inside PostgreSQL.
-- Keep images inside Django CMS.
+Continue refining until no significant visual or content gap remains.
 
-Never:
+==================================================
+EXPECTED RESULT
+==================================================
 
-- Hardcode content.
-- Hardcode image paths.
-- Duplicate templates.
-- Duplicate business logic.
-- Redesign the UI.
+✓ Enterprise Architecture preserved
 
----
+✓ Shared Components reused
 
-# Expected Result
+✓ Website Settings implemented
 
-Sprint 3 is complete when the project contains:
+✓ Global Header completed
 
-✓ Solution Landing Page
+✓ Global Footer completed
 
-✓ Dynamic Solution Sections
+✓ Solution module completed
 
-✓ Django Models
+✓ CMS completed
 
-✓ PostgreSQL Database
+✓ Dynamic rendering completed
 
-✓ Django CMS
+✓ Complete business text populated
 
-✓ Django Admin
+✓ Complete images populated
 
-✓ Service Layer
+✓ Every ImageField mapped
 
-✓ Shared Components
+✓ Every visible text block mapped
 
-✓ Dynamic Rendering
+✓ Every visible image mapped
 
-✓ Image Upload
+✓ Every visible card mapped
 
-✓ Image Preview
+✓ Responsive layout completed
 
-✓ Demo Seed Data
+✓ Seed commands completed
 
-✓ Responsive Design
+✓ Website visually close to the approved Figma
 
-✓ SEO Support
+✓ Website ready for stakeholder demonstration immediately after:
 
-✓ UI closely matching:
+python manage.py migrate
 
-figmapng/solution/GiaiPhap.png
+python manage.py seed_website
 
-✓ Clean Enterprise Architecture
+python manage.py seed_solution
+
+The objective is not only to make the application functional.
+
+The objective is to generate a complete demonstration website.
+
+Every visible business text, image, icon, illustration and card shown in the approved PNG shall have a corresponding CMS representation and shall be automatically populated by the seed commands.
+
+The generated website must be ready for stakeholder demonstration without requiring manual CMS editing or manual image upload.
