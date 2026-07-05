@@ -1,184 +1,126 @@
-# Solution Module Product Specification
+# 004. Solution Module
+
+# Product Specification
 
 Version: 2.0
+
 Status: Approved
-Module: Solution
-Sprint: Sprint 3
 
 ---
 
 # 1. Module Overview
 
-## 1.1 Purpose
+The Solution module presents how IRDM solves business challenges for different customer segments.
 
-The Solution module presents how IRDM transforms domain expertise, data capabilities and consulting methodologies into practical solutions for different customer segments.
+Unlike a traditional service page, Solution is implemented as **one dynamic Landing Page** composed of **one or more reusable Solution Sections** managed entirely through Django CMS.
 
-This module is one of the core business domains of the IRDM Website.
+The number of Solution Sections is unlimited.
 
-It introduces solution offerings and serves as the entry point connecting visitors with IRDM capabilities, experts and knowledge resources.
-
-## 1.2 Business Objectives
-
-- Present IRDM solution portfolio.
-- Demonstrate business value.
-- Connect business problems with IRDM capabilities.
-- Generate consultation opportunities.
-- Increase user engagement.
-
-## 1.3 Scope
-
-The Solution module includes:
-
-- Solution Landing Page
-- Solution Detail Page
-- Solution Categories
-- Related Capability
-- CTA Sections
-
-## 1.4 Out of Scope
-
-The following modules are implemented separately:
-
-- Capability
-- Knowledge
-- Expert
-- Partner
-- Event
-- Publication
+Business users can create, publish, reorder or remove Solution Sections without modifying source code.
 
 ---
 
-# 2. Design Reference
+# 2. Business Objectives
 
-The Solution module is designed based on the approved design.
+The Solution module shall:
 
-Approved Design
+- Present IRDM business solutions.
+- Connect customer challenges with IRDM capabilities.
+- Demonstrate business value instead of technical implementation.
+- Support unlimited customer segments.
+- Encourage customer engagement through contextual CTA.
+- Remain fully manageable through Django CMS.
+- Support future integration with other business modules.
 
+---
+
+# 3. Architecture Principles
+
+The Solution module follows these principles.
+
+- CMS First
+- PostgreSQL as the Single Source of Truth
+- Dynamic Rendering
+- Reusable Components
+- Service Layer
+- Enterprise CMS
+- Future Extensibility
+
+No business content shall be hardcoded.
+
+---
+
+# 4. Approved Design
+
+Approved visual source:
+
+```text
 figmapng/
 └── solution/
-    └── giaiphap.png
+    └── GiaiPhap.png
+```
 
-This document defines the business and technical specification corresponding to the approved design.
+The approved PNG defines:
 
-The implementation shall remain visually consistent with the approved design.
+- Layout
+- Typography
+- Colors
+- Images
+- Icons
+- Illustrations
+- Spacing
+- Responsive Behaviour
 
----
-
-# 3. Business Architecture
-
-The Solution module connects multiple business domains.
-
-Relationship
-
-Solution
-
-↓
-
-Capability
-
-↓
-
-Knowledge
-
-↓
-
-Expert
-
-↓
-
-Partner
-
-↓
-
-Publication
-
-↓
-
-Event
-
-The Solution module acts as the business entry point that guides users toward relevant capabilities and services.
+The implementation shall closely match the approved design while preserving the project architecture.
 
 ---
 
-# 4. Information Architecture
+# 5. Information Architecture
 
-Website Structure
+```text
+Solution Landing Page
+│
+├── Hero
+├── Solution Navigator
+├── Value Proposition
+├── Solution Sections (1..N)
+├── Global CTA
+└── Footer
+```
 
-Solutions
+The Landing Page is rendered dynamically.
 
-├── Landing Page
-
-├── Government
-
-├── Healthcare
-
-├── University
-
-├── Enterprise
-
-├── International
-
-└── Detail
-
-Each solution page may include:
-
-- Hero
-- Overview
-- Challenges
-- Methodology
-- Benefits
-- Related Capabilities
-- Case Studies
-- CTA
+No Solution Section is hardcoded.
 
 ---
 
-# 5. Component Mapping
+# 6. Solution Section
 
-The Solution module consists of reusable components.
+Every Solution Section shares one reusable layout.
 
-Core Components
+```text
+Solution Section
+│
+├── Hero
+├── Overview
+├── Related Capabilities
+├── Expected Outputs
+└── Call To Action
+```
 
-- Hero
-- Breadcrumb
-- Overview
-- Category Card
-- Challenge Card
-- Methodology
-- Benefits
-- Statistics
-- CTA Banner
-- Related Capability
-- Footer CTA
+Each Solution Section represents one business audience.
 
-These components should reuse the shared component library whenever possible.
+Examples include:
 
----
+- Government & Policy
+- Healthcare
+- Education
+- Enterprise
+- International Organization
 
-# 6. Database Requirements
+These are demonstration data only.
 
-The Solution module shall support:
-
-- Solution
-- Solution Category
-- Solution Feature
-- Challenge
-- Methodology Step
-- Output
-- CTA
-- Related Capability
-- SEO Metadata
-
-All entities shall support:
-
-- UUID Primary Key
-- Slug
-- Publish Status
-- Display Order
-- Audit Fields
-- Soft Delete
-- Language Support
-- ImageField
+Future Solution Sections can be added entirely through CMS.
 
 ---
 
@@ -186,154 +128,207 @@ All entities shall support:
 
 Editors shall be able to manage:
 
+- Landing Page
+- Solution Sections
 - Hero
 - Overview
-- Categories
-- Challenges
-- Methodology
-- Outputs
+- Related Capabilities
+- Expected Outputs
 - CTA
 - Images
 - SEO
 - Publish Status
 - Display Order
 
-All visible business content shall be editable through Django CMS.
+Business users must never modify source code.
 
 ---
 
-# 8. Media Requirements
+# 8. Data Model Overview
 
-The module supports:
+Core entities:
 
-- Hero Images
-- Background Images
-- Card Images
+```text
+SolutionLandingPage
+
+SolutionSection
+
+SolutionCapability
+
+SolutionOutput
+
+SolutionCTA
+```
+
+Relationships:
+
+```text
+Landing Page
+    │
+    └── Solution Sections (1..N)
+             │
+             ├── Related Capabilities
+             ├── Expected Outputs
+             └── CTA
+```
+
+The architecture shall support unlimited Solution Sections.
+
+---
+
+# 9. Media Strategy
+
+All media is managed through Django CMS.
+
+Supported media:
+
+- Hero Image
+- Background Image
+- Card Image
+- CTA Image
 - Icons
 - Illustrations
 
-Images shall be stored using Django ImageField.
+All images shall use ImageField.
 
-Future deployment should support cloud storage (Amazon S3) without changing business logic.
+Images are rendered dynamically.
 
----
+Demo assets may be extracted from:
 
-# 9. Service Layer Requirements
+```text
+figmapng/
+└── solution/
+    └── GiaiPhap.png
+```
 
-Views shall never access Django Models directly.
-
-Business logic shall be implemented through reusable Service Layer classes.
-
-Responsibilities include:
-
-- Query business data
-- Aggregate related content
-- Build View Models
-- Support caching
-- Support future REST API
+Production images are uploaded through Django CMS.
 
 ---
 
-# 10. Frontend Requirements
+# 10. Frontend Rendering
 
-The Solution module shall support:
+The frontend renders Solution Sections dynamically.
 
-- Desktop
-- Tablet
-- Mobile
+Pseudo flow:
 
-The implementation shall reuse:
+```text
+Load Landing Page
 
-- Shared Layout
-- Shared Components
-- Shared Design Tokens
+↓
 
-The user interface shall remain consistent with the project design system.
+Load Published Solution Sections
+
+↓
+
+Loop
+
+    Hero
+
+    Overview
+
+    Related Capabilities
+
+    Expected Outputs
+
+    CTA
+
+End Loop
+
+↓
+
+Footer
+```
+
+No Solution-specific template shall be duplicated.
+
+One reusable component shall render every Solution Section.
 
 ---
 
-# 11. Dynamic Content Strategy
+# 11. Shared Components
 
-All visible content shall come from PostgreSQL.
+The Solution module shall reuse existing shared components whenever possible.
 
-No business information shall be hardcoded.
+Recommended shared components include:
 
-Dynamic content includes:
+- Hero
+- Section Header
+- Breadcrumb
+- Capability Card
+- Output Card
+- CTA Banner
+- Button
+- Responsive Grid
+- Footer
 
-- Titles
-- Descriptions
-- Images
-- Buttons
+Only create new components when they are reusable.
+
+---
+
+# 12. Service Layer
+
+Views must never access Django Models directly.
+
+The Service Layer is responsible for:
+
+- Landing Page
+- Solution Sections
+- Related Capabilities
+- Outputs
 - CTA
-- Navigation
-- SEO Metadata
+- SEO
+- Media
+
+Business logic belongs only inside the Service Layer.
 
 ---
 
-# 12. Integration Requirements
+# 13. Future Integration
 
-The Solution module shall integrate with:
+The Solution module is designed for future expansion.
+
+Each Solution Section may later reference:
 
 - Capability
-- Knowledge
 - Expert
+- Knowledge
 - Partner
-- Event
 - Publication
+- Event
+- Case Study
+- Testimonial
 
-Relationships should be implemented using reusable database associations.
-
----
-
-# 13. SEO Requirements
-
-Support:
-
-- Meta Title
-- Meta Description
-- Open Graph
-- Canonical URL
-- Slug
-- Structured Data
-
-SEO content shall be manageable through CMS.
+No architectural redesign should be required.
 
 ---
 
 # 14. Acceptance Criteria
 
-The Solution Product Specification is considered complete when:
+The Solution module is complete when:
 
-✓ Business objectives are clearly defined.
-
-✓ Information architecture is completed.
-
-✓ Component mapping is defined.
-
-✓ Database requirements are documented.
-
-✓ CMS requirements are documented.
-
-✓ Service Layer responsibilities are defined.
-
-✓ Dynamic content strategy is documented.
-
-✓ Integration with other modules is defined.
-
-✓ SEO requirements are defined.
-
-✓ The specification remains consistent with the approved Figma design.
+- Solution is implemented as one Landing Page.
+- Solution Sections are dynamic.
+- Unlimited Solution Sections are supported.
+- Landing Page is CMS-driven.
+- Images are managed through CMS.
+- Related Capabilities are dynamic.
+- Expected Outputs are dynamic.
+- CTA is configurable.
+- All content comes from PostgreSQL.
+- Images are rendered from ImageField.
+- UI closely matches the approved design.
+- New Solution Sections can be added without modifying source code.
 
 ---
 
-# 15. Future Extension
+# 15. Definition of Done
 
-The Solution module is designed for future expansion including:
+The implementation is complete only when:
 
-- AI Recommendation
-- Semantic Search
-- Headless CMS
-- REST API
-- Multi-language
-- Analytics
-- Personalization
+- The Landing Page renders entirely from PostgreSQL.
+- Every Solution Section is managed through Django CMS.
+- The frontend renders Solution Sections using a reusable loop.
+- No business content is hardcoded.
+- Images are uploaded and managed through CMS.
+- The implementation follows the approved design.
+- The architecture supports future business expansion.

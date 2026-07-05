@@ -63,6 +63,7 @@ class SolutionListingPageAdmin(admin.ModelAdmin):
         ("CTA", {"fields": ("cta_primary_label", "cta_primary_url", "cta_secondary_label", "cta_secondary_url")}),
         ("Quick-nav", {"fields": ("quicknav_heading",)}),
         ("Approach Section", {"fields": ("approach_label", "approach_heading", "approach_description")}),
+        ("SEO", {"fields": ("meta_title", "meta_description", "meta_keywords"), "classes": ("collapse",)}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 
@@ -81,7 +82,7 @@ class SolutionApproachStepAdmin(admin.ModelAdmin):
 class SolutionAdmin(admin.ModelAdmin):
     list_display = ("title", "slug", "thumbnail_preview", "is_published", "display_order", "is_active")
     list_editable = ("is_published", "display_order", "is_active")
-    readonly_fields = ("thumbnail_preview", "hero_image_preview")
+    readonly_fields = ("thumbnail_preview", "hero_image_preview", "cta_image_preview")
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ("title", "slug")
     filter_horizontal = ("related_capabilities",)
@@ -100,7 +101,7 @@ class SolutionAdmin(admin.ModelAdmin):
             "description",
         )}),
         ("Section labels", {"fields": ("challenge_label", "methodology_label", "output_label", "capability_label")}),
-        ("CTA", {"fields": ("cta_heading", "cta_sub", "cta_primary_label", "cta_primary_url", "cta_secondary_label", "cta_secondary_url")}),
+        ("CTA", {"fields": ("cta_heading", "cta_sub", "cta_primary_label", "cta_primary_url", "cta_secondary_label", "cta_secondary_url", "cta_image", "cta_image_preview")}),
         ("Related Capabilities", {"fields": ("related_capabilities",)}),
         ("SEO", {"fields": ("meta_title", "meta_description", "meta_keywords"), "classes": ("collapse",)}),
         ("Status", {"fields": ("is_published", "is_active", "display_order")}),
@@ -113,3 +114,7 @@ class SolutionAdmin(admin.ModelAdmin):
     @admin.display(description="Hero preview")
     def hero_image_preview(self, obj):
         return _img_preview(obj.hero_image, height=80)
+
+    @admin.display(description="CTA preview")
+    def cta_image_preview(self, obj):
+        return _img_preview(obj.cta_image, height=60)

@@ -17,15 +17,11 @@
 {% block content %}
 
 {# ── Hero ─────────────────────────────────────────────────────────────────── #}
-<section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 pt-32 pb-16 lg:pt-40 lg:pb-20"
-         aria-label="{% trans 'Solution hero' %}">
-  <div class="absolute inset-0 opacity-20" aria-hidden="true"
-       style="background-image: radial-gradient(circle at 1px 1px, #93c5fd 1px, transparent 0); background-size: 40px 40px;"></div>
+<section class="pt-24 pb-0" aria-label="{% trans 'Solution hero' %}">
 
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    {# Breadcrumb #}
-    <nav class="flex items-center gap-2 text-sm text-slate-500 mb-8 flex-wrap" aria-label="{% trans 'Breadcrumb' %}">
+  {# Breadcrumb above the card #}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <nav class="flex items-center gap-2 text-sm text-slate-500 flex-wrap" aria-label="{% trans 'Breadcrumb' %}">
       <a href="{% url 'home:index' %}" class="hover:text-primary-700 transition-colors">{% trans "Home" %}</a>
       <svg class="w-4 h-4 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -36,41 +32,59 @@
       </svg>
       <span class="text-primary-700 font-medium">{{ solution.title }}</span>
     </nav>
+  </div>
 
-    {% if solution.section_label %}
-      <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">
-        <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
-        {{ solution.section_label }}
-      </p>
-    {% endif %}
+  {# 2-column hero card: dark left + photo right — same style as listing strips #}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="rounded-2xl overflow-hidden flex flex-col lg:flex-row shadow-lg" style="min-height:400px;">
 
-    <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-      <div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-5">
-          {{ solution.title }}
-        </h1>
-        {% if solution.description %}
-          <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6">{{ solution.description }}</p>
-        {% endif %}
+      {# Left: dark panel #}
+      <div class="lg:w-[55%] bg-primary-950 p-8 lg:p-12 flex flex-col justify-between">
+        <div>
+          {% if solution.section_label %}
+            <p class="text-orange-400 text-xs font-semibold uppercase tracking-widest mb-5">
+              {{ solution.section_label }}
+            </p>
+          {% endif %}
+
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white uppercase tracking-tight leading-tight mb-4">
+            {{ solution.title }}
+          </h1>
+
+          {% if solution.summary %}
+            <p class="text-sm text-orange-300 font-medium leading-relaxed mb-4">{{ solution.summary }}</p>
+          {% endif %}
+
+          {% if solution.description %}
+            <p class="text-sm text-white/70 leading-relaxed">{{ solution.description }}</p>
+          {% endif %}
+        </div>
+
         {% if features %}
-          <div class="flex flex-wrap gap-2">
+          <div class="mt-8 flex flex-wrap gap-2">
             {% for tag in features %}
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border border-primary-300 text-primary-800 bg-white/60">{{ tag.label }}</span>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border border-white/20 text-white/80 bg-white/10">{{ tag.label }}</span>
             {% endfor %}
           </div>
         {% endif %}
       </div>
-      {% if solution.hero_image %}
-        <div class="hidden lg:block">
-          <div class="rounded-2xl overflow-hidden shadow-2xl">
-            <img src="{{ solution.hero_image.url }}" alt="{{ solution.title }}"
-                 class="w-full h-auto object-cover" loading="eager" />
-          </div>
-        </div>
-      {% endif %}
-    </div>
 
+      {# Right: hero photo #}
+      <div class="lg:w-[45%] min-h-[260px] relative overflow-hidden bg-primary-800">
+        {% if solution.hero_image %}
+          <img src="{{ solution.hero_image.url }}" alt="{{ solution.title }}"
+               class="absolute inset-0 w-full h-full object-cover"
+               loading="eager" />
+        {% elif solution.thumbnail %}
+          <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}"
+               class="absolute inset-0 w-full h-full object-cover"
+               loading="eager" />
+        {% endif %}
+      </div>
+
+    </div>
   </div>
+
 </section>
 
 {# ── Challenges ──────────────────────────────────────────────────────────── #}
@@ -211,13 +225,15 @@
 {# ── CTA ─────────────────────────────────────────────────────────────────── #}
 {% if solution.cta_primary_label or solution.cta_secondary_label %}
 <section class="relative overflow-hidden py-16" aria-label="{% trans 'CTA' %}">
-  {% if solution.hero_image %}
-    <div class="absolute inset-0 z-0" aria-hidden="true">
-      <img src="{{ solution.hero_image.url }}" alt="" class="w-full h-full object-cover" loading="lazy" />
-    </div>
-  {% else %}
-    <div class="absolute inset-0 z-0 bg-gradient-to-r from-primary-950 via-primary-900 to-primary-800" aria-hidden="true"></div>
-  {% endif %}
+  {% with cta_bg=solution.cta_image|default:solution.hero_image %}
+    {% if cta_bg %}
+      <div class="absolute inset-0 z-0" aria-hidden="true">
+        <img src="{{ cta_bg.url }}" alt="" class="w-full h-full object-cover" loading="lazy" />
+      </div>
+    {% else %}
+      <div class="absolute inset-0 z-0 bg-gradient-to-r from-primary-950 via-primary-900 to-primary-800" aria-hidden="true"></div>
+    {% endif %}
+  {% endwith %}
   <div class="absolute inset-0 z-10 bg-primary-950/75" aria-hidden="true"></div>
 
   <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

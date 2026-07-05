@@ -416,11 +416,28 @@ def _assign_image(instance, field_name: str, filename: str, png_bytes: bytes, st
     stdout.write(f"    {field_name}: saved demo image → {filename}")
 
 
+def _assign_from_file(instance, field_name: str, src: "pathlib.Path", filename: str, stdout) -> None:
+    """Assign an ImageField from a pre-extracted file only if the field is empty."""
+    field = getattr(instance, field_name)
+    if field:
+        stdout.write(f"    {field_name}: already set, skipping")
+        return
+    if not src.exists():
+        stdout.write(f"    {field_name}: source not found {src}, skipping")
+        return
+    content = ContentFile(src.read_bytes(), name=filename)
+    field.save(filename, content, save=True)
+    stdout.write(f"    {field_name}: saved → {filename}")
+
+
 class Command(BaseCommand):
     help = "Seed the Solution module with demonstration data from GiaiPhap.pdf."
 
     def handle(self, *args, **options) -> None:
+        from django.conf import settings
         self.stdout.write(self.style.MIGRATE_HEADING("Seeding Solution module..."))
+
+        MEDIA = settings.MEDIA_ROOT
 
         # ── Listing Page ──────────────────────────────────────────────────────
         listing_page, created = SolutionListingPage.objects.update_or_create(
@@ -429,11 +446,15 @@ class Command(BaseCommand):
         )
         self.stdout.write(f"  {'Created' if created else 'Updated'} listing page: {listing_page.heading}")
 
-        # Seed listing hero image
+        # Listing hero: prefer Figma-extracted illustration; fall back to gradient
         if not listing_page.hero_image:
-            info = DEMO_IMAGE_MAP["__listing__"]
-            png = _make_gradient_png(info[0], info[1])
-            _assign_image(listing_page, "hero_image", "solution-listing-hero.png", png, self.stdout)
+            figma_src = MEDIA / "solution" / "listing" / "hero-illustration.png"
+            if figma_src.exists():
+                _assign_from_file(listing_page, "hero_image", figma_src, "solution-listing-hero-illustration.png", self.stdout)
+            else:
+                info = DEMO_IMAGE_MAP["__listing__"]
+                png = _make_gradient_png(info[0], info[1])
+                _assign_image(listing_page, "hero_image", "solution-listing-hero.png", png, self.stdout)
 
         # ── Approach Steps ────────────────────────────────────────────────────
         for number, title, description, icon in APPROACH_STEPS:
@@ -444,7 +465,9 @@ class Command(BaseCommand):
             self.stdout.write(f"  {'Created' if created else 'Updated'} approach step {number:02d}: {title}")
 
         # ── Solutions ─────────────────────────────────────────────────────────
-        for sol_data in SOLUTIONS:
+        for _sol_data in SOLUTIONS:
+            # Shallow copy to avoid mutating the module-level SOLUTIONS constant
+            sol_data = {**_sol_data}
             slug = sol_data["slug"]
             capability_slugs = sol_data.pop("capability_slugs", [])
             features = sol_data.pop("features", [])
@@ -458,12 +481,31 @@ class Command(BaseCommand):
             )
             self.stdout.write(f"  {'Created' if created else 'Updated'} solution: {solution.title}")
 
-            # Seed demo images for this solution
+            # Seed images: prefer Figma-extracted assets; fall back to gradient
             img_info = DEMO_IMAGE_MAP.get(slug)
-            if img_info:
+            figma_thumb = MEDIA / "solution" / "thumbnails" / f"solution-thumb-{slug}.png"
+            figma_hero  = MEDIA / "solution" / "hero"       / f"solution-hero-{slug}.png"
+
+            if figma_thumb.exists():
+                _assign_from_file(solution, "thumbnail", figma_thumb, f"solution-thumb-{slug}.png", self.stdout)
+            elif img_info:
                 png = _make_gradient_png(img_info[0], img_info[1])
                 _assign_image(solution, "thumbnail", f"solution-thumb-{slug}.png", png, self.stdout)
+
+            if figma_hero.exists():
+                _assign_from_file(solution, "hero_image", figma_hero, f"solution-hero-{slug}.png", self.stdout)
+            elif img_info:
+                png = _make_gradient_png(img_info[0], img_info[1])
                 _assign_image(solution, "hero_image", f"solution-hero-{slug}.png", png, self.stdout)
+
+            # cta_image: reuse the same photo as hero_image (fallback to gradient)
+            # CMS editors can replace this with a different image via Django Admin
+            figma_cta = MEDIA / "solution" / "hero" / f"solution-hero-{slug}.png"
+            if figma_cta.exists():
+                _assign_from_file(solution, "cta_image", figma_cta, f"solution-cta-{slug}.png", self.stdout)
+            elif img_info:
+                png = _make_gradient_png(img_info[0], img_info[1])
+                _assign_image(solution, "cta_image", f"solution-cta-{slug}.png", png, self.stdout)
 
             # Features
             solution.features.filter(is_active=True).delete()

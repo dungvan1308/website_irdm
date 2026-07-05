@@ -1,50 +1,34 @@
-You are a Principal Software Architect, Senior Django Architect, Senior PostgreSQL Database Designer, Senior UI/UX Engineer, Senior Frontend Engineer, Senior Backend Engineer and Senior CMS Architect.
+# Sprint 3 - Solution Module
 
-You are implementing the Solution module (Sprint 3) of the IRDM Website.
+# Implementation Guide
 
-=====================================================================
-IMPLEMENTATION OBJECTIVE
-=====================================================================
+Version: 2.0
 
-Implement the complete Solution module following the approved project architecture.
+---
 
-The Solution module is NOT simply a webpage.
+# Objective
 
-It is a reusable business domain that will later integrate with:
+Implement the Solution module according to the project architecture, Product Specification and approved design.
 
-• Capability
-• Knowledge
-• Expert
-• Partner
-• Publication
-• Event
+Do not redesign the page.
 
-The implementation must follow Enterprise Architecture, be CMS-driven, reusable, maintainable and pixel-perfect.
+Do not simplify the design.
 
-=====================================================================
-ARCHITECTURE PRIORITY
-=====================================================================
+Do not hardcode business content.
 
-Always follow this priority.
+---
 
-1. Project Architecture
-2. Product Specification
-3. Approved Figma PDF
-4. Extracted Assets
-5. Existing Shared Components
-6. Existing Source Code
+# Read Before Implementation
 
-Never break the project architecture in order to satisfy a visual detail.
+Read the following documents in order.
 
-=====================================================================
-READ PROJECT DOCUMENTATION
-=====================================================================
-
-Before writing any code, read and understand:
+## Project Rules
 
 .github/copilot-instructions.md
 
-Read all architecture documents
+---
+
+## Project Architecture
 
 docs/01_foundation/
 
@@ -62,366 +46,234 @@ docs/07_backend/
 
 docs/08_frontend/
 
-Read Product Specification
+---
 
-docs/11_product_spec/
+## Product Specification
 
-001_global_layout.md
+docs/11_product_spec/001_global_layout.md
 
-004_solution.md
+docs/11_product_spec/004_solution.md
 
-These documents define the project architecture, coding standards, reusable components, CMS rules, service layer, UI rules and implementation constraints.
+---
 
-=====================================================================
-READ APPROVED FIGMA DESIGN
-=====================================================================
+## Approved Design
 
-The ONLY approved visual design is located at:
+Read the approved design.
 
-FigmaPDF/
+```text
+figmapng/
+└── solution/
+    └── GiaiPhap.png
+```
 
-Solution_Subpage/
+The PNG is the visual source of truth.
 
-GiaiPhap.pdf
+---
 
-Before implementing anything you MUST:
+# Architecture Priority
 
-Read the complete PDF.
+Always follow this order.
 
-Analyse every page.
+1. Project Architecture
 
-Analyse every section.
+2. Product Specification
 
-Analyse typography.
+3. Approved PNG
 
-Analyse spacing.
+4. Existing Shared Components
 
-Analyse colors.
+5. Existing Source Code
 
-Analyse icons.
+Never break the project architecture to match a visual detail.
 
-Analyse illustrations.
+---
 
-Analyse buttons.
+# Review Existing Implementation
 
-Analyse images.
+Before writing code:
 
-Analyse CTA.
+Review:
 
-Analyse responsive behaviour.
+- Models
+- Migrations
+- Admin
+- CMS
+- Service Layer
+- Templates
+- Shared Components
+- Existing Solution module
 
-Analyse reusable UI patterns.
+Reuse existing implementation whenever possible.
 
-Do NOT redesign.
+Do not duplicate code.
 
-Do NOT simplify.
+---
 
-Do NOT invent layouts.
+# Database
 
-The supplied PDF is the ONLY approved visual reference.
+Implement all models defined in:
 
-=====================================================================
-STEP 1
-ARCHITECTURE REVIEW
-=====================================================================
+docs/11_product_spec/004_solution.md
 
-Review the current project architecture.
+Generate:
 
-Review reusable components.
+- Models
+- Migrations
+- Relationships
+- Constraints
+- Display Order
+- Publish Status
+- SEO Fields
+- ImageField
 
-Review existing shared layouts.
+---
 
-Review Service Layer.
+# CMS
 
-Review CMS architecture.
-
-Review Design System.
-
-Review database conventions.
-
-Review Product Specification.
-
-Reuse existing components whenever possible.
-
-Do not duplicate components.
-
-=====================================================================
-STEP 2
-FIGMA ANALYSIS
-=====================================================================
-
-Identify every reusable component inside the PDF.
-
-Examples:
-
-Hero
-
-Breadcrumb
-
-Section Header
-
-Overview
-
-Content Block
-
-Solution Category
-
-Challenge Card
-
-Methodology
-
-Benefits
-
-Timeline
-
-CTA Banner
-
-Gallery
-
-Footer CTA
-
-Navigation
-
-Determine which components should become reusable shared components.
-
-=====================================================================
-STEP 3
-ASSET EXTRACTION
-=====================================================================
-
-Read GiaiPhap.pdf.
-
-Extract all reusable assets.
-
-Including:
-
-• Hero Images
-
-• Background Images
-
-• Illustrations
-
-• Icons
-
-• Logos
-
-• Card Images
-
-• Decorative Graphics
-
-Store extracted assets under
-
-FigmaPDF/
-
-Solution_Subpage/
-
-extracted_assets/
-
-Use meaningful filenames.
-
-Preserve the highest possible quality.
-
-Convert to WebP only when appropriate.
-
-Do not overwrite existing assets.
-
-=====================================================================
-STEP 4
-DATABASE DESIGN
-=====================================================================
-
-Design a scalable PostgreSQL schema.
-
-Support:
-
-Solution
-
-Solution Category
-
-Hero
-
-Overview
-
-Challenge
-
-Methodology
-
-Outputs
-
-CTA
-
-Related Capability
-
-SEO
-
-Publish Status
-
-Display Order
-
-Language
-
-Media
-
-Audit Fields
-
-ImageField
-
-Generate Django Models.
-
-Generate Django Migrations.
-
-=====================================================================
-STEP 5
-CMS IMPLEMENTATION
-=====================================================================
+Implement a complete Django CMS.
 
 Editors must manage:
 
-Hero
+- Landing Page
+- Solution Sections
+- Hero
+- Overview
+- Related Capabilities
+- Outputs
+- CTA
+- Images
+- SEO
+- Display Order
+- Publish Status
 
-Overview
+No business content may remain hardcoded.
 
-Categories
+---
 
-Challenges
+# Media
 
-Methodology
+Implement complete media support.
 
-Outputs
+Review and implement if missing:
 
-CTA
+- MEDIA_ROOT
+- MEDIA_URL
+- ImageField
+- Image Upload
+- Image Preview
+- Dynamic Image Rendering
 
-SEO
+Images shall be managed through Django CMS.
 
-Publish Status
+Demo images may be extracted from:
 
-Ordering
+```text
+figmapng/
+└── solution/
+    └── GiaiPhap.png
+```
 
-Visibility
+---
 
-Images
+# Service Layer
 
-Icons
-
-Illustrations
-
-Background Images
-
-No business content shall remain hardcoded.
-
-=====================================================================
-STEP 6
-SERVICE LAYER
-=====================================================================
-
-Views must never directly access Django Models.
+Views must never access models directly.
 
 Implement reusable services.
 
 Business logic belongs inside the Service Layer.
 
-Support caching where appropriate.
+Prepare the module for future REST API and Headless CMS support.
 
-Design for future REST API and Headless CMS.
+---
 
-=====================================================================
-STEP 7
-FRONTEND IMPLEMENTATION
-=====================================================================
+# Frontend
 
 Implement:
 
-Solution Landing Page
+- Landing Page
+- Hero
+- Solution Navigator
+- Value Proposition
+- Solution Sections
+- Related Capabilities
+- Outputs
+- CTA
+- Footer
 
-Solution Detail Page
+Reuse existing shared components.
 
-Hero
+Do not duplicate templates.
 
-Overview
+---
 
-Solution Categories
+# Dynamic Rendering
 
-Challenges
+Render the Landing Page dynamically.
 
-Methodology
+Pseudo flow:
 
-Outputs
+```text
+Landing
 
-CTA
+↓
 
-Breadcrumb
+Load Published Solution Sections
 
-Related Capability
+↓
+
+Loop
+
+    Hero
+
+    Overview
+
+    Related Capabilities
+
+    Outputs
+
+    CTA
+
+End Loop
+
+↓
 
 Footer
-
-Responsive Layout
-
-Reuse shared components whenever possible.
-
-=====================================================================
-STEP 8
-DYNAMIC CONTENT
-=====================================================================
-
-Everything displayed on the website must come from PostgreSQL.
+```
 
 Never hardcode:
 
-Titles
+Government
 
-Paragraphs
+Healthcare
 
-Buttons
+Education
 
-Images
+Enterprise
 
-Illustrations
+NGO
 
-Icons
+The frontend must support unlimited Solution Sections.
 
-Navigation
+---
 
-Statistics
+# Seed Data
 
-CTA
+Implement:
 
-SEO
+management/commands/seed_solution.py
 
-Everything must be editable through Django CMS.
+The command shall:
 
-=====================================================================
-STEP 9
-SEED DATA
-=====================================================================
+- Create Landing Page
+- Create Solution Sections
+- Create Related Capabilities
+- Create Outputs
+- Create CTA
+- Register Demo Images
+- Populate ImageField
 
-Generate complete demo data.
-
-Include:
-
-Solution Categories
-
-Hero
-
-Overview
-
-Challenges
-
-Methodology
-
-Outputs
-
-CTA
-
-Relationships
-
-Navigation
-
-SEO
-
-Register all extracted images.
-
-Populate ImageField automatically.
+The command must remain idempotent.
 
 Running:
 
@@ -429,107 +281,70 @@ python manage.py migrate
 
 python manage.py seed_solution
 
-must generate a demonstration-ready website.
+must generate a complete demonstration website.
 
-=====================================================================
-STEP 10
-UI IMPLEMENTATION
-=====================================================================
+---
 
-Follow the approved PDF exactly.
+# UI Synchronization
 
-Focus on:
+Compare the rendered website with:
 
-Typography
-
-Spacing
-
-Padding
-
-Margins
-
-Cards
-
-Buttons
-
-Background
-
-Images
-
-Illustrations
-
-Grid
-
-Color Palette
-
-Section Spacing
-
-Hover
-
-Animation
-
-Responsive Behaviour
-
-Pixel-perfect implementation is required.
-
-=====================================================================
-STEP 11
-FINAL REVIEW
-=====================================================================
-
-Compare the implementation against:
-
-FigmaPDF/
-
-Solution_Subpage/
-
-GiaiPhap.pdf
+```text
+figmapng/
+└── solution/
+    └── GiaiPhap.png
+```
 
 Review every section.
 
-Review every component.
+Adjust:
 
-Review typography.
-
-Review colors.
-
-Review spacing.
-
-Review responsiveness.
+- Layout
+- Typography
+- Spacing
+- Grid
+- Hero
+- Images
+- Card Layout
+- CTA
+- Responsive Behaviour
 
 Continue refining until the implementation closely matches the approved design.
 
-=====================================================================
-DO NOT
-=====================================================================
+---
 
-Do NOT redesign.
+# Implementation Rules
 
-Do NOT simplify.
+Always:
 
-Do NOT invent layouts.
+- Reuse shared components.
+- Reuse existing templates.
+- Reuse existing services.
+- Preserve project architecture.
+- Keep business content inside PostgreSQL.
+- Keep images inside Django CMS.
 
-Do NOT hardcode business content.
+Never:
 
-Do NOT hardcode image paths.
+- Hardcode content.
+- Hardcode image paths.
+- Duplicate templates.
+- Duplicate business logic.
+- Redesign the UI.
 
-Do NOT break project architecture.
+---
 
-Do NOT duplicate components.
+# Expected Result
 
-Do NOT duplicate business logic.
+Sprint 3 is complete when the project contains:
 
-=====================================================================
-EXPECTED RESULT
-=====================================================================
+✓ Solution Landing Page
 
-Sprint 3 is complete only when the project contains:
-
-✓ PostgreSQL Database Design
+✓ Dynamic Solution Sections
 
 ✓ Django Models
 
-✓ Django Migration
+✓ PostgreSQL Database
 
 ✓ Django CMS
 
@@ -537,26 +352,22 @@ Sprint 3 is complete only when the project contains:
 
 ✓ Service Layer
 
-✓ Solution Landing Page
+✓ Shared Components
 
-✓ Solution Detail Page
+✓ Dynamic Rendering
 
-✓ Dynamic Content from PostgreSQL
+✓ Image Upload
 
-✓ Image Upload via CMS
+✓ Image Preview
 
-✓ Asset Extraction from PDF
-
-✓ Seed Data
+✓ Demo Seed Data
 
 ✓ Responsive Design
 
 ✓ SEO Support
 
-✓ Pixel-perfect implementation matching GiaiPhap.pdf
+✓ UI closely matching:
 
-✓ Clean Architecture
+figmapng/solution/GiaiPhap.png
 
-✓ Reusable Shared Components
-
-After implementation is completed, perform a complete UI review against the approved PDF and continue refining until the website visually matches the approved design as closely as possible.
+✓ Clean Enterprise Architecture
