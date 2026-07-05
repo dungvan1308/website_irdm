@@ -9,6 +9,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
     path("", include("apps.home.urls", namespace="home")),
+    path("giai-phap/", include("apps.solution.urls", namespace="solution")),
     path("capabilities/", include("apps.capability.urls", namespace="capability")),
 ]
 
