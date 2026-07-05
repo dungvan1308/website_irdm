@@ -54,9 +54,9 @@ The Solution module is designed based on the approved design.
 
 Approved Design
 
-FigmaPDF/
-└── Solution_Subpage/
-    └── GiaiPhap.pdf
+figmapng/
+└── solution/
+    └── giaiphap.png
 
 This document defines the business and technical specification corresponding to the approved design.
 

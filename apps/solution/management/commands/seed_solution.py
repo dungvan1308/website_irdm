@@ -7,6 +7,10 @@ FigmaPDF/Solution_Subpage/GiaiPhap.pdf.
 Idempotent — safe to run multiple times.
 """
 
+import io
+import pathlib
+
+from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
 
 from apps.capability.models import Capability
@@ -347,6 +351,71 @@ SOLUTIONS = [
 ]
 
 
+# ─── Demo image colour map ─────────────────────────────────────────────────────
+#
+# Each entry: slug → (top_colour_rgb, bottom_colour_rgb, label_text)
+# These match the primary brand palette (primary-900 / primary-800) with a
+# distinct accent per audience segment.
+
+DEMO_IMAGE_MAP = {
+    "__listing__": (
+        (10, 30, 70), (15, 50, 120), "GIẢI PHÁP",
+    ),
+    "co-quan-quan-ly-va-chinh-sach": (
+        (15, 40, 100), (25, 65, 150), "Cơ quan\nquản lý",
+    ),
+    "he-thong-y-te": (
+        (10, 70, 80), (15, 110, 130), "Hệ thống\ny tế",
+    ),
+    "truong-dai-hoc-va-giao-duc": (
+        (50, 30, 110), (80, 50, 160), "Trường\nĐại học",
+    ),
+    "doanh-nghiep": (
+        (90, 40, 10), (140, 70, 20), "Doanh\nnghiệp",
+    ),
+    "to-chuc-quoc-te-va-ngo": (
+        (10, 60, 50), (20, 90, 80), "Tổ chức\nQuốc tế",
+    ),
+}
+
+
+def _make_gradient_png(
+    top_rgb: tuple,
+    bottom_rgb: tuple,
+    width: int = 1200,
+    height: int = 675,
+) -> bytes:
+    """Generate a vertical-gradient PNG using Pillow. Returns raw bytes."""
+    from PIL import Image
+
+    img = Image.new("RGB", (width, height))
+    pixels = img.load()
+    r0, g0, b0 = top_rgb
+    r1, g1, b1 = bottom_rgb
+    for y in range(height):
+        t = y / (height - 1)
+        r = int(r0 + (r1 - r0) * t)
+        g = int(g0 + (g1 - g0) * t)
+        b = int(b0 + (b1 - b0) * t)
+        for x in range(width):
+            pixels[x, y] = (r, g, b)
+
+    buf = io.BytesIO()
+    img.save(buf, format="PNG", optimize=True)
+    return buf.getvalue()
+
+
+def _assign_image(instance, field_name: str, filename: str, png_bytes: bytes, stdout) -> None:
+    """Assign a generated PNG to an ImageField only if the field is empty."""
+    field = getattr(instance, field_name)
+    if field:
+        stdout.write(f"    {field_name}: already set, skipping")
+        return
+    content = ContentFile(png_bytes, name=filename)
+    field.save(filename, content, save=True)
+    stdout.write(f"    {field_name}: saved demo image → {filename}")
+
+
 class Command(BaseCommand):
     help = "Seed the Solution module with demonstration data from GiaiPhap.pdf."
 
@@ -359,6 +428,12 @@ class Command(BaseCommand):
             defaults={k: v for k, v in LISTING_PAGE.items() if k != "heading"},
         )
         self.stdout.write(f"  {'Created' if created else 'Updated'} listing page: {listing_page.heading}")
+
+        # Seed listing hero image
+        if not listing_page.hero_image:
+            info = DEMO_IMAGE_MAP["__listing__"]
+            png = _make_gradient_png(info[0], info[1])
+            _assign_image(listing_page, "hero_image", "solution-listing-hero.png", png, self.stdout)
 
         # ── Approach Steps ────────────────────────────────────────────────────
         for number, title, description, icon in APPROACH_STEPS:
@@ -382,6 +457,13 @@ class Command(BaseCommand):
                 defaults=sol_data,
             )
             self.stdout.write(f"  {'Created' if created else 'Updated'} solution: {solution.title}")
+
+            # Seed demo images for this solution
+            img_info = DEMO_IMAGE_MAP.get(slug)
+            if img_info:
+                png = _make_gradient_png(img_info[0], img_info[1])
+                _assign_image(solution, "thumbnail", f"solution-thumb-{slug}.png", png, self.stdout)
+                _assign_image(solution, "hero_image", f"solution-hero-{slug}.png", png, self.stdout)
 
             # Features
             solution.features.filter(is_active=True).delete()
@@ -414,3 +496,4 @@ class Command(BaseCommand):
 
         total = Solution.objects.filter(is_active=True, is_published=True).count()
         self.stdout.write(self.style.SUCCESS(f"\nDone. {total} published solutions in database."))
+

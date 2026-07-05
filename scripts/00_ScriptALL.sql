@@ -1,0 +1,18 @@
+
+SELECT datname
+FROM pg_database
+ORDER BY datname;
+
+
+CREATE USER irdm_user WITH PASSWORD 'irdm_user';
+
+
+GRANT CONNECT ON DATABASE irdm_db TO irdm_user;
+
+GRANT ALL PRIVILEGES ON DATABASE irdm_db TO irdm_user;
+
+
+GRANT ALL ON SCHEMA public TO irdm_user;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO irdm_user;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO irdm_user;
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public TO irdm_user;

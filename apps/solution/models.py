@@ -13,6 +13,8 @@ class SolutionListingPage(BaseModel):
 
     section_label = models.CharField(_("section label"), max_length=200, blank=True)
     heading = models.CharField(_("heading"), max_length=300)
+    hero_image = models.ImageField(_("hero image"), upload_to="solution/listing/", blank=True,
+                                   help_text=_("Background image for the listing page hero section."))
     description = models.TextField(_("description"), blank=True)
     cta_primary_label = models.CharField(_("primary CTA label"), max_length=100, blank=True)
     cta_primary_url = models.CharField(_("primary CTA URL"), max_length=500, blank=True)
