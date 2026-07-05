@@ -156,3 +156,19 @@ cd D:\07.Dungnv\01.Projects\HRPSolution\OOT-HRPSolution
 .\venv\Scripts\Activate.ps1
 cd backend
 python manage.py runserver
+
+
+-- Seed database
+
+Module	File
+Homepage	apps/home/management/commands/seed_homepage.py
+Solution	apps/solution/management/commands/seed_solution.py
+Capability	apps/capability/management/commands/seed_capability.py
+
+
+python manage.py seed_homepage
+
+python manage.py seed_capability
+python manage.py seed_solution
+
+
