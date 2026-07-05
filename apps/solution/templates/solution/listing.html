@@ -1,0 +1,254 @@
+{% extends "layouts/base.html" %}
+{% load i18n static %}
+
+{% block title %}
+  {% if listing_page %}{{ listing_page.heading }}{% else %}{% trans "Solutions" %}{% endif %}
+  — {% if site_settings %}{{ site_settings.site_name }}{% else %}IRDM{% endif %}
+{% endblock %}
+
+{% block meta_description %}
+  {% if listing_page and listing_page.description %}{{ listing_page.description|truncatewords:30 }}{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{# ── Hero ─────────────────────────────────────────────────────────────────── #}
+<section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 pt-32 pb-16 lg:pt-40 lg:pb-20"
+         aria-label="{% trans 'Solutions hero' %}">
+  <div class="absolute inset-0 opacity-20" aria-hidden="true"
+       style="background-image: radial-gradient(circle at 1px 1px, #93c5fd 1px, transparent 0); background-size: 40px 40px;"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {# Breadcrumb #}
+    <nav class="flex items-center gap-2 text-sm text-slate-500 mb-8 flex-wrap" aria-label="{% trans 'Breadcrumb' %}">
+      <a href="{% url 'home:index' %}" class="hover:text-primary-700 transition-colors">{% trans "Home" %}</a>
+      <svg class="w-4 h-4 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <span class="text-primary-700 font-medium">
+        {% if listing_page %}{{ listing_page.heading }}{% else %}{% trans "Solutions" %}{% endif %}
+      </span>
+    </nav>
+
+    {# Section label #}
+    {% if listing_page and listing_page.section_label %}
+      <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">
+        <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+        {{ listing_page.section_label }}
+      </p>
+    {% endif %}
+
+    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+      <div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-6">
+          {% if listing_page %}{{ listing_page.heading }}{% else %}{% trans "Solutions" %}{% endif %}
+        </h1>
+        {% if listing_page and listing_page.description %}
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">{{ listing_page.description }}</p>
+        {% endif %}
+        <div class="flex flex-col sm:flex-row gap-4">
+          {% if listing_page and listing_page.cta_primary_label and listing_page.cta_primary_url %}
+            <a href="{{ listing_page.cta_primary_url }}"
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-150 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+              {{ listing_page.cta_primary_label }}
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if listing_page and listing_page.cta_secondary_label and listing_page.cta_secondary_url %}
+            <a href="{{ listing_page.cta_secondary_url }}"
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-primary-300 text-primary-700 hover:bg-primary-50 font-semibold rounded-lg transition-all duration-150">
+              {{ listing_page.cta_secondary_label }}
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# ── Quick navigation: solution cards ────────────────────────────────────── #}
+{% if solutions %}
+<section class="bg-white py-16" aria-labelledby="quicknav-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {% if listing_page and listing_page.quicknav_heading %}
+      <div class="mb-10">
+        <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-2">
+          <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+          {% trans "Điều hướng nhanh" %}
+        </p>
+        <h2 id="quicknav-heading" class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight">
+          {{ listing_page.quicknav_heading }}
+        </h2>
+      </div>
+    {% endif %}
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+      {% for sol in solutions %}
+        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-primary-200 hover:shadow-lg transition-all duration-300 flex flex-col">
+
+          {# Thumbnail #}
+          <div class="relative h-36 flex-shrink-0 bg-gradient-to-br from-primary-800 to-primary-950 overflow-hidden">
+            {% if sol.thumbnail %}
+              <img src="{{ sol.thumbnail.url }}" alt=""
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   loading="lazy" aria-hidden="true" />
+            {% endif %}
+            <div class="absolute inset-0 bg-gradient-to-t from-primary-950/70 to-transparent" aria-hidden="true"></div>
+          </div>
+
+          <div class="p-5 flex flex-col flex-1">
+            {# Feature tags #}
+            {% with tags=sol.features.all %}
+              {% if tags %}
+                <div class="flex flex-wrap gap-1 mb-3">
+                  {% for tag in tags %}
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border border-gray-200 text-slate-600">{{ tag.label }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+
+            <h3 class="text-sm font-bold text-primary-900 leading-snug mb-2 group-hover:text-primary-700 transition-colors flex-1">
+              {{ sol.title }}
+            </h3>
+
+            {% if sol.summary %}
+              <p class="text-xs text-slate-500 leading-relaxed mb-4">{{ sol.summary|truncatewords:15 }}</p>
+            {% endif %}
+
+            <a href="{{ sol.get_absolute_url }}"
+               class="inline-flex items-center gap-1 text-sm font-semibold text-orange-500 hover:text-orange-700 transition-colors mt-auto group/link">
+              {% trans "Khám phá Giải pháp" %}
+              <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ── Approach Section ─────────────────────────────────────────────────────── #}
+{% if approach_steps %}
+<section class="bg-slate-50 py-16" aria-labelledby="approach-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="lg:grid lg:grid-cols-5 lg:gap-12">
+      {# Left: heading #}
+      <div class="lg:col-span-2 mb-10 lg:mb-0">
+        {% if listing_page and listing_page.approach_label %}
+          <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">
+            <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+            {{ listing_page.approach_label }}
+          </p>
+        {% endif %}
+        <h2 id="approach-heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-4">
+          {% if listing_page and listing_page.approach_heading %}{{ listing_page.approach_heading }}{% else %}{% trans "Hướng tiếp cận" %}{% endif %}
+        </h2>
+        {% if listing_page and listing_page.approach_description %}
+          <p class="text-base text-slate-600 leading-relaxed">{{ listing_page.approach_description }}</p>
+        {% endif %}
+      </div>
+
+      {# Right: horizontal steps #}
+      <div class="lg:col-span-3">
+        <div class="relative">
+          <div class="hidden sm:block absolute top-8 left-8 right-8 h-0.5 bg-primary-200 z-0" aria-hidden="true"></div>
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-y-10 gap-x-4 relative z-10">
+            {% for step in approach_steps %}
+              <div class="flex flex-col items-center text-center">
+                <div class="relative mb-4 flex-shrink-0">
+                  <div class="w-16 h-16 rounded-full border-2 border-primary-300 bg-white flex items-center justify-center shadow-sm">
+                    <svg class="w-7 h-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      {% if step.icon == "magnifying-glass" %}
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                      {% elif step.icon == "chart-bar" %}
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
+                      {% elif step.icon == "squares-2x2" %}
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/>
+                      {% elif step.icon == "beaker" %}
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5"/>
+                      {% else %}
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
+                      {% endif %}
+                    </svg>
+                  </div>
+                  <span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-primary-700 text-white text-xs font-bold flex items-center justify-center leading-none">
+                    {{ step.number|stringformat:"02d" }}
+                  </span>
+                </div>
+                <h3 class="text-xs font-bold text-primary-900 leading-snug mb-1">{{ step.title }}</h3>
+                {% if step.description %}
+                  <p class="text-xs text-slate-500 leading-relaxed">{{ step.description }}</p>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ── All Solutions — full detail strips ──────────────────────────────────── #}
+{% for sol in solutions %}
+<section id="{{ sol.slug }}" class="{% cycle 'bg-white' 'bg-slate-50' %} py-16 border-t border-gray-100" aria-labelledby="sol-{{ sol.slug }}-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {# Solution header #}
+    <div class="mb-10">
+      {% if sol.section_label %}
+        <p class="inline-flex items-center gap-3 text-orange-500 text-xs font-semibold uppercase tracking-widest mb-3">
+          <span class="w-6 h-px bg-orange-400" aria-hidden="true"></span>
+          {{ sol.section_label }}
+        </p>
+      {% endif %}
+      <div class="lg:flex lg:items-start lg:justify-between lg:gap-12">
+        <div class="lg:max-w-2xl">
+          <h2 id="sol-{{ sol.slug }}-heading" class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-4">
+            {{ sol.title }}
+          </h2>
+          {% if sol.description %}
+            <p class="text-base text-slate-600 leading-relaxed">{{ sol.description }}</p>
+          {% endif %}
+        </div>
+        <a href="{{ sol.get_absolute_url }}"
+           class="mt-6 lg:mt-0 inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors flex-shrink-0 self-start">
+          {% trans "Khám phá Giải pháp" %}
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    {# Feature tags #}
+    {% with tags=sol.features.all %}
+      {% if tags %}
+        <div class="flex flex-wrap gap-2 mb-8">
+          {% for tag in tags %}
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border border-primary-300 text-primary-800 bg-white">{{ tag.label }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+  </div>
+</section>
+{% endfor %}
+
+{% endblock %}
