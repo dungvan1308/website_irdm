@@ -141,10 +141,12 @@ class SolutionChallenge(BaseModel):
 # ─── Methodology Steps ────────────────────────────────────────────────────────
 
 class SolutionMethodologyStep(BaseModel):
-    """How IRDM delivers this solution."""
+    """How IRDM delivers this solution (IRDM Action)."""
 
     solution = models.ForeignKey(Solution, on_delete=models.CASCADE, related_name="methodology_steps", verbose_name=_("solution"))
     title = models.CharField(_("title"), max_length=200)
+    description = models.TextField(_("description"), blank=True,
+                                   help_text=_("Full text of this IRDM action step."))
     icon = models.CharField(_("icon"), max_length=100, blank=True)
 
     class Meta(BaseModel.Meta):
@@ -158,11 +160,17 @@ class SolutionMethodologyStep(BaseModel):
 # ─── Outputs ──────────────────────────────────────────────────────────────────
 
 class SolutionOutput(BaseModel):
-    """A numbered deliverable output."""
+    """A numbered deliverable output card."""
 
     solution = models.ForeignKey(Solution, on_delete=models.CASCADE, related_name="outputs", verbose_name=_("solution"))
     number = models.PositiveSmallIntegerField(_("number"))
     content = models.TextField(_("content"))
+    image = models.ImageField(
+        _("output image"),
+        upload_to="solution/outputs/",
+        blank=True,
+        help_text=_("Photo illustrating this output (shown on the output card)."),
+    )
 
     class Meta(BaseModel.Meta):
         verbose_name = _("solution output")

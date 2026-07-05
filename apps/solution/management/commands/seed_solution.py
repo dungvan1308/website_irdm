@@ -520,12 +520,31 @@ class Command(BaseCommand):
             # Methodology Steps
             solution.methodology_steps.filter(is_active=True).delete()
             for order, (title, icon) in enumerate(methodology_steps, start=1):
-                SolutionMethodologyStep.objects.create(solution=solution, title=title, icon=icon, display_order=order, is_active=True)
+                SolutionMethodologyStep.objects.create(
+                    solution=solution, title=title, description="", icon=icon,
+                    display_order=order, is_active=True,
+                )
 
-            # Outputs
+            # Outputs — create then generate demo images
             solution.outputs.filter(is_active=True).delete()
             for number, content in outputs:
-                SolutionOutput.objects.create(solution=solution, number=number, content=content, display_order=number, is_active=True)
+                SolutionOutput.objects.create(
+                    solution=solution, number=number, content=content,
+                    display_order=number, is_active=True,
+                )
+
+            # Output images — slightly varied gradient per output number
+            if img_info:
+                for output_obj in solution.outputs.filter(is_active=True).order_by("number"):
+                    if not output_obj.image:
+                        r0, g0, b0 = img_info[0]
+                        r1, g1, b1 = img_info[1]
+                        shift = (output_obj.number - 1) * 8
+                        top = (min(r0 + shift, 220), min(g0 + shift, 220), min(b0 + shift, 220))
+                        bot = (min(r1 + shift, 220), min(g1 + shift, 220), min(b1 + shift, 220))
+                        png = _make_gradient_png(top, bot, width=800, height=500)
+                        filename = f"solution-output-{slug}-{output_obj.number:02d}.png"
+                        _assign_image(output_obj, "image", filename, png, self.stdout)
 
             # Related Capabilities
             solution.related_capabilities.clear()

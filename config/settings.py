@@ -1,7 +1,12 @@
 """Django settings for the IRDM Website project."""
 
+import sys
 import environ
 from pathlib import Path
+
+# Increase Python recursion limit to handle deeply nested Django template
+# rendering (listing page renders 5 full audience sections inline)
+sys.setrecursionlimit(10000)
 
 # Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent

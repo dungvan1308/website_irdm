@@ -1,0 +1,188 @@
+{% load i18n static %}
+{#
+  Reusable partial: full Audience Section content.
+  Required context variable:  sol  (Solution instance, with all sub-data prefetched)
+  Usage: {% include "solution/_audience_section.html" with sol=sol %}
+#}
+
+{# ── Focus Topics + IRDM Actions ─────────────────────────────────────────── #}
+<div class="bg-white py-12 border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+
+      {# Left: Focus Topics — checkmark list #}
+      <div x-data="{ expanded: false }">
+        <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-5">
+          <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+          {{ sol.challenge_label }}
+        </p>
+        <ul class="space-y-3">
+          {% for item in sol.challenges.all %}
+            <li class="flex items-start gap-3"
+                {% if forloop.counter > 3 %}x-show="expanded" x-cloak{% endif %}>
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-primary-50 border border-primary-200 flex items-center justify-center mt-0.5 flex-none" aria-hidden="true">
+                <svg class="w-3 h-3 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <p class="text-sm text-slate-700 leading-relaxed">{{ item.content }}</p>
+            </li>
+          {% empty %}
+            <li class="text-sm text-slate-400 italic">{% trans "Chưa có thách thức nào." %}</li>
+          {% endfor %}
+        </ul>
+        {% if sol.challenges.count > 3 %}
+          <button @click="expanded = !expanded"
+                  class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-700 transition-colors">
+            <svg class="w-4 h-4 transition-transform duration-200" :class="{'rotate-180': expanded}"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+            <span x-show="!expanded">{% trans "Xem thêm thách thức" %}</span>
+            <span x-show="expanded" x-cloak>{% trans "Thu gọn" %}</span>
+          </button>
+        {% endif %}
+      </div>
+
+      {# Right: IRDM Actions — numbered vertical list #}
+      <div>
+        <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-5">
+          <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+          {{ sol.methodology_label }}
+        </p>
+        <ol class="space-y-3">
+          {% for step in sol.methodology_steps.all %}
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-700 text-white text-xs font-bold flex items-center justify-center leading-none mt-0.5">
+                {{ forloop.counter }}
+              </span>
+              <p class="text-sm text-slate-700 leading-relaxed">{{ step.title }}</p>
+            </li>
+          {% empty %}
+            <li class="text-sm text-slate-400 italic">{% trans "Chưa có bước nào." %}</li>
+          {% endfor %}
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{# ── Capability Collection — image cards ─────────────────────────────────── #}
+<div class="bg-slate-50 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h3 class="text-xl sm:text-2xl font-extrabold text-primary-900 uppercase tracking-tight mb-8">
+      {{ sol.capability_label }}
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for cap in sol.related_capabilities.all %}
+        <a href="{{ cap.get_absolute_url }}"
+           class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="relative flex-shrink-0 overflow-hidden bg-primary-900" style="aspect-ratio:16/9;">
+            {% if cap.thumbnail %}
+              <img src="{{ cap.thumbnail.url }}" alt="{{ cap.title }}"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   loading="lazy" />
+            {% else %}
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-700 to-primary-950" aria-hidden="true"></div>
+            {% endif %}
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h4 class="text-sm font-bold text-primary-900 leading-snug mb-2 group-hover:text-primary-700 transition-colors">
+              {{ cap.title }}
+            </h4>
+            {% if cap.summary %}
+              <p class="text-xs text-slate-500 leading-relaxed flex-1 mb-3">{{ cap.summary|truncatewords:22 }}</p>
+            {% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{# ── Output Collection — image cards 3×N grid ────────────────────────────── #}
+<div class="bg-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h3 class="text-xl sm:text-2xl font-extrabold text-primary-900 uppercase tracking-tight mb-8">
+      {{ sol.output_label }}
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for output in sol.outputs.all %}
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow duration-200">
+          {% if output.image %}
+            <div class="relative overflow-hidden" style="aspect-ratio:16/10;">
+              <img src="{{ output.image.url }}" alt="{{ output.content|truncatewords:5 }}"
+                   class="w-full h-full object-cover" loading="lazy" />
+              <span class="absolute bottom-3 left-4 text-3xl font-black text-white/90 drop-shadow-md leading-none tabular-nums">
+                {{ output.number|stringformat:"02d" }}
+              </span>
+            </div>
+          {% else %}
+            <div class="bg-gradient-to-br from-primary-800 to-primary-950 relative" style="aspect-ratio:16/10;">
+              <span class="absolute bottom-3 left-4 text-3xl font-black text-white/90 leading-none tabular-nums" aria-hidden="true">
+                {{ output.number|stringformat:"02d" }}
+              </span>
+            </div>
+          {% endif %}
+          <div class="p-5">
+            <p class="text-sm text-slate-700 leading-relaxed">{{ output.content }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{# ── CTA Banner ───────────────────────────────────────────────────────────── #}
+{% if sol.cta_primary_label or sol.cta_heading %}
+<div class="bg-slate-50 pb-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="relative overflow-hidden rounded-2xl" style="min-height:160px;">
+
+      {% if sol.cta_image %}
+        <div class="absolute inset-0 z-0" aria-hidden="true">
+          <img src="{{ sol.cta_image.url }}" alt="" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      {% elif sol.hero_image %}
+        <div class="absolute inset-0 z-0" aria-hidden="true">
+          <img src="{{ sol.hero_image.url }}" alt="" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      {% endif %}
+      <div class="absolute inset-0 z-10 bg-primary-950/85 rounded-2xl" aria-hidden="true"></div>
+
+      <div class="relative z-20 flex flex-col sm:flex-row items-center justify-between gap-6 p-8 lg:p-10">
+        <div>
+          {% if sol.cta_sub %}
+            <p class="text-xs font-semibold text-white/60 uppercase tracking-widest mb-2">{{ sol.cta_sub }}</p>
+          {% endif %}
+          {% if sol.cta_heading %}
+            <h4 class="text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight leading-tight">
+              {{ sol.cta_heading }}
+            </h4>
+          {% endif %}
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          {% if sol.cta_primary_label and sol.cta_primary_url %}
+            <a href="{{ sol.cta_primary_url }}"
+               class="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-400 text-white font-semibold rounded-lg transition-all duration-150 shadow-md hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap">
+              {{ sol.cta_primary_label }}
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if sol.cta_secondary_label and sol.cta_secondary_url %}
+            <a href="{{ sol.cta_secondary_url }}"
+               class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/40 hover:border-white/80 text-white font-semibold rounded-lg transition-all duration-150 hover:bg-white/10 whitespace-nowrap">
+              {{ sol.cta_secondary_label }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endif %}
+

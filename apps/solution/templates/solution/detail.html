@@ -87,113 +87,111 @@
 
 </section>
 
-{# ── Challenges ──────────────────────────────────────────────────────────── #}
-{% if challenges %}
+{# ── Focus Topics + IRDM Actions — 2-column Figma layout ─────────────────── #}
+{% if challenges or methodology_steps %}
 <section class="bg-white py-16" aria-labelledby="challenges-heading">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 id="challenges-heading" class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight mb-10">
-      {{ solution.challenge_label }}
-    </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      {% for item in challenges %}
-        <div class="flex items-start gap-4 bg-slate-50 rounded-2xl p-5 border border-gray-100 hover:border-primary-200 hover:shadow-sm transition-all duration-200">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-orange-100 border border-orange-200 flex items-center justify-center text-xs font-bold text-orange-700">
-            {{ item.number|stringformat:"02d" }}
-          </span>
-          <p class="text-sm text-slate-700 leading-relaxed">{{ item.content }}</p>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-{% endif %}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
-{# ── Methodology ─────────────────────────────────────────────────────────── #}
-{% if methodology_steps %}
-<section class="bg-slate-50 py-16" aria-labelledby="methodology-heading">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:grid lg:grid-cols-5 lg:gap-16">
-
-      <div class="lg:col-span-2 mb-10 lg:mb-0">
-        <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">
+      {# Left: Focus Topics — checkmark list with expand #}
+      {% if challenges %}
+      <div x-data="{ expanded: false }">
+        <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-5">
           <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
-          IRDM
+          {{ solution.challenge_label }}
         </p>
-        <h2 id="methodology-heading" class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight">
-          {{ solution.methodology_label }}
-        </h2>
+        <ul class="space-y-3">
+          {% for item in challenges %}
+            <li class="flex items-start gap-3"
+                {% if forloop.counter > 3 %}x-show="expanded" x-cloak{% endif %}>
+              <span class="flex-shrink-0 w-5 h-5 rounded-full bg-primary-50 border border-primary-200 flex items-center justify-center mt-0.5 flex-none" aria-hidden="true">
+                <svg class="w-3 h-3 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <p class="text-sm text-slate-700 leading-relaxed">{{ item.content }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+        {% if challenges|length > 3 %}
+          <button @click="expanded = !expanded"
+                  class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-700 transition-colors">
+            <svg class="w-4 h-4 transition-transform duration-200" :class="{'rotate-180': expanded}"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+            <span x-show="!expanded">{% trans "Xem thêm thách thức" %}</span>
+            <span x-show="expanded" x-cloak>{% trans "Thu gọn" %}</span>
+          </button>
+        {% endif %}
       </div>
+      {% endif %}
 
-      <div class="lg:col-span-3">
-        <div class="relative">
-          <div class="hidden sm:block absolute top-8 left-8 right-8 h-0.5 bg-primary-200 z-0" aria-hidden="true"></div>
-          <div class="grid grid-cols-2 sm:grid-cols-5 gap-y-10 gap-x-4 relative z-10">
-            {% for step in methodology_steps %}
-              <div class="flex flex-col items-center text-center">
-                <div class="relative mb-4 flex-shrink-0">
-                  <div class="w-16 h-16 rounded-full border-2 border-primary-300 bg-white flex items-center justify-center shadow-sm">
-                    <svg class="w-7 h-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      {% if step.icon == "magnifying-glass" %}
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
-                      {% elif step.icon == "chart-bar" %}
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
-                      {% elif step.icon == "light-bulb" %}
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
-                      {% elif step.icon == "arrow-trending-up" %}
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/>
-                      {% elif step.icon == "users" %}
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
-                      {% elif step.icon == "document-text" %}
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
-                      {% else %}
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                      {% endif %}
-                    </svg>
-                  </div>
-                  <span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-primary-700 text-white text-xs font-bold flex items-center justify-center leading-none">
-                    {{ forloop.counter }}
-                  </span>
-                </div>
-                <h3 class="text-xs font-bold text-primary-900 leading-snug">{{ step.title }}</h3>
-              </div>
-            {% endfor %}
-          </div>
-        </div>
+      {# Right: IRDM Actions — numbered vertical list #}
+      {% if methodology_steps %}
+      <div>
+        <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-5">
+          <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+          {{ solution.methodology_label }}
+        </p>
+        <ol class="space-y-3">
+          {% for step in methodology_steps %}
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-700 text-white text-xs font-bold flex items-center justify-center leading-none mt-0.5">
+                {{ forloop.counter }}
+              </span>
+              <p class="text-sm text-slate-700 leading-relaxed">{{ step.title }}</p>
+            </li>
+          {% endfor %}
+        </ol>
       </div>
+      {% endif %}
 
     </div>
   </div>
 </section>
 {% endif %}
 
-{# ── Related Capabilities ────────────────────────────────────────────────── #}
+{# ── Capability Collection — image cards ─────────────────────────────────── #}
 {% if related_capabilities %}
-<section class="bg-white py-16" aria-labelledby="rel-cap-heading">
+<section class="bg-slate-50 py-16" aria-labelledby="rel-cap-heading">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mb-8">
-      <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-2">
-        <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
-        {{ solution.capability_label }}
-      </p>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <h2 id="rel-cap-heading"
+        class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight mb-8">
+      {{ solution.capability_label }}
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {% for cap in related_capabilities %}
         <a href="{{ cap.get_absolute_url }}"
-           class="group flex items-start gap-4 bg-slate-50 rounded-2xl p-5 border border-gray-100 hover:border-primary-200 hover:shadow-md transition-all duration-200">
-          <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-200 transition-colors">
-            <svg class="w-5 h-5 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
-            </svg>
-          </div>
-          <div class="flex-1 min-w-0">
-            <h3 class="text-sm font-bold text-primary-900 leading-snug group-hover:text-primary-700 transition-colors">{{ cap.title }}</h3>
-            {% if cap.summary %}
-              <p class="text-xs text-slate-500 leading-relaxed mt-1">{{ cap.summary|truncatewords:12 }}</p>
+           class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="relative flex-shrink-0 overflow-hidden bg-primary-900" style="aspect-ratio:16/9;">
+            {% if cap.thumbnail %}
+              <img src="{{ cap.thumbnail.url }}" alt="{{ cap.title }}"
+                   class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                   loading="lazy" />
+            {% else %}
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-700 to-primary-950" aria-hidden="true"></div>
             {% endif %}
           </div>
-          <svg class="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="text-sm font-bold text-primary-900 leading-snug mb-2 group-hover:text-primary-700 transition-colors">
+              {{ cap.title }}
+            </h3>
+            {% if cap.summary %}
+              <p class="text-xs text-slate-500 leading-relaxed flex-1 mb-3">{{ cap.summary|truncatewords:22 }}</p>
+            {% else %}
+              <div class="flex-1"></div>
+            {% endif %}
+            {% with tags=cap.features.all %}
+              {% if tags %}
+                <div class="flex flex-wrap gap-1 mt-auto pt-2">
+                  {% for tag in tags %}
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-600">{{ tag.label }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+          </div>
         </a>
       {% endfor %}
     </div>
@@ -201,20 +199,35 @@
 </section>
 {% endif %}
 
-{# ── Outputs ─────────────────────────────────────────────────────────────── #}
+{# ── Output Collection — image cards 3×N grid ────────────────────────────── #}
 {% if outputs %}
-<section class="bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 py-16" aria-labelledby="outputs-heading">
+<section class="bg-white py-16" aria-labelledby="outputs-heading">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 id="outputs-heading" class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight mb-10">
+    <h2 id="outputs-heading"
+        class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight mb-8">
       {{ solution.output_label }}
     </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {% for output in outputs %}
-        <div class="flex items-start gap-4 bg-white/70 backdrop-blur-sm rounded-xl p-5 border border-white shadow-sm hover:shadow-md transition-all duration-200">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-700 text-white text-xs font-bold flex items-center justify-center leading-none">
-            {{ output.number|stringformat:"02d" }}
-          </span>
-          <p class="text-sm text-slate-700 leading-relaxed">{{ output.content }}</p>
+        <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-md transition-shadow duration-200">
+          {% if output.image %}
+            <div class="relative overflow-hidden" style="aspect-ratio:16/10;">
+              <img src="{{ output.image.url }}" alt="{{ output.content|truncatewords:5 }}"
+                   class="w-full h-full object-cover" loading="lazy" />
+              <span class="absolute bottom-3 left-4 text-3xl font-black text-white/90 drop-shadow-md leading-none tabular-nums">
+                {{ output.number|stringformat:"02d" }}
+              </span>
+            </div>
+          {% else %}
+            <div class="bg-gradient-to-br from-primary-800 to-primary-950 relative" style="aspect-ratio:16/10;">
+              <span class="absolute bottom-3 left-4 text-3xl font-black text-white/90 leading-none tabular-nums" aria-hidden="true">
+                {{ output.number|stringformat:"02d" }}
+              </span>
+            </div>
+          {% endif %}
+          <div class="p-5">
+            <p class="text-sm text-slate-700 leading-relaxed">{{ output.content }}</p>
+          </div>
         </div>
       {% endfor %}
     </div>

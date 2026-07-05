@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from typing import Optional
+from django.db.models import Prefetch
 from .models import Solution, SolutionApproachStep, SolutionChallenge, SolutionFeature, SolutionListingPage, SolutionMethodologyStep, SolutionOutput
 
 
@@ -18,14 +19,46 @@ class SolutionService:
 
     @staticmethod
     def get_all_solutions() -> list[Solution]:
-        return list(Solution.objects.filter(is_active=True, is_published=True).prefetch_related("features"))
+        """Return all published solutions with full sub-data for listing page rendering."""
+        from apps.capability.models import Capability, CapabilityFeature
+        return list(
+            Solution.objects
+            .filter(is_active=True, is_published=True)
+            .prefetch_related(
+                Prefetch("features", queryset=SolutionFeature.objects.filter(is_active=True).order_by("display_order")),
+                Prefetch("challenges", queryset=SolutionChallenge.objects.filter(is_active=True).order_by("number")),
+                Prefetch("methodology_steps", queryset=SolutionMethodologyStep.objects.filter(is_active=True).order_by("display_order")),
+                Prefetch("outputs", queryset=SolutionOutput.objects.filter(is_active=True).order_by("number")),
+                Prefetch(
+                    "related_capabilities",
+                    queryset=Capability.objects
+                    .filter(is_active=True, is_published=True)
+                    .prefetch_related(
+                        Prefetch("features", queryset=CapabilityFeature.objects.filter(is_active=True).order_by("display_order"))
+                    ),
+                ),
+            )
+            .order_by("display_order")
+        )
 
     @staticmethod
     def get_solution_by_slug(slug: str) -> Optional[Solution]:
+        from apps.capability.models import Capability, CapabilityFeature
         return (
             Solution.objects
             .filter(slug=slug, is_active=True, is_published=True)
-            .prefetch_related("features", "challenges", "methodology_steps", "outputs", "related_capabilities")
+            .prefetch_related(
+                Prefetch("features", queryset=SolutionFeature.objects.filter(is_active=True).order_by("display_order")),
+                Prefetch("challenges", queryset=SolutionChallenge.objects.filter(is_active=True).order_by("number")),
+                Prefetch("methodology_steps", queryset=SolutionMethodologyStep.objects.filter(is_active=True).order_by("display_order")),
+                Prefetch("outputs", queryset=SolutionOutput.objects.filter(is_active=True).order_by("number")),
+                Prefetch(
+                    "related_capabilities",
+                    queryset=Capability.objects.filter(is_active=True, is_published=True).prefetch_related(
+                        Prefetch("features", queryset=CapabilityFeature.objects.filter(is_active=True).order_by("display_order"))
+                    ),
+                ),
+            )
             .first()
         )
 

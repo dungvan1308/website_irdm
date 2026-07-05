@@ -43,13 +43,18 @@ class SolutionChallengeInline(admin.TabularInline):
 class SolutionMethodologyStepInline(admin.TabularInline):
     model = SolutionMethodologyStep
     extra = 1
-    fields = ("title", "icon", "display_order", "is_active")
+    fields = ("title", "description", "icon", "display_order", "is_active")
 
 
-class SolutionOutputInline(admin.TabularInline):
+class SolutionOutputInline(admin.StackedInline):
     model = SolutionOutput
     extra = 1
-    fields = ("number", "content", "display_order", "is_active")
+    fields = ("number", "content", "image", "output_image_preview", "display_order", "is_active")
+    readonly_fields = ("output_image_preview",)
+
+    @admin.display(description="Image preview")
+    def output_image_preview(self, obj):
+        return _img_preview(obj.image, height=80) if obj.pk else "—"
 
 
 # ─── Admin registrations ─────────────────────────────────────────────────────
