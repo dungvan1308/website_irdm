@@ -14,7 +14,7 @@ class SolutionListingPage(BaseModel):
     section_label = models.CharField(_("section label"), max_length=200, blank=True)
     heading = models.CharField(_("heading"), max_length=300)
     hero_image = models.ImageField(_("hero image"), upload_to="solution/listing/", blank=True,
-                                   help_text=_("Background image for the listing page hero section."))
+                                   help_text=_("Illustration shown in the right column of the hero section."))
     description = models.TextField(_("description"), blank=True)
     cta_primary_label = models.CharField(_("primary CTA label"), max_length=100, blank=True)
     cta_primary_url = models.CharField(_("primary CTA URL"), max_length=500, blank=True)
@@ -24,6 +24,9 @@ class SolutionListingPage(BaseModel):
     approach_label = models.CharField(_("approach section label"), max_length=200, blank=True)
     approach_heading = models.CharField(_("approach heading"), max_length=300, blank=True)
     approach_description = models.TextField(_("approach description"), blank=True)
+    meta_title = models.CharField(_("meta title"), max_length=200, blank=True)
+    meta_description = models.CharField(_("meta description"), max_length=300, blank=True)
+    meta_keywords = models.CharField(_("meta keywords"), max_length=300, blank=True)
 
     class Meta(BaseModel.Meta):
         verbose_name = _("solution listing page")
@@ -75,6 +78,8 @@ class Solution(BaseModel):
     cta_primary_url = models.CharField(_("primary CTA URL"), max_length=500, blank=True)
     cta_secondary_label = models.CharField(_("secondary CTA label"), max_length=100, blank=True)
     cta_secondary_url = models.CharField(_("secondary CTA URL"), max_length=500, blank=True)
+    cta_image = models.ImageField(_("CTA background image"), upload_to="solution/cta/", blank=True,
+                                  help_text=_("Background image for the CTA section at the bottom of the detail page."))
 
     related_capabilities = models.ManyToManyField(
         "capability.Capability",
