@@ -115,7 +115,7 @@
                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                    loading="lazy" />
             {% else %}
-              <div class="absolute inset-0 bg-gradient-to-br from-primary-800 to-primary-950" aria-hidden="true"></div>
+              <div class="absolute inset-0 bg-gradient-to-br {{ sol.card_color|default:'from-primary-800 to-primary-950' }}" aria-hidden="true"></div>
             {% endif %}
             <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" aria-hidden="true"></div>
           </div>
