@@ -103,6 +103,7 @@ class SolutionAdmin(admin.ModelAdmin):
             "summary",
             "thumbnail", "thumbnail_preview",
             "hero_image", "hero_image_preview",
+            "card_color",
             "description",
         )}),
         ("Section labels", {"fields": ("challenge_label", "methodology_label", "output_label", "capability_label")}),

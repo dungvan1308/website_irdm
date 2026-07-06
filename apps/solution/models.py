@@ -65,6 +65,13 @@ class Solution(BaseModel):
     summary = models.TextField(_("summary"), blank=True)
     thumbnail = models.ImageField(_("thumbnail"), upload_to="solution/thumbnails/", blank=True)
     hero_image = models.ImageField(_("hero image"), upload_to="solution/hero/", blank=True)
+    card_color = models.CharField(
+        _("card color"),
+        max_length=200,
+        blank=True,
+        default="",
+        help_text=_("Tailwind gradient classes shown when no thumbnail is uploaded. Example: from-blue-900 to-blue-950"),
+    )
     description = models.TextField(_("description"), blank=True)
 
     challenge_label = models.CharField(_("challenge label"), max_length=200, default="Các thách thức trọng tâm")

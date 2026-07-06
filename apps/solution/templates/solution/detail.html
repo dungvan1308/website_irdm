@@ -237,42 +237,64 @@
 
 {# ── CTA ─────────────────────────────────────────────────────────────────── #}
 {% if solution.cta_primary_label or solution.cta_secondary_label %}
-<section class="relative overflow-hidden py-16" aria-label="{% trans 'CTA' %}">
-  {% with cta_bg=solution.cta_image|default:solution.hero_image %}
-    {% if cta_bg %}
-      <div class="absolute inset-0 z-0" aria-hidden="true">
-        <img src="{{ cta_bg.url }}" alt="" class="w-full h-full object-cover" loading="lazy" />
-      </div>
-    {% else %}
-      <div class="absolute inset-0 z-0 bg-gradient-to-r from-primary-950 via-primary-900 to-primary-800" aria-hidden="true"></div>
-    {% endif %}
-  {% endwith %}
-  <div class="absolute inset-0 z-10 bg-primary-950/75" aria-hidden="true"></div>
+<section class="bg-white py-8" aria-label="{% trans 'CTA' %}">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative overflow-hidden rounded-2xl" style="min-height:180px;">
 
-  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    {% if solution.cta_heading %}
-      <p class="text-xs font-bold text-white/50 uppercase tracking-widest mb-2">{% trans "Sẵn sàng trao đổi?" %}</p>
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-6">{{ solution.cta_heading }}</h2>
-    {% endif %}
-    <div class="flex flex-col sm:flex-row justify-center gap-4">
-      {% if solution.cta_primary_label and solution.cta_primary_url %}
-        <a href="{{ solution.cta_primary_url }}"
-           class="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-150 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-          {{ solution.cta_primary_label }}
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      {% endif %}
-      {% if solution.cta_secondary_label and solution.cta_secondary_url %}
-        <a href="{{ solution.cta_secondary_url }}"
-           class="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/40 hover:border-white/80 text-white font-semibold rounded-lg transition-all duration-150 hover:bg-white/10">
-          {{ solution.cta_secondary_label }}
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      {% endif %}
+      {# Background image #}
+      {% with cta_bg=solution.cta_image|default:solution.hero_image %}
+        {% if cta_bg %}
+          <div class="absolute inset-0 z-0" aria-hidden="true">
+            <img src="{{ cta_bg.url }}" alt="" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        {% else %}
+          <div class="absolute inset-0 z-0 bg-gradient-to-r from-primary-950 via-primary-900 to-primary-800" aria-hidden="true"></div>
+        {% endif %}
+      {% endwith %}
+      {# 40% overlay lets the photo show through #}
+      <div class="absolute inset-0 z-10 bg-primary-950/40" aria-hidden="true"></div>
+
+      {# Content #}
+      <div class="relative z-20 px-8 py-10 lg:px-12 lg:py-12">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+
+          {# Left: label + heading #}
+          <div>
+            {% if solution.cta_sub %}
+              <p class="text-xs font-semibold text-orange-400 uppercase tracking-widest mb-2">{{ solution.cta_sub }}</p>
+            {% endif %}
+            {% if solution.cta_heading %}
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white uppercase tracking-tight leading-tight" style="max-width:26rem;">
+                {{ solution.cta_heading }}
+              </h2>
+            {% endif %}
+          </div>
+
+          {# Right: buttons #}
+          <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+            {% if solution.cta_primary_label and solution.cta_primary_url %}
+              <a href="{{ solution.cta_primary_url }}"
+                 class="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-400 text-white font-semibold rounded-lg transition-all duration-150 shadow-md hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap">
+                {{ solution.cta_primary_label }}
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            {% endif %}
+            {% if solution.cta_secondary_label and solution.cta_secondary_url %}
+              <a href="{{ solution.cta_secondary_url }}"
+                 class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/50 hover:border-white text-white font-semibold rounded-lg transition-all duration-150 hover:bg-white/10 whitespace-nowrap">
+                {{ solution.cta_secondary_label }}
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

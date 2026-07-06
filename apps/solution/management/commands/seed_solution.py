@@ -13,6 +13,20 @@ import pathlib
 from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
 
+# ─── Extracted assets (real Figma images) ─────────────────────────────────────
+# Files placed here by the developer are used instead of generated gradients.
+_ASSETS_DIR = pathlib.Path(__file__).resolve().parents[4] / "figmapng" / "solution" / "extracted_assets"
+
+_THUMB_ASSETS: dict = {
+    "co-quan-quan-ly-va-chinh-sach": "thumb-co-quan-quan-ly.png",
+    "he-thong-y-te":                  "thumb-he-thong-y-te.png",
+    "truong-dai-hoc-va-giao-duc":     "thumb-truong-dai-hoc.png",
+    "doanh-nghiep":                   "thumb-doanh-nghiep.png",
+    "to-chuc-quoc-te-va-ngo":         "thumb-to-chuc-quoc-te.png",
+}
+_HERO_ASSET = "hero-listing.png"
+_CTA_ASSET  = "cta-ready.png"
+
 from apps.capability.models import Capability
 from apps.solution.models import (
     Solution,
@@ -69,6 +83,7 @@ SOLUTIONS = [
         "title": "Cơ quan quản lý & Chính sách",
         "section_label": "Giải pháp",
         "display_order": 1,
+        "card_color": "from-blue-950 to-blue-800",
         "summary": (
             "Củng cố căn cứ khoa học, dữ liệu và cơ chế phối hợp cho các chương trình, "
             "đề án và nhiệm vụ KHCN & ĐMST."
@@ -126,6 +141,7 @@ SOLUTIONS = [
         "title": "Hệ thống y tế",
         "section_label": "Giải pháp",
         "display_order": 2,
+        "card_color": "from-teal-900 to-cyan-800",
         "summary": (
             "Làm rõ bài toán ưu tiên, dữ liệu sẵn có và lộ trình thí điểm phù hợp "
             "để hỗ trợ quản trị, chất lượng dịch vụ, phát triển đội ngũ và nhiệm vụ KHCN & ĐMST."
@@ -184,6 +200,7 @@ SOLUTIONS = [
         "title": "Trường đại học & Giáo dục",
         "section_label": "Giải pháp",
         "display_order": 3,
+        "card_color": "from-purple-900 to-violet-800",
         "summary": (
             "Hỗ trợ nhà trường đổi mới chương trình, phát triển người học, khai thác dữ liệu giáo dục "
             "và xây dựng môi trường học thuật lành mạnh."
@@ -242,6 +259,7 @@ SOLUTIONS = [
         "title": "Doanh nghiệp",
         "section_label": "Giải pháp",
         "display_order": 4,
+        "card_color": "from-amber-950 to-orange-900",
         "summary": (
             "Thiết kế các sáng kiến phát triển con người, năng lực làm việc, văn hóa phối hợp "
             "và trách nhiệm xã hội gắn với mục tiêu tổ chức."
@@ -299,6 +317,7 @@ SOLUTIONS = [
         "title": "Tổ chức quốc tế & NGO",
         "section_label": "Giải pháp",
         "display_order": 5,
+        "card_color": "from-emerald-950 to-teal-900",
         "summary": (
             "Kết nối tri thức quốc tế với bối cảnh Việt Nam để thiết kế, triển khai và đánh giá "
             "các sáng kiến liên ngành có khả năng duy trì."
@@ -416,10 +435,10 @@ def _assign_image(instance, field_name: str, filename: str, png_bytes: bytes, st
     stdout.write(f"    {field_name}: saved demo image → {filename}")
 
 
-def _assign_from_file(instance, field_name: str, src: "pathlib.Path", filename: str, stdout) -> None:
-    """Assign an ImageField from a pre-extracted file only if the field is empty."""
+def _assign_from_file(instance, field_name: str, src: "pathlib.Path", filename: str, stdout, force: bool = False) -> None:
+    """Assign an ImageField from a file.  When force=True, overwrites an existing value (used for real Figma assets)."""
     field = getattr(instance, field_name)
-    if field:
+    if field and not force:
         stdout.write(f"    {field_name}: already set, skipping")
         return
     if not src.exists():
@@ -446,8 +465,11 @@ class Command(BaseCommand):
         )
         self.stdout.write(f"  {'Created' if created else 'Updated'} listing page: {listing_page.heading}")
 
-        # Listing hero: prefer Figma-extracted illustration; fall back to gradient
-        if not listing_page.hero_image:
+        # Listing hero: prefer extracted Figma asset; fall back to legacy media path; then gradient
+        extracted_hero = _ASSETS_DIR / _HERO_ASSET
+        if extracted_hero.exists():
+            _assign_from_file(listing_page, "hero_image", extracted_hero, "solution-listing-hero.png", self.stdout, force=True)
+        elif not listing_page.hero_image:
             figma_src = MEDIA / "solution" / "listing" / "hero-illustration.png"
             if figma_src.exists():
                 _assign_from_file(listing_page, "hero_image", figma_src, "solution-listing-hero-illustration.png", self.stdout)
@@ -481,31 +503,45 @@ class Command(BaseCommand):
             )
             self.stdout.write(f"  {'Created' if created else 'Updated'} solution: {solution.title}")
 
-            # Seed images: prefer Figma-extracted assets; fall back to gradient
+            # ── Images: extracted Figma assets take highest priority ──────────
             img_info = DEMO_IMAGE_MAP.get(slug)
-            figma_thumb = MEDIA / "solution" / "thumbnails" / f"solution-thumb-{slug}.png"
-            figma_hero  = MEDIA / "solution" / "hero"       / f"solution-hero-{slug}.png"
 
-            if figma_thumb.exists():
-                _assign_from_file(solution, "thumbnail", figma_thumb, f"solution-thumb-{slug}.png", self.stdout)
-            elif img_info:
-                png = _make_gradient_png(img_info[0], img_info[1])
-                _assign_image(solution, "thumbnail", f"solution-thumb-{slug}.png", png, self.stdout)
+            # thumbnail
+            extracted_thumb = _ASSETS_DIR / _THUMB_ASSETS.get(slug, "")
+            if extracted_thumb.exists():
+                _assign_from_file(solution, "thumbnail", extracted_thumb, f"solution-thumb-{slug}.png", self.stdout, force=True)
+            else:
+                figma_thumb = MEDIA / "solution" / "thumbnails" / f"solution-thumb-{slug}.png"
+                if figma_thumb.exists():
+                    _assign_from_file(solution, "thumbnail", figma_thumb, f"solution-thumb-{slug}.png", self.stdout)
+                elif img_info:
+                    png = _make_gradient_png(img_info[0], img_info[1])
+                    _assign_image(solution, "thumbnail", f"solution-thumb-{slug}.png", png, self.stdout)
 
-            if figma_hero.exists():
-                _assign_from_file(solution, "hero_image", figma_hero, f"solution-hero-{slug}.png", self.stdout)
-            elif img_info:
-                png = _make_gradient_png(img_info[0], img_info[1])
-                _assign_image(solution, "hero_image", f"solution-hero-{slug}.png", png, self.stdout)
+            # hero_image — reuse thumbnail asset for detail page hero
+            if extracted_thumb.exists():
+                _assign_from_file(solution, "hero_image", extracted_thumb, f"solution-hero-{slug}.png", self.stdout, force=True)
+            else:
+                figma_hero = MEDIA / "solution" / "hero" / f"solution-hero-{slug}.png"
+                if figma_hero.exists():
+                    _assign_from_file(solution, "hero_image", figma_hero, f"solution-hero-{slug}.png", self.stdout)
+                elif img_info:
+                    png = _make_gradient_png(img_info[0], img_info[1])
+                    _assign_image(solution, "hero_image", f"solution-hero-{slug}.png", png, self.stdout)
 
-            # cta_image: reuse the same photo as hero_image (fallback to gradient)
-            # CMS editors can replace this with a different image via Django Admin
-            figma_cta = MEDIA / "solution" / "hero" / f"solution-hero-{slug}.png"
-            if figma_cta.exists():
-                _assign_from_file(solution, "cta_image", figma_cta, f"solution-cta-{slug}.png", self.stdout)
-            elif img_info:
-                png = _make_gradient_png(img_info[0], img_info[1])
-                _assign_image(solution, "cta_image", f"solution-cta-{slug}.png", png, self.stdout)
+            # cta_image — use dedicated CTA asset if available, else reuse thumbnail
+            extracted_cta = _ASSETS_DIR / _CTA_ASSET
+            if extracted_cta.exists():
+                _assign_from_file(solution, "cta_image", extracted_cta, f"solution-cta-{slug}.png", self.stdout, force=True)
+            elif extracted_thumb.exists():
+                _assign_from_file(solution, "cta_image", extracted_thumb, f"solution-cta-{slug}.png", self.stdout, force=True)
+            else:
+                figma_cta = MEDIA / "solution" / "hero" / f"solution-hero-{slug}.png"
+                if figma_cta.exists():
+                    _assign_from_file(solution, "cta_image", figma_cta, f"solution-cta-{slug}.png", self.stdout)
+                elif img_info:
+                    png = _make_gradient_png(img_info[0], img_info[1])
+                    _assign_image(solution, "cta_image", f"solution-cta-{slug}.png", png, self.stdout)
 
             # Features
             solution.features.filter(is_active=True).delete()
