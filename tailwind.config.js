@@ -16,6 +16,17 @@ module.exports = {
     "lg:flex-row",
     "lg:w-[55%]",
     "lg:w-[45%]",
+    // CTA overlay opacity variants
+    "bg-primary-950/40",
+    "bg-primary-950/75",
+    // CTA heading sizes
+    "lg:text-5xl",
+    "sm:text-4xl",
+    // CTA label colour
+    "text-orange-400",
+    // CTA layout
+    "lg:items-center",
+    "lg:justify-between",
   ],
   theme: {
     extend: {
