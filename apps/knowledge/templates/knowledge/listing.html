@@ -1,0 +1,478 @@
+{% extends "layouts/base.html" %}
+{% load i18n static %}
+
+{% block title %}
+  {% if listing_page and listing_page.meta_title %}{{ listing_page.meta_title }}
+  {% elif listing_page %}{{ listing_page.heading }}
+  {% else %}{% trans "Knowledge & Insights" %}{% endif %}
+  — {% if site_settings %}{{ site_settings.site_name }}{% else %}IRDM{% endif %}
+{% endblock %}
+
+{% block meta_description %}
+  {% if listing_page and listing_page.meta_description %}{{ listing_page.meta_description }}
+  {% elif listing_page and listing_page.description %}{{ listing_page.description|truncatewords:30 }}{% endif %}
+{% endblock %}
+
+{% block content %}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  HERO — Light 2-column: text+CTAs left | illustration right                #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+<section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 pt-28 pb-16 lg:pt-36 lg:pb-20"
+         aria-label="{% trans 'Knowledge hero' %}">
+
+  <div class="absolute inset-0 pointer-events-none opacity-30" aria-hidden="true"
+       style="background-image: radial-gradient(circle at 1px 1px, #bfdbfe 1px, transparent 0); background-size: 36px 36px;"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+      {# Left: text + CTAs #}
+      <div>
+        {% if listing_page and listing_page.section_label %}
+          <div class="inline-flex items-center gap-2 bg-white border border-primary-200 text-primary-700 px-3 py-1 rounded-full text-xs font-semibold mb-6 shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-orange-500" aria-hidden="true"></span>
+            {{ listing_page.section_label }}
+          </div>
+        {% endif %}
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-6">
+          {% if listing_page %}{{ listing_page.heading }}{% else %}{% trans "Tri thức & Góc nhìn ngành" %}{% endif %}
+        </h1>
+
+        {% if listing_page and listing_page.description %}
+          <div class="text-base text-slate-600 leading-relaxed mb-8 space-y-3">
+            {% for line in listing_page.description.splitlines %}
+              {% if line %}<p>{{ line }}</p>{% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="flex flex-col sm:flex-row gap-3 mt-2">
+          {% if listing_page and listing_page.hero_cta_primary_label and listing_page.hero_cta_primary_url %}
+            <a href="{{ listing_page.hero_cta_primary_url }}"
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-400 text-white font-semibold rounded-lg transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+              {{ listing_page.hero_cta_primary_label }}
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if listing_page and listing_page.hero_cta_secondary_label and listing_page.hero_cta_secondary_url %}
+            <a href="{{ listing_page.hero_cta_secondary_url }}"
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-primary-300 hover:border-primary-500 text-primary-700 font-semibold rounded-lg transition-all hover:bg-white">
+              {{ listing_page.hero_cta_secondary_label }}
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      {# Right: illustration #}
+      {% if listing_page and listing_page.hero_image %}
+        <div class="hidden lg:flex items-center justify-end">
+          <img src="{{ listing_page.hero_image.url }}" alt=""
+               class="w-full max-w-lg rounded-2xl shadow-xl object-cover"
+               loading="eager" aria-hidden="true" />
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  FILTER / SEARCH SECTION                                                   #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+<section class="bg-white py-10 border-b border-slate-100" aria-label="{% trans 'Filter content' %}">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <h2 class="text-xl font-bold text-slate-800 mb-1">
+      {% if listing_page and listing_page.filter_section_heading %}{{ listing_page.filter_section_heading }}{% else %}{% trans "Tìm nội dung phù hợp với nhu cầu của bạn" %}{% endif %}
+    </h2>
+    <p class="text-sm text-slate-500 mb-5">
+      {% if listing_page and listing_page.filter_section_description %}{{ listing_page.filter_section_description }}{% else %}{% trans "Bộ lọc giúp người đọc tìm nhanh nội dung theo mục đích sử dụng, chủ đề quan tâm và nhóm đối tác liên quan." %}{% endif %}
+    </p>
+
+    {% if not listing_page or listing_page.search_enabled %}
+      <form method="get" action="" class="mb-6" role="search" aria-label="{% trans 'Search articles' %}">
+        <div class="flex items-center bg-slate-50 border border-slate-200 rounded-xl overflow-hidden max-w-lg focus-within:border-primary-400 focus-within:ring-2 focus-within:ring-primary-100 transition-all">
+          <svg class="w-5 h-5 text-slate-400 ml-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+          </svg>
+          <label for="knowledge-search" class="sr-only">{% trans "Search" %}</label>
+          <input id="knowledge-search" type="search" name="search"
+                 value="{{ search_query }}"
+                 placeholder="{% trans 'Tìm kiếm bài viết, báo cáo, chủ đề...' %}"
+                 class="flex-1 px-4 py-3 text-sm text-slate-800 placeholder-slate-400 outline-none bg-transparent" />
+          {% if search_query %}
+            <a href="{% url 'knowledge:listing' %}" class="flex-shrink-0 px-3 text-slate-400 hover:text-slate-600" aria-label="{% trans 'Clear' %}">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </a>
+          {% endif %}
+        </div>
+      </form>
+    {% endif %}
+
+    {% if topics %}
+      <div class="flex flex-wrap gap-2" role="navigation" aria-label="{% trans 'Topics' %}">
+        <a href="{% url 'knowledge:listing' %}"
+           class="px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors
+                  {% if not active_topic and not search_query %}bg-primary-700 text-white border-primary-700{% else %}bg-white text-slate-600 border-slate-200 hover:border-primary-400 hover:text-primary-700{% endif %}">
+          {% trans "Tất cả" %}
+        </a>
+        {% for topic in topics %}
+          <a href="?topic={{ topic.slug }}"
+             class="px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors whitespace-nowrap
+                    {% if active_topic == topic.slug %}bg-primary-700 text-white border-primary-700{% else %}bg-white text-slate-600 border-slate-200 hover:border-primary-400 hover:text-primary-700{% endif %}">
+            {{ topic.label }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  SEARCH / FILTER RESULTS                                                   #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if search_results is not None %}
+<section class="bg-slate-50 py-14" aria-label="{% trans 'Search results' %}">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-8">
+      {% if search_query %}
+        <p class="text-sm text-slate-500">
+          {% blocktrans with q=search_query %}Kết quả tìm kiếm cho: <strong class="text-primary-700">{{ q }}</strong>{% endblocktrans %}
+        </p>
+      {% elif active_topic %}
+        {% for topic in topics %}{% if topic.slug == active_topic %}
+          <p class="text-sm text-slate-500">
+            {% blocktrans with label=topic.label %}Bài viết theo chủ đề: <strong class="text-primary-700">{{ label }}</strong>{% endblocktrans %}
+          </p>
+        {% endif %}{% endfor %}
+      {% endif %}
+    </div>
+
+    {% if search_results %}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for article in search_results %}
+          {% include "knowledge/_article_card.html" with article=article %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-slate-500 text-sm">{% trans "Không tìm thấy bài viết phù hợp." %}</p>
+    {% endif %}
+
+  </div>
+</section>
+
+{% else %}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  FEATURED ARTICLES                                                          #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if featured_articles %}
+<section class="bg-white py-16 lg:py-20" aria-labelledby="featured-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-10">
+      {% if listing_page and listing_page.featured_section_label %}
+        <p class="inline-flex items-center gap-3 text-orange-500 text-xs font-semibold uppercase tracking-widest mb-3">
+          <span class="w-6 h-px bg-orange-400" aria-hidden="true"></span>
+          {{ listing_page.featured_section_label }}
+        </p>
+      {% endif %}
+      <h2 id="featured-heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-900 uppercase tracking-tight">
+        {% if listing_page and listing_page.featured_section_heading %}{{ listing_page.featured_section_heading }}{% else %}{% trans "Nội dung nổi bật" %}{% endif %}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for article in featured_articles %}
+        {% include "knowledge/_article_card.html" with article=article featured=True %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  TOPIC BROWSE — Khám phá theo chủ đề                                       #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if topics %}
+<section class="bg-slate-50 py-16 lg:py-20" aria-labelledby="topics-browse-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-10">
+      <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">
+        <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+        {% trans "Khám phá theo chủ đề" %}
+      </p>
+      <h2 id="topics-browse-heading" class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight">
+        {% trans "Chủ đề chuyên môn" %}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      {% for topic in topics %}
+      <a href="?topic={{ topic.slug }}"
+         class="group rounded-2xl overflow-hidden bg-white border border-slate-100 hover:shadow-lg hover:border-primary-200 transition-all flex flex-col items-center p-4 text-center">
+        {% if topic.cover_image %}
+          <div class="w-full mb-3 rounded-xl overflow-hidden" style="aspect-ratio: 4/3;">
+            <img src="{{ topic.cover_image.url }}" alt="{{ topic.label }}"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+        {% else %}
+          <div class="w-full mb-3 rounded-xl bg-gradient-to-br from-primary-100 to-blue-100 flex items-center justify-center" style="aspect-ratio: 4/3;">
+            <svg class="w-8 h-8 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+        {% endif %}
+        <span class="text-xs font-semibold text-slate-700 group-hover:text-primary-700 transition-colors leading-snug">
+          {{ topic.label }}
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  CATEGORY SECTIONS                                                          #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% for category in categories %}
+  {% if category.published_articles %}
+  <section class="{% cycle 'bg-white' 'bg-slate-50' %} py-16 lg:py-20"
+           aria-labelledby="cat-heading-{{ category.slug }}">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="mb-10">
+        <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">
+          <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+          {{ category.label }}
+        </p>
+        {% if category.heading %}
+          <h2 id="cat-heading-{{ category.slug }}"
+              class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight">
+            {{ category.heading }}
+          </h2>
+        {% endif %}
+        {% if category.description %}
+          <p class="mt-2 text-sm text-slate-500 max-w-2xl">{{ category.description }}</p>
+        {% endif %}
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for article in category.published_articles %}
+          {% include "knowledge/_article_card.html" with article=article %}
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+  {% endif %}
+{% endfor %}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  DOWNLOAD SECTION                                                           #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if downloads %}
+<section class="bg-primary-950 py-16 lg:py-20" aria-labelledby="downloads-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-10">
+      <p class="inline-flex items-center gap-3 text-orange-400 text-xs font-semibold uppercase tracking-widest mb-3">
+        <span class="w-6 h-px bg-orange-400" aria-hidden="true"></span>
+        {% trans "Ấn phẩm & Báo cáo" %}
+      </p>
+      <h2 id="downloads-heading"
+          class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white uppercase tracking-tight">
+        {% trans "Tài liệu tải về" %}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for item in downloads %}
+      <article class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden flex flex-col hover:bg-white/10 transition-colors group">
+
+        <div class="relative overflow-hidden bg-primary-900/50" style="aspect-ratio: 4/3;">
+          {% if item.cover_image %}
+            <img src="{{ item.cover_image.url }}" alt="{{ item.title }}"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          {% else %}
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-800 to-primary-900">
+              <svg class="w-12 h-12 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+            </div>
+          {% endif %}
+          {% if item.file_type_label %}
+            <span class="absolute top-3 left-3 px-2 py-0.5 bg-orange-500 text-white text-xs font-bold rounded">
+              {{ item.file_type_label }}
+            </span>
+          {% endif %}
+        </div>
+
+        <div class="flex flex-col flex-1 p-5">
+          {% if item.category %}
+            <p class="text-orange-400 text-xs font-semibold uppercase tracking-widest mb-2">
+              {{ item.category.label }}
+            </p>
+          {% endif %}
+          <h3 class="font-bold text-white text-sm leading-snug mb-2 flex-1">{{ item.title }}</h3>
+          {% if item.summary %}
+            <p class="text-white/60 text-xs leading-relaxed mb-4 line-clamp-2">{{ item.summary }}</p>
+          {% endif %}
+
+          <div class="flex items-center justify-between mt-auto pt-3 border-t border-white/10">
+            {% if item.file_size_label %}
+              <span class="text-white/40 text-xs">{{ item.file_size_label }}</span>
+            {% endif %}
+            {% if item.file %}
+              <a href="{{ item.file.url }}" download
+                 class="inline-flex items-center gap-1.5 px-4 py-2 bg-orange-500 hover:bg-orange-400 text-white text-xs font-semibold rounded-lg transition-colors">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                {% trans "Tải xuống" %}
+              </a>
+            {% else %}
+              <span class="inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 text-white/40 text-xs font-semibold rounded-lg">{% trans "Sắp có" %}</span>
+            {% endif %}
+          </div>
+        </div>
+
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  NEWS SECTION                                                               #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if news_items %}
+<section class="bg-white py-16 lg:py-20" aria-labelledby="news-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-10">
+      <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">
+        <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+        {% trans "IRDM trên báo chí và diễn đàn chuyên môn" %}
+      </p>
+      <h2 id="news-heading"
+          class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-900 uppercase tracking-tight">
+        {% trans "Tin tức & Sự kiện" %}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {% for item in news_items %}
+      <article class="group flex flex-col bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow">
+
+        <div class="aspect-video relative overflow-hidden bg-slate-100">
+          {% if item.thumbnail %}
+            <img src="{{ item.thumbnail.url }}" alt="{{ item.title }}"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          {% else %}
+            <div class="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+              <svg class="w-8 h-8 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                      d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+              </svg>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="flex flex-col flex-1 p-4">
+          {% if item.category %}
+            <p class="text-primary-600 text-xs font-semibold uppercase tracking-widest mb-1.5">{{ item.category.label }}</p>
+          {% endif %}
+          <h3 class="font-bold text-slate-800 text-sm leading-snug mb-2 flex-1 line-clamp-3">
+            {% if item.source_url %}
+              <a href="{{ item.source_url }}" target="_blank" rel="noopener noreferrer"
+                 class="hover:text-primary-700 transition-colors">{{ item.title }}</a>
+            {% else %}{{ item.title }}{% endif %}
+          </h3>
+          <div class="flex items-center justify-between mt-auto pt-2 border-t border-slate-50">
+            {% if item.published_date %}
+              <span class="text-slate-400 text-xs">{{ item.published_date|date:"d/m/Y" }}</span>
+            {% endif %}
+            {% if item.source_url %}
+              <a href="{{ item.source_url }}" target="_blank" rel="noopener noreferrer"
+                 class="text-xs text-primary-600 hover:underline font-medium">{% trans "Đọc thêm →" %}</a>
+            {% endif %}
+          </div>
+        </div>
+
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{% endif %}{# end search_results is not None #}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  CTA BANNER                                                                 #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if listing_page and listing_page.cta_heading %}
+<section class="py-12 lg:py-16 bg-slate-50" aria-label="{% trans 'Call to action' %}">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative rounded-2xl overflow-hidden" style="min-height: 280px;">
+
+      {% if listing_page.cta_background_image %}
+        <img src="{{ listing_page.cta_background_image.url }}" alt=""
+             class="absolute inset-0 w-full h-full object-cover" aria-hidden="true" />
+        <div class="absolute inset-0 bg-primary-950/75" aria-hidden="true"></div>
+      {% else %}
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-900 to-primary-950" aria-hidden="true"></div>
+      {% endif %}
+
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 p-8 lg:p-12">
+        <div>
+          {% if listing_page.cta_sub %}
+            <p class="text-orange-400 text-xs font-semibold uppercase tracking-widest mb-3">{{ listing_page.cta_sub }}</p>
+          {% endif %}
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white uppercase tracking-tight leading-tight max-w-xl">
+            {{ listing_page.cta_heading }}
+          </h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          {% if listing_page.cta_primary_label and listing_page.cta_primary_url %}
+            <a href="{{ listing_page.cta_primary_url }}"
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-400 text-white font-semibold rounded-lg transition-all shadow-md hover:-translate-y-0.5">
+              {{ listing_page.cta_primary_label }}
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if listing_page.cta_secondary_label and listing_page.cta_secondary_url %}
+            <a href="{{ listing_page.cta_secondary_url }}"
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-white/30 hover:border-white/60 text-white font-semibold rounded-lg transition-all">
+              {{ listing_page.cta_secondary_label }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

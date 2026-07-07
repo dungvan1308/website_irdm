@@ -1,0 +1,80 @@
+{% load i18n %}
+{# Article card partial — used in featured section and category sections #}
+<article class="group flex flex-col bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow h-full">
+
+  {# Thumbnail #}
+  <a href="{{ article.get_absolute_url }}" class="block aspect-video relative overflow-hidden bg-slate-100"
+     tabindex="-1" aria-hidden="true">
+    {% if article.thumbnail %}
+      <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}"
+           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+           loading="lazy" />
+    {% else %}
+      <div class="w-full h-full bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+        <svg class="w-10 h-10 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+      </div>
+    {% endif %}
+    {% if featured %}
+      <span class="absolute top-3 left-3 px-2 py-0.5 bg-orange-500 text-white text-xs font-bold rounded">
+        {% trans "Nổi bật" %}
+      </span>
+    {% endif %}
+  </a>
+
+  <div class="flex flex-col flex-1 p-5">
+
+    {# Category label #}
+    {% if article.category %}
+      <p class="text-primary-600 text-xs font-semibold uppercase tracking-widest mb-2">
+        {{ article.category.label }}
+      </p>
+    {% endif %}
+
+    {# Title #}
+    <h3 class="font-bold text-slate-800 text-sm leading-snug mb-2 flex-1">
+      <a href="{{ article.get_absolute_url }}"
+         class="hover:text-primary-700 transition-colors line-clamp-3">
+        {{ article.title }}
+      </a>
+    </h3>
+
+    {# Summary #}
+    {% if article.summary %}
+      <p class="text-slate-500 text-xs leading-relaxed mb-4 line-clamp-2">
+        {{ article.summary }}
+      </p>
+    {% endif %}
+
+    {# Topic tags #}
+    {% if article.topics.all %}
+      <div class="flex flex-wrap gap-1.5 mb-3">
+        {% for topic in article.topics.all|slice:":3" %}
+          <a href="?topic={{ topic.slug }}"
+             class="px-2 py-0.5 bg-slate-100 text-slate-600 text-xs rounded-full hover:bg-primary-100 hover:text-primary-700 transition-colors">
+            {{ topic.label }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {# Footer: date + read time #}
+    <div class="flex items-center justify-between mt-auto pt-3 border-t border-slate-100 text-xs text-slate-400">
+      {% if article.published_date %}
+        <span>{{ article.published_date|date:"d/m/Y" }}</span>
+      {% endif %}
+      {% if article.read_time %}
+        <span class="flex items-center gap-1">
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          {{ article.read_time }} {% trans "phút đọc" %}
+        </span>
+      {% endif %}
+    </div>
+
+  </div>
+</article>

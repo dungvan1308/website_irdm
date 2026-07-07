@@ -57,7 +57,7 @@ HEADER_MENU = [
     ("Trang chủ",               "/",                           10),
     ("Giải pháp",               "/giai-phap/",                 20),
     ("Năng lực cốt lõi",        "/capabilities/",              30),
-    ("Tri thức & Góc nhìn",     "/tri-thuc/",                  40),
+    ("Tri thức & Góc nhìn",     "/tri-thuc-goc-nhin/",         40),
     ("Đội ngũ chuyên gia",      "/chuyen-gia/",                50),
     ("Về IRDM",                 "/ve-irdm/",                   60),
     ("Liên hệ",                 "/lien-he/",                   70),
@@ -93,10 +93,10 @@ FOOTER_SECTIONS = [
         "Tri thức & Góc nhìn",
         20,
         [
-            ("Xuất bản & Tài liệu",   "/tri-thuc/tai-lieu/",    10),
-            ("Sự kiện & Diễn đàn",    "/tri-thuc/su-kien/",     20),
-            ("Góc nhìn từ Đối tác",   "/tri-thuc/doi-tac/",     30),
-            ("Truyền thông",          "/tri-thuc/truyen-thong/", 40),
+            ("Xuất bản & Tài liệu",   "/tri-thuc-goc-nhin/",   10),
+            ("Sự kiện & Diễn đàn",    "/tri-thuc-goc-nhin/",   20),
+            ("Góc nhìn từ Đối tác",   "/tri-thuc-goc-nhin/",   30),
+            ("Truyền thông",          "/tri-thuc-goc-nhin/",   40),
         ],
     ),
     (
