@@ -69,8 +69,14 @@
               {% endif %}
             </div>
 
-            {# Card bottom: image / decorative strip #}
-            <div class="h-32 bg-gradient-to-br from-blue-100 to-blue-200 flex-shrink-0" aria-hidden="true"></div>
+            {# Card bottom: image or decorative strip #}
+            <div class="h-44 bg-gradient-to-br from-blue-100 to-blue-200 flex-shrink-0 overflow-hidden relative" aria-hidden="true">
+              {% if cat.image %}
+                <img src="{{ cat.image.url }}" alt=""
+                     class="w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-primary-800/10"></div>
+              {% endif %}
+            </div>
 
           </div>
         {% endfor %}

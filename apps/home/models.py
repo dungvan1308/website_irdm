@@ -140,6 +140,10 @@ class AudienceSegment(BaseModel):
         _("icon"), max_length=100, blank=True,
         help_text=_("Heroicon name, e.g. building-office")
     )
+    image = models.ImageField(
+        _("card image"), upload_to="home/audience/", blank=True,
+        help_text=_("Illustration image shown on the audience card.")
+    )
     title = models.CharField(_("title"), max_length=200)
     description = models.TextField(_("description"), blank=True)
     cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
@@ -356,6 +360,10 @@ class KnowledgeCategory(BaseModel):
     )
     category_label = models.CharField(_("category label"), max_length=100)
     title = models.CharField(_("title"), max_length=200)
+    image = models.ImageField(
+        _("card image"), upload_to="home/knowledge/", blank=True,
+        help_text=_("Image shown at the bottom of the knowledge category card.")
+    )
     cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
     cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
 
