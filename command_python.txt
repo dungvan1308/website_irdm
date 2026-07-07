@@ -166,9 +166,24 @@ Solution	apps/solution/management/commands/seed_solution.py
 Capability	apps/capability/management/commands/seed_capability.py
 
 
-python manage.py seed_homepage
 
-python manage.py seed_capability
-python manage.py seed_solution
+
+# 1. Migrate database (luôn chạy trước)
+py manage.py migrate
+
+# 2. Website globals (SiteSettings, Header, Footer nav)
+py manage.py seed_website
+
+# 3. Homepage
+py manage.py seed_homepage
+
+# 4. Solutions
+py manage.py seed_solution
+
+# 5. Capabilities
+py manage.py seed_capability
+
+# 6. Knowledge
+py manage.py seed_knowledge
 
 
