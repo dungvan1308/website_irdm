@@ -3,6 +3,14 @@
   class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100"
   aria-label="{% trans 'Hero' %}"
 >
+  {# Background image with subtle overlay when set #}
+  {% if hero and hero.background_image %}
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <img src="{{ hero.background_image.url }}" alt=""
+           class="w-full h-full object-cover opacity-10" />
+    </div>
+  {% endif %}
+
   {# Subtle decorative grid overlay #}
   <div class="absolute inset-0 opacity-20" aria-hidden="true"
        style="background-image: radial-gradient(circle at 1px 1px, #93c5fd 1px, transparent 0); background-size: 40px 40px;"></div>

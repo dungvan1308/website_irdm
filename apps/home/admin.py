@@ -1,6 +1,7 @@
 """Django admin registrations for homepage CMS models."""
 
 from django.contrib import admin
+from django.utils.html import format_html
 
 from .models import (
     AudienceSegment,
@@ -96,11 +97,19 @@ class AudienceSegmentAdmin(admin.ModelAdmin):
     list_display = ("title", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
     inlines = [AudienceTagInline]
+    readonly_fields = ("image_preview",)
     fieldsets = (
         ("Content", {"fields": ("icon", "title", "description")}),
+        ("Image", {"fields": ("image", "image_preview")}),
         ("CTA", {"fields": ("cta_label", "cta_url")}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
+
+    @admin.display(description="Image preview")
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="height:80px;border-radius:4px;object-fit:cover;"/>', obj.image.url)
+        return "—"
 
 
 # ─── Methodology ──────────────────────────────────────────────────────────────
@@ -164,11 +173,19 @@ class KnowledgeSectionHeaderAdmin(admin.ModelAdmin):
 class KnowledgeCategoryAdmin(admin.ModelAdmin):
     list_display = ("category_label", "title", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
+    readonly_fields = ("image_preview",)
     fieldsets = (
         ("Content", {"fields": ("icon", "category_label", "title")}),
+        ("Image", {"fields": ("image", "image_preview")}),
         ("CTA", {"fields": ("cta_label", "cta_url")}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
+
+    @admin.display(description="Image preview")
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" style="height:80px;border-radius:4px;object-fit:cover;"/>', obj.image.url)
+        return "—"
 
 
 # ─── CTA Banner ───────────────────────────────────────────────────────────────

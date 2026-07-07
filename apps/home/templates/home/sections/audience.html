@@ -33,9 +33,14 @@
         {% for segment in audience_segments %}
           <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-primary-200 hover:shadow-lg transition-all duration-200 flex flex-col">
 
-            {# Card top: colored strip with icon #}
-            <div class="h-32 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center relative flex-shrink-0">
-              <div class="w-14 h-14 rounded-full bg-white shadow-sm flex items-center justify-center border border-primary-200">
+            {# Card top: image or gradient fallback #}
+            <div class="h-44 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center relative flex-shrink-0 overflow-hidden">
+              {% if segment.image %}
+                <img src="{{ segment.image.url }}" alt="{{ segment.title }}"
+                     class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-primary-900/20"></div>
+              {% else %}
+                <div class="w-14 h-14 rounded-full bg-white shadow-sm flex items-center justify-center border border-primary-200">
                 <svg class="w-7 h-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   {% if segment.icon == "building-office" %}
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/>
@@ -52,6 +57,7 @@
                   {% endif %}
                 </svg>
               </div>
+              {% endif %}
             </div>
 
             {# Card body #}

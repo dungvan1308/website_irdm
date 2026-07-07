@@ -92,8 +92,14 @@ class HomeService:
         return CapabilitiesSectionHeader.objects.filter(is_active=True).first()
 
     @staticmethod
-    def get_core_capabilities() -> list[CoreCapability]:
-        return list(CoreCapability.objects.filter(is_active=True))
+    def get_core_capabilities() -> list:
+        """Return published Capability records from the capability module (single source of truth)."""
+        from apps.capability.models import Capability
+        return list(
+            Capability.objects
+            .filter(is_active=True, is_published=True)
+            .order_by("display_order")
+        )
 
     # ─── Philosophy ───────────────────────────────────────────────────────────
 

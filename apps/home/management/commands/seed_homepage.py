@@ -3,8 +3,13 @@ Management command: seed_homepage
 
 Populates the database with initial homepage content from the Figma design.
 Safe to run multiple times — uses get_or_create to avoid duplicates.
+Loads real assets from assets_irdm_web/Home page/ when available.
 """
 
+from pathlib import Path
+
+from django.conf import settings
+from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
 
 from apps.core.models import FooterLink, FooterSection, MenuItem, SiteSettings
@@ -27,6 +32,17 @@ from apps.home.models import (
     PhilosophySectionHeader,
     StatisticItem,
 )
+
+ASSETS_DIR = Path(settings.BASE_DIR) / "assets_irdm_web" / "Home page"
+
+
+def _load_asset(relative_path: str) -> ContentFile | None:
+    """Load a real PNG asset relative to ASSETS_DIR, return None if not found."""
+    full = ASSETS_DIR / relative_path
+    if full.exists():
+        with open(full, "rb") as f:
+            return ContentFile(f.read(), name=full.name)
+    return None
 
 
 class Command(BaseCommand):
@@ -164,7 +180,7 @@ class Command(BaseCommand):
                 "primary_cta_label": "Khám phá thêm Giải pháp",
                 "primary_cta_url": "/giai-phap/",
                 "secondary_cta_label": "Xem Năng lực IRDM",
-                "secondary_cta_url": "/ve-irdm/",
+                "secondary_cta_url": "/capabilities/",
                 "quote_strip_text": "Từ nghiên cứu đến tác động ở tầm hệ thống",
                 "is_active": True,
                 "display_order": 0,
@@ -172,6 +188,12 @@ class Command(BaseCommand):
         )
         action = "Created" if created else "Already exists"
         self.stdout.write(f"  HeroSection: {action}")
+
+        if created or not hero.background_image:
+            asset = _load_asset("Homepage-HeroSection.png")
+            if asset:
+                hero.background_image.save("home/hero/hero-section.png", asset, save=True)
+                self.stdout.write("  HeroSection: background image loaded.")
 
         if created:
             tags = [
@@ -208,6 +230,7 @@ class Command(BaseCommand):
         segments_data = [
             (
                 "Cơ quan quản lý & Chính sách", "building-office",
+                "IRDM đồng hành với ai/Cơ quan quản lý & Chính sách.png",
                 (
                     "Cung cố căn cứ khoa học, dữ liệu và cơ chế phối hợp cho các chương trình, "
                     "dự án và nhiệm vụ KHCN & MST."
@@ -217,6 +240,7 @@ class Command(BaseCommand):
             ),
             (
                 "Hệ thống y tế", "heart",
+                "IRDM đồng hành với ai/Hệ thống y tế.png",
                 (
                     "Làm rõ bài toán ưu tiên, dữ liệu sẵn có và lộ trình thí điểm phù hợp "
                     "để hỗ trợ quản trị, chất lượng dịch vụ, phát triển năng lực."
@@ -226,6 +250,7 @@ class Command(BaseCommand):
             ),
             (
                 "Trường Đại học & Giáo dục", "academic-cap",
+                "IRDM đồng hành với ai/Trường đại học & Giáo dục.png",
                 (
                     "Hỗ trợ nhà trường đổi mới chương trình, phát triển người học, khai thác "
                     "dữ liệu giáo dục và xây dựng môi trường học tập."
@@ -235,6 +260,7 @@ class Command(BaseCommand):
             ),
             (
                 "Doanh nghiệp", "briefcase",
+                "IRDM đồng hành với ai/Doanh nghiệp.png",
                 (
                     "Thiết kế các sáng kiến phát triển con người, năng lực làm việc, văn hóa "
                     "phối hợp và trách nhiệm xã hội gắn với mục tiêu."
@@ -244,6 +270,7 @@ class Command(BaseCommand):
             ),
             (
                 "Tổ chức quốc tế", "globe-alt",
+                "IRDM đồng hành với ai/Tổ chức quốc tế.png",
                 (
                     "Kết nối tri thức quốc tế với bối cảnh Việt Nam để thiết kế, triển khai "
                     "và đánh giá các sáng kiến liên ngành có khả năng nhân rộng."
@@ -253,7 +280,7 @@ class Command(BaseCommand):
             ),
         ]
 
-        for title, icon, desc, cta_label, cta_url, tags, order in segments_data:
+        for title, icon, asset_path, desc, cta_label, cta_url, tags, order in segments_data:
             segment, created = AudienceSegment.objects.get_or_create(
                 title=title,
                 defaults={
@@ -262,6 +289,10 @@ class Command(BaseCommand):
                     "display_order": order, "is_active": True,
                 },
             )
+            if created or not segment.image:
+                asset = _load_asset(asset_path)
+                if asset:
+                    segment.image.save(f"home/audience/{segment.pk}.png", asset, save=True)
             if created:
                 for tag_order, tag_label in enumerate(tags, start=10):
                     AudienceTag.objects.create(
@@ -420,24 +451,29 @@ class Command(BaseCommand):
         )
 
         partners_data = [
-            ("Sở Khoa học và Công nghệ TP.HCM", "", 10),
-            ("Sở Y tế TP.HCM", "", 20),
-            ("Đại học Bách Khoa TP.HCM", "", 30),
-            ("Đại học Y Dược TP.HCM", "", 40),
-            ("Đại học Y Khoa Phạm Ngọc Thạch", "", 50),
-            ("Bệnh viện Nguyễn Tri Phương", "", 60),
-            ("Bệnh viện Chấn thương Chỉnh hình", "", 70),
-            ("Bệnh viện Bệnh Nhiệt đới", "", 80),
-            ("Bệnh viện Răng Hàm Mặt TP.HCM", "", 90),
-            ("TalentNet", "", 100),
-            ("Sanofi", "", 110),
+            ("Sở Khoa học và Công nghệ TP.HCM",  "Các tổ chức IRDM đã đồng hành/Sở Khoa học và Công nghệ TP.HCM.png",  "", 10),
+            ("Sở Y tế TP.HCM",                   "Các tổ chức IRDM đã đồng hành/Sở Y tế TP.HCM.png",                   "", 20),
+            ("Đại học Bách Khoa TP.HCM",          "Các tổ chức IRDM đã đồng hành/Đại học Bách Khoa TP.HCM.png",          "", 30),
+            ("Đại học Y Dược TP.HCM",             "Các tổ chức IRDM đã đồng hành/Đại học Y Dược TP.HCM.png",             "", 40),
+            ("Đại học Y Khoa Phạm Ngọc Thạch",    "Các tổ chức IRDM đã đồng hành/Đại học Y Khoa Phạm Ngọc Thạch.png",    "", 50),
+            ("Bệnh viện Nguyễn Tri Phương",        "Các tổ chức IRDM đã đồng hành/Bệnh viện Nguyễn Tri Phương.png",        "", 60),
+            ("Bệnh viện Chấn thương Chỉnh hình",  "Các tổ chức IRDM đã đồng hành/Bệnh viện Chấn thương Chỉnh hình.png",  "", 70),
+            ("Bệnh viện Bệnh Nhiệt đới",           "Các tổ chức IRDM đã đồng hành/Bệnh viện Bệnh Nhiệt đới.png",           "", 80),
+            ("Bệnh viện Răng Hàm Mặt TP.HCM",     "Các tổ chức IRDM đã đồng hành/Bệnh viện Răng Hàm Mặt TP.HCM.png",     "", 90),
+            ("TalentNet",                          "Các tổ chức IRDM đã đồng hành/TalentNet.png",                          "", 100),
+            ("Sanofi",                             "Các tổ chức IRDM đã đồng hành/Sanofi.png",                             "", 110),
+            ("Merit Medica",                       "Các tổ chức IRDM đã đồng hành/Merit Medica.png",                       "", 120),
         ]
 
-        for name, url, order in partners_data:
-            PartnerLogo.objects.get_or_create(
+        for name, asset_path, url, order in partners_data:
+            partner, created = PartnerLogo.objects.get_or_create(
                 name=name,
                 defaults={"website_url": url, "display_order": order, "is_active": True},
             )
+            if created or not partner.logo:
+                asset = _load_asset(asset_path)
+                if asset:
+                    partner.logo.save(f"home/partners/{partner.pk}.png", asset, save=True)
 
         stats_data = [
             ("11+", "Đối tác & tổ chức", "", 10),
@@ -475,17 +511,21 @@ class Command(BaseCommand):
 
         categories_data = [
             ("document-text", "XUẤT BẢN & TÀI LIỆU", "Bài viết, báo cáo & policy brief",
+             "Tri thức & Diễn đàn chuyên môn/Bài viết, báo cáo & policy brief.png",
              "Xem tài liệu", "/tri-thuc-goc-nhin/", 10),
             ("calendar", "SỰ KIỆN & DIỄN ĐÀN", "Hội thảo, tọa đàm & diễn đàn chuyên môn",
+             "Tri thức & Diễn đàn chuyên môn/Hội thảo, tọa đàm & diễn đàn chuyên môn.png",
              "Xem sự kiện", "/tri-thuc-goc-nhin/", 20),
             ("chat-bubble-left-ellipsis", "GÓC NHÌN TỪ ĐỐI TÁC", "Cảm nhận từ đối tác & người học",
+             "Tri thức & Diễn đàn chuyên môn/Cảm nhận từ đối tác & người học.png",
              "Đọc chia sẻ", "/tri-thuc-goc-nhin/", 30),
             ("newspaper", "TRUYỀN THÔNG", "Báo chí & diễn đàn chuyên môn",
+             "Tri thức & Diễn đàn chuyên môn/Báo chí & diễn đàn chuyên môn.png",
              "Xem trên báo chí", "/tri-thuc-goc-nhin/", 40),
         ]
 
-        for icon, cat_label, title, cta_label, cta_url, order in categories_data:
-            KnowledgeCategory.objects.get_or_create(
+        for icon, cat_label, title, asset_path, cta_label, cta_url, order in categories_data:
+            cat, created = KnowledgeCategory.objects.get_or_create(
                 category_label=cat_label,
                 defaults={
                     "icon": icon, "title": title,
@@ -493,11 +533,15 @@ class Command(BaseCommand):
                     "display_order": order, "is_active": True,
                 },
             )
+            if created or not cat.image:
+                asset = _load_asset(asset_path)
+                if asset:
+                    cat.image.save(f"home/knowledge/{cat.pk}.png", asset, save=True)
 
     # ─── CTA Banner ───────────────────────────────────────────────────────────
 
     def _seed_cta_banner(self) -> None:
-        CTABanner.objects.get_or_create(
+        banner, created = CTABanner.objects.get_or_create(
             heading="CÙNG THIẾT KẾ GIẢI PHÁP PHÙ HỢP VỚI BỐI CẢNH VÀ MỤC TIÊU PHÁT TRIỂN CỦA TỔ CHỨC",
             defaults={
                 "section_label": "KẾT NỐI VỚI IRDM",
@@ -511,3 +555,7 @@ class Command(BaseCommand):
                 "display_order": 0,
             },
         )
+        if created or not banner.background_image:
+            asset = _load_asset("Kết nối với IRDM.png")
+            if asset:
+                banner.background_image.save("home/cta/cta-banner.png", asset, save=True)

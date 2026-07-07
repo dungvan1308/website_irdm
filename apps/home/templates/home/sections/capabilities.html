@@ -32,7 +32,9 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {% for cap in core_capabilities %}
           <div class="group relative rounded-2xl overflow-hidden bg-primary-900 flex flex-col" style="min-height: 420px;">
-            {% if cap.background_image %}
+            {% if cap.thumbnail %}
+              <img src="{{ cap.thumbnail.url }}" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" aria-hidden="true" />
+            {% elif cap.background_image %}
               <img src="{{ cap.background_image.url }}" alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" aria-hidden="true" />
             {% endif %}
             {# Gradient overlay — stronger at bottom #}
@@ -51,8 +53,10 @@
               {# Spacer pushes description to bottom #}
               <div class="flex-1"></div>
               {# Description at bottom #}
-              {% if cap.description %}
-                <p class="text-xs text-white/75 leading-relaxed mt-auto">{{ cap.description }}</p>
+              {% if cap.summary %}
+                <p class="text-xs text-white/75 leading-relaxed mt-auto">{{ cap.summary|truncatewords:20 }}</p>
+              {% elif cap.description %}
+                <p class="text-xs text-white/75 leading-relaxed mt-auto">{{ cap.description|truncatewords:20 }}</p>
               {% endif %}
             </div>
           </div>
