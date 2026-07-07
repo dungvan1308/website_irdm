@@ -1,0 +1,271 @@
+{% extends "layouts/base.html" %}
+{% load i18n static %}
+
+{% block title %}
+  {% if article.meta_title %}{{ article.meta_title }}
+  {% else %}{{ article.title }}{% endif %}
+  — {% if site_settings %}{{ site_settings.site_name }}{% else %}IRDM{% endif %}
+{% endblock %}
+
+{% block meta_description %}
+  {% if article.meta_description %}{{ article.meta_description }}
+  {% elif article.summary %}{{ article.summary|truncatewords:30 }}{% endif %}
+{% endblock %}
+
+{% block meta_keywords %}{% if article.meta_keywords %}{{ article.meta_keywords }}{% endif %}{% endblock %}
+
+{% block content %}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  BREADCRUMB + HERO                                                          #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+<section class="pt-24 pb-0" aria-label="{% trans 'Article hero' %}">
+
+  {# Breadcrumb #}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <nav class="flex items-center gap-2 text-sm text-slate-500 flex-wrap" aria-label="{% trans 'Breadcrumb' %}">
+      <a href="{% url 'home:index' %}" class="hover:text-primary-700 transition-colors">{% trans "Home" %}</a>
+      <svg class="w-4 h-4 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <a href="{% url 'knowledge:listing' %}" class="hover:text-primary-700 transition-colors">{% trans "Tri thức & Góc nhìn" %}</a>
+      <svg class="w-4 h-4 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <span class="text-primary-700 font-medium truncate max-w-xs">{{ article.title }}</span>
+    </nav>
+  </div>
+
+  {# Hero card #}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="rounded-2xl overflow-hidden flex flex-col lg:flex-row shadow-lg" style="min-height:400px;">
+
+      {# Left: dark panel #}
+      <div class="lg:w-[55%] bg-primary-950 p-8 lg:p-12 flex flex-col justify-between">
+        <div>
+          {# Category label #}
+          {% if article.category %}
+            <p class="text-orange-400 text-xs font-semibold uppercase tracking-widest mb-5">
+              {{ article.category.label }}
+            </p>
+          {% endif %}
+
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            {{ article.title }}
+          </h1>
+
+          {% if article.summary %}
+            <p class="text-sm text-white/70 leading-relaxed mb-6">{{ article.summary }}</p>
+          {% endif %}
+
+          {# Meta: author, date, read time #}
+          <div class="flex flex-wrap items-center gap-4 text-xs text-white/50">
+            {% if article.author_name %}
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+                {{ article.author_name }}
+              </span>
+            {% endif %}
+            {% if article.published_date %}
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                {{ article.published_date|date:"d/m/Y" }}
+              </span>
+            {% endif %}
+            {% if article.read_time %}
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                {{ article.read_time }} {% trans "phút đọc" %}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+
+        {# Topics #}
+        {% if article.topics.all %}
+          <div class="mt-8 flex flex-wrap gap-2">
+            {% for topic in article.topics.all %}
+              <a href="{% url 'knowledge:listing' %}?topic={{ topic.slug }}"
+                 class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border border-white/20 text-white/80 bg-white/10 hover:bg-white/20 transition-colors">
+                {{ topic.label }}
+              </a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      {# Right: hero image #}
+      <div class="lg:w-[45%] min-h-[260px] relative overflow-hidden bg-primary-800">
+        {% if article.hero_image %}
+          <img src="{{ article.hero_image.url }}" alt="{{ article.title }}"
+               class="absolute inset-0 w-full h-full object-cover"
+               loading="eager" />
+        {% elif article.thumbnail %}
+          <img src="{{ article.thumbnail.url }}" alt="{{ article.title }}"
+               class="absolute inset-0 w-full h-full object-cover"
+               loading="eager" />
+        {% else %}
+          <div class="absolute inset-0 bg-gradient-to-br from-primary-700 to-primary-900 flex items-center justify-center">
+            <svg class="w-16 h-16 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  ARTICLE BODY                                                               #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if article.body %}
+<section class="bg-white py-12 lg:py-16" aria-label="{% trans 'Article body' %}">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="prose prose-slate prose-lg max-w-none">
+      {{ article.body|linebreaks }}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  RELATED CAPABILITIES                                                       #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if related_capabilities %}
+<section class="bg-slate-50 py-12 lg:py-16" aria-labelledby="related-caps-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-8">
+      <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">
+        <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+        {% trans "Năng lực liên quan" %}
+      </p>
+      <h2 id="related-caps-heading"
+          class="text-xl sm:text-2xl font-extrabold text-primary-900 uppercase tracking-tight">
+        {% trans "Các năng lực IRDM" %}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {% for cap in related_capabilities %}
+      <a href="{{ cap.get_absolute_url }}"
+         class="group flex items-start gap-4 bg-white border border-slate-100 rounded-2xl p-5 hover:shadow-md hover:border-primary-200 transition-all">
+        {% if cap.thumbnail %}
+          <img src="{{ cap.thumbnail.url }}" alt="{{ cap.title }}"
+               class="w-14 h-14 rounded-xl object-cover flex-shrink-0" />
+        {% else %}
+          <div class="w-14 h-14 rounded-xl bg-primary-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+        {% endif %}
+        <div>
+          <h3 class="font-bold text-slate-800 text-sm leading-snug group-hover:text-primary-700 transition-colors">
+            {{ cap.title }}
+          </h3>
+          {% if cap.summary %}
+            <p class="text-slate-500 text-xs mt-1 line-clamp-2">{{ cap.summary }}</p>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  RELATED ARTICLES                                                           #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if related_articles %}
+<section class="bg-white py-12 lg:py-16" aria-labelledby="related-articles-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-8">
+      <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">
+        <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
+        {% trans "Bài viết liên quan" %}
+      </p>
+      <h2 id="related-articles-heading"
+          class="text-xl sm:text-2xl font-extrabold text-primary-900 uppercase tracking-tight">
+        {% trans "Khám phá thêm" %}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for rel in related_articles %}
+        {% include "knowledge/_article_card.html" with article=rel %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  CTA BANNER                                                                 #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if listing_page and listing_page.cta_heading %}
+<section class="py-12 lg:py-16 bg-slate-50" aria-label="{% trans 'Call to action' %}">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative rounded-2xl overflow-hidden" style="min-height: 280px;">
+
+      {% if listing_page.cta_background_image %}
+        <img src="{{ listing_page.cta_background_image.url }}" alt=""
+             class="absolute inset-0 w-full h-full object-cover" aria-hidden="true" />
+        <div class="absolute inset-0 bg-primary-950/75" aria-hidden="true"></div>
+      {% else %}
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-900 to-primary-950" aria-hidden="true"></div>
+      {% endif %}
+
+      <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 p-8 lg:p-12">
+        <div>
+          {% if listing_page.cta_sub %}
+            <p class="text-orange-400 text-xs font-semibold uppercase tracking-widest mb-3">
+              {{ listing_page.cta_sub }}
+            </p>
+          {% endif %}
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white uppercase tracking-tight leading-tight max-w-xl">
+            {{ listing_page.cta_heading }}
+          </h2>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          {% if listing_page.cta_primary_label and listing_page.cta_primary_url %}
+            <a href="{{ listing_page.cta_primary_url }}"
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-400 text-white font-semibold rounded-lg transition-all shadow-md hover:-translate-y-0.5">
+              {{ listing_page.cta_primary_label }}
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if listing_page.cta_secondary_label and listing_page.cta_secondary_url %}
+            <a href="{{ listing_page.cta_secondary_url }}"
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-white/30 hover:border-white/60 text-white font-semibold rounded-lg transition-all">
+              {{ listing_page.cta_secondary_label }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

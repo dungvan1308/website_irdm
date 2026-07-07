@@ -27,6 +27,17 @@ module.exports = {
     // CTA layout
     "lg:items-center",
     "lg:justify-between",
+    // Knowledge module — article card text clamping
+    "line-clamp-2",
+    "line-clamp-3",
+    // Knowledge module — filter bar
+    "scrollbar-hide",
+    "flex-nowrap",
+    // Knowledge module — aspect ratios
+    "aspect-[4/3]",
+    "aspect-[16/9]",
+    // Knowledge module — backdrop
+    "backdrop-blur-sm",
   ],
   theme: {
     extend: {

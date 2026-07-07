@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     "apps.event.apps.EventConfig",
     "apps.resource.apps.ResourceConfig",
     "apps.contact.apps.ContactConfig",
+    # Knowledge
+    "apps.knowledge.apps.KnowledgeConfig",
     # CMS
     "apps.cms.apps.CmsConfig",
     # Administration

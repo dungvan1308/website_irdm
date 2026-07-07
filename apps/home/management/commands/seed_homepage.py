@@ -79,7 +79,7 @@ class Command(BaseCommand):
         header_items = [
             ("Trang chủ", "/", 10),
             ("Giải pháp", "/giai-phap/", 20),
-            ("Tri thức & Góc nhìn", "/tri-thuc/", 30),
+            ("Tri thức & Góc nhìn", "/tri-thuc-goc-nhin/", 30),
             ("Đội ngũ chuyên gia", "/chuyen-gia/", 40),
             ("Đối tác & Khách hàng", "/doi-tac/", 50),
             ("Về IRDM", "/ve-irdm/", 60),
@@ -97,7 +97,7 @@ class Command(BaseCommand):
         footer_items = [
             ("Trang chủ", "/", 10),
             ("Giải pháp", "/giai-phap/", 20),
-            ("Tri thức & Góc nhìn", "/tri-thuc/", 30),
+            ("Tri thức & Góc nhìn", "/tri-thuc-goc-nhin/", 30),
             ("Đội ngũ chuyên gia", "/chuyen-gia/", 40),
             ("Về IRDM", "/ve-irdm/", 50),
         ]
@@ -121,10 +121,10 @@ class Command(BaseCommand):
                 ("Tổ chức quốc tế", "/giai-phap/to-chuc-quoc-te/"),
             ]),
             ("Tri thức & Góc nhìn", [
-                ("Xuất bản & Tài liệu", "/tri-thuc/tai-lieu/"),
-                ("Sự kiện & Diễn đàn", "/tri-thuc/su-kien/"),
-                ("Góc nhìn từ Đối tác", "/tri-thuc/doi-tac/"),
-                ("Truyền thông", "/tri-thuc/truyen-thong/"),
+                ("Xuất bản & Tài liệu", "/tri-thuc-goc-nhin/"),
+                ("Sự kiện & Diễn đàn", "/tri-thuc-goc-nhin/"),
+                ("Góc nhìn từ Đối tác", "/tri-thuc-goc-nhin/"),
+                ("Truyền thông", "/tri-thuc-goc-nhin/"),
             ]),
             ("Về IRDM", [
                 ("Giới thiệu", "/ve-irdm/"),
@@ -412,7 +412,7 @@ class Command(BaseCommand):
                     "trường đại học, doanh nghiệp và đối tác trong các bài toán thực tiễn."
                 ),
                 "cta_label": "Xem Tin IRDM",
-                "cta_url": "/tri-thuc/",
+                "cta_url": "/tri-thuc-goc-nhin/",
                 "partners_label": "ĐỐI TÁC TIÊU BIỂU",
                 "is_active": True,
                 "display_order": 0,
@@ -467,7 +467,7 @@ class Command(BaseCommand):
                     "phổ biến tri thức với vai trò tổ chức chủ trì nghiên cứu và ứng dụng."
                 ),
                 "cta_label": "Xem Tri thức & Góc nhìn",
-                "cta_url": "/tri-thuc/",
+                "cta_url": "/tri-thuc-goc-nhin/",
                 "is_active": True,
                 "display_order": 0,
             },
@@ -475,13 +475,13 @@ class Command(BaseCommand):
 
         categories_data = [
             ("document-text", "XUẤT BẢN & TÀI LIỆU", "Bài viết, báo cáo & policy brief",
-             "Xem tài liệu", "/tri-thuc/tai-lieu/", 10),
+             "Xem tài liệu", "/tri-thuc-goc-nhin/", 10),
             ("calendar", "SỰ KIỆN & DIỄN ĐÀN", "Hội thảo, tọa đàm & diễn đàn chuyên môn",
-             "Xem sự kiện", "/tri-thuc/su-kien/", 20),
+             "Xem sự kiện", "/tri-thuc-goc-nhin/", 20),
             ("chat-bubble-left-ellipsis", "GÓC NHÌN TỪ ĐỐI TÁC", "Cảm nhận từ đối tác & người học",
-             "Đọc chia sẻ", "/tri-thuc/doi-tac/", 30),
+             "Đọc chia sẻ", "/tri-thuc-goc-nhin/", 30),
             ("newspaper", "TRUYỀN THÔNG", "Báo chí & diễn đàn chuyên môn",
-             "Xem trên báo chí", "/tri-thuc/truyen-thong/", 40),
+             "Xem trên báo chí", "/tri-thuc-goc-nhin/", 40),
         ]
 
         for icon, cat_label, title, cta_label, cta_url, order in categories_data:
