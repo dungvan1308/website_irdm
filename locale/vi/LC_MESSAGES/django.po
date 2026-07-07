@@ -1,0 +1,737 @@
+# Vietnamese translations for IRDM Website
+# Copyright (C) 2026 IRDM
+msgid ""
+msgstr ""
+"Project-Id-Version: IRDM Website 1.0\n"
+"POT-Creation-Date: 2026-07-07 00:00+0700\n"
+"PO-Revision-Date: 2026-07-07 00:00+0700\n"
+"Last-Translator: IRDM Team\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# ── App names (apps.py verbose_name) ─────────────────────────────────────────
+
+msgid "Capability"
+msgstr "Năng lực"
+
+msgid "Core Settings"
+msgstr "Cài đặt chung"
+
+msgid "Homepage"
+msgstr "Trang chủ"
+
+msgid "Knowledge & Insights"
+msgstr "Tri thức & Góc nhìn"
+
+msgid "Solutions"
+msgstr "Giải pháp"
+
+# ── BaseModel fields ─────────────────────────────────────────────────────────
+
+msgid "is active"
+msgstr "Đang hoạt động"
+
+msgid "display order"
+msgstr "Thứ tự hiển thị"
+
+# ── Common field labels ──────────────────────────────────────────────────────
+
+msgid "title"
+msgstr "Tiêu đề"
+
+msgid "slug"
+msgstr "Đường dẫn (slug)"
+
+msgid "heading"
+msgstr "Tiêu đề chính"
+
+msgid "description"
+msgstr "Mô tả"
+
+msgid "summary"
+msgstr "Tóm tắt"
+
+msgid "label"
+msgstr "Nhãn"
+
+msgid "content"
+msgstr "Nội dung"
+
+msgid "body"
+msgstr "Nội dung"
+
+msgid "number"
+msgstr "Số thứ tự"
+
+msgid "icon"
+msgstr "Tên icon"
+
+msgid "name"
+msgstr "Tên"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "email"
+msgstr "Email"
+
+msgid "phone"
+msgstr "Số điện thoại"
+
+msgid "address"
+msgstr "Địa chỉ"
+
+msgid "logo"
+msgstr "Logo"
+
+msgid "favicon"
+msgstr "Favicon"
+
+msgid "thumbnail"
+msgstr "Ảnh thu nhỏ"
+
+msgid "hero image"
+msgstr "Ảnh banner"
+
+msgid "background image"
+msgstr "Ảnh nền"
+
+msgid "cover image"
+msgstr "Ảnh bìa"
+
+msgid "card image"
+msgstr "Ảnh card"
+
+msgid "published"
+msgstr "Đã xuất bản"
+
+msgid "featured"
+msgstr "Nổi bật"
+
+msgid "visible"
+msgstr "Hiển thị"
+
+msgid "section label"
+msgstr "Nhãn phần"
+
+msgid "section"
+msgstr "Nhóm"
+
+msgid "category"
+msgstr "Danh mục"
+
+msgid "topics"
+msgstr "Chủ đề"
+
+msgid "article"
+msgstr "Bài viết"
+
+msgid "listing page"
+msgstr "Trang danh sách"
+
+msgid "subtitle"
+msgstr "Tiêu đề phụ"
+
+msgid "subheading"
+msgstr "Tiêu đề phụ"
+
+msgid "value"
+msgstr "Giá trị"
+
+msgid "file"
+msgstr "Tệp tin"
+
+msgid "segment"
+msgstr "Phân khúc"
+
+# ── CTA / Button labels ──────────────────────────────────────────────────────
+
+msgid "CTA label"
+msgstr "Nhãn nút CTA"
+
+msgid "CTA URL"
+msgstr "URL nút CTA"
+
+msgid "CTA heading"
+msgstr "Tiêu đề CTA"
+
+msgid "CTA sub-heading"
+msgstr "Tiêu đề phụ CTA"
+
+msgid "CTA background image"
+msgstr "Ảnh nền CTA"
+
+msgid "CTA primary label"
+msgstr "Nhãn nút CTA chính"
+
+msgid "CTA primary URL"
+msgstr "URL nút CTA chính"
+
+msgid "CTA secondary label"
+msgstr "Nhãn nút CTA phụ"
+
+msgid "CTA secondary URL"
+msgstr "URL nút CTA phụ"
+
+msgid "primary CTA label"
+msgstr "Nhãn nút chính"
+
+msgid "primary CTA URL"
+msgstr "URL nút chính"
+
+msgid "secondary CTA label"
+msgstr "Nhãn nút phụ"
+
+msgid "secondary CTA URL"
+msgstr "URL nút phụ"
+
+msgid "hero CTA primary label"
+msgstr "Nhãn nút chính (banner)"
+
+msgid "hero CTA primary URL"
+msgstr "URL nút chính (banner)"
+
+msgid "hero CTA secondary label"
+msgstr "Nhãn nút phụ (banner)"
+
+msgid "hero CTA secondary URL"
+msgstr "URL nút phụ (banner)"
+
+# ── SEO fields ───────────────────────────────────────────────────────────────
+
+msgid "meta title"
+msgstr "Tiêu đề SEO"
+
+msgid "meta description"
+msgstr "Mô tả SEO"
+
+msgid "meta keywords"
+msgstr "Từ khóa SEO"
+
+# ── Core / Site Settings ─────────────────────────────────────────────────────
+
+msgid "site name"
+msgstr "Tên website"
+
+msgid "site tagline"
+msgstr "Slogan website"
+
+msgid "site description"
+msgstr "Mô tả website"
+
+msgid "logo (white)"
+msgstr "Logo (nền tối)"
+
+msgid "operating hours"
+msgstr "Giờ làm việc"
+
+msgid "map embed URL"
+msgstr "URL nhúng bản đồ"
+
+msgid "LinkedIn URL"
+msgstr "URL LinkedIn"
+
+msgid "Twitter / X URL"
+msgstr "URL Twitter / X"
+
+msgid "Facebook URL"
+msgstr "URL Facebook"
+
+msgid "YouTube URL"
+msgstr "URL YouTube"
+
+msgid "site settings"
+msgstr "Cài đặt website"
+
+# ── Menu ─────────────────────────────────────────────────────────────────────
+
+msgid "menu"
+msgstr "Menu"
+
+msgid "Header"
+msgstr "Header (điều hướng trên)"
+
+msgid "Footer"
+msgstr "Footer (điều hướng dưới)"
+
+msgid "open in new tab"
+msgstr "Mở trong tab mới"
+
+msgid "parent item"
+msgstr "Mục cha"
+
+msgid "menu item"
+msgstr "Mục menu"
+
+msgid "menu items"
+msgstr "Các mục menu"
+
+# ── Footer ───────────────────────────────────────────────────────────────────
+
+msgid "footer section"
+msgstr "Nhóm liên kết footer"
+
+msgid "footer sections"
+msgstr "Các nhóm liên kết footer"
+
+msgid "footer link"
+msgstr "Liên kết footer"
+
+msgid "footer links"
+msgstr "Các liên kết footer"
+
+# ── Capability ───────────────────────────────────────────────────────────────
+
+msgid "capability listing page"
+msgstr "Trang danh sách năng lực"
+
+msgid "capability listing pages"
+msgstr "Các trang danh sách năng lực"
+
+msgid "overview heading"
+msgstr "Tiêu đề tổng quan"
+
+msgid "overview description"
+msgstr "Mô tả tổng quan"
+
+msgid "Short description shown on the listing card."
+msgstr "Mô tả ngắn hiển thị trên thẻ danh sách."
+
+msgid "Background image for the detail page hero."
+msgstr "Ảnh nền cho banner trang chi tiết."
+
+msgid "Small label above the heading, e.g. 'Nền tảng chuyên môn'"
+msgstr "Nhãn nhỏ phía trên tiêu đề, ví dụ: 'Nền tảng chuyên môn'"
+
+msgid "Detailed description for the detail page hero."
+msgstr "Mô tả chi tiết cho banner trang chi tiết."
+
+msgid "'What is' section label"
+msgstr "Nhãn phần 'Năng lực là gì'"
+
+msgid "'What is' description"
+msgstr "Mô tả phần 'Năng lực là gì'"
+
+msgid "'When needed' section label"
+msgstr "Nhãn phần 'Khi nào cần'"
+
+msgid "'How IRDM helps' section label"
+msgstr "Nhãn phần 'IRDM đồng hành'"
+
+msgid "'Outputs' section label"
+msgstr "Nhãn phần 'Đầu ra'"
+
+msgid "capability"
+msgstr "Năng lực"
+
+msgid "capabilities"
+msgstr "Các năng lực"
+
+msgid "capability feature"
+msgstr "Đặc trưng năng lực"
+
+msgid "capability features"
+msgstr "Các đặc trưng năng lực"
+
+msgid "capability need item"
+msgstr "Mục nhu cầu năng lực"
+
+msgid "capability need items"
+msgstr "Các mục nhu cầu năng lực"
+
+msgid "Heroicon name, e.g. magnifying-glass"
+msgstr "Tên icon Heroicons, ví dụ: magnifying-glass"
+
+msgid "capability how step"
+msgstr "Bước triển khai IRDM"
+
+msgid "capability how steps"
+msgstr "Các bước triển khai IRDM"
+
+msgid "capability output"
+msgstr "Đầu ra năng lực"
+
+msgid "capability outputs"
+msgstr "Các đầu ra năng lực"
+
+msgid "category label"
+msgstr "Nhãn danh mục"
+
+msgid "e.g. 'Bệnh viện & KHCN'"
+msgstr "Ví dụ: 'Bệnh viện & KHCN'"
+
+msgid "capability case study"
+msgstr "Case study minh họa"
+
+msgid "capability case studies"
+msgstr "Các case study minh họa"
+
+msgid "case study"
+msgstr "Case study"
+
+msgid "case study tag"
+msgstr "Thẻ case study"
+
+msgid "case study tags"
+msgstr "Các thẻ case study"
+
+# ── Solution ─────────────────────────────────────────────────────────────────
+
+msgid "solution listing page"
+msgstr "Trang danh sách giải pháp"
+
+msgid "solution listing pages"
+msgstr "Các trang danh sách giải pháp"
+
+msgid "Illustration shown in the right column of the hero section."
+msgstr "Ảnh minh họa ở cột bên phải của phần banner."
+
+msgid "quick-nav heading"
+msgstr "Tiêu đề điều hướng nhanh"
+
+msgid "approach section label"
+msgstr "Nhãn phần tiếp cận"
+
+msgid "approach heading"
+msgstr "Tiêu đề tiếp cận"
+
+msgid "approach description"
+msgstr "Mô tả tiếp cận"
+
+msgid "solution approach step"
+msgstr "Bước tiếp cận giải pháp"
+
+msgid "solution approach steps"
+msgstr "Các bước tiếp cận giải pháp"
+
+msgid "solution"
+msgstr "Giải pháp"
+
+msgid "solutions"
+msgstr "Các giải pháp"
+
+msgid "card color"
+msgstr "Màu nền card"
+
+msgid "Tailwind gradient classes shown when no thumbnail is uploaded. Example: from-blue-900 to-blue-950"
+msgstr "Lớp màu gradient Tailwind khi chưa có ảnh thu nhỏ. Ví dụ: from-blue-900 to-blue-950"
+
+msgid "challenge label"
+msgstr "Nhãn phần thách thức"
+
+msgid "methodology label"
+msgstr "Nhãn phần phương pháp"
+
+msgid "output label"
+msgstr "Nhãn phần đầu ra"
+
+msgid "capability label"
+msgstr "Nhãn phần năng lực"
+
+msgid "related capabilities"
+msgstr "Năng lực liên quan"
+
+msgid "solution feature"
+msgstr "Đặc trưng giải pháp"
+
+msgid "solution features"
+msgstr "Các đặc trưng giải pháp"
+
+msgid "solution challenge"
+msgstr "Thách thức giải pháp"
+
+msgid "solution challenges"
+msgstr "Các thách thức giải pháp"
+
+msgid "Full text of this IRDM action step."
+msgstr "Toàn bộ nội dung bước hành động IRDM này."
+
+msgid "solution methodology step"
+msgstr "Bước triển khai giải pháp"
+
+msgid "solution methodology steps"
+msgstr "Các bước triển khai giải pháp"
+
+msgid "output image"
+msgstr "Ảnh đầu ra"
+
+msgid "Photo illustrating this output (shown on the output card)."
+msgstr "Ảnh minh họa đầu ra này (hiển thị trên thẻ đầu ra)."
+
+msgid "solution output"
+msgstr "Đầu ra giải pháp"
+
+msgid "solution outputs"
+msgstr "Các đầu ra giải pháp"
+
+# ── Home ─────────────────────────────────────────────────────────────────────
+
+msgid "eyebrow text"
+msgstr "Văn bản phụ đề"
+
+msgid "Small label shown above the heading (e.g. institute type)"
+msgstr "Nhãn nhỏ hiển thị phía trên tiêu đề (ví dụ: loại viện)"
+
+msgid "quote strip text"
+msgstr "Văn bản dải trích dẫn"
+
+msgid "Quote shown in the dark strip at the bottom of the hero"
+msgstr "Trích dẫn hiển thị trong dải tối ở cuối phần banner"
+
+msgid "hero section"
+msgstr "Banner chính"
+
+msgid "hero sections"
+msgstr "Các banner chính"
+
+msgid "hero pill tag"
+msgstr "Thẻ pill banner"
+
+msgid "hero pill tags"
+msgstr "Các thẻ pill banner"
+
+msgid "icon CSS class / name"
+msgstr "Tên icon"
+
+msgid "e.g. 200+"
+msgstr "Ví dụ: 200+"
+
+msgid "Heroicon name, e.g. chart-bar"
+msgstr "Tên icon Heroicons, ví dụ: chart-bar"
+
+msgid "statistic item"
+msgstr "Số liệu thống kê"
+
+msgid "statistic items"
+msgstr "Các số liệu thống kê"
+
+msgid "website URL"
+msgstr "URL website"
+
+msgid "partner logo"
+msgstr "Logo đối tác"
+
+msgid "partner logos"
+msgstr "Các logo đối tác"
+
+msgid "Featured Solutions"
+msgstr "Giải pháp nổi bật"
+
+msgid "Featured Capabilities"
+msgstr "Năng lực nổi bật"
+
+msgid "Featured Experts"
+msgstr "Chuyên gia nổi bật"
+
+msgid "Featured Insights"
+msgstr "Góc nhìn nổi bật"
+
+msgid "Featured Events"
+msgstr "Sự kiện nổi bật"
+
+msgid "Featured Resources"
+msgstr "Tài nguyên nổi bật"
+
+msgid "featured section config"
+msgstr "Cấu hình phần nổi bật"
+
+msgid "featured section configs"
+msgstr "Các cấu hình phần nổi bật"
+
+msgid "Illustration image shown on the audience card."
+msgstr "Ảnh minh họa hiển thị trên thẻ đối tượng."
+
+msgid "Heroicon name, e.g. building-office"
+msgstr "Tên icon Heroicons, ví dụ: building-office"
+
+msgid "audience segment"
+msgstr "Phân khúc đối tượng"
+
+msgid "audience segments"
+msgstr "Các phân khúc đối tượng"
+
+msgid "audience tag"
+msgstr "Thẻ đối tượng"
+
+msgid "audience tags"
+msgstr "Các thẻ đối tượng"
+
+msgid "audience section header"
+msgstr "Tiêu đề phần Đối tượng"
+
+msgid "audience section headers"
+msgstr "Các tiêu đề phần Đối tượng"
+
+msgid "methodology section header"
+msgstr "Tiêu đề phần Phương pháp"
+
+msgid "methodology section headers"
+msgstr "Các tiêu đề phần Phương pháp"
+
+msgid "step number"
+msgstr "Số bước"
+
+msgid "Heroicon name, e.g. cpu-chip"
+msgstr "Tên icon Heroicons, ví dụ: cpu-chip"
+
+msgid "methodology step"
+msgstr "Bước phương pháp"
+
+msgid "methodology steps"
+msgstr "Các bước phương pháp"
+
+msgid "capabilities section header"
+msgstr "Tiêu đề phần Năng lực"
+
+msgid "capabilities section headers"
+msgstr "Các tiêu đề phần Năng lực"
+
+msgid "core capability"
+msgstr "Năng lực cốt lõi"
+
+msgid "core capabilities"
+msgstr "Các năng lực cốt lõi"
+
+msgid "Heroicon name, e.g. link"
+msgstr "Tên icon Heroicons, ví dụ: link"
+
+msgid "philosophy section header"
+msgstr "Tiêu đề phần Triết lý"
+
+msgid "philosophy section headers"
+msgstr "Các tiêu đề phần Triết lý"
+
+msgid "philosophy principle"
+msgstr "Nguyên tắc triết lý"
+
+msgid "philosophy principles"
+msgstr "Các nguyên tắc triết lý"
+
+msgid "featured partners label"
+msgstr "Nhãn đối tác tiêu biểu"
+
+msgid "evidence section header"
+msgstr "Tiêu đề phần Đối tác"
+
+msgid "evidence section headers"
+msgstr "Các tiêu đề phần Đối tác"
+
+msgid "knowledge section header"
+msgstr "Tiêu đề phần Tri thức (Trang chủ)"
+
+msgid "knowledge section headers"
+msgstr "Các tiêu đề phần Tri thức (Trang chủ)"
+
+msgid "knowledge category"
+msgstr "Danh mục tri thức"
+
+msgid "knowledge categories"
+msgstr "Các danh mục tri thức"
+
+msgid "Heroicon name, e.g. document-text"
+msgstr "Tên icon Heroicons, ví dụ: document-text"
+
+msgid "Image shown at the bottom of the knowledge category card."
+msgstr "Ảnh hiển thị ở cuối thẻ danh mục tri thức."
+
+msgid "CTA banner"
+msgstr "Banner kêu gọi hành động"
+
+msgid "CTA banners"
+msgstr "Các banner CTA"
+
+# ── Knowledge ─────────────────────────────────────────────────────────────────
+
+msgid "knowledge listing page"
+msgstr "Trang danh sách Tri thức"
+
+msgid "knowledge listing pages"
+msgstr "Các trang danh sách Tri thức"
+
+msgid "hero image / illustration"
+msgstr "Ảnh minh họa banner"
+
+msgid "Right-side illustration image in the hero section."
+msgstr "Ảnh minh họa bên phải trong phần banner."
+
+msgid "search enabled"
+msgstr "Bật tìm kiếm"
+
+msgid "filter section heading"
+msgstr "Tiêu đề phần lọc"
+
+msgid "filter section description"
+msgstr "Mô tả phần lọc"
+
+msgid "featured section label"
+msgstr "Nhãn phần nổi bật"
+
+msgid "featured section heading"
+msgstr "Tiêu đề phần nổi bật"
+
+msgid "Thumbnail shown on topic browse cards."
+msgstr "Ảnh thu nhỏ hiển thị trên thẻ duyệt chủ đề."
+
+msgid "knowledge topic"
+msgstr "Chủ đề tri thức"
+
+msgid "knowledge topics"
+msgstr "Các chủ đề tri thức"
+
+msgid "author name"
+msgstr "Tên tác giả"
+
+msgid "published date"
+msgstr "Ngày xuất bản"
+
+msgid "read time (minutes)"
+msgstr "Thời gian đọc (phút)"
+
+msgid "Estimated reading time in minutes."
+msgstr "Thời gian đọc ước tính tính bằng phút."
+
+msgid "knowledge article"
+msgstr "Bài viết tri thức"
+
+msgid "knowledge articles"
+msgstr "Các bài viết tri thức"
+
+msgid "featured article"
+msgstr "Bài viết nổi bật"
+
+msgid "featured articles"
+msgstr "Các bài viết nổi bật"
+
+msgid "Uploaded PDF or document file."
+msgstr "Tệp PDF hoặc tài liệu đã tải lên."
+
+msgid "file type label"
+msgstr "Nhãn loại tệp"
+
+msgid "Display label, e.g. PDF"
+msgstr "Nhãn hiển thị, ví dụ: PDF"
+
+msgid "file size label"
+msgstr "Nhãn kích thước tệp"
+
+msgid "Display label, e.g. 2.3 MB"
+msgstr "Nhãn hiển thị, ví dụ: 2.3 MB"
+
+msgid "knowledge download"
+msgstr "Tài liệu tải xuống"
+
+msgid "knowledge downloads"
+msgstr "Các tài liệu tải xuống"
+
+msgid "source URL"
+msgstr "URL nguồn"
+
+msgid "knowledge news item"
+msgstr "Tin tức"
+
+msgid "knowledge news items"
+msgstr "Các tin tức"

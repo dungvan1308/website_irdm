@@ -21,3 +21,5 @@ Pillow==11.3.0
 
 # YAML
 PyYAML==6.0.2
+
+polib==1.2.0
