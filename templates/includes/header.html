@@ -30,7 +30,7 @@
 
                alt="{{ site_settings.site_name }}"
 
-               class="h-10 w-auto" />
+               class="h-14 w-auto" />
 
         {% elif site_settings and site_settings.logo_white %}
 
@@ -56,7 +56,7 @@
 
       {# Desktop Navigation #}
 
-      <nav class="hidden lg:flex items-center gap-1" role="navigation" aria-label="{% trans 'Primary navigation' %}">
+      <nav class="hidden lg:flex items-center gap-0.5" role="navigation" aria-label="{% trans 'Primary navigation' %}">
 
         {% for item in header_menu %}
 
@@ -72,7 +72,7 @@
 
                 @click.outside="open = false"
 
-                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary-700 rounded-full transition-colors duration-150"
+                class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-700 rounded-full transition-colors duration-150 whitespace-nowrap"
 
                 :aria-expanded="open.toString()"
 
@@ -138,7 +138,7 @@
 
                  {% if item.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
 
-                 class="px-4 py-2 text-sm font-semibold text-primary-700 bg-primary-50 rounded-full transition-colors duration-150">
+                 class="px-3 py-2 text-sm font-semibold text-primary-700 bg-primary-50 rounded-full transition-colors duration-150 whitespace-nowrap">
 
                 {{ item.label }}
 
@@ -150,7 +150,7 @@
 
                  {% if item.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
 
-                 class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary-700 hover:bg-primary-50 rounded-full transition-colors duration-150">
+                 class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-700 hover:bg-primary-50 rounded-full transition-colors duration-150 whitespace-nowrap">
 
                 {{ item.label }}
 
@@ -220,11 +220,11 @@
 
         {# Contact CTA #}
 
-        <a href="/contact/"
+        <a href="/lien-he/"
 
-           class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors duration-150">
+           class="inline-flex items-center gap-1.5 px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors duration-150 whitespace-nowrap">
 
-          {% trans "Contact Us" %}
+          {% trans "Liên hệ hợp tác" %}
 
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
 
@@ -318,11 +318,11 @@
 
       <div class="pt-4 border-t border-gray-100">
 
-        <a href="/contact/"
+        <a href="/lien-he/"
 
            class="block text-center px-5 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-colors">
 
-          {% trans "Contact Us" %}
+          {% trans "Liên hệ hợp tác" %}
 
         </a>
 
