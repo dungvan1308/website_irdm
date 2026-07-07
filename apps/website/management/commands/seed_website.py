@@ -28,19 +28,23 @@ SITE_SETTINGS = {
     "site_name": "IRDM",
     "site_tagline": "Viện Nghiên cứu Phát triển Nguồn lực Việt",
     "site_description": (
-        "Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) là tổ chức Khoa học, "
-        "Công nghệ và Đổi mới sáng tạo, hoạt động nghiên cứu và ứng dụng các "
-        "giải pháp phát triển bền vững cho cơ quan quản lý, hệ thống y tế, "
-        "trường đại học, doanh nghiệp và tổ chức quốc tế."
+        "Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) là tổ chức Khoa học, Công nghệ và Đổi mới sáng tạo, "
+        "hoạt động nghiên cứu tập trung các lĩnh vực Y tế \u2013 Giáo dục \u2013 Môi trường trong bối cảnh ứng dụng công nghệ số.\n"
+        "Viện IRDM được thành lập theo Quyết định số 1111/Q\u0110-LHHVN ngày 01/11/2019 của Liên Hiệp các Hội Khoa học "
+        "và Kỹ thuẫt Việt Nam; Được cấp Chứng nhận Đăng ký hoạt động Khoa học và Công nghệ số A \u2013 2157 "
+        "do Bộ Khoa học và Công nghệ cấp ngày 29/11/2019."
     ),
     "email": "vienncptnlv@irdm.edu.vn",
     "phone": "(+84) 33 656 7701",
     "address": "8C Trần Huy Liệu, Phường Phú Nhuận, TP.HCM",
-    "operating_hours": "Thứ 2 đến Thứ 6 | 8h00 – 17h00",
+    "operating_hours": "Thứ 2 đến Thứ 6 | 8h00 \u2013 17h00",
     "map_embed_url": (
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3!2d106.6800!3d10.7800"
-        "!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z8C!5e0!3m2!1svi"
-        "!2svn!4v1000000000000"
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.418742898547"
+        "!2d106.67854097579797!3d10.779498258849395!2m3!1f0!2f0!3f0!3m2!1i1024"
+        "!2i768!4f13.1!3m3!1m2!1s0x31752f3a9d8b6fb5%3A0x8f5b7c2a1e4d3c9b"
+        "!2s8C%20Tr%E1%BA%A7n%20Huy%20Li%E1%BB%87u%2C%20Ph%C6%B0%E1%BB%9Dng%20"
+        "Ph%C3%BA%20Nhu%E1%BA%ADn%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh"
+        "!5e0!3m2!1svi!2svn!4v1720000000000!5m2!1svi!2svn"
     ),
     "facebook_url": "https://facebook.com/irdm",
     "youtube_url": "https://youtube.com/@irdm",
