@@ -3,6 +3,7 @@
 import uuid
 
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class BaseModel(models.Model):
@@ -13,8 +14,8 @@ class BaseModel(models.Model):
         default=uuid.uuid4,
         editable=False,
     )
-    is_active = models.BooleanField(default=True, db_index=True)
-    display_order = models.PositiveIntegerField(default=0, db_index=True)
+    is_active = models.BooleanField(_("is active"), default=True, db_index=True)
+    display_order = models.PositiveIntegerField(_("display order"), default=0, db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

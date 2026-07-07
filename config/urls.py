@@ -5,6 +5,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include, path
 
+admin.site.site_header = "Trang quản trị cho Website IRDM"
+admin.site.site_title = "Website IRDM"
+admin.site.index_title = "Quản trị nội dung"
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),

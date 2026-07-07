@@ -187,3 +187,7 @@ py manage.py seed_capability
 py manage.py seed_knowledge
 
 
+Lưu ý: Mỗi khi sửa file .po, cần chạy lại lệnh compile:
+.\venv\Scripts\python.exe -c "import polib; po = polib.pofile('locale/vi/LC_MESSAGES/django.po'); po.save_as_mofile('locale/vi/LC_MESSAGES/django.mo')"
+```> .\venv\Scripts\python.exe -c "import polib; po = polib.pofile('locale/vi/LC_MESSAGES/django.po'); po.save_as_mofile('locale/vi/LC_MESSAGES/django.mo')"
+
