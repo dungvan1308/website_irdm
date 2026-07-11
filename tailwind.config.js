@@ -59,6 +59,7 @@ module.exports = {
     "text-[18px]",
     "leading-7",
     "text-[#1565C0]",
+    "leading-[56px]",
   ],
   theme: {
     extend: {
