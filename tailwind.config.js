@@ -54,6 +54,11 @@ module.exports = {
     "lg:py-[160px]",
     "sm:py-28",
     "py-20",
+    // Quote strip — Figma exact values
+    "font-display",
+    "text-[18px]",
+    "leading-7",
+    "text-[#1565C0]",
   ],
   theme: {
     extend: {
