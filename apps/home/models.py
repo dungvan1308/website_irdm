@@ -264,6 +264,10 @@ class CoreCapability(BaseModel):
     background_image = models.ImageField(
         _("background image"), upload_to="home/capabilities/", blank=True
     )
+    link_url = models.CharField(
+        _("link URL"), max_length=500, blank=True,
+        help_text=_("URL trang chi tiết năng lực, ví dụ: /vi/capability/nghien-cuu-ung-dung/")
+    )
 
     class Meta(BaseModel.Meta):
         verbose_name = _("core capability")
