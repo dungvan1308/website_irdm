@@ -39,7 +39,16 @@ class HeroSectionAdmin(admin.ModelAdmin):
     fieldsets = (
         (
             "Content",
-            {"fields": ("eyebrow_text", "heading", "subheading", "description", "background_image", "quote_strip_text")},
+            {"fields": (
+                "eyebrow_text",
+                "heading",
+                "heading_accent",
+                "subheading",
+                "description",
+                "background_image",
+                "hero_image",
+                "quote_strip_text",
+            )},
         ),
         (
             "Primary CTA",

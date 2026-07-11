@@ -1,3 +1,15 @@
+/*
+ * UTM Banque — place utm-banque-regular.woff2 in static/fonts/ to activate.
+ * Obtain the font file from your licensed UTM Banque source.
+ */
+@font-face {
+  font-family: 'UTM Banque';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/utm-banque-regular.woff2') format('woff2');
+}
+
 /* Inter font - local, self-hosted */
 @font-face {
   font-family: 'Inter';
