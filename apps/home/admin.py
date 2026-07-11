@@ -136,10 +136,19 @@ class CapabilitiesSectionHeaderAdmin(admin.ModelAdmin):
 class CoreCapabilityAdmin(admin.ModelAdmin):
     list_display = ("title", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
+    readonly_fields = ("image_preview",)
     fieldsets = (
-        ("Content", {"fields": ("icon", "title", "description", "background_image")}),
+        ("Content", {"fields": ("icon", "title", "description")}),
+        ("Image", {"fields": ("background_image", "image_preview")}),
+        ("Link", {"fields": ("link_url",), "description": "URL trang chi tiết khi click vào card, ví dụ: /vi/capability/nghien-cuu-ung-dung/"}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
+
+    @admin.display(description="Image preview")
+    def image_preview(self, obj):
+        if obj.background_image:
+            return format_html('<img src="{}" style="height:120px;border-radius:4px;object-fit:cover;"/>', obj.background_image.url)
+        return "—"
 
 
 # ─── Philosophy ───────────────────────────────────────────────────────────────

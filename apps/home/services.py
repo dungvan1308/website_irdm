@@ -93,11 +93,10 @@ class HomeService:
 
     @staticmethod
     def get_core_capabilities() -> list:
-        """Return published Capability records from the capability module (single source of truth)."""
-        from apps.capability.models import Capability
+        """Return CoreCapability records configured via the homepage CMS admin."""
         return list(
-            Capability.objects
-            .filter(is_active=True, is_published=True)
+            CoreCapability.objects
+            .filter(is_active=True)
             .order_by("display_order")
         )
 
