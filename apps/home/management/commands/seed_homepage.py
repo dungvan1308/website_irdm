@@ -164,9 +164,17 @@ class Command(BaseCommand):
     # ─── Hero ─────────────────────────────────────────────────────────────────
 
     def _seed_hero(self) -> None:
+        # Remove any legacy record that has the full combined heading (pre-split schema)
+        legacy_qs = HeroSection.objects.exclude(heading="KIẾN TẠO GIẢI PHÁP TỪ")
+        if legacy_qs.exists():
+            count = legacy_qs.count()
+            legacy_qs.delete()
+            self.stdout.write(f"  HeroSection: removed {count} legacy record(s)")
+
         hero, created = HeroSection.objects.get_or_create(
-            heading="KIẾN TẠO GIẢI PHÁP TỪ NGHIÊN CỨU, DỮ LIỆU VÀ TRI THỨC LIÊN NGÀNH",
+            heading="KIẾN TẠO GIẢI PHÁP TỪ",
             defaults={
+                "heading_accent": "NGHIÊN CỨU, DỮ LIỆU VÀ TRI THỨC LIÊN NGÀNH",
                 "eyebrow_text": (
                     "VIỆN NGHIÊN CỨU, KHOA HỌC, CÔNG NGHỆ VÀ ĐỔI MỚI SÁNG TẠO "
                     "ĐỊNH HƯỚNG ỨNG DỤNG"
@@ -186,27 +194,41 @@ class Command(BaseCommand):
                 "display_order": 0,
             },
         )
+
+        # Always ensure heading_accent is set on existing records
+        if not hero.heading_accent:
+            hero.heading_accent = "NGHIÊN CỨU, DỮ LIỆU VÀ TRI THỨC LIÊN NGÀNH"
+            hero.save(update_fields=["heading_accent"])
+            self.stdout.write("  HeroSection: heading_accent updated")
+
         action = "Created" if created else "Already exists"
         self.stdout.write(f"  HeroSection: {action}")
 
-        if created or not hero.background_image:
-            asset = _load_asset("Homepage-HeroSection.png")
+        # Load background overlay image
+        if not hero.background_image:
+            asset = _load_asset("BG.png")
             if asset:
-                hero.background_image.save("home/hero/hero-section.png", asset, save=True)
+                hero.background_image.save("home/hero/hero-bg.png", asset, save=True)
                 self.stdout.write("  HeroSection: background image loaded.")
 
-        if created:
-            tags = [
-                ("Nghiên cứu ứng dụng", 10),
-                ("Khoa học dữ liệu", 20),
-                ("Đổi mới sáng tạo", 30),
-                ("Phát triển năng lực", 40),
-            ]
-            for label, order in tags:
-                HeroPillTag.objects.get_or_create(
-                    hero=hero, label=label,
-                    defaults={"display_order": order, "is_active": True},
-                )
+        # Load right-panel hero illustration
+        if not hero.hero_image:
+            asset = _load_asset("Homepage-HeroSection.png")
+            if asset:
+                hero.hero_image.save("home/hero/hero-illustration.png", asset, save=True)
+                self.stdout.write("  HeroSection: hero illustration loaded.")
+
+        tags = [
+            ("Nghiên cứu ứng dụng", 10),
+            ("Khoa học dữ liệu", 20),
+            ("Đổi mới sáng tạo", 30),
+            ("Phát triển năng lực", 40),
+        ]
+        for label, order in tags:
+            HeroPillTag.objects.get_or_create(
+                hero=hero, label=label,
+                defaults={"display_order": order, "is_active": True},
+            )
 
     # ─── Audience ─────────────────────────────────────────────────────────────
 

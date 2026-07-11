@@ -1,25 +1,19 @@
 {% load i18n %}
 <section
-  class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100"
+  class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 min-h-[864px]"
   aria-label="{% trans 'Hero' %}"
 >
-  {# Background image with subtle overlay when set #}
-  {% if hero and hero.background_image %}
-    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <img src="{{ hero.background_image.url }}" alt=""
-           class="w-full h-full object-cover opacity-10" />
+  {# Hero illustration — absolute right, full section height, no card wrapper #}
+  {% if hero and hero.hero_image %}
+    <div class="absolute top-0 right-0 h-full w-[55%] pointer-events-none select-none" aria-hidden="true">
+      <img src="{{ hero.hero_image.url }}" alt=""
+           class="h-full w-full object-contain object-right-bottom" />
     </div>
   {% endif %}
 
-  {# Subtle decorative grid overlay #}
-  <div class="absolute inset-0 opacity-20" aria-hidden="true"
-       style="background-image: radial-gradient(circle at 1px 1px, #93c5fd 1px, transparent 0); background-size: 40px 40px;"></div>
-
-  <div class="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-40 lg:pb-20">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-      {# Left: Content #}
-      <div>
+  {# Content — left side, max 640px, vertically centred #}
+  <div class="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 flex items-center min-h-[864px]">
+    <div class="w-full lg:max-w-[640px] py-20 sm:py-28 lg:py-[160px]">
         {% if hero %}
           {# Eyebrow pill #}
           {% if hero.eyebrow_text %}
@@ -34,9 +28,12 @@
             </div>
           {% endif %}
 
-          {# Heading — first part navy, split shown via CMS content #}
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 leading-tight uppercase tracking-tight mb-6">
-            {{ hero.heading }}
+          {# Heading — line 1 dark blue, lines 2-3 orange (Figma spec) #}
+          <h1 class="font-utm-banque font-normal text-[40px] lg:text-[48px] leading-[1.5] lg:leading-[72px] tracking-normal mb-6">
+            <span class="block text-[#094977]">{{ hero.heading }}</span>
+            {% if hero.heading_accent %}
+              <span class="text-[#EC6D29]">{{ hero.heading_accent }}</span>
+            {% endif %}
           </h1>
 
           {% if hero.description %}
@@ -89,8 +86,9 @@
             <span class="w-2 h-2 rounded-full bg-primary-600 flex-shrink-0" aria-hidden="true"></span>
             <span class="text-primary-800 text-xs font-semibold uppercase tracking-wider">{% trans "Research · Science · Technology · Innovation" %}</span>
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 leading-tight uppercase tracking-tight mb-6">
-            {% trans "Building Solutions from Research, Data and Interdisciplinary Knowledge" %}
+          <h1 class="font-utm-banque font-normal text-[40px] lg:text-[48px] leading-[1.5] lg:leading-[72px] tracking-normal mb-6">
+            <span class="block text-[#094977]">{% trans "BUILDING SOLUTIONS FROM" %}</span>
+            <span class="text-[#EC6D29]">{% trans "RESEARCH, DATA AND INTERDISCIPLINARY KNOWLEDGE" %}</span>
           </h1>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/giai-phap/"
@@ -109,46 +107,6 @@
             </a>
           </div>
         {% endif %}
-      </div>
-
-      {# Right: Hero image or decorative placeholder #}
-      <div class="relative hidden lg:block">
-        {% if hero and hero.background_image %}
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-            <img src="{{ hero.background_image.url }}"
-                 alt=""
-                 class="w-full h-auto object-cover"
-                 loading="eager"
-                 aria-hidden="true" />
-          </div>
-        {% else %}
-          {# Decorative placeholder — stacked cards with blue tint #}
-          <div class="relative h-96 lg:h-[480px]">
-            <div class="absolute top-0 right-0 w-72 h-48 rounded-2xl bg-primary-100 shadow-lg rotate-3 overflow-hidden" aria-hidden="true">
-              <div class="w-full h-full bg-gradient-to-br from-primary-200 to-primary-400 flex items-center justify-center">
-                <svg class="w-24 h-24 text-primary-600/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                </svg>
-              </div>
-            </div>
-            <div class="absolute top-16 left-0 w-64 h-44 rounded-2xl bg-white shadow-xl overflow-hidden" aria-hidden="true">
-              <div class="w-full h-full bg-gradient-to-br from-slate-100 to-blue-100 flex items-center justify-center">
-                <svg class="w-20 h-20 text-primary-500/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-              </div>
-            </div>
-            <div class="absolute bottom-0 right-8 w-80 h-52 rounded-2xl bg-white shadow-xl overflow-hidden" aria-hidden="true">
-              <div class="w-full h-full bg-gradient-to-br from-blue-50 to-blue-200 flex items-center justify-center">
-                <svg class="w-24 h-24 text-primary-400/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-        {% endif %}
-      </div>
-
     </div>
   </div>
 </section>

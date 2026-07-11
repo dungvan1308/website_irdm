@@ -13,7 +13,17 @@ class HeroSection(BaseModel):
         _("eyebrow text"), max_length=300, blank=True,
         help_text=_("Small label shown above the heading (e.g. institute type)")
     )
-    heading = models.CharField(_("heading"), max_length=300)
+    heading = models.CharField(
+        _("heading line 1 (dark)"),
+        max_length=300,
+        help_text=_("First line of the hero title — displayed in dark blue (#094977)"),
+    )
+    heading_accent = models.CharField(
+        _("heading lines 2-3 (orange)"),
+        max_length=300,
+        blank=True,
+        help_text=_("Remaining lines of the hero title — displayed in orange (#EC6D29)"),
+    )
     subheading = models.CharField(_("subheading"), max_length=300, blank=True)
     description = models.TextField(_("description"), blank=True)
     primary_cta_label = models.CharField(_("primary CTA label"), max_length=100, blank=True)
@@ -21,7 +31,16 @@ class HeroSection(BaseModel):
     secondary_cta_label = models.CharField(_("secondary CTA label"), max_length=100, blank=True)
     secondary_cta_url = models.CharField(_("secondary CTA URL"), max_length=500, blank=True)
     background_image = models.ImageField(
-        _("background image"), upload_to="home/hero/", blank=True
+        _("background image (section overlay)"),
+        upload_to="home/hero/",
+        blank=True,
+        help_text=_("Used as a subtle full-section background overlay (opacity ~10%)"),
+    )
+    hero_image = models.ImageField(
+        _("hero illustration (right panel)"),
+        upload_to="home/hero/",
+        blank=True,
+        help_text=_("Illustration displayed on the right panel, e.g. laptop/globe image"),
     )
     quote_strip_text = models.CharField(
         _("quote strip text"), max_length=300, blank=True,

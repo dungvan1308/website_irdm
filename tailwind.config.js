@@ -38,6 +38,22 @@ module.exports = {
     "aspect-[16/9]",
     // Knowledge module — backdrop
     "backdrop-blur-sm",
+    // Hero section — Figma exact values (arbitrary classes not in template scan)
+    "font-utm-banque",
+    "text-[40px]",
+    "lg:text-[48px]",
+    "leading-[1.5]",
+    "lg:leading-[72px]",
+    "tracking-[0px]",
+    "text-[#094977]",
+    "text-[#EC6D29]",
+    "min-h-[864px]",
+    "max-w-[1440px]",
+    "lg:px-20",
+    "sm:px-10",
+    "lg:py-[160px]",
+    "sm:py-28",
+    "py-20",
   ],
   theme: {
     extend: {
@@ -55,10 +71,15 @@ module.exports = {
           900: '#1e3a8a',
           950: '#172554',
         },
+        brand: {
+          dark:   '#094977',
+          accent: '#EC6D29',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         display: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Inter', 'ui-sans-serif', 'sans-serif'],
+        'utm-banque': ['"UTM Banque"', 'Inter', 'ui-sans-serif', 'sans-serif'],
       },
     },
   },
