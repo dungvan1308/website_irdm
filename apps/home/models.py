@@ -259,6 +259,10 @@ class CoreCapability(BaseModel):
         _("icon"), max_length=100, blank=True,
         help_text=_("Heroicon name, e.g. cpu-chip")
     )
+    icon_image = models.ImageField(
+        _("icon image"), upload_to="home/capability_icons/", blank=True,
+        help_text=_("Upload ảnh icon (SVG/PNG, nền trong suốt). Nếu có sẽ thay thế icon mặc định.")
+    )
     title = models.CharField(_("title"), max_length=200)
     description = models.TextField(_("description"), blank=True)
     background_image = models.ImageField(
