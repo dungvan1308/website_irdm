@@ -66,8 +66,8 @@
               {% endif %}
             </div>
 
-            {# Card body: pt-12=48px clears 28px badge overlap + 20px gap before title #}
-            <div class="flex-1 flex flex-col px-5 pb-5 pt-12">
+            {# Card body: inline padding-top to clear badge + 2-line gap, avoids Tailwind compile dependency #}
+            <div class="flex-1 flex flex-col px-5 pb-5" style="padding-top:4.5rem;">
               <h3 class="text-sm font-bold text-primary-700 mb-2 leading-snug">{{ segment.title }}</h3>
               {% if segment.description %}
                 <p class="text-sm text-slate-500 leading-relaxed mb-4 flex-1">{{ segment.description }}</p>
