@@ -46,12 +46,16 @@
             <div class="relative z-10 flex flex-col flex-1 p-5">
               {# Icon top-left #}
               <div class="w-9 h-9 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3 flex-shrink-0">
-                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
-                </svg>
+                {% if cap.icon_image %}
+                  <img src="{{ cap.icon_image.url }}" alt="" class="w-5 h-5 object-contain" aria-hidden="true" />
+                {% else %}
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
+                  </svg>
+                {% endif %}
               </div>
               {# Title at top #}
-              <h3 class="text-base sm:text-lg font-bold text-white leading-snug uppercase tracking-wide mb-2">{{ cap.title }}</h3>
+              <h3 class="font-display text-[22px] leading-7 font-bold text-white normal-case tracking-normal mb-2">{{ cap.title }}</h3>
               {# Spacer pushes description to bottom #}
               <div class="flex-1"></div>
               {# Description at bottom #}
