@@ -46,6 +46,12 @@ class HeroSection(BaseModel):
         _("quote strip text"), max_length=300, blank=True,
         help_text=_("Quote shown in the dark strip at the bottom of the hero")
     )
+    quote_icon = models.ImageField(
+        _("quote icon"),
+        upload_to="home/hero/icons/",
+        blank=True,
+        help_text=_("Icon displayed next to the quote text (PNG/SVG ~24×24px). Falls back to default chat-bubble icon if empty.")
+    )
 
     class Meta(BaseModel.Meta):
         verbose_name = _("hero section")

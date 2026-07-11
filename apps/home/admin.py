@@ -47,7 +47,7 @@ class HeroSectionAdmin(admin.ModelAdmin):
                 "description",
                 "background_image",
                 "hero_image",
-                "quote_strip_text",
+                ("quote_strip_text", "quote_icon"),
             )},
         ),
         (
