@@ -140,6 +140,10 @@ class AudienceSegment(BaseModel):
         _("icon"), max_length=100, blank=True,
         help_text=_("Heroicon name, e.g. building-office")
     )
+    icon_image = models.ImageField(
+        _("icon image"), upload_to="home/audience_icons/", blank=True,
+        help_text=_("Upload ảnh icon (PNG/SVG nền trong suốt, ~56×56px). Hiển thị trong badge bo tròn trắng ở góc dưới ảnh card.")
+    )
     image = models.ImageField(
         _("card image"), upload_to="home/audience/", blank=True,
         help_text=_("Illustration image shown on the audience card.")

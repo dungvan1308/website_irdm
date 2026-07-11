@@ -97,18 +97,33 @@ class AudienceSegmentAdmin(admin.ModelAdmin):
     list_display = ("title", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
     inlines = [AudienceTagInline]
-    readonly_fields = ("image_preview",)
+    readonly_fields = ("image_preview", "icon_image_preview")
     fieldsets = (
-        ("Content", {"fields": ("icon", "title", "description")}),
-        ("Image", {"fields": ("image", "image_preview")}),
+        ("Content", {"fields": ("title", "description")}),
+        ("Icon Badge", {
+            "fields": ("icon_image", "icon_image_preview", "icon"),
+            "description": "Upload ảnh icon (PNG/SVG nền trong suốt, ~56×56px) hiển thị trong badge bo tròn trắng ở góc dưới ảnh card. Trường 'icon' là Heroicon name dự phòng khi chưa có ảnh.",
+        }),
+        ("Card Image", {"fields": ("image", "image_preview")}),
         ("CTA", {"fields": ("cta_label", "cta_url")}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 
-    @admin.display(description="Image preview")
+    @admin.display(description="Card image preview")
     def image_preview(self, obj):
         if obj.image:
             return format_html('<img src="{}" style="height:80px;border-radius:4px;object-fit:cover;"/>', obj.image.url)
+        return "—"
+
+    @admin.display(description="Icon badge preview")
+    def icon_image_preview(self, obj):
+        if obj.icon_image:
+            return format_html(
+                '<div style="width:56px;height:56px;border-radius:99px;background:#fff;border:1px solid #e5e7eb;'
+                'display:flex;align-items:center;justify-content:center;padding:13px;box-shadow:0 1px 3px rgba(0,0,0,.1);">'
+                '<img src="{}" style="width:100%;height:100%;object-fit:contain;"/></div>',
+                obj.icon_image.url
+            )
         return "—"
 
 
