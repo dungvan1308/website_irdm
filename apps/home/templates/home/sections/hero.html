@@ -3,11 +3,11 @@
   class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 min-h-[864px]"
   aria-label="{% trans 'Hero' %}"
 >
-  {# Hero illustration — absolute right, full section height, no card wrapper #}
+  {# Hero illustration — absolute inset-0, fill full section (width + height) #}
   {% if hero and hero.hero_image %}
-    <div class="absolute top-0 right-0 h-full w-[55%] pointer-events-none select-none" aria-hidden="true">
+    <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
       <img src="{{ hero.hero_image.url }}" alt=""
-           class="h-full w-full object-contain object-right-bottom" />
+           class="h-full w-full object-cover object-right" />
     </div>
   {% endif %}
 
