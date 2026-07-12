@@ -31,7 +31,7 @@ class CapabilityNeedItemInline(admin.TabularInline):
 class CapabilityHowStepInline(admin.TabularInline):
     model = CapabilityHowStep
     extra = 1
-    fields = ("title", "icon", "display_order", "is_active")
+    fields = ("title", "icon", "step_image", "display_order", "is_active")
 
 
 class CapabilityOutputInline(admin.TabularInline):
@@ -53,7 +53,7 @@ class CapabilityListingPageAdmin(admin.ModelAdmin):
     list_display = ("heading", "is_active")
     fieldsets = (
         ("Hero", {
-            "fields": ("section_label", "heading", "description"),
+            "fields": ("section_label", "heading", "description", "hero_image"),
         }),
         ("Overview", {
             "fields": ("overview_heading", "overview_description"),
@@ -84,13 +84,13 @@ class CapabilityAdmin(admin.ModelAdmin):
             "fields": ("title", "slug", "section_label"),
         }),
         ("Hero / Listing", {
-            "fields": ("summary", "thumbnail", "hero_image", "description"),
+            "fields": ("summary", "thumbnail", "card_icon", "hero_image", "description"),
         }),
         ("What-is section", {
-            "fields": ("what_is_label", "what_is_description"),
+            "fields": ("what_is_label", "what_is_description", "what_is_image"),
         }),
         ("Section labels", {
-            "fields": ("need_section_label", "how_label", "output_label"),
+            "fields": ("need_section_label", "need_section_intro", "how_label", "output_label"),
         }),
         ("CTA buttons", {
             "fields": (
@@ -116,7 +116,7 @@ class CapabilityCaseStudyAdmin(admin.ModelAdmin):
     inlines = [CapabilityCaseStudyTagInline]
     fieldsets = (
         ("Relationship", {
-            "fields": ("capability", "number"),
+            "fields": ("capability", "number", "image"),
         }),
         ("Content", {
             "fields": ("category_label", "title", "description"),
