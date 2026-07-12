@@ -20,6 +20,12 @@ class CapabilityListingPage(BaseModel):
     overview_description = models.TextField(_("overview description"), blank=True)
     cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
     cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+    hero_image = models.ImageField(
+        _("hero background image"),
+        upload_to="capability/listing/",
+        blank=True,
+        help_text=_("Full-width background photo in the listing page hero section."),
+    )
 
     class Meta(BaseModel.Meta):
         verbose_name = _("capability listing page")
@@ -45,6 +51,12 @@ class Capability(BaseModel):
     thumbnail = models.ImageField(
         _("thumbnail"), upload_to="capability/thumbnails/", blank=True
     )
+    card_icon = models.ImageField(
+        _("card icon"),
+        upload_to="capability/icons/",
+        blank=True,
+        help_text=_("Small icon (PNG/SVG ~40×40 px) shown in frosted-glass box on the listing card top-left."),
+    )
     hero_image = models.ImageField(
         _("hero image"), upload_to="capability/hero/", blank=True,
         help_text=_("Background image for the detail page hero."),
@@ -68,11 +80,22 @@ class Capability(BaseModel):
     what_is_description = models.TextField(
         _("'What is' description"), blank=True
     )
+    what_is_image = models.ImageField(
+        _("'What is' illustration"),
+        upload_to="capability/what-is/",
+        blank=True,
+        help_text=_("Infographic/diagram shown on the left side of the 'What is' section."),
+    )
 
     # When-needed section
     need_section_label = models.CharField(
         _("'When needed' section label"), max_length=200,
         default="Khi nào tổ chức cần năng lực này?",
+    )
+    need_section_intro = models.TextField(
+        _("'When needed' intro text"),
+        blank=True,
+        help_text=_("Intro paragraph shown on the left column of the 'When needed' section."),
     )
 
     # How-we-work section
@@ -172,6 +195,12 @@ class CapabilityHowStep(BaseModel):
         _("icon"), max_length=100, blank=True,
         help_text=_("Heroicon name, e.g. magnifying-glass"),
     )
+    step_image = models.ImageField(
+        _("step photo"),
+        upload_to="capability/how-steps/",
+        blank=True,
+        help_text=_("Photo shown at the top of the how-step card (landscape ~16:9)."),
+    )
 
     class Meta(BaseModel.Meta):
         verbose_name = _("capability how step")
@@ -215,6 +244,12 @@ class CapabilityCaseStudy(BaseModel):
         verbose_name=_("capability"),
     )
     number = models.PositiveSmallIntegerField(_("number"), default=1)
+    image = models.ImageField(
+        _("case study image"),
+        upload_to="capability/case-studies/",
+        blank=True,
+        help_text=_("Full-width photo shown on the case study card (landscape ~16:9)."),
+    )
     category_label = models.CharField(
         _("category label"), max_length=200,
         blank=True,
