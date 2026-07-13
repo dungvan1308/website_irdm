@@ -1,107 +1,154 @@
 {% load i18n %}
 <section
-  class="relative min-h-screen flex flex-col overflow-hidden"
+  class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100"
   aria-label="{% trans 'Hero' %}"
 >
+  {# Background image with subtle overlay when set #}
   {% if hero and hero.background_image %}
-    <div class="absolute inset-0 z-0">
-      <img src="{{ hero.background_image.url }}" alt="" class="w-full h-full object-cover object-center" loading="eager" aria-hidden="true" />
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <img src="{{ hero.background_image.url }}" alt=""
+           class="w-full h-full object-cover opacity-10" />
     </div>
-  {% else %}
-    <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800" aria-hidden="true"></div>
   {% endif %}
 
-  <div class="absolute inset-0 z-10 bg-primary-950/65" aria-hidden="true"></div>
+  {# Subtle decorative grid overlay #}
+  <div class="absolute inset-0 opacity-20" aria-hidden="true"
+       style="background-image: radial-gradient(circle at 1px 1px, #93c5fd 1px, transparent 0); background-size: 40px 40px;"></div>
 
-  <div class="absolute inset-0 z-10 opacity-10" aria-hidden="true"
-       style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
-  </div>
+  <div class="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-40 lg:pb-20">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-  <div class="relative z-20 flex-1 flex items-center">
-    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-32 lg:py-48">
-      <div class="max-w-3xl">
+      {# Left: Content #}
+      <div>
         {% if hero %}
+          {# Eyebrow pill #}
           {% if hero.eyebrow_text %}
-            <p class="inline-flex items-center gap-3 text-primary-300 text-xs font-semibold uppercase tracking-widest mb-6">
-              <span class="w-8 h-px bg-primary-400 flex-shrink-0" aria-hidden="true"></span>
-              {{ hero.eyebrow_text }}
-            </p>
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100/80 rounded-full mb-6 border border-blue-200">
+              <span class="w-2 h-2 rounded-full bg-primary-600 flex-shrink-0" aria-hidden="true"></span>
+              <span class="text-primary-800 text-xs font-semibold uppercase tracking-wider">{{ hero.eyebrow_text }}</span>
+            </div>
           {% elif hero.subheading %}
-            <p class="inline-flex items-center gap-3 text-primary-300 text-xs font-semibold uppercase tracking-widest mb-6">
-              <span class="w-8 h-px bg-primary-400 flex-shrink-0" aria-hidden="true"></span>
-              {{ hero.subheading }}
-            </p>
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100/80 rounded-full mb-6 border border-blue-200">
+              <span class="w-2 h-2 rounded-full bg-primary-600 flex-shrink-0" aria-hidden="true"></span>
+              <span class="text-primary-800 text-xs font-semibold uppercase tracking-wider">{{ hero.subheading }}</span>
+            </div>
           {% endif %}
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 uppercase">
+          {# Heading — first part navy, split shown via CMS content #}
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 leading-tight uppercase tracking-tight mb-6">
             {{ hero.heading }}
           </h1>
 
           {% if hero.description %}
-            <p class="text-base sm:text-lg text-white/75 leading-relaxed mb-10 max-w-2xl">{{ hero.description }}</p>
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-xl">{{ hero.description }}</p>
           {% endif %}
 
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
             {% if hero.primary_cta_label and hero.primary_cta_url %}
               <a href="{{ hero.primary_cta_url }}"
-                 class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all duration-150 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                 class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-150 shadow-md hover:shadow-lg hover:-translate-y-0.5">
                 {{ hero.primary_cta_label }}
-                <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
               </a>
             {% endif %}
             {% if hero.secondary_cta_label and hero.secondary_cta_url %}
               <a href="{{ hero.secondary_cta_url }}"
-                 class="inline-flex items-center justify-center px-8 py-4 border border-white/30 hover:border-white/60 text-white font-semibold rounded-xl transition-all duration-150 hover:bg-white/10 backdrop-blur-sm">
+                 class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-orange-500 text-orange-600 font-semibold rounded-lg transition-all duration-150 hover:bg-orange-50">
                 {{ hero.secondary_cta_label }}
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
               </a>
             {% endif %}
           </div>
 
           {% with tags=hero.pill_tags.all %}
             {% if tags %}
-              <div class="flex flex-wrap gap-2">
+              <div class="flex flex-wrap gap-2 mb-8">
                 {% for tag in tags %}
-                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/80 border border-white/20">{{ tag.label }}</span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-primary-300 text-primary-800 bg-white/60">{{ tag.label }}</span>
                 {% endfor %}
               </div>
             {% endif %}
           {% endwith %}
 
+          {% if hero.quote_strip_text %}
+            <div class="flex items-center gap-3 mt-6 pt-6 border-t border-blue-200">
+              <svg class="w-6 h-6 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.956.76-3.022.66-1.065 1.515-1.867 2.558-2.403L9.373 5c-.8.396-1.56.898-2.26 1.505-.71.607-1.34 1.305-1.9 2.094s-.98 1.68-1.25 2.69-.346 2.04-.217 3.1c.168 1.4.62 2.52 1.356 3.35.735.84 1.652 1.26 2.748 1.26.965 0 1.766-.29 2.4-.878.628-.576.94-1.365.94-2.368l.002.003zm9.124 0c0-.88-.23-1.618-.69-2.217-.326-.42-.77-.692-1.327-.817-.56-.124-1.074-.13-1.54-.022-.16-.94.09-1.95.75-3.02.66-1.06 1.514-1.86 2.557-2.4L18.49 5c-.8.396-1.555.898-2.26 1.505-.708.607-1.34 1.305-1.894 2.094-.556.79-.97 1.68-1.24 2.69-.273 1-.345 2.04-.217 3.1.168 1.4.62 2.52 1.356 3.35.735.84 1.652 1.26 2.748 1.26.965 0 1.766-.29 2.4-.878.628-.576.94-1.365.94-2.368l.002.003z"/>
+              </svg>
+              <p class="text-sm font-bold text-orange-600 uppercase tracking-wide">&ldquo;{{ hero.quote_strip_text }}&rdquo;</p>
+            </div>
+          {% endif %}
+
         {% else %}
-          <p class="inline-flex items-center gap-3 text-primary-300 text-xs font-semibold uppercase tracking-widest mb-6">
-            <span class="w-8 h-px bg-primary-400 flex-shrink-0" aria-hidden="true"></span>
-            {% trans "Research · Science · Technology · Innovation" %}
-          </p>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 uppercase">
+          {# Fallback content #}
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100/80 rounded-full mb-6 border border-blue-200">
+            <span class="w-2 h-2 rounded-full bg-primary-600 flex-shrink-0" aria-hidden="true"></span>
+            <span class="text-primary-800 text-xs font-semibold uppercase tracking-wider">{% trans "Research · Science · Technology · Innovation" %}</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 leading-tight uppercase tracking-tight mb-6">
             {% trans "Building Solutions from Research, Data and Interdisciplinary Knowledge" %}
           </h1>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/giai-phap/"
-               class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all duration-150">
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-150">
               {% trans "Explore Solutions" %}
-              <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
             <a href="/ve-irdm/"
-               class="inline-flex items-center justify-center px-8 py-4 border border-white/30 hover:border-white/60 text-white font-semibold rounded-xl transition-all duration-150 hover:bg-white/10">
+               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-orange-500 text-orange-600 font-semibold rounded-lg transition-all duration-150 hover:bg-orange-50">
               {% trans "View IRDM Capabilities" %}
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
             </a>
           </div>
         {% endif %}
       </div>
+
+      {# Right: Hero image or decorative placeholder #}
+      <div class="relative hidden lg:block">
+        {% if hero and hero.background_image %}
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img src="{{ hero.background_image.url }}"
+                 alt=""
+                 class="w-full h-auto object-cover"
+                 loading="eager"
+                 aria-hidden="true" />
+          </div>
+        {% else %}
+          {# Decorative placeholder — stacked cards with blue tint #}
+          <div class="relative h-96 lg:h-[480px]">
+            <div class="absolute top-0 right-0 w-72 h-48 rounded-2xl bg-primary-100 shadow-lg rotate-3 overflow-hidden" aria-hidden="true">
+              <div class="w-full h-full bg-gradient-to-br from-primary-200 to-primary-400 flex items-center justify-center">
+                <svg class="w-24 h-24 text-primary-600/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute top-16 left-0 w-64 h-44 rounded-2xl bg-white shadow-xl overflow-hidden" aria-hidden="true">
+              <div class="w-full h-full bg-gradient-to-br from-slate-100 to-blue-100 flex items-center justify-center">
+                <svg class="w-20 h-20 text-primary-500/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-0 right-8 w-80 h-52 rounded-2xl bg-white shadow-xl overflow-hidden" aria-hidden="true">
+              <div class="w-full h-full bg-gradient-to-br from-blue-50 to-blue-200 flex items-center justify-center">
+                <svg class="w-24 h-24 text-primary-400/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
     </div>
   </div>
-
-  {% if hero and hero.quote_strip_text %}
-    <div class="relative z-20 bg-primary-900/80 backdrop-blur-sm border-t border-white/10 py-5">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-center text-white/90 text-base sm:text-lg font-medium italic">
-          &ldquo;{{ hero.quote_strip_text }}&rdquo;
-        </p>
-      </div>
-    </div>
-  {% endif %}
 </section>
