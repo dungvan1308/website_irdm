@@ -1,6 +1,6 @@
 {% load i18n %}
-{# Capability card — full-image overlay style (Figma Subpage_capability_v2) #}
-<article class="group relative rounded-2xl overflow-hidden bg-primary-950 cursor-pointer" style="aspect-ratio: 4/5;">
+{# Capability card — full-image overlay, flex-col 3-zone layout #}
+<article class="group relative rounded-2xl overflow-hidden bg-primary-950" style="aspect-ratio: 4/5;">
 
   {# Background thumbnail — scale on hover #}
   {% if cap.thumbnail %}
@@ -9,31 +9,40 @@
          loading="lazy" aria-hidden="true" />
   {% endif %}
 
-  {# Dark gradient overlay: stronger at top + bottom, lighter in middle #}
-  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/45" aria-hidden="true"></div>
+  {# Gradient: dark top (title readable) → transparent mid (image visible) → dark bottom (summary/CTA readable) #}
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/75" aria-hidden="true"></div>
 
-  {# ── Top area: frosted-glass icon box + title ── #}
-  <div class="absolute top-0 left-0 right-0 p-5 flex items-start gap-3">
-    {% if cap.card_icon %}
-      <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm border border-white/25 flex items-center justify-center">
-        <img src="{{ cap.card_icon.url }}" alt="" class="w-5 h-5 object-contain" aria-hidden="true" />
-      </div>
-    {% else %}
-      <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm border border-white/25 flex items-center justify-center" aria-hidden="true">
-        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-        </svg>
-      </div>
-    {% endif %}
-    <h3 class="text-white font-bold text-base leading-snug pt-1 line-clamp-3">{{ cap.title }}</h3>
-  </div>
+  {# ── Content: flex-col fills full card ── #}
+  <div class="absolute inset-0 flex flex-col p-5">
 
-  {# ── Bottom area: summary + "Khám phá" link ── #}
-  <div class="absolute bottom-0 left-0 right-0 p-5">
+    {# ZONE 1 — TOP: frosted-glass icon + title (SF Display 22px Bold #FFFFFF) #}
+    <div class="flex items-start gap-3 flex-shrink-0">
+      {% if cap.card_icon %}
+        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm border border-white/25 flex items-center justify-center">
+          <img src="{{ cap.card_icon.url }}" alt="" class="w-5 h-5 object-contain" aria-hidden="true" />
+        </div>
+      {% else %}
+        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm border border-white/25 flex items-center justify-center" aria-hidden="true">
+          <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+          </svg>
+        </div>
+      {% endif %}
+      <h3 class="font-display text-[22px] font-bold leading-snug text-white pt-1">{{ cap.title }}</h3>
+    </div>
+
+    {# ZONE 2 — SPACER: pushes summary + CTA to bottom #}
+    <div class="flex-1"></div>
+
+    {# ZONE 3a — SUMMARY: SF Display 14px Regular #FFFFFF (separate from CTA) #}
     {% if cap.summary %}
-      <p class="text-white/85 text-sm leading-relaxed line-clamp-2 mb-3">{{ cap.summary }}</p>
+      <p class="font-display text-[14px] font-normal leading-relaxed text-white line-clamp-3 mb-4">
+        {{ cap.summary }}
+      </p>
     {% endif %}
+
+    {# ZONE 3b — CTA LINK: tách riêng, luôn ở bottom #}
     <a href="{{ cap.get_absolute_url }}"
        class="relative z-20 inline-flex items-center gap-1.5 text-orange-400 text-xs font-semibold hover:text-orange-300 transition-colors">
       {% trans "Khám phá thêm năng lực" %} →
@@ -41,9 +50,10 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
       </svg>
     </a>
+
   </div>
 
-  {# Full-card clickable link overlay (behind CTA link z-20) #}
+  {# Full-card clickable overlay (z-10, below CTA z-20) #}
   <a href="{{ cap.get_absolute_url }}"
      class="absolute inset-0 z-10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-900"
      aria-label="{{ cap.title }}" tabindex="-1"></a>
