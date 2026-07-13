@@ -8,18 +8,16 @@
   {% else %}
     <div class="absolute inset-0 z-0 bg-gradient-to-r from-primary-950 via-primary-900 to-primary-800" aria-hidden="true"></div>
   {% endif %}
-  {# Gradient overlay: dark on left, transparent on right to show image #}
-  <div class="absolute inset-0 z-10 bg-gradient-to-r from-primary-950/90 via-primary-950/75 to-primary-950/40" aria-hidden="true"></div>
-
+  <div class="absolute inset-0 z-10 bg-primary-950/70" aria-hidden="true"></div>
   <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
     <div class="max-w-2xl">
       {% if cta_banner.section_label %}
-        <p class="inline-flex items-center gap-3 text-orange-400 text-xs font-semibold uppercase tracking-widest mb-4">
-          <span class="w-6 h-px bg-orange-400" aria-hidden="true"></span>
+        <p class="inline-flex items-center gap-3 text-primary-300 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
           {{ cta_banner.section_label }}
         </p>
       {% endif %}
-      <h2 id="cta-banner-heading" class="font-utm-banque font-normal text-[40px] leading-[56px] tracking-normal uppercase text-white mb-4">
+      <h2 id="cta-banner-heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
         {{ cta_banner.heading }}
       </h2>
       {% if cta_banner.description %}
@@ -27,7 +25,7 @@
       {% endif %}
       {% if cta_banner.cta_label and cta_banner.cta_url %}
         <a href="{{ cta_banner.cta_url }}"
-           class="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-150 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+           class="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-400 text-white font-semibold rounded-xl transition-all duration-150 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
           {{ cta_banner.cta_label }}
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

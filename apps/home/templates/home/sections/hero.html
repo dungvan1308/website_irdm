@@ -1,118 +1,107 @@
 {% load i18n %}
 <section
-  class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 min-h-[864px]"
+  class="relative min-h-screen flex flex-col overflow-hidden"
   aria-label="{% trans 'Hero' %}"
 >
-  {# Hero illustration — absolute inset-0, fill full section (width + height) #}
-  {% if hero and hero.hero_image %}
-    <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-      <img src="{{ hero.hero_image.url }}" alt=""
-           class="h-full w-full object-cover object-right" />
+  {% if hero and hero.background_image %}
+    <div class="absolute inset-0 z-0">
+      <img src="{{ hero.background_image.url }}" alt="" class="w-full h-full object-cover object-center" loading="eager" aria-hidden="true" />
     </div>
+  {% else %}
+    <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800" aria-hidden="true"></div>
   {% endif %}
 
-  {# Content — left side, max 640px, vertically centred #}
-  <div class="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 flex items-center min-h-[864px]">
-    <div class="w-full lg:max-w-[640px] py-20 sm:py-28 lg:py-[160px]">
+  <div class="absolute inset-0 z-10 bg-primary-950/65" aria-hidden="true"></div>
+
+  <div class="absolute inset-0 z-10 opacity-10" aria-hidden="true"
+       style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+  </div>
+
+  <div class="relative z-20 flex-1 flex items-center">
+    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-32 lg:py-48">
+      <div class="max-w-3xl">
         {% if hero %}
-          {# Eyebrow pill #}
           {% if hero.eyebrow_text %}
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100/80 rounded-full mb-6 border border-blue-200">
-              <span class="w-2 h-2 rounded-full bg-primary-600 flex-shrink-0" aria-hidden="true"></span>
-              <span class="text-primary-800 text-xs font-semibold uppercase tracking-wider">{{ hero.eyebrow_text }}</span>
-            </div>
+            <p class="inline-flex items-center gap-3 text-primary-300 text-xs font-semibold uppercase tracking-widest mb-6">
+              <span class="w-8 h-px bg-primary-400 flex-shrink-0" aria-hidden="true"></span>
+              {{ hero.eyebrow_text }}
+            </p>
           {% elif hero.subheading %}
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100/80 rounded-full mb-6 border border-blue-200">
-              <span class="w-2 h-2 rounded-full bg-primary-600 flex-shrink-0" aria-hidden="true"></span>
-              <span class="text-primary-800 text-xs font-semibold uppercase tracking-wider">{{ hero.subheading }}</span>
-            </div>
+            <p class="inline-flex items-center gap-3 text-primary-300 text-xs font-semibold uppercase tracking-widest mb-6">
+              <span class="w-8 h-px bg-primary-400 flex-shrink-0" aria-hidden="true"></span>
+              {{ hero.subheading }}
+            </p>
           {% endif %}
 
-          {# Heading — line 1 dark blue, lines 2-3 orange (Figma spec) #}
-          <h1 class="font-utm-banque font-normal text-[40px] lg:text-[48px] leading-[1.5] lg:leading-[72px] tracking-normal mb-6">
-            <span class="block text-[#094977]">{{ hero.heading }}</span>
-            {% if hero.heading_accent %}
-              <span class="text-[#EC6D29]">{{ hero.heading_accent }}</span>
-            {% endif %}
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 uppercase">
+            {{ hero.heading }}
           </h1>
 
           {% if hero.description %}
-            <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-xl">{{ hero.description }}</p>
+            <p class="text-base sm:text-lg text-white/75 leading-relaxed mb-10 max-w-2xl">{{ hero.description }}</p>
           {% endif %}
 
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
             {% if hero.primary_cta_label and hero.primary_cta_url %}
               <a href="{{ hero.primary_cta_url }}"
-                 class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-150 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                 class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all duration-150 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 {{ hero.primary_cta_label }}
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
               </a>
             {% endif %}
             {% if hero.secondary_cta_label and hero.secondary_cta_url %}
               <a href="{{ hero.secondary_cta_url }}"
-                 class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-orange-500 text-orange-600 font-semibold rounded-lg transition-all duration-150 hover:bg-orange-50">
+                 class="inline-flex items-center justify-center px-8 py-4 border border-white/30 hover:border-white/60 text-white font-semibold rounded-xl transition-all duration-150 hover:bg-white/10 backdrop-blur-sm">
                 {{ hero.secondary_cta_label }}
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                </svg>
               </a>
             {% endif %}
           </div>
 
           {% with tags=hero.pill_tags.all %}
             {% if tags %}
-              <div class="flex flex-wrap gap-2 mb-8">
+              <div class="flex flex-wrap gap-2">
                 {% for tag in tags %}
-                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-primary-300 text-primary-800 bg-white/60">{{ tag.label }}</span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/80 border border-white/20">{{ tag.label }}</span>
                 {% endfor %}
               </div>
             {% endif %}
           {% endwith %}
 
-          {% if hero.quote_strip_text %}
-            <div class="flex items-center gap-3 mt-6">
-              {# Quote icon — CMS upload nếu có, fallback sang SVG mặc định #}
-              {% if hero.quote_icon %}
-                <img src="{{ hero.quote_icon.url }}" alt=""
-                     class="w-6 h-6 flex-shrink-0 object-contain" aria-hidden="true" />
-              {% else %}
-                <svg class="w-6 h-6 text-[#1565C0] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"/>
-                </svg>
-              {% endif %}
-              <p class="font-display font-bold text-[18px] leading-7 uppercase text-[#1565C0]">&ldquo;{{ hero.quote_strip_text }}&rdquo;</p>
-            </div>
-          {% endif %}
-
         {% else %}
-          {# Fallback content #}
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100/80 rounded-full mb-6 border border-blue-200">
-            <span class="w-2 h-2 rounded-full bg-primary-600 flex-shrink-0" aria-hidden="true"></span>
-            <span class="text-primary-800 text-xs font-semibold uppercase tracking-wider">{% trans "Research · Science · Technology · Innovation" %}</span>
-          </div>
-          <h1 class="font-utm-banque font-normal text-[40px] lg:text-[48px] leading-[1.5] lg:leading-[72px] tracking-normal mb-6">
-            <span class="block text-[#094977]">{% trans "BUILDING SOLUTIONS FROM" %}</span>
-            <span class="text-[#EC6D29]">{% trans "RESEARCH, DATA AND INTERDISCIPLINARY KNOWLEDGE" %}</span>
+          <p class="inline-flex items-center gap-3 text-primary-300 text-xs font-semibold uppercase tracking-widest mb-6">
+            <span class="w-8 h-px bg-primary-400 flex-shrink-0" aria-hidden="true"></span>
+            {% trans "Research · Science · Technology · Innovation" %}
+          </p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 uppercase">
+            {% trans "Building Solutions from Research, Data and Interdisciplinary Knowledge" %}
           </h1>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/giai-phap/"
-               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-150">
+               class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 hover:bg-primary-500 text-white font-semibold rounded-xl transition-all duration-150">
               {% trans "Explore Solutions" %}
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
             <a href="/ve-irdm/"
-               class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-orange-500 text-orange-600 font-semibold rounded-lg transition-all duration-150 hover:bg-orange-50">
+               class="inline-flex items-center justify-center px-8 py-4 border border-white/30 hover:border-white/60 text-white font-semibold rounded-xl transition-all duration-150 hover:bg-white/10">
               {% trans "View IRDM Capabilities" %}
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
             </a>
           </div>
         {% endif %}
+      </div>
     </div>
   </div>
+
+  {% if hero and hero.quote_strip_text %}
+    <div class="relative z-20 bg-primary-900/80 backdrop-blur-sm border-t border-white/10 py-5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-white/90 text-base sm:text-lg font-medium italic">
+          &ldquo;{{ hero.quote_strip_text }}&rdquo;
+        </p>
+      </div>
+    </div>
+  {% endif %}
 </section>
