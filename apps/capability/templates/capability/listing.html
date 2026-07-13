@@ -79,29 +79,11 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {% if capabilities %}
-
-      {# Row 1: first 4 capabilities — 4-column grid #}
-      {% with row1=capabilities|slice:":4" %}
-        {% if row1 %}
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-5">
-            {% for cap in row1 %}
-              {% include "capability/_cap_card.html" with cap=cap %}
-            {% endfor %}
-          </div>
-        {% endif %}
-      {% endwith %}
-
-      {# Row 2: remaining capabilities — 3-column grid (wider cards) #}
-      {% with row2=capabilities|slice:"4:" %}
-        {% if row2 %}
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {% for cap in row2 %}
-              {% include "capability/_cap_card.html" with cap=cap %}
-            {% endfor %}
-          </div>
-        {% endif %}
-      {% endwith %}
-
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {% for cap in capabilities %}
+          {% include "capability/_cap_card.html" with cap=cap %}
+        {% endfor %}
+      </div>
     {% else %}
       <div class="text-center py-24">
         <svg class="mx-auto w-12 h-12 text-slate-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

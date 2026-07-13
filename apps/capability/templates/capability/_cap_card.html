@@ -34,17 +34,18 @@
     {% if cap.summary %}
       <p class="text-white/85 text-sm leading-relaxed line-clamp-2 mb-3">{{ cap.summary }}</p>
     {% endif %}
-    <span class="inline-flex items-center gap-1.5 text-orange-400 text-xs font-semibold">
-      {% trans "Khám phá thêm năng lực" %}
+    <a href="{{ cap.get_absolute_url }}"
+       class="relative z-20 inline-flex items-center gap-1.5 text-orange-400 text-xs font-semibold hover:text-orange-300 transition-colors">
+      {% trans "Khám phá thêm năng lực" %} →
       <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
       </svg>
-    </span>
+    </a>
   </div>
 
-  {# Full-card clickable link overlay #}
+  {# Full-card clickable link overlay (behind CTA link z-20) #}
   <a href="{{ cap.get_absolute_url }}"
-     class="absolute inset-0 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-900"
-     aria-label="{{ cap.title }}"></a>
+     class="absolute inset-0 z-10 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-900"
+     aria-label="{{ cap.title }}" tabindex="-1"></a>
 
 </article>
