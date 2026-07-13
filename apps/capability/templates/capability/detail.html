@@ -18,64 +18,68 @@
 
 {% block content %}
 
-{# ── Hero / Page Header (dark panel + split) ───────────────────────────────── #}
-<section class="relative overflow-hidden bg-[#0a1628] pt-32 pb-16 lg:pt-40 lg:pb-24"
-         aria-label="{% trans 'Capability hero' %}">
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+{# ── Hero (solution-style split card) ───────────────────────────────────────────────── #}
+<section class="pt-24 pb-0" aria-label="{% trans 'Capability hero' %}">
 
-      {# LEFT: breadcrumb + icon + title + description + tags #}
-      <div>
-        <nav class="flex items-center gap-2 text-sm text-white/50 mb-8 flex-wrap" aria-label="{% trans 'Breadcrumb' %}">
-          <a href="{% url 'home:index' %}" class="hover:text-white transition-colors">{% trans "Home" %}</a>
-          <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-          <a href="{% url 'capability:listing' %}" class="hover:text-white transition-colors">{% trans "N\u0103ng l\u1ef1c c\u1ed1t l\u00f5i" %}</a>
-          <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-          <span class="text-white/90 font-medium">{{ capability.title }}</span>
-        </nav>
+  {# Breadcrumb above card — light theme #}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <nav class="flex items-center gap-2 text-sm text-slate-500 flex-wrap" aria-label="{% trans 'Breadcrumb' %}">
+      <a href="{% url 'home:index' %}" class="hover:text-primary-700 transition-colors">{% trans "Trang chủ" %}</a>
+      <svg class="w-4 h-4 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <a href="{% url 'capability:listing' %}" class="hover:text-primary-700 transition-colors">{% trans "Năng lực" %}</a>
+      <svg class="w-4 h-4 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <span class="text-primary-700 font-medium">{{ capability.title }}</span>
+    </nav>
+  </div>
 
+  {# Split card: dark left + photo right #}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="rounded-2xl overflow-hidden flex flex-col lg:flex-row shadow-lg" style="min-height: 400px;">
+
+      {# LEFT: dark panel #}
+      <div class="lg:w-[55%] bg-primary-950 p-8 lg:p-12 flex flex-col">
+
+        {# Icon only — no section_label #}
         {% if capability.card_icon %}
-          <div class="w-16 h-16 rounded-2xl bg-primary-600 flex items-center justify-center mb-6 shadow-lg">
-            <img src="{{ capability.card_icon.url }}" alt="" class="w-8 h-8 object-contain" aria-hidden="true" />
+          <div class="w-12 h-12 rounded-xl bg-primary-700 flex items-center justify-center flex-shrink-0 mb-5">
+            <img src="{{ capability.card_icon.url }}" alt="" class="w-6 h-6 object-contain" aria-hidden="true" />
           </div>
         {% endif %}
 
-        <h1 class="font-utm-banque font-normal text-[36px] lg:text-[48px] leading-tight tracking-normal text-white uppercase mb-5">
+        {# Title: UTM Banque, 40px, Regular (400), Uppercase #}
+        <h1 class="font-utm-banque font-normal text-[40px] leading-tight tracking-normal text-white uppercase mb-4">
           {{ capability.title }}
         </h1>
 
+        {# Description: white body text #}
         {% if capability.description %}
-          <p class="text-base sm:text-lg text-white/75 leading-relaxed mb-6">{{ capability.description }}</p>
+          <p class="text-sm text-white/70 leading-relaxed">{{ capability.description }}</p>
         {% endif %}
 
-        {% if features %}
-          <div class="flex flex-wrap gap-2">
-            {% for tag in features %}
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border border-white/25 text-white/85 bg-white/10">{{ tag.label }}</span>
-            {% endfor %}
-          </div>
+      </div>
+
+      {# RIGHT: hero photo — fallback to thumbnail #}
+      <div class="lg:w-[45%] min-h-[260px] relative overflow-hidden bg-primary-800">
+        {% if capability.hero_image %}
+          <img src="{{ capability.hero_image.url }}" alt="{{ capability.title }}"
+               class="absolute inset-0 w-full h-full object-cover"
+               loading="eager" />
+        {% elif capability.thumbnail %}
+          <img src="{{ capability.thumbnail.url }}" alt="{{ capability.title }}"
+               class="absolute inset-0 w-full h-full object-cover"
+               loading="eager" />
         {% endif %}
       </div>
 
-      {# RIGHT: hero image #}
-      {% if capability.hero_image %}
-        <div class="hidden lg:block mt-10 lg:mt-0">
-          <div class="rounded-2xl overflow-hidden shadow-2xl">
-            <img src="{{ capability.hero_image.url }}"
-                 alt="{{ capability.title }}"
-                 class="w-full object-cover"
-                 loading="eager" />
-          </div>
-        </div>
-      {% endif %}
-
     </div>
   </div>
+
 </section>
+
 
 {# ── What-is Section ───────────────────────────────────────────────────────── #}
 {% if capability.what_is_description %}
