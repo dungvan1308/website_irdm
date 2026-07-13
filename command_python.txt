@@ -191,3 +191,5 @@ Lưu ý: Mỗi khi sửa file .po, cần chạy lại lệnh compile:
 .\venv\Scripts\python.exe -c "import polib; po = polib.pofile('locale/vi/LC_MESSAGES/django.po'); po.save_as_mofile('locale/vi/LC_MESSAGES/django.mo')"
 ```> .\venv\Scripts\python.exe -c "import polib; po = polib.pofile('locale/vi/LC_MESSAGES/django.po'); po.save_as_mofile('locale/vi/LC_MESSAGES/django.mo')"
 
+Gợi ý: Để tránh lặp lại vấn đề này, chạy lệnh sau trong terminal khi đang phát triển:
+npm run watch:css
