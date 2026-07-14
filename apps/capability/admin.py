@@ -31,7 +31,7 @@ class CapabilityNeedItemInline(admin.TabularInline):
 class CapabilityHowStepInline(admin.TabularInline):
     model = CapabilityHowStep
     extra = 1
-    fields = ("title", "icon", "step_image", "display_order", "is_active")
+    fields = ("title", "icon_image", "step_image", "display_order", "is_active")
 
 
 class CapabilityOutputInline(admin.TabularInline):
