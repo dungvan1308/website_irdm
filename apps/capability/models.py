@@ -195,6 +195,12 @@ class CapabilityHowStep(BaseModel):
         _("icon"), max_length=100, blank=True,
         help_text=_("Heroicon name, e.g. magnifying-glass"),
     )
+    icon_image = models.FileField(
+        _("icon image"),
+        upload_to="capability/how-step-icons/",
+        blank=True,
+        help_text=_("Upload SVG hoặc PNG icon (khuyến nghị: SVG 24×24px). Nếu có, sẽ ưu tiên hiển thị thay icon text."),
+    )
     step_image = models.ImageField(
         _("step photo"),
         upload_to="capability/how-steps/",
