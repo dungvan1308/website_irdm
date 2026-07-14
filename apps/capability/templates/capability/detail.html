@@ -168,23 +168,26 @@
                     hover:border-primary-200 hover:shadow-md
                     transition-all duration-200 overflow-hidden">
 
-          {# Number badge — diagonal tab, top-left corner #}
-          <div class="absolute top-0 left-0 w-11 h-11 bg-primary-700
-                      flex items-center justify-center"
-               style="clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%);">
-            <span class="text-white text-xs font-bold pr-2">
+          {# Number badge — right-triangle corner, top-left #}
+          <div class="absolute top-0 left-0 w-14 h-14 bg-primary-700"
+               style="clip-path: polygon(0 0, 100% 0, 0 100%);">
+              <span class="absolute text-white text-xs font-bold leading-none"
+                  style="top: 13px; left: 11px;">
               {{ item.number|stringformat:"02d" }}
             </span>
           </div>
 
-          {# Dashed circle + checkmark #}
-          <div class="w-24 h-24 rounded-full border-2 border-dashed border-primary-300
+          {# Outer dashed ring + inner solid circle + checkmark #}
+          <div class="w-28 h-28 rounded-full border-2 border-dashed border-blue-300
                       flex items-center justify-center mb-5 flex-shrink-0">
-            <svg class="w-9 h-9 text-primary-500" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width="1.5" d="M5 13l4 4L19 7"/>
-            </svg>
+            <div class="w-20 h-20 rounded-full bg-white border border-gray-100 shadow-sm
+                        flex items-center justify-center">
+              <svg class="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24"
+                   stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
           </div>
 
           {# Item text #}
