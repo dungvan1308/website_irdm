@@ -410,42 +410,7 @@
 </section>
 {% endif %}
 
-{# ── Capability CTAs ───────────────────────────────────────────────────────── #}
-{% if capability.cta_primary_label or capability.cta_secondary_label %}
-<section class="relative overflow-hidden py-16" aria-label="{% trans 'Capability CTA' %}">
-  {% if capability.hero_image %}
-    <div class="absolute inset-0 z-0" aria-hidden="true">
-      <img src="{{ capability.hero_image.url }}" alt="" class="w-full h-full object-cover" loading="lazy" />
-    </div>
-  {% else %}
-    <div class="absolute inset-0 z-0 bg-gradient-to-r from-primary-950 via-primary-900 to-primary-800" aria-hidden="true"></div>
-  {% endif %}
-  <div class="absolute inset-0 z-10 bg-primary-950/75" aria-hidden="true"></div>
 
-  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div class="flex flex-col sm:flex-row justify-center gap-4">
-      {% if capability.cta_primary_label and capability.cta_primary_url %}
-        <a href="{{ capability.cta_primary_url }}"
-           class="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-150 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-          {{ capability.cta_primary_label }}
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      {% endif %}
-      {% if capability.cta_secondary_label and capability.cta_secondary_url %}
-        <a href="{{ capability.cta_secondary_url }}"
-           class="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/40 hover:border-white/80 text-white font-semibold rounded-lg transition-all duration-150 hover:bg-white/10">
-          {{ capability.cta_secondary_label }}
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      {% endif %}
-    </div>
-  </div>
-</section>
-{% endif %}
 
 {# ── Related Capabilities ──────────────────────────────────────────────────── #}
 {% if related_capabilities %}
@@ -456,15 +421,15 @@
       <div>
         <p class="inline-flex items-center gap-3 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-2">
           <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
-          {% trans "Explore more" %}
+          {% trans "Khám phá thêm" %}
         </p>
         <h2 id="related-heading" class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight">
-          {% trans "Related Capabilities" %}
+          {% trans "Năng lực liên quan" %}
         </h2>
       </div>
       <a href="{% url 'capability:listing' %}"
          class="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors flex-shrink-0">
-        {% trans "All Capabilities" %}
+        {% trans "Tất cả năng lực" %}
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
@@ -517,9 +482,9 @@
 
 {# ── All Capabilities Navigation ───────────────────────────────────────────── #}
 {% if all_capabilities %}
-<section class="bg-white py-12 border-t border-gray-100" aria-label="{% trans 'All capabilities navigation' %}">
+<section class="bg-white py-12 border-t border-gray-100" aria-label="{% trans 'Tất cả năng lực' %}">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-5">{% trans "All Capabilities" %}</p>
+    <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-5">{% trans "Tất cả năng lực" %}</p>
     <div class="flex flex-wrap gap-3">
       {% for cap in all_capabilities %}
         <a href="{{ cap.get_absolute_url }}"
