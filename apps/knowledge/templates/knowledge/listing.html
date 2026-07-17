@@ -81,52 +81,90 @@
 {# ═══════════════════════════════════════════════════════════════════════════ #}
 {#  FILTER / SEARCH SECTION                                                   #}
 {# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  FILTER / SEARCH SECTION — Figma 3-column redesign                         #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
 <section class="bg-white py-10 border-b border-slate-100" aria-label="{% trans 'Filter content' %}">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <h2 class="text-xl font-bold text-slate-800 mb-1">
+    <h2 class="text-xl font-bold text-primary-900 mb-1">
       {% if listing_page and listing_page.filter_section_heading %}{{ listing_page.filter_section_heading }}{% else %}{% trans "Tìm nội dung phù hợp với nhu cầu của bạn" %}{% endif %}
     </h2>
-    <p class="text-sm text-slate-500 mb-5">
+    <p class="text-sm text-primary-600 mb-7">
       {% if listing_page and listing_page.filter_section_description %}{{ listing_page.filter_section_description }}{% else %}{% trans "Bộ lọc giúp người đọc tìm nhanh nội dung theo mục đích sử dụng, chủ đề quan tâm và nhóm đối tác liên quan." %}{% endif %}
     </p>
 
-    {% if not listing_page or listing_page.search_enabled %}
-      <form method="get" action="" class="mb-6" role="search" aria-label="{% trans 'Search articles' %}">
-        <div class="flex items-center bg-slate-50 border border-slate-200 rounded-xl overflow-hidden max-w-lg focus-within:border-primary-400 focus-within:ring-2 focus-within:ring-primary-100 transition-all">
-          <svg class="w-5 h-5 text-slate-400 ml-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
-          </svg>
-          <label for="knowledge-search" class="sr-only">{% trans "Search" %}</label>
-          <input id="knowledge-search" type="search" name="search"
-                 value="{{ search_query }}"
-                 placeholder="{% trans 'Tìm kiếm bài viết, báo cáo, chủ đề...' %}"
-                 class="flex-1 px-4 py-3 text-sm text-slate-800 placeholder-slate-400 outline-none bg-transparent" />
-          {% if search_query %}
-            <a href="{% url 'knowledge:listing' %}" class="flex-shrink-0 px-3 text-slate-400 hover:text-slate-600" aria-label="{% trans 'Clear' %}">
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-            </a>
-          {% endif %}
-        </div>
-      </form>
-    {% endif %}
+    {# Single form: search input + checkbox filters submitted together #}
+    <form method="get" id="knowledge-filter-form" action="">
 
-    {% if topics %}
-      <div class="flex flex-wrap gap-2" role="navigation" aria-label="{% trans 'Topics' %}">
-        <a href="{% url 'knowledge:listing' %}"
-           class="px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors
-                  {% if not active_topic and not search_query %}bg-primary-700 text-white border-primary-700{% else %}bg-white text-slate-600 border-slate-200 hover:border-primary-400 hover:text-primary-700{% endif %}">
-          {% trans "Tất cả" %}
-        </a>
-        {% for topic in topics %}
-          <a href="?topic={{ topic.slug }}"
-             class="px-4 py-1.5 rounded-full text-xs font-semibold border transition-colors whitespace-nowrap
-                    {% if active_topic == topic.slug %}bg-primary-700 text-white border-primary-700{% else %}bg-white text-slate-600 border-slate-200 hover:border-primary-400 hover:text-primary-700{% endif %}">
-            {{ topic.label }}
-          </a>
-        {% endfor %}
-      </div>
-    {% endif %}
+      {# ── Search input ────────────────────────────────────────── #}
+      {% if not listing_page or listing_page.search_enabled %}
+        <div class="mb-8 max-w-lg">
+          <div class="flex items-center border border-orange-400 rounded-lg overflow-hidden bg-white
+                      focus-within:ring-2 focus-within:ring-orange-200 transition-all">
+            <svg class="w-4 h-4 text-slate-400 ml-4 flex-shrink-0" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+            </svg>
+            <label for="knowledge-search" class="sr-only">{% trans "Tìm kiếm" %}</label>
+            <input id="knowledge-search" type="search" name="search"
+                   value="{{ search_query }}"
+                   placeholder="{% if listing_page and listing_page.search_placeholder %}{{ listing_page.search_placeholder }}{% else %}{% trans 'Tìm kiếm bài viết, báo cáo, chủ đề...' %}{% endif %}"
+                   class="flex-1 px-3 py-3 text-sm text-slate-700 placeholder-slate-400 outline-none bg-transparent" />
+            {% if search_query %}
+              <a href="{% url 'knowledge:listing' %}" class="flex-shrink-0 px-3 text-slate-400 hover:text-slate-600"
+                 aria-label="{% trans 'Xóa' %}">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      {# ── 3-column filter groups from CMS ────────────────────────────── #}
+      {% if filter_groups %}
+        <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+          {% for group in filter_groups %}
+            <div class="{% if not forloop.first %}pt-6 sm:pt-0 sm:pl-8{% endif %}
+                        {% if not forloop.last %}pb-6 sm:pb-0 sm:pr-8{% endif %}">
+              <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
+                {{ group.title }}
+              </p>
+              <div class="flex flex-wrap gap-2" role="group" aria-label="{{ group.title }}">
+                {% for item in group.active_items %}
+                  <label class="cursor-pointer select-none">
+                    <input type="checkbox"
+                           name="{{ group.param_key }}"
+                           value="{{ item.value }}"
+                           {% if item.is_checked %}checked{% endif %}
+                           class="sr-only"
+                           onchange="document.getElementById('knowledge-filter-form').submit()" />
+                    <span class="inline-flex items-center px-3 py-1.5 rounded text-xs font-medium border
+                                 transition-colors whitespace-nowrap"
+                          style="{% if item.is_checked %}border-color: {{ item.color_active }}; color: {{ item.color_active }};{% else %}border-color: {{ item.color_default }}; color: {{ item.color_default }};{% endif %}">
+                      {{ item.label }}
+                    </span>
+                  </label>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        {# Clear all filters — shown when any filter is active #}
+        {% if search_query or active_topic %}
+          <div class="mt-5">
+            <a href="{% url 'knowledge:listing' %}"
+               class="text-xs text-slate-400 hover:text-primary-600 transition-colors">
+              ✕ {% trans "Xóa bộ lọc" %}
+            </a>
+          </div>
+        {% endif %}
+      {% endif %}
+
+    </form>
 
   </div>
 </section>

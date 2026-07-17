@@ -23,6 +23,12 @@ class KnowledgeListingPage(BaseModel):
     hero_cta_secondary_label = models.CharField(_("hero CTA secondary label"), max_length=100, blank=True)
     hero_cta_secondary_url = models.CharField(_("hero CTA secondary URL"), max_length=500, blank=True)
     search_enabled = models.BooleanField(_("search enabled"), default=True)
+    search_placeholder = models.CharField(
+        _("search placeholder"),
+        max_length=200,
+        blank=True,
+        help_text=_("Placeholder text inside the search box."),
+    )
     filter_section_heading = models.CharField(_("filter section heading"), max_length=300, blank=True)
     filter_section_description = models.TextField(_("filter section description"), blank=True)
 
@@ -261,3 +267,57 @@ class KnowledgeNewsItem(BaseModel):
 
     def __str__(self) -> str:
         return self.title
+
+
+# ─── Filter Groups ─────────────────────────────────────────────────────────────────
+
+class KnowledgeFilterGroup(BaseModel):
+    """A labelled group of filter tags shown in the filter section of the listing page."""
+
+    title = models.CharField(
+        _("group title"), max_length=200,
+        help_text=_("Nhãn hiển thị phía trên nhóm, e.g. THEO LOẠI NỘI DUNG."),
+    )
+    param_key = models.SlugField(
+        _("URL param key"), max_length=50, unique=True,
+        help_text=_("Tên URL query param dùng cho nhóm này, e.g. ctype, topic, partner."),
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("filter group")
+        verbose_name_plural = _("filter groups")
+
+    def __str__(self) -> str:
+        return self.title
+
+
+class KnowledgeFilterItem(BaseModel):
+    """A single selectable tag inside a filter group."""
+
+    group = models.ForeignKey(
+        KnowledgeFilterGroup,
+        on_delete=models.CASCADE,
+        related_name="items",
+        verbose_name=_("group"),
+    )
+    label = models.CharField(_("label"), max_length=200)
+    value = models.CharField(
+        _("value"), max_length=200,
+        help_text=_("Slug value dùng làm URL query param value."),
+    )
+    color_default = models.CharField(
+        _("default color"), max_length=30, default="#6b7280",
+        help_text=_("Màu border & text mặc định (hex), e.g. #6b7280."),
+    )
+    color_active = models.CharField(
+        _("active color"), max_length=30, default="#f97316",
+        help_text=_("Màu border & text khi active (hex), e.g. #f97316."),
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("filter item")
+        verbose_name_plural = _("filter items")
+        unique_together = [("group", "value")]
+
+    def __str__(self) -> str:
+        return f"{self.group.title} — {self.label}"
