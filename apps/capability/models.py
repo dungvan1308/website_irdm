@@ -27,12 +27,59 @@ class CapabilityListingPage(BaseModel):
         help_text=_("Full-width background photo in the listing page hero section."),
     )
 
+    # ── CTA Section — Kết nối với IRDM ───────────────────────────────────────
+    cta_show = models.BooleanField(
+        _("show CTA section"),
+        default=True,
+        help_text=_("Hiển thị hoặc ẩn section 'Kết nối với IRDM' phía trên Footer."),
+    )
+    cta_bg_image = models.ImageField(
+        _("CTA background image"),
+        upload_to="capability/cta/",
+        blank=True,
+        help_text=_("Ảnh nền full-width cho section CTA."),
+    )
+    cta_eyebrow = models.CharField(
+        _("CTA eyebrow text"),
+        max_length=200,
+        blank=True,
+        help_text=_("Dòng chữ nhỏ phía trên tiêu đề, e.g. 'KẾT NỐI VỚI IRDM'."),
+    )
+    cta_heading = models.CharField(
+        _("CTA heading"),
+        max_length=400,
+        blank=True,
+        help_text=_("Tiêu đề lớn của section CTA."),
+    )
+    cta_description = models.TextField(
+        _("CTA description"),
+        blank=True,
+        help_text=_("Mô tả ngắn bên dưới tiêu đề CTA."),
+    )
+    cta_overlay_color = models.CharField(
+        _("overlay color"),
+        max_length=30,
+        default="#0a1628",
+        blank=True,
+        help_text=_("Màu overlay dạng hex, e.g. #0a1628."),
+    )
+    cta_overlay_opacity = models.PositiveSmallIntegerField(
+        _("overlay opacity (0–100)"),
+        default=75,
+        help_text=_("Độ mờ overlay: 0 = trong suốt, 100 = đục hoàn toàn."),
+    )
+
     class Meta(BaseModel.Meta):
         verbose_name = _("capability listing page")
         verbose_name_plural = _("capability listing pages")
 
     def __str__(self) -> str:
         return self.heading
+
+    @property
+    def cta_overlay_css(self) -> str:
+        """Return CSS opacity value (0.0–1.0) for the overlay div."""
+        return f"{min(max(self.cta_overlay_opacity, 0), 100) / 100:.2f}"
 
 
 # ─── Capability ───────────────────────────────────────────────────────────────

@@ -59,7 +59,18 @@ class CapabilityListingPageAdmin(admin.ModelAdmin):
             "fields": ("overview_heading", "overview_description"),
         }),
         ("CTA", {
-            "fields": ("cta_label", "cta_url"),
+            "description": "Section 'Kết nối với IRDM' hiển thị phía trên Footer.",
+            "fields": (
+                "cta_show",
+                "cta_bg_image",
+                "cta_eyebrow",
+                "cta_heading",
+                "cta_description",
+                "cta_label",
+                "cta_url",
+                "cta_overlay_color",
+                "cta_overlay_opacity",
+            ),
         }),
         ("Status", {
             "fields": ("is_active", "display_order"),
