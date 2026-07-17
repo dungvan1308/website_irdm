@@ -106,17 +106,72 @@
   </div>
 </section>
 
-{# ── Bottom CTA ────────────────────────────────────────────────────────────── #}
-{% if listing_page and listing_page.cta_label and listing_page.cta_url %}
-<section class="bg-primary-950 py-16" aria-label="{% trans 'CTA' %}">
-  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 text-center">
-    <a href="{{ listing_page.cta_url }}"
-       class="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all duration-150 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-      {{ listing_page.cta_label }}
-      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-      </svg>
-    </a>
+{# ── CTA Section — Kết nối với IRDM ───────────────────────────────────────── #}
+{% if listing_page and listing_page.cta_show %}
+<section class="relative overflow-hidden" aria-labelledby="cap-cta-heading">
+
+  {# Background image — CMS managed #}
+  {% if listing_page.cta_bg_image %}
+    <div class="absolute inset-0 z-0" aria-hidden="true">
+      <img src="{{ listing_page.cta_bg_image.url }}" alt=""
+           class="w-full h-full object-cover object-center" loading="lazy" />
+    </div>
+  {% else %}
+    <div class="absolute inset-0 z-0 bg-gradient-to-r from-primary-950 via-primary-900 to-primary-800"
+         aria-hidden="true"></div>
+  {% endif %}
+
+  {# Overlay — màu + độ mờ từ CMS #}
+  <div class="absolute inset-0 z-10" aria-hidden="true"
+       style="background-color: {{ listing_page.cta_overlay_color|default:'#0a1628' }};
+              opacity: {{ listing_page.cta_overlay_css }};"></div>
+
+  <div class="relative z-20 max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-24 lg:py-32">
+    <div class="max-w-2xl">
+
+      {# Eyebrow — dòng nhỏ phía trên #}
+      {% if listing_page.cta_eyebrow %}
+        <p class="inline-flex items-center gap-3 text-orange-400 text-xs font-semibold uppercase tracking-widest mb-4">
+          <span class="w-6 h-px bg-orange-400" aria-hidden="true"></span>
+          {{ listing_page.cta_eyebrow }}
+        </p>
+      {% endif %}
+
+      {# Heading #}
+      {% if listing_page.cta_heading %}
+        <h2 id="cap-cta-heading"
+            class="font-utm-banque font-normal text-[36px] sm:text-[44px] lg:text-[52px] leading-tight tracking-normal uppercase text-white mb-4">
+          {{ listing_page.cta_heading }}
+        </h2>
+      {% else %}
+        {# Fallback heading nếu chưa cấu hình #}
+        <h2 id="cap-cta-heading"
+            class="font-utm-banque font-normal text-[36px] sm:text-[44px] lg:text-[52px] leading-tight tracking-normal uppercase text-white mb-4">
+          {% trans "Kết nối với IRDM" %}
+        </h2>
+      {% endif %}
+
+      {# Description #}
+      {% if listing_page.cta_description %}
+        <p class="text-base text-white/70 leading-relaxed mb-8 max-w-xl">
+          {{ listing_page.cta_description }}
+        </p>
+      {% endif %}
+
+      {# Button #}
+      {% if listing_page.cta_label and listing_page.cta_url %}
+        <a href="{{ listing_page.cta_url }}"
+           class="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600
+                  text-white font-semibold rounded-lg transition-all duration-150
+                  shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+          {{ listing_page.cta_label }}
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      {% endif %}
+
+    </div>
   </div>
 </section>
 {% endif %}

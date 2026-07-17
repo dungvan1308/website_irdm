@@ -40,6 +40,18 @@ LISTING_PAGE = {
     ),
     "cta_label": "Liên hệ hợp tác",
     "cta_url": "/contact/",
+    # ── CTA Section — Kết nối với IRDM ───────────────────────────────────────
+    "cta_show": True,
+    "cta_eyebrow": "Kết nối với IRDM",
+    "cta_heading": (
+        "Cùng thiết kế giải pháp phù hợp với bối cảnh và mục tiêu phát triển của tổ chức"
+    ),
+    "cta_description": (
+        "Kết nối với Viện IRDM để cùng thiết kế giải pháp phù hợp với bối cảnh, "
+        "dữ liệu và mục tiêu phát triển của tổ chức của bạn."
+    ),
+    "cta_overlay_color": "#0a1628",
+    "cta_overlay_opacity": 75,
     "is_active": True,
     "display_order": 0,
 }
