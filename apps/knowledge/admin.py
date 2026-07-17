@@ -8,6 +8,8 @@ from .models import (
     KnowledgeCategory,
     KnowledgeDownload,
     KnowledgeFeaturedArticle,
+    KnowledgeFilterGroup,
+    KnowledgeFilterItem,
     KnowledgeListingPage,
     KnowledgeNewsItem,
     KnowledgeTopic,
@@ -52,7 +54,8 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
             ),
         }),
         ("Filter / Search Section", {
-            "fields": ("search_enabled", "filter_section_heading", "filter_section_description"),
+            "description": "Cấu hình section bộ lọc — các nhóm lọc được quản lý riêng tại Filter Groups.",
+            "fields": ("search_enabled", "search_placeholder", "filter_section_heading", "filter_section_description"),
         }),
         ("Featured Section", {
             "fields": ("featured_section_label", "featured_section_heading"),
@@ -191,10 +194,28 @@ class KnowledgeNewsItemAdmin(admin.ModelAdmin):
     fieldsets = (
         ("Identity", {"fields": ("title", "slug", "summary")}),
         ("Media", {"fields": ("thumbnail", "thumbnail_preview")}),
-        ("Classification", {"fields": ("category", "topics", "published_date", "source_url")}),
         ("Status", {"fields": ("is_published", "is_active", "display_order")}),
     )
 
     @admin.display(description="Thumbnail")
     def thumbnail_preview(self, obj):
         return _img_preview(obj.thumbnail, height=60)
+
+
+# ─── KnowledgeFilterGroup ──────────────────────────────────────────────────────
+
+class KnowledgeFilterItemInline(admin.TabularInline):
+    model = KnowledgeFilterItem
+    extra = 1
+    fields = ("label", "value", "color_default", "color_active", "display_order", "is_active")
+
+
+@admin.register(KnowledgeFilterGroup)
+class KnowledgeFilterGroupAdmin(admin.ModelAdmin):
+    list_display = ("title", "param_key", "display_order", "is_active")
+    list_editable = ("display_order", "is_active")
+    inlines = [KnowledgeFilterItemInline]
+    fieldsets = (
+        ("Group", {"fields": ("title", "param_key")}),
+        ("Status", {"fields": ("is_active", "display_order")}),
+    )

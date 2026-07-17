@@ -10,6 +10,8 @@ from .models import (
     KnowledgeArticle,
     KnowledgeCategory,
     KnowledgeDownload,
+    KnowledgeFilterGroup,
+    KnowledgeFilterItem,
     KnowledgeListingPage,
     KnowledgeNewsItem,
     KnowledgeTopic,
@@ -153,4 +155,42 @@ class KnowledgeService:
             .prefetch_related("topics")
             .order_by("display_order", "-published_date")
             [:limit]
+        )
+
+    # ─── Filter groups ────────────────────────────────────────────────────────
+
+    @staticmethod
+    def get_filter_groups() -> list:
+        """Return active filter groups with prefetched active items."""
+        return list(
+            KnowledgeFilterGroup.objects
+            .filter(is_active=True)
+            .prefetch_related(
+                Prefetch(
+                    "items",
+                    queryset=KnowledgeFilterItem.objects.filter(is_active=True).order_by("display_order"),
+                    to_attr="active_items",
+                )
+            )
+            .order_by("display_order")
+        )
+
+    @staticmethod
+    def filter_articles_multi(active_filters: dict) -> QuerySet:
+        """Filter articles by multiple filter groups. active_filters = {param_key: [values]}."""
+        qs = KnowledgeArticle.objects.filter(is_active=True, is_published=True)
+        topic_values = active_filters.get("topic", [])
+        ctype_values = active_filters.get("ctype", [])
+        partner_values = active_filters.get("partner", [])
+        if topic_values:
+            qs = qs.filter(topics__slug__in=topic_values)
+        if ctype_values:
+            qs = qs.filter(category__slug__in=ctype_values)
+        if partner_values:
+            qs = qs.filter(topics__slug__in=partner_values)
+        return (
+            qs.select_related("category")
+            .prefetch_related("topics")
+            .distinct()
+            .order_by("display_order", "-published_date")
         )

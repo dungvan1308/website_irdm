@@ -15,19 +15,34 @@ class KnowledgeListingView(TemplateView):
         context = super().get_context_data(**kwargs)
         listing_page = KnowledgeService.get_listing_page()
         context["listing_page"] = listing_page
-        context["topics"] = KnowledgeService.get_topics()
+        context["topics"] = KnowledgeService.get_topics()  # kept for Topic Browse section
 
-        active_topic = self.request.GET.get("topic", "").strip()
+        # ── Build filter groups + annotate active state ─────────────────────
+        filter_groups = KnowledgeService.get_filter_groups()
         search_query = self.request.GET.get("search", "").strip()
+        active_filters: dict[str, list[str]] = {}
+        for group in filter_groups:
+            values = self.request.GET.getlist(group.param_key)
+            active_filters[group.param_key] = values
+            for item in group.active_items:
+                item.is_checked = item.value in values
+
+        # backward-compat: single active_topic for Topic Browse section links
+        active_topic = self.request.GET.get("topic", "").strip()
+        context["filter_groups"] = filter_groups
+        context["active_filters"] = active_filters
         context["active_topic"] = active_topic
         context["search_query"] = search_query
+
+        # ── Decide which content to show ──────────────────────────────
+        has_active_filters = any(v for v in active_filters.values())
 
         if search_query:
             context["search_results"] = KnowledgeService.search_articles(search_query)
             context["categories"] = []
             context["featured_articles"] = []
-        elif active_topic:
-            context["search_results"] = KnowledgeService.filter_articles_by_topic(active_topic)
+        elif has_active_filters:
+            context["search_results"] = KnowledgeService.filter_articles_multi(active_filters)
             context["categories"] = []
             context["featured_articles"] = []
         else:

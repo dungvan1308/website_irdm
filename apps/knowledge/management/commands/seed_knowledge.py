@@ -24,6 +24,8 @@ from apps.knowledge.models import (
     KnowledgeCategory,
     KnowledgeDownload,
     KnowledgeFeaturedArticle,
+    KnowledgeFilterGroup,
+    KnowledgeFilterItem,
     KnowledgeListingPage,
     KnowledgeNewsItem,
     KnowledgeTopic,
@@ -596,4 +598,71 @@ class Command(BaseCommand):
             if created:
                 self.stdout.write(f"  News: {obj.title[:60]}")
 
+        # ── Filter Groups ───────────────────────────────────────────────────────────
+        self._seed_filter_groups()
+
         self.stdout.write(self.style.SUCCESS("Knowledge module seeded successfully."))
+
+    def _seed_filter_groups(self) -> None:
+        """Seed the 3 Figma filter groups and their items."""
+        FILTER_GROUPS = [
+            {
+                "title": "THEO LOẠI NỘI DUNG",
+                "param_key": "ctype",
+                "display_order": 1,
+                "items": [
+                    ("Công bố nghiên cứu",       "cong-bo-nghien-cuu",        1),
+                    ("Góc nhìn ngành",              "goc-nhin-nganh",            2),
+                    ("Tóm lược chính sách",         "tom-luoc-chinh-sach",       3),
+                    ("Báo cáo & tài liệu",          "bao-cao-tai-lieu",          4),
+                    ("Tin IRDM",                     "tin-irdm",                 5),
+                    ("Sự kiện",                     "su-kien",                   6),
+                ],
+            },
+            {
+                "title": "THEO CHỦ ĐỀ",
+                "param_key": "topic",
+                "display_order": 2,
+                "items": [
+                    ("Y tế",                                    "y-te",                          1),
+                    ("Giáo dục",                              "giao-duc",                      2),
+                    ("Môi trường & phát triển bền vững",  "moi-truong-phat-trien-ben-vung", 3),
+                    ("AI, dữ liệu & chuyển đổi số",       "ai-du-lieu-chuyen-doi-so",      4),
+                    ("Sức khỏe tâm thần & wellbeing",    "suc-khoe-tam-than-wellbeing",   5),
+                    ("Nguồn nhân lực",                     "nguon-nhan-luc",                6),
+                ],
+            },
+            {
+                "title": "THEO NHÓM ĐỐI TÁC",
+                "param_key": "partner",
+                "display_order": 3,
+                "items": [
+                    ("Cơ quan quản lý",   "co-quan-quan-ly",  1),
+                    ("Hệ thống y tế",     "he-thong-y-te",    2),
+                    ("Trường đại học",    "truong-dai-hoc",   3),
+                    ("Doanh nghiệp",       "doanh-nghiep",    4),
+                    ("Tổ chức quốc tế",  "to-chuc-quoc-te", 5),
+                ],
+            },
+        ]
+        for gdata in FILTER_GROUPS:
+            group, created = KnowledgeFilterGroup.objects.update_or_create(
+                param_key=gdata["param_key"],
+                defaults={
+                    "title": gdata["title"],
+                    "display_order": gdata["display_order"],
+                    "is_active": True,
+                },
+            )
+            for label, value, order in gdata["items"]:
+                KnowledgeFilterItem.objects.update_or_create(
+                    group=group,
+                    value=value,
+                    defaults={
+                        "label": label,
+                        "display_order": order,
+                        "is_active": True,
+                    },
+                )
+            status = "created" if created else "updated"
+            self.stdout.write(f"  Filter group [{status}]: {group.title}")
