@@ -51,6 +51,9 @@ class KnowledgeListingView(TemplateView):
             context["featured_articles"] = (
                 KnowledgeService.get_featured_articles(listing_page) if listing_page else []
             )
+            context["featured_pins"] = (
+                KnowledgeService.get_featured_pins(listing_page) if listing_page else []
+            )
 
         context["downloads"] = KnowledgeService.get_downloads()
         context["news_items"] = KnowledgeService.get_news_items()

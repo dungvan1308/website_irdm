@@ -33,7 +33,7 @@ def _img_preview(image_field, height: int = 80) -> str:
 class KnowledgeFeaturedArticleInline(admin.TabularInline):
     model = KnowledgeFeaturedArticle
     extra = 1
-    fields = ("article", "display_order", "is_active")
+    fields = ("article", "display_order", "is_active", "badge_text", "cta_text", "cta_icon", "cta_url")
     autocomplete_fields = ("article",)
 
 
@@ -58,7 +58,14 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
             "fields": ("search_enabled", "search_placeholder", "filter_section_heading", "filter_section_description"),
         }),
         ("Featured Section", {
-            "fields": ("featured_section_label", "featured_section_heading"),
+            "description": "Cấu hình section Nội dung nổi bật — các card được quản lý qua inline bên dưới.",
+            "fields": (
+                "featured_section_label",
+                "featured_section_heading",
+                "featured_section_description",
+                "featured_bg_image",
+                "featured_bg_decoration",
+            ),
         }),
         ("CTA", {
             "fields": (

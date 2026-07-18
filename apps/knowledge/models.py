@@ -34,6 +34,20 @@ class KnowledgeListingPage(BaseModel):
 
     featured_section_label = models.CharField(_("featured section label"), max_length=200, blank=True)
     featured_section_heading = models.CharField(_("featured section heading"), max_length=300, blank=True)
+    featured_section_description = models.TextField(
+        _("featured section description"), blank=True,
+        help_text=_("Mô tả ngắn hiển thị dưới tiêu đề section Nội dung nổi bật."),
+    )
+    featured_bg_image = models.ImageField(
+        _("featured section background image"),
+        upload_to="knowledge/featured/bg/", blank=True,
+        help_text=_("Ảnh nền phía sau section Nội dung nổi bật."),
+    )
+    featured_bg_decoration = models.ImageField(
+        _("featured section decoration"),
+        upload_to="knowledge/featured/deco/", blank=True,
+        help_text=_("Họa tiết trang trí (dots, circles) hiển thị phía sau card."),
+    )
 
     cta_sub = models.CharField(_("CTA sub-heading"), max_length=200, blank=True)
     cta_heading = models.CharField(_("CTA heading"), max_length=300, blank=True)
@@ -180,6 +194,27 @@ class KnowledgeFeaturedArticle(BaseModel):
         related_name="featured_pins",
         verbose_name=_("article"),
     )
+    badge_text = models.CharField(
+        _("badge text"), max_length=100, blank=True,
+        help_text=_("Nhãn badge trên ảnh card. Nếu trống, dùng tên category của bài viết."),
+    )
+    cta_text = models.CharField(
+        _("CTA text"), max_length=200, blank=True,
+        help_text=_("Ví dụ: Đọc bài viết, Đăng ký tải tài liệu, Xem sự kiện"),
+    )
+    cta_icon = models.CharField(
+        _("CTA icon"), max_length=50, blank=True,
+        choices=[
+            ("arrow-right", "Arrow Right →"),
+            ("download", "Download ↓"),
+            ("external", "External ↗"),
+        ],
+        default="arrow-right",
+    )
+    cta_url = models.CharField(
+        _("CTA URL override"), max_length=500, blank=True,
+        help_text=_("Nếu trống, dùng URL của bài viết."),
+    )
 
     class Meta(BaseModel.Meta):
         verbose_name = _("featured article")
@@ -188,6 +223,10 @@ class KnowledgeFeaturedArticle(BaseModel):
 
     def __str__(self) -> str:
         return f"{self.listing_page} — {self.article}"
+
+    def get_cta_url(self) -> str:
+        """Return CTA URL override if set, otherwise fallback to article URL."""
+        return self.cta_url or self.article.get_absolute_url()
 
 
 # ─── Download ─────────────────────────────────────────────────────────────────

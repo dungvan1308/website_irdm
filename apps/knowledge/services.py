@@ -64,6 +64,19 @@ class KnowledgeService:
         return [pin.article for pin in pins if pin.article.is_published and pin.article.is_active]
 
     @staticmethod
+    def get_featured_pins(listing_page: KnowledgeListingPage) -> list:
+        """Return KnowledgeFeaturedArticle pins (with CMS fields) for the featured section."""
+        from .models import KnowledgeFeaturedArticle
+        pins = (
+            KnowledgeFeaturedArticle.objects
+            .filter(listing_page=listing_page, is_active=True)
+            .select_related("article", "article__category")
+            .prefetch_related("article__topics")
+            .order_by("display_order")
+        )
+        return [pin for pin in pins if pin.article.is_published and pin.article.is_active]
+
+    @staticmethod
     def get_downloads() -> QuerySet:
         return (
             KnowledgeDownload.objects
