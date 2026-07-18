@@ -9,6 +9,7 @@ from django.db.models import Prefetch, QuerySet
 from .models import (
     KnowledgeArticle,
     KnowledgeCategory,
+    KnowledgeContentTypeCard,
     KnowledgeDownload,
     KnowledgeFilterGroup,
     KnowledgeFilterItem,
@@ -206,4 +207,15 @@ class KnowledgeService:
             .prefetch_related("topics")
             .distinct()
             .order_by("display_order", "-published_date")
+        )
+
+    @staticmethod
+    def get_content_type_cards(listing_page: KnowledgeListingPage) -> list:
+        """Return published Content Type Cards for the 'Khám phá theo Loại Nội Dung' section."""
+        return list(
+            KnowledgeContentTypeCard.objects
+            .filter(listing_page=listing_page, is_active=True, is_published=True)
+            .select_related("category")
+            .prefetch_related("tags")
+            .order_by("display_order")
         )

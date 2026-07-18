@@ -59,6 +59,38 @@ class KnowledgeListingPage(BaseModel):
     cta_secondary_label = models.CharField(_("CTA secondary label"), max_length=100, blank=True)
     cta_secondary_url = models.CharField(_("CTA secondary URL"), max_length=500, blank=True)
 
+    # ─── Content Type Section ─────────────────────────────────────────────────
+    content_type_section_label = models.CharField(
+        _("content type section label"), max_length=200, blank=True,
+    )
+    content_type_section_heading = models.CharField(
+        _("content type section heading"), max_length=300, blank=True,
+    )
+    content_type_section_description = models.TextField(
+        _("content type section description"), blank=True,
+    )
+    content_type_section_bg_image = models.ImageField(
+        _("content type section background image"),
+        upload_to="knowledge/content_type/bg/", blank=True,
+    )
+    content_type_section_bg_decoration = models.ImageField(
+        _("content type section decorative background"),
+        upload_to="knowledge/content_type/deco/", blank=True,
+    )
+    content_type_section_cta_text = models.CharField(
+        _("content type section CTA text"), max_length=100, blank=True,
+    )
+    content_type_section_cta_icon = models.CharField(
+        _("content type section CTA icon"), max_length=50, blank=True,
+        choices=[
+            ("arrow-right", "Arrow Right →"),
+            ("external", "External ↗"),
+        ],
+    )
+    content_type_section_cta_url = models.CharField(
+        _("content type section CTA URL"), max_length=500, blank=True,
+    )
+
     meta_title = models.CharField(_("meta title"), max_length=200, blank=True)
     meta_description = models.CharField(_("meta description"), max_length=300, blank=True)
 
@@ -360,3 +392,63 @@ class KnowledgeFilterItem(BaseModel):
 
     def __str__(self) -> str:
         return f"{self.group.title} — {self.label}"
+
+
+# ─── Content Type Card ────────────────────────────────────────────────────────
+
+class KnowledgeContentTypeCard(BaseModel):
+    """A card in the 'Khám phá theo Loại Nội Dung' section of the listing page."""
+
+    listing_page = models.ForeignKey(
+        KnowledgeListingPage,
+        on_delete=models.CASCADE,
+        related_name="content_type_cards",
+        verbose_name=_("listing page"),
+    )
+    cover_image = models.ImageField(
+        _("cover image"), upload_to="knowledge/content_type/cards/", blank=True,
+        help_text=_("Ảnh đại diện hiển thị trên đầu card."),
+    )
+    category = models.ForeignKey(
+        KnowledgeCategory,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="content_type_cards",
+        verbose_name=_("category"),
+        help_text=_("Liên kết tới loại nội dung (dùng làm nhãn category trên card)."),
+    )
+    title = models.CharField(_("title"), max_length=300)
+    summary = models.TextField(_("summary"), blank=True)
+    tags = models.ManyToManyField(
+        KnowledgeTopic,
+        blank=True,
+        related_name="content_type_cards",
+        verbose_name=_("tags"),
+        help_text=_("Các chủ đề hiển thị dưới dạng tag trên card."),
+    )
+    cta_text = models.CharField(
+        _("CTA text"), max_length=200, blank=True,
+        help_text=_("Ví dụ: Xem nội dung liên quan"),
+    )
+    cta_icon = models.CharField(
+        _("CTA icon"), max_length=50, blank=True,
+        choices=[
+            ("arrow-right", "Arrow Right →"),
+            ("download", "Download ↓"),
+            ("external", "External ↗"),
+        ],
+        default="arrow-right",
+    )
+    cta_url = models.CharField(
+        _("CTA URL"), max_length=500, blank=True,
+        help_text=_("URL khi nhấn CTA. Ví dụ: ?ctype=cong-bo-nghien-cuu"),
+    )
+    is_published = models.BooleanField(_("published"), default=False, db_index=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("content type card")
+        verbose_name_plural = _("content type cards")
+
+    def __str__(self) -> str:
+        return self.title
