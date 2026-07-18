@@ -30,6 +30,8 @@ from apps.knowledge.models import (
     KnowledgeListingPage,
     KnowledgeNewsItem,
     KnowledgeTopic,
+    KnowledgeTopicCard,
+    KnowledgeTopicCardTag,
 )
 
 BASE_DIR = Path(settings.BASE_DIR)
@@ -477,6 +479,110 @@ CONTENT_TYPE_CARDS = [
     },
 ]
 
+# ─── Topic Card Tags ───────────────────────────────────────────────────────────
+
+TOPIC_CARD_TAGS = [
+    {"slug": "tc-ai-du-lieu",          "label": "AI, dữ liệu & chuyển đổi số",       "color": "#3b82f6",  "display_order": 1},
+    {"slug": "tc-suc-khoe-tam-than",   "label": "Sức khỏe tâm thần & wellbeing",    "color": "#8b5cf6",  "display_order": 2},
+    {"slug": "tc-he-thong-y-te",       "label": "Hệ thống y tế",                    "color": "#06b6d4",  "display_order": 3},
+    {"slug": "tc-co-quan-quan-ly",     "label": "Cơ quan quản lý",                  "color": "#f97316",  "display_order": 4},
+    {"slug": "tc-truong-dai-hoc",      "label": "Trường đại học",                   "color": "#10b981",  "display_order": 5},
+    {"slug": "tc-to-chuc-quoc-te",     "label": "Tổ chức quốc tế",                  "color": "#6366f1",  "display_order": 6},
+    {"slug": "tc-doanh-nghiep",        "label": "Doanh nghiệp",                     "color": "#f59e0b",  "display_order": 7},
+    {"slug": "tc-nguon-nhan-luc",      "label": "Nguồn nhân lực",                   "color": "#84cc16",  "display_order": 8},
+    {"slug": "tc-y-te",                "label": "Y tế",                            "color": "#ef4444",  "display_order": 9},
+    {"slug": "tc-giao-duc",            "label": "Giáo dục",                         "color": "#22d3ee",  "display_order": 10},
+]
+
+# ─── Topic Cards — matching Figma "Khám phá theo Chủ Đề" ─────────────────────────
+
+TOPIC_CARDS = [
+    {
+        "title": "Y tế",
+        "topic_slug": "y-te",
+        "icon": "heart",
+        "description": (
+            "Dữ liệu y tế, quản trị bệnh viện, chuyển đổi số, "
+            "sức khỏe nhân viên y tế và cải tiến hệ thống."
+        ),
+        "tag_slugs": ["tc-ai-du-lieu", "tc-suc-khoe-tam-than", "tc-he-thong-y-te", "tc-co-quan-quan-ly"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?topic=y-te",
+        "display_order": 1,
+    },
+    {
+        "title": "Giáo dục",
+        "topic_slug": "giao-duc",
+        "icon": "academic-cap",
+        "description": (
+            "Môi trường học thuật, phát triển người học, năng lực nghề nghiệp, "
+            "E-Learning, đổi mới đào tạo, sức khỏe tâm thần sinh viên và phát triển đội ngũ."
+        ),
+        "tag_slugs": ["tc-suc-khoe-tam-than", "tc-nguon-nhan-luc", "tc-truong-dai-hoc", "tc-to-chuc-quoc-te"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?topic=giao-duc",
+        "display_order": 2,
+    },
+    {
+        "title": "Môi trường & phát triển bền vững",
+        "topic_slug": "moi-truong-phat-trien-ben-vung",
+        "icon": "globe-alt",
+        "description": (
+            "ESG, Green University, Green Hospital, sức khỏe môi trường "
+            "và mô hình phục hồi."
+        ),
+        "tag_slugs": ["tc-y-te", "tc-giao-duc", "tc-he-thong-y-te", "tc-truong-dai-hoc"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?topic=moi-truong-phat-trien-ben-vung",
+        "display_order": 3,
+    },
+    {
+        "title": "AI, dữ liệu & chuyển đổi số",
+        "topic_slug": "ai-du-lieu-chuyen-doi-so",
+        "icon": "cpu-chip",
+        "description": (
+            "Use case, dashboard, nền tảng dữ liệu, hỗ trợ ra quyết định "
+            "và lộ trình thí điểm công nghệ."
+        ),
+        "tag_slugs": ["tc-y-te", "tc-giao-duc", "tc-he-thong-y-te", "tc-co-quan-quan-ly"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?topic=ai-du-lieu-chuyen-doi-so",
+        "display_order": 4,
+    },
+    {
+        "title": "Sức khỏe tâm thần & wellbeing",
+        "topic_slug": "suc-khoe-tam-than-wellbeing",
+        "icon": "heart-pulse",
+        "description": (
+            "Nghiên cứu, truyền thống, hỗ trợ sớm, hỗ trợ đồng đẳng và "
+            "môi trường học tập – làm việc lành mạnh."
+        ),
+        "tag_slugs": ["tc-y-te", "tc-giao-duc", "tc-nguon-nhan-luc", "tc-he-thong-y-te", "tc-truong-dai-hoc"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?topic=suc-khoe-tam-than-wellbeing",
+        "display_order": 5,
+    },
+    {
+        "title": "Nguồn nhân lực",
+        "topic_slug": "nguon-nhan-luc",
+        "icon": "users",
+        "description": (
+            "Phát triển năng lực, học tập suốt đời, quản trị con người "
+            "và chuyển hóa hành vi trong tổ chức."
+        ),
+        "tag_slugs": ["tc-giao-duc", "tc-suc-khoe-tam-than", "tc-doanh-nghiep", "tc-truong-dai-hoc", "tc-he-thong-y-te"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?topic=nguon-nhan-luc",
+        "display_order": 6,
+    },
+]
+
 NEWS_ITEMS = [
     {
         "slug": "irdm-cung-cap-dich-vu-thu-ky-khoa-hoc-nguyen-tri-phuong",
@@ -767,6 +873,56 @@ class Command(BaseCommand):
             card.tags.set(tag_objs)
             if created:
                 self.stdout.write(f"  ContentTypeCard: {card.title}")
+
+        # ── Topic Section fields on listing page ─────────────────────────────
+        KnowledgeListingPage.objects.filter(pk=listing_page.pk).update(
+            topic_section_label="KHÁM PHÁ THEO CHỦ ĐỀ",
+            topic_section_heading="Khám phá theo Chủ đề",
+            topic_section_description=(
+                "Các chủ đề trọng tâm phản ánh định hướng nghiên cứu, phổ biến tri thức "
+                "và đồng hành triển khai của Viện IRDM trong y tế, giáo dục, môi trường, "
+                "dữ liệu, wellbeing và phát triển nguồn lực."
+            ),
+        )
+        listing_page.refresh_from_db()
+
+        # ── Topic Card Tags ───────────────────────────────────────────────────
+        tc_tag_map: dict[str, KnowledgeTopicCardTag] = {}
+        for tag_data in TOPIC_CARD_TAGS:
+            tag, _ = KnowledgeTopicCardTag.objects.update_or_create(
+                slug=tag_data["slug"],
+                defaults={
+                    "label": tag_data["label"],
+                    "color": tag_data["color"],
+                    "display_order": tag_data["display_order"],
+                    "is_active": True,
+                },
+            )
+            tc_tag_map[tag_data["slug"]] = tag
+
+        # ── Topic Cards ───────────────────────────────────────────────────────
+        for card_data in TOPIC_CARDS:
+            linked_topic = topic_map.get(card_data.get("topic_slug", ""))
+            card, created = KnowledgeTopicCard.objects.update_or_create(
+                listing_page=listing_page,
+                title=card_data["title"],
+                defaults={
+                    "topic": linked_topic,
+                    "icon": card_data.get("icon", ""),
+                    "description": card_data.get("description", ""),
+                    "cta_text": card_data.get("cta_text", ""),
+                    "cta_icon": card_data.get("cta_icon", "arrow-right"),
+                    "cta_url": card_data.get("cta_url", ""),
+                    "display_order": card_data.get("display_order", 1),
+                    "is_published": True,
+                    "is_active": True,
+                },
+            )
+            tag_objs = [tc_tag_map[s] for s in card_data.get("tag_slugs", []) if s in tc_tag_map]
+            card.tags.set(tag_objs)
+            if created:
+                self.stdout.write(f"  TopicCard: {card.title}")
+
         # ── Filter Groups ───────────────────────────────────────────────────────────
         self._seed_filter_groups()
 

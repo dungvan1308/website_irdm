@@ -16,6 +16,7 @@ from .models import (
     KnowledgeListingPage,
     KnowledgeNewsItem,
     KnowledgeTopic,
+    KnowledgeTopicCard,
 )
 
 
@@ -216,6 +217,17 @@ class KnowledgeService:
             KnowledgeContentTypeCard.objects
             .filter(listing_page=listing_page, is_active=True, is_published=True)
             .select_related("category")
+            .prefetch_related("tags")
+            .order_by("display_order")
+        )
+
+    @staticmethod
+    def get_topic_cards(listing_page: KnowledgeListingPage) -> list:
+        """Return published Topic Cards for the 'Khám phá theo Chủ Đề' section."""
+        return list(
+            KnowledgeTopicCard.objects
+            .filter(listing_page=listing_page, is_active=True, is_published=True)
+            .select_related("topic")
             .prefetch_related("tags")
             .order_by("display_order")
         )
