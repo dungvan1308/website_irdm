@@ -14,6 +14,8 @@ from .models import (
     KnowledgeListingPage,
     KnowledgeNewsItem,
     KnowledgeTopic,
+    KnowledgeTopicCard,
+    KnowledgeTopicCardTag,
 )
 
 
@@ -56,13 +58,31 @@ class KnowledgeContentTypeCardInline(admin.StackedInline):
         return _img_preview(obj.cover_image)
 
 
+class KnowledgeTopicCardInline(admin.StackedInline):
+    model = KnowledgeTopicCard
+    extra = 1
+    filter_horizontal = ("tags",)
+    readonly_fields = ("cover_image_preview",)
+    fields = (
+        "title", "topic", "description",
+        "cover_image", "cover_image_preview",
+        "icon", "tags",
+        "cta_text", "cta_icon", "cta_url",
+        "display_order", "is_published", "is_active",
+    )
+
+    @admin.display(description="Cover preview")
+    def cover_image_preview(self, obj):
+        return _img_preview(obj.cover_image)
+
+
 # ─── KnowledgeListingPage ─────────────────────────────────────────────────────
 
 @admin.register(KnowledgeListingPage)
 class KnowledgeListingPageAdmin(admin.ModelAdmin):
     list_display = ("heading", "hero_image_preview", "is_active")
     readonly_fields = ("hero_image_preview", "cta_background_image_preview")
-    inlines = [KnowledgeFeaturedArticleInline, KnowledgeContentTypeCardInline]
+    inlines = [KnowledgeFeaturedArticleInline, KnowledgeContentTypeCardInline, KnowledgeTopicCardInline]
     fieldsets = (
         ("Hero", {
             "fields": (
@@ -97,6 +117,16 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "content_type_section_cta_text",
                 "content_type_section_cta_icon",
                 "content_type_section_cta_url",
+            ),
+        }),
+        ("Topic Browse Section (Khám phá theo Chủ Đề)", {
+            "description": "Cấu hình section Khám phá theo Chủ Đề — các card được quản lý qua inline bên dưới.",
+            "fields": (
+                "topic_section_label",
+                "topic_section_heading",
+                "topic_section_description",
+                "topic_section_bg_image",
+                "topic_section_bg_decoration",
             ),
         }),
         ("CTA", {
@@ -275,6 +305,59 @@ class KnowledgeContentTypeCardAdmin(admin.ModelAdmin):
         }),
         ("Media", {
             "fields": ("cover_image", "cover_image_preview"),
+        }),
+        ("Tags", {
+            "fields": ("tags",),
+        }),
+        ("CTA", {
+            "fields": ("cta_text", "cta_icon", "cta_url"),
+        }),
+        ("Status", {
+            "fields": ("is_published", "is_active", "display_order"),
+        }),
+    )
+
+    @admin.display(description="Cover preview")
+    def cover_image_preview(self, obj):
+        return _img_preview(obj.cover_image)
+
+
+# ─── KnowledgeTopicCardTag ────────────────────────────────────────────────────
+
+@admin.register(KnowledgeTopicCardTag)
+class KnowledgeTopicCardTagAdmin(admin.ModelAdmin):
+    list_display = ("label", "slug", "color_chip", "display_order", "is_active")
+    list_editable = ("display_order", "is_active")
+    prepopulated_fields = {"slug": ("label",)}
+    fieldsets = (
+        ("Tag", {"fields": ("label", "slug", "color")}),
+        ("Status", {"fields": ("is_active", "display_order")}),
+    )
+
+    @admin.display(description="Color")
+    def color_chip(self, obj):
+        return format_html(
+            '<span style="display:inline-block;width:16px;height:16px;border-radius:3px;'
+            'background:{};vertical-align:middle;margin-right:6px;"></span>{}',
+            obj.color, obj.color,
+        )
+
+
+# ─── KnowledgeTopicCard ───────────────────────────────────────────────────────
+
+@admin.register(KnowledgeTopicCard)
+class KnowledgeTopicCardAdmin(admin.ModelAdmin):
+    list_display = ("title", "topic", "listing_page", "is_published", "display_order", "is_active")
+    list_editable = ("display_order", "is_published", "is_active")
+    list_filter = ("listing_page", "is_published")
+    filter_horizontal = ("tags",)
+    readonly_fields = ("cover_image_preview",)
+    fieldsets = (
+        ("Card", {
+            "fields": ("listing_page", "title", "topic", "description"),
+        }),
+        ("Media", {
+            "fields": ("cover_image", "cover_image_preview", "icon"),
         }),
         ("Tags", {
             "fields": ("tags",),

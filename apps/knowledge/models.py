@@ -91,6 +91,25 @@ class KnowledgeListingPage(BaseModel):
         _("content type section CTA URL"), max_length=500, blank=True,
     )
 
+    # ─── Topic Browse Section ──────────────────────────────────────────────
+    topic_section_label = models.CharField(
+        _("topic section label"), max_length=200, blank=True,
+    )
+    topic_section_heading = models.CharField(
+        _("topic section heading"), max_length=300, blank=True,
+    )
+    topic_section_description = models.TextField(
+        _("topic section description"), blank=True,
+    )
+    topic_section_bg_image = models.ImageField(
+        _("topic section background image"),
+        upload_to="knowledge/topic_section/bg/", blank=True,
+    )
+    topic_section_bg_decoration = models.ImageField(
+        _("topic section decorative background"),
+        upload_to="knowledge/topic_section/deco/", blank=True,
+    )
+
     meta_title = models.CharField(_("meta title"), max_length=200, blank=True)
     meta_description = models.CharField(_("meta description"), max_length=300, blank=True)
 
@@ -449,6 +468,90 @@ class KnowledgeContentTypeCard(BaseModel):
     class Meta(BaseModel.Meta):
         verbose_name = _("content type card")
         verbose_name_plural = _("content type cards")
+
+    def __str__(self) -> str:
+        return self.title
+
+
+# ─── Topic Card Tag ──────────────────────────────────────────────────────────
+
+class KnowledgeTopicCardTag(BaseModel):
+    """A tag label displayed on a Topic Card (audience / partner type labels)."""
+
+    label = models.CharField(_("label"), max_length=200)
+    slug = models.SlugField(_("slug"), max_length=200, unique=True, db_index=True)
+    color = models.CharField(
+        _("color"), max_length=30, default="#6b7280",
+        help_text=_("Hex color for tag chip, e.g. #3b82f6."),
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("topic card tag")
+        verbose_name_plural = _("topic card tags")
+
+    def __str__(self) -> str:
+        return self.label
+
+
+# ─── Topic Card ────────────────────────────────────────────────────────────
+
+class KnowledgeTopicCard(BaseModel):
+    """Presentation card for the 'Khám phá theo Chủ Đề' section."""
+
+    listing_page = models.ForeignKey(
+        KnowledgeListingPage,
+        on_delete=models.CASCADE,
+        related_name="topic_cards",
+        verbose_name=_("listing page"),
+    )
+    topic = models.ForeignKey(
+        KnowledgeTopic,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="topic_cards",
+        verbose_name=_("linked topic"),
+        help_text=_("Liên kết taxonomy topic để filter bài viết khi click CTA."),
+    )
+    cover_image = models.ImageField(
+        _("cover image"), upload_to="knowledge/topic_cards/", blank=True,
+        help_text=_("Ảnh đại diện hiển thị trên đầu card."),
+    )
+    icon = models.CharField(
+        _("icon"), max_length=100, blank=True,
+        help_text=_("Icon key để render SVG, e.g. heart, academic-cap, globe-alt, cpu-chip, users."),
+    )
+    title = models.CharField(_("title"), max_length=300)
+    description = models.TextField(_("description"), blank=True)
+    tags = models.ManyToManyField(
+        KnowledgeTopicCardTag,
+        blank=True,
+        related_name="topic_cards",
+        verbose_name=_("tags"),
+        help_text=_("Các tag hiển thị dưới dạng chip trên card."),
+    )
+    cta_text = models.CharField(
+        _("CTA text"), max_length=200, blank=True,
+        help_text=_("Ví dụ: Xem nội dung liên quan"),
+    )
+    cta_icon = models.CharField(
+        _("CTA icon"), max_length=50, blank=True,
+        choices=[
+            ("arrow-right", "Arrow Right →"),
+            ("download", "Download ↓"),
+            ("external", "External ↗"),
+        ],
+        default="arrow-right",
+    )
+    cta_url = models.CharField(
+        _("CTA URL"), max_length=500, blank=True,
+        help_text=_("URL khi nhấn CTA. Ví dụ: ?topic=y-te"),
+    )
+    is_published = models.BooleanField(_("published"), default=False, db_index=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("topic card")
+        verbose_name_plural = _("topic cards")
 
     def __str__(self) -> str:
         return self.title
