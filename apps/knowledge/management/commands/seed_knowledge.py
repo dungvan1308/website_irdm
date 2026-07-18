@@ -97,7 +97,12 @@ LISTING_PAGE = {
     "filter_section_heading": "Tìm nội dung phù hợp với nhu cầu của bạn",
     "filter_section_description": "Bộ lọc giúp người đọc tìm nhanh nội dung theo mục đích sử dụng, chủ đề quan tâm và nhóm đối tác liên quan.",
     "featured_section_label": "Nội dung nổi bật",
-    "featured_section_heading": "Những góc nhìn đáng chú ý",
+    "featured_section_heading": "Nội dung nổi bật",
+    "featured_section_description": (
+        "Các bài viết, báo cáo và tài liệu được chọn lọc nhằm giúp người đọc tiếp cận nhanh "
+        "những vấn đề chuyên môn có giá trị ứng dụng cao."
+    ),
+
     "cta_sub": "Hợp tác cùng IRDM",
     "cta_heading": "Bắt đầu hành trình chuyển đổi của bạn",
     "cta_primary_label": "Liên hệ ngay",
@@ -240,7 +245,7 @@ ARTICLES = [
         "author_name": "Ban Truyền thông IRDM",
         "published_date": date(2024, 7, 1),
         "read_time": 5,
-        "is_featured": False,
+        "is_featured": True,
         "asset": "Nội dung nổi bật/Các sự kiện chuyên môn sắp diễn ra tại Viện IRDM.png",
         "display_order": 4,
     },
@@ -300,6 +305,43 @@ ARTICLES = [
         "is_featured": False,
         "asset": None,
         "display_order": 2,
+    },
+]
+
+# ─── Featured Pins — CMS-configurable badges & CTAs (theo Figma) ─────────────
+
+FEATURED_PINS = [
+    {
+        "article_slug": "vi-sao-du-lieu-benh-vien-chua-de-chuyen-thanh-khcn",
+        "badge_text": "Góc nhìn ngành",
+        "cta_text": "Đọc bài viết",
+        "cta_icon": "arrow-right",
+        "cta_url": "",
+        "display_order": 1,
+    },
+    {
+        "article_slug": "suc-khoe-tam-than-nhan-vien-y-te-chiu-dung-khong-ben-vung",
+        "badge_text": "Tóm lược chính sách",
+        "cta_text": "Đọc bài viết",
+        "cta_icon": "arrow-right",
+        "cta_url": "",
+        "display_order": 2,
+    },
+    {
+        "article_slug": "green-university-green-hospital-quan-tri-ben-vung",
+        "badge_text": "Báo cáo & Tài liệu",
+        "cta_text": "Đăng ký tải tài liệu",
+        "cta_icon": "download",
+        "cta_url": "#downloads",
+        "display_order": 3,
+    },
+    {
+        "article_slug": "cac-su-kien-chuyen-mon-sap-dien-ra-irdm",
+        "badge_text": "Sự kiện",
+        "cta_text": "Xem sự kiện",
+        "cta_icon": "arrow-right",
+        "cta_url": "/su-kien/",
+        "display_order": 4,
     },
 ]
 
@@ -539,15 +581,21 @@ class Command(BaseCommand):
         if lp_created:
             self.stdout.write("  Listing page created.")
 
-        # ── Featured articles ─────────────────────────────────────────────────
-        featured_slugs = [a["slug"] for a in ARTICLES if a.get("is_featured")]
-        for order, slug in enumerate(featured_slugs[:3], start=1):
-            article = article_map.get(slug)
+        # ── Featured pins — badge, CTA text, CTA icon, CTA URL ──────────────
+        for pin_data in FEATURED_PINS:
+            article = article_map.get(pin_data["article_slug"])
             if article:
-                KnowledgeFeaturedArticle.objects.get_or_create(
+                pin, _ = KnowledgeFeaturedArticle.objects.update_or_create(
                     listing_page=listing_page,
                     article=article,
-                    defaults={"display_order": order, "is_active": True},
+                    defaults={
+                        "badge_text": pin_data.get("badge_text", ""),
+                        "cta_text": pin_data.get("cta_text", ""),
+                        "cta_icon": pin_data.get("cta_icon", "arrow-right"),
+                        "cta_url": pin_data.get("cta_url", ""),
+                        "display_order": pin_data.get("display_order", 1),
+                        "is_active": True,
+                    },
                 )
 
         # ── Downloads ─────────────────────────────────────────────────────────
