@@ -6,6 +6,7 @@ from django.utils.html import format_html
 from .models import (
     KnowledgeArticle,
     KnowledgeCategory,
+    KnowledgeContentTypeCard,
     KnowledgeDownload,
     KnowledgeFeaturedArticle,
     KnowledgeFilterGroup,
@@ -37,13 +38,31 @@ class KnowledgeFeaturedArticleInline(admin.TabularInline):
     autocomplete_fields = ("article",)
 
 
+class KnowledgeContentTypeCardInline(admin.StackedInline):
+    model = KnowledgeContentTypeCard
+    extra = 1
+    filter_horizontal = ("tags",)
+    readonly_fields = ("cover_image_preview",)
+    fields = (
+        "title", "category", "summary",
+        "cover_image", "cover_image_preview",
+        "tags",
+        "cta_text", "cta_icon", "cta_url",
+        "display_order", "is_published", "is_active",
+    )
+
+    @admin.display(description="Cover preview")
+    def cover_image_preview(self, obj):
+        return _img_preview(obj.cover_image)
+
+
 # ─── KnowledgeListingPage ─────────────────────────────────────────────────────
 
 @admin.register(KnowledgeListingPage)
 class KnowledgeListingPageAdmin(admin.ModelAdmin):
     list_display = ("heading", "hero_image_preview", "is_active")
     readonly_fields = ("hero_image_preview", "cta_background_image_preview")
-    inlines = [KnowledgeFeaturedArticleInline]
+    inlines = [KnowledgeFeaturedArticleInline, KnowledgeContentTypeCardInline]
     fieldsets = (
         ("Hero", {
             "fields": (
@@ -65,6 +84,19 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "featured_section_description",
                 "featured_bg_image",
                 "featured_bg_decoration",
+            ),
+        }),
+        ("Content Type Section (Khám phá theo Loại Nội Dung)", {
+            "description": "Cấu hình section Khám phá theo Loại Nội Dung — các card được quản lý qua inline bên dưới.",
+            "fields": (
+                "content_type_section_label",
+                "content_type_section_heading",
+                "content_type_section_description",
+                "content_type_section_bg_image",
+                "content_type_section_bg_decoration",
+                "content_type_section_cta_text",
+                "content_type_section_cta_icon",
+                "content_type_section_cta_url",
             ),
         }),
         ("CTA", {
@@ -226,3 +258,35 @@ class KnowledgeFilterGroupAdmin(admin.ModelAdmin):
         ("Group", {"fields": ("title", "param_key")}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
+
+
+# ─── KnowledgeContentTypeCard ─────────────────────────────────────────────────
+
+@admin.register(KnowledgeContentTypeCard)
+class KnowledgeContentTypeCardAdmin(admin.ModelAdmin):
+    list_display = ("title", "category", "listing_page", "is_published", "display_order", "is_active")
+    list_editable = ("display_order", "is_published", "is_active")
+    list_filter = ("listing_page", "category", "is_published")
+    filter_horizontal = ("tags",)
+    readonly_fields = ("cover_image_preview",)
+    fieldsets = (
+        ("Card", {
+            "fields": ("listing_page", "title", "category", "summary"),
+        }),
+        ("Media", {
+            "fields": ("cover_image", "cover_image_preview"),
+        }),
+        ("Tags", {
+            "fields": ("tags",),
+        }),
+        ("CTA", {
+            "fields": ("cta_text", "cta_icon", "cta_url"),
+        }),
+        ("Status", {
+            "fields": ("is_published", "is_active", "display_order"),
+        }),
+    )
+
+    @admin.display(description="Cover preview")
+    def cover_image_preview(self, obj):
+        return _img_preview(obj.cover_image)

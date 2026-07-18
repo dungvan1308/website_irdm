@@ -1,0 +1,91 @@
+{% load i18n %}
+{# Content Type Card partial — used in the "Khám phá theo Loại Nội Dung" section #}
+<article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+
+  {# ── Cover image — 16:9 ratio ───────────────────────────────────────── #}
+  <div class="relative overflow-hidden bg-slate-100" style="aspect-ratio: 16/9;">
+    {% if card.cover_image %}
+      <img src="{{ card.cover_image.url }}" alt="{{ card.title }}"
+           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+           loading="lazy" />
+    {% else %}
+      <div class="w-full h-full bg-gradient-to-br from-primary-100 via-blue-50 to-primary-200 flex items-center justify-center">
+        <svg class="w-12 h-12 text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+      </div>
+    {% endif %}
+  </div>
+
+  {# ── Card body ──────────────────────────────────────────────────────── #}
+  <div class="flex flex-col flex-1 p-6">
+
+    {# Category badge #}
+    {% if card.category %}
+      <p class="text-primary-600 text-xs font-semibold uppercase tracking-widest mb-2">
+        {{ card.category.label }}
+      </p>
+    {% endif %}
+
+    {# Title #}
+    <h3 class="text-xl font-extrabold text-slate-900 leading-snug mb-3">
+      {% if card.cta_url %}
+        <a href="{{ card.cta_url }}" class="hover:text-primary-700 transition-colors">
+          {{ card.title }}
+        </a>
+      {% else %}
+        {{ card.title }}
+      {% endif %}
+    </h3>
+
+    {# Description #}
+    {% if card.summary %}
+      <p class="text-slate-500 text-sm leading-relaxed mb-5 flex-1">
+        {{ card.summary }}
+      </p>
+    {% endif %}
+
+    {# Tags #}
+    {% if card.tags.all %}
+      <div class="flex flex-wrap gap-2 mb-5">
+        {% for tag in card.tags.all|slice:":5" %}
+          <span class="inline-flex items-center px-3 py-1 bg-slate-100 text-slate-600
+                       text-xs font-medium rounded-full hover:bg-primary-50 hover:text-primary-700
+                       transition-colors cursor-default">
+            {{ tag.label }}
+          </span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {# CTA link #}
+    {% if card.cta_url or card.cta_text %}
+      <a href="{{ card.cta_url|default:'#' }}"
+         class="inline-flex items-center gap-2 text-orange-500 hover:text-orange-400
+                font-semibold text-sm mt-auto group/cta transition-colors">
+        <span>{% if card.cta_text %}{{ card.cta_text }}{% else %}{% trans "Xem nội dung liên quan" %}{% endif %}</span>
+        {% if card.cta_icon == "download" %}
+          <svg class="w-4 h-4 flex-shrink-0 transition-transform group-hover/cta:translate-y-0.5"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+        {% elif card.cta_icon == "external" %}
+          <svg class="w-4 h-4 flex-shrink-0 transition-transform group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        {% else %}
+          <svg class="w-4 h-4 flex-shrink-0 transition-transform group-hover/cta:translate-x-1"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        {% endif %}
+      </a>
+    {% endif %}
+
+  </div>
+</article>

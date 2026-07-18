@@ -22,6 +22,7 @@ from django.core.management.base import BaseCommand
 from apps.knowledge.models import (
     KnowledgeArticle,
     KnowledgeCategory,
+    KnowledgeContentTypeCard,
     KnowledgeDownload,
     KnowledgeFeaturedArticle,
     KnowledgeFilterGroup,
@@ -392,6 +393,90 @@ DOWNLOADS = [
 
 # ─── News Items — dùng ảnh thật từ assets ────────────────────────────────────
 
+# ─── Content Type Cards — matching Figma "Khám phá theo Loại Nội Dung" ────────
+
+CONTENT_TYPE_CARDS = [
+    {
+        "title": "Công bố nghiên cứu",
+        "category_slug": "cong-bo-nghien-cuu",
+        "summary": (
+            "Các công bố và kết quả nghiên cứu của Viện IRDM, được trình "
+            "bày theo hướng dễ tiếp cận hơn cho người đọc ngoài chuyên ngành hẹp."
+        ),
+        "tag_slugs": ["y-te", "giao-duc", "moi-truong-phat-trien-ben-vung", "ai-du-lieu-chuyen-doi-so"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?ctype=cong-bo-nghien-cuu",
+        "display_order": 1,
+    },
+    {
+        "title": "Góc nhìn ngành",
+        "category_slug": "goc-nhin-nganh",
+        "summary": (
+            "Các bài viết phân tích những vấn đề đang nổi bật trong y tế, "
+            "giáo dục, môi trường, dữ liệu, AI, wellbeing và phát triển nguồn lực."
+        ),
+        "tag_slugs": ["y-te", "giao-duc", "ai-du-lieu-chuyen-doi-so", "suc-khoe-tam-than-wellbeing"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?ctype=goc-nhin-nganh",
+        "display_order": 2,
+    },
+    {
+        "title": "Tóm lược chính sách",
+        "category_slug": "tom-luoc-chinh-sach",
+        "summary": (
+            "Các tóm lược ngắn, cô đọng, giúp chuyển hóa bằng chứng, dữ liệu "
+            "và kinh nghiệm triển khai thành hàm ý cho quản lý, chính sách hoặc "
+            "chương trình hành động."
+        ),
+        "tag_slugs": ["co-quan-quan-ly", "y-te", "giao-duc", "moi-truong-phat-trien-ben-vung"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?ctype=tom-luoc-chinh-sach",
+        "display_order": 3,
+    },
+    {
+        "title": "Báo cáo & tài liệu",
+        "category_slug": "cong-bo-nghien-cuu",
+        "summary": (
+            "Các tài liệu ứng dụng giúp người đọc tìm hiểu vấn đề, tham khảo "
+            "khung tiếp cận, chuẩn bị hợp tác hoặc lựa chọn hướng triển khai phù hợp."
+        ),
+        "tag_slugs": ["y-te", "giao-duc", "moi-truong-phat-trien-ben-vung", "nguon-nhan-luc"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?ctype=bao-cao-tai-lieu",
+        "display_order": 4,
+    },
+    {
+        "title": "Tin IRDM",
+        "category_slug": "tin-irdm",
+        "summary": (
+            "Cập nhật các hoạt động nghiên cứu, hợp tác, tập huấn, hội thảo "
+            "và những dấu mốc chuyên môn của Viện IRDM."
+        ),
+        "tag_slugs": ["y-te", "giao-duc", "moi-truong-phat-trien-ben-vung", "ai-du-lieu-chuyen-doi-so"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "?ctype=tin-irdm",
+        "display_order": 5,
+    },
+    {
+        "title": "Sự kiện",
+        "category_slug": "tin-irdm",
+        "summary": (
+            "Thông tin về các hội thảo, tọa đàm, workshop, lớp tập huấn và "
+            "diễn đàn chuyên môn do Viện IRDM tổ chức hoặc tham gia."
+        ),
+        "tag_slugs": ["y-te", "giao-duc", "suc-khoe-tam-than-wellbeing", "ai-du-lieu-chuyen-doi-so"],
+        "cta_text": "Xem nội dung liên quan",
+        "cta_icon": "arrow-right",
+        "cta_url": "/su-kien/",
+        "display_order": 6,
+    },
+]
+
 NEWS_ITEMS = [
     {
         "slug": "irdm-cung-cap-dich-vu-thu-ky-khoa-hoc-nguyen-tri-phuong",
@@ -645,7 +730,43 @@ class Command(BaseCommand):
                 obj.thumbnail.save(f"knowledge/news/{obj.slug}.png", img, save=True)
             if created:
                 self.stdout.write(f"  News: {obj.title[:60]}")
+        # ── Content Type Section fields on listing page ─────────────────────
+        KnowledgeListingPage.objects.filter(pk=listing_page.pk).update(
+            content_type_section_label="KHÁM PHÁ THEO LOẠI NỘI DUNG",
+            content_type_section_heading="Khám phá theo Loại Nội Dung",
+            content_type_section_description=(
+                "Các nhóm nội dung được Viện IRDM biên soạn và hệ thống hóa nhằm hỗ trợ người đọc tiếp cận "
+                "tri thức theo nhu cầu: nghiên cứu, phân tích, chính sách, tài liệu ứng dụng, "
+                "tin chuyên môn và sự kiện."
+            ),
+            content_type_section_cta_text="Xem tất cả năng lực",
+            content_type_section_cta_icon="arrow-right",
+            content_type_section_cta_url="/tri-thuc-goc-nhin/",
+        )
+        listing_page.refresh_from_db()
 
+        # ── Content Type Cards ─────────────────────────────────────────────
+        for card_data in CONTENT_TYPE_CARDS:
+            category = cat_map.get(card_data.get("category_slug", ""))
+            card, created = KnowledgeContentTypeCard.objects.update_or_create(
+                listing_page=listing_page,
+                title=card_data["title"],
+                defaults={
+                    "category": category,
+                    "summary": card_data.get("summary", ""),
+                    "cta_text": card_data.get("cta_text", ""),
+                    "cta_icon": card_data.get("cta_icon", "arrow-right"),
+                    "cta_url": card_data.get("cta_url", ""),
+                    "display_order": card_data.get("display_order", 1),
+                    "is_published": True,
+                    "is_active": True,
+                },
+            )
+            # Set tags — only slugs that exist in topic_map
+            tag_objs = [topic_map[s] for s in card_data.get("tag_slugs", []) if s in topic_map]
+            card.tags.set(tag_objs)
+            if created:
+                self.stdout.write(f"  ContentTypeCard: {card.title}")
         # ── Filter Groups ───────────────────────────────────────────────────────────
         self._seed_filter_groups()
 
