@@ -450,7 +450,7 @@
 {#  CATEGORY SECTIONS                                                          #}
 {# ═══════════════════════════════════════════════════════════════════════════ #}
 {% for category in categories %}
-  {% if category.published_articles and category.slug != "cong-bo-nghien-cuu" and category.slug != "goc-nhin-nganh" %}
+  {% if category.published_articles and category.slug != "cong-bo-nghien-cuu" and category.slug != "goc-nhin-nganh" and category.slug != "tin-irdm" and category.slug != "tom-luoc-chinh-sach" %}
   <section class="{% cycle 'bg-white' 'bg-slate-50' %} py-16 lg:py-20"
            aria-labelledby="cat-heading-{{ category.slug }}">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
