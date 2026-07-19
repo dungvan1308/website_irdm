@@ -57,6 +57,10 @@ CMD:
 
 venv\Scripts\activate.bat
 
+
+.\.venv\Scripts\Activate.ps1
+
+
 Khi active thành công sẽ thấy:
 
 (venv) PS C:\...
