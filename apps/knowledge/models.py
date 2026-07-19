@@ -223,6 +223,24 @@ class KnowledgeListingPage(BaseModel):
         help_text=_("Tiêu đề cột phải — danh sách sự kiện."),
     )
 
+    # ─── Press Section (IRDM trên báo chí và diễn đàn chuyên môn) ─────────────────
+    press_section_label = models.CharField(
+        _("press section label"), max_length=200, blank=True,
+        help_text=_("Label nhỏ phía trên, e.g. BÁO CHÍ & DIỄN ĐÀN."),
+    )
+    press_section_heading = models.CharField(
+        _("press section heading"), max_length=300, blank=True,
+        help_text=_("Tiêu đề section, e.g. IRDM trên báo chí và diễn đàn chuyên môn."),
+    )
+    press_section_description = models.TextField(
+        _("press section description"), blank=True,
+    )
+    press_section_bg_image = models.ImageField(
+        _("press section background image"),
+        upload_to="knowledge/press/bg/", blank=True,
+        help_text=_("Nhả nền tuỳ chọn cho section báo chí."),
+    )
+
     meta_title = models.CharField(_("meta title"), max_length=200, blank=True)
     meta_description = models.CharField(_("meta description"), max_length=300, blank=True)
 
@@ -448,6 +466,18 @@ class KnowledgeNewsItem(BaseModel):
     )
     published_date = models.DateField(_("published date"), null=True, blank=True)
     source_url = models.URLField(_("source URL"), blank=True)
+    is_press_article = models.BooleanField(
+        _("is press article"), default=False, db_index=True,
+        help_text=_("Hiển thị bài trong section IRDM trên báo chí và diễn đàn chuyên môn."),
+    )
+    cta_text = models.CharField(
+        _("CTA text"), max_length=100, blank=True, default="Xem chi tiết",
+    )
+    cta_target = models.CharField(
+        _("CTA target"), max_length=20, blank=True, default="_blank",
+        choices=[("_self", "Cùng tab (_self)"), ("_blank", "Tab mới (_blank)")],
+        help_text=_("Mở link CTA trong tab nào."),
+    )
     category = models.ForeignKey(
         KnowledgeCategory,
         on_delete=models.SET_NULL,
