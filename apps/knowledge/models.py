@@ -723,6 +723,11 @@ class KnowledgeActivityNews(BaseModel):
         choices=CTA_ICON_CHOICES, default="arrow-right",
     )
     cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+    cta_target = models.CharField(
+        _("CTA target"), max_length=20, blank=True, default="_self",
+        choices=[("_self", "Cùng tab (_self)"), ("_blank", "Tab mới (_blank)")],
+        help_text=_("Mở link CTA trong tab nào, e.g. _self hoặc _blank."),
+    )
     is_published = models.BooleanField(_("published"), default=False, db_index=True)
 
     class Meta(BaseModel.Meta):
@@ -800,6 +805,11 @@ class KnowledgeEvent(BaseModel):
         choices=CTA_ICON_CHOICES, default="arrow-right",
     )
     cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+    cta_target = models.CharField(
+        _("CTA target"), max_length=20, blank=True, default="_self",
+        choices=[("_self", "Cùng tab (_self)"), ("_blank", "Tab mới (_blank)")],
+        help_text=_("Mở link CTA trong tab nào, e.g. _self hoặc _blank."),
+    )
     is_published = models.BooleanField(_("published"), default=False, db_index=True)
 
     class Meta(BaseModel.Meta):

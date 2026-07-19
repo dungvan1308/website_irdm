@@ -849,7 +849,7 @@
     <div class="mb-10">
       <p class="inline-flex items-center gap-2 text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">
         <span class="w-6 h-0.5 bg-primary-500 rounded-full inline-block flex-shrink-0" aria-hidden="true"></span>
-        {% if listing_page and listing_page.news_section_label %}{{ listing_page.news_section_label }}{% else %}{% trans "IRDM trên báo chí và diễn đàn chuyên môn" %}{% endif %}
+        {% if listing_page and listing_page.news_section_label %}{{ listing_page.news_section_label }}{% else %}IRDM trên báo chí và diễn đàn chuyên môn{% endif %}
       </p>
       <h2 id="news-events-heading"
           class="text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight">
@@ -879,7 +879,7 @@
 
             {# Thumbnail — 140×104 with rounded-xl #}
             <a href="{{ item.cta_url|default:'#' }}"
-               class="flex-shrink-0 w-[140px] h-[104px] rounded-xl overflow-hidden bg-slate-100 block">
+               class="flex-shrink-0 w-36 h-24 rounded-lg overflow-hidden bg-slate-100 block">
               {% if item.thumbnail %}
                 <img src="{{ item.thumbnail.url }}" alt="{{ item.title }}"
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -922,8 +922,9 @@
               {% endif %}
 
               {# CTA #}
-              {% if item.cta_text and item.cta_url %}
-                <a href="{{ item.cta_url }}"
+              {% if item.cta_text %}
+                <a href="{{ item.cta_url|default:'#' }}"
+                   target="{{ item.cta_target|default:'_self' }}"
                    class="mt-auto inline-flex items-center gap-1.5 text-primary-600 text-sm font-semibold hover:text-primary-800 transition-colors group/cta w-fit">
                   {{ item.cta_text }}
                   <svg class="w-4 h-4 group-hover/cta:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
@@ -1017,8 +1018,9 @@
                       <span class="truncate">{{ event.location }}</span>
                     </div>
                   {% else %}<span></span>{% endif %}
-                  {% if event.cta_text and event.cta_url %}
-                    <a href="{{ event.cta_url }}"
+                  {% if event.cta_text %}
+                    <a href="{{ event.cta_url|default:'#' }}"
+                       target="{{ event.cta_target|default:'_self' }}"
                        class="flex-shrink-0 inline-flex items-center gap-1 text-orange-500 text-[12px] font-bold hover:text-orange-600 transition-colors group/cta">
                       {{ event.cta_text }}
                       <svg class="w-3.5 h-3.5 group-hover/cta:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
@@ -1118,7 +1120,6 @@
 {% endif %}
 
 {% endif %}{# end search_results is not None #}
-══════════════════════════════════════════════════════════════════ #}
 {#  CTA BANNER                                                                 #}
 {# ═══════════════════════════════════════════════════════════════════════════ #}
 {% if listing_page and listing_page.cta_heading %}

@@ -434,7 +434,7 @@ class KnowledgeActivityNewsAdmin(admin.ModelAdmin):
         ("Identity", {"fields": ("title", "summary")}),
         ("Media", {"fields": ("thumbnail", "thumbnail_preview")}),
         ("Classification", {"fields": ("category", "published_date")}),
-        ("CTA", {"fields": ("cta_text", "cta_icon", "cta_url")}),
+        ("CTA", {"fields": ("cta_text", "cta_icon", "cta_url", "cta_target")}),
         ("Status", {"fields": ("is_published", "is_active", "display_order")}),
     )
 
@@ -478,7 +478,7 @@ class KnowledgeEventAdmin(admin.ModelAdmin):
         ("Identity", {"fields": ("title", "description")}),
         ("Media", {"fields": ("cover_image", "cover_image_preview")}),
         ("Classification", {"fields": ("category", "event_date", "location", "tags")}),
-        ("CTA", {"fields": ("cta_text", "cta_icon", "cta_url")}),
+        ("CTA", {"fields": ("cta_text", "cta_icon", "cta_url", "cta_target")}),
         ("Status", {"fields": ("is_published", "is_active", "display_order")}),
     )
 
