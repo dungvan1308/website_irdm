@@ -896,6 +896,7 @@ class Command(BaseCommand):
                 "cta_icon": "arrow-right",
                 "cta_url": "",
                 "display_order": 1,
+                "asset": "Tin tức & Sự kiện/IRDM cung cấp dịch vụ thư ký khoa học cho Bệnh viện Nguyễn Tri Phương.png",
             },
             {
                 "title": "IRDM ký kết hợp tác với Đại học Y Dược TP.HCM trong nghiên cứu ứng dụng",
@@ -906,6 +907,7 @@ class Command(BaseCommand):
                 "cta_icon": "arrow-right",
                 "cta_url": "",
                 "display_order": 2,
+                "asset": "Tin tức & Sự kiện/IRDM ký kết hợp tác với Đại học Y Dược TP.HCM trong nghiên cứu ứng dụng.png",
             },
             {
                 "title": "Tóm lược Hội thảo Wellbeing trong y tế và giáo dục 2024",
@@ -916,6 +918,7 @@ class Command(BaseCommand):
                 "cta_icon": "arrow-right",
                 "cta_url": "",
                 "display_order": 3,
+                "asset": "Tin tức & Sự kiện/Tóm lược Hội thảo Wellbeing trong y tế và giáo dục 2024.png",
             },
             {
                 "title": "IRDM hoàn thành báo cáo đánh giá nhu cầu năng lực nhân lực y tế TP.HCM",
@@ -926,6 +929,7 @@ class Command(BaseCommand):
                 "cta_icon": "arrow-right",
                 "cta_url": "",
                 "display_order": 4,
+                "asset": "Tin tức & Sự kiện/IRDM hoàn thành báo cáo đánh giá nhu cầu năng lực nhân lực y tế TP.HCM.png",
             },
         ]
         for i, n in enumerate(ACTIVITY_NEWS):
@@ -945,6 +949,11 @@ class Command(BaseCommand):
                     "display_order": n.get("display_order", i),
                 },
             )
+            if created or not obj.thumbnail:
+                asset = _load_asset(n["asset"]) if n.get("asset") else None
+                img = asset or _placeholder(f"activity-news-{i}.png", i, 600, 400)
+                slug = title[:40].lower().replace(" ", "-").replace("/", "-")
+                obj.thumbnail.save(f"knowledge/activity_news/{slug}.png", img, save=True)
             if created:
                 self.stdout.write(f"  ActivityNews: {obj.title[:60]}")
 

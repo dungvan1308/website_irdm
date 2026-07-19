@@ -56,6 +56,13 @@ module.exports = {
     "aspect-[16/9]",
     // Knowledge module — backdrop
     "backdrop-blur-sm",
+    // Knowledge module — News & Events small text sizes (safelist so CSS is always included)
+    "text-[9px]",
+    "text-[10px]",
+    "text-[11px]",
+    "text-[12px]",
+    "text-[14px]",
+    "text-[15px]",
     // Hero section — Figma exact values (arbitrary classes not in template scan)
     "font-utm-banque",
     "text-[40px]",
