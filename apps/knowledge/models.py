@@ -110,6 +110,85 @@ class KnowledgeListingPage(BaseModel):
         upload_to="knowledge/topic_section/deco/", blank=True,
     )
 
+    # ─── Publication Section (Ấn phẩm & Báo cáo) ────────────────────────────
+    pub_section_label = models.CharField(
+        _("publication section label"), max_length=200, blank=True,
+        help_text=_("Label nhỏ phía trên tiêu đề, e.g. Ấn phẩm & Báo cáo."),
+    )
+    pub_section_heading = models.CharField(
+        _("publication section heading"), max_length=300, blank=True,
+        help_text=_("Tiêu đề section, e.g. Tài liệu tải về."),
+    )
+    pub_section_description = models.TextField(
+        _("publication section description"), blank=True,
+        help_text=_("Mô tả ngắn hiển thị dưới tiêu đề section."),
+    )
+    pub_section_bg_image = models.ImageField(
+        _("publication section background image"),
+        upload_to="knowledge/pub/bg/", blank=True,
+        help_text=_("Ảnh nền toàn section (ví dụ: cityscape, globe illustration)."),
+    )
+    pub_section_bg_decoration = models.ImageField(
+        _("publication section decorative background"),
+        upload_to="knowledge/pub/deco/", blank=True,
+        help_text=_("Họa tiết trang trí (dots, circles) hiển thị phía sau nội dung."),
+    )
+
+    # ─── Publication Form ─────────────────────────────────────────────────────
+    pub_form_title = models.CharField(_("form title"), max_length=300, blank=True)
+    pub_form_description = models.TextField(_("form description"), blank=True)
+    pub_form_name_label = models.CharField(
+        _("name field label"), max_length=100, blank=True, default="Họ và tên",
+    )
+    pub_form_name_placeholder = models.CharField(
+        _("name field placeholder"), max_length=200, blank=True,
+    )
+    pub_form_org_label = models.CharField(
+        _("org field label"), max_length=100, blank=True, default="Đơn vị công tác",
+    )
+    pub_form_org_placeholder = models.CharField(
+        _("org field placeholder"), max_length=200, blank=True,
+    )
+    pub_form_email_label = models.CharField(
+        _("email field label"), max_length=100, blank=True, default="Email",
+    )
+    pub_form_email_placeholder = models.CharField(
+        _("email field placeholder"), max_length=200, blank=True,
+    )
+    pub_form_note_label = models.CharField(
+        _("note field label"), max_length=100, blank=True, default="Ghi chú",
+    )
+    pub_form_note_placeholder = models.TextField(_("note field placeholder"), blank=True)
+    pub_form_privacy_note = models.TextField(_("form privacy note"), blank=True)
+    pub_form_button_text = models.CharField(
+        _("form button text"), max_length=100, blank=True, default="Gửi yêu cầu",
+    )
+    pub_form_button_icon = models.CharField(
+        _("form button icon"), max_length=50, blank=True,
+        choices=[("send", "Send ✉"), ("arrow-right", "Arrow Right →")],
+        default="send",
+    )
+    pub_form_success_message = models.TextField(_("form success message"), blank=True)
+
+    # ─── Publication Contact Block ────────────────────────────────────────────
+    pub_contact_title = models.CharField(_("contact block title"), max_length=300, blank=True)
+    pub_contact_description = models.TextField(_("contact block description"), blank=True)
+    pub_contact_email = models.CharField(_("contact email"), max_length=200, blank=True)
+    pub_contact_phone = models.CharField(_("contact phone"), max_length=100, blank=True)
+    pub_contact_address = models.TextField(_("contact address"), blank=True)
+    pub_contact_cta_text = models.CharField(_("contact CTA text"), max_length=200, blank=True)
+    pub_contact_cta_icon = models.CharField(
+        _("contact CTA icon"), max_length=50, blank=True,
+        choices=[("arrow-right", "Arrow Right →"), ("external", "External ↗")],
+        default="arrow-right",
+    )
+    pub_contact_cta_url = models.CharField(_("contact CTA URL"), max_length=500, blank=True)
+    pub_contact_city_image = models.ImageField(
+        _("contact block city image"),
+        upload_to="knowledge/pub/city/", blank=True,
+        help_text=_("Ảnh skyline thành phố hiển thị phía dưới contact block."),
+    )
+
     meta_title = models.CharField(_("meta title"), max_length=200, blank=True)
     meta_description = models.CharField(_("meta description"), max_length=300, blank=True)
 
@@ -555,3 +634,23 @@ class KnowledgeTopicCard(BaseModel):
 
     def __str__(self) -> str:
         return self.title
+
+
+# ─── Download Request ─────────────────────────────────────────────────────────
+
+class KnowledgeDownloadRequest(models.Model):
+    """Form submission: user requests a downloadable document from IRDM."""
+
+    full_name = models.CharField(_("full name"), max_length=200)
+    organization = models.CharField(_("organization"), max_length=300)
+    email = models.EmailField(_("email"))
+    note = models.TextField(_("note"), blank=True)
+    submitted_at = models.DateTimeField(_("submitted at"), auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("download request")
+        verbose_name_plural = _("download requests")
+        ordering = ["-submitted_at"]
+
+    def __str__(self) -> str:
+        return f"{self.full_name} <{self.email}>"

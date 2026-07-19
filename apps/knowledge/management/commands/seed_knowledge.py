@@ -114,6 +114,50 @@ LISTING_PAGE = {
     "cta_secondary_url": "/giai-phap/",
     "meta_title": "Tri thức & Góc nhìn ngành — IRDM",
     "meta_description": "Nghiên cứu, phân tích chính sách và góc nhìn ngành từ IRDM.",
+    # ── Publication Section ────────────────────────────────────────────────
+    "pub_section_label": "Ấn phẩm & Báo cáo",
+    "pub_section_heading": "Tài liệu tải về",
+    "pub_section_description": (
+        "Các tài liệu được chọn lọc nhằm hỗ trợ người đọc ứng dụng tri thức vào quá trình "
+        "ra quyết định, thiết kế chương trình hoặc trao đổi hợp tác."
+    ),
+    # ── Publication Form ───────────────────────────────────────────────────
+    "pub_form_title": "Gửi yêu cầu nhận tài liệu",
+    "pub_form_description": (
+        "Vui lòng để lại thông tin cơ bản và ghi chú tài liệu bạn quan tâm. "
+        "Viện IRDM sẽ ghi nhận yêu cầu và gửi tài liệu phù hợp tới email bạn cung cấp."
+    ),
+    "pub_form_name_label": "Họ và tên",
+    "pub_form_name_placeholder": "Nhập họ và tên của bạn",
+    "pub_form_org_label": "Đơn vị công tác",
+    "pub_form_org_placeholder": "Tên cơ quan, tổ chức, trường, bệnh viện hoặc doanh nghiệp",
+    "pub_form_email_label": "Email",
+    "pub_form_email_placeholder": "Nhập email nhận tài liệu",
+    "pub_form_note_label": "Ghi chú",
+    "pub_form_note_placeholder": (
+        "Bạn có thể ghi loại tài liệu muốn nhận, lĩnh vực quan tâm hoặc lời nhắn cho Viện IRDM"
+    ),
+    "pub_form_privacy_note": (
+        "Viện IRDM sử dụng thông tin này để phản hồi yêu cầu tài liệu và hỗ trợ "
+        "trao đổi chuyên môn khi phù hợp."
+    ),
+    "pub_form_button_text": "Gửi yêu cầu",
+    "pub_form_button_icon": "send",
+    "pub_form_success_message": (
+        "Cảm ơn bạn! Viện IRDM đã nhận được yêu cầu và sẽ gửi tài liệu phù hợp đến email của bạn."
+    ),
+    # ── Publication Contact Block ──────────────────────────────────────────
+    "pub_contact_title": "Liên hệ trao đổi với Viện IRDM",
+    "pub_contact_description": (
+        "Bạn cần thêm thông tin hoặc chưa rõ tài liệu nào phù hợp? Liên hệ với Viện IRDM "
+        "để được hỗ trợ và gợi ý tài liệu theo nhu cầu."
+    ),
+    "pub_contact_email": "vienncptnlv@irdm.edu.vn",
+    "pub_contact_phone": "(+84) 33 656 7701",
+    "pub_contact_address": "8C Trần Huy Liệu, Phường Phú Nhuận, TP.HCM",
+    "pub_contact_cta_text": "Liên hệ hợp tác",
+    "pub_contact_cta_icon": "arrow-right",
+    "pub_contact_cta_url": "/lien-he/",
     "is_active": True,
     "display_order": 0,
 }

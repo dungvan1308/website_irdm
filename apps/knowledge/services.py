@@ -11,6 +11,7 @@ from .models import (
     KnowledgeCategory,
     KnowledgeContentTypeCard,
     KnowledgeDownload,
+    KnowledgeDownloadRequest,
     KnowledgeFilterGroup,
     KnowledgeFilterItem,
     KnowledgeListingPage,
@@ -230,4 +231,13 @@ class KnowledgeService:
             .select_related("topic")
             .prefetch_related("tags")
             .order_by("display_order")
+        )
+    @staticmethod
+    def save_download_request(data: dict) -> KnowledgeDownloadRequest:
+        """Persist a publication download request form submission."""
+        return KnowledgeDownloadRequest.objects.create(
+            full_name=data["full_name"],
+            organization=data["organization"],
+            email=data["email"],
+            note=data.get("note", ""),
         )

@@ -8,6 +8,7 @@ from .models import (
     KnowledgeCategory,
     KnowledgeContentTypeCard,
     KnowledgeDownload,
+    KnowledgeDownloadRequest,
     KnowledgeFeaturedArticle,
     KnowledgeFilterGroup,
     KnowledgeFilterItem,
@@ -129,6 +130,49 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "topic_section_bg_decoration",
             ),
         }),
+        ("Publication Section (Ấn phẩm & Báo cáo)", {
+            "description": "Cấu hình section Tài liệu tải về — gồm tiêu đề section, form yêu cầu và contact block.",
+            "fields": (
+                "pub_section_label",
+                "pub_section_heading",
+                "pub_section_description",
+                "pub_section_bg_image",
+                "pub_section_bg_decoration",
+            ),
+        }),
+        ("Publication Form", {
+            "description": "Cấu hình form 'Gửi yêu cầu nhận tài liệu'.",
+            "fields": (
+                "pub_form_title",
+                "pub_form_description",
+                "pub_form_name_label",
+                "pub_form_name_placeholder",
+                "pub_form_org_label",
+                "pub_form_org_placeholder",
+                "pub_form_email_label",
+                "pub_form_email_placeholder",
+                "pub_form_note_label",
+                "pub_form_note_placeholder",
+                "pub_form_privacy_note",
+                "pub_form_button_text",
+                "pub_form_button_icon",
+                "pub_form_success_message",
+            ),
+        }),
+        ("Publication Contact Block", {
+            "description": "Cấu hình khối 'Liên hệ trao đổi với Viện IRDM' phía bên phải form.",
+            "fields": (
+                "pub_contact_title",
+                "pub_contact_description",
+                "pub_contact_email",
+                "pub_contact_phone",
+                "pub_contact_address",
+                "pub_contact_cta_text",
+                "pub_contact_cta_icon",
+                "pub_contact_cta_url",
+                "pub_contact_city_image",
+            ),
+        }),
         ("CTA", {
             "fields": (
                 "cta_sub", "cta_heading",
@@ -153,6 +197,23 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
     @admin.display(description="CTA background preview")
     def cta_background_image_preview(self, obj):
         return _img_preview(obj.cta_background_image)
+
+
+# ─── KnowledgeDownloadRequest ─────────────────────────────────────────────────
+
+@admin.register(KnowledgeDownloadRequest)
+class KnowledgeDownloadRequestAdmin(admin.ModelAdmin):
+    list_display = ("full_name", "email", "organization", "submitted_at")
+    list_filter = ("submitted_at",)
+    search_fields = ("full_name", "email", "organization")
+    readonly_fields = ("full_name", "email", "organization", "note", "submitted_at")
+    ordering = ("-submitted_at",)
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
 
 
 # ─── KnowledgeCategory ────────────────────────────────────────────────────────

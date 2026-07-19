@@ -1,8 +1,10 @@
 """Knowledge module views."""
 
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
+from django.urls import reverse
 from django.views.generic import TemplateView
 
+from .forms import KnowledgeDownloadRequestForm
 from .services import KnowledgeService
 
 
@@ -63,7 +65,22 @@ class KnowledgeListingView(TemplateView):
 
         context["downloads"] = KnowledgeService.get_downloads()
         context["news_items"] = KnowledgeService.get_news_items()
+        # ── Publication section form ──────────────────────────────────────────
+        context["pub_form"] = KnowledgeDownloadRequestForm()
+        context["pub_form_success"] = self.request.GET.get("pub_form") == "success"
         return context
+
+    def post(self, request, *args, **kwargs):
+        """Handle publication download request form submission."""
+        form = KnowledgeDownloadRequestForm(request.POST)
+        if form.is_valid():
+            KnowledgeService.save_download_request(form.cleaned_data)
+            return HttpResponseRedirect(
+                reverse("knowledge:listing") + "?pub_form=success#tai-lieu-tai-ve"
+            )
+        context = self.get_context_data(**kwargs)
+        context["pub_form"] = form  # override with error form
+        return self.render_to_response(context)
 
 
 class KnowledgeArticleDetailView(TemplateView):
