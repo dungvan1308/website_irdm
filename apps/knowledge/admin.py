@@ -4,11 +4,15 @@ from django.contrib import admin
 from django.utils.html import format_html
 
 from .models import (
+    KnowledgeAccordionItem,
+    KnowledgeActivityNews,
     KnowledgeArticle,
     KnowledgeCategory,
     KnowledgeContentTypeCard,
     KnowledgeDownload,
     KnowledgeDownloadRequest,
+    KnowledgeEvent,
+    KnowledgeEventTag,
     KnowledgeFeaturedArticle,
     KnowledgeFilterGroup,
     KnowledgeFilterItem,
@@ -171,6 +175,18 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "pub_contact_cta_icon",
                 "pub_contact_cta_url",
                 "pub_contact_city_image",
+            ),
+        }),
+        ("News & Events Section (Tin tức & Sự kiện)", {
+            "description": "Cấu hình section Tin tức & Sự kiện — Tin hoạt động IRDM và Sự kiện sắp diễn ra.",
+            "fields": (
+                "news_section_label",
+                "news_section_heading",
+                "news_section_description",
+                "news_section_bg_image",
+                "news_section_bg_decoration",
+                "news_activity_heading",
+                "news_events_heading",
             ),
         }),
         ("CTA", {
@@ -402,6 +418,88 @@ class KnowledgeTopicCardTagAdmin(admin.ModelAdmin):
             'background:{};vertical-align:middle;margin-right:6px;"></span>{}',
             obj.color, obj.color,
         )
+
+
+# ─── KnowledgeActivityNews ───────────────────────────────────────────────────
+
+@admin.register(KnowledgeActivityNews)
+class KnowledgeActivityNewsAdmin(admin.ModelAdmin):
+    list_display = ("title", "category", "published_date", "is_published", "display_order", "is_active")
+    list_editable = ("display_order", "is_published", "is_active")
+    list_filter = ("category", "is_published")
+    search_fields = ("title", "summary")
+    ordering = ("display_order", "-published_date")
+    readonly_fields = ("thumbnail_preview",)
+    fieldsets = (
+        ("Identity", {"fields": ("title", "summary")}),
+        ("Media", {"fields": ("thumbnail", "thumbnail_preview")}),
+        ("Classification", {"fields": ("category", "published_date")}),
+        ("CTA", {"fields": ("cta_text", "cta_icon", "cta_url")}),
+        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+    )
+
+    @admin.display(description="Thumbnail")
+    def thumbnail_preview(self, obj):
+        return _img_preview(obj.thumbnail, height=60)
+
+
+# ─── KnowledgeEventTag ────────────────────────────────────────────────────────
+
+@admin.register(KnowledgeEventTag)
+class KnowledgeEventTagAdmin(admin.ModelAdmin):
+    list_display = ("label", "slug", "color_chip", "display_order", "is_active")
+    list_editable = ("display_order", "is_active")
+    prepopulated_fields = {"slug": ("label",)}
+    fieldsets = (
+        ("Tag", {"fields": ("label", "slug", "color")}),
+        ("Status", {"fields": ("is_active", "display_order")}),
+    )
+
+    @admin.display(description="Color")
+    def color_chip(self, obj):
+        return format_html(
+            '<span style="display:inline-block;width:16px;height:16px;border-radius:3px;'
+            'background:{};vertical-align:middle;margin-right:6px;"></span>{}',
+            obj.color, obj.color,
+        )
+
+
+# ─── KnowledgeEvent ───────────────────────────────────────────────────────────
+
+@admin.register(KnowledgeEvent)
+class KnowledgeEventAdmin(admin.ModelAdmin):
+    list_display = ("title", "category", "event_date", "location", "is_published", "display_order", "is_active")
+    list_editable = ("display_order", "is_published", "is_active")
+    list_filter = ("category", "is_published")
+    search_fields = ("title", "description", "location")
+    filter_horizontal = ("tags",)
+    readonly_fields = ("cover_image_preview",)
+    fieldsets = (
+        ("Identity", {"fields": ("title", "description")}),
+        ("Media", {"fields": ("cover_image", "cover_image_preview")}),
+        ("Classification", {"fields": ("category", "event_date", "location", "tags")}),
+        ("CTA", {"fields": ("cta_text", "cta_icon", "cta_url")}),
+        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+    )
+
+    @admin.display(description="Cover preview")
+    def cover_image_preview(self, obj):
+        return _img_preview(obj.cover_image)
+
+
+# ─── KnowledgeAccordionItem ───────────────────────────────────────────────────
+
+@admin.register(KnowledgeAccordionItem)
+class KnowledgeAccordionItemAdmin(admin.ModelAdmin):
+    list_display = ("title", "accordion_type", "is_published", "display_order", "is_active")
+    list_editable = ("display_order", "is_published", "is_active")
+    list_filter = ("accordion_type", "is_published")
+    search_fields = ("title", "content")
+    ordering = ("accordion_type", "display_order")
+    fieldsets = (
+        ("Accordion", {"fields": ("accordion_type", "title", "content")}),
+        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+    )
 
 
 # ─── KnowledgeTopicCard ───────────────────────────────────────────────────────

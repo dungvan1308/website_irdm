@@ -20,10 +20,14 @@ from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
 
 from apps.knowledge.models import (
+    KnowledgeAccordionItem,
+    KnowledgeActivityNews,
     KnowledgeArticle,
     KnowledgeCategory,
     KnowledgeContentTypeCard,
     KnowledgeDownload,
+    KnowledgeEvent,
+    KnowledgeEventTag,
     KnowledgeFeaturedArticle,
     KnowledgeFilterGroup,
     KnowledgeFilterItem,
@@ -880,6 +884,228 @@ class Command(BaseCommand):
                 obj.thumbnail.save(f"knowledge/news/{obj.slug}.png", img, save=True)
             if created:
                 self.stdout.write(f"  News: {obj.title[:60]}")
+
+        # ── Activity News (Tin hoạt động IRDM) ───────────────────────────────
+        ACTIVITY_NEWS = [
+            {
+                "title": "IRDM cung cấp dịch vụ thư ký khoa học cho Bệnh viện Nguyễn Tri Phương",
+                "summary": "Hỗ trợ thiết kế và triển khai nhiệm vụ KH,CN & ĐMST tại đơn vị y tế.",
+                "category_slug": "tin-irdm",
+                "published_date": date(2024, 6, 15),
+                "cta_text": "Xem chi tiết",
+                "cta_icon": "arrow-right",
+                "cta_url": "",
+                "display_order": 1,
+            },
+            {
+                "title": "IRDM ký kết hợp tác với Đại học Y Dược TP.HCM trong nghiên cứu ứng dụng",
+                "summary": "Phối hợp triển khai các nghiên cứu về sức khỏe cộng đồng và chuyển đổi số.",
+                "category_slug": "tin-irdm",
+                "published_date": date(2024, 5, 10),
+                "cta_text": "Xem chi tiết",
+                "cta_icon": "arrow-right",
+                "cta_url": "",
+                "display_order": 2,
+            },
+            {
+                "title": "Tóm lược Hội thảo Wellbeing trong y tế và giáo dục 2024",
+                "summary": "Những phát hiện chính và khuyến nghị từ 3 phiên thảo luận chuyên sâu.",
+                "category_slug": "tin-irdm",
+                "published_date": date(2024, 4, 20),
+                "cta_text": "Xem chi tiết",
+                "cta_icon": "arrow-right",
+                "cta_url": "",
+                "display_order": 3,
+            },
+            {
+                "title": "IRDM hoàn thành báo cáo đánh giá nhu cầu năng lực nhân lực y tế TP.HCM",
+                "summary": "Kết quả phân tích từ khảo sát 420 nhân viên y tế tại 8 bệnh viện.",
+                "category_slug": "cong-bo-nghien-cuu",
+                "published_date": date(2024, 5, 28),
+                "cta_text": "Xem chi tiết",
+                "cta_icon": "arrow-right",
+                "cta_url": "",
+                "display_order": 4,
+            },
+        ]
+        for i, n in enumerate(ACTIVITY_NEWS):
+            category = cat_map.get(n.get("category_slug", ""))
+            title = n["title"]
+            obj, created = KnowledgeActivityNews.objects.update_or_create(
+                title=title,
+                defaults={
+                    "summary": n.get("summary", ""),
+                    "published_date": n.get("published_date"),
+                    "category": category,
+                    "cta_text": n.get("cta_text", "Xem chi tiết"),
+                    "cta_icon": n.get("cta_icon", "arrow-right"),
+                    "cta_url": n.get("cta_url", ""),
+                    "is_published": True,
+                    "is_active": True,
+                    "display_order": n.get("display_order", i),
+                },
+            )
+            if created:
+                self.stdout.write(f"  ActivityNews: {obj.title[:60]}")
+
+        # ── Event Tags ────────────────────────────────────────────────────────────
+        EVENT_TAGS_DATA = [
+            {"slug": "nguon-nhan-luc-evt",       "label": "Nguồn nhân lực",                    "color": "#3b82f6",  "display_order": 1},
+            {"slug": "co-quan-quan-ly-evt",      "label": "Cơ quan quản lý",                  "color": "#f97316",  "display_order": 2},
+            {"slug": "truong-dai-hoc-evt",       "label": "Trường đại học",                  "color": "#10b981",  "display_order": 3},
+            {"slug": "he-thong-y-te-evt",        "label": "Hệ thống y tế",                   "color": "#06b6d4",  "display_order": 4},
+            {"slug": "y-te-evt",                 "label": "Y tế",                              "color": "#ef4444",  "display_order": 5},
+            {"slug": "ai-du-lieu-evt",           "label": "AI, dữ liệu & chuyển đổi số",    "color": "#6366f1",  "display_order": 6},
+        ]
+        evt_tag_map: dict[str, KnowledgeEventTag] = {}
+        for tdata in EVENT_TAGS_DATA:
+            tag, _ = KnowledgeEventTag.objects.update_or_create(
+                slug=tdata["slug"],
+                defaults={
+                    "label": tdata["label"],
+                    "color": tdata["color"],
+                    "display_order": tdata["display_order"],
+                    "is_active": True,
+                },
+            )
+            evt_tag_map[tdata["slug"]] = tag
+
+        # ── Events (Sự kiện sắp diễn ra) ────────────────────────────────────────
+        EVENTS_DATA = [
+            {
+                "title": "Xây dựng đề xuất, thuyết minh & dự toán nhiệm vụ KH&CN & ĐMST cấp tỉnh/thành phố",
+                "description": (
+                    "Khóa chuyên sâu hỗ trợ viên ngọi quy trình xây dựng đề xuất, "
+                    "thuyết minh và dự toán nhiệm vụ KH&CN & ĐMST cấp tỉnh/thành phố "
+                    "theo các yêu cầu thực tiễn."
+                ),
+                "category_slug": "tin-irdm",
+                "event_date": "08/07/2026 - 11/07/2026",
+                "location": "Viện IRDM (Thực tế)",
+                "tag_slugs": ["nguon-nhan-luc-evt", "co-quan-quan-ly-evt", "truong-dai-hoc-evt", "he-thong-y-te-evt"],
+                "cta_text": "Xem sự kiện",
+                "cta_icon": "arrow-right",
+                "cta_url": "",
+                "display_order": 1,
+            },
+            {
+                "title": "Chuyển đổi số Bệnh viện: Từ chiến lược đến vận hành",
+                "description": (
+                    "Tập trung vào chiến lược chuyển hóa định hướng chuyển đổi số bệnh viện "
+                    "thành các buộc triển khai thực tế, gắn với dữ liệu, văn hóa và hỗ trợ quyết định."
+                ),
+                "category_slug": "tin-irdm",
+                "event_date": "14/07/2026",
+                "location": "Viện IRDM (Thực tế)",
+                "tag_slugs": ["y-te-evt", "ai-du-lieu-evt", "he-thong-y-te-evt", "co-quan-quan-ly-evt"],
+                "cta_text": "Xem sự kiện",
+                "cta_icon": "arrow-right",
+                "cta_url": "",
+                "display_order": 2,
+            },
+            {
+                "title": "Nghiệp vụ Thư ký Khoa học đề tài KH, Công nghệ & Đổi mới sáng tạo cấp tỉnh/thành phố",
+                "description": (
+                    "Hỗ trợ nắm vững vai trò và nghiệp vụ của thư ký khoa học trong quản lý hồ sơ, "
+                    "theo dõi quy trình và hỗ trợ triển khai nhiệm vụ KH&CN & ĐMST cấp tỉnh/thành phố."
+                ),
+                "category_slug": "tin-irdm",
+                "event_date": "Di Động 7, 2024",
+                "location": "Viện IRDM (Thực tế)",
+                "tag_slugs": ["nguon-nhan-luc-evt", "co-quan-quan-ly-evt", "truong-dai-hoc-evt", "he-thong-y-te-evt"],
+                "cta_text": "Xem sự kiện",
+                "cta_icon": "arrow-right",
+                "cta_url": "",
+                "display_order": 3,
+            },
+        ]
+        for i, ev in enumerate(EVENTS_DATA):
+            category = cat_map.get(ev.get("category_slug", ""))
+            obj, created = KnowledgeEvent.objects.update_or_create(
+                title=ev["title"],
+                defaults={
+                    "description": ev.get("description", ""),
+                    "category": category,
+                    "event_date": ev.get("event_date", ""),
+                    "location": ev.get("location", ""),
+                    "cta_text": ev.get("cta_text", "Xem sự kiện"),
+                    "cta_icon": ev.get("cta_icon", "arrow-right"),
+                    "cta_url": ev.get("cta_url", ""),
+                    "is_published": True,
+                    "is_active": True,
+                    "display_order": ev.get("display_order", i),
+                },
+            )
+            obj.tags.set([evt_tag_map[s] for s in ev.get("tag_slugs", []) if s in evt_tag_map])
+            if created:
+                self.stdout.write(f"  Event: {obj.title[:60]}")
+
+        # ── Accordion Items ──────────────────────────────────────────────────────
+        ACCORDION_DATA = [
+            {
+                "accordion_type": "post_event",
+                "title": "Hội thảo Wellbeing trong y tế và giáo dục 2024",
+                "content": (
+                    "Tóm tắt hội thảo với sự tham gia của hơn 120 chuyên gia và nhà quản lý.\n"
+                    "Các chủ đề chính: sức khỏe tâm thần nhân viên y tế, môi trường học đường lành mạnh, các mô hình can thiệp sớm."
+                ),
+                "display_order": 1,
+            },
+            {
+                "accordion_type": "post_event",
+                "title": "Workshop Chuyển đổi số Bệnh viện — Thoái tất và triển vọ ngày 14/07",
+                "content": (
+                    "Tóm lược các bài trình bày và kết quả thảo luận nhóm trong workshop.\n"
+                    "Các quyết định hành động mà các đại biểu cam kết sau sự kiện."
+                ),
+                "display_order": 2,
+            },
+            {
+                "accordion_type": "cooperation",
+                "title": "IRDM và Đại học Y Dược TP.HCM công bố hợp tác nghiên cứu 2024–2026",
+                "content": (
+                    "Hai bên chính thức công bố hợp tác trong lĩnh vực nghiên cứu ứng dụng và đào tạo năng lực.\n"
+                    "Thời gian: 2024–2026. Phạm vi: nghiên cứu hỗn hợp, thực tập sinh, hội thảo chung."
+                ),
+                "display_order": 1,
+            },
+            {
+                "accordion_type": "cooperation",
+                "title": "Hợp tác với Tổ chức Y tế Thế giới (WHO) và UNICEF trong chương trình wellbeing",
+                "content": (
+                    "Công bố bản ghi nhớ hợp tác (MOU) với WHO và UNICEF.\n"
+                    "Nội dung: triển khai chương trình wellbeing tại các tỉnh thành phíển Bắc 2025."
+                ),
+                "display_order": 2,
+            },
+        ]
+        for i, acc in enumerate(ACCORDION_DATA):
+            obj, created = KnowledgeAccordionItem.objects.update_or_create(
+                accordion_type=acc["accordion_type"],
+                title=acc["title"],
+                defaults={
+                    "content": acc["content"],
+                    "is_published": True,
+                    "is_active": True,
+                    "display_order": acc["display_order"],
+                },
+            )
+            if created:
+                self.stdout.write(f"  Accordion [{acc['accordion_type']}]: {obj.title[:60]}")
+
+        # ── News & Events section fields on listing page ───────────────────
+        KnowledgeListingPage.objects.filter(pk=listing_page.pk).update(
+            news_section_label="IRDM trên báo chí và diễn đàn chuyên môn",
+            news_section_heading="Tin tức & Sự kiện",
+            news_section_description=(
+                "Tin tức và sự kiện hỗ trợ người đọc theo dõi các hoạt động chuyên môn, hợp tác "
+                "và diễn đàn mà IRDM tham gia hoặc tổ chức."
+            ),
+            news_activity_heading="Tin hoạt động IRDM",
+            news_events_heading="Sự kiện sắp diễn ra",
+        )
+        listing_page.refresh_from_db()
+
         # ── Content Type Section fields on listing page ─────────────────────
         KnowledgeListingPage.objects.filter(pk=listing_page.pk).update(
             content_type_section_label="KHÁM PHÁ THEO LOẠI NỘI DUNG",

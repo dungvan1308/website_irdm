@@ -7,11 +7,14 @@ from typing import Optional
 from django.db.models import Prefetch, QuerySet
 
 from .models import (
+    KnowledgeAccordionItem,
+    KnowledgeActivityNews,
     KnowledgeArticle,
     KnowledgeCategory,
     KnowledgeContentTypeCard,
     KnowledgeDownload,
     KnowledgeDownloadRequest,
+    KnowledgeEvent,
     KnowledgeFilterGroup,
     KnowledgeFilterItem,
     KnowledgeListingPage,
@@ -96,6 +99,36 @@ class KnowledgeService:
             .select_related("category")
             .prefetch_related("topics")
             .order_by("display_order", "-published_date")
+        )
+
+    @staticmethod
+    def get_activity_news() -> QuerySet:
+        """Return published activity news items for the left column of the News & Events section."""
+        return (
+            KnowledgeActivityNews.objects
+            .filter(is_active=True, is_published=True)
+            .select_related("category")
+            .order_by("display_order", "-published_date")
+        )
+
+    @staticmethod
+    def get_upcoming_events() -> QuerySet:
+        """Return published upcoming events for the right column of the News & Events section."""
+        return (
+            KnowledgeEvent.objects
+            .filter(is_active=True, is_published=True)
+            .select_related("category")
+            .prefetch_related("tags")
+            .order_by("display_order")
+        )
+
+    @staticmethod
+    def get_accordion_items(accordion_type: str) -> QuerySet:
+        """Return published accordion items of the given type."""
+        return (
+            KnowledgeAccordionItem.objects
+            .filter(is_active=True, is_published=True, accordion_type=accordion_type)
+            .order_by("display_order")
         )
 
     @staticmethod
