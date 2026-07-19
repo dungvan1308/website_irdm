@@ -12,6 +12,7 @@ from .models import (
     KnowledgeArticle,
     KnowledgeCategory,
     KnowledgeContentTypeCard,
+    KnowledgeCTAButton,
     KnowledgeDownload,
     KnowledgeDownloadRequest,
     KnowledgeEvent,
@@ -109,6 +110,17 @@ class KnowledgeService:
             .filter(is_active=True, is_published=True, is_press_article=True)
             .select_related("category")
             .order_by("display_order", "-published_date")
+        )
+
+    @staticmethod
+    def get_ready_section_buttons(listing_page: KnowledgeListingPage) -> QuerySet:
+        """Return active CTA buttons for the Sẵn sàng trao đổi section (max 3)."""
+        if not listing_page:
+            return KnowledgeCTAButton.objects.none()
+        return (
+            KnowledgeCTAButton.objects
+            .filter(listing_page=listing_page, is_active=True, is_published=True)
+            .order_by("display_order")[:3]
         )
 
     @staticmethod

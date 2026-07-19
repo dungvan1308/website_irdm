@@ -241,6 +241,40 @@ class KnowledgeListingPage(BaseModel):
         help_text=_("Nhả nền tuỳ chọn cho section báo chí."),
     )
 
+    # ─── Ready Section (Sẵn sàng trao đổi) ─────────────────────────────────
+    ready_section_subtitle = models.CharField(
+        _("ready section subtitle"), max_length=200, blank=True,
+        help_text=_("Subtitle nhỏ phía trên, e.g. Sẵn sàng trao đổi?"),
+    )
+    ready_section_title = models.CharField(
+        _("ready section title"), max_length=500, blank=True,
+        help_text=_("Tiêu đề lớn của section CTA."),
+    )
+    ready_section_description = models.TextField(
+        _("ready section description"), blank=True,
+    )
+    ready_section_bg_image = models.ImageField(
+        _("ready section background image"),
+        upload_to="knowledge/ready/bg/", blank=True,
+        help_text=_("Ảnh nền full-width của section."),
+    )
+    ready_section_overlay_color = models.CharField(
+        _("ready section overlay color"), max_length=30, blank=True, default="#0d1e4a",
+        help_text=_("Màu overlay dạng hex, e.g. #0d1e4a."),
+    )
+    ready_section_overlay_opacity = models.FloatField(
+        _("ready section overlay opacity"), default=0.82,
+        help_text=_("Độ mờ overlay từ 0.0 đến 1.0."),
+    )
+    ready_section_text_color = models.CharField(
+        _("ready section text color"), max_length=20, blank=True, default="light",
+        choices=[("light", "Sáng (white)"), ("dark", "Tối (dark)")],
+    )
+    ready_section_is_active = models.BooleanField(
+        _("ready section is active"), default=True,
+        help_text=_("N/hiện toàn bộ section Sẵn sàng trao đổi."),
+    )
+
     meta_title = models.CharField(_("meta title"), max_length=200, blank=True)
     meta_description = models.CharField(_("meta description"), max_length=300, blank=True)
 
@@ -878,3 +912,54 @@ class KnowledgeAccordionItem(BaseModel):
 
     def __str__(self) -> str:
         return f"[{self.get_accordion_type_display()}] {self.title}"
+
+
+# ─── CTA Button (Sẵn sàng trao đổi) ───────────────────────────────────────────────────
+
+class KnowledgeCTAButton(BaseModel):
+    """A CTA button in the 'Sẵn sàng trao đổi' section on the Knowledge listing page."""
+
+    STYLE_CHOICES = [
+        ("primary",   "Primary (cam)"),
+        ("secondary", "Secondary (trắng/mờ)"),
+        ("outline",   "Outline (viền trắng)"),
+    ]
+    TARGET_CHOICES = [
+        ("_self",  "Cùng tab (_self)"),
+        ("_blank", "Tab mới (_blank)"),
+    ]
+    ICON_CHOICES = [
+        ("",            "Không có"),
+        ("arrow-right", "Mũi tên →"),
+        ("external",    "Mở ngoài ↗"),
+    ]
+
+    listing_page = models.ForeignKey(
+        KnowledgeListingPage,
+        on_delete=models.CASCADE,
+        related_name="cta_buttons",
+        verbose_name=_("listing page"),
+    )
+    text = models.CharField(_("button text"), max_length=200)
+    url = models.CharField(_("button URL"), max_length=500, blank=True)
+    target = models.CharField(
+        _("button target"), max_length=20, default="_self",
+        choices=TARGET_CHOICES,
+    )
+    style = models.CharField(
+        _("button style"), max_length=20, default="primary",
+        choices=STYLE_CHOICES,
+    )
+    icon = models.CharField(
+        _("button icon"), max_length=50, blank=True,
+        choices=ICON_CHOICES,
+    )
+    is_published = models.BooleanField(_("published"), default=True, db_index=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("CTA button")
+        verbose_name_plural = _("CTA buttons")
+        ordering = ["display_order"]
+
+    def __str__(self) -> str:
+        return self.text
