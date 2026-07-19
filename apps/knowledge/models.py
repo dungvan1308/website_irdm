@@ -189,6 +189,40 @@ class KnowledgeListingPage(BaseModel):
         help_text=_("Ảnh skyline thành phố hiển thị phía dưới contact block."),
     )
 
+    # ─── News & Events Section (Tin tức & Sự kiện) ───────────────────────────
+    news_section_label = models.CharField(
+        _("news section label"), max_length=200, blank=True,
+        help_text=_("Label nhỏ phía trên, e.g. IRDM trên báo chí và diễn đàn chuyên môn."),
+    )
+    news_section_heading = models.CharField(
+        _("news section heading"), max_length=300, blank=True,
+        help_text=_("Tiêu đề section, e.g. Tin tức & Sự kiện."),
+    )
+    news_section_description = models.TextField(
+        _("news section description"), blank=True,
+        help_text=_("Mô tả ngắn hiển thị dưới tiêu đề section."),
+    )
+    news_section_bg_image = models.ImageField(
+        _("news section background image"),
+        upload_to="knowledge/news_section/bg/", blank=True,
+        help_text=_("Ảnh nền toàn section."),
+    )
+    news_section_bg_decoration = models.ImageField(
+        _("news section decorative background"),
+        upload_to="knowledge/news_section/deco/", blank=True,
+        help_text=_("Họa tiết trang trí hiển thị phía sau nội dung."),
+    )
+    news_activity_heading = models.CharField(
+        _("activity news heading"), max_length=200, blank=True,
+        default="Tin hoạt động IRDM",
+        help_text=_("Tiêu đề cột trái — danh sách tin hoạt động."),
+    )
+    news_events_heading = models.CharField(
+        _("upcoming events heading"), max_length=200, blank=True,
+        default="Sự kiện sắp diễn ra",
+        help_text=_("Tiêu đề cột phải — danh sách sự kiện."),
+    )
+
     meta_title = models.CharField(_("meta title"), max_length=200, blank=True)
     meta_description = models.CharField(_("meta description"), max_length=300, blank=True)
 
@@ -654,3 +688,153 @@ class KnowledgeDownloadRequest(models.Model):
 
     def __str__(self) -> str:
         return f"{self.full_name} <{self.email}>"
+
+
+# ─── Activity News (Tin hoạt động IRDM) ──────────────────────────────────────
+
+class KnowledgeActivityNews(BaseModel):
+    """A news/activity item shown in the left column of the News & Events section."""
+
+    CTA_ICON_CHOICES = [
+        ("arrow-right", "Arrow Right →"),
+        ("external", "External ↗"),
+    ]
+
+    thumbnail = models.ImageField(
+        _("thumbnail"), upload_to="knowledge/activity_news/", blank=True,
+        help_text=_("Ảnh đại diện cho tin hoạt động."),
+    )
+    category = models.ForeignKey(
+        KnowledgeCategory,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="activity_news",
+        verbose_name=_("category"),
+    )
+    title = models.CharField(_("title"), max_length=300)
+    summary = models.TextField(_("summary"), blank=True)
+    published_date = models.DateField(_("published date"), null=True, blank=True)
+    cta_text = models.CharField(
+        _("CTA text"), max_length=100, blank=True, default="Xem chi tiết",
+    )
+    cta_icon = models.CharField(
+        _("CTA icon"), max_length=50, blank=True,
+        choices=CTA_ICON_CHOICES, default="arrow-right",
+    )
+    cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+    is_published = models.BooleanField(_("published"), default=False, db_index=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("activity news item")
+        verbose_name_plural = _("activity news items")
+
+    def __str__(self) -> str:
+        return self.title
+
+
+# ─── Event Tag ────────────────────────────────────────────────────────────────
+
+class KnowledgeEventTag(BaseModel):
+    """A reusable tag for labelling events (audience, format, topic)."""
+
+    label = models.CharField(_("label"), max_length=100)
+    slug = models.SlugField(_("slug"), max_length=100, unique=True, db_index=True)
+    color = models.CharField(
+        _("color (hex)"), max_length=30, default="#3b82f6",
+        help_text=_("Màu nền badge tag, e.g. #3b82f6."),
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("event tag")
+        verbose_name_plural = _("event tags")
+
+    def __str__(self) -> str:
+        return self.label
+
+
+# ─── Event (Sự kiện sắp diễn ra) ─────────────────────────────────────────────
+
+class KnowledgeEvent(BaseModel):
+    """An upcoming event shown in the right column of the News & Events section."""
+
+    CTA_ICON_CHOICES = [
+        ("arrow-right", "Arrow Right →"),
+        ("external", "External ↗"),
+        ("calendar", "Calendar 📅"),
+    ]
+
+    cover_image = models.ImageField(
+        _("cover image"), upload_to="knowledge/events/", blank=True,
+        help_text=_("Ảnh bìa sự kiện."),
+    )
+    category = models.ForeignKey(
+        KnowledgeCategory,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="events",
+        verbose_name=_("category"),
+    )
+    event_date = models.CharField(
+        _("event date (display text)"), max_length=200, blank=True,
+        help_text=_("Chuỗi hiển thị ngày giờ sự kiện, e.g. 08/07/2026 - 11/07/2026."),
+    )
+    title = models.CharField(_("title"), max_length=300)
+    description = models.TextField(_("description"), blank=True)
+    tags = models.ManyToManyField(
+        KnowledgeEventTag,
+        blank=True,
+        related_name="events",
+        verbose_name=_("tags"),
+    )
+    location = models.CharField(
+        _("location"), max_length=300, blank=True,
+        help_text=_("Địa điểm tổ chức, e.g. Viện IRDM (Thực tế)."),
+    )
+    cta_text = models.CharField(
+        _("CTA text"), max_length=100, blank=True, default="Xem sự kiện",
+    )
+    cta_icon = models.CharField(
+        _("CTA icon"), max_length=50, blank=True,
+        choices=CTA_ICON_CHOICES, default="arrow-right",
+    )
+    cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+    is_published = models.BooleanField(_("published"), default=False, db_index=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("knowledge event")
+        verbose_name_plural = _("knowledge events")
+
+    def __str__(self) -> str:
+        return self.title
+
+
+# ─── Accordion Item ───────────────────────────────────────────────────────────
+
+class KnowledgeAccordionItem(BaseModel):
+    """An accordion item under the Events column (post-event summaries or cooperation announcements)."""
+
+    ACCORDION_TYPE_CHOICES = [
+        ("post_event", "Tổng hợp sau sự kiện"),
+        ("cooperation", "Công bố hợp tác"),
+    ]
+
+    accordion_type = models.CharField(
+        _("accordion type"), max_length=20,
+        choices=ACCORDION_TYPE_CHOICES, default="post_event",
+        db_index=True,
+    )
+    title = models.CharField(_("title"), max_length=300)
+    content = models.TextField(
+        _("content"),
+        help_text=_("Nội dung accordion. Hỗ trợ văn bản thông thường, mỗi dòng là một đoạn."),
+    )
+    is_published = models.BooleanField(_("published"), default=False, db_index=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("accordion item")
+        verbose_name_plural = _("accordion items")
+
+    def __str__(self) -> str:
+        return f"[{self.get_accordion_type_display()}] {self.title}"

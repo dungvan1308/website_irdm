@@ -3089,3 +3089,26 @@ video {
     padding: 3rem;
   }
 }
+
+
+/* === News & Events section — manually appended (Tailwind rebuild not available) === */
+.grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}
+.col-span-4{grid-column:span 4/span 4}
+.col-span-5{grid-column:span 5/span 5}
+.col-span-7{grid-column:span 7/span 7}
+.col-span-8{grid-column:span 8/span 8}
+.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}
+.divide-slate-100>:not([hidden])~:not([hidden]){--tw-divide-opacity:1;border-color:rgb(241 245 249/var(--tw-divide-opacity))}
+.border-l-4{border-left-width:4px}
+.border-l-orange-400{--tw-border-opacity:1;border-left-color:rgb(251 146 60/var(--tw-border-opacity))}
+.last\:border-b-0:last-child{border-bottom-width:0px}
+.first\:border-l-4:first-child{border-left-width:4px}
+@media (min-width:1024px){
+  .lg\:col-span-4{grid-column:span 4/span 4}
+  .lg\:col-span-5{grid-column:span 5/span 5}
+  .lg\:col-span-7{grid-column:span 7/span 7}
+  .lg\:col-span-8{grid-column:span 8/span 8}
+  .lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}
+  .lg\:gap-10{gap:2.5rem}
+}
+/* === end patch === */
