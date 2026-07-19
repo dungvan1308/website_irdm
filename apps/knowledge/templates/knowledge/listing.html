@@ -1268,9 +1268,9 @@
         {% endif %}
       </div>
 
-      {# Right: CTA buttons (vertical stack, max 3) #}
+      {# Right: CTA buttons — horizontal row, wraps on mobile #}
       {% if ready_section_buttons %}
-      <div class="flex flex-col gap-3 lg:min-w-[260px] lg:flex-shrink-0">
+      <div class="flex flex-row flex-wrap gap-3 lg:flex-shrink-0 lg:justify-end">
         {% for btn in ready_section_buttons %}
           <a href="{{ btn.url|default:'#' }}"
              target="{{ btn.target|default:'_self' }}"
