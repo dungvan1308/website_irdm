@@ -9,6 +9,7 @@ from .models import (
     KnowledgeArticle,
     KnowledgeCategory,
     KnowledgeContentTypeCard,
+    KnowledgeCTAButton,
     KnowledgeDownload,
     KnowledgeDownloadRequest,
     KnowledgeEvent,
@@ -81,13 +82,21 @@ class KnowledgeTopicCardInline(admin.StackedInline):
         return _img_preview(obj.cover_image)
 
 
-# ─── KnowledgeListingPage ─────────────────────────────────────────────────────
+class KnowledgeCTAButtonInline(admin.TabularInline):
+    model = KnowledgeCTAButton
+    extra = 1
+    fields = ("text", "url", "target", "style", "icon", "display_order", "is_published", "is_active")
+    verbose_name = "CTA Button (Sẵn sàng trao đổi)"
+    verbose_name_plural = "CTA Buttons (Sẵn sàng trao đổi)"
+
+
+# ─── KnowledgeListingPage ───────────────────────────────────────────────────────────────────
 
 @admin.register(KnowledgeListingPage)
 class KnowledgeListingPageAdmin(admin.ModelAdmin):
     list_display = ("heading", "hero_image_preview", "is_active")
     readonly_fields = ("hero_image_preview", "cta_background_image_preview")
-    inlines = [KnowledgeFeaturedArticleInline, KnowledgeContentTypeCardInline, KnowledgeTopicCardInline]
+    inlines = [KnowledgeFeaturedArticleInline, KnowledgeContentTypeCardInline, KnowledgeTopicCardInline, KnowledgeCTAButtonInline]
     fieldsets = (
         ("Hero", {
             "fields": (
@@ -196,6 +205,19 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "press_section_heading",
                 "press_section_description",
                 "press_section_bg_image",
+            ),
+        }),
+        ("Ready Section (Sẵn sàng trao đổi)", {
+            "description": "Cấu hình section CTA. Quản lý CTA Buttons ở bên dưới (inline).",
+            "fields": (
+                "ready_section_is_active",
+                "ready_section_subtitle",
+                "ready_section_title",
+                "ready_section_description",
+                "ready_section_bg_image",
+                "ready_section_overlay_color",
+                "ready_section_overlay_opacity",
+                "ready_section_text_color",
             ),
         }),
         ("CTA", {

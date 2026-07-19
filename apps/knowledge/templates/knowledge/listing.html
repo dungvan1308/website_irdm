@@ -1225,6 +1225,80 @@
 {% endif %}
 
 {% endif %}{# end search_results is not None #}
+
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{#  READY SECTION — Sẵn sàng trao đổi                                          #}
+{# ═══════════════════════════════════════════════════════════════════════════ #}
+{% if listing_page and listing_page.ready_section_is_active and listing_page.ready_section_title %}
+<section id="san-sang-trao-doi"
+         class="relative overflow-hidden"
+         style="min-height: 280px;"
+         aria-labelledby="ready-section-heading">
+
+  {# ── Background image (full-width, object-cover) ────────────────────── #}
+  {% if listing_page.ready_section_bg_image %}
+    <img src="{{ listing_page.ready_section_bg_image.url }}" alt=""
+         class="absolute inset-0 w-full h-full object-cover object-center"
+         aria-hidden="true" loading="eager" />
+  {% endif %}
+
+  {# ── Overlay layer (color + opacity separate so content is unaffected) ── #}
+  <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true"
+       style="background-color: {{ listing_page.ready_section_overlay_color|default:'#0d1e4a' }}; opacity: {{ listing_page.ready_section_overlay_opacity|default:'0.82' }};"></div>
+
+  {# ── Content ──────────────────────────────────────────────────────────── #}
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+    <div class="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
+
+      {# Left: subtitle + title + description #}
+      <div class="flex-1 min-w-0">
+        {% if listing_page.ready_section_subtitle %}
+          <p class="text-orange-400 text-sm font-semibold uppercase tracking-wide mb-3">
+            {{ listing_page.ready_section_subtitle }}
+          </p>
+        {% endif %}
+        <h2 id="ready-section-heading"
+            class="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase leading-tight tracking-tight mb-5">
+          {{ listing_page.ready_section_title }}
+        </h2>
+        {% if listing_page.ready_section_description %}
+          <p class="text-slate-300 text-base leading-relaxed max-w-xl">
+            {{ listing_page.ready_section_description }}
+          </p>
+        {% endif %}
+      </div>
+
+      {# Right: CTA buttons — horizontal row, wraps on mobile #}
+      {% if ready_section_buttons %}
+      <div class="flex flex-row flex-wrap gap-3 lg:flex-shrink-0 lg:justify-end">
+        {% for btn in ready_section_buttons %}
+          <a href="{{ btn.url|default:'#' }}"
+             target="{{ btn.target|default:'_self' }}"
+             class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-sm whitespace-nowrap transition-all duration-200
+                    {% if btn.style == 'primary' %}bg-orange-500 text-white hover:bg-orange-600 shadow-lg
+                    {% elif btn.style == 'secondary' %}bg-white/10 text-white hover:bg-white/20 border border-white/20
+                    {% else %}border-2 border-white/60 text-white hover:bg-white/10{% endif %}">
+            {{ btn.text }}
+            {% if btn.icon == 'arrow-right' %}
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+              </svg>
+            {% elif btn.icon == 'external' %}
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            {% endif %}
+          </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+</section>
+{% endif %}
+
 {#  CTA BANNER                                                                 #}
 {# ═══════════════════════════════════════════════════════════════════════════ #}
 {% if listing_page and listing_page.cta_heading %}

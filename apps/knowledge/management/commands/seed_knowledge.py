@@ -25,6 +25,7 @@ from apps.knowledge.models import (
     KnowledgeArticle,
     KnowledgeCategory,
     KnowledgeContentTypeCard,
+    KnowledgeCTAButton,
     KnowledgeDownload,
     KnowledgeEvent,
     KnowledgeEventTag,
@@ -1137,6 +1138,45 @@ class Command(BaseCommand):
             ),
         )
         listing_page.refresh_from_db()
+
+        # ── Ready Section fields on listing page ───────────────────────────────
+        KnowledgeListingPage.objects.filter(pk=listing_page.pk).update(
+            ready_section_is_active=True,
+            ready_section_subtitle="Sẵn sàng trao đổi?",
+            ready_section_title=(
+                "BẠN ĐANG TÌM KIẾM NGHIÊN CỨU, PHÂN TÍCH HOẶC TÀI LIỆU PHù HỢP "
+                "VỚI LĨNH VỰC CỦA MÌNH?"
+            ),
+            ready_section_description=(
+                "IRDM có thể đồng hành cùng bạn trong việc kết nối tri thức, dữ liệu và giải pháp "
+                "thực tiễn cho các bài toán trong y tế, giáo dục, môi trường và phát triển nguồn lực."
+            ),
+            ready_section_overlay_color="#0d1e4a",
+            ready_section_overlay_opacity=0.82,
+            ready_section_text_color="light",
+        )
+        listing_page.refresh_from_db()
+
+        # ── Ready Section CTA Buttons ─────────────────────────────────────────────
+        READY_CTA_BUTTONS = [
+            {"text": "Khám phá tri thức",        "url": "/tri-thuc-goc-nhin/",                    "style": "primary",   "icon": "",           "display_order": 1},
+            {"text": "Đăng ký tải tài liệu",    "url": "/tri-thuc-goc-nhin/#tai-lieu-tai-ve", "style": "outline",   "icon": "",           "display_order": 2},
+            {"text": "Liên hệ trao đổi với IRDM", "url": "/lien-he/",                            "style": "outline",   "icon": "arrow-right", "display_order": 3},
+        ]
+        for btn_data in READY_CTA_BUTTONS:
+            KnowledgeCTAButton.objects.update_or_create(
+                listing_page=listing_page,
+                text=btn_data["text"],
+                defaults={
+                    "url": btn_data["url"],
+                    "target": "_self",
+                    "style": btn_data["style"],
+                    "icon": btn_data.get("icon", ""),
+                    "display_order": btn_data["display_order"],
+                    "is_published": True,
+                    "is_active": True,
+                },
+            )
 
         # ── Content Type Section fields on listing page ─────────────────────
         KnowledgeListingPage.objects.filter(pk=listing_page.pk).update(
