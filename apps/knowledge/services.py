@@ -102,6 +102,16 @@ class KnowledgeService:
         )
 
     @staticmethod
+    def get_press_items() -> QuerySet:
+        """Return press/media articles for the IRDM trên báo chí section."""
+        return (
+            KnowledgeNewsItem.objects
+            .filter(is_active=True, is_published=True, is_press_article=True)
+            .select_related("category")
+            .order_by("display_order", "-published_date")
+        )
+
+    @staticmethod
     def get_activity_news() -> QuerySet:
         """Return published activity news items for the left column of the News & Events section."""
         return (

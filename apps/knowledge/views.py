@@ -65,6 +65,7 @@ class KnowledgeListingView(TemplateView):
 
         context["downloads"] = KnowledgeService.get_downloads()
         context["news_items"] = KnowledgeService.get_news_items()
+        context["press_items"] = KnowledgeService.get_press_items()
         context["activity_news"] = KnowledgeService.get_activity_news()
         context["upcoming_events"] = KnowledgeService.get_upcoming_events()
         context["post_event_accordions"] = KnowledgeService.get_accordion_items("post_event")

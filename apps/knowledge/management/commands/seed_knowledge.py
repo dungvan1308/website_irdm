@@ -680,35 +680,44 @@ NEWS_ITEMS = [
     {
         "slug": "chuyen-gia-irdm-wellbeing-dau-tu-nang-luc-phuc-hoi",
         "title": "Chuyên gia IRDM: 'Wellbeing không phải là phúc lợi, mà là đầu tư cho năng lực phục hồi'",
-        "summary": "Phỏng vấn chuyên gia IRDM về tầm quan trọng của wellbeing trong tổ chức y tế và giáo dục.",
+        "summary": "Bình luận chuyên môn về xu hướng wellbeing tại doanh nghiệp và tổ chức giáo dục Việt Nam.",
         "published_date": date(2024, 6, 5),
         "source_url": "",
         "category_slug": "goc-nhin-nganh",
         "topic_slugs": ["suc-khoe-tam-than-wellbeing"],
         "asset": "IRDM trên báo chí và diễn đàn chuyên môn/Chuyên gia IRDM_ 'Wellbeing không phải là phúc lợi, mà là đầu tư cho năng lực phục hồi'.png",
         "display_order": 5,
+        "is_press_article": True,
+        "cta_text": "Xem chi tiết",
+        "cta_target": "_blank",
     },
     {
         "slug": "du-lieu-benh-vien-bai-toan-chuyen-doi-so-nghien-cuu-ung-dung",
         "title": "Dữ liệu bệnh viện và bài toán chuyển đổi số: góc nhìn từ nghiên cứu ứng dụng",
-        "summary": "Bài viết trên diễn đàn chuyên môn về hành trình chuyển đổi số dữ liệu bệnh viện từ góc nhìn nghiên cứu ứng dụng.",
+        "summary": "Bài phỏng vấn về tiếp cận dữ liệu y tế và định hướng AI trong hệ thống bệnh viện Việt Nam.",
         "published_date": date(2024, 5, 25),
         "source_url": "",
         "category_slug": "cong-bo-nghien-cuu",
         "topic_slugs": ["ai-du-lieu-chuyen-doi-so", "y-te"],
         "asset": "IRDM trên báo chí và diễn đàn chuyên môn/Dữ liệu bệnh viện và bài toán chuyển đổi số_ góc nhìn từ nghiên cứu ứng dụng.png",
         "display_order": 6,
+        "is_press_article": True,
+        "cta_text": "Xem chi tiết",
+        "cta_target": "_blank",
     },
     {
         "slug": "irdm-tham-luan-hoi-nghi-quoc-gia-doi-moi-sang-tao-2024",
         "title": "IRDM tham luận tại Hội nghị Quốc gia về đổi mới sáng tạo trong y tế và giáo dục 2024",
-        "summary": "Đại diện Viện IRDM trình bày tham luận về ứng dụng nghiên cứu và đổi mới sáng tạo trong phát triển hệ thống y tế.",
+        "summary": "Trình bày kết quả nghiên cứu và đề xuất chính sách trong lĩnh vực chuyển đổi số y tế.",
         "published_date": date(2024, 5, 12),
         "source_url": "",
         "category_slug": "tin-irdm",
         "topic_slugs": ["y-te", "giao-duc"],
         "asset": "IRDM trên báo chí và diễn đàn chuyên môn/IRDM tham luận tại Hội nghị Quốc gia về đổi mới sáng tạo trong y tế và giáo dục 2024.png",
         "display_order": 7,
+        "is_press_article": True,
+        "cta_text": "Xem chi tiết",
+        "cta_target": "_blank",
     },
     {
         "slug": "bao-cao-moi-esg-viet-nam-2024",
@@ -871,6 +880,9 @@ class Command(BaseCommand):
                     "summary": n.get("summary", ""),
                     "published_date": n.get("published_date"),
                     "source_url": n.get("source_url", ""),
+                    "is_press_article": n.get("is_press_article", False),
+                    "cta_text": n.get("cta_text", "Xem chi tiết"),
+                    "cta_target": n.get("cta_target", "_self"),
                     "category": category,
                     "is_published": True,
                     "is_active": True,
@@ -1112,6 +1124,17 @@ class Command(BaseCommand):
             ),
             news_activity_heading="Tin hoạt động IRDM",
             news_events_heading="Sự kiện sắp diễn ra",
+        )
+        listing_page.refresh_from_db()
+
+        # ── Press Section fields on listing page ─────────────────────────────────
+        KnowledgeListingPage.objects.filter(pk=listing_page.pk).update(
+            press_section_label="BÁO CHÍ & DIỄN ĐÀN",
+            press_section_heading="IRDM trên báo chí và diễn đàn chuyên môn",
+            press_section_description=(
+                "Tổng hợp các bài báo, phỏng vấn và diễn đàn có sự tham gia của IRDM "
+                "và chuyên gia của Viện."
+            ),
         )
         listing_page.refresh_from_db()
 

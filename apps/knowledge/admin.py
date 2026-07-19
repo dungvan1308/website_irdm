@@ -189,6 +189,15 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "news_events_heading",
             ),
         }),
+        ("Press Section (IRDM trên báo chí và diễn đàn chuyên môn)", {
+            "description": "Cấu hình section báo chí và diễn đàn chuyên môn.",
+            "fields": (
+                "press_section_label",
+                "press_section_heading",
+                "press_section_description",
+                "press_section_bg_image",
+            ),
+        }),
         ("CTA", {
             "fields": (
                 "cta_sub", "cta_heading",
@@ -340,6 +349,11 @@ class KnowledgeNewsItemAdmin(admin.ModelAdmin):
     fieldsets = (
         ("Identity", {"fields": ("title", "slug", "summary")}),
         ("Media", {"fields": ("thumbnail", "thumbnail_preview")}),
+        ("Classification", {"fields": ("category", "published_date", "source_url", "topics")}),
+        ("Press Section", {
+            "description": "Bật is_press_article để hiển thị bài trong section IRDM trên báo chí.",
+            "fields": ("is_press_article", "cta_text", "cta_target"),
+        }),
         ("Status", {"fields": ("is_published", "is_active", "display_order")}),
     )
 
