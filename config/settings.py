@@ -17,7 +17,9 @@ env = environ.Env(
     ALLOWED_HOSTS=(list, []),
 )
 #environ.Env.read_env(BASE_DIR / ".env")
-environ.Env.read_env(BASE_DIR / ".env")
+#environ.Env.read_env(BASE_DIR / ".env")
+PROJECT_ROOT = BASE_DIR.parent
+environ.Env.read_env(PROJECT_ROOT / ".env")
 
 # ─── Security ────────────────────────────────────────────────────────────────
 
