@@ -110,7 +110,7 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         display: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Inter', 'ui-sans-serif', 'sans-serif'],
-        'utm-banque': ['"UTM Banque"', 'Inter', 'ui-sans-serif', 'sans-serif'],
+        'utm-banque': ['Inter', 'ui-sans-serif', 'sans-serif'],
       },
     },
   },
