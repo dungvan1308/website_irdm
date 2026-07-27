@@ -16,6 +16,7 @@ urlpatterns = [
     path("giai-phap/", include("apps.solution.urls", namespace="solution")),
     path("capabilities/", include("apps.capability.urls", namespace="capability")),
     path("tri-thuc-goc-nhin/", include("apps.knowledge.urls", namespace="knowledge")),
+    path("chuyen-gia/", include("apps.expert.urls", namespace="expert")),
 ]
 
 if settings.DEBUG:
