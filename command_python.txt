@@ -103,6 +103,10 @@ hoặc:
 4. Kiểm tra Django đã cài chưa
 python -m django --version
 
+
+
+-- python manage.py migrate knowledge 0011 --fake
+
 Nếu lỗi thì cài:
 
 pip install django
@@ -112,7 +116,7 @@ python manage.py migrate
 6. Tạo admin user (optional)
 python manage.py createsuperuser
 7. Run server Django
-python manage.py runserver
+
 
 Mặc định chạy tại:
 
@@ -197,3 +201,16 @@ Lưu ý: Mỗi khi sửa file .po, cần chạy lại lệnh compile:
 
 Gợi ý: Để tránh lặp lại vấn đề này, chạy lệnh sau trong terminal khi đang phát triển:
 npm run watch:css
+
+trước khi resto
+
+Giải pháp dứt điểm — sau mỗi lần restore
+# 1. Kiểm tra trạng thái knowledge migrations
+python manage.py showmigrations knowledge
+
+Nếu 0011 hiển thị [ ] (chưa applied):
+# 2. Fake đúng 0011 — vì columns + table đã có sẵn trong dump
+python manage.py migrate knowledge 0011 --fake
+
+# 3. Sau đó mới chạy migrate tổng
+python manage.py migrate
