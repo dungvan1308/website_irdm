@@ -1,1 +1,81 @@
-from django.views import View
+"""Expert module views."""
+
+from django.http import Http404, HttpRequest, HttpResponse
+from django.views.generic import TemplateView
+
+from .forms import ExpertSearchForm
+from .services import ExpertService
+
+
+class ExpertListingView(TemplateView):
+    """Public expert listing page."""
+
+    template_name = "expert/listing.html"
+
+    def get_context_data(self, **kwargs: object) -> dict:
+        ctx = super().get_context_data(**kwargs)
+        ctx["listing_page"] = ExpertService.get_listing_page()
+        ctx["process_steps"] = ExpertService.get_process_steps()
+        ctx["senior_experts"] = ExpertService.get_senior_experts()
+        ctx["research_areas"] = ExpertService.get_research_areas()
+        ctx["expert_groups"] = ExpertService.get_expert_groups()
+        ctx["knowledge_topics"] = ExpertService.get_knowledge_topics()
+        # Initial directory load
+        search_data = ExpertService.get_experts()
+        ctx["experts"] = search_data["experts"]
+        ctx["page_obj"] = search_data["page_obj"]
+        ctx["has_next"] = search_data["has_next"]
+        ctx["total_experts"] = search_data["total"]
+        ctx["form"] = ExpertSearchForm()
+        ctx["active_group"] = "all"
+        return ctx
+
+
+class ExpertSearchView(TemplateView):
+    """HTMX endpoint — returns the expert grid partial."""
+
+    template_name = "expert/_expert_grid.html"
+
+    def get(self, request: HttpRequest, *args: object, **kwargs: object) -> HttpResponse:
+        form = ExpertSearchForm(request.GET)
+        q = ""
+        group_slug = ""
+        area_slug = ""
+        if form.is_valid():
+            q = form.cleaned_data.get("q") or ""
+            group_slug = form.cleaned_data.get("group") or ""
+            area_slug = form.cleaned_data.get("area") or ""
+
+        try:
+            page = int(request.GET.get("page", 1))
+        except (ValueError, TypeError):
+            page = 1
+
+        search_data = ExpertService.get_experts(
+            q=q, group_slug=group_slug, area_slug=area_slug, page=page
+        )
+        ctx = self.get_context_data(**kwargs)
+        ctx["experts"] = search_data["experts"]
+        ctx["page_obj"] = search_data["page_obj"]
+        ctx["has_next"] = search_data["has_next"]
+        ctx["total_experts"] = search_data["total"]
+        ctx["q"] = q
+        ctx["active_group"] = group_slug or "all"
+        ctx["active_area"] = area_slug
+        return self.render_to_response(ctx)
+
+
+class ExpertDetailView(TemplateView):
+    """Public expert detail page (Sprint after)."""
+
+    template_name = "expert/detail.html"
+
+    def get_context_data(self, **kwargs: object) -> dict:
+        ctx = super().get_context_data(**kwargs)
+        slug = self.kwargs["slug"]
+        expert = ExpertService.get_expert_by_slug(slug)
+        if expert is None:
+            raise Http404
+        ctx["expert"] = expert
+        ctx["listing_page"] = ExpertService.get_listing_page()
+        return ctx

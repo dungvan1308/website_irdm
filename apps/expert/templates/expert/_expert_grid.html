@@ -1,0 +1,46 @@
+{% load i18n %}
+{# HTMX partial: expert grid + pagination — target: #expert-grid-wrapper #}
+
+<div id="expert-count-label" class="text-sm text-slate-500 mb-4" aria-live="polite">
+  {% if total_experts %}
+    {% blocktrans with count=total_experts %}Tìm thấy {{ count }} chuyên gia{% endblocktrans %}
+  {% endif %}
+</div>
+
+{% if experts %}
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="expert-cards-grid">
+    {% for expert in experts %}
+      {% include "expert/_expert_card_compact.html" with expert=expert %}
+    {% endfor %}
+  </div>
+
+  {# Load More button (HTMX append) #}
+  {% if has_next %}
+    <div class="text-center mt-8">
+      <button
+        class="inline-flex items-center gap-2 px-6 py-2.5 bg-white border border-slate-200 text-primary-700 text-sm font-semibold rounded-full hover:border-primary-300 hover:bg-primary-50 transition-colors shadow-sm"
+        hx-get="{% url 'expert:search' %}?q={{ q|urlencode }}&group={{ active_group|urlencode }}&area={{ active_area|urlencode }}&page={{ page_obj.next_page_number }}"
+        hx-target="#expert-cards-grid"
+        hx-swap="beforeend"
+        hx-select="#expert-cards-grid > *"
+        hx-indicator="#search-spinner"
+        onclick="this.closest('div').remove()">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+        {% trans "Tải thêm chuyên gia" %}
+      </button>
+    </div>
+  {% endif %}
+
+{% else %}
+  {# Empty state #}
+  <div class="text-center py-20">
+    <svg class="mx-auto w-12 h-12 text-slate-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+    </svg>
+    <p class="text-slate-500 font-medium">{% trans "Không tìm thấy chuyên gia phù hợp." %}</p>
+    <p class="text-sm text-slate-400 mt-1">{% trans "Hãy thử từ khoá khác hoặc chọn nhóm khác." %}</p>
+  </div>
+{% endif %}

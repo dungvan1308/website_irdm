@@ -1,0 +1,425 @@
+{% extends "layouts/base.html" %}
+{% load i18n static %}
+
+{% block title %}
+  {% if listing_page and listing_page.meta_title %}{{ listing_page.meta_title }}
+  {% elif listing_page %}{{ listing_page.hero_heading }}
+  {% else %}{% trans "Đội ngũ chuyên gia" %}
+  {% endif %}
+  — {% if site_settings %}{{ site_settings.site_name }}{% else %}IRDM{% endif %}
+{% endblock %}
+
+{% block meta_description %}
+  {% if listing_page and listing_page.meta_description %}{{ listing_page.meta_description }}
+  {% elif listing_page and listing_page.hero_description %}{{ listing_page.hero_description|truncatewords:30 }}
+  {% endif %}
+{% endblock %}
+
+{% block og_title %}{% if listing_page %}{{ listing_page.hero_heading }}{% else %}{% trans "Đội ngũ chuyên gia" %}{% endif %} — IRDM{% endblock %}
+{% block og_description %}{% if listing_page and listing_page.hero_description %}{{ listing_page.hero_description|truncatewords:30 }}{% endif %}{% endblock %}
+
+{% block extra_head %}
+{# JSON-LD Breadcrumb #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'home:index' %}"},
+    {"@type": "ListItem", "position": 2, "name": "{% if listing_page %}{{ listing_page.hero_heading|escapejs }}{% else %}Chuyên gia{% endif %}", "item": "{{ request.build_absolute_uri }}"}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{# SECTION 1 — HERO BANNER                                                     #}
+{# ════════════════════════════════════════════════════════════════════════════ #}
+<section class="relative overflow-hidden bg-primary-950 min-h-[520px] sm:min-h-[600px] lg:min-h-[680px]"
+         aria-label="{% trans 'Expert listing hero' %}">
+
+  {# Background image #}
+  {% if listing_page and listing_page.hero_image %}
+    <div class="absolute inset-0" aria-hidden="true">
+      <img src="{{ listing_page.hero_image.url }}" alt=""
+           class="h-full w-full object-cover object-center" />
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-950/70 to-primary-950/30"></div>
+    </div>
+  {% else %}
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-blue-900" aria-hidden="true"></div>
+    {# Decorative pattern #}
+    <div class="absolute inset-0 opacity-5" aria-hidden="true">
+      <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" stroke-width="1"/>
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#grid)"/>
+      </svg>
+    </div>
+  {% endif %}
+
+  {# Content #}
+  <div class="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 flex items-center min-h-[520px] sm:min-h-[600px] lg:min-h-[680px]">
+    <div class="w-full lg:max-w-[700px] py-20 lg:py-24">
+
+      {# Eyebrow #}
+      {% if listing_page and listing_page.hero_eyebrow %}
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full mb-5 border border-white/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0" aria-hidden="true"></span>
+          <span class="text-white/80 text-xs font-semibold tracking-widest uppercase">{{ listing_page.hero_eyebrow }}</span>
+        </div>
+      {% endif %}
+
+      {# Heading h1 #}
+      <h1 class="font-utm-banque font-normal text-[32px] sm:text-[40px] lg:text-[52px] leading-tight text-white uppercase mb-5">
+        {% if listing_page %}{{ listing_page.hero_heading }}{% else %}{% trans "MẠNG LƯỚI NHÀ KHOA HỌC & CHUYÊN GIA LIÊN NGÀNH" %}{% endif %}
+      </h1>
+
+      {# Description #}
+      {% if listing_page and listing_page.hero_description %}
+        <p class="text-white/75 text-base sm:text-lg leading-relaxed max-w-[560px] mb-8">
+          {{ listing_page.hero_description }}
+        </p>
+      {% endif %}
+
+      {# Buttons #}
+      <div class="flex flex-wrap gap-3">
+        {% if listing_page and listing_page.hero_btn1_label %}
+          <a href="{{ listing_page.hero_btn1_url }}"
+             class="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-400 text-white font-semibold text-sm rounded-full transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-primary-950">
+            {{ listing_page.hero_btn1_label }}
+          </a>
+        {% endif %}
+        {% if listing_page and listing_page.hero_btn2_label %}
+          <a href="{{ listing_page.hero_btn2_url }}"
+             class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm rounded-full border border-white/30 backdrop-blur-sm transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-950">
+            {{ listing_page.hero_btn2_label }}
+          </a>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ── Breadcrumb ───────────────────────────────────────────────────────────── #}
+<div class="bg-white border-b border-gray-100">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-3">
+    <nav class="flex items-center gap-2 text-sm text-slate-500" aria-label="{% trans 'Breadcrumb' %}">
+      <a href="{% url 'home:index' %}" class="flex items-center gap-1 text-slate-500 hover:text-primary-700 transition-colors">
+        <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        {% trans "Trang chủ" %}
+      </a>
+      <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <span class="text-primary-700 font-medium">{% trans "Chuyên gia" %}</span>
+    </nav>
+  </div>
+</div>
+
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{# SECTION 2 — PROCESS: VIỆN IRDM KẾT NỐI CHUYÊN GIA NHƯ THẾ NÀO?            #}
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{% if process_steps %}
+<section id="ket-noi" class="bg-gradient-to-b from-slate-50 to-white py-16 lg:py-20 border-b border-slate-100"
+         aria-labelledby="process-heading">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+
+    {# Section header #}
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 id="process-heading" class="font-utm-banque font-normal text-2xl sm:text-3xl lg:text-[36px] text-primary-900 uppercase tracking-tight mb-3">
+        {% if listing_page and listing_page.process_heading %}{{ listing_page.process_heading }}{% else %}{% trans "VIỆN IRDM KẾT NỐI CHUYÊN GIA NHƯ THẾ NÀO?" %}{% endif %}
+      </h2>
+      {% if listing_page and listing_page.process_description %}
+        <p class="text-slate-500 text-base leading-relaxed">{{ listing_page.process_description }}</p>
+      {% endif %}
+    </div>
+
+    {# Process steps grid #}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative">
+      {# Connector line (desktop only) #}
+      <div class="hidden lg:block absolute top-8 left-[calc(12.5%+2rem)] right-[calc(12.5%+2rem)] h-0.5 bg-primary-100 z-0" aria-hidden="true"></div>
+      {% for step in process_steps %}
+        <div class="relative z-10">
+          {% include "expert/_process_step.html" with step=step %}
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{# SECTION 3 — SENIOR EXPERTS: CHUYÊN GIA CAO CẤP CỦA VIỆN IRDM              #}
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{% if senior_experts %}
+<section class="bg-white py-16 lg:py-20 border-b border-slate-100"
+         aria-labelledby="senior-heading">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+
+    {# Section header #}
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+      <h2 id="senior-heading" class="font-utm-banque font-normal text-2xl sm:text-3xl lg:text-[36px] text-primary-900 uppercase tracking-tight">
+        {% if listing_page and listing_page.senior_heading %}{{ listing_page.senior_heading }}{% else %}{% trans "CHUYÊN GIA CAO CẤP CỦA VIỆN IRDM" %}{% endif %}
+      </h2>
+      {% if listing_page and listing_page.senior_cta_label %}
+        <a href="{{ listing_page.senior_cta_url }}"
+           class="flex-shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-700 hover:text-primary-900 transition-colors group">
+          {{ listing_page.senior_cta_label }}
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+
+    {# Senior expert cards #}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for expert in senior_experts %}
+        <div class="relative">
+          {% include "expert/_expert_card_senior.html" with expert=expert %}
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{# SECTION 4 — RESEARCH AREA MAP: BẢN ĐỒ CHUYÊN MÔN LIÊN NGÀNH               #}
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{% if research_areas %}
+<section class="bg-gradient-to-b from-blue-50 to-white py-16 lg:py-20 border-b border-slate-100"
+         aria-labelledby="map-heading">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+
+    {# Section header #}
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <h2 id="map-heading" class="font-utm-banque font-normal text-2xl sm:text-3xl lg:text-[36px] text-primary-900 uppercase tracking-tight mb-3">
+        {% if listing_page and listing_page.map_heading %}{{ listing_page.map_heading }}{% else %}{% trans "BẢN ĐỒ CHUYÊN MÔN LIÊN NGÀNH" %}{% endif %}
+      </h2>
+      {% if listing_page and listing_page.map_description %}
+        <p class="text-slate-500 text-base leading-relaxed">{{ listing_page.map_description }}</p>
+      {% endif %}
+    </div>
+
+    {# Research area cards grid #}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+      {% for area in research_areas %}
+        {% include "expert/_research_area_card.html" with area=area %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{# SECTION 5 — EXPERT DIRECTORY: TÌM NHÀ KHOA HỌC/CHUYÊN GIA                 #}
+{# ════════════════════════════════════════════════════════════════════════════ #}
+<section id="tim-kiem" class="bg-white py-16 lg:py-20 border-b border-slate-100"
+         aria-labelledby="directory-heading">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+
+    {# Section header #}
+    <h2 id="directory-heading" class="font-utm-banque font-normal text-2xl sm:text-3xl lg:text-[36px] text-primary-900 uppercase tracking-tight mb-8">
+      {% if listing_page and listing_page.directory_heading %}{{ listing_page.directory_heading }}{% else %}{% trans "TÌM NHÀ KHOA HỌC/CHUYÊN GIA" %}{% endif %}
+    </h2>
+
+    {# Search Box #}
+    <div class="mb-6" role="search" aria-label="{% trans 'Tìm kiếm chuyên gia' %}">
+      <div class="relative max-w-xl">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none" aria-hidden="true">
+          <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+        <input type="search"
+               id="expert-search-input"
+               name="q"
+               placeholder="{% trans 'Tên, chức danh, đơn vị, lĩnh vực...' %}"
+               autocomplete="off"
+               class="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white shadow-sm"
+               hx-get="{% url 'expert:search' %}"
+               hx-trigger="keyup changed delay:300ms, search"
+               hx-target="#expert-grid-wrapper"
+               hx-swap="innerHTML"
+               hx-indicator="#search-spinner"
+               hx-include="#group-filter-input, #area-filter-input" />
+        {# Loading spinner #}
+        <div id="search-spinner" class="htmx-indicator absolute inset-y-0 right-4 flex items-center" aria-hidden="true">
+          <svg class="animate-spin w-4 h-4 text-primary-500" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    {# Hidden filter inputs (sent with HTMX) #}
+    <input type="hidden" id="group-filter-input" name="group" value="{{ active_group }}" />
+    <input type="hidden" id="area-filter-input" name="area" value="" />
+
+    {# Filter Tabs #}
+    {% if expert_groups %}
+      <div class="flex flex-wrap gap-2 mb-8"
+           role="tablist"
+           aria-label="{% trans 'Lọc theo nhóm chuyên gia' %}">
+
+        {# "All" tab #}
+        <button role="tab"
+                aria-selected="{% if active_group == 'all' %}true{% else %}false{% endif %}"
+                class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors border
+                       {% if active_group == 'all' %}bg-primary-700 text-white border-primary-700{% else %}bg-white text-slate-600 border-slate-200 hover:border-primary-200 hover:text-primary-700{% endif %}"
+                hx-get="{% url 'expert:search' %}?group=all"
+                hx-target="#expert-grid-wrapper"
+                hx-swap="innerHTML"
+                hx-indicator="#search-spinner"
+                hx-include="#expert-search-input"
+                onclick="document.getElementById('group-filter-input').value='all'">
+          {% trans "Tất cả" %}
+          <span class="ml-1 text-xs opacity-70">({{ total_experts }})</span>
+        </button>
+
+        {% for grp in expert_groups %}
+          <button role="tab"
+                  aria-selected="{% if active_group == grp.slug %}true{% else %}false{% endif %}"
+                  class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors border
+                         {% if active_group == grp.slug %}bg-primary-700 text-white border-primary-700{% else %}bg-white text-slate-600 border-slate-200 hover:border-primary-200 hover:text-primary-700{% endif %}"
+                  hx-get="{% url 'expert:search' %}?group={{ grp.slug }}"
+                  hx-target="#expert-grid-wrapper"
+                  hx-swap="innerHTML"
+                  hx-indicator="#search-spinner"
+                  hx-include="#expert-search-input"
+                  onclick="document.getElementById('group-filter-input').value='{{ grp.slug }}'">
+            {{ grp.name }}
+            {% if grp.expert_count %}
+              <span class="ml-1 text-xs opacity-70">({{ grp.expert_count }})</span>
+            {% endif %}
+          </button>
+        {% endfor %}
+
+      </div>
+    {% endif %}
+
+    {# Expert grid — HTMX target #}
+    <div id="expert-grid-wrapper" aria-live="polite">
+      {% include "expert/_expert_grid.html" %}
+    </div>
+
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{# SECTION 6 — KNOWLEDGE TOPICS: CÁC CHỦ ĐỀ THÔNG TIN CHUYÊN MÔN             #}
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{% if knowledge_topics %}
+<section class="bg-slate-50 py-16 lg:py-20 border-b border-slate-100"
+         aria-labelledby="topics-heading">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+
+    {# Section header #}
+    <div class="max-w-2xl mb-10">
+      <h2 id="topics-heading" class="font-utm-banque font-normal text-2xl sm:text-3xl lg:text-[36px] text-primary-900 uppercase tracking-tight mb-3">
+        {% if listing_page and listing_page.topic_heading %}{{ listing_page.topic_heading }}{% else %}{% trans "CÁC CHỦ ĐỀ THÔNG TIN CHUYÊN MÔN" %}{% endif %}
+      </h2>
+      {% if listing_page and listing_page.topic_description %}
+        <p class="text-slate-500 text-base leading-relaxed">{{ listing_page.topic_description }}</p>
+      {% endif %}
+    </div>
+
+    {# Accordion list #}
+    <div class="space-y-3 max-w-4xl">
+      {% for topic in knowledge_topics %}
+        {% include "expert/_accordion_topic.html" with topic=topic %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{# SECTION 7 — CTA BANNER                                                      #}
+{# ════════════════════════════════════════════════════════════════════════════ #}
+{% if listing_page and listing_page.cta_heading %}
+<section class="relative overflow-hidden bg-primary-950 py-16 lg:py-20"
+         aria-label="{% trans 'Expert CTA' %}">
+
+  {# Background image #}
+  {% if listing_page.cta_bg_image %}
+    <div class="absolute inset-0" aria-hidden="true">
+      <img src="{{ listing_page.cta_bg_image.url }}" alt=""
+           class="w-full h-full object-cover object-center" />
+      <div class="absolute inset-0 bg-primary-950/80"></div>
+    </div>
+  {% else %}
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-blue-900" aria-hidden="true"></div>
+  {% endif %}
+
+  <div class="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 text-center">
+
+    {% if listing_page.cta_eyebrow %}
+      <p class="text-orange-400 text-sm font-semibold uppercase tracking-widest mb-3">{{ listing_page.cta_eyebrow }}</p>
+    {% endif %}
+
+    <h2 class="font-utm-banque font-normal text-2xl sm:text-3xl lg:text-[40px] text-white uppercase tracking-tight mb-4 max-w-3xl mx-auto">
+      {{ listing_page.cta_heading }}
+    </h2>
+
+    {% if listing_page.cta_description %}
+      <p class="text-white/70 text-base leading-relaxed max-w-xl mx-auto mb-8">{{ listing_page.cta_description }}</p>
+    {% endif %}
+
+    <div class="flex flex-wrap justify-center gap-3">
+      {% if listing_page.cta_btn1_label %}
+        <a href="{{ listing_page.cta_btn1_url }}"
+           class="inline-flex items-center gap-2 px-7 py-3.5 bg-orange-500 hover:bg-orange-400 text-white font-semibold text-sm rounded-full transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-primary-950">
+          {{ listing_page.cta_btn1_label }}
+        </a>
+      {% endif %}
+      {% if listing_page.cta_btn2_label %}
+        <a href="{{ listing_page.cta_btn2_url }}"
+           class="inline-flex items-center gap-2 px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm rounded-full border border-white/30 backdrop-blur-sm transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-950">
+          {{ listing_page.cta_btn2_label }}
+        </a>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  // Highlight active filter tab after HTMX swaps
+  document.body.addEventListener('htmx:afterSwap', function(evt) {
+    if (evt.detail.target.id === 'expert-grid-wrapper') {
+      // Sync tab active states based on current group-filter-input value
+      const activeGroup = document.getElementById('group-filter-input').value || 'all';
+      document.querySelectorAll('.filter-tab').forEach(function(btn) {
+        const isActive = btn.getAttribute('hx-get') && btn.getAttribute('hx-get').includes('group=' + activeGroup);
+        if (isActive) {
+          btn.classList.add('bg-primary-700', 'text-white', 'border-primary-700');
+          btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+          btn.setAttribute('aria-selected', 'true');
+        } else {
+          btn.classList.remove('bg-primary-700', 'text-white', 'border-primary-700');
+          btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+          btn.setAttribute('aria-selected', 'false');
+        }
+      });
+    }
+  });
+</script>
+{% endblock %}
