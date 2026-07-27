@@ -13,17 +13,76 @@ from apps.common.models import BaseModel
 class ExpertListingPage(BaseModel):
     """CMS-editable content for the expert listing page."""
 
-    # Hero
-    hero_eyebrow = models.CharField(_("hero eyebrow"), max_length=200, blank=True)
-    hero_heading = models.CharField(_("hero heading"), max_length=400)
+    # Hero Badge
+    hero_badge_text = models.CharField(
+        _("hero badge text"), max_length=200, blank=True,
+        default="ĐỘI NGŨ CHUYÊN GIA",
+        help_text=_("Badge label phía trên tiêu đề, e.g. ĐỘI NGŨ CHUYÊN GIA"),
+    )
+    hero_badge_icon = models.CharField(
+        _("hero badge icon"), max_length=50, blank=True,
+        help_text=_("Heroicon name, e.g. 'users'. Để trống để dùng dot mặc định."),
+    )
+    hero_badge_color = models.CharField(
+        _("hero badge color (hex)"), max_length=30, blank=True, default="#ffffff1a",
+        help_text=_("Màu nền badge dạng hex hoặc rgba, e.g. #ffffff1a"),
+    )
+    hero_badge_show = models.BooleanField(_("show hero badge"), default=True)
+
+    # Hero Content
+    hero_eyebrow = models.CharField(_("hero eyebrow (legacy)"), max_length=200, blank=True)
+    hero_heading = models.TextField(
+        _("hero heading"),
+        help_text=_("Nhập Enter để xuống dòng trong tiêu đề. VD: MẠNG LƯỚI NHÀ KHOA HỌC (Enter) & CHUYÊN GIA LIÊN NGÀNH"),
+    )
     hero_description = models.TextField(_("hero description"), blank=True)
     hero_image = models.ImageField(
         _("hero background image"), upload_to="expert/hero/", blank=True
     )
-    hero_btn1_label = models.CharField(_("button 1 label"), max_length=100, blank=True, default="TÌM HIỂU THÊM")
+
+    # Hero Buttons
+    hero_btn1_label = models.CharField(_("button 1 label"), max_length=100, blank=True, default="Tìm chuyên gia")
     hero_btn1_url = models.CharField(_("button 1 URL"), max_length=500, blank=True, default="#ket-noi")
-    hero_btn2_label = models.CharField(_("button 2 label"), max_length=100, blank=True, default="ĐĂNG KÝ CHUYÊN GIA")
+    hero_btn1_icon = models.CharField(
+        _("button 1 icon"), max_length=50, blank=True,
+        help_text=_("Heroicon name, e.g. 'arrow-right'. Để trống nếu không dùng icon."),
+    )
+    hero_btn1_target = models.CharField(
+        _("button 1 target"), max_length=10, blank=True, default="_self",
+        choices=[("_self", "Cùng tab (_self)"), ("_blank", "Tab mới (_blank)")],
+    )
+    hero_btn2_label = models.CharField(_("button 2 label"), max_length=100, blank=True, default="Xem lĩnh vực chuyên môn")
     hero_btn2_url = models.CharField(_("button 2 URL"), max_length=500, blank=True, default="/lien-he/")
+    hero_btn2_icon = models.CharField(
+        _("button 2 icon"), max_length=50, blank=True,
+        help_text=_("Heroicon name, e.g. 'arrow-right'. Để trống nếu không dùng icon."),
+    )
+    hero_btn2_target = models.CharField(
+        _("button 2 target"), max_length=10, blank=True, default="_self",
+        choices=[("_self", "Cùng tab (_self)"), ("_blank", "Tab mới (_blank)")],
+    )
+
+    # Hero Bottom Badge (ĐÚNG CHUYÊN MÔN CHO ĐÚNG BÀI TOÁN)
+    hero_bottom_badge_text = models.CharField(
+        _("hero bottom badge text"), max_length=300, blank=True,
+        default="ĐÚNG CHUYÊN MÔN CHO ĐÚNG BÀI TOÁN",
+        help_text=_("Text hiển thị bên dưới CTA buttons, e.g. ĐÚNG CHUYÊN MÔN CHO ĐÚNG BÀI TOÁN"),
+    )
+    hero_bottom_badge_logo = models.ImageField(
+        _("hero bottom badge logo"),
+        upload_to="expert/hero/badges/",
+        blank=True,
+        help_text=_("Upload ảnh/logo hiển thị bên trái text badge. Ưu tiên hơn icon text."),
+    )
+    hero_bottom_badge_icon = models.CharField(
+        _("hero bottom badge icon (fallback)"), max_length=50, blank=True,
+        help_text=_("Chỉ dùng khi không upload logo ở trên. Heroicon name, e.g. 'chat-bubble-left-right'."),
+    )
+    hero_bottom_badge_bg = models.CharField(
+        _("hero bottom badge bg color"), max_length=30, blank=True, default="#ffffff14",
+        help_text=_("Màu nền bottom badge, e.g. #ffffff14"),
+    )
+    hero_bottom_badge_show = models.BooleanField(_("show hero bottom badge"), default=True)
 
     # Process Section
     process_heading = models.CharField(_("process section heading"), max_length=300, blank=True)

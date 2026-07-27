@@ -26,12 +26,31 @@ class ProcessStepInline(admin.TabularInline):
 class ExpertListingPageAdmin(admin.ModelAdmin):
     list_display = ("hero_heading", "is_active")
     fieldsets = (
-        ("Hero", {
+        ("Hero Badge", {
             "fields": (
-                "hero_eyebrow", "hero_heading", "hero_description", "hero_image",
-                "hero_btn1_label", "hero_btn1_url",
-                "hero_btn2_label", "hero_btn2_url",
+                "hero_badge_text", "hero_badge_icon", "hero_badge_color", "hero_badge_show",
             ),
+            "description": "Badge label nhỏ phía trên tiêu đề hero (e.g. ĐỘI NGŨ CHUYÊN GIA)",
+        }),
+        ("Hero Content", {
+            "fields": (
+                "hero_heading", "hero_description", "hero_image",
+            ),
+            "description": "Tiêu đề hỗ trợ xuống dòng: nhập Enter (\\n) giữa các dòng muốn ngắt.",
+        }),
+        ("Hero Buttons", {
+            "fields": (
+                "hero_btn1_label", "hero_btn1_url", "hero_btn1_icon", "hero_btn1_target",
+                "hero_btn2_label", "hero_btn2_url", "hero_btn2_icon", "hero_btn2_target",
+            ),
+        }),
+        ("Hero Bottom Badge", {
+            "fields": (
+                "hero_bottom_badge_text",
+                "hero_bottom_badge_logo", "hero_bottom_badge_icon",
+                "hero_bottom_badge_bg", "hero_bottom_badge_show",
+            ),
+            "description": "Badge nhỏ hiển thị ngay bên dưới CTA buttons (e.g. ĐÚNG CHUYÊN MÔN CHO ĐÚNG BÀI TOÁN)",
         }),
         ("Process Section", {
             "fields": ("process_heading", "process_description"),
