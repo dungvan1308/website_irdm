@@ -11,6 +11,7 @@ from django.core.management.base import BaseCommand
 from django.utils.text import slugify
 
 from apps.expert.models import (
+    EngagementType,
     Expert,
     ExpertGroup,
     ExpertListingPage,
@@ -63,7 +64,12 @@ LISTING_PAGE = {
     "map_cta1_url": "#tim-kiem",
     "map_cta2_label": "Khám phá giải pháp",
     "map_cta2_url": "/giai-phap/",
+    "directory_section_label": "TÌM KIẾM",
     "directory_heading": "TÌM NHÀ KHOA HỌC/CHUYÊN GIA",
+    "directory_description": (
+        "Sử dụng bộ lọc bên dưới để tìm nhà khoa học/chuyên gia theo vai trò, lĩnh vực chuyên môn "
+        "và hình thức đồng hành phù hợp. Mỗi kết quả sẽ dẫn đến hồ sơ chuyên môn chi tiết của chuyên gia."
+    ),
     "topic_heading": "CÁC CHỦ ĐỀ THÔNG TIN CHUYÊN MÔN",
     "topic_description": (
         "Khám phá các chủ đề nghiên cứu và tìm hiểu đội ngũ chuyên gia "
@@ -99,6 +105,16 @@ GROUPS = [
     {"name": "Chuyên gia quốc tế", "slug": "chuyen-gia-quoc-te", "display_order": 5},
 ]
 
+# ─── Engagement Types ───────────────────────────────────────────────────────
+
+ENGAGEMENT_TYPES = [
+    {"name": "Tư vấn chiến lược", "slug": "tu-van-chien-luoc", "display_order": 1},
+    {"name": "Thiết kế nghiên cứu", "slug": "thiet-ke-nghien-cuu", "display_order": 2},
+    {"name": "Đào tạo & tập huấn", "slug": "dao-tao-tap-huan", "display_order": 3},
+    {"name": "Phản biện khoa học", "slug": "phan-bien-khoa-hoc", "display_order": 4},
+    {"name": "Đồng thiết kế giải pháp", "slug": "dong-thiet-ke-giai-phap", "display_order": 5},
+    {"name": "Triển khai & đánh giá chương trình", "slug": "trien-khai-danh-gia", "display_order": 6},
+]
 
 # ─── Research Areas ───────────────────────────────────────────────────────────
 
@@ -294,6 +310,7 @@ EXPERTS = [
         "group_slug": "nha-khoa-hoc",
         "areas": ["kinh-te-hoc-lien-nganh", "phat-trien-ben-vung"],
         "topics": ["phat-trien-kinh-te-ben-vung", "chinh-sach-cong-the-che"],
+        "engagements": ["tu-van-chien-luoc", "phan-bien-khoa-hoc"],
         "short_bio": (
             "Chuyên gia hàng đầu về kinh tế phát triển với hơn 25 năm kinh nghiệm "
             "nghiên cứu và tư vấn chính sách. Từng là cố vấn cho các tổ chức quốc tế "
@@ -312,6 +329,7 @@ EXPERTS = [
         "group_slug": "giang-vien",
         "areas": ["quan-tri-lanh-dao", "cong-nghe-doi-moi"],
         "topics": ["quan-tri-to-chuc-lanh-dao-chien-luoc", "chuyen-doi-so-doi-moi-sang-tao"],
+        "engagements": ["dao-tao-tap-huan", "dong-thiet-ke-giai-phap"],
         "short_bio": (
             "Chuyên gia về quản trị doanh nghiệp và chuyển đổi số với nhiều công trình "
             "nghiên cứu được quốc tế công nhận. Tác giả của 3 cuốn sách về lãnh đạo "
@@ -330,6 +348,7 @@ EXPERTS = [
         "group_slug": "nha-khoa-hoc",
         "areas": ["khoa-hoc-du-lieu-ai", "cong-nghe-doi-moi"],
         "topics": ["chuyen-doi-so-doi-moi-sang-tao"],
+        "engagements": ["thiet-ke-nghien-cuu", "tu-van-chien-luoc"],
         "short_bio": (
             "Chuyên gia AI và phân tích dữ liệu lớn, từng làm việc tại MIT Media Lab "
             "và Google Research. Hiện đang dẫn dắt nhóm nghiên cứu AI ứng dụng trong "
@@ -622,17 +641,20 @@ class Command(BaseCommand):
         # 2. Expert groups
         groups = self._seed_groups()
 
-        # 3. Research areas
+        # 3. Engagement types
+        engagement_types = self._seed_engagement_types()
+
+        # 4. Research areas
         areas = self._seed_research_areas()
 
-        # 4. Process steps
+        # 5. Process steps
         self._seed_process_steps()
 
-        # 5. Knowledge topics
+        # 6. Knowledge topics
         topics = self._seed_knowledge_topics()
 
-        # 6. Experts
-        self._seed_experts(groups, areas, topics)
+        # 7. Experts
+        self._seed_experts(groups, areas, topics, engagement_types)
 
         self.stdout.write(self.style.SUCCESS("\n✓ Expert module seed complete."))
 
@@ -664,6 +686,21 @@ class Command(BaseCommand):
             groups[data["slug"]] = obj
         self.stdout.write(f"  ✓ {len(groups)} ExpertGroups seeded")
         return groups
+
+    def _seed_engagement_types(self):
+        eng_types = {}
+        for data in ENGAGEMENT_TYPES:
+            obj, created = EngagementType.objects.get_or_create(
+                slug=data["slug"],
+                defaults={**data, "is_active": True},
+            )
+            if not created:
+                obj.name = data["name"]
+                obj.display_order = data["display_order"]
+                obj.save()
+            eng_types[data["slug"]] = obj
+        self.stdout.write(f"  ✓ {len(eng_types)} EngagementTypes seeded")
+        return eng_types
 
     def _seed_research_areas(self):
         areas = {}
@@ -701,7 +738,7 @@ class Command(BaseCommand):
         self.stdout.write(f"  ✓ {len(topics)} KnowledgeTopics seeded")
         return topics
 
-    def _seed_experts(self, groups, areas, topics):
+    def _seed_experts(self, groups, areas, topics, engagement_types):
         created_count = 0
         updated_count = 0
 
@@ -709,6 +746,7 @@ class Command(BaseCommand):
             group_slug = data.pop("group_slug", None)
             area_slugs = data.pop("areas", [])
             topic_slugs = data.pop("topics", [])
+            engagement_slugs = data.pop("engagements", [])
 
             # Build slug from name
             slug = slugify(data["name"], allow_unicode=False)
@@ -739,6 +777,10 @@ class Command(BaseCommand):
             # M2M: research areas
             if area_slugs:
                 obj.research_areas.set([areas[s] for s in area_slugs if s in areas])
+
+            # M2M: engagement types
+            if engagement_slugs:
+                obj.engagement_types.set([engagement_types[s] for s in engagement_slugs if s in engagement_types])
 
             # M2M: knowledge topics
             if topic_slugs:

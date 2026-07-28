@@ -19,6 +19,7 @@ class ExpertListingView(TemplateView):
         ctx["senior_experts"] = ExpertService.get_senior_experts()
         ctx["research_areas"] = ExpertService.get_research_areas()
         ctx["expert_groups"] = ExpertService.get_expert_groups()
+        ctx["engagement_types"] = ExpertService.get_engagement_types()
         ctx["knowledge_topics"] = ExpertService.get_knowledge_topics()
         # Initial directory load
         search_data = ExpertService.get_experts()
@@ -28,6 +29,8 @@ class ExpertListingView(TemplateView):
         ctx["total_experts"] = search_data["total"]
         ctx["form"] = ExpertSearchForm()
         ctx["active_group"] = "all"
+        ctx["active_area"] = ""
+        ctx["active_engagement"] = ""
         return ctx
 
 
@@ -41,10 +44,12 @@ class ExpertSearchView(TemplateView):
         q = ""
         group_slug = ""
         area_slug = ""
+        engagement_slug = ""
         if form.is_valid():
             q = form.cleaned_data.get("q") or ""
             group_slug = form.cleaned_data.get("group") or ""
             area_slug = form.cleaned_data.get("area") or ""
+            engagement_slug = form.cleaned_data.get("engagement") or ""
 
         try:
             page = int(request.GET.get("page", 1))
@@ -52,7 +57,8 @@ class ExpertSearchView(TemplateView):
             page = 1
 
         search_data = ExpertService.get_experts(
-            q=q, group_slug=group_slug, area_slug=area_slug, page=page
+            q=q, group_slug=group_slug, area_slug=area_slug,
+            engagement_slug=engagement_slug, page=page
         )
         ctx = self.get_context_data(**kwargs)
         ctx["experts"] = search_data["experts"]
@@ -62,6 +68,7 @@ class ExpertSearchView(TemplateView):
         ctx["q"] = q
         ctx["active_group"] = group_slug or "all"
         ctx["active_area"] = area_slug
+        ctx["active_engagement"] = engagement_slug
         return self.render_to_response(ctx)
 
 

@@ -6,7 +6,7 @@ from typing import Optional
 
 from django.db.models import Count, Prefetch, Q, QuerySet
 
-from .models import Expert, ExpertGroup, ExpertListingPage, KnowledgeTopic, ProcessStep, ResearchArea
+from .models import EngagementType, Expert, ExpertGroup, ExpertListingPage, KnowledgeTopic, ProcessStep, ResearchArea
 
 
 class ExpertService:
@@ -69,13 +69,29 @@ class ExpertService:
             .order_by("display_order")
         )
 
-    # ─── Expert Directory (search + filter) ───────────────────────────────────
+    # ─── Engagement Types (filter sidebar) ──────────────────────────────────────
+
+    @staticmethod
+    def get_engagement_types() -> list[EngagementType]:
+        """Return all active engagement types for the sidebar filter."""
+        return list(
+            EngagementType.objects
+            .filter(is_active=True)
+            .annotate(expert_count=Count(
+                "experts",
+                filter=Q(experts__is_active=True, experts__is_published=True),
+            ))
+            .order_by("display_order")
+        )
+
+    # ─── Expert Directory (search + filter) ──────────────────────────────────────
 
     @staticmethod
     def get_experts(
         q: str = "",
         group_slug: str = "",
         area_slug: str = "",
+        engagement_slug: str = "",
         page: int = 1,
         per_page: int = 12,
     ) -> dict:
@@ -86,7 +102,7 @@ class ExpertService:
             Expert.objects
             .filter(is_active=True, is_published=True)
             .select_related("group")
-            .prefetch_related("research_areas")
+            .prefetch_related("research_areas", "engagement_types")
             .order_by("display_order", "name")
         )
 
@@ -104,7 +120,10 @@ class ExpertService:
             qs = qs.filter(group__slug=group_slug)
 
         if area_slug:
-            qs = qs.filter(research_areas__slug=area_slug)
+            qs = qs.filter(research_areas__slug=area_slug).distinct()
+
+        if engagement_slug:
+            qs = qs.filter(engagement_types__slug=engagement_slug).distinct()
 
         paginator = Paginator(qs, per_page)
         page_obj = paginator.get_page(page)

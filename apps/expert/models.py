@@ -130,9 +130,18 @@ class ExpertListingPage(BaseModel):
     map_cta2_url = models.CharField(_("map CTA 2 URL"), max_length=500, blank=True, default="/giai-phap/")
 
     # Directory Section
+    directory_section_label = models.CharField(
+        _("directory section label"), max_length=100, blank=True,
+        default="TÌM KIẾM",
+        help_text=_("Nhãn nhỏ phía trên tiêu đề section. Để trống để ẩn."),
+    )
     directory_heading = models.CharField(
         _("directory section heading"), max_length=300, blank=True,
         default="TÌM NHÀ KHOA HỌC/CHUYÊN GIA"
+    )
+    directory_description = models.TextField(
+        _("directory section description"), blank=True,
+        help_text=_("Mô tả ngắn hiển thị bên dưới tiêu đề section tìm kiếm."),
     )
 
     # Knowledge Topic Section
@@ -162,6 +171,23 @@ class ExpertListingPage(BaseModel):
 
     def __str__(self) -> str:
         return self.hero_heading or "Expert Listing Page"
+
+
+# ─── Engagement Type (Hình thức đồng hành) ──────────────────────────────────
+
+class EngagementType(BaseModel):
+    """Engagement mode/type for filtering experts (e.g. Tư vấn chiến lược, Đào tạo & tập huấn)."""
+
+    name = models.CharField(_("name"), max_length=200)
+    slug = models.SlugField(_("slug"), max_length=200, unique=True, db_index=True)
+    description = models.TextField(_("description"), blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("engagement type")
+        verbose_name_plural = _("engagement types")
+
+    def __str__(self) -> str:
+        return self.name
 
 
 # ─── Expert Group (Nhóm chuyên gia) ──────────────────────────────────────────
@@ -360,6 +386,13 @@ class Expert(BaseModel):
         blank=True,
         related_name="experts",
         verbose_name=_("research areas"),
+    )
+    engagement_types = models.ManyToManyField(
+        "EngagementType",
+        blank=True,
+        related_name="experts",
+        verbose_name=_("engagement types"),
+        help_text=_("Hình thức đồng hành: Tư vấn chiến lược, Đào tạo, Nghiên cứu, v.v."),
     )
     knowledge_topics = models.ManyToManyField(
         KnowledgeTopic,

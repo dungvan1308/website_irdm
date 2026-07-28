@@ -357,12 +357,23 @@
   <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
 
     {# Section header #}
-    <h2 id="directory-heading" class="font-utm-banque font-normal text-2xl sm:text-3xl lg:text-[36px] text-primary-900 uppercase tracking-tight mb-8">
-      {% if listing_page and listing_page.directory_heading %}{{ listing_page.directory_heading }}{% else %}{% trans "TÌM NHÀ KHOA HỌC/CHUYÊN GIA" %}{% endif %}
-    </h2>
+    <div class="mb-8">
+      {% if listing_page and listing_page.directory_section_label %}
+        <p class="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-primary-700 mb-3" aria-hidden="true">
+          <span class="inline-block w-6 h-px bg-primary-700"></span>
+          {{ listing_page.directory_section_label }}
+        </p>
+      {% endif %}
+      <h2 id="directory-heading" class="font-utm-banque font-normal text-2xl sm:text-3xl lg:text-[36px] text-primary-900 uppercase tracking-tight mb-3">
+        {% if listing_page and listing_page.directory_heading %}{{ listing_page.directory_heading }}{% else %}{% trans "TÌM NHÀ KHOA HỌC/CHUYÊN GIA" %}{% endif %}
+      </h2>
+      {% if listing_page and listing_page.directory_description %}
+        <p class="text-slate-500 text-base leading-relaxed max-w-2xl">{{ listing_page.directory_description }}</p>
+      {% endif %}
+    </div>
 
     {# Search Box #}
-    <div class="mb-6" role="search" aria-label="{% trans 'Tìm kiếm chuyên gia' %}">
+    <div class="mb-8" role="search" aria-label="{% trans 'Tìm kiếm chuyên gia' %}">
       <div class="relative max-w-xl">
         <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none" aria-hidden="true">
           <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -372,7 +383,7 @@
         <input type="search"
                id="expert-search-input"
                name="q"
-               placeholder="{% trans 'Tên, chức danh, đơn vị, lĩnh vực...' %}"
+               placeholder="{% trans 'Tìm theo tên, lĩnh vực, chủ đề hoặc hình thức đồng hành...' %}"
                autocomplete="off"
                class="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white shadow-sm"
                hx-get="{% url 'expert:search' %}"
@@ -380,8 +391,7 @@
                hx-target="#expert-grid-wrapper"
                hx-swap="innerHTML"
                hx-indicator="#search-spinner"
-               hx-include="#group-filter-input, #area-filter-input" />
-        {# Loading spinner #}
+               hx-include="#group-filter-input, #area-filter-input, #engagement-filter-input" />
         <div id="search-spinner" class="htmx-indicator absolute inset-y-0 right-4 flex items-center" aria-hidden="true">
           <svg class="animate-spin w-4 h-4 text-primary-500" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
@@ -391,59 +401,131 @@
       </div>
     </div>
 
-    {# Hidden filter inputs (sent with HTMX) #}
+    {# Hidden filter state inputs #}
     <input type="hidden" id="group-filter-input" name="group" value="{{ active_group }}" />
-    <input type="hidden" id="area-filter-input" name="area" value="" />
+    <input type="hidden" id="area-filter-input" name="area" value="{{ active_area }}" />
+    <input type="hidden" id="engagement-filter-input" name="engagement" value="{{ active_engagement }}" />
 
-    {# Filter Tabs #}
-    {% if expert_groups %}
-      <div class="flex flex-wrap gap-2 mb-8"
-           role="tablist"
-           aria-label="{% trans 'Lọc theo nhóm chuyên gia' %}">
+    {# ── 2-column layout: Sidebar (filters) + Main (grid) ─────────────────── #}
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-10">
 
-        {# "All" tab #}
-        <button role="tab"
-                aria-selected="{% if active_group == 'all' %}true{% else %}false{% endif %}"
-                class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors border
-                       {% if active_group == 'all' %}bg-primary-700 text-white border-primary-700{% else %}bg-white text-slate-600 border-slate-200 hover:border-primary-200 hover:text-primary-700{% endif %}"
-                hx-get="{% url 'expert:search' %}?group=all"
-                hx-target="#expert-grid-wrapper"
-                hx-swap="innerHTML"
-                hx-indicator="#search-spinner"
-                hx-include="#expert-search-input"
-                onclick="document.getElementById('group-filter-input').value='all'">
-          {% trans "Tất cả" %}
-          <span class="ml-1 text-xs opacity-70">({{ total_experts }})</span>
-        </button>
+      {# ── LEFT SIDEBAR — Filter groups ─────────────────────────────────────── #}
+      <aside class="lg:w-56 xl:w-64 flex-shrink-0" aria-label="{% trans 'Bộ lọc chuyên gia' %}">
 
-        {% for grp in expert_groups %}
-          <button role="tab"
-                  aria-selected="{% if active_group == grp.slug %}true{% else %}false{% endif %}"
-                  class="filter-tab px-4 py-2 rounded-full text-sm font-medium transition-colors border
-                         {% if active_group == grp.slug %}bg-primary-700 text-white border-primary-700{% else %}bg-white text-slate-600 border-slate-200 hover:border-primary-200 hover:text-primary-700{% endif %}"
-                  hx-get="{% url 'expert:search' %}?group={{ grp.slug }}"
-                  hx-target="#expert-grid-wrapper"
-                  hx-swap="innerHTML"
-                  hx-indicator="#search-spinner"
-                  hx-include="#expert-search-input"
-                  onclick="document.getElementById('group-filter-input').value='{{ grp.slug }}'">
-            {{ grp.name }}
-            {% if grp.expert_count %}
-              <span class="ml-1 text-xs opacity-70">({{ grp.expert_count }})</span>
-            {% endif %}
-          </button>
-        {% endfor %}
+        {# THEO VAI TRÒ #}
+        {% if expert_groups %}
+          <div class="mb-7">
+            <h3 class="text-xs font-extrabold uppercase tracking-[0.18em] text-slate-700 mb-3">
+              {% trans "THEO VAI TRÒ" %}
+            </h3>
+            <ul class="space-y-1">
+              <li>
+                <button class="w-full text-left text-sm px-3 py-1.5 rounded-lg transition-colors
+                               {% if active_group == 'all' and not active_area and not active_engagement %}font-semibold text-primary-700 bg-primary-50{% else %}text-slate-600 hover:text-primary-700 hover:bg-slate-50{% endif %}"
+                        hx-get="{% url 'expert:search' %}?group=all"
+                        hx-target="#expert-grid-wrapper"
+                        hx-swap="innerHTML"
+                        hx-indicator="#search-spinner"
+                        hx-include="#expert-search-input"
+                        onclick="setFilter('group','all')">
+                  {% trans "Tất cả" %}
+                </button>
+              </li>
+              {% for grp in expert_groups %}
+                <li>
+                  <button class="w-full text-left text-sm px-3 py-1.5 rounded-lg transition-colors
+                                 {% if active_group == grp.slug %}font-semibold text-primary-700 bg-primary-50{% else %}text-slate-600 hover:text-primary-700 hover:bg-slate-50{% endif %}"
+                          hx-get="{% url 'expert:search' %}?group={{ grp.slug }}"
+                          hx-target="#expert-grid-wrapper"
+                          hx-swap="innerHTML"
+                          hx-indicator="#search-spinner"
+                          hx-include="#expert-search-input"
+                          onclick="setFilter('group','{{ grp.slug }}')">
+                    {{ grp.name }}
+                  </button>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
 
+        {# THEO LĨNH VỰC CHUYÊN MÔN #}
+        {% if research_areas %}
+          <div class="mb-7">
+            <h3 class="text-xs font-extrabold uppercase tracking-[0.18em] text-slate-700 mb-3">
+              {% trans "THEO LĨNH VỰC CHUYÊN MÔN" %}
+            </h3>
+            <ul class="space-y-1">
+              {% for area in research_areas %}
+                <li>
+                  <button class="w-full text-left text-sm px-3 py-1.5 rounded-lg transition-colors
+                                 {% if active_area == area.slug %}font-semibold text-primary-700 bg-primary-50{% else %}text-slate-600 hover:text-primary-700 hover:bg-slate-50{% endif %}"
+                          hx-get="{% url 'expert:search' %}?area={{ area.slug }}"
+                          hx-target="#expert-grid-wrapper"
+                          hx-swap="innerHTML"
+                          hx-indicator="#search-spinner"
+                          hx-include="#expert-search-input"
+                          onclick="setFilter('area','{{ area.slug }}')">
+                    {{ area.name }}
+                  </button>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        {# THEO HÌNH THỨC ĐỒNG HÀNH #}
+        {% if engagement_types %}
+          <div class="mb-7">
+            <h3 class="text-xs font-extrabold uppercase tracking-[0.18em] text-slate-700 mb-3">
+              {% trans "THEO HÌNH THỨC ĐỒNG HÀNH" %}
+            </h3>
+            <ul class="space-y-1">
+              {% for eng in engagement_types %}
+                <li>
+                  <button class="w-full text-left text-sm px-3 py-1.5 rounded-lg transition-colors
+                                 {% if active_engagement == eng.slug %}font-semibold text-primary-700 bg-primary-50{% else %}text-slate-600 hover:text-primary-700 hover:bg-slate-50{% endif %}"
+                          hx-get="{% url 'expert:search' %}?engagement={{ eng.slug }}"
+                          hx-target="#expert-grid-wrapper"
+                          hx-swap="innerHTML"
+                          hx-indicator="#search-spinner"
+                          hx-include="#expert-search-input"
+                          onclick="setFilter('engagement','{{ eng.slug }}')">
+                    {{ eng.name }}
+                  </button>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+      </aside>
+
+      {# ── MAIN CONTENT — Expert grid ────────────────────────────────────────── #}
+      <div class="flex-1 min-w-0">
+        <div id="expert-grid-wrapper" aria-live="polite">
+          {% include "expert/_expert_grid.html" %}
+        </div>
       </div>
-    {% endif %}
 
-    {# Expert grid — HTMX target #}
-    <div id="expert-grid-wrapper" aria-live="polite">
-      {% include "expert/_expert_grid.html" %}
-    </div>
+    </div>{# end 2-col layout #}
 
   </div>
 </section>
+
+<script>
+{# Helper: update hidden filter inputs and reset others #}
+function setFilter(type, value) {
+  document.getElementById('group-filter-input').value = (type === 'group') ? value : (type === 'group' ? value : 'all');
+  document.getElementById('area-filter-input').value = (type === 'area') ? value : '';
+  document.getElementById('engagement-filter-input').value = (type === 'engagement') ? value : '';
+  if (type === 'group') {
+    document.getElementById('group-filter-input').value = value;
+    document.getElementById('area-filter-input').value = '';
+    document.getElementById('engagement-filter-input').value = '';
+  }
+}
+</script>
 
 {# ════════════════════════════════════════════════════════════════════════════ #}
 {# SECTION 6 — KNOWLEDGE TOPICS: CÁC CHỦ ĐỀ THÔNG TIN CHUYÊN MÔN             #}
