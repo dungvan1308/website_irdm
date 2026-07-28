@@ -42,7 +42,12 @@ LISTING_PAGE = {
         "sau đó kết nối nhà khoa học/chuyên gia phù hợp để đồng thiết kế hướng đi "
         "và hỗ trợ triển khai."
     ),
+    "senior_section_label": "CHUYÊN GIA CẤP CAO",
     "senior_heading": "CHUYÊN GIA CAO CẤP CỦA VIỆN IRDM",
+    "senior_description": (
+        "Một số hồ sơ đại diện cho các trục chuyên môn chính "
+        "trong mạng lưới chuyên gia của Viện IRDM."
+    ),
     "senior_cta_label": "Xem tất cả chuyên gia",
     "senior_cta_url": "#tim-kiem",
     "map_heading": "BẢN ĐỒ CHUYÊN MÔN LIÊN NGÀNH",
