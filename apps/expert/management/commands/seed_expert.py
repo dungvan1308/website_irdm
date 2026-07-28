@@ -34,9 +34,13 @@ LISTING_PAGE = {
     "hero_btn1_url": "#ket-noi",
     "hero_btn2_label": "ĐĂNG KÝ CHUYÊN GIA",
     "hero_btn2_url": "/lien-he/",
+    "process_section_label": "PHƯƠNG THỨC TIẾP CẬN",
     "process_heading": "VIỆN IRDM KẾT NỐI CHUYÊN GIA NHƯ THẾ NÀO?",
     "process_description": (
-        "Quy trình 4 bước đơn giản, minh bạch để kết nối bạn với chuyên gia phù hợp nhất."
+        "Viện IRDM không tiếp cận đối tác bằng một danh sách chuyên gia rời rạc. "
+        "Chúng tôi bắt đầu từ bài toán cần giải quyết, xác định tổ hợp chuyên môn cần thiết, "
+        "sau đó kết nối nhà khoa học/chuyên gia phù hợp để đồng thiết kế hướng đi "
+        "và hỗ trợ triển khai."
     ),
     "senior_heading": "CHUYÊN GIA CAO CẤP CỦA VIỆN IRDM",
     "senior_cta_label": "Xem tất cả chuyên gia",
@@ -102,41 +106,41 @@ AREAS = [
 STEPS = [
     {
         "step_number": 1,
-        "title": "Tiếp nhận nhu cầu",
+        "title": "Làm rõ bài toán",
         "icon": "document-text",
         "description": (
-            "Bạn gửi yêu cầu tư vấn, mô tả vấn đề cần giải quyết "
-            "và lĩnh vực cần chuyên gia."
+            "Xác định vấn đề cốt lõi, nhóm thụ hưởng, bối cảnh "
+            "vận hành và mục tiêu hợp tác."
         ),
         "display_order": 1,
     },
     {
         "step_number": 2,
-        "title": "Phân tích & Khớp chuyên gia",
+        "title": "Kết nối chuyên gia phù hợp",
         "icon": "magnifying-glass",
         "description": (
-            "Đội ngũ IRDM phân tích nhu cầu và tìm kiếm chuyên gia "
-            "phù hợp nhất từ mạng lưới."
+            "Huy động nhà khoa học/chuyên gia theo lĩnh vực, "
+            "vai trò và kinh nghiệm triển khai."
         ),
         "display_order": 2,
     },
     {
         "step_number": 3,
-        "title": "Kết nối & Tư vấn ban đầu",
+        "title": "Đồng thiết kế giải pháp",
         "icon": "user-group",
         "description": (
-            "Chúng tôi kết nối bạn với chuyên gia, tổ chức buổi "
-            "tư vấn khám phá ban đầu."
+            "Kết nối bằng chứng khoa học, hiểu biết thực tiễn "
+            "và điều kiện triển khai của đối tác."
         ),
         "display_order": 3,
     },
     {
         "step_number": 4,
-        "title": "Theo dõi & Đánh giá",
+        "title": "Đồng hành triển khai & cải tiến",
         "icon": "chart-bar-square",
         "description": (
-            "IRDM theo dõi chất lượng hợp tác và thu thập phản hồi "
-            "để cải thiện liên tục."
+            "Hỗ trợ thực hiện, theo dõi, điều chỉnh và chuyển hóa "
+            "kết quả thành giá trị sử dụng."
         ),
         "display_order": 4,
     },
@@ -542,14 +546,12 @@ class Command(BaseCommand):
     # ── helpers ───────────────────────────────────────────────────────────────
 
     def _seed_listing_page(self):
-        obj, created = ExpertListingPage.objects.get_or_create(
-            hero_heading=LISTING_PAGE["hero_heading"],
-            defaults=LISTING_PAGE,
-        )
-        if created:
+        # Singleton pattern: luôn lấy bản ghi đầu tiên (pk nhỏ nhất), không tạo thêm
+        obj = ExpertListingPage.objects.order_by("pk").first()
+        if obj is None:
+            ExpertListingPage.objects.create(**LISTING_PAGE)
             self.stdout.write("  ✓ ExpertListingPage created")
         else:
-            # Update fields in case spec changed
             for k, v in LISTING_PAGE.items():
                 setattr(obj, k, v)
             obj.save()

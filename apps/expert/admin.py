@@ -53,7 +53,7 @@ class ExpertListingPageAdmin(admin.ModelAdmin):
             "description": "Badge nhỏ hiển thị ngay bên dưới CTA buttons (e.g. ĐÚNG CHUYÊN MÔN CHO ĐÚNG BÀI TOÁN)",
         }),
         ("Process Section", {
-            "fields": ("process_heading", "process_description"),
+            "fields": ("process_section_label", "process_heading", "process_description"),
         }),
         ("Senior Experts Section", {
             "fields": ("senior_heading", "senior_cta_label", "senior_cta_url"),
