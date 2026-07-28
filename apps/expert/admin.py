@@ -56,7 +56,10 @@ class ExpertListingPageAdmin(admin.ModelAdmin):
             "fields": ("process_section_label", "process_heading", "process_description"),
         }),
         ("Senior Experts Section", {
-            "fields": ("senior_heading", "senior_cta_label", "senior_cta_url"),
+            "fields": (
+                "senior_section_label", "senior_heading", "senior_description",
+                "senior_cta_label", "senior_cta_url",
+            ),
         }),
         ("Research Area Map Section", {
             "fields": ("map_heading", "map_description"),

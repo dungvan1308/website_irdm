@@ -97,9 +97,18 @@ class ExpertListingPage(BaseModel):
     process_description = models.TextField(_("process section description"), blank=True)
 
     # Senior Section
+    senior_section_label = models.CharField(
+        _("senior section label"), max_length=100, blank=True,
+        default="CHUYÊN GIA CẤP CAO",
+        help_text=_("Nhãn nhỏ phía trên tiêu đề section. Để trống để ẩn."),
+    )
     senior_heading = models.CharField(
         _("senior experts section heading"), max_length=300, blank=True,
         default="CHUYÊN GIA CAO CẤP CỦA VIỆN IRDM"
+    )
+    senior_description = models.TextField(
+        _("senior section description"), blank=True,
+        help_text=_("Mô tả ngắn bên dưới tiêu đề section chuyên gia cao cấp."),
     )
     senior_cta_label = models.CharField(_("senior section CTA label"), max_length=100, blank=True, default="Xem tất cả")
     senior_cta_url = models.CharField(_("senior section CTA URL"), max_length=500, blank=True, default="#tim-kiem")
