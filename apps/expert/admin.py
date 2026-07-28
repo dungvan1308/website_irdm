@@ -107,10 +107,10 @@ class ResearchAreaAdmin(admin.ModelAdmin):
     search_fields = ("name",)
     fieldsets = (
         (None, {
-            "fields": ("name", "slug", "icon", "color"),
+            "fields": ("name", "slug", "icon", "card_icon", "color"),
         }),
         ("Card Content", {
-            "fields": ("description", "card_tags"),
+            "fields": ("description", "card_tags", "card_cta_label", "card_cta_url"),
             "description": "Nội dung hiển thị trong card bản đồ chuyên môn.",
         }),
         ("Status", {

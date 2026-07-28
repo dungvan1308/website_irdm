@@ -186,13 +186,35 @@ class ExpertGroup(BaseModel):
 class ResearchArea(BaseModel):
     """Research area / field of expertise shown on the Interdisciplinary Map."""
 
+    ICON_CHOICES = [
+        ("chart-bar",       "📊 chart-bar — Kinh tế / Thống kê"),
+        ("briefcase",       "💼 briefcase — Quản trị / Lãnh đạo"),
+        ("cpu",             "🖥️ cpu — Công nghệ / AI"),
+        ("building-library","🏛️ building-library — Chính sách / Pháp luật"),
+        ("leaf",            "🌿 leaf — Bền vững / Môi trường"),
+        ("academic-cap",    "🎓 academic-cap — Giáo dục / Đào tạo"),
+        ("heart",           "❤️ heart — Y tế / Sức khoẻ"),
+        ("light-bulb",      "💡 light-bulb — Đổi mới sáng tạo"),
+        ("globe-alt",       "🌐 globe-alt — Quốc tế / Toàn cầu"),
+        ("users",           "👥 users — Nhân lực / Cộng đồng"),
+        ("beaker",          "🔬 beaker — Nghiên cứu / Khoa học"),
+        ("currency-dollar", "💵 currency-dollar — Tài chính / Đầu tư"),
+    ]
+
     name = models.CharField(_("name"), max_length=200)
     slug = models.SlugField(_("slug"), max_length=200, unique=True, db_index=True)
     icon = models.CharField(
         _("icon name"),
         max_length=100,
         blank=True,
-        help_text=_("Heroicon name, e.g. 'chart-bar'"),
+        choices=ICON_CHOICES,
+        help_text=_("Chọn icon đại diện cho lĩnh vực chuyên môn."),
+    )
+    card_icon = models.ImageField(
+        _("card icon"),
+        upload_to="expert/area-icons/",
+        blank=True,
+        help_text=_("Upload icon PNG/SVG (~40×40 px). Nếu upload thì ưu tiên hiển thị, nếu không sẽ dùng icon từ danh sách bên trên."),
     )
     color = models.CharField(
         _("color (hex)"),
@@ -208,6 +230,16 @@ class ResearchArea(BaseModel):
     card_tags = models.TextField(
         _("card tags"), blank=True,
         help_text=_("Mỗi tag một dòng (nhấn Enter để xuống dòng). VD:\nY tế\nHệ thống y tế\nAI dữ liệu"),
+    )
+    card_cta_label = models.CharField(
+        _("CTA label"), max_length=200, blank=True,
+        default="Tìm chuyên gia liên quan",
+        help_text=_("Nhãn nút CTA trong card, e.g. 'Tìm chuyên gia liên quan'"),
+    )
+    card_cta_url = models.CharField(
+        _("CTA URL"), max_length=500, blank=True,
+        default="/chuyen-gia/",
+        help_text=_("Đường dẫn khi nhấn CTA, e.g. /chuyen-gia/?linh-vuc=kinh-te"),
     )
 
     class Meta(BaseModel.Meta):
