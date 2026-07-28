@@ -50,11 +50,19 @@ LISTING_PAGE = {
     ),
     "senior_cta_label": "Xem tất cả chuyên gia",
     "senior_cta_url": "#tim-kiem",
+    "map_section_label": "BẢN ĐỒ CHUYÊN MÔN",
     "map_heading": "BẢN ĐỒ CHUYÊN MÔN LIÊN NGÀNH",
     "map_description": (
-        "Viện IRDM tập hợp chuyên gia từ nhiều lĩnh vực khác nhau, "
-        "tạo nên mạng lưới tri thức liên ngành toàn diện."
+        "Mỗi bài toán thực tiễn cần nhiều góc nhìn chuyên môn cùng tham gia. "
+        "Mỗi cụm chuyên môn phản ánh một nhóm năng lực mà IRDM có thể huy động "
+        "trong nghiên cứu, đào tạo, tư vấn, phản biện, thiết kế giải pháp hoặc "
+        "triển khai chương trình — giúp nhận diện lĩnh vực phù hợp, khám phá "
+        "các hướng giải pháp liên quan hoặc tìm nhóm chuyên gia có thể đồng hành."
     ),
+    "map_cta1_label": "Tìm chuyên gia",
+    "map_cta1_url": "#tim-kiem",
+    "map_cta2_label": "Khám phá giải pháp",
+    "map_cta2_url": "/giai-phap/",
     "directory_heading": "TÌM NHÀ KHOA HỌC/CHUYÊN GIA",
     "topic_heading": "CÁC CHỦ ĐỀ THÔNG TIN CHUYÊN MÔN",
     "topic_description": (
@@ -95,14 +103,78 @@ GROUPS = [
 # ─── Research Areas ───────────────────────────────────────────────────────────
 
 AREAS = [
-    {"name": "Kinh tế học liên ngành", "slug": "kinh-te-hoc-lien-nganh", "icon": "chart-bar", "color": "#1d4ed8", "display_order": 1},
-    {"name": "Quản trị & Lãnh đạo", "slug": "quan-tri-lanh-dao", "icon": "briefcase", "color": "#7c3aed", "display_order": 2},
-    {"name": "Khoa học dữ liệu & AI", "slug": "khoa-hoc-du-lieu-ai", "icon": "cpu", "color": "#0891b2", "display_order": 3},
-    {"name": "Chính sách công & Quản lý nhà nước", "slug": "chinh-sach-cong", "icon": "building-library", "color": "#0f766e", "display_order": 4},
-    {"name": "Phát triển bền vững", "slug": "phat-trien-ben-vung", "icon": "leaf", "color": "#15803d", "display_order": 5},
-    {"name": "Giáo dục & Đào tạo", "slug": "giao-duc-dao-tao", "icon": "academic-cap", "color": "#b45309", "display_order": 6},
-    {"name": "Y tế & Sức khỏe cộng đồng", "slug": "y-te-suc-khoe-cong-dong", "icon": "heart", "color": "#be123c", "display_order": 7},
-    {"name": "Công nghệ & Đổi mới sáng tạo", "slug": "cong-nghe-doi-moi", "icon": "light-bulb", "color": "#ea580c", "display_order": 8},
+    {
+        "name": "Kinh tế học liên ngành", "slug": "kinh-te-hoc-lien-nganh",
+        "icon": "chart-bar", "color": "#1d4ed8", "display_order": 1,
+        "description": (
+            "Phân tích kinh tế từ nhiều góc nhìn: hành vi, thể chế, phúc lợi xã hội "
+            "và tác động chính sách — hỗ trợ thiết kế giải pháp tăng trưởng bền vững."
+        ),
+        "card_tags": "Kinh tế học\nChính sách kinh tế\nPhát triển bền vững",
+    },
+    {
+        "name": "Quản trị & Lãnh đạo", "slug": "quan-tri-lanh-dao",
+        "icon": "briefcase", "color": "#7c3aed", "display_order": 2,
+        "description": (
+            "Khung lý thuyết và thực tiễn về quản trị hiệu quả, lãnh đạo thay đổi "
+            "và xây dựng năng lực tổ chức trong bối cảnh chuyển đổi."
+        ),
+        "card_tags": "Lãnh đạo\nQuản trị tổ chức\nDoanh nghiệp",
+    },
+    {
+        "name": "Khoa học dữ liệu & AI", "slug": "khoa-hoc-du-lieu-ai",
+        "icon": "cpu", "color": "#0891b2", "display_order": 3,
+        "description": (
+            "Hỗ trợ nhận diện use case, đánh giá dữ liệu, thiết kế dashboard, "
+            "công cụ số và lộ trình thí điểm ứng dụng AI trong tổ chức."
+        ),
+        "card_tags": "AI dữ liệu & chuyển đổi số\nY tế\nCơ quan quản lý",
+    },
+    {
+        "name": "Chính sách công & Quản lý nhà nước", "slug": "chinh-sach-cong",
+        "icon": "building-library", "color": "#0f766e", "display_order": 4,
+        "description": (
+            "Phân tích bối cảnh xã hội, nhóm thụ hưởng, tác động chính sách "
+            "và các vấn đề hệ thống trong quản trị nhà nước và cải cách thể chế."
+        ),
+        "card_tags": "Cơ quan quản lý\nTổ chức quốc tế\nNguồn nhân lực",
+    },
+    {
+        "name": "Phát triển bền vững", "slug": "phat-trien-ben-vung",
+        "icon": "leaf", "color": "#15803d", "display_order": 5,
+        "description": (
+            "Kết nối môi trường sống, ESG, Green University, Green Hospital "
+            "và các sáng kiến kinh tế tuần hoàn và phát triển bền vững."
+        ),
+        "card_tags": "Môi trường & phát triển bền vững\nGiáo dục\nHệ thống y tế",
+    },
+    {
+        "name": "Giáo dục & Đào tạo", "slug": "giao-duc-dao-tao",
+        "icon": "academic-cap", "color": "#b45309", "display_order": 6,
+        "description": (
+            "Thiết kế chương trình học tập, đào tạo, E-Learning, microlearning "
+            "và phát triển năng lực đội ngũ theo hướng thực hành."
+        ),
+        "card_tags": "Giáo dục\nNguồn nhân lực\nTrường đại học",
+    },
+    {
+        "name": "Y tế & Sức khỏe cộng đồng", "slug": "y-te-suc-khoe-cong-dong",
+        "icon": "heart", "color": "#be123c", "display_order": 7,
+        "description": (
+            "Chuyên môn về hệ thống y tế, quản trị bệnh viện, chất lượng "
+            "chăm sóc sức khỏe và phát triển dịch vụ y tế cộng đồng."
+        ),
+        "card_tags": "Y tế\nHệ thống y tế\nSức khỏe cộng đồng",
+    },
+    {
+        "name": "Công nghệ & Đổi mới sáng tạo", "slug": "cong-nghe-doi-moi",
+        "icon": "light-bulb", "color": "#ea580c", "display_order": 8,
+        "description": (
+            "Phát triển năng lực đổi mới sáng tạo, chuyển đổi số trong doanh nghiệp, "
+            "hệ sinh thái khởi nghiệp và ứng dụng công nghệ vào thực tiễn."
+        ),
+        "card_tags": "Công nghệ\nĐổi mới sáng tạo\nChuyển đổi số",
+    },
 ]
 
 
