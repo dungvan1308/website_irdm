@@ -1,6 +1,7 @@
 """Django admin registrations for the Capability module."""
 
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from .models import (
     Capability,
@@ -52,14 +53,14 @@ class CapabilityCaseStudyTagInline(admin.TabularInline):
 class CapabilityListingPageAdmin(admin.ModelAdmin):
     list_display = ("heading", "is_active")
     fieldsets = (
-        ("Hero", {
+        (_("Hero"), {
             "fields": ("section_label", "heading", "description", "hero_image"),
         }),
-        ("Overview", {
+        (_("Overview"), {
             "fields": ("overview_heading", "overview_description"),
         }),
-        ("CTA", {
-            "description": "Section 'Kết nối với IRDM' hiển thị phía trên Footer.",
+        (_("CTA"), {
+            "description": _("Section 'Kết nối với IRDM' hiển thị phía trên Footer."),
             "fields": (
                 "cta_show",
                 "cta_bg_image",
@@ -72,7 +73,7 @@ class CapabilityListingPageAdmin(admin.ModelAdmin):
                 "cta_overlay_opacity",
             ),
         }),
-        ("Status", {
+        (_("Status"), {
             "fields": ("is_active", "display_order"),
         }),
     )
@@ -91,29 +92,29 @@ class CapabilityAdmin(admin.ModelAdmin):
         CapabilityOutputInline,
     ]
     fieldsets = (
-        ("Identity", {
+        (_("Identity"), {
             "fields": ("title", "slug", "section_label"),
         }),
-        ("Hero / Listing", {
+        (_("Hero / Listing"), {
             "fields": ("summary", "thumbnail", "card_icon", "hero_image", "description"),
         }),
-        ("What-is section", {
+        (_("What-is section"), {
             "fields": ("what_is_label", "what_is_description", "what_is_image"),
         }),
-        ("Section labels", {
+        (_("Section labels"), {
             "fields": ("need_section_label", "need_section_intro", "how_label", "output_label"),
         }),
-        ("CTA buttons", {
+        (_("CTA buttons"), {
             "fields": (
                 "cta_primary_label", "cta_primary_url",
                 "cta_secondary_label", "cta_secondary_url",
             ),
         }),
-        ("SEO", {
+        (_("SEO"), {
             "fields": ("meta_title", "meta_description", "meta_keywords"),
             "classes": ("collapse",),
         }),
-        ("Status", {
+        (_("Status"), {
             "fields": ("is_published", "is_active", "display_order"),
         }),
     )
@@ -126,19 +127,19 @@ class CapabilityCaseStudyAdmin(admin.ModelAdmin):
     list_filter = ("capability",)
     inlines = [CapabilityCaseStudyTagInline]
     fieldsets = (
-        ("Relationship", {
+        (_("Relationship"), {
             "fields": ("capability", "number", "image"),
         }),
-        ("Content", {
+        (_("Content"), {
             "fields": ("category_label", "title", "description"),
         }),
-        ("CTAs", {
+        (_("CTAs"), {
             "fields": (
                 "cta_primary_label", "cta_primary_url",
                 "cta_secondary_label", "cta_secondary_url",
             ),
         }),
-        ("Status", {
+        (_("Status"), {
             "fields": ("is_active", "display_order"),
         }),
     )

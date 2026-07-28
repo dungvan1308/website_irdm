@@ -2,6 +2,7 @@
 
 from django.contrib import admin
 from django.utils.html import format_html
+from django.utils.translation import gettext_lazy as _
 
 from .models import (
     Solution,
@@ -64,12 +65,12 @@ class SolutionListingPageAdmin(admin.ModelAdmin):
     list_display = ("heading", "hero_image_preview", "is_active")
     readonly_fields = ("hero_image_preview",)
     fieldsets = (
-        ("Hero", {"fields": ("section_label", "heading", "description", "hero_image", "hero_image_preview")}),
-        ("CTA", {"fields": ("cta_primary_label", "cta_primary_url", "cta_secondary_label", "cta_secondary_url")}),
-        ("Quick-nav", {"fields": ("quicknav_heading",)}),
-        ("Approach Section", {"fields": ("approach_label", "approach_heading", "approach_description")}),
-        ("SEO", {"fields": ("meta_title", "meta_description", "meta_keywords"), "classes": ("collapse",)}),
-        ("Status", {"fields": ("is_active", "display_order")}),
+        (_("Hero"), {"fields": ("section_label", "heading", "description", "hero_image", "hero_image_preview")}),
+        (_("CTA"), {"fields": ("cta_primary_label", "cta_primary_url", "cta_secondary_label", "cta_secondary_url")}),
+        (_("Quick-nav"), {"fields": ("quicknav_heading",)}),
+        (_("Approach Section"), {"fields": ("approach_label", "approach_heading", "approach_description")}),
+        (_("SEO"), {"fields": ("meta_title", "meta_description", "meta_keywords"), "classes": ("collapse",)}),
+        (_("Status"), {"fields": ("is_active", "display_order")}),
     )
 
     @admin.display(description="Hero preview")
@@ -98,19 +99,19 @@ class SolutionAdmin(admin.ModelAdmin):
         SolutionOutputInline,
     ]
     fieldsets = (
-        ("Identity", {"fields": ("title", "slug", "section_label")}),
-        ("Hero / Listing", {"fields": (
+        (_("Identity"), {"fields": ("title", "slug", "section_label")}),
+        (_("Hero / Listing"), {"fields": (
             "summary",
             "thumbnail", "thumbnail_preview",
             "hero_image", "hero_image_preview",
             "card_color",
             "description",
         )}),
-        ("Section labels", {"fields": ("challenge_label", "methodology_label", "output_label", "capability_label")}),
-        ("CTA", {"fields": ("cta_heading", "cta_sub", "cta_primary_label", "cta_primary_url", "cta_secondary_label", "cta_secondary_url", "cta_image", "cta_image_preview")}),
-        ("Related Capabilities", {"fields": ("related_capabilities",)}),
-        ("SEO", {"fields": ("meta_title", "meta_description", "meta_keywords"), "classes": ("collapse",)}),
-        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+        (_("Section labels"), {"fields": ("challenge_label", "methodology_label", "output_label", "capability_label")}),
+        (_("CTA"), {"fields": ("cta_heading", "cta_sub", "cta_primary_label", "cta_primary_url", "cta_secondary_label", "cta_secondary_url", "cta_image", "cta_image_preview")}),
+        (_("Related Capabilities"), {"fields": ("related_capabilities",)}),
+        (_("SEO"), {"fields": ("meta_title", "meta_description", "meta_keywords"), "classes": ("collapse",)}),
+        (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
     @admin.display(description="Thumbnail")
