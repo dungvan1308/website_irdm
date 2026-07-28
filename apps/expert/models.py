@@ -85,6 +85,11 @@ class ExpertListingPage(BaseModel):
     hero_bottom_badge_show = models.BooleanField(_("show hero bottom badge"), default=True)
 
     # Process Section
+    process_section_label = models.CharField(
+        _("process section label"), max_length=100, blank=True,
+        default="PHƯƠNG THỨC TIẾP CẬN",
+        help_text=_("Nhãn nhỏ phía trên tiêu đề section, e.g. PHƯƠNG THỨC TIẾP CẬN. Để trống để ẩn."),
+    )
     process_heading = models.CharField(_("process section heading"), max_length=300, blank=True)
     process_description = models.TextField(_("process section description"), blank=True)
 
