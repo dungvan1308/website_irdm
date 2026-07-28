@@ -90,7 +90,10 @@ class ExpertListingPage(BaseModel):
         default="PHƯƠNG THỨC TIẾP CẬN",
         help_text=_("Nhãn nhỏ phía trên tiêu đề section, e.g. PHƯƠNG THỨC TIẾP CẬN. Để trống để ẩn."),
     )
-    process_heading = models.CharField(_("process section heading"), max_length=300, blank=True)
+    process_heading = models.TextField(
+        _("process section heading"), blank=True,
+        help_text=_("Nhấn Enter để xuống dòng trong tiêu đề. VD: VIỆN IRDM KẾT NỐI CHUYÊN GIA (Enter) NHƯ THẾ NÀO?"),
+    )
     process_description = models.TextField(_("process section description"), blank=True)
 
     # Senior Section

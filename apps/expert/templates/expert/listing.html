@@ -194,17 +194,48 @@
       {% endif %}
       <h2 id="process-heading"
           class="font-utm-banque font-normal text-3xl sm:text-4xl lg:text-[48px] text-primary-900 uppercase tracking-tight leading-tight mb-5">
-        {% if listing_page and listing_page.process_heading %}{{ listing_page.process_heading }}{% else %}{% trans "VIỆN IRDM KẾT NỐI CHUYÊN GIA NHƯ THẾ NÀO?" %}{% endif %}
+        {% if listing_page and listing_page.process_heading %}
+          {{ listing_page.process_heading|linebreaksbr }}
+        {% else %}
+          {% trans "VIỆN IRDM KẾT NỐI CHUYÊN GIA NHƯ THẾ NÀO?" %}
+        {% endif %}
       </h2>
       {% if listing_page and listing_page.process_description %}
         <p class="text-slate-600 text-base leading-relaxed max-w-3xl">{{ listing_page.process_description }}</p>
       {% endif %}
     </div>
 
-    {# Process steps — horizontal with connector lines between circles #}
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+    {# ── Row 1 (desktop): All circles + connector lines in one shared flex row ── #}
+    <div class="hidden lg:flex items-center mb-8">
       {% for step in process_steps %}
-        {% include "expert/_process_step.html" with step=step %}
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-700
+                    flex items-center justify-center">
+          <span class="text-white text-lg font-bold font-utm-banque">{{ step.step_number }}</span>
+        </div>
+        {% if not forloop.last %}
+          <div class="flex-1 h-0.5 bg-primary-700" aria-hidden="true"></div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {# ── Row 2: Text content — 4-column grid aligned with circles above ── #}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+      {% for step in process_steps %}
+        <div>
+          {# Mobile only: number circle above text #}
+          <div class="flex items-center gap-3 mb-4 lg:hidden">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-700
+                        flex items-center justify-center">
+              <span class="text-white text-base font-bold font-utm-banque">{{ step.step_number }}</span>
+            </div>
+          </div>
+          <h3 class="font-bold text-primary-900 text-base leading-snug mb-2">
+            {{ step.title }}
+          </h3>
+          {% if step.description %}
+            <p class="text-sm text-slate-600 leading-relaxed">{{ step.description }}</p>
+          {% endif %}
+        </div>
       {% endfor %}
     </div>
 

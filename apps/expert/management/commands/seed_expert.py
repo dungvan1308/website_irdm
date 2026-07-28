@@ -546,14 +546,12 @@ class Command(BaseCommand):
     # ── helpers ───────────────────────────────────────────────────────────────
 
     def _seed_listing_page(self):
-        obj, created = ExpertListingPage.objects.get_or_create(
-            hero_heading=LISTING_PAGE["hero_heading"],
-            defaults=LISTING_PAGE,
-        )
-        if created:
+        # Singleton pattern: luôn lấy bản ghi đầu tiên (pk nhỏ nhất), không tạo thêm
+        obj = ExpertListingPage.objects.order_by("pk").first()
+        if obj is None:
+            ExpertListingPage.objects.create(**LISTING_PAGE)
             self.stdout.write("  ✓ ExpertListingPage created")
         else:
-            # Update fields in case spec changed
             for k, v in LISTING_PAGE.items():
                 setattr(obj, k, v)
             obj.save()
