@@ -62,7 +62,11 @@ class ExpertListingPageAdmin(admin.ModelAdmin):
             ),
         }),
         ("Research Area Map Section", {
-            "fields": ("map_heading", "map_description"),
+            "fields": (
+                "map_section_label", "map_heading", "map_description",
+                "map_cta1_label", "map_cta1_url",
+                "map_cta2_label", "map_cta2_url",
+            ),
         }),
         ("Expert Directory Section", {
             "fields": ("directory_heading",),
@@ -101,6 +105,18 @@ class ResearchAreaAdmin(admin.ModelAdmin):
     list_editable = ("display_order", "is_active")
     prepopulated_fields = {"slug": ("name",)}
     search_fields = ("name",)
+    fieldsets = (
+        (None, {
+            "fields": ("name", "slug", "icon", "card_icon", "color"),
+        }),
+        ("Card Content", {
+            "fields": ("description", "card_tags", "card_cta_label", "card_cta_url"),
+            "description": "Nội dung hiển thị trong card bản đồ chuyên môn.",
+        }),
+        ("Status", {
+            "fields": ("is_active", "display_order"),
+        }),
+    )
 
 
 @admin.register(ProcessStep)

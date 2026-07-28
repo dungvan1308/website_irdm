@@ -114,11 +114,20 @@ class ExpertListingPage(BaseModel):
     senior_cta_url = models.CharField(_("senior section CTA URL"), max_length=500, blank=True, default="#tim-kiem")
 
     # Research Area Map Section
+    map_section_label = models.CharField(
+        _("map section label"), max_length=100, blank=True,
+        default="BẢN ĐỒ CHUYÊN MÔN",
+        help_text=_("Nhãn nhỏ phía trên tiêu đề section. Để trống để ẩn."),
+    )
     map_heading = models.CharField(
         _("research area map heading"), max_length=300, blank=True,
         default="BẢN ĐỒ CHUYÊN MÔN LIÊN NGÀNH"
     )
     map_description = models.TextField(_("research area map description"), blank=True)
+    map_cta1_label = models.CharField(_("map CTA 1 label"), max_length=100, blank=True, default="Tìm chuyên gia")
+    map_cta1_url = models.CharField(_("map CTA 1 URL"), max_length=500, blank=True, default="#tim-kiem")
+    map_cta2_label = models.CharField(_("map CTA 2 label"), max_length=100, blank=True, default="Khám phá giải pháp")
+    map_cta2_url = models.CharField(_("map CTA 2 URL"), max_length=500, blank=True, default="/giai-phap/")
 
     # Directory Section
     directory_heading = models.CharField(
@@ -177,13 +186,35 @@ class ExpertGroup(BaseModel):
 class ResearchArea(BaseModel):
     """Research area / field of expertise shown on the Interdisciplinary Map."""
 
+    ICON_CHOICES = [
+        ("chart-bar",       "📊 chart-bar — Kinh tế / Thống kê"),
+        ("briefcase",       "💼 briefcase — Quản trị / Lãnh đạo"),
+        ("cpu",             "🖥️ cpu — Công nghệ / AI"),
+        ("building-library","🏛️ building-library — Chính sách / Pháp luật"),
+        ("leaf",            "🌿 leaf — Bền vững / Môi trường"),
+        ("academic-cap",    "🎓 academic-cap — Giáo dục / Đào tạo"),
+        ("heart",           "❤️ heart — Y tế / Sức khoẻ"),
+        ("light-bulb",      "💡 light-bulb — Đổi mới sáng tạo"),
+        ("globe-alt",       "🌐 globe-alt — Quốc tế / Toàn cầu"),
+        ("users",           "👥 users — Nhân lực / Cộng đồng"),
+        ("beaker",          "🔬 beaker — Nghiên cứu / Khoa học"),
+        ("currency-dollar", "💵 currency-dollar — Tài chính / Đầu tư"),
+    ]
+
     name = models.CharField(_("name"), max_length=200)
     slug = models.SlugField(_("slug"), max_length=200, unique=True, db_index=True)
     icon = models.CharField(
         _("icon name"),
         max_length=100,
         blank=True,
-        help_text=_("Heroicon name, e.g. 'chart-bar'"),
+        choices=ICON_CHOICES,
+        help_text=_("Chọn icon đại diện cho lĩnh vực chuyên môn."),
+    )
+    card_icon = models.ImageField(
+        _("card icon"),
+        upload_to="expert/area-icons/",
+        blank=True,
+        help_text=_("Upload icon PNG/SVG (~40×40 px). Nếu upload thì ưu tiên hiển thị, nếu không sẽ dùng icon từ danh sách bên trên."),
     )
     color = models.CharField(
         _("color (hex)"),
@@ -191,6 +222,24 @@ class ResearchArea(BaseModel):
         blank=True,
         default="#1d4ed8",
         help_text=_("Hex color for the tag background, e.g. #1d4ed8"),
+    )
+    description = models.TextField(
+        _("description"), blank=True,
+        help_text=_("Mô tả ngắn hiển thị trong card bản đồ chuyên môn (2-3 câu)."),
+    )
+    card_tags = models.TextField(
+        _("card tags"), blank=True,
+        help_text=_("Mỗi tag một dòng (nhấn Enter để xuống dòng). VD:\nY tế\nHệ thống y tế\nAI dữ liệu"),
+    )
+    card_cta_label = models.CharField(
+        _("CTA label"), max_length=200, blank=True,
+        default="Tìm chuyên gia liên quan",
+        help_text=_("Nhãn nút CTA trong card, e.g. 'Tìm chuyên gia liên quan'"),
+    )
+    card_cta_url = models.CharField(
+        _("CTA URL"), max_length=500, blank=True,
+        default="/chuyen-gia/",
+        help_text=_("Đường dẫn khi nhấn CTA, e.g. /chuyen-gia/?linh-vuc=kinh-te"),
     )
 
     class Meta(BaseModel.Meta):
