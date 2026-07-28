@@ -8,7 +8,7 @@
 </div>
 
 {% if experts %}
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="expert-cards-grid">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="expert-cards-grid">
     {% for expert in experts %}
       {% include "expert/_expert_card_compact.html" with expert=expert %}
     {% endfor %}
@@ -19,7 +19,7 @@
     <div class="text-center mt-8">
       <button
         class="inline-flex items-center gap-2 px-6 py-2.5 bg-white border border-slate-200 text-primary-700 text-sm font-semibold rounded-full hover:border-primary-300 hover:bg-primary-50 transition-colors shadow-sm"
-        hx-get="{% url 'expert:search' %}?q={{ q|urlencode }}&group={{ active_group|urlencode }}&area={{ active_area|urlencode }}&page={{ page_obj.next_page_number }}"
+        hx-get="{% url 'expert:search' %}?q={{ q|urlencode }}&group={{ active_group|urlencode }}&area={{ active_area|urlencode }}&engagement={{ active_engagement|urlencode }}&page={{ page_obj.next_page_number }}"
         hx-target="#expert-cards-grid"
         hx-swap="beforeend"
         hx-select="#expert-cards-grid > *"

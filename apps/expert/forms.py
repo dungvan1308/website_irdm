@@ -16,3 +16,4 @@ class ExpertSearchForm(forms.Form):
     )
     group = forms.CharField(required=False, widget=forms.HiddenInput())
     area = forms.CharField(required=False, widget=forms.HiddenInput())
+    engagement = forms.CharField(required=False, widget=forms.HiddenInput())

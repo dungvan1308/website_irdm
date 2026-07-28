@@ -3,6 +3,7 @@
 from django.contrib import admin
 
 from .models import (
+    EngagementType,
     Expert,
     ExpertGroup,
     ExpertListingPage,
@@ -69,7 +70,8 @@ class ExpertListingPageAdmin(admin.ModelAdmin):
             ),
         }),
         ("Expert Directory Section", {
-            "fields": ("directory_heading",),
+            "fields": ("directory_section_label", "directory_heading", "directory_description"),
+            "description": "Tiêu đề, mô tả hiển thị trước thanh tìm kiếm.",
         }),
         ("Knowledge Topics Section", {
             "fields": ("topic_heading", "topic_description"),
@@ -93,6 +95,14 @@ class ExpertListingPageAdmin(admin.ModelAdmin):
 
 @admin.register(ExpertGroup)
 class ExpertGroupAdmin(admin.ModelAdmin):
+    list_display = ("name", "slug", "display_order", "is_active")
+    list_editable = ("display_order", "is_active")
+    prepopulated_fields = {"slug": ("name",)}
+    search_fields = ("name",)
+
+
+@admin.register(EngagementType)
+class EngagementTypeAdmin(admin.ModelAdmin):
     list_display = ("name", "slug", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
     prepopulated_fields = {"slug": ("name",)}
@@ -144,7 +154,7 @@ class ExpertAdmin(admin.ModelAdmin):
     list_filter = ("group", "is_senior", "is_featured", "is_published", "research_areas")
     search_fields = ("name", "position", "organization")
     prepopulated_fields = {"slug": ("name",)}
-    filter_horizontal = ("research_areas", "knowledge_topics")
+    filter_horizontal = ("research_areas", "knowledge_topics", "engagement_types")
     fieldsets = (
         ("Identity", {
             "fields": ("name", "slug", "academic_title", "position", "organization"),
@@ -159,7 +169,8 @@ class ExpertAdmin(admin.ModelAdmin):
             "fields": ("email", "profile_url"),
         }),
         ("Classification", {
-            "fields": ("group", "research_areas", "knowledge_topics"),
+            "fields": ("group", "research_areas", "engagement_types", "knowledge_topics"),
+            "description": "Phân loại: Nhóm vai trò, Lĩnh vực chuyên môn, Hình thức đồng hành, Chủ đề.",
         }),
         ("Status", {
             "fields": ("is_published", "is_featured", "is_senior", "is_active", "display_order"),
