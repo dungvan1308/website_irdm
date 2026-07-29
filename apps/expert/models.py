@@ -412,6 +412,33 @@ class InfoGroup(BaseModel):
         help_text=_("Đoạn mô tả bên dưới tiêu đề trong phần body."),
     )
 
+    # Expert Grid mode (Nhà khoa học & Chuyên gia)
+    show_expert_grid = models.BooleanField(
+        _("show expert grid"),
+        default=False,
+        help_text=_(
+            "Khi bật, accordion hiển thị lưới chuyên gia theo nhóm chuyên môn "
+            "thay vì sơ đồ tổ chức / khối mô tả."
+        ),
+    )
+    expert_research_areas = models.ManyToManyField(
+        "ResearchArea",
+        blank=True,
+        related_name="info_groups",
+        verbose_name=_("expert research areas"),
+        help_text=_(
+            "Chọn các nhóm chuyên môn sẽ hiển thị trong lưới chuyên gia. "
+            "Thứ tự hiển thị theo 'display_order' của từng Lĩnh vực chuyên môn."
+        ),
+    )
+    expert_grid_cta_label = models.CharField(
+        _("expert grid CTA label"),
+        max_length=100,
+        blank=True,
+        default="Xem hồ sơ chuyên môn",
+        help_text=_("Nhãn nút CTA bên dưới mỗi expert card, e.g. 'Xem hồ sơ chuyên môn'."),
+    )
+
     class Meta(BaseModel.Meta):
         verbose_name = _("info group")
         verbose_name_plural = _("info groups")

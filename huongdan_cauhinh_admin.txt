@@ -1,0 +1,8 @@
+Hướng dẫn cấu hình CMS Admin
+Để bật tính năng cho accordion "Nhà khoa học & Chuyên gia":
+
+Vào Admin → Expert → Nhóm thông tin → chọn "Nhà khoa học & Chuyên gia"
+Tích "Show expert grid" → Lưu
+Trong mục "Lưới chuyên gia" → chọn các Lĩnh vực chuyên môn (ResearchArea) muốn hiển thị
+Vào Admin → Expert → Lĩnh vực chuyên môn → điền name, description cho từng lĩnh vực và display_order
+Vào Admin → Expert → Chuyên gia → gắn research_areas cho từng chuyên gia và đặt is_published=True
