@@ -6,7 +6,7 @@ from typing import Optional
 
 from django.db.models import Count, Prefetch, Q, QuerySet
 
-from .models import EngagementType, Expert, ExpertGroup, ExpertListingPage, KnowledgeTopic, ProcessStep, ResearchArea
+from .models import EngagementType, Expert, ExpertGroup, ExpertListingPage, InfoGroup, InfoGroupBlock, KnowledgeTopic, OrgNode, ProcessStep, ResearchArea
 
 
 class ExpertService:
@@ -146,6 +146,33 @@ class ExpertService:
             .prefetch_related(Prefetch("experts", queryset=expert_qs))
             .order_by("display_order")[:limit]
         )
+
+    # ─── Info Groups (CÁC NHÓM THÔNG TIN CHUYÊN MÔN) ─────────────────────────
+
+    @staticmethod
+    def get_info_groups(limit: int = 20) -> list:
+        """Return active info groups with prefetched org nodes and blocks."""
+        groups = list(
+            InfoGroup.objects
+            .filter(is_active=True)
+            .prefetch_related(
+                Prefetch(
+                    "org_nodes",
+                    queryset=OrgNode.objects.filter(is_active=True).order_by("level", "display_order"),
+                ),
+                Prefetch(
+                    "blocks",
+                    queryset=InfoGroupBlock.objects.filter(is_active=True).order_by("display_order"),
+                ),
+            )
+            .order_by("display_order")[:limit]
+        )
+        for group in groups:
+            all_nodes = list(group.org_nodes.all())
+            group.org_nodes_l0 = [n for n in all_nodes if n.level == 0]
+            group.org_nodes_l1 = [n for n in all_nodes if n.level == 1]
+            group.org_nodes_l2 = [n for n in all_nodes if n.level == 2]
+        return groups
 
     # ─── Detail page ──────────────────────────────────────────────────────────
 

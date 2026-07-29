@@ -21,6 +21,7 @@ class ExpertListingView(TemplateView):
         ctx["expert_groups"] = ExpertService.get_expert_groups()
         ctx["engagement_types"] = ExpertService.get_engagement_types()
         ctx["knowledge_topics"] = ExpertService.get_knowledge_topics()
+        ctx["info_groups"] = ExpertService.get_info_groups()
         # Initial directory load
         search_data = ExpertService.get_experts()
         ctx["experts"] = search_data["experts"]

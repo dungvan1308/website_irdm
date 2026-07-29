@@ -214,3 +214,4 @@ python manage.py migrate knowledge 0011 --fake
 
 # 3. Sau đó mới chạy migrate tổng
 python manage.py migrate
+python manage.py migrate --fake

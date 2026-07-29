@@ -1,0 +1,19 @@
+{# Single org chart node — include with `node` variable #}
+{# node.level: 0=top, 1=mid, 2=dept — controls size and weight #}
+{% if node.url %}<a href="{{ node.url }}"
+{% else %}<div
+{% endif %}
+  class="rounded-lg text-center transition-colors duration-150 w-full leading-tight
+    {% if node.level == 0 %}px-6 py-3 text-sm font-bold tracking-wide
+    {% elif node.level == 1 %}px-5 py-2.5 text-sm font-semibold
+    {% else %}px-3 py-2 text-xs font-medium{% endif %}
+    {% if node.style == 'filled' %}bg-primary-800 text-white
+    {% elif node.style == 'outlined' %}bg-white border-2 border-primary-500 text-primary-900
+    {% else %}bg-white border border-slate-200 text-slate-600{% endif %}"
+  {% if node.color %}
+    {% if node.style == 'filled' %}style="background-color:{{ node.color }}"
+    {% elif node.style == 'outlined' %}style="border-color:{{ node.color }};color:{{ node.color }}"
+    {% endif %}
+  {% endif %}>
+  {{ node.name }}
+{% if node.url %}</a>{% else %}</div>{% endif %}
