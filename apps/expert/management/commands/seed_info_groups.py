@@ -1,6 +1,6 @@
-"""Management command to seed InfoGroup, OrgNode and InfoGroupBlock entries."""
+"""Management command to seed InfoGroup, OrgNode, InfoGroupBlock and InfoGroupMember entries."""
 from django.core.management.base import BaseCommand
-from apps.expert.models import InfoGroup, InfoGroupBlock, OrgNode
+from apps.expert.models import InfoGroup, InfoGroupBlock, InfoGroupMember, OrgNode
 
 
 GROUPS = [
@@ -52,6 +52,7 @@ GROUPS = [
                 "is_active": True,
             },
         ],
+        "members": [],
     },
     {
         "slug": "hoi-dong-khoa-hoc",
@@ -63,16 +64,43 @@ GROUPS = [
             "nghiên cứu và định hướng phát triển học thuật của Viện IRDM."
         ),
         "section_label": "HỘI ĐỒNG KHOA HỌC",
-        "section_heading": "Cơ quan tư vấn và thẩm định chất lượng nghiên cứu khoa học của Viện IRDM.",
+        "section_heading": (
+            "Bảo chứng chuyên môn cấp cao cho các hoạt động nghiên cứu khoa học "
+            "& công nghệ, đào tạo, tư vấn và đổi mới sáng tạo của Viện IRDM."
+        ),
         "section_description": (
-            "Hội đồng Khoa học gồm các chuyên gia đầu ngành, có nhiệm vụ "
-            "thẩm định chất lượng nghiên cứu, định hướng đề tài "
-            "và giám sát tiêu chuẩn học thuật."
+            "Hội đồng Khoa học của Viện IRDM đồng hành trong việc định hướng học thuật, "
+            "tư vấn về các nhiệm vụ khoa học – công nghệ, đồng thời tham gia đánh giá, "
+            "thẩm định và phản biện các đề tài, dự án, chương trình và kết quả hoạt động chuyên môn."
         ),
         "display_order": 2,
         "is_active": True,
         "org_nodes": [],
         "blocks": [],
+        "members": [
+            {
+                "role_label": "Chủ tịch Hội đồng",
+                "academic_title": "PGS.TS.",
+                "name": "Lê Quang Minh",
+                "position": "",
+                "email": "quangminh.le@irdm.edu.vn",
+                "cta_text": "Xem hồ sơ chuyên môn",
+                "cta_url": "#",
+                "display_order": 1,
+                "is_active": True,
+            },
+            {
+                "role_label": "Thư ký Hội đồng",
+                "academic_title": "ThS.",
+                "name": "Tạ Thị Phấn",
+                "position": "",
+                "email": "hongphan.ta@irdm.edu.vn",
+                "cta_text": "Xem hồ sơ chuyên môn",
+                "cta_url": "#",
+                "display_order": 2,
+                "is_active": True,
+            },
+        ],
     },
     {
         "slug": "nha-khoa-hoc-chuyen-gia",
@@ -93,6 +121,7 @@ GROUPS = [
         "is_active": True,
         "org_nodes": [],
         "blocks": [],
+        "members": [],
     },
 ]
 
@@ -105,6 +134,7 @@ class Command(BaseCommand):
             slug = data["slug"]
             org_nodes_data = data.pop("org_nodes", [])
             blocks_data = data.pop("blocks", [])
+            members_data = data.pop("members", [])
             data.pop("slug")
 
             group, created = InfoGroup.objects.update_or_create(
@@ -138,5 +168,15 @@ class Command(BaseCommand):
                 )
             if blocks_data:
                 self.stdout.write(f"    → {len(blocks_data)} InfoGroupBlock(s) seeded")
+
+            # Seed InfoGroupMembers
+            for member_data in members_data:
+                InfoGroupMember.objects.update_or_create(
+                    info_group=group,
+                    name=member_data["name"],
+                    defaults={k: v for k, v in member_data.items() if k != "name"},
+                )
+            if members_data:
+                self.stdout.write(f"    → {len(members_data)} InfoGroupMember(s) seeded")
 
         self.stdout.write(self.style.SUCCESS("Done seeding InfoGroup data."))

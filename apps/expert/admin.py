@@ -10,6 +10,7 @@ from .models import (
     ExpertListingPage,
     InfoGroup,
     InfoGroupBlock,
+    InfoGroupMember,
     KnowledgeTopic,
     OrgNode,
     ProcessStep,
@@ -222,7 +223,18 @@ class InfoGroupBlockInline(admin.StackedInline):
     verbose_name_plural = "Các khối mô tả"
 
 
-InfoGroupAdmin.inlines = [OrgNodeInline, InfoGroupBlockInline]
+class InfoGroupMemberInline(admin.StackedInline):
+    model = InfoGroupMember
+    extra = 0
+    fields = (
+        "role_label", "academic_title", "name", "position",
+        "email", "avatar", "cta_text", "cta_url", "display_order", "is_active",
+    )
+    verbose_name = "Thành viên Hội đồng"
+    verbose_name_plural = "Danh sách thành viên Hội đồng"
+
+
+InfoGroupAdmin.inlines = [OrgNodeInline, InfoGroupBlockInline, InfoGroupMemberInline]
 
 
 @admin.register(Expert)

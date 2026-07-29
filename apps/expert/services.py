@@ -6,7 +6,7 @@ from typing import Optional
 
 from django.db.models import Count, Prefetch, Q, QuerySet
 
-from .models import EngagementType, Expert, ExpertGroup, ExpertListingPage, InfoGroup, InfoGroupBlock, KnowledgeTopic, OrgNode, ProcessStep, ResearchArea
+from .models import EngagementType, Expert, ExpertGroup, ExpertListingPage, InfoGroup, InfoGroupBlock, InfoGroupMember, KnowledgeTopic, OrgNode, ProcessStep, ResearchArea
 
 
 class ExpertService:
@@ -163,6 +163,10 @@ class ExpertService:
                 Prefetch(
                     "blocks",
                     queryset=InfoGroupBlock.objects.filter(is_active=True).order_by("display_order"),
+                ),
+                Prefetch(
+                    "members",
+                    queryset=InfoGroupMember.objects.filter(is_active=True).order_by("display_order"),
                 ),
             )
             .order_by("display_order")[:limit]

@@ -119,9 +119,9 @@
       <div class="mb-8 p-8 bg-white rounded-xl border border-slate-200 shadow-sm">
         <div class="flex flex-col items-center gap-0">
 
-          {# Level 0 — top node (Hội đồng, centered, prominent) #}
+          {# Level 0 — top node (Hội đồng, compact centered) #}
           {% for node in group.org_nodes_l0 %}
-            <div class="w-full max-w-[220px]">
+            <div class="mx-auto w-full" style="max-width:220px">
               {% include "expert/_org_node.html" with node=node %}
             </div>
           {% endfor %}
@@ -131,9 +131,9 @@
             <div class="w-px h-8 bg-slate-300"></div>
           {% endif %}
 
-          {# Level 1 — second tier (Viện trưởng) #}
+          {# Level 1 — second tier (Viện trưởng, compact centered) #}
           {% for node in group.org_nodes_l1 %}
-            <div class="w-full max-w-[220px]">
+            <div class="mx-auto w-full" style="max-width:220px">
               {% include "expert/_org_node.html" with node=node %}
             </div>
           {% endfor %}
@@ -207,6 +207,84 @@
             {% endif %}
 
           </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {# ── Member Cards (Chủ tịch, Thư ký, Thành viên Hội đồng) ───────────── #}
+    {% if group.members.all %}
+      <div class="flex flex-col items-center mt-6">
+        {% for member in group.members.all %}
+
+          {# ── Card ────────────────────────────────────────────────────── #}
+          <div class="w-full bg-white rounded-xl border border-slate-200 shadow-sm p-6 text-center"
+               style="max-width:320px">
+
+            {# Role badge #}
+            {% if member.role_label %}
+              <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold mb-5
+                          bg-primary-50 text-primary-700 border border-primary-100">
+                {{ member.role_label }}
+              </div>
+            {% endif %}
+
+            {# Avatar #}
+            {% if member.avatar %}
+              <div class="mx-auto w-24 h-24 rounded-full overflow-hidden mb-4 ring-2 ring-primary-100">
+                <img src="{{ member.avatar.url }}" alt="{{ member.full_name }}"
+                     class="w-full h-full object-cover object-top">
+              </div>
+            {% else %}
+              <div class="mx-auto w-24 h-24 rounded-full bg-primary-50 flex items-center justify-center mb-4 ring-2 ring-primary-100">
+                <svg class="w-10 h-10 text-primary-300" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
+                </svg>
+              </div>
+            {% endif %}
+
+            {# Name (with academic title) #}
+            <h6 class="font-bold text-primary-900 text-base leading-snug mb-2">
+              {{ member.full_name }}
+            </h6>
+
+            {# Position (optional) #}
+            {% if member.position %}
+              <p class="text-xs text-slate-500 mb-3 leading-relaxed">{{ member.position }}</p>
+            {% endif %}
+
+            {# Email #}
+            {% if member.email %}
+              <div class="flex items-center justify-center gap-1.5 text-sm text-slate-500 mb-4">
+                <svg class="w-4 h-4 flex-shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
+                </svg>
+                <span>{{ member.email }}</span>
+              </div>
+            {% endif %}
+
+            {# CTA link #}
+            {% if member.cta_url %}
+              <a href="{{ member.cta_url }}"
+                 class="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-600 hover:text-amber-700 transition-colors">
+                {{ member.cta_text|default:"Xem hồ sơ chuyên môn" }}
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                     stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                </svg>
+              </a>
+            {% endif %}
+
+          </div>
+
+          {# Connector between cards #}
+          {% if not forloop.last %}
+            <div class="w-px h-8 bg-slate-200"></div>
+          {% endif %}
+
         {% endfor %}
       </div>
     {% endif %}

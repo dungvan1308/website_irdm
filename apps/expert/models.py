@@ -515,6 +515,59 @@ class InfoGroupBlock(BaseModel):
         return f"{self.info_group.name} — {self.title}"
 
 
+# ─── InfoGroupMember (Thành viên Hội đồng) ───────────────────────────────────
+
+class InfoGroupMember(BaseModel):
+    """
+    Council/committee member card for an InfoGroup accordion.
+    Displayed as a centered card with avatar, role badge, email, and CTA link.
+    """
+
+    info_group = models.ForeignKey(
+        "InfoGroup", on_delete=models.CASCADE, related_name="members",
+        verbose_name=_("info group"),
+    )
+    role_label = models.CharField(
+        _("role label"), max_length=100, blank=True,
+        help_text=_("Nhãn vai trò hiển thị trên badge, vd: 'Chủ tịch Hội đồng', 'Thư ký Hội đồng'."),
+    )
+    academic_title = models.CharField(
+        _("academic title"), max_length=100, blank=True,
+        help_text=_("Học hàm/học vị, vd: GS.TS., PGS.TS., ThS., TS."),
+    )
+    name = models.CharField(_("full name"), max_length=200)
+    position = models.CharField(
+        _("position"), max_length=300, blank=True,
+        help_text=_("Chức danh / đơn vị công tác (tùy chọn)."),
+    )
+    email = models.EmailField(_("email"), blank=True)
+    avatar = models.ImageField(
+        _("avatar"), upload_to="expert/council/", blank=True,
+        help_text=_("Ảnh đại diện, recommended 200×200 px."),
+    )
+    cta_text = models.CharField(
+        _("CTA text"), max_length=100, blank=True, default="Xem hồ sơ chuyên môn",
+        help_text=_("Nhãn nút CTA bên dưới card, vd: 'Xem hồ sơ chuyên môn'."),
+    )
+    cta_url = models.CharField(
+        _("CTA URL"), max_length=500, blank=True,
+        help_text=_("Đường dẫn trang hồ sơ chuyên môn. Để trống nếu không cần link."),
+    )
+
+    @property
+    def full_name(self) -> str:
+        if self.academic_title:
+            return f"{self.academic_title} {self.name}"
+        return self.name
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("info group member")
+        verbose_name_plural = _("info group members")
+
+    def __str__(self) -> str:
+        return f"{self.info_group.name} — {self.name}"
+
+
 # ─── Expert (Chuyên gia) ─────────────────────────────────────────────────────
 
 class Expert(BaseModel):
