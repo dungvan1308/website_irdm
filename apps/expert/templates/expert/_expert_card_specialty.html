@@ -36,7 +36,7 @@
 
   {# ── CTA link ─────────────────────────────────────────────────────────────── #}
   <a href="{{ expert.get_absolute_url }}"
-     class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E8600A] hover:text-orange-700 transition-colors focus:outline-none focus:underline"
+     class="inline-flex items-center gap-1.5 text-xs font-medium text-[#EC6D29] hover:opacity-80 transition-opacity focus:outline-none focus:underline"
      aria-label="{% blocktrans with name=expert.display_name %}Xem hồ sơ chuyên môn của {{ name }}{% endblocktrans %}">
     {% if cta_label %}{{ cta_label }}{% else %}{% trans "Xem hồ sơ chuyên môn" %}{% endif %}
     <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

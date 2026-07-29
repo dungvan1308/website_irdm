@@ -179,11 +179,11 @@ class KnowledgeTopicAdmin(admin.ModelAdmin):
 
 @admin.register(InfoGroup)
 class InfoGroupAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug", "icon", "show_expert_grid", "display_order", "is_active")
-    list_editable = ("show_expert_grid", "display_order", "is_active")
+    list_display = ("name", "slug", "icon", "show_expert_grid", "expert_grid_flat", "display_order", "is_active")
+    list_editable = ("show_expert_grid", "expert_grid_flat", "display_order", "is_active")
     prepopulated_fields = {"slug": ("name",)}
     search_fields = ("name",)
-    filter_horizontal = ("expert_research_areas",)
+    filter_horizontal = ("expert_research_areas", "expert_direct_members")
     fieldsets = (
         (_("Thông tin nhóm"), {
             "fields": ("name", "slug"),
@@ -202,12 +202,20 @@ class InfoGroupAdmin(admin.ModelAdmin):
                 "Khối mô tả quản lý qua 'Khối mô tả' (InfoGroupBlock) bên dưới."
             ),
         }),
-        (_("Lưới chuyên gia (Nhà khoa học & Chuyên gia)"), {
+        (_("Lưới chuyên gia — Nhóm theo lĩnh vực (Nhà khoa học & Chuyên gia)"), {
             "fields": ("show_expert_grid", "expert_research_areas", "expert_grid_cta_label"),
             "description": _(
                 "Bật 'Hiển thị lưới chuyên gia' để accordion hiển thị chuyên gia nhóm theo lĩnh vực chuyên môn. "
                 "Chọn các Lĩnh vực chuyên môn (ResearchArea) muốn hiển thị — thứ tự theo 'display_order' của từng lĩnh vực. "
                 "Chuyên gia thuộc lĩnh vực đó sẽ tự động hiển thị (is_published=True)."
+            ),
+        }),
+        (_("Lưới chuyên gia — Phẳng (Giảng viên & Chuyên gia học tập ứng dụng)"), {
+            "fields": ("expert_grid_flat", "expert_direct_members"),
+            "description": _(
+                "Bật 'Flat expert grid' (cùng với 'show expert grid') để hiển thị danh sách chuyên gia dạng lưới phẳng "
+                "không tách nhóm theo lĩnh vực. Chọn trực tiếp từng chuyên gia trong 'Direct expert members'. "
+                "Thứ tự hiển thị theo 'display_order' của từng chuyên gia."
             ),
         }),
         (_("Trạng thái"), {
