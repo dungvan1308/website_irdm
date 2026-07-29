@@ -178,6 +178,12 @@ class ExpertService:
                         Prefetch("experts", queryset=expert_qs),
                     ),
                 ),
+                Prefetch(
+                    "expert_direct_members",
+                    queryset=Expert.objects.filter(
+                        is_active=True, is_published=True,
+                    ).select_related("group").prefetch_related("research_areas").order_by("display_order", "name"),
+                ),
             )
             .order_by("display_order")[:limit]
         )
@@ -186,14 +192,19 @@ class ExpertService:
             group.org_nodes_l0 = [n for n in all_nodes if n.level == 0]
             group.org_nodes_l1 = [n for n in all_nodes if n.level == 1]
             group.org_nodes_l2 = [n for n in all_nodes if n.level == 2]
-            # Build expert_areas_data for show_expert_grid groups
-            if group.show_expert_grid:
+            # Build expert_areas_data for grouped-by-specialty mode
+            if group.show_expert_grid and not group.expert_grid_flat:
                 group.expert_areas_data = [
                     {"area": area, "experts": list(area.experts.all())}
                     for area in group.expert_research_areas.all()
                 ]
             else:
                 group.expert_areas_data = []
+            # Build expert_flat_data for flat grid mode (Giảng viên)
+            if group.show_expert_grid and group.expert_grid_flat:
+                group.expert_flat_data = list(group.expert_direct_members.all())
+            else:
+                group.expert_flat_data = []
         return groups
 
     # ─── Detail page ──────────────────────────────────────────────────────────

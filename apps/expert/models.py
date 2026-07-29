@@ -372,6 +372,7 @@ class InfoGroup(BaseModel):
         ("building-office-2", "🏢 building-office-2 — Cơ cấu tổ chức"),
         ("academic-cap",      "🎓 academic-cap — Hội đồng khoa học"),
         ("users",             "👥 users — Nhà khoa học & Chuyên gia"),
+        ("book-open",         "📖 book-open — Giảng viên & Học tập ứng dụng"),
         ("chart-bar",         "📊 chart-bar — Thống kê / Kinh tế"),
         ("briefcase",         "💼 briefcase — Quản trị / Lãnh đạo"),
         ("beaker",            "🔬 beaker — Nghiên cứu / Khoa học"),
@@ -437,6 +438,27 @@ class InfoGroup(BaseModel):
         blank=True,
         default="Xem hồ sơ chuyên môn",
         help_text=_("Nhãn nút CTA bên dưới mỗi expert card, e.g. 'Xem hồ sơ chuyên môn'."),
+    )
+
+    # Flat Expert Grid mode (Giảng viên & Chuyên gia học tập ứng dụng)
+    expert_grid_flat = models.BooleanField(
+        _("flat expert grid"),
+        default=False,
+        help_text=_(
+            "Khi bật cùng với 'show expert grid', hiển thị danh sách chuyên gia theo lưới phẳng "
+            "(không tách nhóm theo lĩnh vực) — dùng cho accordion Giảng viên."
+        ),
+    )
+    expert_direct_members = models.ManyToManyField(
+        "Expert",
+        blank=True,
+        related_name="direct_info_groups",
+        verbose_name=_("direct expert members"),
+        help_text=_(
+            "Chọn chuyên gia hiển thị trực tiếp trong lưới phẳng. "
+            "Chỉ dùng khi bật 'flat expert grid'. "
+            "Thứ tự hiển thị theo 'display_order' của từng chuyên gia."
+        ),
     )
 
     class Meta(BaseModel.Meta):
