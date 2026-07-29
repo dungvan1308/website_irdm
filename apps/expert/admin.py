@@ -179,10 +179,11 @@ class KnowledgeTopicAdmin(admin.ModelAdmin):
 
 @admin.register(InfoGroup)
 class InfoGroupAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug", "icon", "display_order", "is_active")
-    list_editable = ("display_order", "is_active")
+    list_display = ("name", "slug", "icon", "show_expert_grid", "display_order", "is_active")
+    list_editable = ("show_expert_grid", "display_order", "is_active")
     prepopulated_fields = {"slug": ("name",)}
     search_fields = ("name",)
+    filter_horizontal = ("expert_research_areas",)
     fieldsets = (
         (_("Thông tin nhóm"), {
             "fields": ("name", "slug"),
@@ -193,11 +194,20 @@ class InfoGroupAdmin(admin.ModelAdmin):
                 "Icon hình vuông bo góc + tiêu đề + mô tả ngắn hiển thị trong phần đầu accordion."
             ),
         }),
-        (_("Body — Phần mở rộng"), {
+        (_("Body — Phần mở rộng (Sơ đồ / Khối mô tả)"), {
             "fields": ("section_label", "section_heading", "section_description"),
             "description": _(
+                "Dùng khi KHÔNG bật 'Hiển thị lưới chuyên gia'. "
                 "Sơ đồ tổ chức quản lý qua 'Các nút sơ đồ' (OrgNode) bên dưới. "
                 "Khối mô tả quản lý qua 'Khối mô tả' (InfoGroupBlock) bên dưới."
+            ),
+        }),
+        (_("Lưới chuyên gia (Nhà khoa học & Chuyên gia)"), {
+            "fields": ("show_expert_grid", "expert_research_areas", "expert_grid_cta_label"),
+            "description": _(
+                "Bật 'Hiển thị lưới chuyên gia' để accordion hiển thị chuyên gia nhóm theo lĩnh vực chuyên môn. "
+                "Chọn các Lĩnh vực chuyên môn (ResearchArea) muốn hiển thị — thứ tự theo 'display_order' của từng lĩnh vực. "
+                "Chuyên gia thuộc lĩnh vực đó sẽ tự động hiển thị (is_published=True)."
             ),
         }),
         (_("Trạng thái"), {
