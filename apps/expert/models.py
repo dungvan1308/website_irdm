@@ -151,6 +151,21 @@ class ExpertListingPage(BaseModel):
     )
     topic_description = models.TextField(_("knowledge topic section description"), blank=True)
 
+    # Info Groups Section (CÁC NHÓM THÔNG TIN CHUYÊN MÔN)
+    info_group_section_label = models.CharField(
+        _("info group section label"), max_length=100, blank=True,
+        default="CÁC NHÓM THÔNG TIN CHUYÊN MÔN",
+        help_text=_("Nhãn nhỏ phía trên tiêu đề section. Để trống để ẩn."),
+    )
+    info_group_section_heading = models.CharField(
+        _("info group section heading"), max_length=300, blank=True,
+        default="CÁC NHÓM THÔNG TIN CHUYÊN MÔN",
+    )
+    info_group_section_description = models.TextField(
+        _("info group section description"), blank=True,
+        help_text=_("Mô tả ngắn hiển thị bên dưới tiêu đề section."),
+    )
+
     # CTA Section
     cta_eyebrow = models.CharField(_("CTA eyebrow"), max_length=200, blank=True)
     cta_heading = models.CharField(_("CTA heading"), max_length=400, blank=True)
@@ -309,12 +324,248 @@ class KnowledgeTopic(BaseModel):
     slug = models.SlugField(_("slug"), max_length=200, unique=True, db_index=True)
     description = models.TextField(_("description"), blank=True)
 
+    # Visual configuration
+    icon = models.CharField(
+        _("icon"),
+        max_length=50,
+        blank=True,
+        help_text=_("Heroicon name, e.g. 'cpu-chip', 'leaf', 'chart-bar'. Hiển thị cạnh số thứ tự."),
+    )
+    color = models.CharField(
+        _("accent color (hex)"),
+        max_length=30,
+        blank=True,
+        help_text=_("Màu accent cho badge số thứ tự, e.g. #1B3F6E. Để trống dùng màu mặc định."),
+    )
+
+    # Optional CTA
+    cta_label = models.CharField(
+        _("CTA label"),
+        max_length=100,
+        blank=True,
+        help_text=_("Nhãn nút CTA bên dưới danh sách chuyên gia, e.g. 'Xem tất cả'. Để trống để ẩn."),
+    )
+    cta_url = models.CharField(
+        _("CTA URL"),
+        max_length=500,
+        blank=True,
+        help_text=_("Đường dẫn của nút CTA, e.g. /chuyen-gia/?chu-de=chuyen-doi-so"),
+    )
+
     class Meta(BaseModel.Meta):
         verbose_name = _("knowledge topic")
         verbose_name_plural = _("knowledge topics")
 
     def __str__(self) -> str:
         return self.name
+
+
+# ─── Info Group (Nhóm thông tin — Cơ cấu tổ chức, Hội đồng KH, …) ──────────
+
+class InfoGroup(BaseModel):
+    """
+    Rich-content accordion for 'CÁC NHÓM THÔNG TIN CHUYÊN MÔN'.
+    Org chart nodes → OrgNode; description panels → InfoGroupBlock.
+    """
+
+    ICON_CHOICES = [
+        ("building-office-2", "🏢 building-office-2 — Cơ cấu tổ chức"),
+        ("academic-cap",      "🎓 academic-cap — Hội đồng khoa học"),
+        ("users",             "👥 users — Nhà khoa học & Chuyên gia"),
+        ("chart-bar",         "📊 chart-bar — Thống kê / Kinh tế"),
+        ("briefcase",         "💼 briefcase — Quản trị / Lãnh đạo"),
+        ("beaker",            "🔬 beaker — Nghiên cứu / Khoa học"),
+        ("light-bulb",        "💡 light-bulb — Đổi mới sáng tạo"),
+        ("globe-alt",         "🌐 globe-alt — Quốc tế / Toàn cầu"),
+        ("document-text",     "📄 document-text — Tài liệu / Chính sách"),
+        ("star",              "⭐ star — Nổi bật"),
+    ]
+
+    name = models.CharField(_("name"), max_length=200)
+    slug = models.SlugField(_("slug"), max_length=200, unique=True, db_index=True)
+
+    # Header
+    icon = models.CharField(
+        _("icon"), max_length=50, blank=True, choices=ICON_CHOICES,
+        help_text=_("Icon hiển thị trong header accordion."),
+    )
+    icon_bg_color = models.CharField(
+        _("icon background color (hex)"), max_length=30, blank=True, default="#EFF6FF",
+        help_text=_("Màu nền ô icon, e.g. #EFF6FF. Để trống dùng màu mặc định."),
+    )
+    header_description = models.TextField(
+        _("header description"), blank=True,
+        help_text=_("Mô tả ngắn hiển thị trong header accordion (bên dưới tiêu đề)."),
+    )
+
+    # Body header
+    section_label = models.CharField(
+        _("body section label"), max_length=100, blank=True,
+        help_text=_("Nhãn nhỏ uppercase bên trên tiêu đề body, e.g. 'CƠ CẤU TỔ CHỨC'."),
+    )
+    section_heading = models.TextField(
+        _("body section heading"), blank=True,
+        help_text=_("Tiêu đề đậm chính trong phần body mở rộng."),
+    )
+    section_description = models.TextField(
+        _("body section description"), blank=True,
+        help_text=_("Đoạn mô tả bên dưới tiêu đề trong phần body."),
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("info group")
+        verbose_name_plural = _("info groups")
+
+    def __str__(self) -> str:
+        return self.name
+
+
+# ─── OrgNode (Nút sơ đồ tổ chức) ────────────────────────────────────────────
+
+class OrgNode(BaseModel):
+    """Single node in the org chart of an InfoGroup."""
+
+    STYLE_FILLED   = "filled"
+    STYLE_OUTLINED = "outlined"
+    STYLE_DEFAULT  = "default"
+    STYLE_CHOICES = [
+        ("filled",   "Filled — Nền xanh đậm, chữ trắng (vd: Hội đồng)"),
+        ("outlined", "Outlined — Viền xanh, nền trắng (vd: Viện trưởng)"),
+        ("default",  "Default — Viền xám, nền trắng (vd: Phòng/Ban)"),
+    ]
+    LEVEL_CHOICES = [
+        (0, "Cấp 0 — Hội đồng/Ban cấp cao nhất"),
+        (1, "Cấp 1 — Giám đốc/Viện trưởng"),
+        (2, "Cấp 2 — Phòng/Ban/Đơn vị"),
+    ]
+
+    info_group = models.ForeignKey(
+        "InfoGroup", on_delete=models.CASCADE, related_name="org_nodes",
+        verbose_name=_("info group"),
+    )
+    name   = models.CharField(_("node name"), max_length=200)
+    level  = models.PositiveSmallIntegerField(
+        _("level"), choices=LEVEL_CHOICES, default=2,
+        help_text=_("Cấp độ trong sơ đồ tổ chức. Xác định vị trí và kiểu hiển thị mặc định."),
+    )
+    parent = models.ForeignKey(
+        "self", null=True, blank=True, on_delete=models.SET_NULL,
+        related_name="children", verbose_name=_("parent node"),
+        help_text=_("Node cha trong cây tổ chức. Để trống nếu là node gốc."),
+    )
+    style  = models.CharField(
+        _("style"), max_length=20, choices=STYLE_CHOICES, default=STYLE_DEFAULT,
+        help_text=_("Kiểu hiển thị của node."),
+    )
+    color  = models.CharField(
+        _("custom color (hex)"), max_length=30, blank=True,
+        help_text=_("Màu nền tùy chỉnh (hex), e.g. #1B3F6E. Để trống dùng màu theo style."),
+    )
+    url    = models.CharField(
+        _("URL"), max_length=500, blank=True,
+        help_text=_("Đường dẫn khi click vào node. Để trống nếu không cần link."),
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("org node")
+        verbose_name_plural = _("org nodes")
+        ordering = ["level", "display_order"]
+
+    def __str__(self) -> str:
+        return f"[L{self.level}] {self.name}"
+
+
+# ─── InfoGroupBlock (Khối mô tả bên dưới sơ đồ) ─────────────────────────────
+
+class InfoGroupBlock(BaseModel):
+    """Description panel (title + function + duties) below the org chart."""
+
+    info_group     = models.ForeignKey(
+        "InfoGroup", on_delete=models.CASCADE, related_name="blocks",
+        verbose_name=_("info group"),
+    )
+    title          = models.CharField(_("title"), max_length=200)
+    function_label = models.CharField(
+        _("function label"), max_length=100, blank=True, default="CHỨC NĂNG",
+        help_text=_("Nhãn nhỏ uppercase trên đoạn mô tả chức năng."),
+    )
+    function_text  = models.TextField(
+        _("function text"), blank=True,
+        help_text=_("Đoạn mô tả chức năng của đơn vị."),
+    )
+    duties_label   = models.CharField(
+        _("duties label"), max_length=100, blank=True, default="NHIỆM VỤ CHÍNH",
+        help_text=_("Nhãn nhỏ uppercase trên danh sách nhiệm vụ."),
+    )
+    duties         = models.TextField(
+        _("duties (one per line)"), blank=True,
+        help_text=_("Mỗi dòng là một nhiệm vụ → bullet list. Nhấn Enter để thêm dòng."),
+    )
+    icon           = models.CharField(_("icon"), max_length=50, blank=True)
+
+    @property
+    def duties_list(self) -> list:
+        return [d.strip() for d in self.duties.splitlines() if d.strip()]
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("info group block")
+        verbose_name_plural = _("info group blocks")
+
+    def __str__(self) -> str:
+        return f"{self.info_group.name} — {self.title}"
+
+
+# ─── InfoGroupMember (Thành viên Hội đồng) ───────────────────────────────────
+
+class InfoGroupMember(BaseModel):
+    """
+    Council/committee member card for an InfoGroup accordion.
+    Displayed as a centered card with avatar, role badge, email, and CTA link.
+    """
+
+    info_group = models.ForeignKey(
+        "InfoGroup", on_delete=models.CASCADE, related_name="members",
+        verbose_name=_("info group"),
+    )
+    role_label = models.CharField(
+        _("role label"), max_length=100, blank=True,
+        help_text=_("Nhãn vai trò hiển thị trên badge, vd: 'Chủ tịch Hội đồng', 'Thư ký Hội đồng'."),
+    )
+    academic_title = models.CharField(
+        _("academic title"), max_length=100, blank=True,
+        help_text=_("Học hàm/học vị, vd: GS.TS., PGS.TS., ThS., TS."),
+    )
+    name = models.CharField(_("full name"), max_length=200)
+    position = models.CharField(
+        _("position"), max_length=300, blank=True,
+        help_text=_("Chức danh / đơn vị công tác (tùy chọn)."),
+    )
+    email = models.EmailField(_("email"), blank=True)
+    avatar = models.ImageField(
+        _("avatar"), upload_to="expert/council/", blank=True,
+        help_text=_("Ảnh đại diện, recommended 200×200 px."),
+    )
+    cta_text = models.CharField(
+        _("CTA text"), max_length=100, blank=True, default="Xem hồ sơ chuyên môn",
+        help_text=_("Nhãn nút CTA bên dưới card, vd: 'Xem hồ sơ chuyên môn'."),
+    )
+    cta_url = models.CharField(
+        _("CTA URL"), max_length=500, blank=True,
+        help_text=_("Đường dẫn trang hồ sơ chuyên môn. Để trống nếu không cần link."),
+    )
+
+    @property
+    def full_name(self) -> str:
+        if self.academic_title:
+            return f"{self.academic_title} {self.name}"
+        return self.name
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("info group member")
+        verbose_name_plural = _("info group members")
+
+    def __str__(self) -> str:
+        return f"{self.info_group.name} — {self.name}"
 
 
 # ─── Expert (Chuyên gia) ─────────────────────────────────────────────────────

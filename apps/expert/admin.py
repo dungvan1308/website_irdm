@@ -8,7 +8,11 @@ from .models import (
     Expert,
     ExpertGroup,
     ExpertListingPage,
+    InfoGroup,
+    InfoGroupBlock,
+    InfoGroupMember,
     KnowledgeTopic,
+    OrgNode,
     ProcessStep,
     ResearchArea,
 )
@@ -77,6 +81,17 @@ class ExpertListingPageAdmin(admin.ModelAdmin):
         (_("Knowledge Topics Section"), {
             "fields": ("topic_heading", "topic_description"),
         }),
+        (_("Info Groups Section (CÁC NHÓM THÔNG TIN CHUYÊN MÔN)"), {
+            "fields": (
+                "info_group_section_label",
+                "info_group_section_heading",
+                "info_group_section_description",
+            ),
+            "description": _(
+                "Tiêu đề/mô tả section 'CÁC NHÓM THÔNG TIN CHUYÊN MÔN'. "
+                "Quản lý từng nhóm (Cơ cấu tổ chức, Hội đồng KH, …) trong mục 'Nhóm thông tin' bên trái."
+            ),
+        }),
         (_("CTA Section"), {
             "fields": (
                 "cta_eyebrow", "cta_heading", "cta_description", "cta_bg_image",
@@ -139,10 +154,87 @@ class ProcessStepAdmin(admin.ModelAdmin):
 
 @admin.register(KnowledgeTopic)
 class KnowledgeTopicAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug", "display_order", "is_active")
+    list_display = ("name", "slug", "icon", "color", "cta_label", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
     prepopulated_fields = {"slug": ("name",)}
     search_fields = ("name",)
+    fieldsets = (
+        (_("Thông tin chủ đề"), {
+            "fields": ("name", "slug", "description"),
+        }),
+        (_("Giao diện"), {
+            "fields": ("icon", "color"),
+            "description": _("Cấu hình icon và màu accent cho accordion. Để trống dùng mặc định."),
+        }),
+        (_("CTA (tùy chọn)"), {
+            "fields": ("cta_label", "cta_url"),
+            "description": _("Nút 'Xem thêm' bên dưới danh sách chuyên gia trong accordion. Để trống để ẩn."),
+            "classes": ("collapse",),
+        }),
+        (_("Trạng thái"), {
+            "fields": ("is_active", "display_order"),
+        }),
+    )
+
+
+@admin.register(InfoGroup)
+class InfoGroupAdmin(admin.ModelAdmin):
+    list_display = ("name", "slug", "icon", "display_order", "is_active")
+    list_editable = ("display_order", "is_active")
+    prepopulated_fields = {"slug": ("name",)}
+    search_fields = ("name",)
+    fieldsets = (
+        (_("Thông tin nhóm"), {
+            "fields": ("name", "slug"),
+        }),
+        (_("Header Accordion"), {
+            "fields": ("icon", "icon_bg_color", "header_description"),
+            "description": _(
+                "Icon hình vuông bo góc + tiêu đề + mô tả ngắn hiển thị trong phần đầu accordion."
+            ),
+        }),
+        (_("Body — Phần mở rộng"), {
+            "fields": ("section_label", "section_heading", "section_description"),
+            "description": _(
+                "Sơ đồ tổ chức quản lý qua 'Các nút sơ đồ' (OrgNode) bên dưới. "
+                "Khối mô tả quản lý qua 'Khối mô tả' (InfoGroupBlock) bên dưới."
+            ),
+        }),
+        (_("Trạng thái"), {
+            "fields": ("is_active", "display_order"),
+        }),
+    )
+
+
+class OrgNodeInline(admin.TabularInline):
+    model = OrgNode
+    extra = 1
+    fields = ("name", "level", "style", "parent", "color", "url", "display_order", "is_active")
+    ordering = ("level", "display_order")
+    verbose_name = "Nút sơ đồ tổ chức"
+    verbose_name_plural = "Các nút sơ đồ tổ chức"
+
+
+class InfoGroupBlockInline(admin.StackedInline):
+    model = InfoGroupBlock
+    extra = 0
+    fields = ("title", "function_label", "function_text", "duties_label", "duties", "icon", "display_order", "is_active")
+    verbose_name = "Khối mô tả"
+    verbose_name_plural = "Các khối mô tả"
+
+
+class InfoGroupMemberInline(admin.StackedInline):
+    model = InfoGroupMember
+    extra = 0
+    fields = (
+        "role_label", "academic_title", "name", "position",
+        "email", "avatar", "cta_text", "cta_url", "display_order", "is_active",
+    )
+    verbose_name = "Thành viên Hội đồng"
+    verbose_name_plural = "Danh sách thành viên Hội đồng"
+
+
+InfoGroupAdmin.inlines = [OrgNodeInline, InfoGroupBlockInline, InfoGroupMemberInline]
 
 
 @admin.register(Expert)
