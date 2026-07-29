@@ -461,6 +461,17 @@ class InfoGroup(BaseModel):
         ),
     )
 
+    # Association Grid mode (Hiệp hội & Mạng lưới chuyên môn)
+    show_association_grid = models.BooleanField(
+        _("show association grid"),
+        default=False,
+        help_text=_(
+            "Khi bật, accordion hiển thị lưới thẻ Hiệp hội/Mạng lưới — "
+            "dùng cho accordion Hiệp hội & Mạng lưới chuyên môn. "
+            "Quản lý từng hiệp hội trong mục 'Hiệp hội/Mạng lưới' (inline bên dưới)."
+        ),
+    )
+
     class Meta(BaseModel.Meta):
         verbose_name = _("info group")
         verbose_name_plural = _("info groups")
@@ -615,6 +626,114 @@ class InfoGroupMember(BaseModel):
 
     def __str__(self) -> str:
         return f"{self.info_group.name} — {self.name}"
+
+
+# ─── Association (Hiệp hội / Mạng lưới chuyên môn) ───────────────────────────
+
+class Association(BaseModel):
+    """
+    Hiệp hội / Mạng lưới chuyên môn card in accordion.
+    Displayed in a 2-column grid with logo, badge, title, description, CTA.
+    """
+
+    ICON_CHOICES = [
+        ("globe-alt",         "🌐 globe-alt — Quốc tế / Mạng lưới"),
+        ("academic-cap",      "🎓 academic-cap — Học thuật"),
+        ("building-library",  "🏙 building-library — Tổ chức / Hiệp hội"),
+        ("users",             "👥 users — Cộng đồng / Mạng lưới"),
+        ("briefcase",         "💼 briefcase — Nghề nghiệp / Doanh nghiệp"),
+        ("beaker",            "🔬 beaker — Nghiên cứu / Khoa học"),
+        ("cpu-chip",          "🧠 cpu-chip — Công nghệ / AI"),
+        ("heart",             "❤️ heart — Y tế / Sức khoẻ"),
+        ("light-bulb",        "💡 light-bulb — Đổi mới"),
+        ("chart-bar",         "📊 chart-bar — Dữ liệu / Thống kê"),
+    ]
+
+    info_group = models.ForeignKey(
+        "InfoGroup",
+        on_delete=models.CASCADE,
+        related_name="associations",
+        verbose_name=_("info group"),
+    )
+
+    # Logo / Icon
+    logo = models.ImageField(
+        _("logo"),
+        upload_to="expert/associations/",
+        blank=True,
+        help_text=_("Logo PNG/JPG của hiệp hội/mạng lưới. Recommended ≥1:1, ≥200px. Ưu tiên hơn icon."),
+    )
+    icon = models.CharField(
+        _("icon (fallback)"),
+        max_length=50,
+        blank=True,
+        choices=ICON_CHOICES,
+        help_text=_("Heroicon hiển thị khi không có logo. Chọn từ danh sách."),
+    )
+    icon_bg_color = models.CharField(
+        _("icon background color (hex)"),
+        max_length=30,
+        blank=True,
+        default="#EFF6FF",
+        help_text=_("Màu nền ô icon khi không có logo, e.g. #EFF6FF."),
+    )
+
+    # Badge
+    badge_label = models.CharField(
+        _("badge label"),
+        max_length=200,
+        blank=True,
+        help_text=_("Nhãn vai trò, e.g. 'Thành viên và Ban điều hành mở rộng'."),
+    )
+    badge_color = models.CharField(
+        _("badge color (hex)"),
+        max_length=30,
+        blank=True,
+        default="#EC6D29",
+        help_text=_("Màu chữ badge, e.g. #EC6D29 (cam brand). Để trống dùng màu mặc định."),
+    )
+
+    # Content
+    title = models.CharField(
+        _("title"),
+        max_length=500,
+        help_text=_("Tên đầy đủ của hiệp hội/mạng lưới."),
+    )
+    description = models.TextField(
+        _("description"),
+        blank=True,
+        help_text=_("Mô tả ngắn về vai trò và gia trị của việc tham gia (2-5 câu)."),
+    )
+
+    # CTA
+    cta_label = models.CharField(
+        _("CTA label"),
+        max_length=100,
+        blank=True,
+        default="Tìm hiểu thêm",
+        help_text=_("Nhãn nút CTA, e.g. 'Tìm hiểu thêm'."),
+    )
+    cta_url = models.CharField(
+        _("CTA URL"),
+        max_length=500,
+        blank=True,
+        help_text=_("URL đến trang chi tiết hiệp hội hoặc website bên ngoài."),
+    )
+    cta_target = models.CharField(
+        _("CTA target"),
+        max_length=10,
+        blank=True,
+        default="_blank",
+        choices=[("_self", "Cùng tab (_self)"), ("_blank", "Tab mới (_blank)")],
+        help_text=_("_blank để mở website bên ngoài. _self cho trang nội bộ."),
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("association")
+        verbose_name_plural = _("associations")
+
+    def __str__(self) -> str:
+        return f"{self.info_group.name} — {self.title[:60]}"
 
 
 # ─── Expert (Chuyên gia) ─────────────────────────────────────────────────────

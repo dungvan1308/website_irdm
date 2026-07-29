@@ -176,6 +176,22 @@
       {% empty %}
         <p class="text-sm text-slate-400 italic">Chưa có nhóm chuyên môn nào được thiết lập.</p>
       {% endfor %}
+
+    {% elif group.show_association_grid %}
+    {# ═══════════════════════════════════════════════════════════════════════ #}
+    {# ASSOCIATION GRID MODE — Hiệp hội & Mạng lưới chuyên môn               #}
+    {# Shows 2-column grid of association/network cards (Figma design)        #}
+    {# ═══════════════════════════════════════════════════════════════════════ #}
+
+      {% if group.association_data %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {% for assoc in group.association_data %}
+            {% include "expert/_association_card.html" with assoc=assoc %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-sm text-slate-400 italic">Chưa có hiệp hội/mạng lưới nào được thiết lập.</p>
+      {% endif %}
     {% else %}
     {# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• #}
     {# DEFAULT MODE â€” Org Chart + Blocks + Members                             #}

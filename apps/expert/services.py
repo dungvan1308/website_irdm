@@ -6,7 +6,7 @@ from typing import Optional
 
 from django.db.models import Count, Prefetch, Q, QuerySet
 
-from .models import EngagementType, Expert, ExpertGroup, ExpertListingPage, InfoGroup, InfoGroupBlock, InfoGroupMember, KnowledgeTopic, OrgNode, ProcessStep, ResearchArea
+from .models import EngagementType, Expert, ExpertGroup, ExpertListingPage, InfoGroup, InfoGroupBlock, InfoGroupMember, KnowledgeTopic, OrgNode, ProcessStep, ResearchArea, Association
 
 
 class ExpertService:
@@ -184,6 +184,10 @@ class ExpertService:
                         is_active=True, is_published=True,
                     ).select_related("group").prefetch_related("research_areas").order_by("display_order", "name"),
                 ),
+                Prefetch(
+                    "associations",
+                    queryset=Association.objects.filter(is_active=True).order_by("display_order"),
+                ),
             )
             .order_by("display_order")[:limit]
         )
@@ -205,6 +209,11 @@ class ExpertService:
                 group.expert_flat_data = list(group.expert_direct_members.all())
             else:
                 group.expert_flat_data = []
+            # Build association_data for Hiệp hội & Mạng lưới mode
+            if group.show_association_grid:
+                group.association_data = list(group.associations.all())
+            else:
+                group.association_data = []
         return groups
 
     # ─── Detail page ──────────────────────────────────────────────────────────

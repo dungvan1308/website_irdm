@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
 from .models import (
+    Association,
     EngagementType,
     Expert,
     ExpertGroup,
@@ -179,8 +180,8 @@ class KnowledgeTopicAdmin(admin.ModelAdmin):
 
 @admin.register(InfoGroup)
 class InfoGroupAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug", "icon", "show_expert_grid", "expert_grid_flat", "display_order", "is_active")
-    list_editable = ("show_expert_grid", "expert_grid_flat", "display_order", "is_active")
+    list_display = ("name", "slug", "icon", "show_expert_grid", "expert_grid_flat", "show_association_grid", "display_order", "is_active")
+    list_editable = ("show_expert_grid", "expert_grid_flat", "show_association_grid", "display_order", "is_active")
     prepopulated_fields = {"slug": ("name",)}
     search_fields = ("name",)
     filter_horizontal = ("expert_research_areas", "expert_direct_members")
@@ -218,6 +219,13 @@ class InfoGroupAdmin(admin.ModelAdmin):
                 "Thứ tự hiển thị theo 'display_order' của từng chuyên gia."
             ),
         }),
+        (_("Lưới Hiệp hội & Mạng lưới chuyên môn"), {
+            "fields": ("show_association_grid",),
+            "description": _(
+                "Bật 'Show association grid' để hiển thị lưới 2 cột các thẻ Hiệp hội/Mạng lưới. "
+                "Thêm/sửa từng Hiệp hội trong phần 'Hiệp hội / Mạng lưới' (inline bên dưới khi lưu)."
+            ),
+        }),
         (_("Trạng thái"), {
             "fields": ("is_active", "display_order"),
         }),
@@ -252,7 +260,21 @@ class InfoGroupMemberInline(admin.StackedInline):
     verbose_name_plural = "Danh sách thành viên Hội đồng"
 
 
-InfoGroupAdmin.inlines = [OrgNodeInline, InfoGroupBlockInline, InfoGroupMemberInline]
+class AssociationInline(admin.StackedInline):
+    model = Association
+    extra = 0
+    fields = (
+        "title", "badge_label", "badge_color",
+        "logo", "icon", "icon_bg_color",
+        "description",
+        "cta_label", "cta_url", "cta_target",
+        "display_order", "is_active",
+    )
+    verbose_name = "Hiệp hội / Mạng lưới"
+    verbose_name_plural = "Danh sách Hiệp hội / Mạng lưới"
+
+
+InfoGroupAdmin.inlines = [OrgNodeInline, InfoGroupBlockInline, InfoGroupMemberInline, AssociationInline]
 
 
 @admin.register(Expert)
