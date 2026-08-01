@@ -1,0 +1,52 @@
+{% load i18n %}
+{# Section 3: Why IRDM Exists — Purpose #}
+{% if purpose %}
+<section class="bg-slate-50 py-16 lg:py-24 border-t border-slate-100" aria-labelledby="purpose-heading">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+
+    {# Section label #}
+    {% if purpose.section_label %}
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-orange-50 border border-orange-200 rounded-full">
+          <span class="w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" aria-hidden="true"></span>
+          <span class="text-orange-700 text-xs font-semibold uppercase tracking-wider">{{ purpose.section_label }}</span>
+        </div>
+      </div>
+    {% endif %}
+
+    <h2 id="purpose-heading" class="font-utm-banque font-normal text-[28px] sm:text-[36px] lg:text-[42px] leading-[1.15] text-primary-950 uppercase text-center mb-10">
+      {{ purpose.title }}
+    </h2>
+
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+
+      {# Left: highlight box + description #}
+      <div class="flex-1 lg:max-w-[520px]">
+        {% if purpose.highlight_box_text %}
+          <div class="p-6 bg-primary-900 text-white rounded-2xl mb-6 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -translate-y-8 translate-x-8" aria-hidden="true"></div>
+            <p class="text-lg font-medium leading-relaxed relative z-10">{{ purpose.highlight_box_text|linebreaksbr }}</p>
+          </div>
+        {% endif %}
+
+        {% if purpose.description %}
+          <div class="text-slate-600 leading-relaxed space-y-3">
+            {{ purpose.description|linebreaksbr }}
+          </div>
+        {% endif %}
+      </div>
+
+      {# Right: diagram #}
+      {% if purpose.diagram_image %}
+        <div class="flex-1">
+          <img src="{{ purpose.diagram_image.url }}"
+               alt="{{ purpose.diagram_alt|default:purpose.title }}"
+               class="w-full h-auto rounded-xl shadow-lg"
+               loading="lazy" />
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+{% endif %}

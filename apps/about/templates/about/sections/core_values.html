@@ -1,0 +1,55 @@
+{% load i18n %}
+{# Section 5: Core Values #}
+{% if core_values %}
+<section class="bg-white py-16 lg:py-24 border-t border-slate-100" aria-labelledby="values-heading">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+
+    {# Section header #}
+    {% if core_value_section %}
+      {% if core_value_section.section_label %}
+        <div class="flex justify-center mb-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-primary-50 border border-primary-200 rounded-full">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary-600 flex-shrink-0" aria-hidden="true"></span>
+            <span class="text-primary-700 text-xs font-semibold uppercase tracking-wider">{{ core_value_section.section_label }}</span>
+          </div>
+        </div>
+      {% endif %}
+      <h2 id="values-heading" class="font-utm-banque font-normal text-[28px] sm:text-[36px] lg:text-[42px] leading-[1.15] text-primary-950 uppercase text-center mb-4">
+        {{ core_value_section.title }}
+      </h2>
+      {% if core_value_section.description %}
+        <p class="text-slate-500 text-center max-w-2xl mx-auto mb-12">{{ core_value_section.description }}</p>
+      {% endif %}
+    {% else %}
+      <h2 id="values-heading" class="font-utm-banque font-normal text-[28px] sm:text-[36px] lg:text-[42px] leading-[1.15] text-primary-950 uppercase text-center mb-12">
+        {% trans "GIÁ TRỊ CỐT LÕI" %}
+      </h2>
+    {% endif %}
+
+    {# Values grid #}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for value in core_values %}
+        {% with ct=value.color_theme|default:"blue" %}
+        <div class="group p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+          {# Icon #}
+          <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mb-5 group-hover:bg-primary-200 transition-colors">
+            {% if value.icon_image %}
+              <img src="{{ value.icon_image.url }}" alt="" class="w-6 h-6 object-contain" aria-hidden="true" />
+            {% else %}
+              <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+              </svg>
+            {% endif %}
+          </div>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">{{ value.title }}</h3>
+          {% if value.description %}
+            <p class="text-slate-500 text-sm leading-relaxed">{{ value.description }}</p>
+          {% endif %}
+        </div>
+        {% endwith %}
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

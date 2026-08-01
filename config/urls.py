@@ -13,6 +13,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
     path("", include("apps.home.urls", namespace="home")),
+    path("ve-irdm/", include("apps.about.urls", namespace="about")),
     path("giai-phap/", include("apps.solution.urls", namespace="solution")),
     path("capabilities/", include("apps.capability.urls", namespace="capability")),
     path("tri-thuc-goc-nhin/", include("apps.knowledge.urls", namespace="knowledge")),

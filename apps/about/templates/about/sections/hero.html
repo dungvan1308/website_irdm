@@ -1,0 +1,120 @@
+{% load i18n %}
+{# Section 1: Hero Banner — matches Figma: light bg, globe right, dark text, stats bar below #}
+{% if hero %}
+<section aria-label="{% trans 'About IRDM hero' %}">
+
+  {# ── Main Hero Area ──────────────────────────────────────────────────────── #}
+  <div class="relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-blue-100 min-h-[540px] sm:min-h-[600px] lg:min-h-[660px]">
+
+    {# Full-section background texture/image #}
+    {% if hero.background_image %}
+      <div class="absolute inset-0" aria-hidden="true">
+        <img src="{{ hero.background_image.url }}" alt=""
+             class="h-full w-full object-cover object-center" loading="eager" />
+        <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/10"></div>
+      </div>
+    {% endif %}
+
+    {# Foreground Globe / illustration — right half #}
+    {% if hero.foreground_image %}
+      <div class="absolute right-0 top-0 bottom-0 w-[55%] pointer-events-none select-none hidden lg:block" aria-hidden="true">
+        <img src="{{ hero.foreground_image.url }}" alt=""
+             class="h-full w-full object-cover object-left" loading="eager" />
+        {# Gradient mask so image blends into left content seamlessly #}
+        <div class="absolute inset-0 bg-gradient-to-r from-white/60 via-transparent to-transparent"></div>
+      </div>
+    {% endif %}
+
+    {# Content — left column #}
+    <div class="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 flex items-center min-h-[540px] sm:min-h-[600px] lg:min-h-[660px]">
+      <div class="w-full lg:w-[52%] xl:w-[50%] lg:max-w-[680px] py-16 lg:py-20">
+
+        {# Badge / Eyebrow #}
+        {% if hero.eyebrow %}
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white/80 backdrop-blur-sm rounded-full mb-6 border border-slate-200 shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" aria-hidden="true"></span>
+            <span class="text-slate-600 text-[11px] font-medium tracking-wide">{{ hero.eyebrow }}</span>
+          </div>
+        {% endif %}
+
+        {# H1 Title #}
+        <h1 class="font-utm-banque font-normal text-[40px] sm:text-[52px] lg:text-[60px] leading-[1.08] text-primary-950 uppercase mb-5" style="color:#094977">
+          {{ hero.title }}
+        </h1>
+
+        {# Description — supports multiple paragraphs #}
+        {% if hero.description %}
+          <div class="text-slate-600 text-base sm:text-[17px] leading-relaxed space-y-3 mb-8 max-w-[540px]">
+            {{ hero.description|linebreaksbr }}
+          </div>
+        {% endif %}
+
+        {# CTA Buttons #}
+        <div class="flex flex-col sm:flex-row gap-3 mb-7">
+          {% if hero.primary_cta_label and hero.primary_cta_url %}
+            <a href="{{ hero.primary_cta_url }}"
+               class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm rounded-lg transition-all shadow-md hover:shadow-orange-200 hover:shadow-lg hover:-translate-y-0.5">
+              {{ hero.primary_cta_label }}
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if hero.secondary_cta_label and hero.secondary_cta_url %}
+            <a href="{{ hero.secondary_cta_url }}"
+               class="inline-flex items-center justify-center gap-2 px-6 py-3.5 border-2 border-orange-500 text-orange-600 font-semibold text-sm rounded-lg transition-all hover:bg-orange-50">
+              {{ hero.secondary_cta_label }}
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+
+        {# Quote block #}
+        {% if hero.quote_show and hero.quote_text %}
+          <div class="flex items-start gap-3 mt-2">
+            {# Speech bubble icon #}
+            <div class="flex-shrink-0 mt-0.5">
+              <svg class="w-7 h-7 text-slate-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.212-1.428A4.5 4.5 0 0119.5 21H1.875A.375.375 0 011.5 20.625v-1.5z"/>
+              </svg>
+            </div>
+            <p class="text-sm font-semibold text-primary-800 leading-snug italic">
+              "{{ hero.quote_text }}"
+            </p>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+
+  {# ── Statistics Bar ─────────────────────────────────────────────────────── #}
+  {% with stats=hero.statistics.all %}
+    {% if stats %}
+      <div class="bg-primary-900">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-6">
+          <div class="grid grid-cols-{% if stats|length == 2 %}2{% elif stats|length >= 3 %}3{% else %}1{% endif %} gap-4">
+            {% for stat in stats|slice:":3" %}
+              <div class="flex flex-col justify-between rounded-xl border border-primary-700/60 bg-primary-800/70 px-6 py-5 min-h-[100px] shadow-sm">
+                {# Large number #}
+                <p class="font-utm-banque font-bold text-[36px] sm:text-[44px] leading-none text-white mb-2"
+                   {% if stat.animation_enabled %}data-counter="{{ stat.number }}"{% endif %}>
+                  {{ stat.number }}
+                </p>
+                {# Label with orange dot #}
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-orange-400 flex-shrink-0" aria-hidden="true"></span>
+                  <span class="text-white/70 text-sm font-medium">{{ stat.label }}</span>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endwith %}
+
+</section>
+{% endif %}
