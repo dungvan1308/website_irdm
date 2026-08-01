@@ -10,7 +10,7 @@
 {% if experts %}
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="expert-cards-grid">
     {% for expert in experts %}
-      {% include "expert/_expert_card_compact.html" with expert=expert %}
+      {% include "expert/_expert_card_compact.html" with expert=expert active_area=active_area %}
     {% endfor %}
   </div>
 
