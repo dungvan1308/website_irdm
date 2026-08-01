@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  {# Specialty label — show filtered area when active, else first area #}
+  {# Specialty label — active_area filter > card_specialty > first research area #}
   {% if active_area %}
     {% for area in expert.research_areas.all %}
       {% if area.slug == active_area %}
@@ -43,6 +43,12 @@
         </div>
       {% endif %}
     {% endfor %}
+  {% elif expert.card_specialty %}
+    <div class="px-5 pb-2">
+      <span class="inline-block w-full text-center text-xs font-semibold text-primary-700 bg-primary-50 px-2.5 py-0.5 rounded-full border border-primary-100">
+        {{ expert.card_specialty }}
+      </span>
+    </div>
   {% else %}
     {% with primary_area=expert.research_areas.all|first %}
       {% if primary_area %}
@@ -64,19 +70,31 @@
     {% endif %}
   {% endif %}
 
-  {# Research area tags (remaining areas) — hidden when filtering by a specific area #}
+  {# Research area tags — all areas when card_specialty set, else skip first #}
   {% if not active_area %}
     {% with areas=expert.research_areas.all %}
-      {% if areas|length > 1 %}
-        <div class="px-5 pb-3 flex flex-wrap gap-1">
-          {% for area in areas|slice:"1:4" %}
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 text-blue-700 border border-blue-100">
-              {{ area.name }}
-            </span>
-          {% endfor %}
-        </div>
-      {% elif areas|length == 0 %}
-        <div class="pb-3"></div>
+      {% if expert.card_specialty %}
+        {% if areas %}
+          <div class="px-5 pb-3 flex flex-wrap gap-1">
+            {% for area in areas|slice:":4" %}
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 text-blue-700 border border-blue-100">
+                {{ area.name }}
+              </span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% else %}
+        {% if areas|length > 1 %}
+          <div class="px-5 pb-3 flex flex-wrap gap-1">
+            {% for area in areas|slice:"1:4" %}
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-blue-50 text-blue-700 border border-blue-100">
+                {{ area.name }}
+              </span>
+            {% endfor %}
+          </div>
+        {% elif areas|length == 0 %}
+          <div class="pb-3"></div>
+        {% endif %}
       {% endif %}
     {% endwith %}
   {% endif %}

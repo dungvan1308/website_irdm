@@ -301,9 +301,24 @@ class ExpertAdmin(admin.ModelAdmin):
         (_("Contact"), {
             "fields": ("email", "profile_url"),
         }),
-        (_("Classification"), {
-            "fields": ("group", "research_areas", "engagement_types", "knowledge_topics"),
-            "description": _("Phân loại: Nhóm vai trò, Lĩnh vực chuyên môn, Hình thức đồng hành, Chủ đề."),
+        (_("VAI TRÒ"), {
+            "fields": ("group",),
+            "description": _("Nhóm vai trò hiển thị ở bộ lọc THEO VAI TRÒ trên trang chuyên gia."),
+        }),
+        (_("LĨNH VỰC CHUYÊN MÔN"), {
+            "fields": ("research_areas", "card_specialty"),
+            "description": _(
+                "research_areas: Dùng cho bộ lọc THEO LĨNH VỰC CHUYÊN MÔN. | "
+                "card_specialty: Nhãn nổi bật tùy chỉnh trên card (e.g. 'Giáo dục & phát triển năng lực'). "
+                "Để trống → dùng Research Area đầu tiên."
+            ),
+        }),
+        (_("HÌNH THỨC ĐỒNG HÀNH"), {
+            "fields": ("engagement_types",),
+            "description": _("Dùng cho bộ lọc THEO HÌNH THỨC ĐỒNG HÀNH trên trang chuyên gia."),
+        }),
+        (_("CHỦ ĐỀ THÔNG TIN"), {
+            "fields": ("knowledge_topics",),
         }),
         (_("Status"), {
             "fields": ("is_published", "is_featured", "is_senior", "is_active", "display_order"),

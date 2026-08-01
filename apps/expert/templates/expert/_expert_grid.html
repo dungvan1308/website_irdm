@@ -16,21 +16,24 @@
 
   {# Load More button (HTMX append) #}
   {% if has_next %}
-    <div class="text-center mt-8">
+    <div id="expert-load-more" class="text-center mt-8"
+         {% if page_obj.number > 1 %}hx-swap-oob="outerHTML:#expert-load-more"{% endif %}>
       <button
         class="inline-flex items-center gap-2 px-6 py-2.5 bg-white border border-slate-200 text-primary-700 text-sm font-semibold rounded-full hover:border-primary-300 hover:bg-primary-50 transition-colors shadow-sm"
         hx-get="{% url 'expert:search' %}?q={{ q|urlencode }}&group={{ active_group|urlencode }}&area={{ active_area|urlencode }}&engagement={{ active_engagement|urlencode }}&page={{ page_obj.next_page_number }}"
         hx-target="#expert-cards-grid"
         hx-swap="beforeend"
         hx-select="#expert-cards-grid > *"
-        hx-indicator="#search-spinner"
-        onclick="this.closest('div').remove()">
+        hx-indicator="#search-spinner">
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
         </svg>
         {% trans "Tải thêm chuyên gia" %}
       </button>
     </div>
+  {% elif page_obj.number > 1 %}
+    {# No more pages — remove the Load More button via OOB #}
+    <div id="expert-load-more" hx-swap-oob="outerHTML:#expert-load-more"></div>
   {% endif %}
 
 {% else %}
