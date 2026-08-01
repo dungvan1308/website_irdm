@@ -528,35 +528,6 @@ function setFilter(type, value) {
 </script>
 
 {# ════════════════════════════════════════════════════════════════════════════ #}
-{# SECTION 6 — KNOWLEDGE TOPICS: CÁC CHỦ ĐỀ THÔNG TIN CHUYÊN MÔN             #}
-{# ════════════════════════════════════════════════════════════════════════════ #}
-{% if knowledge_topics %}
-<section class="bg-white py-16 lg:py-20"
-         aria-labelledby="topics-heading">
-  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
-
-    {# Section header #}
-    <div class="mb-10">
-      <h2 id="topics-heading" class="font-utm-banque font-normal text-2xl sm:text-3xl lg:text-[36px] text-primary-900 uppercase tracking-tight mb-3">
-        {% if listing_page and listing_page.topic_heading %}{{ listing_page.topic_heading }}{% else %}{% trans "CÁC CHỦ ĐỀ THÔNG TIN CHUYÊN MÔN" %}{% endif %}
-      </h2>
-      <p class="text-slate-500 text-base leading-relaxed max-w-2xl">
-        {% if listing_page and listing_page.topic_description %}{{ listing_page.topic_description }}{% else %}{% trans "Khám phá các chủ đề nghiên cứu và tìm hiểu đội ngũ chuyên gia đang nghiên cứu trong từng lĩnh vực." %}{% endif %}
-      </p>
-    </div>
-
-    {# Accordion list — full container width #}
-    <div class="space-y-3">
-      {% for topic in knowledge_topics %}
-        {% include "expert/_accordion_topic.html" with topic=topic %}
-      {% endfor %}
-    </div>
-
-  </div>
-</section>
-{% endif %}
-
-{# ════════════════════════════════════════════════════════════════════════════ #}
 {# SECTION 7 — INFO GROUPS: CÁC NHÓM THÔNG TIN CHUYÊN MÔN                    #}
 {# (Cơ cấu tổ chức, Hội đồng khoa học, Nhà khoa học & Chuyên gia, …)         #}
 {# ════════════════════════════════════════════════════════════════════════════ #}
