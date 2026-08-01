@@ -85,6 +85,7 @@ class AboutIntroduction(BaseModel):
     description = models.TextField(_("description"), blank=True)
     image = models.ImageField(_("large image"), upload_to="about/intro/", blank=True)
     image_alt = models.CharField(_("image alt text"), max_length=300, blank=True)
+    background_image = models.ImageField(_("background image"), upload_to="about/intro/bg/", blank=True)
 
     class Meta(BaseModel.Meta):
         verbose_name = _("introduction section")
