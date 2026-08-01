@@ -81,6 +81,7 @@ class AboutIntroductionAdmin(admin.ModelAdmin):
     fieldsets = (
         ("Content", {"fields": ("section_label", "title", "subtitle", "description")}),
         ("Image", {"fields": ("image", "image_alt")}),
+        ("Background", {"fields": ("background_image",)}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 
