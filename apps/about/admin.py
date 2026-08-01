@@ -60,7 +60,7 @@ class AboutHeroAdmin(admin.ModelAdmin):
         ("Images", {"fields": ("background_image", "foreground_image")}),
         ("Primary CTA", {"fields": ("primary_cta_label", "primary_cta_url")}),
         ("Secondary CTA", {"fields": ("secondary_cta_label", "secondary_cta_url")}),
-        ("Quote", {"fields": ("quote_text", "quote_show")}),
+        ("Quote", {"fields": ("quote_text", "quote_icon", "quote_show")}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 

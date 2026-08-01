@@ -43,6 +43,8 @@ class AboutHero(BaseModel):
     secondary_cta_url = models.CharField(_("secondary CTA URL"), max_length=500, blank=True)
     quote_text = models.CharField(_("quote text"), max_length=500, blank=True,
                                   help_text=_("Short inspirational quote shown below the CTA buttons"))
+    quote_icon = models.ImageField(_("quote icon"), upload_to="about/hero/quote/", blank=True,
+                                   help_text=_("Icon image shown left of the quote (PNG/SVG ~28×28px). Falls back to default chat-bubble icon if empty."))
     quote_show = models.BooleanField(_("show quote"), default=True)
 
     class Meta(BaseModel.Meta):
