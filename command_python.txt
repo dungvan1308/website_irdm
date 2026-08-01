@@ -215,3 +215,23 @@ python manage.py migrate knowledge 0011 --fake
 # 3. Sau đó mới chạy migrate tổng
 python manage.py migrate
 python manage.py migrate --fake
+
+
+
+-- Deploy Ubuntu 
+
+sudo systemctl restart irdm
+
+restore DB:
+
+export PGPASSWORD=irdm_user
+
+psql -h localhost -U irdm_user -d irdm <<EOF
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+GRANT ALL ON SCHEMA public TO irdm_user;
+GRANT ALL ON SCHEMA public TO public;
+EOF
+
+psql -h localhost -U irdm_user -d irdm \
+-f /opt/irdm/website_irdm/DataBase/irdm_20260729_pc.sql
