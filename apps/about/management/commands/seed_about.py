@@ -126,15 +126,14 @@ class Command(BaseCommand):
 
     def _seed_introduction(self) -> None:
         intro, _ = AboutIntroduction.objects.get_or_create(
-            title="IRDM LÀ GÌ?",
+            title="IRDM LÀ AI?",
             defaults={
-                "section_label": "Giới thiệu",
-                "subtitle": "Viện Nghiên cứu & Phát triển Liên ngành",
+                "section_label": "NHẬN DIỆN TỔ CHỨC",
+                "subtitle": "",
                 "description": (
-                    "IRDM (Institute for Research & Development in Multidisciplinary) là tổ chức phi lợi nhuận "
-                    "hoạt động trong lĩnh vực nghiên cứu, tư vấn chính sách và kết nối tri thức liên ngành.\n\n"
-                    "Chúng tôi kết hợp phương pháp nghiên cứu khoa học nghiêm túc với hiểu biết sâu sắc về bối cảnh "
-                    "địa phương để tạo ra các giải pháp thực tiễn, có tác động lâu dài."
+                    "Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) là tổ chức khoa học, công nghệ và đổi mới "
+                    "sáng tạo định hướng ứng dụng, hoạt động trong các lĩnh vực y tế, giáo dục, môi trường và "
+                    "phát triển nguồn lực."
                 ),
                 "is_active": True,
                 "display_order": 0,
@@ -142,10 +141,21 @@ class Command(BaseCommand):
         )
 
         cards_data = [
-            ("Nghiên cứu độc lập", "Phương pháp khoa học, khách quan và minh bạch", 0),
-            ("Liên ngành", "Kết hợp nhiều lĩnh vực để giải quyết vấn đề phức tạp", 1),
-            ("Tác động xã hội", "Hướng đến thay đổi thực chất trong chính sách và thực tiễn", 2),
-            ("Mạng lưới chuyên gia", "Kết nối hơn 500 nhà khoa học và chuyên gia đầu ngành", 3),
+            (
+                "Kết nối tri thức khoa học",
+                "Huy động nhà khoa học, chuyên gia liên ngành và bằng chứng từ nghiên cứu ứng dụng để định hướng giải pháp.",
+                0,
+            ),
+            (
+                "Tạo bằng chứng từ dữ liệu",
+                "Chuyển hoá dữ liệu, khảo sát và kinh nghiệm thực tiễn thành Insight rõ ràng, có thể được sử dụng cho quyết định và chính sách.",
+                1,
+            ),
+            (
+                "Đồng thiết kế giải pháp có thể triển khai",
+                "Thiết kế chương trình, công cụ và mô hình thí điểm phù hợp với bối cảnh, dữ liệu và năng lực con người của đối tác.",
+                2,
+            ),
         ]
         for title, description, order in cards_data:
             AboutHighlightCard.objects.get_or_create(
