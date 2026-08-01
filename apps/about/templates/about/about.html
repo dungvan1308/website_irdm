@@ -1,0 +1,77 @@
+{% extends "layouts/base.html" %}
+{% load i18n static %}
+
+{% block title %}
+  {% if seo and seo.meta_title %}{{ seo.meta_title }}
+  {% else %}{% trans "Về IRDM" %}{% endif %}
+  — {% if site_settings %}{{ site_settings.site_name }}{% else %}IRDM{% endif %}
+{% endblock %}
+
+{% block meta_description %}
+  {% if seo and seo.meta_description %}{{ seo.meta_description }}{% endif %}
+{% endblock %}
+
+{% block meta_keywords %}
+  {% if seo and seo.meta_keywords %}{{ seo.meta_keywords }}{% endif %}
+{% endblock %}
+
+{% block og_title %}
+  {% if seo and seo.og_title %}{{ seo.og_title }}{% else %}{% trans "Về IRDM" %}{% endif %}
+{% endblock %}
+
+{% block og_description %}
+  {% if seo and seo.og_description %}{{ seo.og_description }}{% endif %}
+{% endblock %}
+
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "{% trans 'Trang chủ' %}", "item": "{{ request.scheme }}://{{ request.get_host }}{% url 'home:index' %}"},
+    {"@type": "ListItem", "position": 2, "name": "{% trans 'Về IRDM' %}", "item": "{{ request.build_absolute_uri }}"}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+  {# 1. Hero Banner #}
+  {% include "about/sections/hero.html" %}
+
+  {# 2. IRDM Introduction #}
+  {% include "about/sections/introduction.html" %}
+
+  {# 3. Why IRDM Exists — Purpose #}
+  {% include "about/sections/purpose.html" %}
+
+  {# 4. Vision / Mission / Philosophy #}
+  {% include "about/sections/vision_mission.html" %}
+
+  {# 5. Core Values #}
+  {% include "about/sections/core_values.html" %}
+
+  {# 6. Legal Foundation #}
+  {% include "about/sections/legal.html" %}
+
+  {# 7. CTA Banner #}
+  {% include "about/sections/cta_banner.html" %}
+
+  {# 8. Partner Benefits #}
+  {% include "about/sections/partner_benefits.html" %}
+
+  {# 9. Professional Network #}
+  {% include "about/sections/network.html" %}
+
+  {# 10. Target Audience #}
+  {% include "about/sections/target_audience.html" %}
+
+  {# 11. Capability & Ecosystem #}
+  {% include "about/sections/ecosystem.html" %}
+
+  {# 12. Contact Banner #}
+  {% include "about/sections/contact_banner.html" %}
+
+{% endblock %}

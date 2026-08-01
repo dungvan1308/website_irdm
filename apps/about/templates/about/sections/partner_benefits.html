@@ -1,0 +1,53 @@
+{% load i18n %}
+{# Section 8: Partner Benefits — Đối tác nhận được gì khi làm việc với IRDM #}
+{% if partner_benefit_section %}
+<section class="bg-white py-16 lg:py-24 border-t border-slate-100" aria-labelledby="benefits-heading">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+
+    {# Header #}
+    {% if partner_benefit_section.section_label %}
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-orange-50 border border-orange-200 rounded-full">
+          <span class="w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" aria-hidden="true"></span>
+          <span class="text-orange-700 text-xs font-semibold uppercase tracking-wider">{{ partner_benefit_section.section_label }}</span>
+        </div>
+      </div>
+    {% endif %}
+
+    <h2 id="benefits-heading" class="font-utm-banque font-normal text-[28px] sm:text-[36px] lg:text-[42px] leading-[1.15] text-primary-950 uppercase text-center mb-4">
+      {{ partner_benefit_section.title }}
+    </h2>
+
+    {% if partner_benefit_section.description %}
+      <p class="text-slate-500 text-center max-w-2xl mx-auto mb-12">{{ partner_benefit_section.description }}</p>
+    {% endif %}
+
+    {# Benefits grid #}
+    {% with benefits=partner_benefit_section.benefits.all %}
+      {% if benefits %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {% for benefit in benefits %}
+            <div class="group p-6 rounded-2xl border border-slate-100 hover:border-primary-200 hover:shadow-md transition-all duration-300">
+              {# Icon #}
+              <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-4 group-hover:bg-primary-100 transition-colors">
+                {% if benefit.icon_image %}
+                  <img src="{{ benefit.icon_image.url }}" alt="" class="w-6 h-6 object-contain" aria-hidden="true" />
+                {% else %}
+                  <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                {% endif %}
+              </div>
+              <h3 class="font-bold text-slate-900 mb-2">{{ benefit.title }}</h3>
+              {% if benefit.description %}
+                <p class="text-slate-500 text-sm leading-relaxed">{{ benefit.description }}</p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+  </div>
+</section>
+{% endif %}
