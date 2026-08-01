@@ -47,14 +47,27 @@
             <div class="space-y-4">
               {% for card in cards %}
                 <div class="flex items-start gap-4 bg-white border border-slate-100 border-l-4 border-l-orange-500 rounded-xl shadow-sm px-5 py-4 hover:shadow-md transition-shadow">
-                  {# Icon container #}
-                  <div class="flex-shrink-0 w-11 h-11 rounded-lg bg-primary-50 flex items-center justify-center border border-primary-100">
+                  {# Icon: dark blue circle + white icon, matching Figma #}
+                  <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-700 flex items-center justify-center shadow-sm">
                     {% if card.icon_image %}
-                      <img src="{{ card.icon_image.url }}" alt="" class="w-6 h-6 object-contain" aria-hidden="true" />
+                      <img src="{{ card.icon_image.url }}" alt="" class="w-6 h-6 object-contain brightness-0 invert" aria-hidden="true" />
                     {% else %}
-                      <svg class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
-                      </svg>
+                      {% if forloop.counter == 2 %}
+                        {# Bar chart icon for card 2 #}
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 13.5V21M9 9v12M15 5.25V21M21 2.25V21"/>
+                        </svg>
+                      {% elif forloop.counter == 3 %}
+                        {# Layers/stack icon for card 3 #}
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"/>
+                        </svg>
+                      {% else %}
+                        {# Open book icon for card 1 (default) #}
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+                        </svg>
+                      {% endif %}
                     {% endif %}
                   </div>
                   {# Text #}
