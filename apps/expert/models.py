@@ -820,6 +820,17 @@ class Expert(BaseModel):
         verbose_name=_("knowledge topics"),
     )
 
+    # Card display
+    card_specialty = models.CharField(
+        _("card specialty label"),
+        max_length=200,
+        blank=True,
+        help_text=_(
+            "Nhãn chuyên môn nổi bật trên card listing, e.g. 'Giáo dục & phát triển năng lực'. "
+            "Để trống → tự động dùng Research Area đầu tiên."
+        ),
+    )
+
     # Status flags
     is_published = models.BooleanField(_("published"), default=False, db_index=True)
     is_featured = models.BooleanField(_("featured"), default=False, db_index=True)
