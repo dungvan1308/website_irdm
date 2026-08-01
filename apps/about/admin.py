@@ -93,8 +93,10 @@ class AboutPurposeAdmin(admin.ModelAdmin):
     list_display = ("title", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
     fieldsets = (
-        ("Content", {"fields": ("section_label", "title", "highlight_box_text", "description")}),
-        ("Diagram", {"fields": ("diagram_image", "diagram_alt")}),
+        ("Content", {"fields": ("section_label", "title", "description")}),
+        ("Quote Block", {"fields": ("highlight_box_text", "quote_icon", "quote_body")}),
+        ("Diagram Card", {"fields": ("diagram_title", "diagram_image", "diagram_alt", "diagram_caption")}),
+        ("Background", {"fields": ("background_image",)}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 
