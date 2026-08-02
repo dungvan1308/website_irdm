@@ -14,6 +14,7 @@ from .models import (
     AboutIntroduction,
     AboutLegalInfo,
     AboutNetworkSectionHeader,
+    AboutOrgStructureSection,
     AboutPageSEO,
     AboutPartnerBenefitSection,
     AboutProfessionalNetwork,
@@ -118,6 +119,15 @@ class AboutService:
                 "partner_groups__items",
                 "statistics",
             )
+            .first()
+        )
+
+    @staticmethod
+    def get_org_structure_section() -> Optional[AboutOrgStructureSection]:
+        return (
+            AboutOrgStructureSection.objects
+            .filter(is_active=True)
+            .prefetch_related("cards", "cards__bullet_items")
             .first()
         )
 

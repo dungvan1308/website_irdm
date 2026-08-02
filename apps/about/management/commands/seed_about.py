@@ -25,6 +25,9 @@ from apps.about.models import (
     AboutLegalOrgAttribute,
     AboutLegalTimelineItem,
     AboutNetworkSectionHeader,
+    AboutOrgStructureBulletItem,
+    AboutOrgStructureCard,
+    AboutOrgStructureSection,
     AboutPageSEO,
     AboutPartnerBenefit,
     AboutPartnerBenefitSection,
@@ -52,6 +55,7 @@ class Command(BaseCommand):
         self._seed_legal()
         self._seed_cta()
         self._seed_partner_benefits()
+        self._seed_org_structure()
         self._seed_network()
         self._seed_target_audience()
         self._seed_ecosystem()
@@ -504,65 +508,126 @@ class Command(BaseCommand):
     # ─── Target Audience ──────────────────────────────────────────────────────
 
     def _seed_target_audience(self) -> None:
-        section, _ = AboutTargetAudienceSection.objects.get_or_create(
-            title="IRDM ĐỒNG HÀNH CÙNG NHỮNG AI?",
+        section, created = AboutTargetAudienceSection.objects.get_or_create(
+            title="IRDM ĐỒNG HÀNH VỚI NHỮNG AI?",
             defaults={
-                "section_label": "Đối tượng phục vụ",
-                "description": "Chúng tôi hợp tác với đa dạng các tổ chức và cá nhân muốn tạo ra tác động tích cực",
-                "cta_label": "Tìm hiểu cách hợp tác",
-                "cta_url": "/lien-he/",
+                "section_label": "ĐỐI TÁC HỢP TÁC",
+                "description": (
+                    "Viện IRDM vận hành theo mô hình kết nối chuyên môn linh hoạt. Mỗi bài toán được tiếp cận "
+                    "từ nhu cầu thực tế, sau đó IRDM huy động tổ hợp nhà khoa học, chuyên gia thực hành, giảng "
+                    "viên, cố vấn và nhóm triển khai phù hợp."
+                ),
+                "cta_label": "Khám phá giải pháp",
+                "cta_url": "/giai-phap/",
+                "background_color": "#0b3d6b",
                 "is_active": True,
                 "display_order": 0,
             }
         )
+        if not created:
+            # Update fields on existing record to match Figma
+            AboutTargetAudienceSection.objects.filter(pk=section.pk).update(
+                title="IRDM ĐỒNG HÀNH VỚI NHỮNG AI?",
+                section_label="ĐỐI TÁC HỢP TÁC",
+                cta_label="Khám phá giải pháp",
+                cta_url="/giai-phap/",
+                background_color="#0b3d6b",
+            )
 
         audiences_data = [
-            ("Cơ quan Chính phủ & Bộ ngành", "Tư vấn chính sách, nghiên cứu đánh giá tác động, hỗ trợ xây dựng chiến lược phát triển quốc gia và địa phương.", "Tìm hiểu thêm", "/lien-he/", 0),
-            ("Tổ chức Quốc tế & NGO", "Nghiên cứu nền tảng, đánh giá chương trình, phân tích bối cảnh để triển khai các dự án phát triển hiệu quả.", "Tìm hiểu thêm", "/lien-he/", 1),
-            ("Doanh nghiệp & Tập đoàn", "Nghiên cứu thị trường, phân tích xu hướng, tư vấn chiến lược ESG và phát triển bền vững.", "Tìm hiểu thêm", "/lien-he/", 2),
-            ("Trường Đại học & Viện NC", "Hợp tác nghiên cứu liên ngành, chia sẻ nguồn lực và xây dựng năng lực nghiên cứu.", "Tìm hiểu thêm", "/lien-he/", 3),
-            ("Nhà khoa học & Chuyên gia", "Tham gia mạng lưới nghiên cứu, chia sẻ tri thức và đóng góp vào các dự án có tác động xã hội.", "Tham gia mạng lưới", "/chuyen-gia/", 4),
-            ("Tổ chức xã hội dân sự", "Hỗ trợ nghiên cứu vận động chính sách, đánh giá nhu cầu và theo dõi tác động xã hội.", "Tìm hiểu thêm", "/lien-he/", 5),
+            ("Cơ quan quản lý",
+             "Cung cố căn cứ khoa học, dữ liệu và cơ chế phối hợp cho chương trình, đề án và nhiệm vụ KHCN&ĐMST.",
+             "Xem giải pháp", "/giai-phap/", 0),
+            ("Hệ thống y tế",
+             "Làm rõ bài toán ưu tiên, dữ liệu sẵn có và lộ trình thí điểm để hỗ trợ quản trị, chất lượng dịch vụ và đổi mới hệ thống.",
+             "Xem giải pháp", "/giai-phap/", 1),
+            ("Trường đại học",
+             "Hỗ trợ đổi mới chương trình, phát triển người học, khai thác dữ liệu giáo dục và xây dựng môi trường học thuật lành mạnh.",
+             "Xem giải pháp", "/giai-phap/", 2),
+            ("Doanh nghiệp",
+             "Thiết kế sáng kiến phát triển con người, wellbeing và trách nhiệm xã hội gắn với mục tiêu tổ chức.",
+             "Xem giải pháp", "/giai-phap/", 3),
+            ("Tổ chức quốc tế",
+             "Kết nối tri thức quốc tế với bối cảnh Việt Nam để thiết kế, triển khai và đánh giá các sáng kiến liên ngành có khả năng duy trì.",
+             "Xem giải pháp", "/giai-phap/", 4),
         ]
         for title, description, cta_label, cta_url, order in audiences_data:
             AboutTargetAudience.objects.get_or_create(
                 section=section, title=title,
-                defaults={"description": description, "cta_label": cta_label, "cta_url": cta_url, "display_order": order, "is_active": True}
+                defaults={
+                    "description": description,
+                    "cta_label": cta_label,
+                    "cta_url": cta_url,
+                    "display_order": order,
+                    "is_active": True,
+                }
             )
-        self.stdout.write("  ✓ Target Audience")
+        self.stdout.write("  \u2713 Target Audience")
 
     # ─── Ecosystem ────────────────────────────────────────────────────────────
 
     def _seed_ecosystem(self) -> None:
-        ecosystem, _ = AboutCapabilityEcosystem.objects.get_or_create(
-            title="HỆ SINH THÁI NĂNG LỰC & ĐỐI TÁC",
+        TITLE = "BẰNG CHỨNG NĂNG LỰC\nVÀ HỆ SINH THÁI HỢP TÁC"
+        # use display_order=0 as stable lookup key (avoids duplicate on title change)
+        ecosystem, created = AboutCapabilityEcosystem.objects.get_or_create(
+            display_order=0,
             defaults={
-                "section_label": "Hệ sinh thái",
-                "description": "IRDM vận hành như một hệ sinh thái tri thức mở, kết nối nhiều tầng lớp đối tác và chuyên gia",
+                "title": TITLE,
+                "section_label": "HỆ SINH THÁI HỢP TÁC",
+                "description": (
+                    "IRDM đã đồng hành cùng cơ quan quản lý, tổ chức y tế, trường đại học, doanh nghiệp và đối tác "
+                    "trong các bài toán liên quan đến dữ liệu, chuyển đổi số, sức khỏe tâm thần, phát triển năng lực "
+                    "và đổi mới hệ thống."
+                ),
+                "primary_cta_label": "Xem Tin IRDM",
+                "primary_cta_url": "/tin-tuc/",
+                "secondary_cta_label": "Xem Tri thức & Góc nhìn",
+                "secondary_cta_url": "/tri-thuc/",
+                "hub_label": "IRDM\nHub",
                 "is_active": True,
-                "display_order": 0,
             }
         )
+        if not created:
+            AboutCapabilityEcosystem.objects.filter(pk=ecosystem.pk).update(
+                title=TITLE,
+                section_label="HỆ SINH THÁI HỢP TÁC",
+                primary_cta_label="Xem Tin IRDM",
+                primary_cta_url="/tin-tuc/",
+                secondary_cta_label="Xem Tri thức & Góc nhìn",
+                secondary_cta_url="/tri-thuc/",
+                hub_label="IRDM\nHub",
+            )
 
         groups_data = [
-            ("Nghiên cứu & Học thuật", "blue", [
-                "Đại học Quốc gia Hà Nội", "Đại học Quốc gia TP.HCM",
-                "Viện Hàn lâm KH&CN", "Đại học Bách khoa HN",
+            ("Cơ quan quản lý", "navy", 0, [
+                "Sở Khoa học và Công nghệ TP.HCM",
+                "Sở Y tế TP.HCM",
             ]),
-            ("Tổ chức Quốc tế", "orange", [
-                "UNDP", "World Bank", "ADB", "GIZ", "JICA",
+            ("Trường đại học", "blue", 1, [
+                "Đại học Bách Khoa TP.HCM",
+                "Đại học Y Dược TP.HCM",
+                "Đại học Y khoa Phạm Ngọc Thạch",
             ]),
-            ("Chính phủ & Nhà nước", "teal", [
-                "Bộ KH&CN", "Bộ GD&ĐT", "Bộ TN&MT", "UBND các tỉnh",
+            ("Bệnh viện", "orange", 2, [
+                "Bệnh viện Nguyễn Tri Phương",
+                "Bệnh viện Chấn thương Chỉnh hình",
+                "Bệnh viện Bệnh Nhiệt đới",
+                "Bệnh viện Răng Hàm Mặt TP.HCM",
+                "Bệnh viện Da liễu",
+                "Bệnh viện Răng Hàm Mặt Trung Ương",
+                "Bệnh viện Mắt TP.HCM",
+                "Bệnh viện Ung bướu TP.HCM",
             ]),
-            ("Doanh nghiệp & Tư nhân", "purple", [
-                "Vingroup", "FPT", "Viettel", "VNPT", "Masan Group",
+            ("Doanh nghiệp", "indigo", 3, [
+                "TalentNet",
+                "Sanofi",
+                "Merit Medical Asia Co Ltd",
             ]),
         ]
-        for group_title, color, items in groups_data:
+        for group_title, color, order, items in groups_data:
             group, _ = AboutEcosystemPartnerGroup.objects.get_or_create(
                 ecosystem=ecosystem, title=group_title,
-                defaults={"color": color, "is_active": True}
+                defaults={"color": color, "display_order": order, "is_active": True}
             )
             for i, item_name in enumerate(items):
                 AboutEcosystemPartnerItem.objects.get_or_create(
@@ -571,17 +636,17 @@ class Command(BaseCommand):
                 )
 
         stats_data = [
-            ("500+", "Chuyên gia & Nhà khoa học", 0),
-            ("50+", "Đối tác chiến lược", 1),
-            ("100+", "Dự án hoàn thành", 2),
-            ("15+", "Quốc gia hợp tác", 3),
+            ("2", "Cơ quan", 0),
+            ("4", "Trường", 1),
+            ("6", "Bệnh viện", 2),
+            ("3", "DN", 3),
         ]
         for number, label, order in stats_data:
             AboutEcosystemStatistic.objects.get_or_create(
                 ecosystem=ecosystem, label=label,
                 defaults={"number": number, "display_order": order, "is_active": True}
             )
-        self.stdout.write("  ✓ Capability & Ecosystem")
+        self.stdout.write("  \u2713 Capability & Ecosystem")
 
     # ─── Contact ──────────────────────────────────────────────────────────────
 
@@ -599,4 +664,103 @@ class Command(BaseCommand):
                 "display_order": 0,
             }
         )
-        self.stdout.write("  ✓ Contact Banner")
+        self.stdout.write("  \u2713 Contact Banner")
+
+    # ─── Org Structure ────────────────────────────────────────────────────────
+
+    def _seed_org_structure(self) -> None:
+        section, _ = AboutOrgStructureSection.objects.get_or_create(
+            title="TỔ CHỨC VÀ MẠNG LƯỚI CHUYÊN MÔN",
+            defaults={
+                "section_label": "CẤU TRÚC",
+                "description": (
+                    "Viện IRDM vận hành theo mô hình kết nối chuyên môn linh hoạt. Mỗi bài toán được tiếp cận "
+                    "từ nhu cầu thực tế, sau đó IRDM huy động tổ hợp nhà khoa học, chuyên gia thực hành, giảng "
+                    "viên, cố vấn và nhóm triển khai phù hợp."
+                ),
+                "primary_cta_label": "Tìm chuyên gia",
+                "primary_cta_url": "/chuyen-gia/",
+                "secondary_cta_label": "Xem lĩnh vực chuyên môn",
+                "secondary_cta_url": "/nang-luc/",
+                "is_active": True,
+                "display_order": 0,
+            }
+        )
+
+        cards_data = [
+            {
+                "title": "Hội đồng khoa học",
+                "color_theme": "navy",
+                "view_more_label": "Xem thêm",
+                "view_more_url": "/nang-luc/#hoi-dong-khoa-hoc",
+                "display_order": 0,
+                "bullets": [
+                    ("Định hướng học thuật", 0),
+                    ("Chất lượng chuyên môn", 1),
+                    ("Chiều sâu chiến lược", 2),
+                ],
+            },
+            {
+                "title": "Cơ cấu tổ chức",
+                "color_theme": "blue",
+                "view_more_label": "Xem thêm",
+                "view_more_url": "/nang-luc/#co-cau-to-chuc",
+                "display_order": 1,
+                "bullets": [
+                    ("Quản trị & điều phối", 0),
+                    ("Vận hành & liên kết", 1),
+                    ("Chiến lược & triển khai", 2),
+                ],
+            },
+            {
+                "title": "Nhà khoa học & chuyên gia",
+                "color_theme": "orange",
+                "view_more_label": "Xem thêm",
+                "view_more_url": "/chuyen-gia/",
+                "display_order": 2,
+                "bullets": [
+                    ("Nền tảng bằng chứng", 0),
+                    ("Kinh nghiệm thực hành", 1),
+                    ("Liên ngành (y tế, AI…)", 2),
+                ],
+            },
+            {
+                "title": "Giảng viên & Chuyên gia học tập",
+                "color_theme": "amber",
+                "view_more_label": "Xem thêm",
+                "view_more_url": "/nang-luc/#giang-vien",
+                "display_order": 3,
+                "bullets": [
+                    ("Chuyển hóa tri thức", 0),
+                    ("Workshop & coaching", 1),
+                    ("E-Learning & microlearning", 2),
+                ],
+            },
+            {
+                "title": "Hiệp hội & Mạng lưới chuyên môn",
+                "color_theme": "purple",
+                "view_more_label": "Xem thêm",
+                "view_more_url": "/nang-luc/#hiep-hoi",
+                "display_order": 4,
+                "bullets": [
+                    ("Kết nối học thuật", 0),
+                    ("Cập nhật tri thức mới", 1),
+                    ("Hợp tác liên ngành", 2),
+                ],
+            },
+        ]
+
+        for card_data in cards_data:
+            bullets = card_data.pop("bullets")
+            card, _ = AboutOrgStructureCard.objects.get_or_create(
+                section=section,
+                title=card_data["title"],
+                defaults={k: v for k, v in card_data.items() if k != "title"},
+            )
+            for text, order in bullets:
+                AboutOrgStructureBulletItem.objects.get_or_create(
+                    card=card, text=text,
+                    defaults={"display_order": order, "is_active": True},
+                )
+
+        self.stdout.write("  \u2713 Org Structure")

@@ -1,0 +1,68 @@
+{% load i18n %}
+{# Partial: single Org Structure card — included from org_structure.html #}
+{# Variables: card, bar_bg, icon_bg, bullet_color #}
+
+<div class="group relative bg-white rounded-2xl border border-slate-100
+            hover:border-slate-200 hover:shadow-lg transition-all duration-300 flex flex-col">
+
+  <div class="flex flex-col flex-1 p-6">
+
+    {# Short accent bar — matches Figma: ~40px wide, 3px, top-left inside padding #}
+    <div class="w-10 rounded-full mb-5 flex-shrink-0"
+         style="height:3px;background:{{ bar_bg }}" aria-hidden="true"></div>
+
+    {# Icon circle #}
+    <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 flex-shrink-0
+                transition-transform duration-300 group-hover:scale-105"
+         style="background:{{ icon_bg }}">
+      {% if card.icon_image %}
+        <img src="{{ card.icon_image.url }}" alt=""
+             class="w-6 h-6 object-contain" style="filter:brightness(0) invert(1)" loading="lazy" />
+      {% else %}
+        {# Default person/group icon — overridden by icon_image upload #}
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="white" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/>
+        </svg>
+      {% endif %}
+    </div>
+
+    {# Card title #}
+    <h3 class="font-semibold leading-snug mb-4" style="font-size:15px;color:#1e293b">
+      {{ card.title }}
+    </h3>
+
+    {# Bullet list #}
+    {% with items=card.bullet_items.all %}
+      {% if items %}
+        <ul class="space-y-2 mb-5 flex-1" role="list">
+          {% for item in items %}
+            {% if item.is_active %}
+              <li class="flex items-start gap-2.5 text-slate-600 leading-snug" style="font-size:13.5px">
+                <span class="w-1.5 h-1.5 rounded-full mt-[5px] flex-shrink-0"
+                      style="background:{{ bullet_color }}" aria-hidden="true"></span>
+                {{ item.text }}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% else %}
+        <div class="flex-1"></div>
+      {% endif %}
+    {% endwith %}
+
+    {# View more link — always #EC6D29 + SF Display per Figma spec #}
+    {% if card.view_more_url %}
+      <a href="{{ card.view_more_url }}"
+         class="inline-flex items-center gap-1.5 font-semibold text-sm mt-auto
+                transition-opacity duration-200 hover:opacity-75"
+         style="color:#EC6D29;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','San Francisco',sans-serif">
+        {{ card.view_more_label|default:_("Xem thêm") }}
+        <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    {% endif %}
+
+  </div>
+</div>

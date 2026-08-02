@@ -1,82 +1,168 @@
 {% load i18n %}
-{# Section 11: Capability & Ecosystem #}
+{# Section: Capability & Ecosystem — Figma light-bg, hub + columns layout #}
 {% if capability_ecosystem %}
-<section class="bg-primary-950 py-16 lg:py-24" aria-labelledby="ecosystem-heading">
-  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+{% with eco=capability_ecosystem %}
 
-    {# Header #}
-    {% if capability_ecosystem.section_label %}
-      <div class="flex justify-center mb-6">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-white/10 border border-white/20 rounded-full">
-          <span class="w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0" aria-hidden="true"></span>
-          <span class="text-white/80 text-xs font-semibold uppercase tracking-wider">{{ capability_ecosystem.section_label }}</span>
-        </div>
+<section aria-labelledby="ecosystem-heading"
+         class="relative overflow-hidden"
+         style="background:#f0f7ff">
+
+  {# Background image — decorative city skyline on right half #}
+  {% if eco.background_image %}
+    <div class="absolute inset-y-0 right-0 w-full lg:w-3/5 pointer-events-none select-none" aria-hidden="true">
+      <img src="{{ eco.background_image.url }}" alt=""
+           class="w-full h-full object-cover object-left" loading="lazy" />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#f0f7ff] via-[#f0f7ff]/60 to-transparent"></div>
+    </div>
+  {% else %}
+    {# Fallback SVG/gradient decoration #}
+    <div class="absolute inset-y-0 right-0 w-1/2 pointer-events-none select-none" aria-hidden="true">
+      <div class="absolute inset-0"
+           style="background:linear-gradient(135deg,transparent 0%,rgba(219,234,254,.5) 60%,rgba(147,197,253,.3) 100%)"></div>
+      <svg class="absolute right-0 bottom-0 opacity-10 w-full" viewBox="0 0 600 300" fill="none" aria-hidden="true">
+        <circle cx="550" cy="200" r="180" stroke="#1d4ed8" stroke-width="1"/>
+        <circle cx="480" cy="250" r="120" stroke="#1d4ed8" stroke-width="0.6"/>
+        <circle cx="600" cy="150" r="80" stroke="#1d4ed8" stroke-width="0.4"/>
+      </svg>
+    </div>
+  {% endif %}
+
+  <div class="relative max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
+
+    {# ── Section Header: text-left / CTAs vertically centered right #}
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12">
+
+      {# Left: badge + title + description #}
+      <div>
+        {% if eco.section_label %}
+          <div class="flex items-center gap-2.5 mb-5">
+            <div class="w-8 bg-primary-600 flex-shrink-0" style="height:2px" aria-hidden="true"></div>
+            <span class="text-primary-700 text-xs font-bold uppercase tracking-widest">{{ eco.section_label }}</span>
+          </div>
+        {% endif %}
+
+        <h2 id="ecosystem-heading"
+            class="font-utm-banque font-normal leading-tight uppercase mb-5"
+            style="font-size:40px;color:#094977;white-space:pre-line">
+          {{ eco.title }}
+        </h2>
+
+        {% if eco.description %}
+          <p class="text-slate-600 leading-relaxed" style="font-size:15px;max-width:560px">
+            {{ eco.description }}
+          </p>
+        {% endif %}
       </div>
-    {% endif %}
 
-    <h2 id="ecosystem-heading" class="font-utm-banque font-normal text-[28px] sm:text-[36px] lg:text-[42px] leading-[1.15] text-white uppercase text-center mb-4">
-      {{ capability_ecosystem.title }}
-    </h2>
-
-    {% if capability_ecosystem.description %}
-      <p class="text-white/60 text-center max-w-2xl mx-auto mb-12">{{ capability_ecosystem.description }}</p>
-    {% endif %}
-
-    {# Layout: diagram + partner groups #}
-    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
-
-      {# Floating diagram #}
-      {% if capability_ecosystem.diagram_image %}
-        <div class="lg:w-[420px] xl:w-[480px] flex-shrink-0 lg:sticky lg:top-24">
-          <img src="{{ capability_ecosystem.diagram_image.url }}"
-               alt="{{ capability_ecosystem.diagram_alt|default:capability_ecosystem.title }}"
-               class="w-full h-auto rounded-2xl"
-               loading="lazy" />
+      {# Right: CTA buttons stacked #}
+      {% if eco.primary_cta_label or eco.secondary_cta_label %}
+        <div class="flex flex-col sm:flex-row items-center justify-start lg:justify-end gap-4">
+          {% if eco.primary_cta_label and eco.primary_cta_url %}
+            <a href="{{ eco.primary_cta_url }}"
+               class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all hover:-translate-y-0.5 flex-shrink-0"
+               style="background:#f97316;color:#fff;box-shadow:0 4px 14px rgba(249,115,22,.35)"
+               onmouseover="this.style.background='#ea6c00'" onmouseout="this.style.background='#f97316'">
+              {{ eco.primary_cta_label }}
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if eco.secondary_cta_label and eco.secondary_cta_url %}
+            <a href="{{ eco.secondary_cta_url }}"
+               class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all flex-shrink-0"
+               style="border:2px solid #f97316;color:#f97316;background:transparent"
+               onmouseover="this.style.background='rgba(249,115,22,.06)'"
+               onmouseout="this.style.background='transparent'">
+              {{ eco.secondary_cta_label }}
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
         </div>
       {% endif %}
+    </div>
 
-      {# Partner groups #}
-      {% with groups=capability_ecosystem.partner_groups.all %}
+    {# ── Hub circle + Partner-group columns #}
+    <div>
+
+      {# IRDM Hub circle — centered above columns #}
+      <div class="flex justify-center mb-8">
+        <div class="relative flex flex-col items-center justify-center rounded-full shadow-lg"
+             style="width:96px;height:96px;background:#fff;border:2px solid #e2e8f0">
+          {% if eco.diagram_image %}
+            <img src="{{ eco.diagram_image.url }}" alt="{{ eco.diagram_alt|default:'IRDM Hub' }}"
+                 class="w-14 h-14 object-contain rounded-full" loading="lazy" />
+          {% else %}
+            {% for line in eco.hub_label.splitlines %}
+              <span class="font-bold leading-tight text-center"
+                    style="font-size:{% if forloop.first %}15px{% else %}11px{% endif %};
+                           color:{% if forloop.first %}#094977{% else %}#64748b{% endif %}">
+                {{ line }}
+              </span>
+            {% empty %}
+              <span class="font-bold text-sm" style="color:#094977">IRDM</span>
+              <span class="text-xs" style="color:#64748b">Hub</span>
+            {% endfor %}
+          {% endif %}
+          {# Decorative radial ring #}
+          <div class="absolute pointer-events-none"
+               style="width:120px;height:120px;border-radius:50%;border:1px dashed rgba(29,78,216,.2);top:-13px;left:-13px"
+               aria-hidden="true"></div>
+        </div>
+      </div>
+
+      {# Partner group columns #}
+      {% with groups=eco.partner_groups.all %}
         {% if groups %}
-          <div class="flex-1 min-w-0 space-y-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {% for group in groups %}
-              <div>
-                <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-orange-400 flex-shrink-0" aria-hidden="true"></span>
-                  {{ group.title }}
-                </h3>
-                <div class="flex flex-wrap gap-3">
-                  {% for item in group.items.all %}
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg border border-white/10 hover:bg-white/15 transition-colors">
-                      {% if item.logo %}
-                        <img src="{{ item.logo.url }}" alt="" class="w-5 h-5 object-contain" aria-hidden="true" />
-                      {% endif %}
-                      <span class="text-white/80 text-sm font-medium">{{ item.name }}</span>
-                    </div>
-                  {% endfor %}
-                </div>
-              </div>
+              {% if group.is_active %}
+              {# Resolve badge color from color field #}
+              {% with ct=group.color %}
+              {% if ct == "navy" %}{% with badge_bg="#0b3d6b" %}{% include "about/sections/_eco_group.html" with group=group badge_bg=badge_bg %}{% endwith %}
+              {% elif ct == "blue" %}{% with badge_bg="#1a56b0" %}{% include "about/sections/_eco_group.html" with group=group badge_bg=badge_bg %}{% endwith %}
+              {% elif ct == "teal" %}{% with badge_bg="#0e7490" %}{% include "about/sections/_eco_group.html" with group=group badge_bg=badge_bg %}{% endwith %}
+              {% elif ct == "orange" %}{% with badge_bg="#f97316" %}{% include "about/sections/_eco_group.html" with group=group badge_bg=badge_bg %}{% endwith %}
+              {% elif ct == "amber" %}{% with badge_bg="#d97706" %}{% include "about/sections/_eco_group.html" with group=group badge_bg=badge_bg %}{% endwith %}
+              {% elif ct == "purple" %}{% with badge_bg="#7c3aed" %}{% include "about/sections/_eco_group.html" with group=group badge_bg=badge_bg %}{% endwith %}
+              {% elif ct == "indigo" %}{% with badge_bg="#4338ca" %}{% include "about/sections/_eco_group.html" with group=group badge_bg=badge_bg %}{% endwith %}
+              {% elif ct == "green" %}{% with badge_bg="#16a34a" %}{% include "about/sections/_eco_group.html" with group=group badge_bg=badge_bg %}{% endwith %}
+              {% else %}{% with badge_bg="#094977" %}{% include "about/sections/_eco_group.html" with group=group badge_bg=badge_bg %}{% endwith %}
+              {% endif %}
+              {% endwith %}
+              {% endif %}
             {% endfor %}
           </div>
         {% endif %}
       {% endwith %}
-
     </div>
 
-    {# Bottom statistics #}
-    {% with stats=capability_ecosystem.statistics.all %}
+    {# ── Bottom statistics strip #}
+    {% with stats=eco.statistics.all %}
       {% if stats %}
-        <div class="mt-16 pt-10 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6">
-          {% for stat in stats %}
-            <div class="text-center">
-              <p class="text-3xl sm:text-4xl font-utm-banque font-bold text-orange-400">{{ stat.number }}</p>
-              <p class="text-white/60 text-sm mt-1">{{ stat.label }}</p>
-            </div>
-          {% endfor %}
+        <div class="mt-12 pt-8"
+             style="border-top:1px solid rgba(30,64,175,.12)">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {% for stat in stats %}
+              {% if stat.is_active %}
+              <div class="text-center sm:text-left">
+                <p class="font-utm-banque font-bold leading-none mb-1"
+                   style="font-size:clamp(32px,4vw,48px);color:#094977">
+                  {{ stat.number }}
+                </p>
+                <p class="text-slate-500" style="font-size:13.5px">{{ stat.label }}</p>
+              </div>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
       {% endif %}
     {% endwith %}
 
   </div>
 </section>
+
+{% endwith %}
 {% endif %}

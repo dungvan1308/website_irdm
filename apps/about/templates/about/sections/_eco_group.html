@@ -1,0 +1,27 @@
+{% load i18n %}
+{# Partial: single partner-group column — included from ecosystem.html #}
+{# Variables: group, badge_bg #}
+
+<div class="flex flex-col gap-2">
+
+  {# Colored header badge #}
+  <div class="inline-flex items-center px-4 py-1.5 rounded-full mb-1 self-start"
+       style="background:{{ badge_bg }}">
+    <span class="text-white text-xs font-bold tracking-wide whitespace-nowrap">{{ group.title }}</span>
+  </div>
+
+  {# Partner item boxes #}
+  {% for item in group.items.all %}
+    {% if item.is_active %}
+    <div class="flex items-center gap-2 bg-white rounded-lg px-4 py-2.5
+                border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-200"
+         style="min-height:40px">
+      {% if item.logo %}
+        <img src="{{ item.logo.url }}" alt="" class="w-4 h-4 object-contain flex-shrink-0" aria-hidden="true" loading="lazy" />
+      {% endif %}
+      <span class="text-slate-700 text-sm leading-snug">{{ item.name }}</span>
+    </div>
+    {% endif %}
+  {% endfor %}
+
+</div>

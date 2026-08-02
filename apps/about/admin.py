@@ -20,6 +20,9 @@ from .models import (
     AboutLegalOrgAttribute,
     AboutLegalTimelineItem,
     AboutNetworkSectionHeader,
+    AboutOrgStructureBulletItem,
+    AboutOrgStructureCard,
+    AboutOrgStructureSection,
     AboutPageSEO,
     AboutPartnerBenefit,
     AboutPartnerBenefitSection,
@@ -268,7 +271,12 @@ class AboutTargetAudienceSectionAdmin(admin.ModelAdmin):
     list_editable = ("display_order", "is_active")
     inlines = [AboutTargetAudienceInline]
     fieldsets = (
-        ("Content", {"fields": ("section_label", "title", "description", "cta_label", "cta_url")}),
+        ("Content", {"fields": ("section_label", "title", "description")}),
+        ("CTA", {"fields": ("cta_label", "cta_url")}),
+        ("Background", {
+            "fields": ("background_color", "background_image"),
+            "description": "background_color: CSS hex e.g. #0b3d6b for dark navy. Leave blank for white.",
+        }),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 
@@ -300,7 +308,10 @@ class AboutCapabilityEcosystemAdmin(admin.ModelAdmin):
     inlines = [AboutEcosystemPartnerGroupInline, AboutEcosystemStatisticInline]
     fieldsets = (
         ("Content", {"fields": ("section_label", "title", "description")}),
-        ("Diagram", {"fields": ("diagram_image", "diagram_alt")}),
+        ("Primary CTA", {"fields": ("primary_cta_label", "primary_cta_url")}),
+        ("Secondary CTA", {"fields": ("secondary_cta_label", "secondary_cta_url")}),
+        ("Hub Diagram", {"fields": ("hub_label", "diagram_image", "diagram_alt")}),
+        ("Background", {"fields": ("background_image",)}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 
@@ -310,6 +321,50 @@ class AboutEcosystemPartnerGroupAdmin(admin.ModelAdmin):
     list_display = ("title", "ecosystem", "color", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
     inlines = [AboutEcosystemPartnerItemInline]
+
+
+# ─── Org Structure ────────────────────────────────────────────────────────────
+
+class AboutOrgStructureBulletItemInline(admin.TabularInline):
+    model = AboutOrgStructureBulletItem
+    extra = 2
+    fields = ("text", "display_order", "is_active")
+
+
+class AboutOrgStructureCardInline(admin.StackedInline):
+    model = AboutOrgStructureCard
+    extra = 1
+    fields = (
+        "icon", "icon_image", "color_theme", "title",
+        "view_more_label", "view_more_url", "display_order", "is_active",
+    )
+    show_change_link = True
+
+
+@admin.register(AboutOrgStructureSection)
+class AboutOrgStructureSectionAdmin(admin.ModelAdmin):
+    list_display = ("title", "display_order", "is_active")
+    list_editable = ("display_order", "is_active")
+    inlines = [AboutOrgStructureCardInline]
+    fieldsets = (
+        ("Section Header", {"fields": ("section_label", "title", "description")}),
+        ("Primary CTA", {"fields": ("primary_cta_label", "primary_cta_url")}),
+        ("Secondary CTA", {"fields": ("secondary_cta_label", "secondary_cta_url")}),
+        ("Background", {"fields": ("background_image",)}),
+        ("Status", {"fields": ("is_active", "display_order")}),
+    )
+
+
+@admin.register(AboutOrgStructureCard)
+class AboutOrgStructureCardAdmin(admin.ModelAdmin):
+    list_display = ("title", "color_theme", "section", "display_order", "is_active")
+    list_editable = ("display_order", "is_active")
+    inlines = [AboutOrgStructureBulletItemInline]
+    fieldsets = (
+        ("Content", {"fields": ("section", "icon", "icon_image", "color_theme", "title")}),
+        ("Link", {"fields": ("view_more_label", "view_more_url")}),
+        ("Status", {"fields": ("is_active", "display_order")}),
+    )
 
 
 # ─── Contact Banner ───────────────────────────────────────────────────────────

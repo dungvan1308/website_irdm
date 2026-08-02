@@ -22,6 +22,7 @@ class AboutPageView(TemplateView):
         ctx["legal_info"] = AboutService.get_legal_info()
         ctx["cta_banner"] = AboutService.get_cta_banner()
         ctx["partner_benefit_section"] = AboutService.get_partner_benefit_section()
+        ctx["org_structure_section"] = AboutService.get_org_structure_section()
         ctx["network_header"] = AboutService.get_network_header()
         ctx["professional_networks"] = AboutService.get_professional_networks()
         ctx["target_audience_section"] = AboutService.get_target_audience_section()

@@ -1,84 +1,156 @@
 {% load i18n %}
-{# Section 10: Target Audience — IRDM đồng hành cùng những ai #}
+{# Section: Target Audience — IRDM đồng hành với những ai? — dark-navy Figma layout #}
 {% if target_audience_section %}
-<section class="bg-white py-16 lg:py-24 border-t border-slate-100" aria-labelledby="audience-heading">
-  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+{% with s=target_audience_section %}
 
-    {# Header #}
-    {% if target_audience_section.section_label %}
-      <div class="flex justify-center mb-6">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-orange-50 border border-orange-200 rounded-full">
-          <span class="w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" aria-hidden="true"></span>
-          <span class="text-orange-700 text-xs font-semibold uppercase tracking-wider">{{ target_audience_section.section_label }}</span>
-        </div>
+<section aria-labelledby="audience-heading"
+         class="relative overflow-hidden py-16 lg:py-24"
+         style="background:{% if s.background_color %}{{ s.background_color }}{% else %}#ffffff{% endif %}">
+
+  {# Background image overlay #}
+  {% if s.background_image %}
+    <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+      <img src="{{ s.background_image.url }}" alt=""
+           class="w-full h-full object-cover {% if s.background_color %}opacity-10{% else %}opacity-5{% endif %}" />
+    </div>
+  {% endif %}
+
+  {# Radial glow decoration for dark background #}
+  {% if s.background_color %}
+    <div class="absolute pointer-events-none select-none"
+         style="top:-200px;right:-120px;width:560px;height:560px;border-radius:50%;
+                background:radial-gradient(circle,rgba(255,255,255,.07) 0%,transparent 70%)"
+         aria-hidden="true"></div>
+    <div class="absolute pointer-events-none select-none"
+         style="bottom:-160px;left:-80px;width:400px;height:400px;border-radius:50%;
+                background:radial-gradient(circle,rgba(249,115,22,.08) 0%,transparent 70%)"
+         aria-hidden="true"></div>
+  {% endif %}
+
+  <div class="relative max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-20">
+
+    {# ── Section Header: text-left / CTA top-right #}
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-12">
+
+      {# Left: badge + title + description #}
+      <div>
+        {% if s.section_label %}
+          <div class="flex items-center gap-2.5 mb-5">
+            <div class="w-8 flex-shrink-0"
+                 style="height:2px;background:{% if s.background_color %}#f97316{% else %}#0b3d6b{% endif %}"
+                 aria-hidden="true"></div>
+            <span class="text-xs font-bold uppercase tracking-widest"
+                  style="color:{% if s.background_color %}#fb923c{% else %}#1d4ed8{% endif %}">
+              {{ s.section_label }}
+            </span>
+          </div>
+        {% endif %}
+
+        <h2 id="audience-heading"
+            class="font-utm-banque font-normal leading-tight uppercase mb-5"
+            style="font-size:clamp(26px,3.6vw,44px);
+                   color:{% if s.background_color %}#ffffff{% else %}#094977{% endif %}">
+          {{ s.title }}
+        </h2>
+
+        {% if s.description %}
+          <p class="leading-relaxed"
+             style="font-size:15px;max-width:560px;
+                    color:{% if s.background_color %}rgba(255,255,255,.7){% else %}#64748b{% endif %}">
+            {{ s.description }}
+          </p>
+        {% endif %}
       </div>
-    {% endif %}
 
-    <h2 id="audience-heading" class="font-utm-banque font-normal text-[28px] sm:text-[36px] lg:text-[42px] leading-[1.15] text-primary-950 uppercase text-center mb-4">
-      {{ target_audience_section.title }}
-    </h2>
+      {# Right: primary CTA button — top-right per Figma #}
+      {% if s.cta_label and s.cta_url %}
+        <div class="flex lg:justify-end lg:items-start pt-1">
+          <a href="{{ s.cta_url }}"
+             class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm
+                    transition-all hover:-translate-y-0.5 flex-shrink-0"
+             style="background:#f97316;color:#fff;box-shadow:0 4px 14px rgba(249,115,22,.4)"
+             onmouseover="this.style.background='#ea6c00'"
+             onmouseout="this.style.background='#f97316'">
+            {{ s.cta_label }}
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      {% endif %}
+    </div>
 
-    {% if target_audience_section.description %}
-      <p class="text-slate-500 text-center max-w-2xl mx-auto mb-12">{{ target_audience_section.description }}</p>
-    {% endif %}
-
-    {# Audience cards #}
-    {% with audiences=target_audience_section.audiences.all %}
+    {# ── Audience Cards: 5-col desktop, responsive #}
+    {% with audiences=s.audiences.all %}
       {% if audiences %}
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {% for audience in audiences %}
-            <div class="group rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300">
-              {# Card image #}
-              {% if audience.image %}
-                <div class="relative h-52 overflow-hidden">
-                  <img src="{{ audience.image.url }}" alt="{{ audience.title }}"
-                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                       loading="lazy" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                  {# Icon badge #}
-                  {% if audience.icon_image %}
-                    <div class="absolute bottom-4 left-4 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center">
-                      <img src="{{ audience.icon_image.url }}" alt="" class="w-6 h-6 object-contain" aria-hidden="true" />
-                    </div>
-                  {% endif %}
-                </div>
-              {% endif %}
+            {% if audience.is_active %}
+            <div class="group flex flex-col rounded-xl p-6 transition-all duration-300
+                        {% if s.background_color %}hover:bg-white/10{% else %}hover:shadow-lg{% endif %}"
+                 style="{% if s.background_color %}border:1px solid rgba(255,255,255,.18)
+                        {% else %}background:#fff;border:1px solid #e2e8f0{% endif %}">
 
-              {# Content #}
-              <div class="p-6">
-                <h3 class="font-bold text-slate-900 text-lg mb-2">{{ audience.title }}</h3>
-                {% if audience.description %}
-                  <p class="text-slate-500 text-sm leading-relaxed mb-4">{{ audience.description }}</p>
-                {% endif %}
-                {% if audience.cta_label and audience.cta_url %}
-                  <a href="{{ audience.cta_url }}"
-                     class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 hover:text-primary-800 transition-colors">
-                    {{ audience.cta_label }}
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                  </a>
+              {# Icon circle #}
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mb-5 flex-shrink-0
+                          transition-transform duration-300 group-hover:scale-105"
+                   style="{% if s.background_color %}background:rgba(255,255,255,.18)
+                          {% else %}background:#e0f2fe{% endif %}">
+                {% if audience.icon_image %}
+                  <img src="{{ audience.icon_image.url }}" alt=""
+                       class="w-6 h-6 object-contain"
+                       style="{% if s.background_color %}filter:brightness(0) invert(1){% endif %}"
+                       loading="lazy" />
+                {% else %}
+                  {# Fallback icon — upload icon_image in CMS Admin for a custom icon #}
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
+                       style="color:{% if s.background_color %}#fff{% else %}#0284c7{% endif %}">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                  </svg>
                 {% endif %}
               </div>
+
+              {# Title #}
+              <h3 class="font-bold leading-snug mb-3"
+                  style="font-size:15px;
+                         color:{% if s.background_color %}#ffffff{% else %}#1e293b{% endif %}">
+                {{ audience.title }}
+              </h3>
+
+              {# Description #}
+              {% if audience.description %}
+                <p class="leading-relaxed flex-1 mb-5"
+                   style="font-size:13.5px;
+                          color:{% if s.background_color %}rgba(255,255,255,.65){% else %}#64748b{% endif %}">
+                  {{ audience.description }}
+                </p>
+              {% else %}
+                <div class="flex-1 mb-5"></div>
+              {% endif %}
+
+              {# Card CTA — #EC6D29 + SF Display per Figma #}
+              {% if audience.cta_label and audience.cta_url %}
+                <a href="{{ audience.cta_url }}"
+                   class="inline-flex items-center gap-1.5 font-semibold text-sm mt-auto
+                          transition-opacity duration-200 hover:opacity-75"
+                   style="color:#EC6D29;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','San Francisco',sans-serif">
+                  {{ audience.cta_label }}
+                  <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                  </svg>
+                </a>
+              {% endif %}
+
             </div>
+            {% endif %}
           {% endfor %}
         </div>
       {% endif %}
     {% endwith %}
 
-    {# Section CTA #}
-    {% if target_audience_section.cta_label and target_audience_section.cta_url %}
-      <div class="text-center mt-10">
-        <a href="{{ target_audience_section.cta_url }}"
-           class="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-colors">
-          {{ target_audience_section.cta_label }}
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      </div>
-    {% endif %}
-
   </div>
 </section>
+
+{% endwith %}
 {% endif %}
