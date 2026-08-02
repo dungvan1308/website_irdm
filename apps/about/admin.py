@@ -308,7 +308,10 @@ class AboutCapabilityEcosystemAdmin(admin.ModelAdmin):
     inlines = [AboutEcosystemPartnerGroupInline, AboutEcosystemStatisticInline]
     fieldsets = (
         ("Content", {"fields": ("section_label", "title", "description")}),
-        ("Diagram", {"fields": ("diagram_image", "diagram_alt")}),
+        ("Primary CTA", {"fields": ("primary_cta_label", "primary_cta_url")}),
+        ("Secondary CTA", {"fields": ("secondary_cta_label", "secondary_cta_url")}),
+        ("Hub Diagram", {"fields": ("hub_label", "diagram_image", "diagram_alt")}),
+        ("Background", {"fields": ("background_image",)}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 

@@ -567,35 +567,65 @@ class Command(BaseCommand):
     # ─── Ecosystem ────────────────────────────────────────────────────────────
 
     def _seed_ecosystem(self) -> None:
-        ecosystem, _ = AboutCapabilityEcosystem.objects.get_or_create(
-            title="HỆ SINH THÁI NĂNG LỰC & ĐỐI TÁC",
+        ecosystem, created = AboutCapabilityEcosystem.objects.get_or_create(
+            title="BẰNG CHỨNG NĂNG LỰC VÀ HỆ SINH THÁI HỢP TÁC",
             defaults={
-                "section_label": "Hệ sinh thái",
-                "description": "IRDM vận hành như một hệ sinh thái tri thức mở, kết nối nhiều tầng lớp đối tác và chuyên gia",
+                "section_label": "HỆ SINH THÁI HỢP TÁC",
+                "description": (
+                    "IRDM đã đồng hành cùng cơ quan quản lý, tổ chức y tế, trường đại học, doanh nghiệp và đối tác "
+                    "trong các bài toán liên quan đến dữ liệu, chuyển đổi số, sức khỏe tâm thần, phát triển năng lực "
+                    "và đổi mới hệ thống."
+                ),
+                "primary_cta_label": "Xem Tin IRDM",
+                "primary_cta_url": "/tin-tuc/",
+                "secondary_cta_label": "Xem Tri thức & Góc nhìn",
+                "secondary_cta_url": "/tri-thuc/",
+                "hub_label": "IRDM\nHub",
                 "is_active": True,
                 "display_order": 0,
             }
         )
+        if not created:
+            AboutCapabilityEcosystem.objects.filter(pk=ecosystem.pk).update(
+                title="BẰNG CHỨNG NĂNG LỰC VÀ HỆ SINH THÁI HỢP TÁC",
+                section_label="HỆ SINH THÁI HỢP TÁC",
+                primary_cta_label="Xem Tin IRDM",
+                primary_cta_url="/tin-tuc/",
+                secondary_cta_label="Xem Tri thức & Góc nhìn",
+                secondary_cta_url="/tri-thuc/",
+                hub_label="IRDM\nHub",
+            )
 
         groups_data = [
-            ("Nghiên cứu & Học thuật", "blue", [
-                "Đại học Quốc gia Hà Nội", "Đại học Quốc gia TP.HCM",
-                "Viện Hàn lâm KH&CN", "Đại học Bách khoa HN",
+            ("Cơ quan quản lý", "navy", 0, [
+                "Sở Khoa học và Công nghệ TP.HCM",
+                "Sở Y tế TP.HCM",
             ]),
-            ("Tổ chức Quốc tế", "orange", [
-                "UNDP", "World Bank", "ADB", "GIZ", "JICA",
+            ("Trường đại học", "blue", 1, [
+                "Đại học Bách Khoa TP.HCM",
+                "Đại học Y Dược TP.HCM",
+                "Đại học Y khoa Phạm Ngọc Thạch",
             ]),
-            ("Chính phủ & Nhà nước", "teal", [
-                "Bộ KH&CN", "Bộ GD&ĐT", "Bộ TN&MT", "UBND các tỉnh",
+            ("Bệnh viện", "orange", 2, [
+                "Bệnh viện Nguyễn Tri Phương",
+                "Bệnh viện Chấn thương Chỉnh hình",
+                "Bệnh viện Bệnh Nhiệt đới",
+                "Bệnh viện Răng Hàm Mặt TP.HCM",
+                "Bệnh viện Da liễu",
+                "Bệnh viện Răng Hàm Mặt Trung Ương",
+                "Bệnh viện Mắt TP.HCM",
+                "Bệnh viện Ung bướu TP.HCM",
             ]),
-            ("Doanh nghiệp & Tư nhân", "purple", [
-                "Vingroup", "FPT", "Viettel", "VNPT", "Masan Group",
+            ("Doanh nghiệp", "indigo", 3, [
+                "TalentNet",
+                "Sanofi",
+                "Merit Medical Asia Co Ltd",
             ]),
         ]
-        for group_title, color, items in groups_data:
+        for group_title, color, order, items in groups_data:
             group, _ = AboutEcosystemPartnerGroup.objects.get_or_create(
                 ecosystem=ecosystem, title=group_title,
-                defaults={"color": color, "is_active": True}
+                defaults={"color": color, "display_order": order, "is_active": True}
             )
             for i, item_name in enumerate(items):
                 AboutEcosystemPartnerItem.objects.get_or_create(
@@ -604,17 +634,17 @@ class Command(BaseCommand):
                 )
 
         stats_data = [
-            ("500+", "Chuyên gia & Nhà khoa học", 0),
-            ("50+", "Đối tác chiến lược", 1),
-            ("100+", "Dự án hoàn thành", 2),
-            ("15+", "Quốc gia hợp tác", 3),
+            ("2", "Cơ quan", 0),
+            ("4", "Trường", 1),
+            ("6", "Bệnh viện", 2),
+            ("3", "DN", 3),
         ]
         for number, label, order in stats_data:
             AboutEcosystemStatistic.objects.get_or_create(
                 ecosystem=ecosystem, label=label,
                 defaults={"number": number, "display_order": order, "is_active": True}
             )
-        self.stdout.write("  ✓ Capability & Ecosystem")
+        self.stdout.write("  \u2713 Capability & Ecosystem")
 
     # ─── Contact ──────────────────────────────────────────────────────────────
 

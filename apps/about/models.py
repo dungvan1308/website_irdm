@@ -526,7 +526,17 @@ class AboutCapabilityEcosystem(BaseModel):
     section_label = models.CharField(_("section label"), max_length=200, blank=True)
     title = models.CharField(_("title"), max_length=300)
     description = models.TextField(_("description"), blank=True)
-    diagram_image = models.ImageField(_("floating diagram"), upload_to="about/ecosystem/", blank=True)
+    # Background decoration (city skyline / full-section bg image)
+    background_image = models.ImageField(_("background image"), upload_to="about/ecosystem/bg/", blank=True)
+    # Hub circle label shown above the partner-group columns
+    hub_label = models.CharField(_("hub label"), max_length=100, blank=True, default="IRDM\nHub")
+    # CTA buttons in section header
+    primary_cta_label = models.CharField(_("primary CTA label"), max_length=100, blank=True)
+    primary_cta_url = models.CharField(_("primary CTA URL"), max_length=500, blank=True)
+    secondary_cta_label = models.CharField(_("secondary CTA label"), max_length=100, blank=True)
+    secondary_cta_url = models.CharField(_("secondary CTA URL"), max_length=500, blank=True)
+    # Legacy floating-diagram (kept for backward compat)
+    diagram_image = models.ImageField(_("hub diagram image"), upload_to="about/ecosystem/", blank=True)
     diagram_alt = models.CharField(_("diagram alt"), max_length=300, blank=True)
 
     class Meta(BaseModel.Meta):
