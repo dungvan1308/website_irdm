@@ -57,7 +57,7 @@ class AboutService:
         return (
             AboutVisionMission.objects
             .filter(is_active=True)
-            .prefetch_related("cards")
+            .prefetch_related("cards", "bottom_icons")
             .first()
         )
 

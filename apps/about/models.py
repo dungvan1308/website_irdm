@@ -153,6 +153,8 @@ class AboutVisionMission(BaseModel):
     title = models.CharField(_("title"), max_length=300)
     description = models.TextField(_("description"), blank=True)
     bottom_panel_text = models.TextField(_("bottom panel text"), blank=True)
+    bottom_panel_title = models.CharField(_("bottom panel title"), max_length=200, blank=True)
+    bottom_panel_description = models.TextField(_("bottom panel description"), blank=True)
 
     class Meta(BaseModel.Meta):
         verbose_name = _("vision & mission section")
@@ -183,6 +185,8 @@ class AboutVisionMissionCard(BaseModel):
     icon_image = models.ImageField(_("icon image"), upload_to="about/vision/icons/", blank=True)
     title = models.CharField(_("title"), max_length=200)
     body = models.TextField(_("body"), blank=True)
+    highlight_label = models.CharField(_("highlight label"), max_length=200, blank=True,
+                                       help_text=_("Short label shown at card bottom e.g. 'Định hướng tương lai'"))
     bg_color = models.CharField(_("background color class"), max_length=100, blank=True,
                                 help_text=_("Tailwind class e.g. bg-primary-900"))
 
@@ -192,6 +196,24 @@ class AboutVisionMissionCard(BaseModel):
 
     def __str__(self) -> str:
         return f"{self.get_card_type_display()}: {self.title}"
+
+
+class AboutVisionMissionIcon(BaseModel):
+    """An icon displayed in the bottom panel of the Vision/Mission section."""
+
+    section = models.ForeignKey(
+        AboutVisionMission, on_delete=models.CASCADE,
+        related_name="bottom_icons", verbose_name=_("section"),
+    )
+    icon_image = models.ImageField(_("icon image"), upload_to="about/vision/panel_icons/", blank=True)
+    icon_alt = models.CharField(_("icon alt text"), max_length=200, blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("vision/mission panel icon")
+        verbose_name_plural = _("vision/mission panel icons")
+
+    def __str__(self) -> str:
+        return self.icon_alt or f"Icon {self.display_order}"
 
 
 # ─── Section 5: Core Values ───────────────────────────────────────────────────

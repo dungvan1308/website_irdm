@@ -32,6 +32,7 @@ from apps.about.models import (
     AboutTargetAudienceSection,
     AboutVisionMission,
     AboutVisionMissionCard,
+    AboutVisionMissionIcon,
 )
 
 
@@ -198,41 +199,65 @@ class Command(BaseCommand):
 
     def _seed_vision_mission(self) -> None:
         section, _ = AboutVisionMission.objects.get_or_create(
-            title="TẦM NHÌN — SỨ MỆNH — TRIẾT LÝ PHÁT TRIỂN",
+            title="TẦM NHÌN - SỨ MỆNH - TRIẾT LÝ PHÁT TRIỂN",
             defaults={
-                "section_label": "Định hướng chiến lược",
+                "section_label": "NỀN TẢNG CHIẾN LƯỢC",
                 "description": "Ba trụ cột định hướng mọi hoạt động của IRDM",
-                "bottom_panel_text": (
-                    "Tất cả hoạt động của IRDM đều hướng tới một mục tiêu duy nhất: "
-                    "tạo ra tác động tích cực, bền vững và có thể đo lường được cho xã hội."
+                "bottom_panel_title": "Định hướng giá trị",
+                "bottom_panel_description": (
+                    "Mọi hoạt động của IRDM hướng đến những thay đổi bền vững, "
+                    "có thể quan sát được ở cấp độ tổ chức và hệ thống."
                 ),
+                "bottom_panel_text": "",
                 "is_active": True,
                 "display_order": 0,
             }
         )
+        if not _:
+            # Update existing record with new fields
+            section.section_label = "NỀN TẢNG CHIẾN LƯỢC"
+            section.title = "TẦM NHÌN - SỨ MỆNH - TRIẾT LÝ PHÁT TRIỂN"
+            section.bottom_panel_title = "Định hướng giá trị"
+            section.bottom_panel_description = (
+                "Mọi hoạt động của IRDM hướng đến những thay đổi bền vững, "
+                "có thể quan sát được ở cấp độ tổ chức và hệ thống."
+            )
+            section.save()
 
         cards_data = [
             (
                 "vision", "Tầm nhìn",
-                "Trở thành viện nghiên cứu liên ngành hàng đầu Đông Nam Á, dẫn dắt tư duy chính sách và tri thức ứng dụng.",
-                "bg-primary-900", 0,
+                "Trở thành tổ chức khoa học, công nghệ và đổi mới sáng tạo định hướng ứng dụng có năng lực kết nối tri thức liên ngành, dữ liệu, công nghệ và phát triển con người; góp phần kiến tạo nguồn lực bền vững và các mô hình phát triển có tác động cho Việt Nam.",
+                "Định hướng tương lai", "bg-primary-900", 0,
             ),
             (
                 "mission", "Sứ mệnh",
-                "Kết nối nhà khoa học, chính sách và thực tiễn để tạo ra các giải pháp bền vững cho những thách thức phát triển.",
-                "bg-orange-600", 1,
+                "Đồng hành cùng các tổ chức trong việc chuyển hóa vấn đề thực tiễn thành bằng chứng, chương trình, công cụ, mô hình thí điểm và giải pháp có thể triển khai; qua đó nâng cao năng lực con người, cải thiện vận hành tổ chức và thúc đẩy phát triển bền vững.",
+                "Hướng dẫn hành động", "bg-primary-900", 1,
             ),
             (
                 "philosophy", "Triết lý phát triển",
-                "Đặt con người làm trung tâm. Nghiên cứu dẫn đến hành động. Hành động tạo ra tác động. Tác động thúc đẩy thay đổi.",
-                "bg-primary-800", 2,
+                "Định hình giá trị cốt lõi - Chuyển hóa hành vi - Khai phóng tiềm năng con người.",
+                "Giá trị cốt lõi", "bg-primary-900", 2,
             ),
         ]
-        for card_type, title, body, bg_color, order in cards_data:
-            AboutVisionMissionCard.objects.get_or_create(
+        for card_type, title, body, highlight_label, bg_color, order in cards_data:
+            card, created = AboutVisionMissionCard.objects.get_or_create(
                 section=section, card_type=card_type,
-                defaults={"title": title, "body": body, "bg_color": bg_color, "display_order": order, "is_active": True}
+                defaults={
+                    "title": title, "body": body,
+                    "highlight_label": highlight_label,
+                    "bg_color": bg_color,
+                    "display_order": order, "is_active": True,
+                }
             )
+            if not created:
+                card.title = title
+                card.body = body
+                card.highlight_label = highlight_label
+                card.bg_color = bg_color
+                card.save()
+
         self.stdout.write("  ✓ Vision/Mission/Philosophy")
 
     # ─── Core Values ──────────────────────────────────────────────────────────
