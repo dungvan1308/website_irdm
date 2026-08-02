@@ -367,11 +367,36 @@ class AboutCTABanner(BaseModel):
 # ─── Section 8: Partner Benefits ─────────────────────────────────────────────
 
 class AboutPartnerBenefitSection(BaseModel):
-    """Header for the 'Đối tác nhận được gì' section."""
+    """Header + KPI banner for the 'Đối tác nhận được gì' section."""
 
+    # ── KPI Banner (blue strip above the section) ──
+    banner_badge = models.CharField(
+        _("banner badge"), max_length=100, blank=True,
+        help_text=_("Small label inside the blue banner, e.g. 'GIÁ TRỊ ĐỐI TÁC'"),
+    )
+    banner_quote = models.TextField(
+        _("banner quote"), blank=True,
+        help_text=_("Testimonial / highlight quote shown in the blue banner."),
+    )
+    kpi_label = models.CharField(
+        _("KPI label"), max_length=100, blank=True,
+        help_text=_("Small label above the KPI value, e.g. 'KPI'"),
+    )
+    kpi_value = models.CharField(
+        _("KPI value"), max_length=200, blank=True,
+        help_text=_("The prominent KPI value, e.g. '6 giá trị cốt lõi'"),
+    )
+
+    # ── Section Header ──
     section_label = models.CharField(_("section label"), max_length=200, blank=True)
     title = models.CharField(_("title"), max_length=300)
     description = models.TextField(_("description"), blank=True)
+
+    # ── Decoration ──
+    background_image = models.ImageField(
+        _("background decoration"), upload_to="about/benefits/bg/", blank=True,
+        help_text=_("Optional full-section background image (will be very lightly overlaid)."),
+    )
 
     class Meta(BaseModel.Meta):
         verbose_name = _("partner benefit section")
@@ -382,7 +407,7 @@ class AboutPartnerBenefitSection(BaseModel):
 
 
 class AboutPartnerBenefit(BaseModel):
-    """A benefit item for partners."""
+    """A benefit card for partners."""
 
     section = models.ForeignKey(
         AboutPartnerBenefitSection, on_delete=models.CASCADE,
@@ -392,6 +417,11 @@ class AboutPartnerBenefit(BaseModel):
     icon_image = models.ImageField(_("icon image"), upload_to="about/benefits/icons/", blank=True)
     title = models.CharField(_("title"), max_length=200)
     description = models.TextField(_("description"), blank=True)
+    color_theme = models.CharField(
+        _("icon color theme"), max_length=50, blank=True,
+        help_text=_("Color name: teal | blue | orange | amber | green | purple. Controls icon background."),
+    )
+    link_url = models.CharField(_("link URL"), max_length=500, blank=True)
 
     class Meta(BaseModel.Meta):
         verbose_name = _("partner benefit")
