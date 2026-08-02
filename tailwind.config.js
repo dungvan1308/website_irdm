@@ -54,8 +54,11 @@ module.exports = {
     // Knowledge module — aspect ratios
     "aspect-[4/3]",
     "aspect-[16/9]",
-    // Knowledge module — backdrop
-    "backdrop-blur-sm",
+    // Vision/Mission cards — bg stored in DB, not auto-detected
+    "bg-primary-900",
+    "bg-primary-800",
+    // Vision/Mission section background
+    "bg-slate-50",
     // Knowledge module — News & Events small text sizes (safelist so CSS is always included)
     "text-[9px]",
     "text-[10px]",

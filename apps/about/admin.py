@@ -27,6 +27,7 @@ from .models import (
     AboutTargetAudienceSection,
     AboutVisionMission,
     AboutVisionMissionCard,
+    AboutVisionMissionIcon,
 )
 
 
@@ -106,16 +107,23 @@ class AboutPurposeAdmin(admin.ModelAdmin):
 class AboutVisionMissionCardInline(admin.TabularInline):
     model = AboutVisionMissionCard
     extra = 3
-    fields = ("card_type", "icon", "icon_image", "title", "body", "bg_color", "display_order", "is_active")
+    fields = ("card_type", "icon", "icon_image", "title", "body", "highlight_label", "bg_color", "display_order", "is_active")
+
+
+class AboutVisionMissionIconInline(admin.TabularInline):
+    model = AboutVisionMissionIcon
+    extra = 4
+    fields = ("icon_image", "icon_alt", "display_order", "is_active")
 
 
 @admin.register(AboutVisionMission)
 class AboutVisionMissionAdmin(admin.ModelAdmin):
     list_display = ("title", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
-    inlines = [AboutVisionMissionCardInline]
+    inlines = [AboutVisionMissionCardInline, AboutVisionMissionIconInline]
     fieldsets = (
-        ("Content", {"fields": ("section_label", "title", "description", "bottom_panel_text")}),
+        ("Content", {"fields": ("section_label", "title", "description")}),
+        ("Bottom Panel", {"fields": ("bottom_panel_title", "bottom_panel_description", "bottom_panel_text")}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 
