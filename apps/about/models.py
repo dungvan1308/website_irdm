@@ -263,6 +263,20 @@ class AboutLegalInfo(BaseModel):
     description = models.TextField(_("description"), blank=True)
     image = models.ImageField(_("left image"), upload_to="about/legal/", blank=True)
     image_alt = models.CharField(_("image alt text"), max_length=300, blank=True)
+    background_image = models.ImageField(_("background decoration"), upload_to="about/legal/bg/", blank=True)
+
+    # Org info card (below the photo)
+    org_card_label = models.CharField(_("org card label"), max_length=100, blank=True,
+                                      default="THÔNG TIN TỔ CHỨC")
+    org_name = models.CharField(_("organisation name"), max_length=300, blank=True)
+
+    # Right-side card
+    timeline_card_title = models.CharField(_("timeline card title"), max_length=200, blank=True,
+                                           default="CỘT MỐC PHÁP LÝ")
+
+    # Footer note
+    footer_note = models.TextField(_("footer note"), blank=True)
+    footer_note_show = models.BooleanField(_("show footer note"), default=False)
 
     class Meta(BaseModel.Meta):
         verbose_name = _("legal foundation section")
@@ -270,6 +284,41 @@ class AboutLegalInfo(BaseModel):
 
     def __str__(self) -> str:
         return self.title
+
+
+class AboutLegalBadge(BaseModel):
+    """Small pill badge shown inside the org-info card (e.g. #IRDM, A-2157)."""
+
+    legal_info = models.ForeignKey(
+        AboutLegalInfo, on_delete=models.CASCADE,
+        related_name="org_badges", verbose_name=_("legal section"),
+    )
+    label = models.CharField(_("label"), max_length=100)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("org badge")
+        verbose_name_plural = _("org badges")
+
+    def __str__(self) -> str:
+        return self.label
+
+
+class AboutLegalOrgAttribute(BaseModel):
+    """A key-value attribute row inside the org-info card (e.g. Loại hình / Tổ chức KHCN)."""
+
+    legal_info = models.ForeignKey(
+        AboutLegalInfo, on_delete=models.CASCADE,
+        related_name="org_attributes", verbose_name=_("legal section"),
+    )
+    key = models.CharField(_("label"), max_length=200)
+    value = models.CharField(_("value"), max_length=500)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("org attribute")
+        verbose_name_plural = _("org attributes")
+
+    def __str__(self) -> str:
+        return f"{self.key}: {self.value}"
 
 
 class AboutLegalTimelineItem(BaseModel):
@@ -282,6 +331,7 @@ class AboutLegalTimelineItem(BaseModel):
     year = models.CharField(_("year"), max_length=20)
     title = models.CharField(_("title"), max_length=300)
     description = models.TextField(_("description"), blank=True)
+    icon_image = models.ImageField(_("icon image"), upload_to="about/legal/icons/", blank=True)
     document_url = models.CharField(_("document URL"), max_length=500, blank=True)
     document_label = models.CharField(_("document link label"), max_length=100, blank=True)
 

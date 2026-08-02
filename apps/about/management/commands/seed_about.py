@@ -21,6 +21,8 @@ from apps.about.models import (
     AboutHighlightCard,
     AboutIntroduction,
     AboutLegalInfo,
+    AboutLegalBadge,
+    AboutLegalOrgAttribute,
     AboutLegalTimelineItem,
     AboutNetworkSectionHeader,
     AboutPageSEO,
@@ -309,27 +311,61 @@ class Command(BaseCommand):
 
     def _seed_legal(self) -> None:
         legal, _ = AboutLegalInfo.objects.get_or_create(
-            title="NỀN TẢNG PHÁP LÝ & LỊCH SỬ HÌNH THÀNH",
+            title="PHÁP LÝ VÀ PHẠM VI HOẠT ĐỘNG",
             defaults={
-                "section_label": "Pháp lý",
-                "description": "IRDM được thành lập và hoạt động theo đúng quy định pháp luật Việt Nam, với nền tảng pháp lý vững chắc và lộ trình phát triển rõ ràng.",
+                "section_label": "THÔNG TIN PHÁP LÝ",
+                "description": (
+                    "IRDM là tổ chức khoa học và công nghệ được thành lập, đăng ký hoạt động và vận hành theo các quy "
+                    "định pháp luật hiện hành liên quan đến tổ chức khoa học và công nghệ tại Việt Nam."
+                ),
+                "org_card_label": "THÔNG TIN TỔ CHỨC",
+                "org_name": "Viện Nghiên cứu Phát triển Nguồn lực Việt",
+                "timeline_card_title": "CỘT MỐC PHÁP LÝ",
+                "footer_note": (
+                    "Lưu ý trước khi public: Đối chiếu lần cuối thông tin pháp lý với bản scan/hồ sơ gốc của IRDM "
+                    "và đồng bộ với footer/trang Liên hệ."
+                ),
+                "footer_note_show": True,
                 "is_active": True,
                 "display_order": 0,
             }
         )
+        if not _:
+            legal.section_label = "THÔNG TIN PHÁP LÝ"
+            legal.org_card_label = "THÔNG TIN TỔ CHỨC"
+            legal.org_name = "Viện Nghiên cứu Phát triển Nguồn lực Việt"
+            legal.timeline_card_title = "CỘT MỐC PHÁP LÝ"
+            legal.footer_note_show = True
+            legal.save()
 
-        timeline_data = [
-            ("2014", "Thành lập Trung tâm Nghiên cứu Liên ngành", "Tiền thân của IRDM, hoạt động trong lĩnh vực nghiên cứu chính sách và phát triển bền vững.", "", "", 0),
-            ("2016", "Mở rộng mạng lưới chuyên gia", "Kết nạp 100+ chuyên gia và nhà khoa học từ các trường đại học và viện nghiên cứu hàng đầu.", "", "", 1),
-            ("2018", "Nâng cấp lên Viện Nghiên cứu", "Chính thức trở thành Viện Nghiên cứu & Phát triển Liên ngành (IRDM) với tư cách pháp nhân độc lập.", "", "", 2),
-            ("2020", "Hợp tác quốc tế", "Ký kết thỏa thuận hợp tác với các tổ chức nghiên cứu uy tín tại Singapore, Nhật Bản và Hàn Quốc.", "", "", 3),
-            ("2022", "Ra mắt Nền tảng Tri thức IRDM", "Xây dựng hệ thống chia sẻ tri thức và kết nối chuyên gia trực tuyến.", "", "", 4),
-            ("2024", "Mở rộng hoạt động khu vực", "Thiết lập văn phòng đại diện tại TP.HCM và mở rộng hoạt động sang các nước ASEAN.", "", "", 5),
-        ]
-        for year, title, description, doc_url, doc_label, order in timeline_data:
-            AboutLegalTimelineItem.objects.get_or_create(
-                legal_info=legal, year=year, title=title,
-                defaults={"description": description, "document_url": doc_url, "document_label": doc_label, "display_order": order, "is_active": True}
+        # Deactivate old timeline, recreate to match Figma
+        AboutLegalTimelineItem.objects.filter(legal_info=legal).delete()
+
+        # Org badges
+        AboutLegalBadge.objects.filter(legal_info=legal).delete()
+        for i, label in enumerate(["#IRDM", "A-2157", "0316181955"]):
+            AboutLegalBadge.objects.create(legal_info=legal, label=label, display_order=i, is_active=True)
+
+        # Org key-value attributes
+        AboutLegalOrgAttribute.objects.filter(legal_info=legal).delete()
+        for key, value, order in [
+            ("Loại hình", "Tổ chức khoa học và công nghệ định hướng ứng dụng", 0),
+            ("Mã số định danh", "079211913489", 1),
+        ]:
+            AboutLegalOrgAttribute.objects.create(
+                legal_info=legal, key=key, value=value, display_order=order, is_active=True
+            )
+
+        # Timeline — real IRDM legal milestones per Figma
+        for year, title, description, order in [
+            ("2019", "Thành lập", "Quyết định thành lập số 1111/QĐ-LHHVN do Liên hiệp các Hội Khoa học và Kỹ thuật Việt Nam cấp ngày 01/11/2019.", 0),
+            ("2019", "Đăng ký hoạt động KHCN", "Giấy chứng nhận đăng ký hoạt động KHCN số A-2157 do Bộ Khoa học và Công nghệ cấp ngày 29/11/2019.", 1),
+            ("2020", "Đăng ký thuế", "Mã số thuế 0316181955. Giấy chứng nhận đăng ký thuế do Bộ Tài chính cấp ngày 04/03/2020.", 2),
+            ("2020", "Phạm vi hoạt động", "Y tế, giáo dục, môi trường, phát triển nguồn lực, nghiên cứu ứng dụng, dữ liệu, công nghệ, phát triển năng lực và các sáng kiến KHCN&ĐMST phù hợp với chức năng của Viện.", 3),
+        ]:
+            AboutLegalTimelineItem.objects.create(
+                legal_info=legal, year=year, title=title, description=description,
+                display_order=order, is_active=True,
             )
         self.stdout.write("  ✓ Legal Foundation")
 
