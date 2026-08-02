@@ -479,6 +479,13 @@ class AboutTargetAudienceSection(BaseModel):
     description = models.TextField(_("description"), blank=True)
     cta_label = models.CharField(_("CTA label"), max_length=100, blank=True)
     cta_url = models.CharField(_("CTA URL"), max_length=500, blank=True)
+    background_color = models.CharField(
+        _("background color"), max_length=100, blank=True,
+        help_text=_("CSS hex color for section background, e.g. #0b3d6b for dark navy. Leave blank for white."),
+    )
+    background_image = models.ImageField(
+        _("background image"), upload_to="about/audience/bg/", blank=True,
+    )
 
     class Meta(BaseModel.Meta):
         verbose_name = _("target audience section")

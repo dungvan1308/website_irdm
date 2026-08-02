@@ -508,32 +508,61 @@ class Command(BaseCommand):
     # ─── Target Audience ──────────────────────────────────────────────────────
 
     def _seed_target_audience(self) -> None:
-        section, _ = AboutTargetAudienceSection.objects.get_or_create(
-            title="IRDM ĐỒNG HÀNH CÙNG NHỮNG AI?",
+        section, created = AboutTargetAudienceSection.objects.get_or_create(
+            title="IRDM ĐỒNG HÀNH VỚI NHỮNG AI?",
             defaults={
-                "section_label": "Đối tượng phục vụ",
-                "description": "Chúng tôi hợp tác với đa dạng các tổ chức và cá nhân muốn tạo ra tác động tích cực",
-                "cta_label": "Tìm hiểu cách hợp tác",
-                "cta_url": "/lien-he/",
+                "section_label": "ĐỐI TÁC HỢP TÁC",
+                "description": (
+                    "Viện IRDM vận hành theo mô hình kết nối chuyên môn linh hoạt. Mỗi bài toán được tiếp cận "
+                    "từ nhu cầu thực tế, sau đó IRDM huy động tổ hợp nhà khoa học, chuyên gia thực hành, giảng "
+                    "viên, cố vấn và nhóm triển khai phù hợp."
+                ),
+                "cta_label": "Khám phá giải pháp",
+                "cta_url": "/giai-phap/",
+                "background_color": "#0b3d6b",
                 "is_active": True,
                 "display_order": 0,
             }
         )
+        if not created:
+            # Update fields on existing record to match Figma
+            AboutTargetAudienceSection.objects.filter(pk=section.pk).update(
+                title="IRDM ĐỒNG HÀNH VỚI NHỮNG AI?",
+                section_label="ĐỐI TÁC HỢP TÁC",
+                cta_label="Khám phá giải pháp",
+                cta_url="/giai-phap/",
+                background_color="#0b3d6b",
+            )
 
         audiences_data = [
-            ("Cơ quan Chính phủ & Bộ ngành", "Tư vấn chính sách, nghiên cứu đánh giá tác động, hỗ trợ xây dựng chiến lược phát triển quốc gia và địa phương.", "Tìm hiểu thêm", "/lien-he/", 0),
-            ("Tổ chức Quốc tế & NGO", "Nghiên cứu nền tảng, đánh giá chương trình, phân tích bối cảnh để triển khai các dự án phát triển hiệu quả.", "Tìm hiểu thêm", "/lien-he/", 1),
-            ("Doanh nghiệp & Tập đoàn", "Nghiên cứu thị trường, phân tích xu hướng, tư vấn chiến lược ESG và phát triển bền vững.", "Tìm hiểu thêm", "/lien-he/", 2),
-            ("Trường Đại học & Viện NC", "Hợp tác nghiên cứu liên ngành, chia sẻ nguồn lực và xây dựng năng lực nghiên cứu.", "Tìm hiểu thêm", "/lien-he/", 3),
-            ("Nhà khoa học & Chuyên gia", "Tham gia mạng lưới nghiên cứu, chia sẻ tri thức và đóng góp vào các dự án có tác động xã hội.", "Tham gia mạng lưới", "/chuyen-gia/", 4),
-            ("Tổ chức xã hội dân sự", "Hỗ trợ nghiên cứu vận động chính sách, đánh giá nhu cầu và theo dõi tác động xã hội.", "Tìm hiểu thêm", "/lien-he/", 5),
+            ("Cơ quan quản lý",
+             "Cung cố căn cứ khoa học, dữ liệu và cơ chế phối hợp cho chương trình, đề án và nhiệm vụ KHCN&ĐMST.",
+             "Xem giải pháp", "/giai-phap/", 0),
+            ("Hệ thống y tế",
+             "Làm rõ bài toán ưu tiên, dữ liệu sẵn có và lộ trình thí điểm để hỗ trợ quản trị, chất lượng dịch vụ và đổi mới hệ thống.",
+             "Xem giải pháp", "/giai-phap/", 1),
+            ("Trường đại học",
+             "Hỗ trợ đổi mới chương trình, phát triển người học, khai thác dữ liệu giáo dục và xây dựng môi trường học thuật lành mạnh.",
+             "Xem giải pháp", "/giai-phap/", 2),
+            ("Doanh nghiệp",
+             "Thiết kế sáng kiến phát triển con người, wellbeing và trách nhiệm xã hội gắn với mục tiêu tổ chức.",
+             "Xem giải pháp", "/giai-phap/", 3),
+            ("Tổ chức quốc tế",
+             "Kết nối tri thức quốc tế với bối cảnh Việt Nam để thiết kế, triển khai và đánh giá các sáng kiến liên ngành có khả năng duy trì.",
+             "Xem giải pháp", "/giai-phap/", 4),
         ]
         for title, description, cta_label, cta_url, order in audiences_data:
             AboutTargetAudience.objects.get_or_create(
                 section=section, title=title,
-                defaults={"description": description, "cta_label": cta_label, "cta_url": cta_url, "display_order": order, "is_active": True}
+                defaults={
+                    "description": description,
+                    "cta_label": cta_label,
+                    "cta_url": cta_url,
+                    "display_order": order,
+                    "is_active": True,
+                }
             )
-        self.stdout.write("  ✓ Target Audience")
+        self.stdout.write("  \u2713 Target Audience")
 
     # ─── Ecosystem ────────────────────────────────────────────────────────────
 

@@ -271,7 +271,12 @@ class AboutTargetAudienceSectionAdmin(admin.ModelAdmin):
     list_editable = ("display_order", "is_active")
     inlines = [AboutTargetAudienceInline]
     fieldsets = (
-        ("Content", {"fields": ("section_label", "title", "description", "cta_label", "cta_url")}),
+        ("Content", {"fields": ("section_label", "title", "description")}),
+        ("CTA", {"fields": ("cta_label", "cta_url")}),
+        ("Background", {
+            "fields": ("background_color", "background_image"),
+            "description": "background_color: CSS hex e.g. #0b3d6b for dark navy. Leave blank for white.",
+        }),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 
