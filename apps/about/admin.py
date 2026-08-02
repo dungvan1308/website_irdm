@@ -16,6 +16,8 @@ from .models import (
     AboutHighlightCard,
     AboutIntroduction,
     AboutLegalInfo,
+    AboutLegalBadge,
+    AboutLegalOrgAttribute,
     AboutLegalTimelineItem,
     AboutNetworkSectionHeader,
     AboutPageSEO,
@@ -133,6 +135,11 @@ class AboutVisionMissionAdmin(admin.ModelAdmin):
 @admin.register(AboutCoreValueSection)
 class AboutCoreValueSectionAdmin(admin.ModelAdmin):
     list_display = ("title", "is_active")
+    fieldsets = (
+        ("Content", {"fields": ("section_label", "title", "description")}),
+        ("Background", {"fields": ("background_image",)}),
+        ("Status", {"fields": ("is_active", "display_order")}),
+    )
 
 
 @admin.register(AboutCoreValue)
@@ -147,20 +154,37 @@ class AboutCoreValueAdmin(admin.ModelAdmin):
 
 # ─── Legal Foundation ─────────────────────────────────────────────────────────
 
+class AboutLegalBadgeInline(admin.TabularInline):
+    model = AboutLegalBadge
+    extra = 1
+    fields = ("label", "display_order", "is_active")
+
+
+class AboutLegalOrgAttributeInline(admin.TabularInline):
+    model = AboutLegalOrgAttribute
+    extra = 1
+    fields = ("key", "value", "display_order", "is_active")
+
+
 class AboutLegalTimelineItemInline(admin.TabularInline):
     model = AboutLegalTimelineItem
     extra = 1
-    fields = ("year", "title", "description", "document_url", "document_label", "display_order", "is_active")
+    fields = ("year", "title", "description", "icon_image", "document_url", "document_label", "display_order", "is_active")
 
 
 @admin.register(AboutLegalInfo)
 class AboutLegalInfoAdmin(admin.ModelAdmin):
     list_display = ("title", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
-    inlines = [AboutLegalTimelineItemInline]
+    inlines = [AboutLegalBadgeInline, AboutLegalOrgAttributeInline, AboutLegalTimelineItemInline]
     fieldsets = (
-        ("Content", {"fields": ("section_label", "title", "description")}),
-        ("Image", {"fields": ("image", "image_alt")}),
+        ("Section Header", {"fields": ("section_label", "title", "description")}),
+        ("Left Column Image", {"fields": ("image", "image_alt")}),
+        ("Org Info Card", {"fields": ("org_card_label", "org_name"),
+                           "description": "Badges and key/value attributes are managed via inlines below."}),
+        ("Right Column", {"fields": ("timeline_card_title",)}),
+        ("Footer Note", {"fields": ("footer_note", "footer_note_show")}),
+        ("Background", {"fields": ("background_image",)}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 

@@ -1,79 +1,200 @@
 {% load i18n %}
-{# Section 6: Legal Foundation #}
+{# Section 6: Legal Foundation — 2-column Figma layout #}
 {% if legal_info %}
-<section class="bg-slate-50 py-16 lg:py-24 border-t border-slate-100" aria-labelledby="legal-heading">
-  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+<section class="bg-slate-50 py-16 lg:py-24 relative overflow-hidden" aria-labelledby="legal-heading">
 
-    {% if legal_info.section_label %}
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-primary-50 border border-primary-200 rounded-full mb-6">
-        <span class="w-1.5 h-1.5 rounded-full bg-primary-600 flex-shrink-0" aria-hidden="true"></span>
-        <span class="text-primary-700 text-xs font-semibold uppercase tracking-wider">{{ legal_info.section_label }}</span>
-      </div>
-    {% endif %}
+  {# Optional CMS background image #}
+  {% if legal_info.background_image %}
+  <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+    <img src="{{ legal_info.background_image.url }}" alt="" class="w-full h-full object-cover opacity-5" />
+  </div>
+  {% endif %}
 
-    <h2 id="legal-heading" class="font-utm-banque font-normal text-[28px] sm:text-[36px] lg:text-[42px] leading-[1.15] text-primary-950 uppercase mb-10">
-      {{ legal_info.title }}
-    </h2>
+  {# Diagonal line decoration — Figma subtle background strokes #}
+  <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+    <svg class="absolute top-0 right-0 opacity-10" width="600" height="500" viewBox="0 0 600 500" fill="none">
+      <line x1="600" y1="0" x2="0" y2="500" stroke="#1e3a5f" stroke-width="1"/>
+      <line x1="650" y1="0" x2="50" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+      <line x1="700" y1="0" x2="100" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    </svg>
+  </div>
 
-    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+  <div class="relative max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-20">
 
-      {# Left: image #}
-      {% if legal_info.image %}
-        <div class="lg:w-[420px] xl:w-[480px] flex-shrink-0">
-          <div class="sticky top-24 rounded-2xl overflow-hidden shadow-xl">
+    {# ── 2-column grid ── #}
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
+
+      {# ─────────────── LEFT COLUMN ─────────────── #}
+      <div class="flex-1 min-w-0">
+
+        {# Badge #}
+        {% if legal_info.section_label %}
+          <div class="flex items-center gap-2.5 mb-5">
+            <div class="w-8 bg-primary-600 flex-shrink-0" style="height:2px" aria-hidden="true"></div>
+            <span class="text-primary-700 text-xs font-bold uppercase tracking-widest">{{ legal_info.section_label }}</span>
+          </div>
+        {% endif %}
+
+        {# Heading #}
+        <h2 id="legal-heading"
+            class="font-utm-banque font-normal leading-tight uppercase mb-5"
+            style="font-size:clamp(26px,3.5vw,44px);color:#094977">
+          {{ legal_info.title }}
+        </h2>
+
+        {# Description #}
+        {% if legal_info.description %}
+          <p class="text-slate-600 leading-relaxed mb-8" style="font-size:16px">
+            {{ legal_info.description }}
+          </p>
+        {% endif %}
+
+        {# Photo #}
+        {% if legal_info.image %}
+          <div class="rounded-2xl overflow-hidden shadow-lg mb-6">
             <img src="{{ legal_info.image.url }}"
                  alt="{{ legal_info.image_alt|default:legal_info.title }}"
                  class="w-full h-auto object-cover"
                  loading="lazy" />
           </div>
-        </div>
-      {% endif %}
-
-      {# Right: timeline #}
-      <div class="flex-1 min-w-0">
-        {% if legal_info.description %}
-          <p class="text-slate-600 leading-relaxed mb-8">{{ legal_info.description }}</p>
         {% endif %}
 
-        {% with items=legal_info.timeline_items.all %}
-          {% if items %}
-            <div class="relative">
-              {# Vertical line #}
-              <div class="absolute left-[22px] top-0 bottom-0 w-0.5 bg-slate-200" aria-hidden="true"></div>
+        {# ── Org Info Card ── #}
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
 
-              <ol class="space-y-8" role="list">
+          {# Card label #}
+          {% if legal_info.org_card_label %}
+            <p class="text-xs font-bold uppercase tracking-widest mb-2"
+               style="color:#1565C0;font-family:'SF Pro Display','San Francisco Display',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif">
+              {{ legal_info.org_card_label }}
+            </p>
+          {% endif %}
+
+          {# Org name #}
+          {% if legal_info.org_name %}
+            <h3 class="font-bold mb-4"
+                style="font-size:17px;line-height:1.4;color:#094977;font-family:'SF Pro Display','San Francisco Display',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif">
+              {{ legal_info.org_name }}
+            </h3>
+          {% endif %}
+
+          {# Badges row #}
+          {% with badges=legal_info.org_badges.all %}
+            {% if badges %}
+              <div class="flex flex-wrap gap-2 mb-5">
+                {% for badge in badges %}
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold text-white"
+                        style="background:#1e3a5f">
+                    {{ badge.label }}
+                  </span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endwith %}
+
+          {# Key-value attributes #}
+          {% with attrs=legal_info.org_attributes.all %}
+            {% if attrs %}
+              <div class="divide-y divide-slate-100">
+                {% for attr in attrs %}
+                  <div class="flex justify-between items-start py-2.5 gap-4">
+                    <span class="text-slate-500 text-sm flex-shrink-0">{{ attr.key }}</span>
+                    <span class="font-semibold text-sm text-right" style="color:#094977">{{ attr.value }}</span>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endwith %}
+
+        </div>
+      </div>
+
+      {# ─────────────── RIGHT COLUMN ─────────────── #}
+      <div class="w-full lg:w-[420px] xl:w-[460px] flex-shrink-0">
+        {# SF Pro Display = native Apple system font; falls back to system-ui on other platforms #}
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6"
+             style="font-family:'SF Pro Display','San Francisco Display',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif">
+
+          {# Card header row #}
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#1565C0">
+              {{ legal_info.timeline_card_title|default:"CỘT MỐC PHÁP LÝ" }}
+            </h3>
+            <div class="flex items-center gap-1.5 text-slate-400 text-xs">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+              </svg>
+              <span>Timeline</span>
+            </div>
+          </div>
+
+          {# Timeline — connector line via flex column inside each li, not absolute positioning #}
+          {% with items=legal_info.timeline_items.all %}
+            {% if items %}
+              <ol role="list">
                 {% for item in items %}
-                  <li class="relative flex gap-6 pl-14">
-                    {# Year dot #}
-                    <div class="absolute left-0 top-1 w-11 h-11 rounded-full bg-white border-2 border-primary-200 flex items-center justify-center flex-shrink-0 z-10">
-                      <span class="text-[10px] font-bold text-primary-700 leading-tight text-center">{{ item.year }}</span>
+                  <li class="flex gap-4 items-stretch">
+
+                    {# Left: badge + connector column #}
+                    <div class="flex flex-col items-center flex-shrink-0" style="width:52px">
+                      {% if item.icon_image %}
+                        <div class="rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center border-2 border-orange-400 bg-white"
+                             style="width:52px;height:52px">
+                          <img src="{{ item.icon_image.url }}" alt="" class="w-8 h-8 object-contain" aria-hidden="true"/>
+                        </div>
+                      {% else %}
+                        {# Figma: white circle, orange border and text #}
+                        <div class="flex-shrink-0 rounded-full flex items-center justify-center bg-white"
+                             style="width:52px;height:52px;border:2px solid #ea580c">
+                          <span class="font-bold leading-none" style="color:#ea580c;font-size:13px">{{ item.year }}</span>
+                        </div>
+                      {% endif %}
+                      {# Connector: grows to fill vertical space between this and next item #}
+                      {% if not forloop.last %}
+                        <div class="flex-1 w-px mt-2 mb-0" style="background:#e2e8f0;min-height:20px"></div>
+                      {% endif %}
                     </div>
 
-                    {# Content #}
-                    <div class="flex-1 min-w-0 pb-2">
-                      <h3 class="font-semibold text-slate-900 mb-1">{{ item.title }}</h3>
+                    {# Right: content #}
+                    <div class="flex-1 min-w-0 {% if not forloop.last %}pb-5{% endif %} pt-1">
+                      <h4 class="font-semibold mb-1" style="font-size:14px;line-height:1.4;color:#094977">
+                        {{ item.title }}
+                      </h4>
                       {% if item.description %}
-                        <p class="text-slate-500 text-sm leading-relaxed mb-2">{{ item.description }}</p>
+                        <p class="text-slate-500 leading-relaxed" style="font-size:13px">{{ item.description }}</p>
                       {% endif %}
                       {% if item.document_url %}
                         <a href="{{ item.document_url }}" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary-600 hover:text-primary-800 transition-colors">
-                          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                           class="inline-flex items-center gap-1 text-xs font-semibold text-primary-600 hover:text-primary-800 mt-1.5 transition-colors">
+                          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                           </svg>
                           {{ item.document_label|default:_("Xem tài liệu") }}
                         </a>
                       {% endif %}
                     </div>
+
                   </li>
                 {% endfor %}
               </ol>
-            </div>
-          {% endif %}
-        {% endwith %}
+            {% endif %}
+          {% endwith %}
+
+        </div>
       </div>
 
     </div>
+
+    {# ── Footer Note ── #}
+    {% if legal_info.footer_note_show and legal_info.footer_note %}
+      <div class="mt-8 flex items-start gap-3 rounded-xl px-5 py-4" style="background:#fef3c7;border:1px solid #fde68a">
+        <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#d97706" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
+        </svg>
+        <p class="text-sm leading-relaxed" style="color:#92400e">{{ legal_info.footer_note }}</p>
+      </div>
+    {% endif %}
+
   </div>
 </section>
 {% endif %}

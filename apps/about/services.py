@@ -74,7 +74,7 @@ class AboutService:
         return (
             AboutLegalInfo.objects
             .filter(is_active=True)
-            .prefetch_related("timeline_items")
+            .prefetch_related("timeline_items", "org_badges", "org_attributes")
             .first()
         )
 
