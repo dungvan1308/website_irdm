@@ -3,40 +3,43 @@
 {% if partner_benefit_section %}
 {% with s=partner_benefit_section %}
 
-{% comment %}KPI BANNER — dark-navy strip; hidden when all three CMS fields are blank{% endcomment %}
+{% comment %}KPI BANNER — rounded card inside page container, matching Figma{% endcomment %}
 {% if s.banner_badge or s.banner_quote or s.kpi_value %}
-<div class="relative overflow-hidden" style="background:#0b3d6b" aria-label="{% trans 'Giá trị đối tác' %}">
-  <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
-    <svg class="absolute right-0 top-0 opacity-10" width="700" height="120" viewBox="0 0 700 120" fill="none">
-      <line x1="700" y1="0" x2="0" y2="120" stroke="white" stroke-width="1"/>
-      <line x1="740" y1="0" x2="40" y2="120" stroke="white" stroke-width="0.6"/>
-      <line x1="780" y1="0" x2="80" y2="120" stroke="white" stroke-width="0.4"/>
-    </svg>
-  </div>
-  <div class="relative max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-20 py-5
-              flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
-    <div class="flex-1 min-w-0 flex flex-col gap-2.5">
-      {% if s.banner_badge %}
-        <span class="inline-flex items-center self-start px-3 py-1 rounded text-xs font-semibold uppercase tracking-wider"
-              style="background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.9);letter-spacing:.08em">
-          {{ s.banner_badge }}
-        </span>
-      {% endif %}
-      {% if s.banner_quote %}
-        <p class="text-white leading-relaxed" style="font-size:14px;font-style:italic;opacity:.92">
-          "{{ s.banner_quote }}"
-        </p>
-      {% endif %}
-    </div>
-    {% if s.kpi_value %}
-      <div class="flex-shrink-0 rounded-xl px-5 py-3 text-right"
-           style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);min-width:140px">
-        {% if s.kpi_label %}
-          <p class="text-xs font-semibold uppercase tracking-widest mb-0.5" style="color:rgba(255,255,255,.55)">{{ s.kpi_label }}</p>
-        {% endif %}
-        <p class="font-bold" style="font-size:15px;color:#fff">{{ s.kpi_value }}</p>
+<div class="bg-white pt-10">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-20">
+    <div class="relative overflow-hidden rounded-2xl" style="background:#0b3d6b" aria-label="{% trans 'Giá trị đối tác' %}">
+      <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+        <svg class="absolute right-0 top-0 opacity-10" width="700" height="120" viewBox="0 0 700 120" fill="none">
+          <line x1="700" y1="0" x2="0" y2="120" stroke="white" stroke-width="1"/>
+          <line x1="740" y1="0" x2="40" y2="120" stroke="white" stroke-width="0.6"/>
+          <line x1="780" y1="0" x2="80" y2="120" stroke="white" stroke-width="0.4"/>
+        </svg>
       </div>
-    {% endif %}
+      <div class="relative px-7 py-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
+        <div class="flex-1 min-w-0 flex flex-col gap-2">
+          {% if s.banner_badge %}
+            <span class="inline-flex items-center self-start px-2.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wider"
+                  style="background:rgba(255,255,255,0.14);color:rgba(255,255,255,0.75);letter-spacing:.08em">
+              {{ s.banner_badge }}
+            </span>
+          {% endif %}
+          {% if s.banner_quote %}
+            <p class="text-white font-medium leading-snug" style="font-size:15px">
+              "{{ s.banner_quote }}"
+            </p>
+          {% endif %}
+        </div>
+        {% if s.kpi_value %}
+          <div class="flex-shrink-0 rounded-xl px-5 py-3 text-right"
+               style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);min-width:148px">
+            {% if s.kpi_label %}
+              <p class="text-xs font-semibold uppercase tracking-widest mb-0.5" style="color:rgba(255,255,255,.5)">{{ s.kpi_label }}</p>
+            {% endif %}
+            <p class="font-bold" style="font-size:16px;color:#fff">{{ s.kpi_value }}</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>
 {% endif %}
