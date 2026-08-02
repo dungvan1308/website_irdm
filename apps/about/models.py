@@ -242,6 +242,8 @@ class AboutCoreValueSection(BaseModel):
     section_label = models.CharField(_("section label"), max_length=200, blank=True)
     title = models.CharField(_("title"), max_length=300)
     description = models.TextField(_("description"), blank=True)
+    background_image = models.ImageField(_("background image"), upload_to="about/core_values/", blank=True,
+                                         help_text=_("Optional background image overlaid on the Core Values section."))
 
     class Meta(BaseModel.Meta):
         verbose_name = _("core values section")

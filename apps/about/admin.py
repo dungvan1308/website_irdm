@@ -133,6 +133,11 @@ class AboutVisionMissionAdmin(admin.ModelAdmin):
 @admin.register(AboutCoreValueSection)
 class AboutCoreValueSectionAdmin(admin.ModelAdmin):
     list_display = ("title", "is_active")
+    fieldsets = (
+        ("Content", {"fields": ("section_label", "title", "description")}),
+        ("Background", {"fields": ("background_image",)}),
+        ("Status", {"fields": ("is_active", "display_order")}),
+    )
 
 
 @admin.register(AboutCoreValue)

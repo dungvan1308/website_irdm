@@ -3,6 +3,12 @@
 {% if core_values %}
 <section class="bg-white py-16 lg:py-24 relative overflow-hidden" aria-labelledby="values-heading">
 
+  {% if core_value_section.background_image %}
+  <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+    <img src="{{ core_value_section.background_image.url }}" alt="" class="w-full h-full object-cover opacity-10" />
+  </div>
+  {% endif %}
+
   {# Background decorations — CSS blobs matching Figma light blue/amber tones #}
   <div class="absolute pointer-events-none select-none" aria-hidden="true"
        style="top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(219,234,254,0.5)"></div>
