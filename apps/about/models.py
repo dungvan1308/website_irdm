@@ -609,12 +609,26 @@ class AboutContactBanner(BaseModel):
 
     title = models.CharField(_("title"), max_length=300)
     description = models.TextField(_("description"), blank=True)
+    background_image = models.ImageField(_("background image"), upload_to="about/contact/", blank=True)
+
+    # Primary CTA (orange filled)
+    cta1_label = models.CharField(_("CTA 1 label"), max_length=100, blank=True)
+    cta1_url = models.CharField(_("CTA 1 URL"), max_length=500, blank=True)
+    # Secondary CTA 1 (white outline)
+    cta2_label = models.CharField(_("CTA 2 label"), max_length=100, blank=True)
+    cta2_url = models.CharField(_("CTA 2 URL"), max_length=500, blank=True)
+    # Secondary CTA 2 (white outline)
+    cta3_label = models.CharField(_("CTA 3 label"), max_length=100, blank=True)
+    cta3_url = models.CharField(_("CTA 3 URL"), max_length=500, blank=True)
+
+    quote_text = models.CharField(_("quote text"), max_length=500, blank=True)
+
+    # Legacy contact fields (kept for backward compatibility)
     hotline = models.CharField(_("hotline"), max_length=50, blank=True)
     email = models.EmailField(_("email"), blank=True)
     facebook_url = models.CharField(_("Facebook URL"), max_length=500, blank=True)
     linkedin_url = models.CharField(_("LinkedIn URL"), max_length=500, blank=True)
     youtube_url = models.CharField(_("YouTube URL"), max_length=500, blank=True)
-    background_image = models.ImageField(_("background image"), upload_to="about/contact/", blank=True)
 
     class Meta(BaseModel.Meta):
         verbose_name = _("contact banner")
@@ -622,6 +636,28 @@ class AboutContactBanner(BaseModel):
 
     def __str__(self) -> str:
         return self.title
+
+
+class AboutContactBannerStat(BaseModel):
+    """A statistic pill displayed inside the contact banner."""
+
+    banner = models.ForeignKey(
+        AboutContactBanner, on_delete=models.CASCADE,
+        related_name="stats", verbose_name=_("banner"),
+    )
+    number = models.CharField(_("number"), max_length=20, help_text="e.g. 500+")
+    label = models.CharField(_("label"), max_length=100, help_text="e.g. Chuyên gia")
+    # icon_key: users | building | clipboard | clock | star | globe
+    icon_key = models.CharField(_("icon key"), max_length=50, blank=True,
+                                help_text="users, building, clipboard, clock, star, globe")
+
+    class Meta(BaseModel.Meta):
+        ordering = ["display_order"]
+        verbose_name = _("contact banner stat")
+        verbose_name_plural = _("contact banner stats")
+
+    def __str__(self) -> str:
+        return f"{self.number} {self.label}"
 
 
 # ─── Section: Org Structure ───────────────────────────────────────────────────

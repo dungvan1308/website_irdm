@@ -8,6 +8,7 @@ from .models import (
     AboutCTABanner,
     AboutCapabilityEcosystem,
     AboutContactBanner,
+    AboutContactBannerStat,
     AboutCoreValue,
     AboutCoreValueSection,
     AboutHero,
@@ -133,4 +134,9 @@ class AboutService:
 
     @staticmethod
     def get_contact_banner() -> Optional[AboutContactBanner]:
-        return AboutContactBanner.objects.filter(is_active=True).first()
+        return (
+            AboutContactBanner.objects
+            .filter(is_active=True)
+            .prefetch_related("stats")
+            .first()
+        )

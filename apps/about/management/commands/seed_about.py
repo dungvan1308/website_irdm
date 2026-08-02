@@ -11,6 +11,7 @@ from apps.about.models import (
     AboutCTABanner,
     AboutCapabilityEcosystem,
     AboutContactBanner,
+    AboutContactBannerStat,
     AboutCoreValue,
     AboutCoreValueSection,
     AboutEcosystemPartnerGroup,
@@ -651,19 +652,52 @@ class Command(BaseCommand):
     # ─── Contact ──────────────────────────────────────────────────────────────
 
     def _seed_contact(self) -> None:
-        AboutContactBanner.objects.get_or_create(
-            title="KẾT NỐI VỚI IRDM",
+        banner, created = AboutContactBanner.objects.get_or_create(
+            display_order=0,
             defaults={
-                "description": "Liên hệ với chúng tôi để tìm hiểu thêm về các cơ hội hợp tác và nghiên cứu",
+                "title": "KẾT NỐI VỚI IRDM",
+                "description": (
+                    "Cùng IRDM thiết kế giải pháp phù hợp với bối cảnh, dữ liệu và mục tiêu phát triển "
+                    "của tổ chức của bạn."
+                ),
+                "cta1_label": "Liên hệ hợp tác",
+                "cta1_url": "/lien-he/",
+                "cta2_label": "Xem Năng lực IRDM",
+                "cta2_url": "/ve-irdm/",
+                "cta3_label": "Khám phá Giải pháp",
+                "cta3_url": "/giai-phap/",
+                "quote_text": "“TỪ NGHIÊN CỨU ĐẾN TÁC ĐỘNG Ờ TẦM HỆ THỐNG”",
                 "hotline": "024 3826 xxxx",
                 "email": "contact@irdm.vn",
-                "facebook_url": "https://facebook.com/irdm.vn",
-                "linkedin_url": "https://linkedin.com/company/irdm",
-                "youtube_url": "https://youtube.com/@irdmvn",
                 "is_active": True,
-                "display_order": 0,
             }
         )
+        if not created:
+            AboutContactBanner.objects.filter(pk=banner.pk).update(
+                title="KẾT NỐI VỚI IRDM",
+                description=(
+                    "Cùng IRDM thiết kế giải pháp phù hợp với bối cảnh, dữ liệu và mục tiêu phát triển "
+                    "của tổ chức của bạn."
+                ),
+                cta1_label="Liên hệ hợp tác",
+                cta1_url="/lien-he/",
+                cta2_label="Xem Năng lực IRDM",
+                cta2_url="/ve-irdm/",
+                cta3_label="Khám phá Giải pháp",
+                cta3_url="/giai-phap/",
+                quote_text="“TỪ NGHIÊN CỨU ĐẾN TÁC ĐỘNG Ờ TẦM HỆ THỐNG”",
+            )
+        stats_data = [
+            ("500+", "Chuyên gia", "users", 0),
+            ("50+", "Dự án", "building", 1),
+            ("20+", "Đối tác", "clipboard", 2),
+            ("10+", "Năm", "clock", 3),
+        ]
+        for number, label, icon_key, order in stats_data:
+            AboutContactBannerStat.objects.get_or_create(
+                banner=banner, label=label,
+                defaults={"number": number, "icon_key": icon_key, "display_order": order, "is_active": True}
+            )
         self.stdout.write("  \u2713 Contact Banner")
 
     # ─── Org Structure ────────────────────────────────────────────────────────
