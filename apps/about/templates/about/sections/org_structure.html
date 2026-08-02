@@ -1,0 +1,138 @@
+{% load i18n %}
+{# Section: Org Structure — TỔ CHỨC VÀ MẠNG LƯỚI CHUYÊN MÔN #}
+{% if org_structure_section %}
+{% with s=org_structure_section %}
+
+<section class="bg-white relative overflow-hidden py-16 lg:py-24"
+         aria-labelledby="org-structure-heading">
+
+  {# Background decoration image #}
+  {% if s.background_image %}
+    <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+      <img src="{{ s.background_image.url }}" alt=""
+           class="w-full h-full object-cover opacity-[0.04]" />
+    </div>
+  {% endif %}
+
+  {# Decorative blobs #}
+  <div class="absolute pointer-events-none select-none"
+       style="top:-100px;right:-60px;width:380px;height:380px;border-radius:50%;background:rgba(219,234,254,.4)"
+       aria-hidden="true"></div>
+  <div class="absolute pointer-events-none select-none"
+       style="bottom:-70px;left:-50px;width:260px;height:260px;border-radius:50%;background:rgba(254,243,199,.3)"
+       aria-hidden="true"></div>
+
+  <div class="relative max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-20">
+
+    {# ── Section Header ──────────────────────────────────────────────────── #}
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-14">
+
+      {# Left: badge + title + description #}
+      <div>
+        {% if s.section_label %}
+          <div class="flex items-center gap-2.5 mb-5">
+            <div class="w-8 bg-primary-600 flex-shrink-0" style="height:2px" aria-hidden="true"></div>
+            <span class="text-primary-700 text-xs font-bold uppercase tracking-widest">
+              {{ s.section_label }}
+            </span>
+          </div>
+        {% endif %}
+
+        <h2 id="org-structure-heading"
+            class="font-utm-banque font-normal leading-tight uppercase mb-5"
+            style="font-size:clamp(26px,3.6vw,44px);color:#094977">
+          {{ s.title }}
+        </h2>
+
+        {% if s.description %}
+          <p class="text-slate-600 leading-relaxed" style="font-size:15px;max-width:540px">
+            {{ s.description }}
+          </p>
+        {% endif %}
+      </div>
+
+      {# Right: CTA buttons #}
+      {% if s.primary_cta_label or s.secondary_cta_label %}
+        <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start lg:items-end xl:items-center gap-3 lg:justify-end">
+          {% if s.primary_cta_label and s.primary_cta_url %}
+            <a href="{{ s.primary_cta_url }}"
+               class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all shadow-md hover:-translate-y-0.5"
+               style="background:#f97316;color:#fff;box-shadow:0 4px 12px rgba(249,115,22,.25)"
+               onmouseover="this.style.background='#ea6c00'"
+               onmouseout="this.style.background='#f97316'">
+              {{ s.primary_cta_label }}
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+          {% if s.secondary_cta_label and s.secondary_cta_url %}
+            <a href="{{ s.secondary_cta_url }}"
+               class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all"
+               style="border:2px solid #f97316;color:#f97316;background:transparent"
+               onmouseover="this.style.background='rgba(249,115,22,.06)'"
+               onmouseout="this.style.background='transparent'">
+              {{ s.secondary_cta_label }}
+              <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    {# ── Structure Cards Grid ─────────────────────────────────────────────── #}
+    {% with cards=s.cards.all %}
+      {% if cards %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+          {% for card in cards %}
+            {% if card.is_active %}
+              {% with ct=card.color_theme %}
+              {# Resolve color values per theme #}
+              {% if ct == "navy" %}
+                {% with bar_bg="#0b3d6b" icon_bg="#0b3d6b" bullet_color="#0b3d6b" %}
+                  {% include "about/sections/_org_card.html" with card=card bar_bg=bar_bg icon_bg=icon_bg bullet_color=bullet_color %}
+                {% endwith %}
+              {% elif ct == "blue" %}
+                {% with bar_bg="#1a56b0" icon_bg="#1a56b0" bullet_color="#1a56b0" %}
+                  {% include "about/sections/_org_card.html" with card=card bar_bg=bar_bg icon_bg=icon_bg bullet_color=bullet_color %}
+                {% endwith %}
+              {% elif ct == "orange" %}
+                {% with bar_bg="#f97316" icon_bg="#f97316" bullet_color="#f97316" %}
+                  {% include "about/sections/_org_card.html" with card=card bar_bg=bar_bg icon_bg=icon_bg bullet_color=bullet_color %}
+                {% endwith %}
+              {% elif ct == "amber" %}
+                {% with bar_bg="#d97706" icon_bg="#d97706" bullet_color="#d97706" %}
+                  {% include "about/sections/_org_card.html" with card=card bar_bg=bar_bg icon_bg=icon_bg bullet_color=bullet_color %}
+                {% endwith %}
+              {% elif ct == "purple" %}
+                {% with bar_bg="#7c3aed" icon_bg="#7c3aed" bullet_color="#7c3aed" %}
+                  {% include "about/sections/_org_card.html" with card=card bar_bg=bar_bg icon_bg=icon_bg bullet_color=bullet_color %}
+                {% endwith %}
+              {% elif ct == "teal" %}
+                {% with bar_bg="#0d9488" icon_bg="#0d9488" bullet_color="#0d9488" %}
+                  {% include "about/sections/_org_card.html" with card=card bar_bg=bar_bg icon_bg=icon_bg bullet_color=bullet_color %}
+                {% endwith %}
+              {% elif ct == "green" %}
+                {% with bar_bg="#16a34a" icon_bg="#16a34a" bullet_color="#16a34a" %}
+                  {% include "about/sections/_org_card.html" with card=card bar_bg=bar_bg icon_bg=icon_bg bullet_color=bullet_color %}
+                {% endwith %}
+              {% else %}
+                {# default: primary navy #}
+                {% with bar_bg="#094977" icon_bg="#094977" bullet_color="#094977" %}
+                  {% include "about/sections/_org_card.html" with card=card bar_bg=bar_bg icon_bg=icon_bg bullet_color=bullet_color %}
+                {% endwith %}
+              {% endif %}
+              {% endwith %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+  </div>
+</section>
+
+{% endwith %}
+{% endif %}

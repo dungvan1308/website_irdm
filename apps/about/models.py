@@ -605,3 +605,75 @@ class AboutContactBanner(BaseModel):
 
     def __str__(self) -> str:
         return self.title
+
+
+# ─── Section: Org Structure ───────────────────────────────────────────────────
+
+class AboutOrgStructureSection(BaseModel):
+    """CMS for the 'Tổ chức và Mạng lưới Chuyên môn' section header."""
+
+    section_label = models.CharField(_("section label"), max_length=200, blank=True,
+                                     help_text=_("Badge text, e.g. CẤU TRÚC"))
+    title = models.CharField(_("title"), max_length=300)
+    description = models.TextField(_("description"), blank=True)
+
+    # Primary CTA (orange filled)
+    primary_cta_label = models.CharField(_("primary CTA label"), max_length=100, blank=True)
+    primary_cta_url = models.CharField(_("primary CTA URL"), max_length=500, blank=True)
+
+    # Secondary CTA (outlined)
+    secondary_cta_label = models.CharField(_("secondary CTA label"), max_length=100, blank=True)
+    secondary_cta_url = models.CharField(_("secondary CTA URL"), max_length=500, blank=True)
+
+    background_image = models.ImageField(
+        _("background decoration"), upload_to="about/org_structure/bg/", blank=True,
+    )
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("org structure section")
+        verbose_name_plural = _("org structure sections")
+
+    def __str__(self) -> str:
+        return self.title
+
+
+class AboutOrgStructureCard(BaseModel):
+    """A single card in the Org Structure section."""
+
+    section = models.ForeignKey(
+        AboutOrgStructureSection, on_delete=models.CASCADE,
+        related_name="cards", verbose_name=_("section"),
+    )
+    icon = models.CharField(_("icon (heroicon name)"), max_length=100, blank=True)
+    icon_image = models.ImageField(_("icon image"), upload_to="about/org_structure/icons/", blank=True)
+    color_theme = models.CharField(
+        _("color theme"), max_length=50, blank=True,
+        help_text=_("Color name: navy | blue | orange | amber | purple | green | teal"),
+    )
+    title = models.CharField(_("title"), max_length=200)
+    view_more_label = models.CharField(_("view more label"), max_length=100, blank=True, default="Xem thêm")
+    view_more_url = models.CharField(_("view more URL"), max_length=500, blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("org structure card")
+        verbose_name_plural = _("org structure cards")
+
+    def __str__(self) -> str:
+        return self.title
+
+
+class AboutOrgStructureBulletItem(BaseModel):
+    """A bullet point inside an Org Structure card."""
+
+    card = models.ForeignKey(
+        AboutOrgStructureCard, on_delete=models.CASCADE,
+        related_name="bullet_items", verbose_name=_("card"),
+    )
+    text = models.CharField(_("text"), max_length=300)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("org structure bullet item")
+        verbose_name_plural = _("org structure bullet items")
+
+    def __str__(self) -> str:
+        return self.text

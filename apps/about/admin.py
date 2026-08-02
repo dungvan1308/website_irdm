@@ -20,6 +20,9 @@ from .models import (
     AboutLegalOrgAttribute,
     AboutLegalTimelineItem,
     AboutNetworkSectionHeader,
+    AboutOrgStructureBulletItem,
+    AboutOrgStructureCard,
+    AboutOrgStructureSection,
     AboutPageSEO,
     AboutPartnerBenefit,
     AboutPartnerBenefitSection,
@@ -310,6 +313,50 @@ class AboutEcosystemPartnerGroupAdmin(admin.ModelAdmin):
     list_display = ("title", "ecosystem", "color", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
     inlines = [AboutEcosystemPartnerItemInline]
+
+
+# ─── Org Structure ────────────────────────────────────────────────────────────
+
+class AboutOrgStructureBulletItemInline(admin.TabularInline):
+    model = AboutOrgStructureBulletItem
+    extra = 2
+    fields = ("text", "display_order", "is_active")
+
+
+class AboutOrgStructureCardInline(admin.StackedInline):
+    model = AboutOrgStructureCard
+    extra = 1
+    fields = (
+        "icon", "icon_image", "color_theme", "title",
+        "view_more_label", "view_more_url", "display_order", "is_active",
+    )
+    show_change_link = True
+
+
+@admin.register(AboutOrgStructureSection)
+class AboutOrgStructureSectionAdmin(admin.ModelAdmin):
+    list_display = ("title", "display_order", "is_active")
+    list_editable = ("display_order", "is_active")
+    inlines = [AboutOrgStructureCardInline]
+    fieldsets = (
+        ("Section Header", {"fields": ("section_label", "title", "description")}),
+        ("Primary CTA", {"fields": ("primary_cta_label", "primary_cta_url")}),
+        ("Secondary CTA", {"fields": ("secondary_cta_label", "secondary_cta_url")}),
+        ("Background", {"fields": ("background_image",)}),
+        ("Status", {"fields": ("is_active", "display_order")}),
+    )
+
+
+@admin.register(AboutOrgStructureCard)
+class AboutOrgStructureCardAdmin(admin.ModelAdmin):
+    list_display = ("title", "color_theme", "section", "display_order", "is_active")
+    list_editable = ("display_order", "is_active")
+    inlines = [AboutOrgStructureBulletItemInline]
+    fieldsets = (
+        ("Content", {"fields": ("section", "icon", "icon_image", "color_theme", "title")}),
+        ("Link", {"fields": ("view_more_label", "view_more_url")}),
+        ("Status", {"fields": ("is_active", "display_order")}),
+    )
 
 
 # ─── Contact Banner ───────────────────────────────────────────────────────────

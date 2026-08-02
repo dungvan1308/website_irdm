@@ -25,6 +25,9 @@ from apps.about.models import (
     AboutLegalOrgAttribute,
     AboutLegalTimelineItem,
     AboutNetworkSectionHeader,
+    AboutOrgStructureBulletItem,
+    AboutOrgStructureCard,
+    AboutOrgStructureSection,
     AboutPageSEO,
     AboutPartnerBenefit,
     AboutPartnerBenefitSection,
@@ -52,6 +55,7 @@ class Command(BaseCommand):
         self._seed_legal()
         self._seed_cta()
         self._seed_partner_benefits()
+        self._seed_org_structure()
         self._seed_network()
         self._seed_target_audience()
         self._seed_ecosystem()
@@ -599,4 +603,103 @@ class Command(BaseCommand):
                 "display_order": 0,
             }
         )
-        self.stdout.write("  ✓ Contact Banner")
+        self.stdout.write("  \u2713 Contact Banner")
+
+    # ─── Org Structure ────────────────────────────────────────────────────────
+
+    def _seed_org_structure(self) -> None:
+        section, _ = AboutOrgStructureSection.objects.get_or_create(
+            title="TỔ CHỨC VÀ MẠNG LƯỚI CHUYÊN MÔN",
+            defaults={
+                "section_label": "CẤU TRÚC",
+                "description": (
+                    "Viện IRDM vận hành theo mô hình kết nối chuyên môn linh hoạt. Mỗi bài toán được tiếp cận "
+                    "từ nhu cầu thực tế, sau đó IRDM huy động tổ hợp nhà khoa học, chuyên gia thực hành, giảng "
+                    "viên, cố vấn và nhóm triển khai phù hợp."
+                ),
+                "primary_cta_label": "Tìm chuyên gia",
+                "primary_cta_url": "/chuyen-gia/",
+                "secondary_cta_label": "Xem lĩnh vực chuyên môn",
+                "secondary_cta_url": "/nang-luc/",
+                "is_active": True,
+                "display_order": 0,
+            }
+        )
+
+        cards_data = [
+            {
+                "title": "Hội đồng khoa học",
+                "color_theme": "navy",
+                "view_more_label": "Xem thêm",
+                "view_more_url": "/nang-luc/#hoi-dong-khoa-hoc",
+                "display_order": 0,
+                "bullets": [
+                    ("Định hướng học thuật", 0),
+                    ("Chất lượng chuyên môn", 1),
+                    ("Chiều sâu chiến lược", 2),
+                ],
+            },
+            {
+                "title": "Cơ cấu tổ chức",
+                "color_theme": "blue",
+                "view_more_label": "Xem thêm",
+                "view_more_url": "/nang-luc/#co-cau-to-chuc",
+                "display_order": 1,
+                "bullets": [
+                    ("Quản trị & điều phối", 0),
+                    ("Vận hành & liên kết", 1),
+                    ("Chiến lược & triển khai", 2),
+                ],
+            },
+            {
+                "title": "Nhà khoa học & chuyên gia",
+                "color_theme": "orange",
+                "view_more_label": "Xem thêm",
+                "view_more_url": "/chuyen-gia/",
+                "display_order": 2,
+                "bullets": [
+                    ("Nền tảng bằng chứng", 0),
+                    ("Kinh nghiệm thực hành", 1),
+                    ("Liên ngành (y tế, AI…)", 2),
+                ],
+            },
+            {
+                "title": "Giảng viên & Chuyên gia học tập",
+                "color_theme": "amber",
+                "view_more_label": "Xem thêm",
+                "view_more_url": "/nang-luc/#giang-vien",
+                "display_order": 3,
+                "bullets": [
+                    ("Chuyển hóa tri thức", 0),
+                    ("Workshop & coaching", 1),
+                    ("E-Learning & microlearning", 2),
+                ],
+            },
+            {
+                "title": "Hiệp hội & Mạng lưới chuyên môn",
+                "color_theme": "purple",
+                "view_more_label": "Xem thêm",
+                "view_more_url": "/nang-luc/#hiep-hoi",
+                "display_order": 4,
+                "bullets": [
+                    ("Kết nối học thuật", 0),
+                    ("Cập nhật tri thức mới", 1),
+                    ("Hợp tác liên ngành", 2),
+                ],
+            },
+        ]
+
+        for card_data in cards_data:
+            bullets = card_data.pop("bullets")
+            card, _ = AboutOrgStructureCard.objects.get_or_create(
+                section=section,
+                title=card_data["title"],
+                defaults={k: v for k, v in card_data.items() if k != "title"},
+            )
+            for text, order in bullets:
+                AboutOrgStructureBulletItem.objects.get_or_create(
+                    card=card, text=text,
+                    defaults={"display_order": order, "is_active": True},
+                )
+
+        self.stdout.write("  \u2713 Org Structure")
