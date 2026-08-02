@@ -263,28 +263,46 @@ class Command(BaseCommand):
     # ─── Core Values ──────────────────────────────────────────────────────────
 
     def _seed_core_values(self) -> None:
-        AboutCoreValueSection.objects.get_or_create(
+        section, _ = AboutCoreValueSection.objects.get_or_create(
             title="GIÁ TRỊ CỐT LÕI",
             defaults={
                 "section_label": "Giá trị",
-                "description": "Những nguyên tắc nền tảng định hướng cách IRDM hoạt động và tạo ra giá trị",
+                "description": (
+                    "Các giá trị cốt lõi định hướng cách IRDM nghiên cứu, tư vấn, đào tạo và đồng hành cùng đối tác. "
+                    "Với IRDM, giá trị không chỉ là nguyên tắc vận hành tổ chức, mà còn là nền tảng để phát triển "
+                    "con người một cách chính trực, nhân văn, bền vững và có khả năng chuyển hóa."
+                ),
                 "is_active": True,
             }
         )
+        if not _:
+            section.description = (
+                "Các giá trị cốt lõi định hướng cách IRDM nghiên cứu, tư vấn, đào tạo và đồng hành cùng đối tác. "
+                "Với IRDM, giá trị không chỉ là nguyên tắc vận hành tổ chức, mà còn là nền tảng để phát triển "
+                "con người một cách chính trực, nhân văn, bền vững và có khả năng chuyển hóa."
+            )
+            section.save()
+
+        # Deactivate old values, seed 4 new Figma values
+        AboutCoreValue.objects.all().update(is_active=False)
 
         values_data = [
-            ("Độc lập & Khách quan", "Nghiên cứu không bị ảnh hưởng bởi lợi ích nhóm. Kết quả phản ánh thực tế.", "blue", 0),
-            ("Liêm chính khoa học", "Tuân thủ nghiêm ngặt các chuẩn mực đạo đức nghiên cứu quốc tế.", "green", 1),
-            ("Tác động xã hội", "Mọi hoạt động hướng đến lợi ích cộng đồng và phát triển bền vững.", "orange", 2),
-            ("Hợp tác liên ngành", "Phá vỡ rào cản giữa các ngành, kết nối tri thức đa lĩnh vực.", "purple", 3),
-            ("Đổi mới sáng tạo", "Luôn tìm kiếm phương pháp và cách tiếp cận mới, hiệu quả hơn.", "teal", 4),
-            ("Minh bạch & Trách nhiệm", "Công khai quy trình, phương pháp và kết quả với tất cả các bên liên quan.", "slate", 5),
+            ("Chính trực", "IRDM đặt trung thực học thuật, minh bạch chuyên môn và trách nhiệm với dữ liệu, đối tác, cộng đồng thụ hưởng làm nền tảng cho mọi hoạt động.", "blue", 0),
+            ("Thấu cảm", "IRDM bắt đầu từ việc lắng nghe bối cảnh, con người và nhu cầu thực tế của từng tổ chức.", "teal", 1),
+            ("Cam kết phát triển bền vững", "IRDM hướng tới các giải pháp có giá trị dài hạn, sử dụng nguồn lực hiệu quả và có khả năng duy trì sau giai đoạn dự án.", "amber", 2),
+            ("Chuyển hóa", "IRDM không dừng ở tri thức, báo cáo hoặc ý tưởng. Trọng tâm là chuyển hóa nghiên cứu thành bằng chứng, bằng chứng thành giải pháp và giải pháp thành thay đổi quan sát được.", "orange", 3),
         ]
         for title, description, color, order in values_data:
-            AboutCoreValue.objects.get_or_create(
+            obj, created = AboutCoreValue.objects.get_or_create(
                 title=title,
                 defaults={"description": description, "color_theme": color, "display_order": order, "is_active": True}
             )
+            if not created:
+                obj.description = description
+                obj.color_theme = color
+                obj.display_order = order
+                obj.is_active = True
+                obj.save()
         self.stdout.write("  ✓ Core Values")
 
     # ─── Legal Foundation ─────────────────────────────────────────────────────
