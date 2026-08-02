@@ -6,6 +6,7 @@ from .models import (
     AboutCTABanner,
     AboutCapabilityEcosystem,
     AboutContactBanner,
+    AboutContactBannerStat,
     AboutCoreValue,
     AboutCoreValueSection,
     AboutEcosystemPartnerGroup,
@@ -369,13 +370,22 @@ class AboutOrgStructureCardAdmin(admin.ModelAdmin):
 
 # ─── Contact Banner ───────────────────────────────────────────────────────────
 
+class AboutContactBannerStatInline(admin.TabularInline):
+    model = AboutContactBannerStat
+    extra = 1
+    fields = ("number", "label", "icon_key", "display_order", "is_active")
+
+
 @admin.register(AboutContactBanner)
 class AboutContactBannerAdmin(admin.ModelAdmin):
-    list_display = ("title", "hotline", "email", "display_order", "is_active")
+    list_display = ("title", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
+    inlines = [AboutContactBannerStatInline]
     fieldsets = (
         ("Content", {"fields": ("title", "description", "background_image")}),
-        ("Contact", {"fields": ("hotline", "email")}),
-        ("Social Links", {"fields": ("facebook_url", "linkedin_url", "youtube_url")}),
+        ("CTAs", {"fields": ("cta1_label", "cta1_url", "cta2_label", "cta2_url", "cta3_label", "cta3_url")}),
+        ("Quote", {"fields": ("quote_text",)}),
+        ("Legacy Contact", {"fields": ("hotline", "email", "facebook_url", "linkedin_url", "youtube_url"),
+                           "classes": ("collapse",)}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
