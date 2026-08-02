@@ -1,7 +1,7 @@
 {% load i18n %}
 {# Section 3: Lý do tồn tại — Vì sao IRDM tồn tại? #}
 {% if purpose %}
-<section class="bg-white py-16 lg:py-24 relative overflow-hidden" aria-labelledby="purpose-heading">
+<section class="bg-slate-50 py-16 lg:py-24 relative overflow-hidden" aria-labelledby="purpose-heading">
 
   {# Background image — CMS configurable #}
   {% if purpose.background_image %}
@@ -12,10 +12,11 @@
   {% endif %}
 
   <div class="relative max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-20">
-    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
 
       {# ── LEFT COLUMN ── #}
       <div class="flex-1 min-w-0">
+        <div class="bg-white border border-slate-100 rounded-2xl shadow-lg p-6 lg:p-8 h-full">
 
         {# Badge: "— LÝ DO TỒN TẠI" #}
         {% if purpose.section_label %}
@@ -76,6 +77,7 @@
           </div>
         {% endif %}
 
+        </div>{# end card wrapper #}
       </div>{# end left column #}
 
       {# ── RIGHT COLUMN — Diagram Card ── width via inline style to avoid JIT compilation issues #}
