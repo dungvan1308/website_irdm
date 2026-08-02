@@ -1,52 +1,118 @@
 {% load i18n %}
-{# Section 3: Why IRDM Exists — Purpose #}
+{# Section 3: Lý do tồn tại — Vì sao IRDM tồn tại? #}
 {% if purpose %}
-<section class="bg-slate-50 py-16 lg:py-24 border-t border-slate-100" aria-labelledby="purpose-heading">
-  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20">
+<section class="bg-slate-50 py-16 lg:py-24 relative overflow-hidden" aria-labelledby="purpose-heading">
 
-    {# Section label #}
-    {% if purpose.section_label %}
-      <div class="flex justify-center mb-6">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 bg-orange-50 border border-orange-200 rounded-full">
-          <span class="w-1.5 h-1.5 rounded-full bg-orange-500 flex-shrink-0" aria-hidden="true"></span>
-          <span class="text-orange-700 text-xs font-semibold uppercase tracking-wider">{{ purpose.section_label }}</span>
-        </div>
-      </div>
-    {% endif %}
+  {# Background image — CMS configurable #}
+  {% if purpose.background_image %}
+    <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+      <img src="{{ purpose.background_image.url }}" alt=""
+           class="w-full h-full object-cover opacity-10" />
+    </div>
+  {% endif %}
 
-    <h2 id="purpose-heading" class="font-utm-banque font-normal text-[28px] sm:text-[36px] lg:text-[42px] leading-[1.15] text-primary-950 uppercase text-center mb-10">
-      {{ purpose.title }}
-    </h2>
+  <div class="relative max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-20">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
 
-    <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+      {# ── LEFT COLUMN ── #}
+      <div class="flex-1 min-w-0">
+        <div class="bg-white border border-slate-100 rounded-2xl shadow-lg p-6 lg:p-8 h-full">
 
-      {# Left: highlight box + description #}
-      <div class="flex-1 lg:max-w-[520px]">
-        {% if purpose.highlight_box_text %}
-          <div class="p-6 bg-primary-900 text-white rounded-2xl mb-6 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -translate-y-8 translate-x-8" aria-hidden="true"></div>
-            <p class="text-lg font-medium leading-relaxed relative z-10">{{ purpose.highlight_box_text|linebreaksbr }}</p>
+        {# Badge: "— LÝ DO TỒN TẠI" #}
+        {% if purpose.section_label %}
+          <div class="flex items-center gap-2.5 mb-5">
+            <div class="w-8 bg-orange-500 flex-shrink-0" style="height:2px" aria-hidden="true"></div>
+            <span class="text-slate-500 text-xs font-bold uppercase tracking-widest">{{ purpose.section_label }}</span>
           </div>
         {% endif %}
 
+        {# Title #}
+        <h2 id="purpose-heading"
+            class="font-utm-banque font-normal leading-tight uppercase mb-6"
+            style="font-size:clamp(28px,4vw,48px);color:#094977">
+          {{ purpose.title }}
+        </h2>
+
+        {# Description #}
         {% if purpose.description %}
-          <div class="text-slate-600 leading-relaxed space-y-3">
+          <div class="text-slate-600 leading-relaxed mb-10 space-y-4" style="font-size:16px">
             {{ purpose.description|linebreaksbr }}
           </div>
         {% endif %}
-      </div>
 
-      {# Right: diagram #}
-      {% if purpose.diagram_image %}
-        <div class="flex-1">
-          <img src="{{ purpose.diagram_image.url }}"
-               alt="{{ purpose.diagram_alt|default:purpose.title }}"
-               class="w-full h-auto rounded-xl shadow-lg"
-               loading="lazy" />
+        {# Quote / Highlight block — Figma style #}
+        {% if purpose.highlight_box_text %}
+          <div class="relative flex items-stretch bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+            {# Orange left accent bar inside the card #}
+            <div class="bg-orange-500 flex-shrink-0" style="width:4px" aria-hidden="true"></div>
+
+            <div class="relative flex-1 px-6 py-5">
+              {# Decorative corner accents — Figma #}
+              <div class="absolute top-3 left-5 w-1.5 h-1.5 rounded-full bg-orange-400 opacity-70" aria-hidden="true"></div>
+              <div class="absolute top-3 right-4 bg-orange-400 opacity-70 rounded-full" style="width:20px;height:2px" aria-hidden="true"></div>
+              <div class="absolute bottom-3 left-5 bg-orange-400 opacity-70 rounded-full" style="width:20px;height:2px" aria-hidden="true"></div>
+              <div class="absolute bottom-3 right-4 w-1.5 h-1.5 rounded-full bg-orange-400 opacity-70" aria-hidden="true"></div>
+
+              {# Icon circle #}
+              <div class="w-11 h-11 rounded-full border-2 border-slate-200 flex items-center justify-center mb-4 bg-white">
+                {% if purpose.quote_icon %}
+                  <img src="{{ purpose.quote_icon.url }}" alt="" class="w-5 h-5 object-contain" aria-hidden="true" />
+                {% else %}
+                  <svg class="w-5 h-5 text-slate-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/>
+                  </svg>
+                {% endif %}
+              </div>
+
+              {# Bold quote text #}
+              <p class="font-bold text-slate-900 leading-snug mb-3" style="font-size:18px">
+                {{ purpose.highlight_box_text }}
+              </p>
+
+              {# Quote body text #}
+              {% if purpose.quote_body %}
+                <p class="text-slate-500 text-sm leading-relaxed">{{ purpose.quote_body }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+
+        </div>{# end card wrapper #}
+      </div>{# end left column #}
+
+      {# ── RIGHT COLUMN — Diagram Card ── width via inline style to avoid JIT compilation issues #}
+      <div class="w-full flex-shrink-0" style="max-width:420px">
+        <div class="bg-white border border-slate-100 rounded-2xl shadow-lg p-6">
+
+          {# Card title #}
+          {% if purpose.diagram_title %}
+            <h3 class="font-bold text-slate-800 mb-4" style="font-size:17px">{{ purpose.diagram_title }}</h3>
+          {% endif %}
+
+          {# Diagram image — uploaded via CMS #}
+          {% if purpose.diagram_image %}
+            <div class="rounded-xl overflow-hidden mb-4 bg-slate-50 p-3">
+              <img src="{{ purpose.diagram_image.url }}"
+                   alt="{{ purpose.diagram_alt|default:purpose.title }}"
+                   class="w-full h-auto"
+                   loading="lazy" />
+            </div>
+          {% else %}
+            <div class="rounded-xl bg-slate-100 flex items-center justify-center mb-4" style="height:260px">
+              <p class="text-slate-400 text-sm">{{ purpose.diagram_alt|default:"Chưa có hình minh họa" }}</p>
+            </div>
+          {% endif %}
+
+          {# Caption #}
+          {% if purpose.diagram_caption %}
+            <p class="text-slate-500 text-sm text-center leading-relaxed">{{ purpose.diagram_caption }}</p>
+          {% endif %}
+
         </div>
-      {% endif %}
+      </div>
 
     </div>
   </div>
 </section>
 {% endif %}
+

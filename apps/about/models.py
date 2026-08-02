@@ -123,10 +123,18 @@ class AboutPurpose(BaseModel):
 
     section_label = models.CharField(_("section label"), max_length=200, blank=True)
     title = models.CharField(_("title"), max_length=300)
-    highlight_box_text = models.TextField(_("highlight box text"), blank=True)
     description = models.TextField(_("description"), blank=True)
+    # Quote block
+    highlight_box_text = models.TextField(_("quote text (bold)"), blank=True)
+    quote_icon = models.ImageField(_("quote icon image"), upload_to="about/purpose/icons/", blank=True)
+    quote_body = models.TextField(_("quote body text"), blank=True)
+    # Diagram card (right column)
+    diagram_title = models.CharField(_("diagram card title"), max_length=200, blank=True)
     diagram_image = models.ImageField(_("diagram image"), upload_to="about/purpose/", blank=True)
     diagram_alt = models.CharField(_("diagram alt text"), max_length=300, blank=True)
+    diagram_caption = models.CharField(_("diagram caption"), max_length=400, blank=True)
+    # Background
+    background_image = models.ImageField(_("background image"), upload_to="about/purpose/bg/", blank=True)
 
     class Meta(BaseModel.Meta):
         verbose_name = _("purpose section")

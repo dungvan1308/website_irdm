@@ -168,20 +168,26 @@ class Command(BaseCommand):
 
     def _seed_purpose(self) -> None:
         AboutPurpose.objects.get_or_create(
-            title="TẠI SAO IRDM TỒN TẠI?",
+            title="VÌ SAO IRDM TỒN TẠI?",
             defaults={
-                "section_label": "Sứ mệnh",
-                "highlight_box_text": (
-                    "\"Tri thức chỉ có giá trị khi nó tạo ra thay đổi tích cực trong cuộc sống con người "
-                    "và sự phát triển bền vững của xã hội.\""
-                ),
+                "section_label": "LÝ DO TỒN TẠI",
                 "description": (
-                    "Trong bối cảnh Việt Nam và khu vực đối mặt với những thách thức phức tạp về phát triển bền vững, "
-                    "chuyển đổi số, biến đổi khí hậu và bất bình đẳng xã hội — IRDM ra đời để lấp đầy khoảng trống "
-                    "giữa nghiên cứu học thuật và thực tiễn chính sách.\n\n"
-                    "Chúng tôi tin rằng các vấn đề phức tạp cần cách tiếp cận liên ngành — kết hợp khoa học tự nhiên, "
-                    "khoa học xã hội, công nghệ và nhân văn."
+                    "IRDM tồn tại để kết nối nghiên cứu, dữ liệu, công nghệ và phát triển con người trong việc "
+                    "giải quyết những vấn đề thực tiễn ngày càng phức hợp của tổ chức và xã hội.\n\n"
+                    "Nhiều tổ chức đã có dữ liệu, kinh nghiệm và nhu cầu đổi mới, nhưng chưa dễ chuyển hóa thành "
+                    "bằng chứng, quyết định hoặc chương trình hành động rõ ràng. Nhiều sáng kiến về công nghệ, AI, "
+                    "đào tạo, wellbeing hoặc phát triển bền vững có ý tưởng tốt, nhưng cần được thiết kế sát hơn "
+                    "với bối cảnh vận hành, năng lực dữ liệu, năng lực con người và khả năng duy trì sau giai đoạn dự án."
                 ),
+                "highlight_box_text": (
+                    "\"IRDM tin rằng mọi chuyển đổi bền vững đều bắt đầu từ con người.\""
+                ),
+                "quote_body": (
+                    "Công nghệ, dữ liệu hay mô hình quản trị chỉ tạo ra tác động khi con người có đủ năng lực "
+                    "để hiểu, sử dụng, thích ứng và chuyển hóa chúng thành hành động."
+                ),
+                "diagram_title": "3 Thành tố kết nối",
+                "diagram_caption": "Ba thành tố này giao thoa để tạo ra giá trị bền vững.",
                 "is_active": True,
                 "display_order": 0,
             }
