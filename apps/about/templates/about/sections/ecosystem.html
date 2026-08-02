@@ -29,8 +29,8 @@
 
   <div class="relative max-w-screen-xl mx-auto px-4 sm:px-10 lg:px-20 py-16 lg:py-24">
 
-    {# ── Section Header: text-left / CTAs top-right #}
-    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-12">
+    {# ── Section Header: text-left / CTAs vertically centered right #}
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12">
 
       {# Left: badge + title + description #}
       <div>
@@ -43,7 +43,7 @@
 
         <h2 id="ecosystem-heading"
             class="font-utm-banque font-normal leading-tight uppercase mb-5"
-            style="font-size:clamp(26px,3.6vw,44px);color:#094977">
+            style="font-size:40px;color:#094977;white-space:pre-line">
           {{ eco.title }}
         </h2>
 
@@ -56,7 +56,7 @@
 
       {# Right: CTA buttons stacked #}
       {% if eco.primary_cta_label or eco.secondary_cta_label %}
-        <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-start lg:items-end xl:items-center gap-3 lg:justify-end">
+        <div class="flex flex-col sm:flex-row items-center justify-start lg:justify-end gap-4">
           {% if eco.primary_cta_label and eco.primary_cta_url %}
             <a href="{{ eco.primary_cta_url }}"
                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all hover:-translate-y-0.5 flex-shrink-0"

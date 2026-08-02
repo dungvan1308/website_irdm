@@ -567,9 +567,12 @@ class Command(BaseCommand):
     # ─── Ecosystem ────────────────────────────────────────────────────────────
 
     def _seed_ecosystem(self) -> None:
+        TITLE = "BẰNG CHỨNG NĂNG LỰC\nVÀ HỆ SINH THÁI HỢP TÁC"
+        # use display_order=0 as stable lookup key (avoids duplicate on title change)
         ecosystem, created = AboutCapabilityEcosystem.objects.get_or_create(
-            title="BẰNG CHỨNG NĂNG LỰC VÀ HỆ SINH THÁI HỢP TÁC",
+            display_order=0,
             defaults={
+                "title": TITLE,
                 "section_label": "HỆ SINH THÁI HỢP TÁC",
                 "description": (
                     "IRDM đã đồng hành cùng cơ quan quản lý, tổ chức y tế, trường đại học, doanh nghiệp và đối tác "
@@ -582,12 +585,11 @@ class Command(BaseCommand):
                 "secondary_cta_url": "/tri-thuc/",
                 "hub_label": "IRDM\nHub",
                 "is_active": True,
-                "display_order": 0,
             }
         )
         if not created:
             AboutCapabilityEcosystem.objects.filter(pk=ecosystem.pk).update(
-                title="BẰNG CHỨNG NĂNG LỰC VÀ HỆ SINH THÁI HỢP TÁC",
+                title=TITLE,
                 section_label="HỆ SINH THÁI HỢP TÁC",
                 primary_cta_label="Xem Tin IRDM",
                 primary_cta_url="/tin-tuc/",
