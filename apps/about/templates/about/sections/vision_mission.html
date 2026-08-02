@@ -26,13 +26,11 @@
             <div class="relative rounded-2xl p-8 flex flex-col overflow-hidden
                         {% if card.bg_color %}{{ card.bg_color }}{% else %}bg-primary-900{% endif %}">
 
-              {# Decorative circles — bottom right corner #}
-              <div class="absolute bottom-0 right-0 pointer-events-none select-none" aria-hidden="true">
-                <div class="absolute bottom-[-24px] right-[-24px] w-32 h-32 rounded-full border border-white/10"></div>
-                <div class="absolute bottom-[12px] right-[-8px] w-20 h-20 rounded-full border border-white/10"></div>
-                <div class="absolute bottom-[8px] right-[52px] w-2.5 h-2.5 rounded-full bg-orange-400/50"></div>
-                <div class="absolute bottom-[44px] right-[12px] w-1.5 h-1.5 rounded-full bg-orange-400/40"></div>
-              </div>
+              {# Decorative — elements positioned directly on card so overflow:hidden clips correctly #}
+              <div class="absolute rounded-full bg-white/20 pointer-events-none" style="width:180px;height:180px;bottom:-72px;right:-72px" aria-hidden="true"></div>
+              <div class="absolute rounded-full bg-orange-400 opacity-90 pointer-events-none" style="width:10px;height:10px;bottom:52px;right:52px" aria-hidden="true"></div>
+              <div class="absolute rounded-full bg-orange-400 opacity-70 pointer-events-none" style="width:8px;height:8px;bottom:32px;right:36px" aria-hidden="true"></div>
+              <div class="absolute rounded-full bg-orange-400 opacity-50 pointer-events-none" style="width:6px;height:6px;bottom:16px;right:20px" aria-hidden="true"></div>
 
               {# Icon box — orange accent #}
               <div class="w-12 h-12 rounded-xl bg-orange-500/20 border border-orange-400/30 flex items-center justify-center mb-6 flex-shrink-0">
@@ -81,13 +79,11 @@
       {% if vision_mission.bottom_panel_title or vision_mission.bottom_panel_text %}
         <div class="relative bg-primary-900 rounded-2xl p-8 lg:p-10 overflow-hidden">
 
-          {# Decorative circles — bottom right #}
-          <div class="absolute bottom-0 right-0 pointer-events-none select-none" aria-hidden="true">
-            <div class="absolute bottom-[-32px] right-[-32px] w-40 h-40 rounded-full border border-white/10"></div>
-            <div class="absolute bottom-[16px] right-[-12px] w-24 h-24 rounded-full border border-white/10"></div>
-            <div class="absolute bottom-[10px] right-[64px] w-2.5 h-2.5 rounded-full bg-orange-400/50"></div>
-            <div class="absolute bottom-[56px] right-[14px] w-1.5 h-1.5 rounded-full bg-orange-400/40"></div>
-          </div>
+          {# Decorative — elements positioned directly on panel so overflow:hidden clips correctly #}
+          <div class="absolute rounded-full bg-white/20 pointer-events-none" style="width:200px;height:200px;bottom:-80px;right:-80px" aria-hidden="true"></div>
+          <div class="absolute rounded-full bg-orange-400 opacity-90 pointer-events-none" style="width:10px;height:10px;bottom:60px;right:60px" aria-hidden="true"></div>
+          <div class="absolute rounded-full bg-orange-400 opacity-70 pointer-events-none" style="width:8px;height:8px;bottom:38px;right:42px" aria-hidden="true"></div>
+          <div class="absolute rounded-full bg-orange-400 opacity-50 pointer-events-none" style="width:6px;height:6px;bottom:20px;right:24px" aria-hidden="true"></div>
 
           <div class="relative flex flex-col lg:flex-row lg:items-center gap-8">
 
