@@ -389,26 +389,84 @@ class Command(BaseCommand):
     # ─── Partner Benefits ─────────────────────────────────────────────────────
 
     def _seed_partner_benefits(self) -> None:
-        section, _ = AboutPartnerBenefitSection.objects.get_or_create(
+        # update_or_create so re-running the seed refreshes banner / KPI fields
+        section, _ = AboutPartnerBenefitSection.objects.update_or_create(
             title="ĐỐI TÁC NHẬN ĐƯỢC GÌ KHI LÀM VIỆC VỚI IRDM?",
             defaults={
-                "section_label": "Lợi ích đối tác",
-                "description": "IRDM cam kết mang lại giá trị thực chất và lâu dài cho tất cả các đối tác hợp tác",
+                "banner_badge": "GIÁ TRỊ ĐỐI TÁC",
+                "banner_quote": (
+                    "Hợp tác với IRDM giúp chúng tôi chuyển dữ liệu thành quyết định "
+                    "- với bằng chứng, lộ trình và năng lực thực thi."
+                ),
+                "kpi_label": "KPI",
+                "kpi_value": "6 giá trị cốt lõi",
+                "section_label": "THÔNG TIN PHÁP LÝ",
+                "description": (
+                    "Viện IRDM đồng hành với đối tác theo hướng thực tế, có căn cứ và có thể kiểm chứng. "
+                    "Thay vì đưa ra một giải pháp chung cho mọi tổ chức, IRDM giúp mỗi đơn vị xác định "
+                    "đúng vấn đề, lựa chọn cách tiếp cận phù hợp và chuẩn bị điều kiện triển khai."
+                ),
                 "is_active": True,
                 "display_order": 0,
-            }
+            },
         )
 
-        benefits_data = [
-            ("Nghiên cứu chuyên sâu", "Báo cáo và phân tích chuyên sâu dựa trên dữ liệu và phương pháp khoa học chuẩn mực.", 0),
-            ("Mạng lưới chuyên gia", "Kết nối với hơn 500 chuyên gia và nhà khoa học đầu ngành trên toàn quốc.", 1),
-            ("Giải pháp tùy chỉnh", "Thiết kế các giải pháp phù hợp với nhu cầu và bối cảnh đặc thù của từng đối tác.", 2),
-            ("Tác động đo lường được", "Hệ thống theo dõi và đánh giá tác động minh bạch, rõ ràng và có thể kiểm chứng.", 3),
+        # Sync benefit cards to match Figma exactly (6 cards, 3×2 grid)
+        figma_benefits = [
+            {
+                "title": "Vấn đề được làm rõ trước khi đề xuất giải pháp",
+                "description": "Khảo sát, dữ liệu và thực tiễn được tổng hợp thành bằng chứng có thể sử dụng.",
+                "color_theme": "teal",
+                "display_order": 0,
+            },
+            {
+                "title": "Dữ liệu, khảo sát và kinh nghiệm thực tiễn được tổ chức thành bằng chứng",
+                "description": "Tổng hợp thông tin một cách có hệ thống để tạo nền tảng cho quyết định.",
+                "color_theme": "blue",
+                "display_order": 1,
+            },
+            {
+                "title": "Giải pháp được đóng thiết kế theo bối cảnh vận hành",
+                "description": "Phù hợp năng lực dữ liệu và năng lực con người của từng tổ chức.",
+                "color_theme": "orange",
+                "display_order": 2,
+            },
+            {
+                "title": "Tổ hợp chuyên gia được huy động theo đúng bài toán",
+                "description": "Thay vì theo danh sách chuyên môn có sẵn – IRDM tập hợp đúng người cho vấn đề.",
+                "color_theme": "blue",
+                "display_order": 3,
+            },
+            {
+                "title": "Kết quả được theo dõi, đánh giá và chuyển hóa thành giá trị",
+                "description": "Đánh giá tác động và chuyển hóa thành giá trị sử dụng trong thực tế.",
+                "color_theme": "blue",
+                "display_order": 4,
+            },
+            {
+                "title": "Tư vấn chiến lược với góc nhìn thực tiễn",
+                "description": "Đề xuất dựa trên dữ liệu và kinh nghiệm triển khai – giúp quyết định nhanh và chắc chắn.",
+                "color_theme": "amber",
+                "display_order": 5,
+            },
         ]
-        for title, description, order in benefits_data:
-            AboutPartnerBenefit.objects.get_or_create(
-                section=section, title=title,
-                defaults={"description": description, "display_order": order, "is_active": True}
+        figma_titles = {b["title"] for b in figma_benefits}
+
+        # Deactivate old cards that are not in the Figma list
+        AboutPartnerBenefit.objects.filter(section=section).exclude(
+            title__in=figma_titles
+        ).update(is_active=False)
+
+        for data in figma_benefits:
+            AboutPartnerBenefit.objects.update_or_create(
+                section=section,
+                title=data["title"],
+                defaults={
+                    "description": data["description"],
+                    "color_theme": data["color_theme"],
+                    "display_order": data["display_order"],
+                    "is_active": True,
+                },
             )
         self.stdout.write("  ✓ Partner Benefits")
 

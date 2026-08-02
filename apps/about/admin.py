@@ -208,7 +208,10 @@ class AboutCTABannerAdmin(admin.ModelAdmin):
 class AboutPartnerBenefitInline(admin.TabularInline):
     model = AboutPartnerBenefit
     extra = 1
-    fields = ("icon", "icon_image", "title", "description", "display_order", "is_active")
+    fields = (
+        "icon", "icon_image", "title", "description",
+        "color_theme", "link_url", "display_order", "is_active",
+    )
 
 
 @admin.register(AboutPartnerBenefitSection)
@@ -217,7 +220,18 @@ class AboutPartnerBenefitSectionAdmin(admin.ModelAdmin):
     list_editable = ("display_order", "is_active")
     inlines = [AboutPartnerBenefitInline]
     fieldsets = (
-        ("Content", {"fields": ("section_label", "title", "description")}),
+        (
+            "KPI Banner",
+            {
+                "fields": ("banner_badge", "banner_quote", "kpi_label", "kpi_value"),
+                "description": (
+                    "Blue banner displayed above the section header. "
+                    "Leave all fields blank to hide the banner."
+                ),
+            },
+        ),
+        ("Section Header", {"fields": ("section_label", "title", "description")}),
+        ("Background", {"fields": ("background_image",)}),
         ("Status", {"fields": ("is_active", "display_order")}),
     )
 
