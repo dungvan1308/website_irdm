@@ -831,6 +831,56 @@ class Expert(BaseModel):
         ),
     )
 
+    # ── Detail page — Hero section ───────────────────────────────────────────
+    hero_tagline = models.TextField(
+        _("hero tagline"),
+        blank=True,
+        help_text=_("Đoạn tagline in đậm hiển thị trên hero, e.g. 'Chuyên gia cao cấp về quản trị đại học...'"),
+    )
+    role_badges = models.TextField(
+        _("role badges"),
+        blank=True,
+        help_text=_("Mỗi dòng là một badge vai trò, e.g.:\nThành viên Hội đồng quản lý IRDM\nNhà khoa học/chuyên gia"),
+    )
+    ticker_text = models.CharField(
+        _("ticker bar text"),
+        max_length=500,
+        blank=True,
+        help_text=_("Văn bản chạy ngang dưới hero, e.g. 'QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG'"),
+    )
+    contact_cta_url = models.CharField(
+        _("contact CTA URL"),
+        max_length=500,
+        blank=True,
+        default="/lien-he/",
+        help_text=_("URL nút 'Liên hệ hợp tác' trên hero, e.g. /lien-he/ hoặc mailto:email@irdm.edu.vn"),
+    )
+
+    # ── Detail page — Stats snapshot ─────────────────────────────────────────
+    stat_1_value = models.CharField(_("stat 1 — value"), max_length=50, blank=True, help_text=_("e.g. '40+'"))
+    stat_1_label = models.CharField(_("stat 1 — label"), max_length=200, blank=True, help_text=_("e.g. 'Năm kinh nghiệm'"))
+    stat_2_value = models.CharField(_("stat 2 — value"), max_length=50, blank=True, help_text=_("e.g. '100+'"))
+    stat_2_label = models.CharField(_("stat 2 — label"), max_length=200, blank=True, help_text=_("e.g. 'Trường đại học tư vấn'"))
+    stat_3_value = models.CharField(_("stat 3 — value"), max_length=50, blank=True, help_text=_("e.g. 'ASEAN'"))
+    stat_3_label = models.CharField(_("stat 3 — label"), max_length=200, blank=True, help_text=_("e.g. 'Phạm vi nghiên cứu và hợp tác quốc tế'"))
+
+    # ── Detail page — Content sections ───────────────────────────────────────
+    experience_highlights = models.TextField(
+        _("experience highlights"),
+        blank=True,
+        help_text=_("Các kinh nghiệm nổi bật, mỗi dòng một mục (hiển thị đánh số tự động), e.g.:\nNguyên Hiệu trưởng Đại học Cần Thơ\nChủ tịch Hội đồng Đảm bảo Chất lượng"),
+    )
+    discussion_topics = models.TextField(
+        _("discussion topics"),
+        blank=True,
+        help_text=_("Các chủ đề có thể đồng hành, mỗi dòng một chủ đề (hiển thị 2 cột), e.g.:\nChiến lược phát triển Giáo dục đại học\nPhát triển chương trình đào tạo theo chuẩn đầu ra"),
+    )
+    notable_projects = models.TextField(
+        _("notable projects"),
+        blank=True,
+        help_text=_("Dự án / Công trình / Chương trình tiêu biểu, mỗi dòng một mục, e.g.:\nChủ nhiệm dự án phát triển đại học quốc tế VLIR (Bỉ)\nThiết kế chương trình Thạc sĩ Quản lý Môi trường"),
+    )
+
     # Status flags
     is_published = models.BooleanField(_("published"), default=False, db_index=True)
     is_featured = models.BooleanField(_("featured"), default=False, db_index=True)

@@ -2,89 +2,403 @@
 {% load i18n static %}
 
 {% block title %}{{ expert.display_name }} — IRDM{% endblock %}
-{% block meta_description %}{% if expert.short_bio %}{{ expert.short_bio|truncatewords:30 }}{% endif %}{% endblock %}
+{% block meta_description %}{% if expert.hero_tagline %}{{ expert.hero_tagline|truncatewords:30 }}{% elif expert.short_bio %}{{ expert.short_bio|truncatewords:30 }}{% endif %}{% endblock %}
 {% block og_title %}{{ expert.display_name }} — IRDM{% endblock %}
-{% block og_description %}{% if expert.short_bio %}{{ expert.short_bio|truncatewords:30 }}{% endif %}{% endblock %}
+{% block og_description %}{% if expert.hero_tagline %}{{ expert.hero_tagline|truncatewords:30 }}{% elif expert.short_bio %}{{ expert.short_bio|truncatewords:30 }}{% endif %}{% endblock %}
 
 {% block content %}
-<section class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-16 lg:py-20">
+
+{# ── HERO ───────────────────────────────────────────────────────────────────── #}
+<section class="relative bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden">
+  {# Decorative background dots #}
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <svg class="absolute right-0 top-0 w-[480px] h-[480px] opacity-10" viewBox="0 0 480 480" fill="none">
+      <defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1.5" fill="#162469"/>
+      </pattern></defs>
+      <rect width="480" height="480" fill="url(#dots)"/>
+    </svg>
+    <svg class="absolute left-0 bottom-0 w-[320px] h-[320px] opacity-10" viewBox="0 0 480 480" fill="none">
+      <rect width="480" height="480" fill="url(#dots)"/>
+    </svg>
+  </div>
 
   {# Breadcrumb #}
-  <nav class="flex items-center gap-2 text-sm text-slate-500 mb-10" aria-label="{% trans 'Breadcrumb' %}">
-    <a href="{% url 'home:index' %}" class="hover:text-primary-700 transition-colors">{% trans "Trang chủ" %}</a>
-    <span aria-hidden="true">›</span>
-    <a href="{% url 'expert:listing' %}" class="hover:text-primary-700 transition-colors">{% trans "Chuyên gia" %}</a>
-    <span aria-hidden="true">›</span>
-    <span class="text-primary-700 font-medium">{{ expert.display_name }}</span>
-  </nav>
+  <div class="relative max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 pt-6">
+    <nav class="flex items-center gap-2 text-sm text-slate-500" aria-label="{% trans 'Breadcrumb' %}">
+      <a href="{% url 'home:index' %}" class="hover:text-primary-700 transition-colors">{% trans "Trang chủ" %}</a>
+      <span aria-hidden="true">›</span>
+      <a href="{% url 'expert:listing' %}" class="hover:text-primary-700 transition-colors">{% trans "Đội ngũ chuyên gia" %}</a>
+      <span aria-hidden="true">›</span>
+      <span class="text-primary-700 font-medium">{{ expert.display_name }}</span>
+    </nav>
+  </div>
 
-  <div class="flex flex-col lg:flex-row gap-10">
+  {# Hero content #}
+  <div class="relative max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-12 lg:py-16">
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
 
-    {# Left column: avatar + info #}
-    <div class="flex-shrink-0 w-full lg:w-64 text-center lg:text-left">
-      <div class="w-36 h-36 mx-auto lg:mx-0 rounded-full overflow-hidden bg-primary-100 border-4 border-white shadow-xl mb-4">
-        {% if expert.avatar %}
-          <img src="{{ expert.avatar.url }}" alt="{% blocktrans with name=expert.display_name %}Ảnh chân dung {{ name }}{% endblocktrans %}"
-               class="w-full h-full object-cover object-top" />
-        {% else %}
-          <div class="w-full h-full flex items-center justify-center">
-            <svg class="w-16 h-16 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-            </svg>
-          </div>
-        {% endif %}
+      {# Avatar — large rectangle #}
+      <div class="flex-shrink-0 w-full lg:w-72">
+        <div class="w-full lg:w-72 h-80 lg:h-96 rounded-2xl overflow-hidden bg-primary-100 shadow-xl">
+          {% if expert.avatar %}
+            <img src="{{ expert.avatar.url }}"
+                 alt="{% blocktrans with name=expert.display_name %}Ảnh chân dung {{ name }}{% endblocktrans %}"
+                 class="w-full h-full object-cover object-top" />
+          {% else %}
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-100 to-primary-200">
+              <svg class="w-24 h-24 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+          {% endif %}
+        </div>
       </div>
 
-      <h1 class="text-xl font-bold text-primary-900 leading-snug mb-1">{{ expert.display_name }}</h1>
-      {% if expert.position %}<p class="text-sm font-medium text-orange-500 mb-1">{{ expert.position }}</p>{% endif %}
-      {% if expert.organization %}<p class="text-sm text-slate-500 mb-4">{{ expert.organization }}</p>{% endif %}
+      {# Right: info #}
+      <div class="flex-1 min-w-0 flex flex-col gap-4 pt-2">
 
-      {# Research area tags #}
-      {% if expert.research_areas.all %}
-        <div class="flex flex-wrap gap-1.5 justify-center lg:justify-start mb-4">
-          {% for area in expert.research_areas.all %}
-            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-100">{{ area.name }}</span>
-          {% endfor %}
+        {# Role badges #}
+        {% if expert.role_badges %}
+          <div class="flex flex-wrap gap-2">
+            {% for badge in expert.role_badges.splitlines %}
+              {% if badge.strip %}
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/80 border border-primary-200 text-primary-700 shadow-sm">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary-500 flex-shrink-0"></span>
+                  {{ badge.strip }}
+                </span>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {# Name #}
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-900 leading-tight tracking-tight uppercase">
+          {{ expert.display_name }}
+        </h1>
+
+        {# Tagline #}
+        {% if expert.hero_tagline %}
+          <p class="text-base lg:text-lg font-semibold text-slate-700 leading-relaxed max-w-2xl">
+            {{ expert.hero_tagline }}
+          </p>
+        {% elif expert.short_bio %}
+          <p class="text-base text-slate-600 leading-relaxed max-w-2xl">{{ expert.short_bio }}</p>
+        {% endif %}
+
+        {# Specialty tag #}
+        {% if expert.card_specialty %}
+          <div>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-700 border border-blue-200">
+              {{ expert.card_specialty }}
+            </span>
+          </div>
+        {% elif expert.research_areas.exists %}
+          <div>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-700 border border-blue-200">
+              {{ expert.research_areas.first.name }}
+            </span>
+          </div>
+        {% endif %}
+
+        {# CTA button #}
+        <div class="mt-2">
+          <a href="{{ expert.contact_cta_url|default:'/lien-he/' }}"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#EC6D29] hover:bg-orange-600 text-white font-semibold text-sm transition-colors shadow-md">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            {% trans "Liên hệ hợp tác" %}
+          </a>
         </div>
-      {% endif %}
 
-      {% if expert.profile_url %}
-        <a href="{{ expert.profile_url }}" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-1.5 text-sm text-primary-600 hover:text-primary-800 font-medium transition-colors">
-          {% trans "Trang cá nhân" %}
-          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-          </svg>
-        </a>
-      {% endif %}
+      </div>
     </div>
-
-    {# Right column: bio #}
-    <div class="flex-1 min-w-0">
-      {% if expert.full_bio %}
-        <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed">
-          {{ expert.full_bio|linebreaks }}
-        </div>
-      {% elif expert.short_bio %}
-        <p class="text-slate-700 leading-relaxed">{{ expert.short_bio }}</p>
-      {% else %}
-        <p class="text-slate-400 italic">{% trans "Đang cập nhật hồ sơ." %}</p>
-      {% endif %}
-    </div>
-
   </div>
 
-  {# Back link #}
-  <div class="mt-12 pt-8 border-t border-slate-100">
-    <a href="{% url 'expert:listing' %}"
-       class="inline-flex items-center gap-2 text-sm font-semibold text-primary-700 hover:text-primary-900 transition-colors">
-      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
-      </svg>
-      {% trans "Quay lại danh sách chuyên gia" %}
-    </a>
-  </div>
-
+  {# Ticker bar #}
+  {% if expert.ticker_text %}
+    <div class="relative bg-primary-900 text-white overflow-hidden">
+      <div class="flex whitespace-nowrap animate-marquee py-3 text-sm font-semibold tracking-widest">
+        <span class="px-8">{{ expert.ticker_text }}</span>
+        <span class="px-8" aria-hidden="true">{{ expert.ticker_text }}</span>
+        <span class="px-8" aria-hidden="true">{{ expert.ticker_text }}</span>
+      </div>
+    </div>
+  {% endif %}
 </section>
+
+{# ── STATS + BIO + SIDEBAR ──────────────────────────────────────────────────── #}
+{% if expert.stat_1_value or expert.stat_2_value or expert.stat_3_value %}
+<section class="bg-white border-b border-slate-100">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-10">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+      {% if expert.stat_1_value %}
+        <div class="text-center pt-6 sm:pt-0">
+          <p class="text-4xl font-extrabold text-primary-900">{{ expert.stat_1_value }}</p>
+          <p class="text-sm text-slate-500 mt-1">{{ expert.stat_1_label }}</p>
+        </div>
+      {% endif %}
+      {% if expert.stat_2_value %}
+        <div class="text-center pt-6 sm:pt-0 sm:pl-8">
+          <p class="text-4xl font-extrabold text-primary-900">{{ expert.stat_2_value }}</p>
+          <p class="text-sm text-slate-500 mt-1">{{ expert.stat_2_label }}</p>
+        </div>
+      {% endif %}
+      {% if expert.stat_3_value %}
+        <div class="text-center pt-6 sm:pt-0 sm:pl-8">
+          <p class="text-4xl font-extrabold text-primary-900">{{ expert.stat_3_value }}</p>
+          <p class="text-sm text-slate-500 mt-1">{{ expert.stat_3_label }}</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── MAIN CONTENT + SIDEBAR ─────────────────────────────────────────────────── #}
+<section class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-14 lg:py-20">
+  <div class="flex flex-col lg:flex-row gap-12">
+
+    {# Main column #}
+    <div class="flex-1 min-w-0 flex flex-col gap-16">
+
+      {# Full bio #}
+      {% if expert.full_bio %}
+        <div class="border-l-4 border-primary-400 pl-6">
+          <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed text-[15px]">
+            {{ expert.full_bio|linebreaks }}
+          </div>
+        </div>
+      {% endif %}
+
+      {# Experience highlights #}
+      {% if expert.experience_highlights %}
+        <div>
+          <p class="text-xs font-bold tracking-widest text-[#EC6D29] uppercase mb-2">— {% trans "Kinh nghiệm nổi bật" %}</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase leading-tight mb-8">
+            {% trans "Kinh nghiệm" %}<br>{% trans "& Lĩnh vực chuyên sâu" %}
+          </h2>
+          <ol class="flex flex-col gap-4">
+            {% for item in expert.experience_highlights.splitlines %}
+              {% if item.strip %}
+                <li class="flex items-start gap-4 p-4 rounded-xl border border-slate-100 bg-slate-50 hover:border-primary-200 hover:bg-blue-50 transition-colors">
+                  <span class="flex-shrink-0 w-9 h-9 rounded-full bg-primary-900 text-white text-sm font-bold flex items-center justify-center">
+                    {{ forloop.counter|stringformat:"02d" }}
+                  </span>
+                  <p class="text-sm text-slate-700 leading-relaxed pt-1.5">{{ item.strip }}</p>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ol>
+        </div>
+      {% endif %}
+
+      {# Discussion topics #}
+      {% if expert.discussion_topics %}
+        <div>
+          <p class="text-xs font-bold tracking-widest text-[#EC6D29] uppercase mb-2">— {% trans "Có thể đồng hành" %}</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase leading-tight mb-8">
+            {% trans "Các chủ đề có thể đồng hành" %}
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {% for topic in expert.discussion_topics.splitlines %}
+              {% if topic.strip %}
+                <div class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-primary-200 transition-colors">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary-500 flex-shrink-0 mt-2"></span>
+                  <p class="text-sm text-slate-700 leading-relaxed">{{ topic.strip }}</p>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {# Notable projects #}
+      {% if expert.notable_projects %}
+        <div>
+          <p class="text-xs font-bold tracking-widest text-[#EC6D29] uppercase mb-2">— {% trans "Công trình tiêu biểu" %}</p>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase leading-tight mb-8">
+            {% trans "Dự án / Công trình / Chương trình tiêu biểu" %}
+          </h2>
+          <ul class="flex flex-col gap-3">
+            {% for project in expert.notable_projects.splitlines %}
+              {% if project.strip %}
+                <li class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-primary-200 transition-colors">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0 mt-2"></span>
+                  <p class="text-sm text-slate-700 leading-relaxed">{{ project.strip }}</p>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+    </div>
+
+    {# Sidebar #}
+    <aside class="w-full lg:w-72 xl:w-80 flex-shrink-0 flex flex-col gap-6">
+
+      {# Research areas #}
+      {% if expert.research_areas.exists %}
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-3">{% trans "Lĩnh vực chuyên môn" %}</h3>
+          <div class="flex flex-wrap gap-2">
+            {% for area in expert.research_areas.all %}
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-100">{{ area.name }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {# Engagement types #}
+      {% if expert.engagement_types.exists %}
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-3">{% trans "Hình thức đồng hành" %}</h3>
+          <div class="flex flex-wrap gap-2">
+            {% for et in expert.engagement_types.all %}
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">{{ et.name }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {# Knowledge topics #}
+      {% if expert.knowledge_topics.exists %}
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-3">{% trans "Chủ đề & Từ khóa" %}</h3>
+          <div class="flex flex-wrap gap-2">
+            {% for kt in expert.knowledge_topics.all %}
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">{{ kt.name }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {# Contact CTA card #}
+      <div class="rounded-xl p-5 text-white" style="background:linear-gradient(135deg,#162469,#1FA2AD)">
+        <h3 class="font-bold text-base mb-2">{% trans "Liên hệ hợp tác" %}</h3>
+        <p class="text-sm text-white/80 mb-4 leading-relaxed">
+          {% trans "Kết nối với chuyên gia để trao đổi về bài toán, chương trình hoặc hợp tác của tổ chức bạn." %}
+        </p>
+        <a href="{{ expert.contact_cta_url|default:'/lien-he/' }}"
+           class="inline-block w-full text-center px-4 py-2.5 rounded-lg bg-[#EC6D29] hover:bg-orange-500 text-white font-semibold text-sm transition-colors">
+          {% trans "Liên hệ ngay" %}
+        </a>
+      </div>
+
+      {# Explore more #}
+      <div class="bg-white rounded-xl border border-slate-200 p-5">
+        <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-4">{% trans "Khám phá thêm" %}</h3>
+        <div class="flex flex-col gap-3">
+          <a href="{% url 'solution:listing' %}"
+             class="flex items-center justify-between p-3 rounded-lg border border-slate-200 hover:border-primary-300 hover:bg-blue-50 text-sm font-medium text-primary-700 transition-colors">
+            {% trans "Giải pháp của IRDM" %}
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="{% url 'knowledge:listing' %}"
+             class="flex items-center justify-between p-3 rounded-lg border border-slate-200 hover:border-primary-300 hover:bg-blue-50 text-sm font-medium text-primary-700 transition-colors">
+            {% trans "Tri thức & góc nhìn" %}
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+{# ── RELATED EXPERTS ─────────────────────────────────────────────────────────── #}
+{% if related_experts %}
+<section class="bg-slate-50 border-t border-slate-100">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-14 lg:py-20">
+    <p class="text-xs font-bold tracking-widest text-[#EC6D29] uppercase mb-2">— {% trans "Khám phá thêm" %}</p>
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase mb-10">{% trans "Chuyên gia liên quan" %}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for rel in related_experts %}
+        <div class="flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200 hover:border-primary-200 hover:shadow-md transition-all">
+          <div class="flex-shrink-0 w-14 h-14 rounded-full overflow-hidden bg-primary-100 border-2 border-white shadow-sm">
+            {% if rel.avatar %}
+              <img src="{{ rel.avatar.url }}" alt="{{ rel.display_name }}" class="w-full h-full object-cover object-top" loading="lazy"/>
+            {% else %}
+              <div class="w-full h-full flex items-center justify-center bg-primary-100">
+                <svg class="w-6 h-6 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+              </div>
+            {% endif %}
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="font-bold text-primary-900 text-sm leading-snug mb-0.5">{{ rel.display_name }}</p>
+            {% if rel.card_specialty %}
+              <p class="text-xs text-slate-500 mb-2 line-clamp-1">{{ rel.card_specialty }}</p>
+            {% elif rel.position %}
+              <p class="text-xs text-slate-500 mb-2 line-clamp-1">{{ rel.position }}</p>
+            {% endif %}
+            {% if rel.research_areas.exists %}
+              <div class="flex flex-wrap gap-1 mb-3">
+                {% for area in rel.research_areas.all|slice:":2" %}
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-blue-50 text-blue-700 border border-blue-100">{{ area.name }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <a href="{{ rel.get_absolute_url }}"
+               class="inline-flex items-center gap-1 text-xs font-semibold text-[#EC6D29] hover:opacity-80 transition-opacity">
+              {% trans "Xem hồ sơ chuyên môn" %}
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ── BOTTOM CTA BANNER ────────────────────────────────────────────────────────── #}
+<section class="relative overflow-hidden bg-primary-900 text-white">
+  <div class="absolute inset-0 bg-gradient-to-r from-primary-950/80 to-primary-800/60 pointer-events-none" aria-hidden="true"></div>
+  <div class="relative max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-14 lg:py-20 flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16">
+    <div class="flex-1 min-w-0">
+      <p class="text-xs font-bold tracking-widest text-orange-400 uppercase mb-3">{% trans "Sẵn sàng trao đổi?" %}</p>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase leading-tight mb-4">
+        {% trans "Kết nối với IRDM để tìm đúng chuyên gia cho bài toán của tổ chức" %}
+      </h2>
+      <p class="text-sm text-white/70 max-w-xl leading-relaxed">
+        {% trans "IRDM có thể kết nối mạng lưới nhà khoa học và chuyên gia phù hợp để đồng hành từ tư vấn, nghiên cứu, đào tạo đến triển khai giải pháp." %}
+      </p>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+      <a href="/lien-he/"
+         class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#EC6D29] hover:bg-orange-500 text-white font-bold text-sm transition-colors shadow-lg">
+        {% trans "Liên hệ hợp tác" %}
+      </a>
+      <a href="{% url 'expert:listing' %}"
+         class="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-white/50 hover:bg-white/10 text-white font-bold text-sm transition-colors">
+        {% trans "Xem tất cả chuyên gia" %}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  width: max-content;
+}
+</style>
+
 {% endblock %}
+
