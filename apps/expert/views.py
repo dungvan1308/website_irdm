@@ -4,6 +4,7 @@ from django.http import Http404, HttpRequest, HttpResponse
 from django.views.generic import TemplateView
 
 from .forms import ExpertSearchForm
+from .models import Expert
 from .services import ExpertService
 
 
@@ -86,4 +87,17 @@ class ExpertDetailView(TemplateView):
             raise Http404
         ctx["expert"] = expert
         ctx["listing_page"] = ExpertService.get_listing_page()
+
+        # Related experts: same research areas, excluding self, max 5
+        area_ids = expert.research_areas.values_list("id", flat=True)
+        ctx["related_experts"] = (
+            Expert.objects.filter(
+                is_published=True,
+                is_active=True,
+                research_areas__in=area_ids,
+            )
+            .exclude(pk=expert.pk)
+            .distinct()
+            .order_by("-is_featured", "-is_senior", "display_order")[:5]
+        )
         return ctx

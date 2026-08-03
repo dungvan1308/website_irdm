@@ -301,6 +301,34 @@ class ExpertAdmin(admin.ModelAdmin):
         (_("Contact"), {
             "fields": ("email", "profile_url"),
         }),
+        (_("TRANG HỒ SƠ — Hero"), {
+            "fields": ("hero_tagline", "role_badges", "ticker_text", "contact_cta_url"),
+            "classes": ("collapse",),
+            "description": _(
+                "hero_tagline: Tagline in đậm dưới tên. | "
+                "role_badges: Mỗi dòng 1 badge vai trò (pill). | "
+                "ticker_text: Văn bản chạy ngang dưới hero. | "
+                "contact_cta_url: URL nút 'Liên hệ hợp tác'."
+            ),
+        }),
+        (_("TRANG HỒ SƠ — Thống kê (Stats)"), {
+            "fields": (
+                ("stat_1_value", "stat_1_label"),
+                ("stat_2_value", "stat_2_label"),
+                ("stat_3_value", "stat_3_label"),
+            ),
+            "classes": ("collapse",),
+            "description": _("3 chỉ số nổi bật hiển thị dưới hero, e.g. 40+ / Năm kinh nghiệm."),
+        }),
+        (_("TRANG HỒ SƠ — Nội dung chuyên sâu"), {
+            "fields": ("experience_highlights", "discussion_topics", "notable_projects"),
+            "classes": ("collapse",),
+            "description": _(
+                "experience_highlights: Mỗi dòng 1 kinh nghiệm nổi bật (tự đánh số). | "
+                "discussion_topics: Mỗi dòng 1 chủ đề đồng hành (hiển thị 2 cột). | "
+                "notable_projects: Mỗi dòng 1 công trình/dự án tiêu biểu."
+            ),
+        }),
         (_("VAI TRÒ"), {
             "fields": ("group",),
             "description": _("Nhóm vai trò hiển thị ở bộ lọc THEO VAI TRÒ trên trang chuyên gia."),
