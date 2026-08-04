@@ -51,7 +51,11 @@
       <div class="flex-shrink-0 w-full lg:w-72 xl:w-80">
         <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-3">
           <div class="w-full h-80 lg:h-96 rounded-xl overflow-hidden bg-primary-50">
-            {% if expert.avatar %}
+            {% if expert.hero_avatar %}
+              <img src="{{ expert.hero_avatar.url }}"
+                   alt="{% blocktrans with name=expert.display_name %}Ảnh chân dung {{ name }}{% endblocktrans %}"
+                   class="w-full h-full object-cover object-center" />
+            {% elif expert.avatar %}
               <img src="{{ expert.avatar.url }}"
                    alt="{% blocktrans with name=expert.display_name %}Ảnh chân dung {{ name }}{% endblocktrans %}"
                    class="w-full h-full object-cover object-center" />

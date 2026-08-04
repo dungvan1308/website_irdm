@@ -768,7 +768,17 @@ class Expert(BaseModel):
         _("avatar"),
         upload_to="expert/avatars/",
         blank=True,
-        help_text=_("Portrait photo, recommended 400×400 px"),
+        help_text=_("Portrait photo, 400×400 px. Dùng cho listing card và fallback cho hero."),
+    )
+    hero_avatar = models.ImageField(
+        _("hero avatar"),
+        upload_to="expert/hero_avatars/",
+        blank=True,
+        help_text=_(
+            "Ảnh chân dung riêng cho Hero Section trang hồ sơ chuyên gia. "
+            "Để trống → tự động dùng Avatar chung ở trên. "
+            "Khuyến nghị: portrait dọc, tỉ lệ 3:4, tối thiểu 600×800 px."
+        ),
     )
 
     # Content

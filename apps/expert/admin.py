@@ -293,7 +293,11 @@ class ExpertAdmin(admin.ModelAdmin):
             "fields": ("name", "slug", "academic_title", "position", "organization"),
         }),
         (_("Media"), {
-            "fields": ("avatar",),
+            "fields": ("avatar", "hero_avatar"),
+            "description": _(
+                "avatar: Ảnh dùng cho listing card và fallback hero. | "
+                "hero_avatar: Ảnh riêng cho Hero Section trang hồ sơ — ưu tiên hơn avatar khi upload."
+            ),
         }),
         (_("Content"), {
             "fields": ("short_bio", "full_bio"),
