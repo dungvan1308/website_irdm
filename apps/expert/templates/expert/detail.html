@@ -180,9 +180,9 @@
         </div>
       {% endif %}
 
-      {# Full bio — clean text block, no left border #}
+      {# Full bio — no prose class to avoid unwanted blockquote border-l #}
       {% if expert.full_bio %}
-        <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed text-[15px]">
+        <div class="text-slate-700 leading-relaxed text-[15px] [&_p]:mb-4 [&_p:last-child]:mb-0">
           {{ expert.full_bio|linebreaks }}
         </div>
       {% endif %}
@@ -222,11 +222,11 @@
           <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase leading-tight tracking-tight mb-8">
             {% trans "Các chủ đề có thể đồng hành" %}
           </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {% for topic in expert.discussion_topics.splitlines %}
               {% if topic.strip %}
-                <div class="flex items-start gap-3 py-3.5 px-1 border-b border-slate-100">
-                  <span class="w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0 mt-1.5"></span>
+                <div class="flex items-start gap-3 p-4 sm:p-5 bg-white border border-slate-200 rounded-xl hover:border-primary-200 hover:shadow-sm transition-all">
+                  <span class="w-2 h-2 rounded-full bg-primary-500 flex-shrink-0 mt-1.5"></span>
                   <p class="text-sm text-slate-700 leading-relaxed">{{ topic.strip }}</p>
                 </div>
               {% endif %}
@@ -245,11 +245,11 @@
           <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase leading-tight tracking-tight mb-8">
             {% trans "Dự án / Công trình / Chương trình tiêu biểu" %}
           </h2>
-          <ul class="flex flex-col divide-y divide-slate-100">
+          <ul class="flex flex-col gap-3">
             {% for project in expert.notable_projects.splitlines %}
               {% if project.strip %}
-                <li class="flex items-start gap-3 py-4">
-                  <span class="w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0 mt-1.5"></span>
+                <li class="flex items-start gap-3 p-4 sm:p-5 bg-white border border-slate-200 rounded-xl hover:border-primary-200 hover:shadow-sm transition-all">
+                  <span class="w-2 h-2 rounded-full bg-primary-500 flex-shrink-0 mt-1.5"></span>
                   <p class="text-sm text-slate-700 leading-relaxed">{{ project.strip }}</p>
                 </li>
               {% endif %}
