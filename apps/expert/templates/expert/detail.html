@@ -139,71 +139,69 @@
   {# Ticker bar — dark navy, content from ticker_text / knowledge_topics / research_areas #}
   {% if ticker_content %}
     <div class="relative overflow-hidden" style="background-color: #1B3A6B;">
-      <div class="flex whitespace-nowrap animate-marquee py-3.5 text-[11px] font-bold tracking-[0.22em]">
-        <span class="px-10 text-white/90">{{ ticker_content }}</span>
-        <span class="px-10 text-white/90" aria-hidden="true">{{ ticker_content }}</span>
-        <span class="px-10 text-white/90" aria-hidden="true">{{ ticker_content }}</span>
+      <div class="py-3.5 text-[11px] font-bold tracking-[0.22em] text-center text-white/90">
+        {{ ticker_content }}
       </div>
     </div>
   {% endif %}
 </section>
-
-{# ── STATS + BIO + SIDEBAR ──────────────────────────────────────────────────── #}
-{% if expert.stat_1_value or expert.stat_2_value or expert.stat_3_value %}
-<section class="bg-white border-b border-slate-100">
-  <div class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-10">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
-      {% if expert.stat_1_value %}
-        <div class="text-center pt-6 sm:pt-0">
-          <p class="text-4xl font-extrabold text-primary-900">{{ expert.stat_1_value }}</p>
-          <p class="text-sm text-slate-500 mt-1">{{ expert.stat_1_label }}</p>
-        </div>
-      {% endif %}
-      {% if expert.stat_2_value %}
-        <div class="text-center pt-6 sm:pt-0 sm:pl-8">
-          <p class="text-4xl font-extrabold text-primary-900">{{ expert.stat_2_value }}</p>
-          <p class="text-sm text-slate-500 mt-1">{{ expert.stat_2_label }}</p>
-        </div>
-      {% endif %}
-      {% if expert.stat_3_value %}
-        <div class="text-center pt-6 sm:pt-0 sm:pl-8">
-          <p class="text-4xl font-extrabold text-primary-900">{{ expert.stat_3_value }}</p>
-          <p class="text-sm text-slate-500 mt-1">{{ expert.stat_3_label }}</p>
-        </div>
-      {% endif %}
-    </div>
-  </div>
-</section>
-{% endif %}
 
 {# ── MAIN CONTENT + SIDEBAR ─────────────────────────────────────────────────── #}
 <section class="max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-14 lg:py-20">
   <div class="flex flex-col lg:flex-row gap-12">
 
     {# Main column #}
-    <div class="flex-1 min-w-0 flex flex-col gap-16">
+    <div class="flex-1 min-w-0 flex flex-col gap-14">
 
-      {# Full bio #}
-      {% if expert.full_bio %}
-        <div class="border-l-4 border-primary-400 pl-6">
-          <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed text-[15px]">
-            {{ expert.full_bio|linebreaks }}
+      {# Profile Snapshot card (Figma) #}
+      {% if expert.stat_1_value or expert.stat_2_value or expert.stat_3_value %}
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 lg:p-8">
+          <p class="text-[11px] font-bold tracking-[0.18em] text-[#EC6D29] uppercase mb-5">PROFILE SNAPSHOT</p>
+          <div class="flex flex-col sm:flex-row sm:divide-x divide-slate-200 gap-6 sm:gap-0">
+            {% if expert.stat_1_value %}
+              <div class="flex-1 sm:pr-8">
+                <p class="text-5xl font-extrabold text-primary-900 leading-none mb-1.5">{{ expert.stat_1_value }}</p>
+                <p class="text-sm text-slate-500">{{ expert.stat_1_label }}</p>
+              </div>
+            {% endif %}
+            {% if expert.stat_2_value %}
+              <div class="flex-1 sm:px-8">
+                <p class="text-2xl font-extrabold text-primary-900 leading-none mb-1.5">{{ expert.stat_2_value }}</p>
+                <p class="text-sm text-slate-500">{{ expert.stat_2_label }}</p>
+              </div>
+            {% endif %}
+            {% if expert.stat_3_value %}
+              <div class="flex-1 sm:pl-8">
+                <p class="text-2xl font-extrabold text-primary-900 leading-none mb-1.5">{{ expert.stat_3_value }}</p>
+                <p class="text-sm text-slate-500">{{ expert.stat_3_label }}</p>
+              </div>
+            {% endif %}
           </div>
+        </div>
+      {% endif %}
+
+      {# Full bio — clean text block, no left border #}
+      {% if expert.full_bio %}
+        <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed text-[15px]">
+          {{ expert.full_bio|linebreaks }}
         </div>
       {% endif %}
 
       {# Experience highlights #}
       {% if expert.experience_highlights %}
         <div>
-          <p class="text-xs font-bold tracking-widest text-[#EC6D29] uppercase mb-2">— {% trans "Kinh nghiệm nổi bật" %}</p>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase leading-tight mb-8">
+          <p class="flex items-center gap-2 text-[11px] font-bold tracking-[0.18em] text-[#EC6D29] uppercase mb-3">
+            <span class="inline-block w-5 h-px bg-[#EC6D29]"></span>
+            {% trans "Kinh nghiệm nổi bật" %}
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase leading-tight tracking-tight mb-8">
             {% trans "Kinh nghiệm" %}<br>{% trans "& Lĩnh vực chuyên sâu" %}
           </h2>
-          <ol class="flex flex-col gap-4">
+          <ol class="flex flex-col gap-3">
             {% for item in expert.experience_highlights.splitlines %}
               {% if item.strip %}
-                <li class="flex items-start gap-4 p-4 rounded-xl border border-slate-100 bg-slate-50 hover:border-primary-200 hover:bg-blue-50 transition-colors">
-                  <span class="flex-shrink-0 w-9 h-9 rounded-full bg-primary-900 text-white text-sm font-bold flex items-center justify-center">
+                <li class="flex items-start gap-4 p-4 sm:p-5 rounded-xl bg-white border border-slate-200 hover:border-primary-200 hover:shadow-sm transition-all">
+                  <span class="flex-shrink-0 w-9 h-9 rounded-full border-2 border-primary-200 bg-primary-50 text-primary-700 text-sm font-bold flex items-center justify-center">
                     {{ forloop.counter|stringformat:"02d" }}
                   </span>
                   <p class="text-sm text-slate-700 leading-relaxed pt-1.5">{{ item.strip }}</p>
@@ -214,18 +212,21 @@
         </div>
       {% endif %}
 
-      {# Discussion topics #}
+      {# Discussion topics — 2-col bullet list (Figma) #}
       {% if expert.discussion_topics %}
         <div>
-          <p class="text-xs font-bold tracking-widest text-[#EC6D29] uppercase mb-2">— {% trans "Có thể đồng hành" %}</p>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase leading-tight mb-8">
+          <p class="flex items-center gap-2 text-[11px] font-bold tracking-[0.18em] text-[#EC6D29] uppercase mb-3">
+            <span class="inline-block w-5 h-px bg-[#EC6D29]"></span>
+            {% trans "Có thể đồng hành" %}
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase leading-tight tracking-tight mb-8">
             {% trans "Các chủ đề có thể đồng hành" %}
           </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2">
             {% for topic in expert.discussion_topics.splitlines %}
               {% if topic.strip %}
-                <div class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-primary-200 transition-colors">
-                  <span class="w-1.5 h-1.5 rounded-full bg-primary-500 flex-shrink-0 mt-2"></span>
+                <div class="flex items-start gap-3 py-3.5 px-1 border-b border-slate-100">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0 mt-1.5"></span>
                   <p class="text-sm text-slate-700 leading-relaxed">{{ topic.strip }}</p>
                 </div>
               {% endif %}
@@ -234,18 +235,21 @@
         </div>
       {% endif %}
 
-      {# Notable projects #}
+      {# Notable projects — separator line list (Figma) #}
       {% if expert.notable_projects %}
         <div>
-          <p class="text-xs font-bold tracking-widest text-[#EC6D29] uppercase mb-2">— {% trans "Công trình tiêu biểu" %}</p>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase leading-tight mb-8">
+          <p class="flex items-center gap-2 text-[11px] font-bold tracking-[0.18em] text-[#EC6D29] uppercase mb-3">
+            <span class="inline-block w-5 h-px bg-[#EC6D29]"></span>
+            {% trans "Công trình tiêu biểu" %}
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase leading-tight tracking-tight mb-8">
             {% trans "Dự án / Công trình / Chương trình tiêu biểu" %}
           </h2>
-          <ul class="flex flex-col gap-3">
+          <ul class="flex flex-col divide-y divide-slate-100">
             {% for project in expert.notable_projects.splitlines %}
               {% if project.strip %}
-                <li class="flex items-start gap-3 p-4 rounded-lg border border-slate-200 bg-white hover:border-primary-200 transition-colors">
-                  <span class="w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0 mt-2"></span>
+                <li class="flex items-start gap-3 py-4">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-400 flex-shrink-0 mt-1.5"></span>
                   <p class="text-sm text-slate-700 leading-relaxed">{{ project.strip }}</p>
                 </li>
               {% endif %}
@@ -257,15 +261,15 @@
     </div>
 
     {# Sidebar #}
-    <aside class="w-full lg:w-72 xl:w-80 flex-shrink-0 flex flex-col gap-6">
+    <aside class="w-full lg:w-72 xl:w-80 flex-shrink-0 flex flex-col gap-5">
 
       {# Research areas #}
       {% if expert.research_areas.exists %}
         <div class="bg-white rounded-xl border border-slate-200 p-5">
-          <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-3">{% trans "Lĩnh vực chuyên môn" %}</h3>
+          <h3 class="text-[10px] font-bold tracking-widest text-slate-400 uppercase mb-3">{% trans "Lĩnh vực chuyên môn" %}</h3>
           <div class="flex flex-wrap gap-2">
             {% for area in expert.research_areas.all %}
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-100">{{ area.name }}</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">{{ area.name }}</span>
             {% endfor %}
           </div>
         </div>
@@ -274,29 +278,29 @@
       {# Engagement types #}
       {% if expert.engagement_types.exists %}
         <div class="bg-white rounded-xl border border-slate-200 p-5">
-          <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-3">{% trans "Hình thức đồng hành" %}</h3>
+          <h3 class="text-[10px] font-bold tracking-widest text-slate-400 uppercase mb-3">{% trans "Hình thức đồng hành" %}</h3>
           <div class="flex flex-wrap gap-2">
             {% for et in expert.engagement_types.all %}
-              <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200">{{ et.name }}</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">{{ et.name }}</span>
             {% endfor %}
           </div>
         </div>
       {% endif %}
 
-      {# Knowledge topics #}
+      {# Knowledge topics — Chủ đề & Từ khóa #}
       {% if expert.knowledge_topics.exists %}
         <div class="bg-white rounded-xl border border-slate-200 p-5">
-          <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-3">{% trans "Chủ đề & Từ khóa" %}</h3>
+          <h3 class="text-[10px] font-bold tracking-widest text-slate-400 uppercase mb-3">{% trans "Chủ đề & Từ khóa" %}</h3>
           <div class="flex flex-wrap gap-2">
             {% for kt in expert.knowledge_topics.all %}
-              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">{{ kt.name }}</span>
+              <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">{{ kt.name }}</span>
             {% endfor %}
           </div>
         </div>
       {% endif %}
 
       {# Contact CTA card #}
-      <div class="rounded-xl p-5 text-white" style="background:linear-gradient(135deg,#162469,#1FA2AD)">
+      <div class="rounded-xl p-5 text-white" style="background:linear-gradient(135deg,#1B3F6E,#1FA2AD)">
         <h3 class="font-bold text-base mb-2">{% trans "Liên hệ hợp tác" %}</h3>
         <p class="text-sm text-white/80 mb-4 leading-relaxed">
           {% trans "Kết nối với chuyên gia để trao đổi về bài toán, chương trình hoặc hợp tác của tổ chức bạn." %}
@@ -307,23 +311,19 @@
         </a>
       </div>
 
-      {# Explore more #}
+      {# Explore more — orange bordered buttons (Figma) #}
       <div class="bg-white rounded-xl border border-slate-200 p-5">
-        <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase mb-4">{% trans "Khám phá thêm" %}</h3>
+        <h3 class="text-[10px] font-bold tracking-widest text-slate-400 uppercase mb-4">{% trans "Khám phá thêm" %}</h3>
         <div class="flex flex-col gap-3">
           <a href="{% url 'solution:listing' %}"
-             class="flex items-center justify-between p-3 rounded-lg border border-slate-200 hover:border-primary-300 hover:bg-blue-50 text-sm font-medium text-primary-700 transition-colors">
+             class="flex items-center justify-between px-4 py-2.5 rounded-lg border border-[#EC6D29] text-[#EC6D29] hover:bg-orange-50 text-sm font-semibold transition-colors">
             {% trans "Giải pháp của IRDM" %}
-            <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
+            <span aria-hidden="true" class="text-base leading-none">→</span>
           </a>
           <a href="{% url 'knowledge:listing' %}"
-             class="flex items-center justify-between p-3 rounded-lg border border-slate-200 hover:border-primary-300 hover:bg-blue-50 text-sm font-medium text-primary-700 transition-colors">
+             class="flex items-center justify-between px-4 py-2.5 rounded-lg border border-[#EC6D29] text-[#EC6D29] hover:bg-orange-50 text-sm font-semibold transition-colors">
             {% trans "Tri thức & góc nhìn" %}
-            <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
+            <span aria-hidden="true" class="text-base leading-none">→</span>
           </a>
         </div>
       </div>

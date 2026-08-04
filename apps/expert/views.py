@@ -88,16 +88,8 @@ class ExpertDetailView(TemplateView):
         ctx["expert"] = expert
         ctx["listing_page"] = ExpertService.get_listing_page()
 
-        # Build ticker bar content: ticker_text → knowledge_topics → research_areas
-        if expert.ticker_text:
-            ctx["ticker_content"] = expert.ticker_text
-        else:
-            topics = list(expert.knowledge_topics.filter(is_active=True).order_by("display_order"))
-            if topics:
-                ctx["ticker_content"] = "  ✦  ".join(t.name.upper() for t in topics)
-            else:
-                areas = list(expert.research_areas.filter(is_active=True).order_by("display_order"))
-                ctx["ticker_content"] = "  ✦  ".join(a.name.upper() for a in areas)
+        # Ticker bar — only from ticker_text field (admin: TRANG HỒ SƠ — Hero)
+        ctx["ticker_content"] = expert.ticker_text
 
         # Related experts: same research areas, excluding self, max 5
         area_ids = expert.research_areas.values_list("id", flat=True)
