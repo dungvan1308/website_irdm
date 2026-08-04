@@ -2,12 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict 4kg4NPOzsePvRnLqJwUaLMDffUZcaJNRumFuoEM4H6ROskNg1mllPwg8wsdpofz
+\restrict a4lsh77GIWCvkspVZpw8nJ0h1YRSKfm6mq9DE2SNXIBAdHCA14aiGIapZYg70ve
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.3
 
--- Started on 2026-08-03 23:34:45
+-- Started on 2026-08-05 00:11:25
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1431,6 +1431,21 @@ CREATE TABLE public.expert_expert (
     is_senior boolean NOT NULL,
     group_id uuid,
     card_specialty character varying(200) NOT NULL,
+    contact_cta_url character varying(500) NOT NULL,
+    discussion_topics text NOT NULL,
+    experience_highlights text NOT NULL,
+    hero_tagline text NOT NULL,
+    notable_projects text NOT NULL,
+    role_badges text NOT NULL,
+    stat_1_label character varying(200) NOT NULL,
+    stat_1_value character varying(50) NOT NULL,
+    stat_2_label character varying(200) NOT NULL,
+    stat_2_value character varying(50) NOT NULL,
+    stat_3_label character varying(200) NOT NULL,
+    stat_3_value character varying(50) NOT NULL,
+    ticker_text character varying(500) NOT NULL,
+    hero_cta_label character varying(100) NOT NULL,
+    hero_avatar character varying(100) NOT NULL,
     CONSTRAINT expert_expert_display_order_check CHECK ((display_order >= 0))
 );
 
@@ -4641,6 +4656,14 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 269	2026-08-03 23:17:25.753765+07	e23ebc4e-6d8d-4070-b204-51f85793e29e	Hiệp hội & Mạng lưới chuyên môn	2	[{"changed": {"name": "association", "object": "Hi\\u1ec7p h\\u1ed9i & M\\u1ea1ng l\\u01b0\\u1edbi chuy\\u00ean m\\u00f4n \\u2014 M\\u1ea1ng l\\u01b0\\u1edbi Trung t\\u00e2m \\u0110\\u00e0o t\\u1ea1o Xu\\u1ea5t s\\u1eafc v\\u00e0 T\\u00e0i n\\u0103ng v\\u1ec1 C\\u00f4ng ngh", "fields": ["Logo"]}}]	71	1
 270	2026-08-03 23:21:05.249631+07	e23ebc4e-6d8d-4070-b204-51f85793e29e	Hiệp hội & Mạng lưới chuyên môn	2	[{"changed": {"name": "association", "object": "Hi\\u1ec7p h\\u1ed9i & M\\u1ea1ng l\\u01b0\\u1edbi chuy\\u00ean m\\u00f4n \\u2014 M\\u1ea1ng l\\u01b0\\u1edbi Trung t\\u00e2m \\u0110\\u00e0o t\\u1ea1o Xu\\u1ea5t s\\u1eafc v\\u00e0 T\\u00e0i n\\u0103ng v\\u1ec1 C\\u00f4ng ngh", "fields": ["Icon background color (hex)"]}}]	71	1
 271	2026-08-03 23:27:53.993605+07	e23ebc4e-6d8d-4070-b204-51f85793e29e	Hiệp hội & Mạng lưới chuyên môn	2	[{"changed": {"name": "association", "object": "Hi\\u1ec7p h\\u1ed9i & M\\u1ea1ng l\\u01b0\\u1edbi chuy\\u00ean m\\u00f4n \\u2014 M\\u1ea1ng l\\u01b0\\u1edbi Trung t\\u00e2m \\u0110\\u00e0o t\\u1ea1o Xu\\u1ea5t s\\u1eafc v\\u00e0 T\\u00e0i n\\u0103ng v\\u1ec1 C\\u00f4ng ngh", "fields": ["Logo"]}}]	71	1
+272	2026-08-04 21:30:21.076673+07	2a264ebc-0bdc-4264-9d99-d9384a9e060d	GS.TS.BS GS.TS.BS. Phạm Lê An	3		64	1
+273	2026-08-04 21:33:55.289997+07	5e834e6b-7d63-4416-b323-80a1758300b1	GS.TS.BS. Phạm Lê An	2	[{"changed": {"fields": ["Short bio", "Full bio", "Experience highlights", "Engagement types", "Knowledge topics"]}}]	64	1
+274	2026-08-04 22:22:33.953721+07	5e834e6b-7d63-4416-b323-80a1758300b1	GS.TS.BS. Phạm Lê An	2	[{"changed": {"fields": ["Ticker bar text"]}}]	64	1
+275	2026-08-04 22:57:10.259046+07	5e834e6b-7d63-4416-b323-80a1758300b1	GS.TS.BS. Phạm Lê An	2	[{"changed": {"fields": ["Stat 1 \\u2014 value", "Stat 1 \\u2014 label", "Stat 3 \\u2014 value", "Stat 3 \\u2014 label", "Notable projects"]}}]	64	1
+276	2026-08-04 22:59:13.627759+07	5e834e6b-7d63-4416-b323-80a1758300b1	GS.TS.BS. Phạm Lê An	2	[{"changed": {"fields": ["Discussion topics", "Notable projects"]}}]	64	1
+277	2026-08-04 23:08:22.369569+07	7a442992-c910-47e8-b627-afd0e7ce4c83	TS.DS. Trần Lê Diễm Anh	2	[{"changed": {"fields": ["Organization", "Short bio", "Hero tagline", "Ticker bar text", "Stat 1 \\u2014 value", "Stat 1 \\u2014 label", "Experience highlights", "Discussion topics", "Notable projects"]}}]	64	1
+278	2026-08-04 23:19:53.723424+07	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	ThS. Tạ Thị Phấn	2	[{"changed": {"fields": ["Organization", "Avatar", "Short bio", "Hero tagline", "Experience highlights", "Discussion topics", "Notable projects", "Engagement types", "Knowledge topics"]}}]	64	1
+279	2026-08-05 00:08:37.88763+07	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	ThS. Tạ Thị Phấn	2	[{"changed": {"fields": ["Avatar", "Hero avatar"]}}]	64	1
 \.
 
 
@@ -4851,6 +4874,9 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 87	about	0011_target_audience_bg	2026-08-02 22:33:32.051445+07
 88	about	0012_ecosystem_enhancements	2026-08-02 22:58:00.412498+07
 89	about	0013_contact_banner_redesign	2026-08-02 23:50:43.730585+07
+90	expert	0021_expert_detail_page_fields	2026-08-03 23:57:13.24995+07
+91	expert	0022_expert_hero_cta_label	2026-08-04 21:54:01.818024+07
+92	expert	0023_expert_hero_avatar	2026-08-04 23:36:07.991788+07
 \.
 
 
@@ -4903,78 +4929,77 @@ a01de170-27f6-477c-a710-00a7d6f68268	t	4	2026-07-28 23:36:07.621143+07	2026-07-2
 -- Data for Name: expert_expert; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
-COPY public.expert_expert (id, is_active, display_order, created_at, updated_at, name, slug, academic_title, "position", organization, avatar, short_bio, full_bio, email, profile_url, is_published, is_featured, is_senior, group_id, card_specialty) FROM stdin;
-b79cdef4-3435-4990-9252-1791aedd6d2e	t	7	2026-07-27 17:43:39.048478+07	2026-07-28 23:36:07.673496+07	Đỗ Thị Hương	o-thi-huong	TS.	Chuyên gia Phát triển bền vững	Viện Chiến lược và Chính sách Tài nguyên Môi trường		Nhà nghiên cứu về kinh tế xanh và phát triển bền vững, tư vấn cho UNDP và GIZ tại Việt Nam.				t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c	
-82f35f80-7d8e-4b7c-9dfc-e0c27c6abf22	t	6	2026-07-27 17:43:39.040919+07	2026-07-28 23:36:07.67154+07	Ngô Quang Minh	ngo-quang-minh	GS.	Giáo sư Giáo dục học	Đại học Sư phạm Hà Nội		Chuyên gia hàng đầu về cải cách giáo dục và đào tạo giáo viên, cố vấn Bộ Giáo dục và Đào tạo.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd	
-b9ff32bd-2aa8-49e7-9586-379c75f33e28	t	9	2026-07-27 17:43:39.060016+07	2026-07-28 23:36:07.677552+07	Nguyễn Thị Mai	nguyen-thi-mai	PGS.TS.	Phó Giáo sư Xã hội học	Đại học Khoa học Xã hội và Nhân văn		Nhà nghiên cứu xã hội học chuyên về bất bình đẳng giới, di cư lao động và an sinh xã hội.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd	
-88999316-8f8d-4ca0-9438-82d9df238d59	t	10	2026-07-27 17:43:39.069274+07	2026-07-28 23:36:07.680021+07	Richard Thompson	richard-thompson	Prof.	Professor of International Economics	University of Melbourne		International expert on economic development in Southeast Asia with 30+ years of research experience.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150	
-95eef455-b009-4c6f-907e-91673dd3f1a8	t	11	2026-07-27 17:43:39.075405+07	2026-07-28 23:36:07.68281+07	Lý Thị Kim Ngân	ly-thi-kim-ngan	TS.	Chuyên gia Tài chính Công	Học viện Tài chính		Chuyên gia tài chính công và ngân sách nhà nước, từng tư vấn cho Bộ Tài chính về cải cách thuế.				t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c	
-a502b2c7-b3b8-4383-a12e-9c069de367c9	t	12	2026-07-27 17:43:39.085151+07	2026-07-28 23:36:07.685254+07	Trần Quốc Bảo	tran-quoc-bao	PGS.TS.	Giám đốc Trung tâm Nghiên cứu AI	Đại học Quốc gia Hà Nội		Nhà nghiên cứu AI và học máy, trưởng nhóm nghiên cứu xử lý ngôn ngữ tự nhiên tiếng Việt.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-d53433ba-b9d8-4441-83e8-14f9693736b5	t	13	2026-07-27 17:43:39.092419+07	2026-07-28 23:36:07.687229+07	Yoshida Kenji	yoshida-kenji	Dr.	Senior Researcher	JICA Research Institute		Japanese development economist specializing in education policy reform and human capital development in Asia.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150	
-7c089591-38b6-43a5-a990-f7b03c9d6d21	t	14	2026-07-27 17:43:39.102249+07	2026-07-28 23:36:07.68936+07	Bùi Thị Thu Hà	bui-thi-thu-ha	TS.	Chuyên gia Phát triển Tổ chức	Công ty Tư vấn McKinsey Vietnam		Chuyên gia tư vấn chiến lược với hơn 18 năm kinh nghiệm giúp doanh nghiệp Việt Nam nâng cao năng lực cạnh tranh.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba	
-eb7bef3e-f94f-49f9-87f3-37f367ab994e	t	15	2026-07-27 17:43:39.110064+07	2026-07-28 23:36:07.691505+07	Đinh Văn Phúc	inh-van-phuc	GS.TS.	Giáo sư Y học Dự phòng	Đại học Y Dược TP.HCM		Chuyên gia y học dự phòng và dịch tễ học, trưởng nhóm nghiên cứu về bệnh không lây nhiễm tại Việt Nam.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-e661b4e7-3380-4305-9404-c2f437fe1aba	t	16	2026-07-27 17:43:39.11934+07	2026-07-28 23:36:07.693387+07	Phạm Thị Lan Anh	pham-thi-lan-anh	TS.	Chuyên gia Lãnh đạo Phụ nữ	Hội Liên hiệp Phụ nữ Việt Nam		Chuyên gia về bình đẳng giới và lãnh đạo phụ nữ trong khu vực công và tư nhân.				t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c	
-06f55fd9-7ccb-4bda-83d3-8d96d3ac8a69	t	17	2026-07-27 17:43:39.126555+07	2026-07-28 23:36:07.695418+07	Cao Xuân Hưng	cao-xuan-hung	TS.	Giám đốc Sản phẩm	VNG Corporation		Nhà lãnh đạo sản phẩm công nghệ với kinh nghiệm xây dựng nền tảng số phục vụ hàng triệu người dùng.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba	
-a77bf886-849b-455b-852a-2df8b6b58fa0	t	18	2026-07-27 17:43:39.134357+07	2026-07-28 23:36:07.698194+07	Sarah Chen	sarah-chen	Dr.	Associate Professor of Development Studies	National University of Singapore		Researcher in sustainable development and urban governance with extensive fieldwork across Southeast Asia.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150	
-2664691b-c5df-4ae9-b521-0185b31cce4d	t	19	2026-07-27 17:43:39.141063+07	2026-07-28 23:36:07.700939+07	Lê Thị Thanh Huyền	le-thi-thanh-huyen	PGS.TS.	Phó Giáo sư Kinh tế Lao động	Viện Khoa học Lao động và Xã hội		Chuyên gia kinh tế lao động và an sinh xã hội, nghiên cứu về thị trường lao động và kỹ năng nghề.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-f545466a-f5e5-4312-b277-5beb577cfa3d	t	20	2026-07-27 17:43:39.148286+07	2026-07-28 23:36:07.703444+07	Nguyễn Bảo Long	nguyen-bao-long	TS.	Chuyên gia ESG & Bền vững	KPMG Vietnam		Chuyên gia về báo cáo ESG và chiến lược phát triển bền vững cho các tập đoàn đa quốc gia tại Việt Nam.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba	
-d37db12f-a3b6-4dc9-aa60-b475590ed25f	t	21	2026-07-27 17:43:39.153912+07	2026-07-28 23:36:07.706055+07	Đặng Thị Minh Châu	ang-thi-minh-chau	TS.	Chuyên gia Tâm lý Tổ chức	Đại học Khoa học Xã hội và Nhân văn TP.HCM		Nhà tâm lý học tổ chức với chuyên môn về văn hóa doanh nghiệp, quản lý thay đổi và phát triển lãnh đạo.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd	
-96d80975-dbfe-4f48-95df-2d31e6cc6ede	t	22	2026-07-27 17:43:39.160426+07	2026-07-28 23:36:07.708412+07	Trương Văn Khoa	truong-van-khoa	GS.TS.	Giáo sư Toán học Ứng dụng	Đại học Khoa học Tự nhiên		Nhà toán học ứng dụng chuyên về mô hình hóa kinh tế và dự báo tài chính, thành viên Hội Toán học Việt Nam.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-0dac0759-934b-4704-97eb-527515f578ea	t	23	2026-07-27 17:43:39.167275+07	2026-07-28 23:36:07.710313+07	Phan Thị Ngọc Linh	phan-thi-ngoc-linh	TS.	Chuyên gia Dinh dưỡng Cộng đồng	Viện Dinh dưỡng Quốc gia		Chuyên gia dinh dưỡng và an toàn thực phẩm, chủ nhiệm nhiều đề tài nghiên cứu cấp quốc gia về dinh dưỡng học sinh.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-a7438e8f-5301-453e-b2be-212f786a8802	t	24	2026-07-27 17:43:39.172366+07	2026-07-28 23:36:07.71219+07	Michael Park	michael-park	Prof.	Professor of Digital Transformation	KAIST		Pioneer in digital transformation research with 20+ years studying technology adoption in emerging economies.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150	
-5bcb6772-6263-4add-a5f3-95054fd00246	t	5	2026-07-27 17:43:39.034892+07	2026-07-28 23:36:07.669477+07	Vũ Thị Lan	vu-thi-lan	TS.	Tiến sĩ Y tế Cộng đồng	Đại học Y Hà Nội		Nhà nghiên cứu y tế công cộng, chuyên gia về dinh dưỡng cộng đồng và can thiệp hành vi sức khỏe.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-e2f886bb-a017-458f-b4f8-311f0d800fee	t	8	2026-07-27 17:43:39.054909+07	2026-07-28 23:36:07.675633+07	Hoàng Văn Thành	hoang-van-thanh	TS.	Giám đốc Chuyển đổi số	Tập đoàn FPT		Lãnh đạo chuyển đổi số với 15 năm kinh nghiệm triển khai giải pháp công nghệ cho doanh nghiệp lớn.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba	
-162d63f1-2d74-436c-b497-12b6f71fd9f7	t	3	2026-07-27 17:43:39.016567+07	2026-07-31 22:19:52.517329+07	Lê Minh Châu	le-minh-chau	TS.	Tiến sĩ Khoa học Dữ liệu	Đại học Bách khoa Hà Nội		Chuyên gia AI và phân tích dữ liệu lớn, từng làm việc tại MIT Media Lab và Google Research. Hiện đang dẫn dắt nhóm nghiên cứu AI ứng dụng trong y tế và giáo dục.				f	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-8b00b6e5-4263-492f-9dde-866efa62f049	t	4	2026-07-27 17:43:39.024389+07	2026-07-31 22:20:13.130236+07	Phạm Đức Hùng	pham-uc-hung	PGS.TS.	Phó Giáo sư Chính sách Công	Học viện Hành chính Quốc gia		Chuyên gia về cải cách hành chính và quản trị nhà nước với 20 năm kinh nghiệm tư vấn chính phủ.				f	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c	
-dea89a12-8647-4952-9b28-f6283f91e0c6	t	0	2026-07-28 22:13:59.405619+07	2026-08-01 21:42:55.908318+07	Lê Quang Minh	pgs-le-quang-minh	GS.TS.	Nhà khoa học giáo dục		expert/avatars/PGS_LeQuangMinh.jpg	Đồng hành định hướng học thuật và phát triển năng lực trong giáo dục đại học.				t	t	t	0122e571-d2d9-4085-81ac-6cce3df19edf	Giáo dục & phát triển năng lực
-6c3770a1-da0e-40ca-bd75-c37091d43431	t	25	2026-07-27 17:43:39.178+07	2026-07-28 23:36:07.714987+07	Võ Thị Thanh Tâm	vo-thi-thanh-tam	PGS.TS.	Phó Giáo sư Quản trị Y tế	Đại học Y tế Công cộng		Chuyên gia quản trị bệnh viện và chính sách y tế, tư vấn cải cách hệ thống y tế cho nhiều tỉnh thành.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd	
-2a264ebc-0bdc-4264-9d99-d9384a9e060d	t	0	2026-07-29 21:53:59.425738+07	2026-07-29 21:53:59.42575+07	GS.TS.BS. Phạm Lê An	gstsbs-phm-le-an	GS.TS.BS	Y tế & Quản trị y tế		expert/avatars/PhamLeAn.png					f	f	f	\N	
-7a442992-c910-47e8-b627-afd0e7ce4c83	t	4	2026-07-29 22:39:48.461006+07	2026-08-01 21:59:10.352375+07	Trần Lê Diễm Anh	tran-le-diem-anh	TS.DS.	Chuyên gia học tập ứng dụng		expert/avatars/TranLeDiemAnh.jpg	Chuyển hóa tri thức thành trải nghiệm học tập, E-Learning và phát triển năng lực.	Chuyển hóa tri thức thành trải nghiệm học tập, E-Learning và phát triển năng lực.			t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Giáo dục & y tế
-11a4ef9f-bb10-487a-8ced-a0d0caacbf1e	t	3	2026-07-29 22:39:48.458409+07	2026-07-29 22:39:48.458417+07	Trần Thị Minh Hạnh	tran-thi-minh-hanh	TS.BS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-3bdbf9f6-a569-4a6d-81e4-7ad65f06149a	t	9	2026-07-29 22:39:48.478643+07	2026-07-29 22:39:48.478651+07	Huỳnh Ngọc Tín	huynh-ngoc-tin	TS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-1ce9b61f-1e94-4c61-bc68-de6f6eabab89	t	12	2026-07-29 22:39:48.489531+07	2026-07-29 22:39:48.489541+07	Minh Nguyễn	minh-nguyen	Kỹ sư								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-858ac4bd-6f40-4bc3-b726-50c42d9cfe32	t	13	2026-07-29 22:39:48.492959+07	2026-07-29 22:39:48.492968+07	Nguyễn Ngọc Liêm	nguyen-ngoc-liem	Kỹ sư								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-2316b863-f75c-4f1c-947d-c92ff5630f80	t	30	2026-07-29 22:39:48.542626+07	2026-08-03 22:58:57.630698+07	John Stiles	john-stiles	TS.			expert/avatars/John.jpg					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-a78667f1-f6cc-407c-8079-eb9a2beed0d1	t	15	2026-07-29 22:39:48.500403+07	2026-07-29 22:39:48.500414+07	Nguyễn Đức Tuấn	nguyen-đuc-tuan	GS.TS.DS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-bb812c25-fe79-4803-a18f-91e2f890dead	t	16	2026-07-29 22:39:48.503259+07	2026-07-29 22:39:48.503268+07	Nguyễn Thị Vân Hạnh	nguyen-thi-van-hanh	PGS.TS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-765a906e-fd8b-4b8b-9788-07cc411e2854	t	17	2026-07-29 22:39:48.506373+07	2026-07-29 22:39:48.50638+07	Phạm Thị Thủy	pham-thi-thuy	TS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-8083be18-e5b7-4a0f-a1d9-68f8a0135d05	t	22	2026-07-29 22:39:48.520097+07	2026-07-29 22:39:48.520104+07	Trịnh Thúy Linh	trinh-thuy-linh	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-71787fd3-18e9-4093-b74d-d0966c7872c7	t	27	2026-07-29 22:39:48.534415+07	2026-07-29 22:39:48.534421+07	Trần Quyết Thắng	tran-quyet-thang	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-2486a510-13b5-40c4-aafe-d016ee99a05f	t	29	2026-07-29 22:39:48.540014+07	2026-07-29 22:39:48.54002+07	Lê Thị Lan Anh	le-thi-lan-anh	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-ce5dba86-d252-497e-82be-9ddce6d30f30	t	31	2026-07-29 22:39:48.545324+07	2026-07-29 22:39:48.54533+07	Nguyễn Minh Hương	nguyen-minh-huong	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-8ba10eec-7416-4b9a-93f1-3bd09f5c7778	t	33	2026-07-29 22:39:48.549807+07	2026-07-29 22:39:48.549812+07	Nguyễn Thị Thanh Hương	nguyen-thi-thanh-huong	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-e68cb480-9541-41b4-b9b0-5a248684757d	t	34	2026-07-29 22:39:48.551762+07	2026-07-29 22:39:48.551766+07	Nguyễn Thuận Đạt	nguyen-thuan-đat	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-e796389d-d04a-426e-8bde-5f80bd1fd8ba	t	8	2026-07-29 23:27:17.368534+07	2026-07-29 23:27:17.368539+07	Trần Thanh Tâm	gv-tran-thanh-tam	TS.								t	f	f	\N	
-5be799bd-bb86-4b46-afe7-22840c17be54	t	9	2026-07-29 23:27:17.370849+07	2026-07-29 23:27:17.370854+07	Nguyễn Minh Hương	gv-nguyen-minh-huong	ThS.								t	f	f	\N	
-8dd1ca64-4c7e-4ed4-8314-7888dd20eb07	t	17	2026-07-29 23:27:17.391208+07	2026-07-29 23:27:17.391216+07	Ngô Minh Uy	gv-ngo-minh-uy	ThS.								t	f	f	\N	
-0320a7f6-ea8e-434e-b1b5-b1492092aff7	f	14	2026-07-29 22:39:48.49661+07	2026-07-31 22:52:20.209736+07	Lê Quang Minh	le-quang-minh	PGS.TS.			expert/avatars/PGS_LeQuangMinh.jpg					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-d65bf112-2363-4863-90af-c2290e38552a	t	26	2026-07-29 22:39:48.5316+07	2026-07-31 23:49:02.268293+07	Nguyễn Minh Nhựt	nguyen-minh-nhut	TS.	Nhà nghiên cứu chính sách		expert/avatars/NguyenMinhNhut.jpg	Nghiên cứu chính sách công, tác động xã hội và phát triển hệ thống.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-0b8fec46-7f9c-485e-9e61-2e36704a3d88	t	24	2026-07-29 22:39:48.526569+07	2026-08-01 22:02:13.68607+07	Ngô Minh Uy	ngo-minh-uy	ThS.	Chuyên gia học tập ứng dụng		expert/avatars/NgoMinhUy.jpg	Chuyên gia thiết kế và triển khai chương trình hỗ trợ tâm lý và wellbeing.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Tâm lý & sức khỏe tâm thần
-b75f4486-d125-4a65-80e5-b9d4f2a6eb52	t	28	2026-07-29 22:39:48.537352+07	2026-08-01 22:00:54.994381+07	Trần Thanh Tâm	tran-thanh-tam	TS.	Chuyên gia môi trường		expert/avatars/TranThanhTam.jpg	Chuyên gia về sức khỏe môi trường, ESG và các mô hình phát triển bền vững trong y tế và giáo dục.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Môi trường & phát triển bền vững
-6a85721a-54d2-4a99-9426-c22f31b4b26a	t	5	2026-07-29 22:39:48.467117+07	2026-08-03 22:40:33.484505+07	Huỳnh Anh Lan	huynh-anh-lan	BS.CKII.	Y tế & Quản trị y tế		expert/avatars/HuynhAnhLan.jpg					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-1548f376-7bd3-455c-a18c-6ae017a08383	t	35	2026-07-29 22:39:48.475565+07	2026-08-03 22:43:43.640992+07	Trần Trung Hiếu	tran-trung-hieu	Mr.			expert/avatars/TranTrungHieu.png					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-032459a4-fa62-412f-8b8e-88e11b17a173	t	18	2026-07-29 22:39:48.510209+07	2026-08-03 22:46:49.919949+07	Bùi Hồng Quân	bui-hong-quan	TS.			expert/avatars/BuiHongQuan.jpg					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-eb0fa648-67ab-4716-84ae-9e28c7e9e779	t	19	2026-07-29 22:39:48.51307+07	2026-08-03 22:47:53.179328+07	Nguyễn Thị Minh	nguyen-thi-minh	TS.			expert/avatars/NguyenThiMinh.png					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-7c7ad3df-ccd0-49c6-a73b-58eb01eb7cc2	t	20	2026-07-29 22:39:48.515564+07	2026-08-03 22:49:03.914066+07	Lương Dũng Nhân	luong-dung-nhan	ThS.			expert/avatars/LuongDungNhan.png					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-c262cfba-f4c8-4c29-b13b-924f195aace4	t	21	2026-07-29 22:39:48.517684+07	2026-08-03 22:50:04.799022+07	Lê Ngọc Anh Khoa	le-ngoc-anh-khoa	ThS.			expert/avatars/LeNgocAnhKhoa.jpg					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	t	5	2026-07-29 22:39:48.481383+07	2026-08-03 22:53:39.317655+07	Tạ Thị Phấn	ta-thi-phan	ThS.	Chuyên gia dữ liệu & điều phối chuyên môn		expert/avatars/TaThiPhan.png	Kết nối dữ liệu, điều phối chuyên môn và hỗ trợ triển khai chương trình.				t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	AI, dữ liệu & chuyển đổi số
-71f9729b-ec4c-414c-b7ee-aa76589d75a5	t	12	2026-07-29 23:27:17.37919+07	2026-08-03 22:51:43.871297+07	Trịnh Thùy Linh	gv-trinh-thuy-linh	ThS.			expert/avatars/TrinhThuyLinh.png					t	f	f	\N	
-b2f5c1ea-5835-4c1e-9c29-805b2c2d322b	t	32	2026-07-29 22:39:48.547712+07	2026-08-03 23:00:15.039874+07	Nguyễn Thị Bích Hà	nguyen-thi-bich-ha	ThS.			expert/avatars/NguyenThiBichHa.png					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-e4f1b232-f338-4822-a71a-dc7108e34ff2	t	7	2026-07-29 23:27:17.366313+07	2026-08-03 23:01:56.127629+07	Nguyễn Hữu Hoàng	gv-nguyen-huu-hoang	TS.			expert/avatars/NguyenHuuHoang.jpg					t	f	f	\N	
-f51aed81-7ebf-428f-bdb4-70b0d54514a2	t	10	2026-07-29 23:27:17.37398+07	2026-08-03 23:03:06.856429+07	Lê Ngọc Thiên Phương	gv-le-ngoc-thien-phuong	ThS.			expert/avatars/LeNgocThienPhuong.jpg					t	f	f	\N	
-9ee63c75-b024-4fbb-90a8-1798cb6ceaaa	t	11	2026-07-29 22:39:48.485888+07	2026-08-03 23:04:22.789074+07	Bùi Thanh Tùng	bui-thanh-tung	ThS.			expert/avatars/BuiThanhTung.png					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-616eb172-f424-4e66-b503-be9b2bf1aa14	t	15	2026-07-29 23:27:17.385467+07	2026-08-03 23:05:23.599441+07	Ngô Văn Huy	gv-ngo-van-huy	ThS.BS.			expert/avatars/NgoVanHuy.jpg					t	f	f	\N	
-722d2f3a-b0f0-48c0-a162-e69c53923476	t	6	2026-07-29 22:39:48.469407+07	2026-08-03 23:08:52.756084+07	Nguyễn Quốc Định	nguyen-quoc-dinh	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-cc2c8d15-3a91-4485-81ef-8fcef5ea4a25	t	1	2026-07-27 17:43:38.979296+07	2026-07-31 22:02:26.242275+07	Nguyễn Văn An	nguyen-van-an	GS.TS.	Giáo sư Kinh tế học	Đại học Kinh tế Quốc dân		Chuyên gia hàng đầu về kinh tế phát triển với hơn 25 năm kinh nghiệm nghiên cứu và tư vấn chính sách. Từng là cố vấn cho các tổ chức quốc tế như World Bank và ADB.				f	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-4bfedb13-2989-40cb-a435-0c3314c0f5c3	t	2	2026-07-27 17:43:39.008155+07	2026-07-31 22:19:41.334325+07	Trần Thị Bình	tran-thi-binh	PGS.TS.	Phó Giáo sư Quản trị Kinh doanh	Đại học Ngoại thương		Chuyên gia về quản trị doanh nghiệp và chuyển đổi số với nhiều công trình nghiên cứu được quốc tế công nhận. Tác giả của 3 cuốn sách về lãnh đạo trong thời đại số.				f	f	f	0490c13d-38a8-445a-9c19-a93227978afd	
-dd4d7f32-1eaa-4a4e-8ea6-6a48ccf87e3c	t	3	2026-07-29 22:39:48.529043+07	2026-07-31 22:20:53.531161+07	Phạm Đức Trọng	pham-duc-trong	TS.	Nhà nghiên cứu xã hội học		expert/avatars/PhamDucTrong.jpg	Phân tích bối cảnh xã hội, nhóm thụ hưởng và tác động chính sách.				t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-81d5f380-1962-4904-bd36-7b02753156b3	t	1	2026-07-29 22:39:48.524025+07	2026-07-31 22:28:36.680763+07	Phan Thị Mai Hương	phan-thi-mai-huong	PGS.TS.	Nhà tâm lý học			Nghiên cứu và ứng dụng tâm lý học trong phát triển con người và wellbeing.				t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-767afe2b-67b0-4078-88ad-28d0d8bc209f	t	2	2026-07-29 22:39:48.453716+07	2026-07-31 23:41:06.015165+07	Ngô Gia Lương	ngo-gia-luong	TS.	Chuyên gia y tế & kinh tế		expert/avatars/NgoGiaLuong.jpg	Chuyên gia về quản trị y tế, kinh tế y tế và phân tích tác động của chính sách y tế.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-55dae78f-50c7-4bec-8975-998d7d55dba2	t	7	2026-07-29 22:39:48.47286+07	2026-07-31 23:57:06.020447+07	Nguyễn Thanh Bình	nguyen-thanh-binh	PGS.TS.	Chuyên gia AI & dữ liệu		expert/avatars/NguyenThanhBinh.jpg	Chuyên gia về AI, khai phá dữ liệu và ứng dụng công nghệ trong y tế số.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	
-5e834e6b-7d63-4416-b323-80a1758300b1	t	1	2026-07-29 22:39:48.44205+07	2026-08-01 21:58:00.192044+07	Phạm Lê An	pham-le-an	GS.TS.BS.	Y tế & quản trị y tế		expert/avatars/PhamLeAn.png	Cố vấn chiến lược trong y học gia đình, sức khỏe cộng đồng và giáo dục y khoa.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Y tế & quản trị y tế
-577f79a5-e422-41bf-9e99-0724e93c88ff	t	3	2026-07-29 23:27:17.357479+07	2026-08-03 22:52:29.870286+07	Phạm Thị Thúy	gv-pham-thi-thuy	TS.	Chuyên gia học tập ứng dụng		expert/avatars/PhamThiThuy.jpg	Chuyên gia đào tạo, kỹ năng sống và phát triển con người.				t	f	f	\N	
-a14a0b20-9b70-4821-970e-e6f505bdbcb9	t	19	2026-07-29 23:27:17.396171+07	2026-08-03 23:06:21.437943+07	Trần Tuấn Hùng	gv-tran-tuan-hung	Mr.			expert/avatars/TranTheHung.png					t	f	f	\N	
-9612b096-9176-4200-95fd-60cb8495d5f2	t	20	2026-07-29 23:27:17.398635+07	2026-08-03 23:07:39.750695+07	Trần Thị Thế Thanh	gv-tran-thi-the-thanh	Ms.			expert/avatars/TranTheThanh.jpg					t	f	f	\N	
+COPY public.expert_expert (id, is_active, display_order, created_at, updated_at, name, slug, academic_title, "position", organization, avatar, short_bio, full_bio, email, profile_url, is_published, is_featured, is_senior, group_id, card_specialty, contact_cta_url, discussion_topics, experience_highlights, hero_tagline, notable_projects, role_badges, stat_1_label, stat_1_value, stat_2_label, stat_2_value, stat_3_label, stat_3_value, ticker_text, hero_cta_label, hero_avatar) FROM stdin;
+b79cdef4-3435-4990-9252-1791aedd6d2e	t	7	2026-07-27 17:43:39.048478+07	2026-07-28 23:36:07.673496+07	Đỗ Thị Hương	o-thi-huong	TS.	Chuyên gia Phát triển bền vững	Viện Chiến lược và Chính sách Tài nguyên Môi trường		Nhà nghiên cứu về kinh tế xanh và phát triển bền vững, tư vấn cho UNDP và GIZ tại Việt Nam.				t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c		/lien-he/														
+82f35f80-7d8e-4b7c-9dfc-e0c27c6abf22	t	6	2026-07-27 17:43:39.040919+07	2026-07-28 23:36:07.67154+07	Ngô Quang Minh	ngo-quang-minh	GS.	Giáo sư Giáo dục học	Đại học Sư phạm Hà Nội		Chuyên gia hàng đầu về cải cách giáo dục và đào tạo giáo viên, cố vấn Bộ Giáo dục và Đào tạo.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd		/lien-he/														
+b9ff32bd-2aa8-49e7-9586-379c75f33e28	t	9	2026-07-27 17:43:39.060016+07	2026-07-28 23:36:07.677552+07	Nguyễn Thị Mai	nguyen-thi-mai	PGS.TS.	Phó Giáo sư Xã hội học	Đại học Khoa học Xã hội và Nhân văn		Nhà nghiên cứu xã hội học chuyên về bất bình đẳng giới, di cư lao động và an sinh xã hội.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd		/lien-he/														
+88999316-8f8d-4ca0-9438-82d9df238d59	t	10	2026-07-27 17:43:39.069274+07	2026-07-28 23:36:07.680021+07	Richard Thompson	richard-thompson	Prof.	Professor of International Economics	University of Melbourne		International expert on economic development in Southeast Asia with 30+ years of research experience.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150		/lien-he/														
+95eef455-b009-4c6f-907e-91673dd3f1a8	t	11	2026-07-27 17:43:39.075405+07	2026-07-28 23:36:07.68281+07	Lý Thị Kim Ngân	ly-thi-kim-ngan	TS.	Chuyên gia Tài chính Công	Học viện Tài chính		Chuyên gia tài chính công và ngân sách nhà nước, từng tư vấn cho Bộ Tài chính về cải cách thuế.				t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c		/lien-he/														
+a502b2c7-b3b8-4383-a12e-9c069de367c9	t	12	2026-07-27 17:43:39.085151+07	2026-07-28 23:36:07.685254+07	Trần Quốc Bảo	tran-quoc-bao	PGS.TS.	Giám đốc Trung tâm Nghiên cứu AI	Đại học Quốc gia Hà Nội		Nhà nghiên cứu AI và học máy, trưởng nhóm nghiên cứu xử lý ngôn ngữ tự nhiên tiếng Việt.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+d53433ba-b9d8-4441-83e8-14f9693736b5	t	13	2026-07-27 17:43:39.092419+07	2026-07-28 23:36:07.687229+07	Yoshida Kenji	yoshida-kenji	Dr.	Senior Researcher	JICA Research Institute		Japanese development economist specializing in education policy reform and human capital development in Asia.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150		/lien-he/														
+7c089591-38b6-43a5-a990-f7b03c9d6d21	t	14	2026-07-27 17:43:39.102249+07	2026-07-28 23:36:07.68936+07	Bùi Thị Thu Hà	bui-thi-thu-ha	TS.	Chuyên gia Phát triển Tổ chức	Công ty Tư vấn McKinsey Vietnam		Chuyên gia tư vấn chiến lược với hơn 18 năm kinh nghiệm giúp doanh nghiệp Việt Nam nâng cao năng lực cạnh tranh.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba		/lien-he/														
+eb7bef3e-f94f-49f9-87f3-37f367ab994e	t	15	2026-07-27 17:43:39.110064+07	2026-07-28 23:36:07.691505+07	Đinh Văn Phúc	inh-van-phuc	GS.TS.	Giáo sư Y học Dự phòng	Đại học Y Dược TP.HCM		Chuyên gia y học dự phòng và dịch tễ học, trưởng nhóm nghiên cứu về bệnh không lây nhiễm tại Việt Nam.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+e661b4e7-3380-4305-9404-c2f437fe1aba	t	16	2026-07-27 17:43:39.11934+07	2026-07-28 23:36:07.693387+07	Phạm Thị Lan Anh	pham-thi-lan-anh	TS.	Chuyên gia Lãnh đạo Phụ nữ	Hội Liên hiệp Phụ nữ Việt Nam		Chuyên gia về bình đẳng giới và lãnh đạo phụ nữ trong khu vực công và tư nhân.				t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c		/lien-he/														
+06f55fd9-7ccb-4bda-83d3-8d96d3ac8a69	t	17	2026-07-27 17:43:39.126555+07	2026-07-28 23:36:07.695418+07	Cao Xuân Hưng	cao-xuan-hung	TS.	Giám đốc Sản phẩm	VNG Corporation		Nhà lãnh đạo sản phẩm công nghệ với kinh nghiệm xây dựng nền tảng số phục vụ hàng triệu người dùng.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba		/lien-he/														
+a77bf886-849b-455b-852a-2df8b6b58fa0	t	18	2026-07-27 17:43:39.134357+07	2026-07-28 23:36:07.698194+07	Sarah Chen	sarah-chen	Dr.	Associate Professor of Development Studies	National University of Singapore		Researcher in sustainable development and urban governance with extensive fieldwork across Southeast Asia.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150		/lien-he/														
+2664691b-c5df-4ae9-b521-0185b31cce4d	t	19	2026-07-27 17:43:39.141063+07	2026-07-28 23:36:07.700939+07	Lê Thị Thanh Huyền	le-thi-thanh-huyen	PGS.TS.	Phó Giáo sư Kinh tế Lao động	Viện Khoa học Lao động và Xã hội		Chuyên gia kinh tế lao động và an sinh xã hội, nghiên cứu về thị trường lao động và kỹ năng nghề.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+f545466a-f5e5-4312-b277-5beb577cfa3d	t	20	2026-07-27 17:43:39.148286+07	2026-07-28 23:36:07.703444+07	Nguyễn Bảo Long	nguyen-bao-long	TS.	Chuyên gia ESG & Bền vững	KPMG Vietnam		Chuyên gia về báo cáo ESG và chiến lược phát triển bền vững cho các tập đoàn đa quốc gia tại Việt Nam.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba		/lien-he/														
+d37db12f-a3b6-4dc9-aa60-b475590ed25f	t	21	2026-07-27 17:43:39.153912+07	2026-07-28 23:36:07.706055+07	Đặng Thị Minh Châu	ang-thi-minh-chau	TS.	Chuyên gia Tâm lý Tổ chức	Đại học Khoa học Xã hội và Nhân văn TP.HCM		Nhà tâm lý học tổ chức với chuyên môn về văn hóa doanh nghiệp, quản lý thay đổi và phát triển lãnh đạo.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd		/lien-he/														
+96d80975-dbfe-4f48-95df-2d31e6cc6ede	t	22	2026-07-27 17:43:39.160426+07	2026-07-28 23:36:07.708412+07	Trương Văn Khoa	truong-van-khoa	GS.TS.	Giáo sư Toán học Ứng dụng	Đại học Khoa học Tự nhiên		Nhà toán học ứng dụng chuyên về mô hình hóa kinh tế và dự báo tài chính, thành viên Hội Toán học Việt Nam.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+0dac0759-934b-4704-97eb-527515f578ea	t	23	2026-07-27 17:43:39.167275+07	2026-07-28 23:36:07.710313+07	Phan Thị Ngọc Linh	phan-thi-ngoc-linh	TS.	Chuyên gia Dinh dưỡng Cộng đồng	Viện Dinh dưỡng Quốc gia		Chuyên gia dinh dưỡng và an toàn thực phẩm, chủ nhiệm nhiều đề tài nghiên cứu cấp quốc gia về dinh dưỡng học sinh.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+a7438e8f-5301-453e-b2be-212f786a8802	t	24	2026-07-27 17:43:39.172366+07	2026-07-28 23:36:07.71219+07	Michael Park	michael-park	Prof.	Professor of Digital Transformation	KAIST		Pioneer in digital transformation research with 20+ years studying technology adoption in emerging economies.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150		/lien-he/														
+5bcb6772-6263-4add-a5f3-95054fd00246	t	5	2026-07-27 17:43:39.034892+07	2026-07-28 23:36:07.669477+07	Vũ Thị Lan	vu-thi-lan	TS.	Tiến sĩ Y tế Cộng đồng	Đại học Y Hà Nội		Nhà nghiên cứu y tế công cộng, chuyên gia về dinh dưỡng cộng đồng và can thiệp hành vi sức khỏe.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+e2f886bb-a017-458f-b4f8-311f0d800fee	t	8	2026-07-27 17:43:39.054909+07	2026-07-28 23:36:07.675633+07	Hoàng Văn Thành	hoang-van-thanh	TS.	Giám đốc Chuyển đổi số	Tập đoàn FPT		Lãnh đạo chuyển đổi số với 15 năm kinh nghiệm triển khai giải pháp công nghệ cho doanh nghiệp lớn.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba		/lien-he/														
+162d63f1-2d74-436c-b497-12b6f71fd9f7	t	3	2026-07-27 17:43:39.016567+07	2026-07-31 22:19:52.517329+07	Lê Minh Châu	le-minh-chau	TS.	Tiến sĩ Khoa học Dữ liệu	Đại học Bách khoa Hà Nội		Chuyên gia AI và phân tích dữ liệu lớn, từng làm việc tại MIT Media Lab và Google Research. Hiện đang dẫn dắt nhóm nghiên cứu AI ứng dụng trong y tế và giáo dục.				f	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+8b00b6e5-4263-492f-9dde-866efa62f049	t	4	2026-07-27 17:43:39.024389+07	2026-07-31 22:20:13.130236+07	Phạm Đức Hùng	pham-uc-hung	PGS.TS.	Phó Giáo sư Chính sách Công	Học viện Hành chính Quốc gia		Chuyên gia về cải cách hành chính và quản trị nhà nước với 20 năm kinh nghiệm tư vấn chính phủ.				f	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c		/lien-he/														
+dea89a12-8647-4952-9b28-f6283f91e0c6	t	0	2026-07-28 22:13:59.405619+07	2026-08-01 21:42:55.908318+07	Lê Quang Minh	pgs-le-quang-minh	GS.TS.	Nhà khoa học giáo dục		expert/avatars/PGS_LeQuangMinh.jpg	Đồng hành định hướng học thuật và phát triển năng lực trong giáo dục đại học.				t	t	t	0122e571-d2d9-4085-81ac-6cce3df19edf	Giáo dục & phát triển năng lực	/lien-he/														
+6c3770a1-da0e-40ca-bd75-c37091d43431	t	25	2026-07-27 17:43:39.178+07	2026-07-28 23:36:07.714987+07	Võ Thị Thanh Tâm	vo-thi-thanh-tam	PGS.TS.	Phó Giáo sư Quản trị Y tế	Đại học Y tế Công cộng		Chuyên gia quản trị bệnh viện và chính sách y tế, tư vấn cải cách hệ thống y tế cho nhiều tỉnh thành.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd		/lien-he/														
+11a4ef9f-bb10-487a-8ced-a0d0caacbf1e	t	3	2026-07-29 22:39:48.458409+07	2026-07-29 22:39:48.458417+07	Trần Thị Minh Hạnh	tran-thi-minh-hanh	TS.BS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+3bdbf9f6-a569-4a6d-81e4-7ad65f06149a	t	9	2026-07-29 22:39:48.478643+07	2026-07-29 22:39:48.478651+07	Huỳnh Ngọc Tín	huynh-ngoc-tin	TS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+1ce9b61f-1e94-4c61-bc68-de6f6eabab89	t	12	2026-07-29 22:39:48.489531+07	2026-07-29 22:39:48.489541+07	Minh Nguyễn	minh-nguyen	Kỹ sư								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+858ac4bd-6f40-4bc3-b726-50c42d9cfe32	t	13	2026-07-29 22:39:48.492959+07	2026-07-29 22:39:48.492968+07	Nguyễn Ngọc Liêm	nguyen-ngoc-liem	Kỹ sư								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+2316b863-f75c-4f1c-947d-c92ff5630f80	t	30	2026-07-29 22:39:48.542626+07	2026-08-03 22:58:57.630698+07	John Stiles	john-stiles	TS.			expert/avatars/John.jpg					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+a78667f1-f6cc-407c-8079-eb9a2beed0d1	t	15	2026-07-29 22:39:48.500403+07	2026-07-29 22:39:48.500414+07	Nguyễn Đức Tuấn	nguyen-đuc-tuan	GS.TS.DS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+bb812c25-fe79-4803-a18f-91e2f890dead	t	16	2026-07-29 22:39:48.503259+07	2026-07-29 22:39:48.503268+07	Nguyễn Thị Vân Hạnh	nguyen-thi-van-hanh	PGS.TS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+765a906e-fd8b-4b8b-9788-07cc411e2854	t	17	2026-07-29 22:39:48.506373+07	2026-07-29 22:39:48.50638+07	Phạm Thị Thủy	pham-thi-thuy	TS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+8083be18-e5b7-4a0f-a1d9-68f8a0135d05	t	22	2026-07-29 22:39:48.520097+07	2026-07-29 22:39:48.520104+07	Trịnh Thúy Linh	trinh-thuy-linh	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+71787fd3-18e9-4093-b74d-d0966c7872c7	t	27	2026-07-29 22:39:48.534415+07	2026-07-29 22:39:48.534421+07	Trần Quyết Thắng	tran-quyet-thang	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+2486a510-13b5-40c4-aafe-d016ee99a05f	t	29	2026-07-29 22:39:48.540014+07	2026-07-29 22:39:48.54002+07	Lê Thị Lan Anh	le-thi-lan-anh	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+ce5dba86-d252-497e-82be-9ddce6d30f30	t	31	2026-07-29 22:39:48.545324+07	2026-07-29 22:39:48.54533+07	Nguyễn Minh Hương	nguyen-minh-huong	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+8ba10eec-7416-4b9a-93f1-3bd09f5c7778	t	33	2026-07-29 22:39:48.549807+07	2026-07-29 22:39:48.549812+07	Nguyễn Thị Thanh Hương	nguyen-thi-thanh-huong	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+e68cb480-9541-41b4-b9b0-5a248684757d	t	34	2026-07-29 22:39:48.551762+07	2026-07-29 22:39:48.551766+07	Nguyễn Thuận Đạt	nguyen-thuan-đat	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+e796389d-d04a-426e-8bde-5f80bd1fd8ba	t	8	2026-07-29 23:27:17.368534+07	2026-07-29 23:27:17.368539+07	Trần Thanh Tâm	gv-tran-thanh-tam	TS.								t	f	f	\N		/lien-he/														
+5be799bd-bb86-4b46-afe7-22840c17be54	t	9	2026-07-29 23:27:17.370849+07	2026-07-29 23:27:17.370854+07	Nguyễn Minh Hương	gv-nguyen-minh-huong	ThS.								t	f	f	\N		/lien-he/														
+8dd1ca64-4c7e-4ed4-8314-7888dd20eb07	t	17	2026-07-29 23:27:17.391208+07	2026-07-29 23:27:17.391216+07	Ngô Minh Uy	gv-ngo-minh-uy	ThS.								t	f	f	\N		/lien-he/														
+0320a7f6-ea8e-434e-b1b5-b1492092aff7	f	14	2026-07-29 22:39:48.49661+07	2026-07-31 22:52:20.209736+07	Lê Quang Minh	le-quang-minh	PGS.TS.			expert/avatars/PGS_LeQuangMinh.jpg					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+d65bf112-2363-4863-90af-c2290e38552a	t	26	2026-07-29 22:39:48.5316+07	2026-07-31 23:49:02.268293+07	Nguyễn Minh Nhựt	nguyen-minh-nhut	TS.	Nhà nghiên cứu chính sách		expert/avatars/NguyenMinhNhut.jpg	Nghiên cứu chính sách công, tác động xã hội và phát triển hệ thống.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+0b8fec46-7f9c-485e-9e61-2e36704a3d88	t	24	2026-07-29 22:39:48.526569+07	2026-08-01 22:02:13.68607+07	Ngô Minh Uy	ngo-minh-uy	ThS.	Chuyên gia học tập ứng dụng		expert/avatars/NgoMinhUy.jpg	Chuyên gia thiết kế và triển khai chương trình hỗ trợ tâm lý và wellbeing.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Tâm lý & sức khỏe tâm thần	/lien-he/														
+b75f4486-d125-4a65-80e5-b9d4f2a6eb52	t	28	2026-07-29 22:39:48.537352+07	2026-08-01 22:00:54.994381+07	Trần Thanh Tâm	tran-thanh-tam	TS.	Chuyên gia môi trường		expert/avatars/TranThanhTam.jpg	Chuyên gia về sức khỏe môi trường, ESG và các mô hình phát triển bền vững trong y tế và giáo dục.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Môi trường & phát triển bền vững	/lien-he/														
+6a85721a-54d2-4a99-9426-c22f31b4b26a	t	5	2026-07-29 22:39:48.467117+07	2026-08-03 22:40:33.484505+07	Huỳnh Anh Lan	huynh-anh-lan	BS.CKII.	Y tế & Quản trị y tế		expert/avatars/HuynhAnhLan.jpg					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+1548f376-7bd3-455c-a18c-6ae017a08383	t	35	2026-07-29 22:39:48.475565+07	2026-08-03 22:43:43.640992+07	Trần Trung Hiếu	tran-trung-hieu	Mr.			expert/avatars/TranTrungHieu.png					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+032459a4-fa62-412f-8b8e-88e11b17a173	t	18	2026-07-29 22:39:48.510209+07	2026-08-03 22:46:49.919949+07	Bùi Hồng Quân	bui-hong-quan	TS.			expert/avatars/BuiHongQuan.jpg					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+eb0fa648-67ab-4716-84ae-9e28c7e9e779	t	19	2026-07-29 22:39:48.51307+07	2026-08-03 22:47:53.179328+07	Nguyễn Thị Minh	nguyen-thi-minh	TS.			expert/avatars/NguyenThiMinh.png					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+7c7ad3df-ccd0-49c6-a73b-58eb01eb7cc2	t	20	2026-07-29 22:39:48.515564+07	2026-08-03 22:49:03.914066+07	Lương Dũng Nhân	luong-dung-nhan	ThS.			expert/avatars/LuongDungNhan.png					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+c262cfba-f4c8-4c29-b13b-924f195aace4	t	21	2026-07-29 22:39:48.517684+07	2026-08-03 22:50:04.799022+07	Lê Ngọc Anh Khoa	le-ngoc-anh-khoa	ThS.			expert/avatars/LeNgocAnhKhoa.jpg					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+71f9729b-ec4c-414c-b7ee-aa76589d75a5	t	12	2026-07-29 23:27:17.37919+07	2026-08-03 22:51:43.871297+07	Trịnh Thùy Linh	gv-trinh-thuy-linh	ThS.			expert/avatars/TrinhThuyLinh.png					t	f	f	\N		/lien-he/														
+b2f5c1ea-5835-4c1e-9c29-805b2c2d322b	t	32	2026-07-29 22:39:48.547712+07	2026-08-03 23:00:15.039874+07	Nguyễn Thị Bích Hà	nguyen-thi-bich-ha	ThS.			expert/avatars/NguyenThiBichHa.png					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+e4f1b232-f338-4822-a71a-dc7108e34ff2	t	7	2026-07-29 23:27:17.366313+07	2026-08-03 23:01:56.127629+07	Nguyễn Hữu Hoàng	gv-nguyen-huu-hoang	TS.			expert/avatars/NguyenHuuHoang.jpg					t	f	f	\N		/lien-he/														
+f51aed81-7ebf-428f-bdb4-70b0d54514a2	t	10	2026-07-29 23:27:17.37398+07	2026-08-03 23:03:06.856429+07	Lê Ngọc Thiên Phương	gv-le-ngoc-thien-phuong	ThS.			expert/avatars/LeNgocThienPhuong.jpg					t	f	f	\N		/lien-he/														
+9ee63c75-b024-4fbb-90a8-1798cb6ceaaa	t	11	2026-07-29 22:39:48.485888+07	2026-08-03 23:04:22.789074+07	Bùi Thanh Tùng	bui-thanh-tung	ThS.			expert/avatars/BuiThanhTung.png					t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+616eb172-f424-4e66-b503-be9b2bf1aa14	t	15	2026-07-29 23:27:17.385467+07	2026-08-03 23:05:23.599441+07	Ngô Văn Huy	gv-ngo-van-huy	ThS.BS.			expert/avatars/NgoVanHuy.jpg					t	f	f	\N		/lien-he/														
+722d2f3a-b0f0-48c0-a162-e69c53923476	t	6	2026-07-29 22:39:48.469407+07	2026-08-03 23:08:52.756084+07	Nguyễn Quốc Định	nguyen-quoc-dinh	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+cc2c8d15-3a91-4485-81ef-8fcef5ea4a25	t	1	2026-07-27 17:43:38.979296+07	2026-07-31 22:02:26.242275+07	Nguyễn Văn An	nguyen-van-an	GS.TS.	Giáo sư Kinh tế học	Đại học Kinh tế Quốc dân		Chuyên gia hàng đầu về kinh tế phát triển với hơn 25 năm kinh nghiệm nghiên cứu và tư vấn chính sách. Từng là cố vấn cho các tổ chức quốc tế như World Bank và ADB.				f	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+4bfedb13-2989-40cb-a435-0c3314c0f5c3	t	2	2026-07-27 17:43:39.008155+07	2026-07-31 22:19:41.334325+07	Trần Thị Bình	tran-thi-binh	PGS.TS.	Phó Giáo sư Quản trị Kinh doanh	Đại học Ngoại thương		Chuyên gia về quản trị doanh nghiệp và chuyển đổi số với nhiều công trình nghiên cứu được quốc tế công nhận. Tác giả của 3 cuốn sách về lãnh đạo trong thời đại số.				f	f	f	0490c13d-38a8-445a-9c19-a93227978afd		/lien-he/														
+dd4d7f32-1eaa-4a4e-8ea6-6a48ccf87e3c	t	3	2026-07-29 22:39:48.529043+07	2026-07-31 22:20:53.531161+07	Phạm Đức Trọng	pham-duc-trong	TS.	Nhà nghiên cứu xã hội học		expert/avatars/PhamDucTrong.jpg	Phân tích bối cảnh xã hội, nhóm thụ hưởng và tác động chính sách.				t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+81d5f380-1962-4904-bd36-7b02753156b3	t	1	2026-07-29 22:39:48.524025+07	2026-07-31 22:28:36.680763+07	Phan Thị Mai Hương	phan-thi-mai-huong	PGS.TS.	Nhà tâm lý học			Nghiên cứu và ứng dụng tâm lý học trong phát triển con người và wellbeing.				t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+767afe2b-67b0-4078-88ad-28d0d8bc209f	t	2	2026-07-29 22:39:48.453716+07	2026-07-31 23:41:06.015165+07	Ngô Gia Lương	ngo-gia-luong	TS.	Chuyên gia y tế & kinh tế		expert/avatars/NgoGiaLuong.jpg	Chuyên gia về quản trị y tế, kinh tế y tế và phân tích tác động của chính sách y tế.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+55dae78f-50c7-4bec-8975-998d7d55dba2	t	7	2026-07-29 22:39:48.47286+07	2026-07-31 23:57:06.020447+07	Nguyễn Thanh Bình	nguyen-thanh-binh	PGS.TS.	Chuyên gia AI & dữ liệu		expert/avatars/NguyenThanhBinh.jpg	Chuyên gia về AI, khai phá dữ liệu và ứng dụng công nghệ trong y tế số.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/														
+577f79a5-e422-41bf-9e99-0724e93c88ff	t	3	2026-07-29 23:27:17.357479+07	2026-08-03 22:52:29.870286+07	Phạm Thị Thúy	gv-pham-thi-thuy	TS.	Chuyên gia học tập ứng dụng		expert/avatars/PhamThiThuy.jpg	Chuyên gia đào tạo, kỹ năng sống và phát triển con người.				t	f	f	\N		/lien-he/														
+a14a0b20-9b70-4821-970e-e6f505bdbcb9	t	19	2026-07-29 23:27:17.396171+07	2026-08-03 23:06:21.437943+07	Trần Tuấn Hùng	gv-tran-tuan-hung	Mr.			expert/avatars/TranTheHung.png					t	f	f	\N		/lien-he/														
+9612b096-9176-4200-95fd-60cb8495d5f2	t	20	2026-07-29 23:27:17.398635+07	2026-08-03 23:07:39.750695+07	Trần Thị Thế Thanh	gv-tran-thi-the-thanh	Ms.			expert/avatars/TranTheThanh.jpg					t	f	f	\N		/lien-he/														
+5e834e6b-7d63-4416-b323-80a1758300b1	t	1	2026-07-29 22:39:48.44205+07	2026-08-04 22:59:13.623753+07	Phạm Lê An	pham-le-an	GS.TS.BS.	Y tế & quản trị y tế		expert/avatars/PhamLeAn.png	Nhà khoa học và chuyên gia cao cấp về Y học gia đình, sức khỏe cộng đồng và phát triển hệ thống Y tế – Giáo dục	GS.TS.BS. Phạm Lê An là chuyên gia hàng đầu trong lĩnh vực Y học gia đình, y tế cộng đồng và giáo dục y khoa tại Việt Nam. Với định hướng tiếp cận hệ thống và chăm sóc toàn diện, ông tập trung thúc đẩy các mô hình chăm sóc sức khỏe ban đầu, phát triển năng lực nhân lực y tế và kết nối liên ngành giữa Y tế – Giáo dục – Xã hội trong bối cảnh phát triển bền vững và hậu đại dịch.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Y tế & quản trị y tế	/lien-he/	Phát triển mô hình Y học gia đình và chăm sóc sức khỏe ban đầu\r\nSức khỏe cộng đồng và sức khỏe môi trường\r\nThiết kế và đánh giá dịch vụ Y tế\r\nGiáo dục y khoa và phát triển năng lực nhân lực Y tế\r\nSức khỏe tâm thần học đường và cộng đồng\r\nChính sách y tế và phát triển hệ thống chăm sóc toàn diện	Hơn 30 năm kinh nghiệm trong giảng dạy, nghiên cứu và phát triển hệ thống Y tế. Giáo sư Nhi khoa, Đại học Y Dược TP.HCM. Từng giữ nhiều vai trò lãnh đạo tại Đại học Y Dược TP.HCM như Trưởng Trung tâm Y học Gia đình, Phó Phòng Sau đại học và phụ trách Trung tâm Hỗ trợ dự án & đổi mới sáng tạo. Cố vấn chuyên môn và nghiên cứu khoa học tại IRDM từ năm 2022. Chủ biên nhiều giáo trình nền tảng cho đào tạo bác sĩ gia đình và nhân lực y tế tuyến đầu.		Chủ trì và tham gia các nghiên cứu về sức khỏe cộng đồng, sức khỏe hô hấp và sức khỏe tâm thần tại Việt Nam.\r\nDự án FRESH AIR (EU) về can thiệp hô hấp trong bối cảnh thiếu nguồn lực.\r\nDự án giảm ô nhiễm không khí và tăng cường sức khỏe trẻ em TP.HCM hợp tác với Đại học Purdue (Mỹ).\r\nNghiên cứu phát triển mô hình hỗ trợ tâm lý học đường và chăm sóc liên tục từ gia đình – nhà trường – y tế.\r\nCông bố hơn 150 bài báo khoa học, trong đó có hơn 50 bài quốc tế thuộc hệ thống ISI/Scopus.		Năm kinh nghiệm	30+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		
+7a442992-c910-47e8-b627-afd0e7ce4c83	t	4	2026-07-29 22:39:48.461006+07	2026-08-04 23:08:22.357405+07	Trần Lê Diễm Anh	tran-le-diem-anh	TS.DS.	Chuyên gia học tập ứng dụng	Phó Chủ tịch Hội Đồng Quản lý Viện IRDM  Viện trưởng Viện IRDM  Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	expert/avatars/TranLeDiemAnh.jpg	Nhà khoa học và chuyên gia liên ngành về quản trị y tế, sức khỏe tâm thần và phát triển hệ thống Y tế – Giáo dục	Chuyển hóa tri thức thành trải nghiệm học tập, E-Learning và phát triển năng lực.			t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Giáo dục & y tế	/lien-he/	Quản trị và phát triển hệ thống Y tế;\r\nSức khỏe tâm thần học đường;\r\nNghiên cứu và phát triển chính sách xã hội sức khỏe.\r\nLeadership & wellbeing cho nhân sự Y tế;\r\nPhát triển năng lực liên ngành;	Hơn 22 năm kinh nghiệm trong lĩnh vực dược phẩm, chăm sóc sức khỏe và phát triển hệ thống Y tế. Từng đảm nhiệm các vị trí lãnh đạo cấp cao tại Roche, Johnson & Johnson, MSD/Merck, Menarini và Chemo Iberica SA. Giảng viên đồng thỉnh giảng Trường Dược – Đại học Y Dược TP.HCM. Tác giả và đồng tác giả nhiều nghiên cứu về sức khỏe tâm thần, xã hội học sức khỏe và phát triển hệ thống Y tế – Giáo dục. Chủ trì và tham gia các sáng kiến nghiên cứu ứng dụng, chuyển đổi số và phát triển năng lực trong lĩnh vực Y tế – Giáo dục.	TS.DS. Trần Lê Diễm Anh là nhà khoa học và chuyên gia liên ngành tập trung vào quản trị y tế, sức khỏe tâm thần và phát triển hệ thống Y tế – Giáo dục từ góc nhìn xã hội học và phát triển con người. TS. DS. Diễm Anh hiện là Viện trưởng IRDM, đồng thời tham gia nghiên cứu, đào tạo và phát triển các sáng kiến liên ngành hướng tới wellbeing và phát triển bền vững	Chủ trì và phát triển các nghiên cứu về sức khỏe tâm thần sinh viên khối ngành Y tế từ góc nhìn xã hội học.\r\nTham gia nhiệm vụ khoa học công nghệ “Ứng dụng chuyển đổi số trong quản lý, phê duyệt, giám sát hoạt động khoa học công nghệ ngành Y tế tại TP.HCM” (2024–2025).\r\nPhát triển các chương trình leadership và wellbeing cho nhân sự Y tế trong bối cảnh hậu COVID-19.\r\nTriển khai các sáng kiến liên ngành về xã hội học sức khỏe, phát triển hệ thống Y tế bền vững và nâng cao năng lực nguồn nhân lực Y tế – Giáo dục.\r\nCó sáng kiến và triển khai các nhiệm vụ ứng dụng AI trong hỗ trợ chẩn đoán, quản lý, phòng ngừa và dự báo bệnh tật.		Năm kinh nghiệm	22+					QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		
+97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	t	5	2026-07-29 22:39:48.481383+07	2026-08-05 00:08:37.880831+07	Tạ Thị Phấn	ta-thi-phan	ThS.	Chuyên gia dữ liệu & điều phối chuyên môn	Trưởng phòng Tổ chức Hành chính - Viện IRDM / Chuyên viên Điều phối dự án / Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng.	expert/avatars/TaThiPhan_yA5KX8t.png	ThS. Tạ Thị Phấn là nhà nghiên cứu xã hội học ứng dụng, có kinh nghiệm triển khai nhiều đề tài, dự án khoa học và phát triển tại Việt Nam. Cô theo đuổi hướng nghiên cứu liên ngành trong các lĩnh vực y tế, giáo dục, văn hóa, xã hội, con người và phát triển đô thị; đồng thời tập trung vào các vấn đề về chính sách công, nguồn nhân lực, lao động việc làm và chuyển đổi số. Với nền tảng chuyên sâu về xã hội học và nghiên cứu phát triển, cô chú trọng kết nối bằng chứng khoa học với nhu cầu quản trị và thực tiễn cộng đồng, hướng đến các giải pháp có tính ứng dụng.				t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	AI, dữ liệu & chuyển đổi số	/lien-he/	Tư vấn nhiệm vụ KH,CN&ĐMST cấp tỉnh/thành phố\r\nNghiên cứu liên ngành y tế – giáo dục – văn hóa \r\nNguồn nhân lực, lao động và định hướng nghề nghiệp\r\nXã hội học ứng dụng và nghiên cứu cộng đồng\r\nChuyển đổi số trong quản trị xã hội và tổ chức\r\nTrách nhiệm xã hội và phát triển bền vững	Hơn 10 năm kinh nghiệm trong nghiên cứu xã hội học ứng dụng, điều phối đề tài, dự án khoa học và các chương trình phát triển cộng đồng.\r\nHiện đảm nhiệm công tác điều phối khoa học, quản lý dự án và Trưởng phòng Tổ chức – Hành chính tại IRDM, với thế mạnh kết nối chuyên gia, đối tác và tổ chức triển khai nghiên cứu.\r\nTừng là nghiên cứu viên tại Trung tâm Nghiên cứu Đô thị và Phát triển và Viện Nghiên cứu Đời sống Xã hội, có nền tảng vững về khảo sát, phân tích xã hội và nghiên cứu chính sách.\r\nCó kinh nghiệm nghiên cứu liên ngành trong các lĩnh vực y tế, giáo dục, văn hóa, lao động, nguồn nhân lực, trách nhiệm xã hội doanh nghiệp, chuyển đổi số và phát triển đô thị.\r\nThế mạnh nổi bật là kết nối bằng chứng khoa học với nhu cầu quản trị và thực tiễn, chuyển hóa kết quả nghiên cứu thành mô hình, quy trình và giải pháp có khả năng ứng dụng.	AI, dữ liệu & chuyển đổi số; Giáo dục & phát triển năng lực; Xã hội học & chính sách công; Quản trị kinh tế & tác động xã hội	Quyền đồng tác giả “Phần mềm quản lý hoạt động khoa học công nghệ ngành Y tế tại Thành phố Hồ Chí Minh”\r\nĐồng Tác giả “Tạo động lực làm việc cho cán bộ, công chức, viên chức gắn bó với chính quyền thành phố Hồ Chí Minh trong quá trình chuyển đổi số hiện nay”\r\nĐồng tác giả “Nhà ở xã hội của nữ công nhân trong các khu công nghiệp, khu chế xuất tại Thành phố Hồ Chí Minh – Góc nhìn giới trong quy hoạch đô thị trước sáp nhập địa giới hành chính”\r\nChủ nhiệm đề tài “Nhận diện xu hướng lựa chọn giá trị sống thông qua hành vi xác định mục tiêu nghề nghiệp của sinh viên tại TP.HCM hiện nay”.\r\nThành viên chính, Thư ký khoa học nhiệm vụ “Ứng dụng chuyển đổi số trong quản lý, phê duyệt, giám sát hoạt động khoa học công nghệ ngành Y tế tại Thành phố Hồ Chí Minh”\r\nThành viên chính nhiệm vụ “Bức khảm các tiểu văn hóa tại thành phố Hồ Chí Minh”\r\nThành viên chính nhiệm vụ “Nghiên cứu đề xuất các giải pháp tạo lập bản sắc quy hoạch – kiến trúc cho một số khu vực trọng điểm của tỉnh Bình Dương trong tương lai”\r\nThành viên chính nhiệm vụ “Nghiên cứu nhận thức, năng lực của nguồn nhân lực trẻ và đề xuất giải pháp đáp ứng yêu cầu tuyển dụng của doanh nghiệp trong bối cảnh cách mạng công nghiệp lần thứ tư tại thành phố Hồ Chí Minh”\r\nThành viên chính, Thư ký khoa học nhiệm vụ “Đánh giá thực trạng công tác quản lý và các phương thức tập hợp người lao động tham gia cung ứng dịch vụ xe sử dụng nền tảng ứng dụng công nghệ trên địa bàn Thành phố Hồ Chí Minh”\r\nThành viên chính, Thư ký khoa học “Nghiên cứu đề xuất giải pháp để các doanh nghiệp tỉnh Vĩnh Long thực hiện tốt trách nhiệm xã hội”\r\nThành viên nhiệm vụ “Xây dựng Khung năng lực của Cán bộ công chức tỉnh Quảng Ngãi theo Đề án Vị trí việc làm”\r\nThành viên nhiệm vụ “Nhà ở xã hội cho công nhân ở vùng Đông Nam Bộ hiện nay”										expert/hero_avatars/TaThiPhan.jpg
 \.
 
 
@@ -4991,6 +5016,14 @@ COPY public.expert_expert_engagement_types (id, expert_id, engagementtype_id) FR
 4	4bfedb13-2989-40cb-a435-0c3314c0f5c3	2d4498c3-376d-475d-a425-65caf86d6db5
 5	162d63f1-2d74-436c-b497-12b6f71fd9f7	25654b63-9bd8-4585-ac38-867279f6512b
 6	162d63f1-2d74-436c-b497-12b6f71fd9f7	23c2da6d-8f55-4c2d-8146-fea61be96edb
+7	5e834e6b-7d63-4416-b323-80a1758300b1	c34213a5-00ad-42b1-85ab-f30fce3f6ad5
+8	5e834e6b-7d63-4416-b323-80a1758300b1	23c2da6d-8f55-4c2d-8146-fea61be96edb
+9	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	25654b63-9bd8-4585-ac38-867279f6512b
+10	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	2d4498c3-376d-475d-a425-65caf86d6db5
+11	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	23c2da6d-8f55-4c2d-8146-fea61be96edb
+12	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	c34213a5-00ad-42b1-85ab-f30fce3f6ad5
+13	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	a01de170-27f6-477c-a710-00a7d6f68268
+14	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	828b7678-6bbb-4201-9e24-5d3db24a4dcd
 \.
 
 
@@ -5040,6 +5073,13 @@ COPY public.expert_expert_knowledge_topics (id, expert_id, knowledgetopic_id) FR
 73	a7438e8f-5301-453e-b2be-212f786a8802	31fa99d3-215a-4f3b-a9ff-776756a9b901
 75	6c3770a1-da0e-40ca-bd75-c37091d43431	2374e014-73a2-434c-bc38-b8de2f6a5d13
 76	6c3770a1-da0e-40ca-bd75-c37091d43431	8440df2b-91f6-475c-b4bc-14579c6e67dc
+313	5e834e6b-7d63-4416-b323-80a1758300b1	2374e014-73a2-434c-bc38-b8de2f6a5d13
+314	5e834e6b-7d63-4416-b323-80a1758300b1	61814c89-4232-48f6-9bc4-8d4895a0d775
+315	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	2374e014-73a2-434c-bc38-b8de2f6a5d13
+316	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	61814c89-4232-48f6-9bc4-8d4895a0d775
+317	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	31fa99d3-215a-4f3b-a9ff-776756a9b901
+318	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	2d7bdbd6-befc-47c3-980f-fd44685e42ca
+319	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	88f1757b-c60b-4d56-bc82-7281e375b2df
 \.
 
 
@@ -6334,7 +6374,7 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 271, true);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 279, true);
 
 
 --
@@ -6352,7 +6392,7 @@ SELECT pg_catalog.setval('public.django_content_type_id_seq', 106, true);
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 89, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 92, true);
 
 
 --
@@ -6361,7 +6401,7 @@ SELECT pg_catalog.setval('public.django_migrations_id_seq', 89, true);
 -- Name: expert_expert_engagement_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.expert_expert_engagement_types_id_seq', 6, true);
+SELECT pg_catalog.setval('public.expert_expert_engagement_types_id_seq', 14, true);
 
 
 --
@@ -6370,7 +6410,7 @@ SELECT pg_catalog.setval('public.expert_expert_engagement_types_id_seq', 6, true
 -- Name: expert_expert_knowledge_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.expert_expert_knowledge_topics_id_seq', 312, true);
+SELECT pg_catalog.setval('public.expert_expert_knowledge_topics_id_seq', 319, true);
 
 
 --
@@ -11176,11 +11216,11 @@ ALTER TABLE ONLY public.solution_solutionoutput
 REVOKE USAGE ON SCHEMA public FROM PUBLIC;
 
 
--- Completed on 2026-08-03 23:34:46
+-- Completed on 2026-08-05 00:11:26
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 4kg4NPOzsePvRnLqJwUaLMDffUZcaJNRumFuoEM4H6ROskNg1mllPwg8wsdpofz
+\unrestrict a4lsh77GIWCvkspVZpw8nJ0h1YRSKfm6mq9DE2SNXIBAdHCA14aiGIapZYg70ve
 
