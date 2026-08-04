@@ -9,18 +9,27 @@
 {% block content %}
 
 {# ── HERO ───────────────────────────────────────────────────────────────────── #}
-<section class="relative bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden">
-  {# Decorative background dots #}
+<section class="relative overflow-hidden"
+         style="background: linear-gradient(140deg, #EBF3FC 0%, #F4F8FF 50%, #EDF4FF 100%)">
+
+  {# Decorative background — wave curves + dots (Figma) #}
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <svg class="absolute right-0 top-0 w-[480px] h-[480px] opacity-10" viewBox="0 0 480 480" fill="none">
-      <defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-        <circle cx="2" cy="2" r="1.5" fill="#162469"/>
-      </pattern></defs>
-      <rect width="480" height="480" fill="url(#dots)"/>
+    <svg class="absolute right-0 top-0 w-[58%] h-full opacity-55"
+         viewBox="0 0 720 600" fill="none" preserveAspectRatio="xMaxYMid slice">
+      <defs>
+        <pattern id="hero-dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.5" fill="#93C5FD" opacity="0.65"/>
+        </pattern>
+      </defs>
+      <path d="M720 30 C580 110 460 60 360 160 C260 260 310 360 200 410 C120 445 60 400 0 340"
+            stroke="#BFDBFE" stroke-width="1.2" fill="none"/>
+      <path d="M720 110 C600 180 490 140 390 230 C290 320 340 410 230 460 C145 498 75 455 0 395"
+            stroke="#BAE8FD" stroke-width="1" fill="none"/>
+      <path d="M720 200 C620 260 510 225 420 305 C330 385 375 465 270 505"
+            stroke="#C7DFFE" stroke-width="0.8" fill="none"/>
+      <rect x="400" y="0" width="320" height="280" fill="url(#hero-dots)" opacity="0.55"/>
     </svg>
-    <svg class="absolute left-0 bottom-0 w-[320px] h-[320px] opacity-10" viewBox="0 0 480 480" fill="none">
-      <rect width="480" height="480" fill="url(#dots)"/>
-    </svg>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-blue-100/50 blur-3xl"></div>
   </div>
 
   {# Breadcrumb #}
@@ -36,40 +45,49 @@
 
   {# Hero content #}
   <div class="relative max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 py-12 lg:py-16">
-    <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start lg:items-center">
 
-      {# Avatar — large rectangle #}
-      <div class="flex-shrink-0 w-full lg:w-72">
-        <div class="w-full lg:w-72 h-80 lg:h-96 rounded-2xl overflow-hidden bg-primary-100 shadow-xl">
-          {% if expert.avatar %}
-            <img src="{{ expert.avatar.url }}"
-                 alt="{% blocktrans with name=expert.display_name %}Ảnh chân dung {{ name }}{% endblocktrans %}"
-                 class="w-full h-full object-cover object-top" />
-          {% else %}
-            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-100 to-primary-200">
-              <svg class="w-24 h-24 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-              </svg>
-            </div>
-          {% endif %}
+      {# Avatar — white card frame (Figma) — explicit width to prevent flex collapse #}
+      <div class="flex-shrink-0 w-full lg:w-72 xl:w-80">
+        <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-3">
+          <div class="w-full h-80 lg:h-96 rounded-xl overflow-hidden bg-primary-50">
+            {% if expert.avatar %}
+              <img src="{{ expert.avatar.url }}"
+                   alt="{% blocktrans with name=expert.display_name %}Ảnh chân dung {{ name }}{% endblocktrans %}"
+                   class="w-full h-full object-cover object-center" />
+            {% else %}
+              <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-100 to-primary-200">
+                <svg class="w-20 h-20 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+              </div>
+            {% endif %}
+          </div>
         </div>
       </div>
 
-      {# Right: info #}
-      <div class="flex-1 min-w-0 flex flex-col gap-4 pt-2">
+      {# Right column — thứ tự Figma: badge → name → tagline → tag → CTA #}
+      <div class="flex-1 min-w-0 flex flex-col gap-4 lg:gap-5">
 
-        {# Role badges #}
+        {# Badge — dòng đầu tiên của role_badges, fallback group name #}
         {% if expert.role_badges %}
-          <div class="flex flex-wrap gap-2">
-            {% for badge in expert.role_badges.splitlines %}
-              {% if badge.strip %}
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white/80 border border-primary-200 text-primary-700 shadow-sm">
-                  <span class="w-1.5 h-1.5 rounded-full bg-primary-500 flex-shrink-0"></span>
+          {% for badge in expert.role_badges.splitlines %}
+            {% if badge.strip and forloop.first %}
+              <div>
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 shadow-sm">
+                  <span class="w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0"></span>
                   {{ badge.strip }}
                 </span>
-              {% endif %}
-            {% endfor %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% elif expert.group %}
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 shadow-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0"></span>
+              {{ expert.group.name }}
+            </span>
           </div>
         {% endif %}
 
@@ -78,39 +96,39 @@
           {{ expert.display_name }}
         </h1>
 
-        {# Tagline #}
+        {# Tagline — semibold (Figma) #}
         {% if expert.hero_tagline %}
           <p class="text-base lg:text-lg font-semibold text-slate-700 leading-relaxed max-w-2xl">
             {{ expert.hero_tagline }}
           </p>
         {% elif expert.short_bio %}
-          <p class="text-base text-slate-600 leading-relaxed max-w-2xl">{{ expert.short_bio }}</p>
+          <p class="text-base font-semibold text-slate-700 leading-relaxed max-w-2xl">{{ expert.short_bio }}</p>
         {% endif %}
 
-        {# Specialty tag #}
+        {# Specialty tag — white bordered (Figma) #}
         {% if expert.card_specialty %}
           <div>
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-700 border border-blue-200">
+            <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-sm font-medium bg-white border border-slate-200 text-slate-600 shadow-sm">
               {{ expert.card_specialty }}
             </span>
           </div>
         {% elif expert.research_areas.exists %}
           <div>
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-50 text-blue-700 border border-blue-200">
+            <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-sm font-medium bg-white border border-slate-200 text-slate-600 shadow-sm">
               {{ expert.research_areas.first.name }}
             </span>
           </div>
         {% endif %}
 
-        {# CTA button #}
-        <div class="mt-2">
+        {# CTA button — label từ CMS (hero_cta_label) #}
+        <div class="mt-1">
           <a href="{{ expert.contact_cta_url|default:'/lien-he/' }}"
              class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#EC6D29] hover:bg-orange-600 text-white font-semibold text-sm transition-colors shadow-md">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
-            {% trans "Liên hệ hợp tác" %}
+            {% if expert.hero_cta_label %}{{ expert.hero_cta_label }}{% else %}{% trans "Liên hệ hợp tác" %}{% endif %}
           </a>
         </div>
 
@@ -118,13 +136,13 @@
     </div>
   </div>
 
-  {# Ticker bar #}
-  {% if expert.ticker_text %}
-    <div class="relative bg-primary-900 text-white overflow-hidden">
-      <div class="flex whitespace-nowrap animate-marquee py-3 text-sm font-semibold tracking-widest">
-        <span class="px-8">{{ expert.ticker_text }}</span>
-        <span class="px-8" aria-hidden="true">{{ expert.ticker_text }}</span>
-        <span class="px-8" aria-hidden="true">{{ expert.ticker_text }}</span>
+  {# Ticker bar — dark navy, content from ticker_text / knowledge_topics / research_areas #}
+  {% if ticker_content %}
+    <div class="relative overflow-hidden" style="background-color: #1B3A6B;">
+      <div class="flex whitespace-nowrap animate-marquee py-3.5 text-[11px] font-bold tracking-[0.22em]">
+        <span class="px-10 text-white/90">{{ ticker_content }}</span>
+        <span class="px-10 text-white/90" aria-hidden="true">{{ ticker_content }}</span>
+        <span class="px-10 text-white/90" aria-hidden="true">{{ ticker_content }}</span>
       </div>
     </div>
   {% endif %}

@@ -848,6 +848,13 @@ class Expert(BaseModel):
         blank=True,
         help_text=_("Văn bản chạy ngang dưới hero, e.g. 'QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG'"),
     )
+    hero_cta_label = models.CharField(
+        _("hero CTA label"),
+        max_length=100,
+        blank=True,
+        default="",
+        help_text=_("Nhãn nút CTA trên hero. Để trống → dùng mặc định 'Liên hệ hợp tác'."),
+    )
     contact_cta_url = models.CharField(
         _("contact CTA URL"),
         max_length=500,

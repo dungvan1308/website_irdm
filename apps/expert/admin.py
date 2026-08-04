@@ -302,13 +302,14 @@ class ExpertAdmin(admin.ModelAdmin):
             "fields": ("email", "profile_url"),
         }),
         (_("TRANG HỒ SƠ — Hero"), {
-            "fields": ("hero_tagline", "role_badges", "ticker_text", "contact_cta_url"),
+            "fields": ("hero_tagline", "role_badges", "ticker_text", "contact_cta_url", "hero_cta_label"),
             "classes": ("collapse",),
             "description": _(
                 "hero_tagline: Tagline in đậm dưới tên. | "
-                "role_badges: Mỗi dòng 1 badge vai trò (pill). | "
-                "ticker_text: Văn bản chạy ngang dưới hero. | "
-                "contact_cta_url: URL nút 'Liên hệ hợp tác'."
+                "role_badges: Mỗi dòng 1 badge vai trò — dòng đầu tiên hiển thị badge trên hero. | "
+                "ticker_text: Văn bản chạy ngang dưới hero (dùng ❖ để phân tách keyword). | "
+                "contact_cta_url: URL nút CTA trên hero. | "
+                "hero_cta_label: Nhãn nút CTA (để trống → 'Liên hệ hợp tác')."
             ),
         }),
         (_("TRANG HỒ SƠ — Thống kê (Stats)"), {
