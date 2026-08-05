@@ -300,7 +300,12 @@ class ExpertAdmin(admin.ModelAdmin):
             ),
         }),
         (_("Content"), {
-            "fields": ("short_bio", "full_bio"),
+            "fields": ("short_bio", "profile_tagline", "full_bio"),
+            "description": _(
+                "short_bio: 1–3 câu hiển thị trên listing card. | "
+                "profile_tagline: Mô tả riêng cho trang Hồ sơ chuyên gia (để trống → dùng short_bio). | "
+                "full_bio: Tiểu sử đầy đủ trên trang detail."
+            ),
         }),
         (_("Contact"), {
             "fields": ("email", "profile_url"),
