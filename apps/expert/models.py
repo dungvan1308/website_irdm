@@ -787,6 +787,11 @@ class Expert(BaseModel):
         blank=True,
         help_text=_("1–3 sentences shown on listing card"),
     )
+    profile_tagline = models.TextField(
+        _("profile tagline"),
+        blank=True,
+        help_text=_("Mô tả ngắn riêng cho trang Hồ sơ chuyên gia. Để trống → dùng Short bio làm dự phòng."),
+    )
     full_bio = models.TextField(
         _("full bio"),
         blank=True,

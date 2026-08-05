@@ -105,6 +105,8 @@
           <p class="text-base lg:text-lg font-semibold text-slate-700 leading-relaxed max-w-2xl">
             {{ expert.hero_tagline }}
           </p>
+        {% elif expert.profile_tagline %}
+          <p class="text-base font-semibold text-slate-700 leading-relaxed max-w-2xl">{{ expert.profile_tagline }}</p>
         {% elif expert.short_bio %}
           <p class="text-base font-semibold text-slate-700 leading-relaxed max-w-2xl">{{ expert.short_bio }}</p>
         {% endif %}
