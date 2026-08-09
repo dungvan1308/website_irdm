@@ -1,6 +1,7 @@
 """Expert module views."""
 
-from django.http import Http404, HttpRequest, HttpResponse
+from django.http import HttpRequest, HttpResponse
+from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from .forms import ExpertSearchForm
@@ -79,12 +80,16 @@ class ExpertDetailView(TemplateView):
 
     template_name = "expert/detail.html"
 
+    def get(self, request: HttpRequest, *args: object, **kwargs: object) -> HttpResponse:
+        slug = self.kwargs["slug"]
+        self.expert = ExpertService.get_expert_by_slug(slug)
+        if self.expert is None:
+            return render(request, "errors/404.html", status=404)
+        return super().get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs: object) -> dict:
         ctx = super().get_context_data(**kwargs)
-        slug = self.kwargs["slug"]
-        expert = ExpertService.get_expert_by_slug(slug)
-        if expert is None:
-            raise Http404
+        expert = self.expert
         ctx["expert"] = expert
         ctx["listing_page"] = ExpertService.get_listing_page()
 

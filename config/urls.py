@@ -9,6 +9,8 @@ admin.site.site_header = "Trang quản trị cho Website IRDM"
 admin.site.site_title = "Website IRDM"
 admin.site.index_title = "Quản trị nội dung"
 
+handler404 = "apps.common.views.error_404"
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
