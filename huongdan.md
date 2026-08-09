@@ -294,3 +294,10 @@ Các nguyên nhân thường gặp:
 - [ ] Service `irdm` đã restart và đang active.
 - [ ] Kết quả Django shell đúng như mục 5.
 - [ ] Đã thử đăng nhập bằng cửa sổ ẩn danh.
+
+
+
+
+python manage.py migrate
+python manage.py collectstatic --noinput
+sudo systemctl restart irdm
