@@ -20,6 +20,7 @@ urlpatterns = [
     path("capabilities/", include("apps.capability.urls", namespace="capability")),
     path("tri-thuc-goc-nhin/", include("apps.knowledge.urls", namespace="knowledge")),
     path("chuyen-gia/", include("apps.expert.urls", namespace="expert")),
+    path("lien-he/", include("apps.contact.urls", namespace="contact")),
 ]
 
 if settings.DEBUG:
