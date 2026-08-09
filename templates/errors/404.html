@@ -1,0 +1,37 @@
+{% extends "layouts/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Không tìm thấy nội dung" %} — IRDM{% endblock %}
+{% block meta_description %}{% trans "Nội dung bạn đang tìm kiếm hiện chưa khả dụng." %}{% endblock %}
+
+{% block content %}
+<section class="relative isolate min-h-[65vh] overflow-hidden bg-slate-50 px-4 py-20 sm:px-6 lg:px-8">
+  <div class="absolute inset-0 -z-10 opacity-60" aria-hidden="true"
+       style="background-image: radial-gradient(#CBD5E1 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+  <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+    <span class="inline-flex h-16 w-16 items-center justify-center rounded-full border border-orange-200 bg-orange-50 text-xl font-bold text-orange-600">
+      404
+    </span>
+
+    <p class="mt-8 text-xs font-bold uppercase text-orange-600">{% trans "Không tìm thấy nội dung" %}</p>
+    <h1 class="mt-3 text-3xl font-extrabold leading-tight text-primary-900 sm:text-4xl">
+      {% trans "Nội dung hiện chưa khả dụng" %}
+    </h1>
+    <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-600">
+      {% trans "Nội dung bạn đang tìm kiếm có thể chưa được công bố, đã được di chuyển hoặc không còn tồn tại." %}
+    </p>
+
+    <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+      <a href="{% url 'expert:listing' %}"
+         class="inline-flex min-h-11 items-center justify-center rounded-lg bg-primary-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+        {% trans "Xem danh sách chuyên gia" %}
+      </a>
+      <a href="{% url 'home:index' %}"
+         class="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-primary-300 hover:text-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
+        {% trans "Về trang chủ" %}
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}
