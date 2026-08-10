@@ -3,12 +3,17 @@
 <article class="group relative bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden
                 hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col h-full">
 
-  {# Rectangular image — full width, fixed height #}
-  <div class="relative h-52 bg-slate-100 overflow-hidden flex-shrink-0">
+  {# Square image frame — keeps every avatar fully visible at a consistent size #}
+  <div class="relative w-full bg-slate-100 overflow-hidden flex items-start justify-center flex-shrink-0"
+       style="aspect-ratio: 1 / 1;">
     {% if expert.avatar %}
+     <img src="{{ expert.avatar.url }}"
+       alt=""
+       aria-hidden="true"
+       class="absolute inset-0 block w-full h-full object-cover scale-110 blur-lg opacity-35" />
       <img src="{{ expert.avatar.url }}"
            alt="{% blocktrans with name=expert.display_name %}Ảnh chân dung {{ name }}{% endblocktrans %}"
-           class="w-full h-full object-cover object-top"
+       class="relative z-10 block w-full h-auto"
            loading="lazy" />
     {% else %}
       <div class="w-full h-full bg-primary-700 flex items-center justify-center">
