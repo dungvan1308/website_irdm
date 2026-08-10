@@ -237,16 +237,16 @@ class OrgNodeInline(admin.TabularInline):
     extra = 1
     fields = ("name", "level", "style", "parent", "color", "url", "display_order", "is_active")
     ordering = ("level", "display_order")
-    verbose_name = "Nút sơ đồ tổ chức"
-    verbose_name_plural = "Các nút sơ đồ tổ chức"
+    verbose_name = _("Organization chart node")
+    verbose_name_plural = _("Organization chart nodes")
 
 
 class InfoGroupBlockInline(admin.StackedInline):
     model = InfoGroupBlock
     extra = 0
     fields = ("title", "function_label", "function_text", "duties_label", "duties", "icon", "display_order", "is_active")
-    verbose_name = "Khối mô tả"
-    verbose_name_plural = "Các khối mô tả"
+    verbose_name = _("Information block")
+    verbose_name_plural = _("Information blocks")
 
 
 class InfoGroupMemberInline(admin.StackedInline):
@@ -256,8 +256,8 @@ class InfoGroupMemberInline(admin.StackedInline):
         "role_label", "academic_title", "name", "position",
         "email", "avatar", "cta_text", "cta_url", "display_order", "is_active",
     )
-    verbose_name = "Thành viên Hội đồng"
-    verbose_name_plural = "Danh sách thành viên Hội đồng"
+    verbose_name = _("Council member")
+    verbose_name_plural = _("Council members")
 
 
 class AssociationInline(admin.StackedInline):
@@ -270,8 +270,8 @@ class AssociationInline(admin.StackedInline):
         "cta_label", "cta_url", "cta_target",
         "display_order", "is_active",
     )
-    verbose_name = "Hiệp hội / Mạng lưới"
-    verbose_name_plural = "Danh sách Hiệp hội / Mạng lưới"
+    verbose_name = _("Association / Network")
+    verbose_name_plural = _("Associations / Networks")
 
 
 InfoGroupAdmin.inlines = [OrgNodeInline, InfoGroupBlockInline, InfoGroupMemberInline, AssociationInline]

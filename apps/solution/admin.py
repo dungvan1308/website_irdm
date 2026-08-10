@@ -53,7 +53,7 @@ class SolutionOutputInline(admin.StackedInline):
     fields = ("number", "content", "image", "output_image_preview", "display_order", "is_active")
     readonly_fields = ("output_image_preview",)
 
-    @admin.display(description="Image preview")
+    @admin.display(description=_("Image preview"))
     def output_image_preview(self, obj):
         return _img_preview(obj.image, height=80) if obj.pk else "—"
 
@@ -73,7 +73,7 @@ class SolutionListingPageAdmin(admin.ModelAdmin):
         (_("Status"), {"fields": ("is_active", "display_order")}),
     )
 
-    @admin.display(description="Hero preview")
+    @admin.display(description=_("Hero preview"))
     def hero_image_preview(self, obj):
         return _img_preview(obj.hero_image, height=80)
 
@@ -114,14 +114,14 @@ class SolutionAdmin(admin.ModelAdmin):
         (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
-    @admin.display(description="Thumbnail")
+    @admin.display(description=_("Thumbnail"))
     def thumbnail_preview(self, obj):
         return _img_preview(obj.thumbnail, height=60)
 
-    @admin.display(description="Hero preview")
+    @admin.display(description=_("Hero preview"))
     def hero_image_preview(self, obj):
         return _img_preview(obj.hero_image, height=80)
 
-    @admin.display(description="CTA preview")
+    @admin.display(description=_("CTA preview"))
     def cta_image_preview(self, obj):
         return _img_preview(obj.cta_image, height=60)

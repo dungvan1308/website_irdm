@@ -13,8 +13,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-# ── App names (apps.py verbose_name) ─────────────────────────────────────────
-
+# ── App names (apps.py verbose_name)
+# ─────────────────────────────────────────
 msgid "Capability"
 msgstr "Năng lực"
 
@@ -30,16 +30,16 @@ msgstr "Tri thức & Góc nhìn"
 msgid "Solutions"
 msgstr "Giải pháp"
 
-# ── BaseModel fields ─────────────────────────────────────────────────────────
-
+# ── BaseModel fields
+# ─────────────────────────────────────────────────────────
 msgid "is active"
 msgstr "Đang hoạt động"
 
 msgid "display order"
 msgstr "Thứ tự hiển thị"
 
-# ── Common field labels ──────────────────────────────────────────────────────
-
+# ── Common field labels
+# ──────────────────────────────────────────────────────
 msgid "title"
 msgstr "Tiêu đề"
 
@@ -148,8 +148,8 @@ msgstr "Tệp tin"
 msgid "segment"
 msgstr "Phân khúc"
 
-# ── CTA / Button labels ──────────────────────────────────────────────────────
-
+# ── CTA / Button labels
+# ──────────────────────────────────────────────────────
 msgid "CTA label"
 msgstr "Nhãn nút CTA"
 
@@ -201,8 +201,8 @@ msgstr "Nhãn nút phụ (banner)"
 msgid "hero CTA secondary URL"
 msgstr "URL nút phụ (banner)"
 
-# ── SEO fields ───────────────────────────────────────────────────────────────
-
+# ── SEO fields
+# ───────────────────────────────────────────────────────────────
 msgid "meta title"
 msgstr "Tiêu đề SEO"
 
@@ -212,8 +212,8 @@ msgstr "Mô tả SEO"
 msgid "meta keywords"
 msgstr "Từ khóa SEO"
 
-# ── Core / Site Settings ─────────────────────────────────────────────────────
-
+# ── Core / Site Settings
+# ─────────────────────────────────────────────────────
 msgid "site name"
 msgstr "Tên website"
 
@@ -247,8 +247,8 @@ msgstr "URL YouTube"
 msgid "site settings"
 msgstr "Cài đặt website"
 
-# ── Menu ─────────────────────────────────────────────────────────────────────
-
+# ── Menu
+# ─────────────────────────────────────────────────────────────────────
 msgid "menu"
 msgstr "Menu"
 
@@ -270,8 +270,8 @@ msgstr "Mục menu"
 msgid "menu items"
 msgstr "Các mục menu"
 
-# ── Footer ───────────────────────────────────────────────────────────────────
-
+# ── Footer
+# ───────────────────────────────────────────────────────────────────
 msgid "footer section"
 msgstr "Nhóm liên kết footer"
 
@@ -284,8 +284,8 @@ msgstr "Liên kết footer"
 msgid "footer links"
 msgstr "Các liên kết footer"
 
-# ── Capability ───────────────────────────────────────────────────────────────
-
+# ── Capability
+# ───────────────────────────────────────────────────────────────
 msgid "capability listing page"
 msgstr "Trang danh sách năng lực"
 
@@ -379,8 +379,8 @@ msgstr "Thẻ case study"
 msgid "case study tags"
 msgstr "Các thẻ case study"
 
-# ── Solution ─────────────────────────────────────────────────────────────────
-
+# ── Solution
+# ─────────────────────────────────────────────────────────────────
 msgid "solution listing page"
 msgstr "Trang danh sách giải pháp"
 
@@ -417,8 +417,12 @@ msgstr "Các giải pháp"
 msgid "card color"
 msgstr "Màu nền card"
 
-msgid "Tailwind gradient classes shown when no thumbnail is uploaded. Example: from-blue-900 to-blue-950"
-msgstr "Lớp màu gradient Tailwind khi chưa có ảnh thu nhỏ. Ví dụ: from-blue-900 to-blue-950"
+msgid ""
+"Tailwind gradient classes shown when no thumbnail is uploaded. Example: "
+"from-blue-900 to-blue-950"
+msgstr ""
+"Lớp màu gradient Tailwind khi chưa có ảnh thu nhỏ. Ví dụ: from-blue-900 to-"
+"blue-950"
 
 msgid "challenge label"
 msgstr "Nhãn phần thách thức"
@@ -468,8 +472,8 @@ msgstr "Đầu ra giải pháp"
 msgid "solution outputs"
 msgstr "Các đầu ra giải pháp"
 
-# ── Home ─────────────────────────────────────────────────────────────────────
-
+# ── Home
+# ─────────────────────────────────────────────────────────────────────
 msgid "eyebrow text"
 msgstr "Văn bản phụ đề"
 
@@ -644,8 +648,8 @@ msgstr "Banner kêu gọi hành động"
 msgid "CTA banners"
 msgstr "Các banner CTA"
 
-# ── Knowledge ─────────────────────────────────────────────────────────────────
-
+# ── Knowledge
+# ─────────────────────────────────────────────────────────────────
 msgid "knowledge listing page"
 msgstr "Trang danh sách Tri thức"
 
@@ -735,3 +739,1540 @@ msgstr "Tin tức"
 
 msgid "knowledge news items"
 msgstr "Các tin tức"
+
+# ── Admin shell / applications
+# ───────────────────────────────────────────────
+msgid "IRDM Website administration"
+msgstr "Quản trị Website IRDM"
+
+msgid "IRDM Website admin"
+msgstr "Quản trị IRDM"
+
+msgid "Content administration"
+msgstr "Quản trị nội dung"
+
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+msgid "Switch to %(language)s"
+msgstr "Chuyển sang %(language)s"
+
+msgid "Website"
+msgstr "Website"
+
+msgid "About"
+msgstr "Giới thiệu"
+
+msgid "Experts"
+msgstr "Chuyên gia"
+
+msgid "Insights"
+msgstr "Góc nhìn"
+
+msgid "Events"
+msgstr "Sự kiện"
+
+msgid "Resources"
+msgstr "Tài nguyên"
+
+msgid "Contact"
+msgstr "Liên hệ"
+
+msgid "CMS"
+msgstr "Quản trị nội dung"
+
+msgid "Administration"
+msgstr "Quản trị hệ thống"
+
+# ── Shared admin labels
+# ──────────────────────────────────────────────────────
+msgid "Content"
+msgstr "Nội dung"
+
+msgid "Status"
+msgstr "Trạng thái"
+
+msgid "Identity"
+msgstr "Thông tin định danh"
+
+msgid "Media"
+msgstr "Hình ảnh"
+
+msgid "Images"
+msgstr "Hình ảnh"
+
+msgid "Image"
+msgstr "Hình ảnh"
+
+msgid "Background"
+msgstr "Ảnh nền"
+
+msgid "Background Image"
+msgstr "Ảnh nền"
+
+msgid "Section"
+msgstr "Phần hiển thị"
+
+msgid "Section Header"
+msgstr "Tiêu đề phần"
+
+msgid "Section labels"
+msgstr "Nhãn các phần"
+
+msgid "Classification"
+msgstr "Phân loại"
+
+msgid "Group"
+msgstr "Nhóm"
+
+msgid "Card"
+msgstr "Thẻ nội dung"
+
+msgid "Tags"
+msgstr "Thẻ"
+
+msgid "Tag"
+msgstr "Thẻ"
+
+msgid "Link"
+msgstr "Liên kết"
+
+msgid "Hero"
+msgstr "Banner chính"
+
+msgid "Hero / Listing"
+msgstr "Banner / Danh sách"
+
+msgid "CTA"
+msgstr "Kêu gọi hành động (CTA)"
+
+msgid "CTAs"
+msgstr "Các nút CTA"
+
+msgid "CTA buttons"
+msgstr "Các nút CTA"
+
+msgid "Primary CTA"
+msgstr "CTA chính"
+
+msgid "Secondary CTA"
+msgstr "CTA phụ"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "Open Graph"
+msgstr "Open Graph"
+
+msgid "Quote"
+msgstr "Trích dẫn"
+
+msgid "Quote Block"
+msgstr "Khối trích dẫn"
+
+msgid "Icon"
+msgstr "Biểu tượng"
+
+msgid "Icon Badge"
+msgstr "Biểu tượng badge"
+
+msgid "Card Image"
+msgstr "Ảnh thẻ"
+
+msgid "Card Content"
+msgstr "Nội dung thẻ"
+
+msgid "Image preview"
+msgstr "Xem trước ảnh"
+
+msgid "Cover preview"
+msgstr "Xem trước ảnh bìa"
+
+msgid "Hero preview"
+msgstr "Xem trước banner"
+
+msgid "Thumbnail"
+msgstr "Ảnh thu nhỏ"
+
+msgid "Background preview"
+msgstr "Xem trước ảnh nền"
+
+msgid "Icon preview"
+msgstr "Xem trước biểu tượng"
+
+msgid "Card image preview"
+msgstr "Xem trước ảnh thẻ"
+
+msgid "Icon badge preview"
+msgstr "Xem trước biểu tượng badge"
+
+msgid "CTA preview"
+msgstr "Xem trước CTA"
+
+msgid "CTA background preview"
+msgstr "Xem trước ảnh nền CTA"
+
+# ── About module
+# ─────────────────────────────────────────────────────────────
+msgid "About Page SEO"
+msgstr "SEO trang Giới thiệu"
+
+msgid "hero banner"
+msgstr "Banner chính"
+
+msgid "hero banners"
+msgstr "Các banner chính"
+
+msgid "hero statistic"
+msgstr "Số liệu banner"
+
+msgid "hero statistics"
+msgstr "Các số liệu banner"
+
+msgid "introduction"
+msgstr "Phần giới thiệu"
+
+msgid "introduction section"
+msgstr "Phần giới thiệu"
+
+msgid "introduction sections"
+msgstr "Các phần giới thiệu"
+
+msgid "highlight card"
+msgstr "Thẻ nổi bật"
+
+msgid "highlight cards"
+msgstr "Các thẻ nổi bật"
+
+msgid "purpose section"
+msgstr "Phần mục đích"
+
+msgid "purpose sections"
+msgstr "Các phần mục đích"
+
+msgid "vision & mission section"
+msgstr "Phần tầm nhìn & sứ mệnh"
+
+msgid "vision & mission sections"
+msgstr "Các phần tầm nhìn & sứ mệnh"
+
+msgid "vision/mission card"
+msgstr "Thẻ tầm nhìn/sứ mệnh"
+
+msgid "vision/mission cards"
+msgstr "Các thẻ tầm nhìn/sứ mệnh"
+
+msgid "vision/mission panel icon"
+msgstr "Biểu tượng tầm nhìn/sứ mệnh"
+
+msgid "vision/mission panel icons"
+msgstr "Các biểu tượng tầm nhìn/sứ mệnh"
+
+msgid "core value"
+msgstr "Giá trị cốt lõi"
+
+msgid "core values"
+msgstr "Các giá trị cốt lõi"
+
+msgid "core values section"
+msgstr "Phần giá trị cốt lõi"
+
+msgid "core values sections"
+msgstr "Các phần giá trị cốt lõi"
+
+msgid "legal foundation section"
+msgstr "Phần cơ sở pháp lý"
+
+msgid "legal foundation sections"
+msgstr "Các phần cơ sở pháp lý"
+
+msgid "org badge"
+msgstr "Badge tổ chức"
+
+msgid "org badges"
+msgstr "Các badge tổ chức"
+
+msgid "org attribute"
+msgstr "Thuộc tính tổ chức"
+
+msgid "org attributes"
+msgstr "Các thuộc tính tổ chức"
+
+msgid "legal timeline item"
+msgstr "Mốc pháp lý"
+
+msgid "legal timeline items"
+msgstr "Các mốc pháp lý"
+
+msgid "partner benefit section"
+msgstr "Phần lợi ích đối tác"
+
+msgid "partner benefit sections"
+msgstr "Các phần lợi ích đối tác"
+
+msgid "partner benefit"
+msgstr "Lợi ích đối tác"
+
+msgid "partner benefits"
+msgstr "Các lợi ích đối tác"
+
+msgid "professional network"
+msgstr "Mạng lưới chuyên môn"
+
+msgid "professional networks"
+msgstr "Các mạng lưới chuyên môn"
+
+msgid "network section header"
+msgstr "Tiêu đề phần mạng lưới"
+
+msgid "network section headers"
+msgstr "Các tiêu đề phần mạng lưới"
+
+msgid "target audience section"
+msgstr "Phần đối tượng mục tiêu"
+
+msgid "target audience sections"
+msgstr "Các phần đối tượng mục tiêu"
+
+msgid "target audience"
+msgstr "Đối tượng mục tiêu"
+
+msgid "target audiences"
+msgstr "Các đối tượng mục tiêu"
+
+msgid "capability & ecosystem section"
+msgstr "Phần năng lực & hệ sinh thái"
+
+msgid "capability & ecosystem sections"
+msgstr "Các phần năng lực & hệ sinh thái"
+
+msgid "ecosystem partner group"
+msgstr "Nhóm đối tác hệ sinh thái"
+
+msgid "ecosystem partner groups"
+msgstr "Các nhóm đối tác hệ sinh thái"
+
+msgid "ecosystem partner item"
+msgstr "Đối tác hệ sinh thái"
+
+msgid "ecosystem partner items"
+msgstr "Các đối tác hệ sinh thái"
+
+msgid "ecosystem statistic"
+msgstr "Số liệu hệ sinh thái"
+
+msgid "ecosystem statistics"
+msgstr "Các số liệu hệ sinh thái"
+
+msgid "contact banner"
+msgstr "Banner liên hệ"
+
+msgid "contact banners"
+msgstr "Các banner liên hệ"
+
+msgid "contact banner stat"
+msgstr "Số liệu banner liên hệ"
+
+msgid "contact banner stats"
+msgstr "Các số liệu banner liên hệ"
+
+msgid "org structure section"
+msgstr "Phần cơ cấu tổ chức"
+
+msgid "org structure sections"
+msgstr "Các phần cơ cấu tổ chức"
+
+msgid "org structure card"
+msgstr "Thẻ cơ cấu tổ chức"
+
+msgid "org structure cards"
+msgstr "Các thẻ cơ cấu tổ chức"
+
+msgid "org structure bullet item"
+msgstr "Mục cơ cấu tổ chức"
+
+msgid "org structure bullet items"
+msgstr "Các mục cơ cấu tổ chức"
+
+msgid "Diagram Card"
+msgstr "Thẻ sơ đồ"
+
+msgid "Bottom Panel"
+msgstr "Bảng nội dung cuối"
+
+msgid "Left Column Image"
+msgstr "Ảnh cột trái"
+
+msgid "Org Info Card"
+msgstr "Thẻ thông tin tổ chức"
+
+msgid "Right Column"
+msgstr "Cột phải"
+
+msgid "Footer Note"
+msgstr "Ghi chú cuối phần"
+
+msgid "KPI Banner"
+msgstr "Banner KPI"
+
+msgid "Hub Diagram"
+msgstr "Sơ đồ trung tâm"
+
+msgid "Legacy Contact"
+msgstr "Thông tin liên hệ cũ"
+
+# ── Expert module
+# ────────────────────────────────────────────────────────────
+msgid "expert listing page"
+msgstr "Trang danh sách chuyên gia"
+
+msgid "expert listing pages"
+msgstr "Các trang danh sách chuyên gia"
+
+msgid "engagement type"
+msgstr "Hình thức đồng hành"
+
+msgid "engagement types"
+msgstr "Các hình thức đồng hành"
+
+msgid "expert group"
+msgstr "Nhóm chuyên gia"
+
+msgid "expert groups"
+msgstr "Các nhóm chuyên gia"
+
+msgid "research area"
+msgstr "Lĩnh vực chuyên môn"
+
+msgid "research areas"
+msgstr "Các lĩnh vực chuyên môn"
+
+msgid "process step"
+msgstr "Bước quy trình"
+
+msgid "process steps"
+msgstr "Các bước quy trình"
+
+msgid "info group"
+msgstr "Nhóm thông tin"
+
+msgid "info groups"
+msgstr "Các nhóm thông tin"
+
+msgid "org node"
+msgstr "Nút sơ đồ tổ chức"
+
+msgid "org nodes"
+msgstr "Các nút sơ đồ tổ chức"
+
+msgid "info group block"
+msgstr "Khối mô tả nhóm"
+
+msgid "info group blocks"
+msgstr "Các khối mô tả nhóm"
+
+msgid "info group member"
+msgstr "Thành viên nhóm"
+
+msgid "info group members"
+msgstr "Các thành viên nhóm"
+
+msgid "association"
+msgstr "Hiệp hội / Mạng lưới"
+
+msgid "associations"
+msgstr "Các hiệp hội / mạng lưới"
+
+msgid "expert"
+msgstr "Chuyên gia"
+
+msgid "experts"
+msgstr "Các chuyên gia"
+
+msgid "Organization chart node"
+msgstr "Nút sơ đồ tổ chức"
+
+msgid "Organization chart nodes"
+msgstr "Các nút sơ đồ tổ chức"
+
+msgid "Information block"
+msgstr "Khối mô tả"
+
+msgid "Information blocks"
+msgstr "Các khối mô tả"
+
+msgid "Council member"
+msgstr "Thành viên Hội đồng"
+
+msgid "Council members"
+msgstr "Các thành viên Hội đồng"
+
+msgid "Association / Network"
+msgstr "Hiệp hội / Mạng lưới"
+
+msgid "Associations / Networks"
+msgstr "Các hiệp hội / mạng lưới"
+
+msgid "Hero Badge"
+msgstr "Badge banner"
+
+msgid "Hero Content"
+msgstr "Nội dung banner"
+
+msgid "Hero Buttons"
+msgstr "Các nút banner"
+
+msgid "Hero Bottom Badge"
+msgstr "Badge dưới banner"
+
+msgid "Process Section"
+msgstr "Phần quy trình"
+
+msgid "Senior Experts Section"
+msgstr "Phần chuyên gia cao cấp"
+
+msgid "Research Area Map Section"
+msgstr "Phần bản đồ chuyên môn"
+
+msgid "Expert Directory Section"
+msgstr "Phần danh bạ chuyên gia"
+
+msgid "Knowledge Topics Section"
+msgstr "Phần chủ đề tri thức"
+
+msgid "CTA Section"
+msgstr "Phần CTA"
+
+# ── Knowledge module additions
+# ───────────────────────────────────────────────
+msgid "filter group"
+msgstr "Nhóm bộ lọc"
+
+msgid "filter groups"
+msgstr "Các nhóm bộ lọc"
+
+msgid "filter item"
+msgstr "Mục bộ lọc"
+
+msgid "filter items"
+msgstr "Các mục bộ lọc"
+
+msgid "content type card"
+msgstr "Thẻ loại nội dung"
+
+msgid "content type cards"
+msgstr "Các thẻ loại nội dung"
+
+msgid "topic card tag"
+msgstr "Thẻ chủ đề"
+
+msgid "topic card tags"
+msgstr "Các thẻ chủ đề"
+
+msgid "topic card"
+msgstr "Thẻ nội dung chủ đề"
+
+msgid "topic cards"
+msgstr "Các thẻ nội dung chủ đề"
+
+msgid "download request"
+msgstr "Yêu cầu tải tài liệu"
+
+msgid "download requests"
+msgstr "Các yêu cầu tải tài liệu"
+
+msgid "activity news item"
+msgstr "Tin hoạt động"
+
+msgid "activity news items"
+msgstr "Các tin hoạt động"
+
+msgid "event tag"
+msgstr "Thẻ sự kiện"
+
+msgid "event tags"
+msgstr "Các thẻ sự kiện"
+
+msgid "knowledge event"
+msgstr "Sự kiện tri thức"
+
+msgid "knowledge events"
+msgstr "Các sự kiện tri thức"
+
+msgid "accordion item"
+msgstr "Mục accordion"
+
+msgid "accordion items"
+msgstr "Các mục accordion"
+
+msgid "CTA button"
+msgstr "Nút CTA"
+
+msgid "Ready section CTA button"
+msgstr "Nút CTA phần Sẵn sàng trao đổi"
+
+msgid "Ready section CTA buttons"
+msgstr "Các nút CTA phần Sẵn sàng trao đổi"
+
+msgid "Filter / Search Section"
+msgstr "Phần lọc / tìm kiếm"
+
+msgid "Featured Section"
+msgstr "Phần nội dung nổi bật"
+
+msgid "Content Type Section (Khám phá theo Loại Nội Dung)"
+msgstr "Phần loại nội dung (Khám phá theo Loại Nội Dung)"
+
+msgid "Topic Browse Section (Khám phá theo Chủ Đề)"
+msgstr "Phần duyệt chủ đề (Khám phá theo Chủ Đề)"
+
+msgid "Publication Section (Ấn phẩm & Báo cáo)"
+msgstr "Phần ấn phẩm & báo cáo"
+
+msgid "Publication Form"
+msgstr "Biểu mẫu nhận ấn phẩm"
+
+msgid "Publication Contact Block"
+msgstr "Khối liên hệ ấn phẩm"
+
+msgid "News & Events Section (Tin tức & Sự kiện)"
+msgstr "Phần tin tức & sự kiện"
+
+msgid "Press Section (IRDM trên báo chí và diễn đàn chuyên môn)"
+msgstr "Phần IRDM trên báo chí và diễn đàn chuyên môn"
+
+msgid "Ready Section (Sẵn sàng trao đổi)"
+msgstr "Phần Sẵn sàng trao đổi"
+
+msgid "Press Section"
+msgstr "Phần báo chí"
+
+msgid "Accordion"
+msgstr "Accordion"
+
+msgid "Color"
+msgstr "Màu sắc"
+
+msgid "Configure the filter section; filter groups are managed separately."
+msgstr "Cấu hình phần bộ lọc; các nhóm lọc được quản lý riêng."
+
+msgid ""
+"Configure the featured section; its cards are managed in the inlines below."
+msgstr ""
+"Cấu hình phần Nội dung nổi bật; các thẻ được quản lý qua inline bên dưới."
+
+msgid ""
+"Configure the content type section; its cards are managed in the inlines "
+"below."
+msgstr ""
+"Cấu hình phần Khám phá theo Loại Nội Dung; các thẻ được quản lý qua inline "
+"bên dưới."
+
+msgid ""
+"Configure the topic browse section; its cards are managed in the inlines "
+"below."
+msgstr ""
+"Cấu hình phần Khám phá theo Chủ Đề; các thẻ được quản lý qua inline bên "
+"dưới."
+
+msgid ""
+"Configure the publication section, including its heading, request form, and "
+"contact block."
+msgstr ""
+"Cấu hình phần Tài liệu tải về, gồm tiêu đề, biểu mẫu yêu cầu và khối liên "
+"hệ."
+
+msgid "Configure the publication request form."
+msgstr "Cấu hình biểu mẫu gửi yêu cầu nhận tài liệu."
+
+msgid "Configure the IRDM contact block displayed beside the request form."
+msgstr "Cấu hình khối liên hệ với Viện IRDM bên cạnh biểu mẫu."
+
+msgid ""
+"Configure the news and events section, including IRDM news and upcoming "
+"events."
+msgstr ""
+"Cấu hình phần Tin tức & Sự kiện, gồm tin hoạt động IRDM và sự kiện sắp diễn "
+"ra."
+
+msgid "Configure the press and professional forums section."
+msgstr "Cấu hình phần báo chí và diễn đàn chuyên môn."
+
+msgid ""
+"Configure the ready-section CTA; its buttons are managed in the inline "
+"below."
+msgstr ""
+"Cấu hình CTA phần Sẵn sàng trao đổi; các nút được quản lý qua inline bên "
+"dưới."
+
+msgid "Enable 'press article' to show this item in the IRDM press section."
+msgstr "Bật 'bài báo chí' để hiển thị nội dung trong phần IRDM trên báo chí."
+
+# ── Contact module
+# ───────────────────────────────────────────────────────────
+msgid "contact request"
+msgstr "Yêu cầu liên hệ"
+
+msgid "contact requests"
+msgstr "Các yêu cầu liên hệ"
+
+msgid "created at"
+msgstr "Ngày tạo"
+
+msgid "updated at"
+msgstr "Ngày cập nhật"
+
+msgid "submitted at"
+msgstr "Thời gian gửi"
+
+msgid "status"
+msgstr "Trạng thái"
+
+msgid "note"
+msgstr "Ghi chú"
+
+msgid "message"
+msgstr "Nội dung tin nhắn"
+
+msgid "inquiry type"
+msgstr "Loại yêu cầu liên hệ"
+
+msgid "organization"
+msgstr "Tổ chức"
+
+msgid "position"
+msgstr "Vị trí / Chức vụ"
+
+msgid "level"
+msgstr "Cấp độ"
+
+msgid "style"
+msgstr "Kiểu hiển thị"
+
+msgid "text"
+msgstr "Nội dung văn bản"
+
+msgid "card"
+msgstr "Thẻ"
+
+msgid "banner"
+msgstr "Banner"
+
+msgid "color"
+msgstr "Màu sắc"
+
+msgid "tags"
+msgstr "Thẻ nội dung"
+
+msgid "hero"
+msgstr "Banner chính"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Favicon"
+msgstr "Favicon"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Case study"
+msgstr "Case study"
+
+msgid "Slogan website"
+msgstr "Slogan website"
+
+msgid "URL Facebook"
+msgstr "URL Facebook"
+
+msgid "URL LinkedIn"
+msgstr "URL LinkedIn"
+
+msgid "URL Twitter / X"
+msgstr "URL Twitter / X"
+
+msgid "URL YouTube"
+msgstr "URL YouTube"
+
+msgid "URL website"
+msgstr "URL website"
+
+msgid "URL param key"
+msgstr "Khóa tham số URL"
+
+msgid "KPI label"
+msgstr "Nhãn KPI"
+
+msgid "KPI value"
+msgstr "Giá trị KPI"
+
+msgid "OG description"
+msgstr "Mô tả OG"
+
+msgid "OG image"
+msgstr "Hình OG"
+
+msgid "OG title"
+msgstr "Tiêu đề OG"
+
+msgid "full name"
+msgstr "Họ và tên đầy đủ"
+
+msgid "academic title"
+msgstr "Học hàm / Học vị"
+
+msgid "position/role"
+msgstr "Chức danh / Vai trò"
+
+msgid "avatar"
+msgstr "Ảnh đại diện"
+
+msgid "hero avatar"
+msgstr "Ảnh banner hồ sơ"
+
+msgid "short bio"
+msgstr "Tiểu sử ngắn"
+
+msgid "profile tagline"
+msgstr "Tagline hồ sơ"
+
+msgid "full bio"
+msgstr "Tiểu sử đầy đủ"
+
+msgid "external profile URL"
+msgstr "URL hồ sơ ngoài"
+
+msgid "card specialty label"
+msgstr "Nhãn chuyên môn thẻ"
+
+msgid "hero tagline"
+msgstr "Tagline banner hồ sơ"
+
+msgid "role badges"
+msgstr "Badge vai trò"
+
+msgid "ticker bar text"
+msgstr "Văn bản ticker"
+
+msgid "hero CTA label"
+msgstr "Nhãn nút CTA banner"
+
+msgid "contact CTA URL"
+msgstr "URL nút liên hệ CTA"
+
+msgid "contact CTA icon"
+msgstr "Biểu tượng CTA liên hệ"
+
+msgid "contact CTA text"
+msgstr "Văn bản CTA liên hệ"
+
+msgid "stat 1 — value"
+msgstr "Chỉ số 1 — Giá trị"
+
+msgid "stat 1 — label"
+msgstr "Chỉ số 1 — Nhãn"
+
+msgid "stat 2 — value"
+msgstr "Chỉ số 2 — Giá trị"
+
+msgid "stat 2 — label"
+msgstr "Chỉ số 2 — Nhãn"
+
+msgid "stat 3 — value"
+msgstr "Chỉ số 3 — Giá trị"
+
+msgid "stat 3 — label"
+msgstr "Chỉ số 3 — Nhãn"
+
+msgid "experience highlights"
+msgstr "Kinh nghiệm nổi bật"
+
+msgid "discussion topics"
+msgstr "Chủ đề trao đổi"
+
+msgid "notable projects"
+msgstr "Dự án / Công trình tiêu biểu"
+
+msgid "senior expert"
+msgstr "Chuyên gia cao cấp"
+
+msgid "hero badge text"
+msgstr "Văn bản badge banner"
+
+msgid "hero badge icon"
+msgstr "Biểu tượng badge banner"
+
+msgid "hero badge color (hex)"
+msgstr "Màu badge banner (hex)"
+
+msgid "show hero badge"
+msgstr "Hiển thị badge banner"
+
+msgid "hero eyebrow (legacy)"
+msgstr "Nhãn phụ banner (cũ)"
+
+msgid "hero heading"
+msgstr "Tiêu đề banner"
+
+msgid "hero description"
+msgstr "Mô tả banner"
+
+msgid "hero background image"
+msgstr "Ảnh nền banner"
+
+msgid "button 1 label"
+msgstr "Nhãn nút 1"
+
+msgid "button 1 URL"
+msgstr "URL nút 1"
+
+msgid "button 1 icon"
+msgstr "Biểu tượng nút 1"
+
+msgid "button 1 target"
+msgstr "Mở tab nút 1"
+
+msgid "button 2 label"
+msgstr "Nhãn nút 2"
+
+msgid "button 2 URL"
+msgstr "URL nút 2"
+
+msgid "button 2 icon"
+msgstr "Biểu tượng nút 2"
+
+msgid "button 2 target"
+msgstr "Mở tab nút 2"
+
+msgid "hero bottom badge text"
+msgstr "Văn bản badge dưới banner"
+
+msgid "hero bottom badge logo"
+msgstr "Logo badge dưới banner"
+
+msgid "hero bottom badge icon (fallback)"
+msgstr "Biểu tượng badge dưới banner"
+
+msgid "hero bottom badge bg color"
+msgstr "Màu nền badge dưới banner"
+
+msgid "show hero bottom badge"
+msgstr "Hiển thị badge dưới banner"
+
+msgid "process section label"
+msgstr "Nhãn phần quy trình"
+
+msgid "process section heading"
+msgstr "Tiêu đề phần quy trình"
+
+msgid "process section description"
+msgstr "Mô tả phần quy trình"
+
+msgid "senior section label"
+msgstr "Nhãn phần chuyên gia cao cấp"
+
+msgid "senior experts section heading"
+msgstr "Tiêu đề phần chuyên gia cao cấp"
+
+msgid "senior section description"
+msgstr "Mô tả phần chuyên gia cao cấp"
+
+msgid "senior section CTA label"
+msgstr "Nhãn CTA phần chuyên gia cao cấp"
+
+msgid "senior section CTA URL"
+msgstr "URL CTA phần chuyên gia cao cấp"
+
+msgid "map section label"
+msgstr "Nhãn phần bản đồ"
+
+msgid "research area map heading"
+msgstr "Tiêu đề bản đồ chuyên môn"
+
+msgid "research area map description"
+msgstr "Mô tả bản đồ chuyên môn"
+
+msgid "map CTA 1 label"
+msgstr "Nhãn CTA 1 bản đồ"
+
+msgid "map CTA 1 URL"
+msgstr "URL CTA 1 bản đồ"
+
+msgid "map CTA 2 label"
+msgstr "Nhãn CTA 2 bản đồ"
+
+msgid "map CTA 2 URL"
+msgstr "URL CTA 2 bản đồ"
+
+msgid "directory section label"
+msgstr "Nhãn phần danh bạ chuyên gia"
+
+msgid "directory section heading"
+msgstr "Tiêu đề phần danh bạ chuyên gia"
+
+msgid "directory section description"
+msgstr "Mô tả phần danh bạ chuyên gia"
+
+msgid "knowledge topic section heading"
+msgstr "Tiêu đề phần chủ đề tri thức"
+
+msgid "knowledge topic section description"
+msgstr "Mô tả phần chủ đề tri thức"
+
+msgid "info group section label"
+msgstr "Nhãn phần nhóm thông tin"
+
+msgid "info group section heading"
+msgstr "Tiêu đề phần nhóm thông tin"
+
+msgid "info group section description"
+msgstr "Mô tả phần nhóm thông tin"
+
+msgid "CTA eyebrow"
+msgstr "Nhãn phụ CTA"
+
+msgid "CTA eyebrow text"
+msgstr "Văn bản nhãn phụ CTA"
+
+msgid "CTA description"
+msgstr "Mô tả CTA"
+
+msgid "CTA button 1 label"
+msgstr "Nhãn nút CTA 1"
+
+msgid "CTA button 1 URL"
+msgstr "URL nút CTA 1"
+
+msgid "CTA button 2 label"
+msgstr "Nhãn nút CTA 2"
+
+msgid "CTA button 2 URL"
+msgstr "URL nút CTA 2"
+
+msgid "CTA 1 label"
+msgstr "Nhãn CTA 1"
+
+msgid "CTA 1 URL"
+msgstr "URL CTA 1"
+
+msgid "CTA 2 label"
+msgstr "Nhãn CTA 2"
+
+msgid "CTA 2 URL"
+msgstr "URL CTA 2"
+
+msgid "CTA 3 label"
+msgstr "Nhãn CTA 3"
+
+msgid "CTA 3 URL"
+msgstr "URL CTA 3"
+
+msgid "CTA URL override"
+msgstr "URL CTA ghi đè"
+
+msgid "CTA icon"
+msgstr "Biểu tượng CTA"
+
+msgid "CTA text"
+msgstr "Văn bản CTA"
+
+msgid "CTA target"
+msgstr "Mục tiêu CTA"
+
+msgid "icon name"
+msgstr "Tên biểu tượng"
+
+msgid "card icon"
+msgstr "Biểu tượng thẻ"
+
+msgid "color (hex)"
+msgstr "Màu sắc (hex)"
+
+msgid "card tags"
+msgstr "Thẻ nội dung"
+
+msgid "accent color (hex)"
+msgstr "Màu sắc nhấn (hex)"
+
+msgid "custom color (hex)"
+msgstr "Màu tùy chỉnh (hex)"
+
+msgid "node name"
+msgstr "Tên nút sơ đồ"
+
+msgid "parent node"
+msgstr "Nút cha"
+
+msgid "icon background color (hex)"
+msgstr "Màu nền biểu tượng (hex)"
+
+msgid "header description"
+msgstr "Mô tả header accordion"
+
+msgid "body section label"
+msgstr "Nhãn phần nội dung"
+
+msgid "body section heading"
+msgstr "Tiêu đề phần nội dung"
+
+msgid "body section description"
+msgstr "Mô tả phần nội dung"
+
+msgid "show expert grid"
+msgstr "Hiển thị lưới chuyên gia"
+
+msgid "expert grid CTA label"
+msgstr "Nhãn CTA lưới chuyên gia"
+
+msgid "flat expert grid"
+msgstr "Lưới chuyên gia phẳng"
+
+msgid "show association grid"
+msgstr "Hiển thị lưới hiệp hội"
+
+msgid "expert research areas"
+msgstr "Lĩnh vực chuyên môn"
+
+msgid "direct expert members"
+msgstr "Thành viên chuyên gia trực tiếp"
+
+msgid "icon (fallback)"
+msgstr "Biểu tượng (dự phòng)"
+
+msgid "badge label"
+msgstr "Nhãn badge"
+
+msgid "badge color (hex)"
+msgstr "Màu badge (hex)"
+
+msgid "badge text"
+msgstr "Văn bản badge"
+
+msgid "role label"
+msgstr "Nhãn vai trò"
+
+msgid "duties (one per line)"
+msgstr "Nhiệm vụ (mỗi dòng một mục)"
+
+msgid "duties label"
+msgstr "Nhãn nhiệm vụ"
+
+msgid "function label"
+msgstr "Nhãn chức năng"
+
+msgid "function text"
+msgstr "Văn bản chức năng"
+
+msgid "eyebrow label"
+msgstr "Nhãn phụ tiêu đề"
+
+msgid "foreground illustration"
+msgstr "Hình minh họa nổi bật"
+
+msgid "show quote"
+msgstr "Hiển thị trích dẫn"
+
+msgid "quote text"
+msgstr "Văn bản trích dẫn"
+
+msgid "quote icon"
+msgstr "Biểu tượng trích dẫn"
+
+msgid "quote body text"
+msgstr "Văn bản nội dung trích dẫn"
+
+msgid "quote text (bold)"
+msgstr "Văn bản trích dẫn (đậm)"
+
+msgid "quote icon image"
+msgstr "Hình biểu tượng trích dẫn"
+
+msgid "icon (heroicon name)"
+msgstr "Biểu tượng (tên heroicon)"
+
+msgid "icon alt text"
+msgstr "Văn bản thay thế biểu tượng"
+
+msgid "icon color theme"
+msgstr "Chủ đề màu biểu tượng"
+
+msgid "icon image"
+msgstr "Hình biểu tượng"
+
+msgid "icon key"
+msgstr "Khóa biểu tượng"
+
+msgid "color theme"
+msgstr "Chủ đề màu"
+
+msgid "highlight label"
+msgstr "Nhãn nổi bật"
+
+msgid "card type"
+msgstr "Loại thẻ"
+
+msgid "background color class"
+msgstr "Lớp màu nền CSS"
+
+msgid "background color"
+msgstr "Màu nền"
+
+msgid "background image (section overlay)"
+msgstr "Ảnh nền (lớp phủ phần)"
+
+msgid "background decoration"
+msgstr "Trang trí nền"
+
+msgid "hub label"
+msgstr "Nhãn trung tâm"
+
+msgid "hub diagram image"
+msgstr "Hình sơ đồ hub"
+
+msgid "diagram alt"
+msgstr "Mô tả thay thế sơ đồ"
+
+msgid "diagram alt text"
+msgstr "Mô tả thay thế sơ đồ"
+
+msgid "diagram caption"
+msgstr "Chú thích sơ đồ"
+
+msgid "diagram card title"
+msgstr "Tiêu đề thẻ sơ đồ"
+
+msgid "diagram image"
+msgstr "Hình ảnh sơ đồ"
+
+msgid "large image"
+msgstr "Hình ảnh lớn"
+
+msgid "image alt text"
+msgstr "Văn bản thay thế ảnh"
+
+msgid "left image"
+msgstr "Ảnh bên trái"
+
+msgid "legal section"
+msgstr "Phần pháp lý"
+
+msgid "org card label"
+msgstr "Nhãn thẻ tổ chức"
+
+msgid "organisation name"
+msgstr "Tên tổ chức"
+
+msgid "timeline card title"
+msgstr "Tiêu đề thẻ mốc thời gian"
+
+msgid "footer note"
+msgstr "Ghi chú footer"
+
+msgid "show footer note"
+msgstr "Hiển thị ghi chú footer"
+
+msgid "document URL"
+msgstr "URL tài liệu"
+
+msgid "document link label"
+msgstr "Nhãn liên kết tài liệu"
+
+msgid "year"
+msgstr "Năm"
+
+msgid "counter animation"
+msgstr "Hoạt ảnh đếm số"
+
+msgid "bottom panel description"
+msgstr "Mô tả panel dưới"
+
+msgid "bottom panel text"
+msgstr "Văn bản panel dưới"
+
+msgid "bottom panel title"
+msgstr "Tiêu đề panel dưới"
+
+msgid "view more label"
+msgstr "Nhãn xem thêm"
+
+msgid "view more URL"
+msgstr "URL xem thêm"
+
+msgid "ecosystem"
+msgstr "Hệ sinh thái"
+
+msgid "group title"
+msgstr "Tiêu đề nhóm"
+
+msgid "color class"
+msgstr "Lớp màu sắc CSS"
+
+msgid "banner badge"
+msgstr "Badge banner"
+
+msgid "banner quote"
+msgstr "Trích dẫn banner"
+
+msgid "link label"
+msgstr "Nhãn liên kết"
+
+msgid "link URL"
+msgstr "URL liên kết"
+
+msgid "hotline"
+msgstr "Hotline"
+
+msgid "contact address"
+msgstr "Địa chỉ liên hệ"
+
+msgid "contact email"
+msgstr "Email liên hệ"
+
+msgid "contact phone"
+msgstr "Điện thoại liên hệ"
+
+msgid "contact block title"
+msgstr "Tiêu đề khối liên hệ"
+
+msgid "contact block description"
+msgstr "Mô tả khối liên hệ"
+
+msgid "contact block city image"
+msgstr "Hình ảnh thành phố khối liên hệ"
+
+msgid "heading line 1 (dark)"
+msgstr "Dòng tiêu đề 1 (màu đậm)"
+
+msgid "heading lines 2-3 (orange)"
+msgstr "Dòng tiêu đề 2-3 (màu cam)"
+
+msgid "hero illustration (right panel)"
+msgstr "Hình minh họa banner (panel phải)"
+
+msgid "'What is' illustration"
+msgstr "Hình minh họa 'Là gì'"
+
+msgid "'When needed' intro text"
+msgstr "Văn bản giới thiệu 'Khi nào cần'"
+
+msgid "case study image"
+msgstr "Hình ảnh case study"
+
+msgid "step photo"
+msgstr "Ảnh bước thực hiện"
+
+msgid "show CTA section"
+msgstr "Hiển thị phần CTA"
+
+msgid "overlay color"
+msgstr "Màu lớp phủ"
+
+msgid "overlay opacity (0–100)"
+msgstr "Độ mờ lớp phủ (0–100)"
+
+msgid "accordion type"
+msgstr "Loại accordion"
+
+msgid "button URL"
+msgstr "URL nút"
+
+msgid "button icon"
+msgstr "Biểu tượng nút"
+
+msgid "button style"
+msgstr "Kiểu nút"
+
+msgid "button target"
+msgstr "Mở tab nút"
+
+msgid "button text"
+msgstr "Văn bản nút"
+
+msgid "active color"
+msgstr "Màu khi chọn"
+
+msgid "default color"
+msgstr "Màu mặc định"
+
+msgid "event date (display text)"
+msgstr "Ngày sự kiện (hiển thị)"
+
+msgid "location"
+msgstr "Địa điểm"
+
+msgid "linked topic"
+msgstr "Chủ đề liên kết"
+
+msgid "is press article"
+msgstr "Là bài báo/thông cáo"
+
+msgid "activity news heading"
+msgstr "Tiêu đề phần tin hoạt động"
+
+msgid "upcoming events heading"
+msgstr "Tiêu đề phần sự kiện sắp tới"
+
+msgid "content type section label"
+msgstr "Nhãn phần loại nội dung"
+
+msgid "content type section heading"
+msgstr "Tiêu đề phần loại nội dung"
+
+msgid "content type section description"
+msgstr "Mô tả phần loại nội dung"
+
+msgid "content type section background image"
+msgstr "Ảnh nền phần loại nội dung"
+
+msgid "content type section decorative background"
+msgstr "Trang trí nền phần loại nội dung"
+
+msgid "content type section CTA text"
+msgstr "Văn bản CTA phần loại nội dung"
+
+msgid "content type section CTA icon"
+msgstr "Biểu tượng CTA phần loại nội dung"
+
+msgid "content type section CTA URL"
+msgstr "URL CTA phần loại nội dung"
+
+msgid "featured section description"
+msgstr "Mô tả phần nổi bật"
+
+msgid "featured section background image"
+msgstr "Ảnh nền phần nổi bật"
+
+msgid "featured section decoration"
+msgstr "Trang trí phần nổi bật"
+
+msgid "news section label"
+msgstr "Nhãn phần tin tức"
+
+msgid "news section heading"
+msgstr "Tiêu đề phần tin tức"
+
+msgid "news section description"
+msgstr "Mô tả phần tin tức"
+
+msgid "news section background image"
+msgstr "Ảnh nền phần tin tức"
+
+msgid "news section decorative background"
+msgstr "Trang trí nền phần tin tức"
+
+msgid "press section label"
+msgstr "Nhãn phần báo chí"
+
+msgid "press section heading"
+msgstr "Tiêu đề phần báo chí"
+
+msgid "press section description"
+msgstr "Mô tả phần báo chí"
+
+msgid "press section background image"
+msgstr "Ảnh nền phần báo chí"
+
+msgid "publication section label"
+msgstr "Nhãn phần ấn phẩm"
+
+msgid "publication section heading"
+msgstr "Tiêu đề phần ấn phẩm"
+
+msgid "publication section description"
+msgstr "Mô tả phần ấn phẩm"
+
+msgid "publication section background image"
+msgstr "Ảnh nền phần ấn phẩm"
+
+msgid "publication section decorative background"
+msgstr "Trang trí nền phần ấn phẩm"
+
+msgid "topic section label"
+msgstr "Nhãn phần chủ đề"
+
+msgid "topic section heading"
+msgstr "Tiêu đề phần chủ đề"
+
+msgid "topic section description"
+msgstr "Mô tả phần chủ đề"
+
+msgid "topic section background image"
+msgstr "Ảnh nền phần chủ đề"
+
+msgid "topic section decorative background"
+msgstr "Trang trí nền phần chủ đề"
+
+msgid "ready section title"
+msgstr "Tiêu đề phần sẵn sàng"
+
+msgid "ready section subtitle"
+msgstr "Tiêu đề phụ phần sẵn sàng"
+
+msgid "ready section description"
+msgstr "Mô tả phần sẵn sàng"
+
+msgid "ready section is active"
+msgstr "Phần sẵn sàng đang hoạt động"
+
+msgid "ready section background image"
+msgstr "Ảnh nền phần sẵn sàng"
+
+msgid "ready section overlay color"
+msgstr "Màu lớp phủ phần sẵn sàng"
+
+msgid "ready section overlay opacity"
+msgstr "Độ mờ lớp phủ phần sẵn sàng"
+
+msgid "ready section text color"
+msgstr "Màu văn bản phần sẵn sàng"
+
+msgid "search placeholder"
+msgstr "Placeholder tìm kiếm"
+
+msgid "form title"
+msgstr "Tiêu đề form"
+
+msgid "form description"
+msgstr "Mô tả form"
+
+msgid "form privacy note"
+msgstr "Ghi chú riêng tư form"
+
+msgid "form success message"
+msgstr "Thông báo thành công form"
+
+msgid "form button text"
+msgstr "Văn bản nút form"
+
+msgid "form button icon"
+msgstr "Biểu tượng nút form"
+
+msgid "name field label"
+msgstr "Nhãn trường tên"
+
+msgid "name field placeholder"
+msgstr "Placeholder trường tên"
+
+msgid "email field label"
+msgstr "Nhãn trường email"
+
+msgid "email field placeholder"
+msgstr "Placeholder trường email"
+
+msgid "org field label"
+msgstr "Nhãn trường tổ chức"
+
+msgid "org field placeholder"
+msgstr "Placeholder trường tổ chức"
+
+msgid "note field label"
+msgstr "Nhãn trường ghi chú"
+
+msgid "note field placeholder"
+msgstr "Placeholder trường ghi chú"

@@ -1,0 +1,315 @@
+#
+msgid ""
+msgstr ""
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Banner chính"
+msgstr "Main banner"
+
+msgid "Bài viết"
+msgstr "Article"
+
+msgid "Bật tìm kiếm"
+msgstr "Enable search"
+
+msgid "Chủ đề"
+msgstr "Topic"
+
+msgid "Các chủ đề tri thức"
+msgstr "Knowledge topics"
+
+msgid "Các hình thức đồng hành"
+msgstr "Engagement types"
+
+msgid "Các lĩnh vực chuyên môn"
+msgstr "Research areas"
+
+msgid "Danh mục"
+msgstr "Category"
+
+msgid "Giá trị"
+msgstr "Value"
+
+msgid "Giải pháp"
+msgstr "Solution"
+
+msgid "Giờ làm việc"
+msgstr "Business hours"
+
+msgid "Hiển thị"
+msgstr "Display"
+
+msgid "Logo (nền tối)"
+msgstr "Logo (dark background)"
+
+msgid "Màu nền card"
+msgstr "Card background color"
+
+msgid "Mô tả"
+msgstr "Description"
+
+msgid "Mô tả SEO"
+msgstr "SEO description"
+
+msgid "Mô tả phần 'Năng lực là gì'"
+msgstr "Description – 'What is Capability' section"
+
+msgid "Mô tả phần lọc"
+msgstr "Filter section description"
+
+msgid "Mô tả tiếp cận"
+msgstr "Approach description"
+
+msgid "Mô tả tổng quan"
+msgstr "Overview description"
+
+msgid "Mô tả website"
+msgstr "Website description"
+
+msgid "Mở trong tab mới"
+msgstr "Open in new tab"
+
+msgid "Mục cha"
+msgstr "Parent item"
+
+msgid "Ngày xuất bản"
+msgstr "Published date"
+
+msgid "Nhãn"
+msgstr "Label"
+
+msgid "Nhãn danh mục"
+msgstr "Category label"
+
+msgid "Nhãn kích thước tệp"
+msgstr "File size label"
+
+msgid "Nhãn loại tệp"
+msgstr "File type label"
+
+msgid "Nhãn nút CTA"
+msgstr "CTA button label"
+
+msgid "Nhãn nút CTA chính"
+msgstr "Primary CTA button label"
+
+msgid "Nhãn nút CTA phụ"
+msgstr "Secondary CTA button label"
+
+msgid "Nhãn nút chính"
+msgstr "Primary button label"
+
+msgid "Nhãn nút chính (banner)"
+msgstr "Primary button label (hero)"
+
+msgid "Nhãn nút phụ"
+msgstr "Secondary button label"
+
+msgid "Nhãn nút phụ (banner)"
+msgstr "Secondary button label (hero)"
+
+msgid "Nhãn phần"
+msgstr "Section label"
+
+msgid "Nhãn phần 'IRDM đồng hành'"
+msgstr "'IRDM Partnership' section label"
+
+msgid "Nhãn phần 'Khi nào cần'"
+msgstr "'When Needed' section label"
+
+msgid "Nhãn phần 'Năng lực là gì'"
+msgstr "'What is Capability' section label"
+
+msgid "Nhãn phần 'Đầu ra'"
+msgstr "'Outputs' section label"
+
+msgid "Nhãn phần năng lực"
+msgstr "Capability section label"
+
+msgid "Nhãn phần nổi bật"
+msgstr "Highlight section label"
+
+msgid "Nhãn phần phương pháp"
+msgstr "Methodology section label"
+
+msgid "Nhãn phần thách thức"
+msgstr "Challenge section label"
+
+msgid "Nhãn phần tiếp cận"
+msgstr "Approach section label"
+
+msgid "Nhãn phần đầu ra"
+msgstr "Output section label"
+
+msgid "Nhãn đối tác tiêu biểu"
+msgstr "Featured partner label"
+
+msgid "Nhóm"
+msgstr "Group"
+
+msgid "Nhóm chuyên gia"
+msgstr "Expert group"
+
+msgid "Nhóm thông tin"
+msgstr "Info group"
+
+msgid "Năng lực"
+msgstr "Capability"
+
+msgid "Năng lực liên quan"
+msgstr "Related capabilities"
+
+msgid "Nổi bật"
+msgstr "Featured"
+
+msgid "Nội dung"
+msgstr "Content"
+
+msgid "Phân khúc"
+msgstr "Segment"
+
+msgid "Phần giới thiệu"
+msgstr "Introduction section"
+
+msgid "Số bước"
+msgstr "Number of steps"
+
+msgid "Số thứ tự"
+msgstr "Order"
+
+msgid "Số điện thoại"
+msgstr "Phone number"
+
+msgid "Thời gian đọc (phút)"
+msgstr "Reading time (minutes)"
+
+msgid "Thứ tự hiển thị"
+msgstr "Display order"
+
+msgid "Tiêu đề"
+msgstr "Title"
+
+msgid "Tiêu đề CTA"
+msgstr "CTA title"
+
+msgid "Tiêu đề SEO"
+msgstr "SEO title"
+
+msgid "Tiêu đề chính"
+msgstr "Main title"
+
+msgid "Tiêu đề phần lọc"
+msgstr "Filter section title"
+
+msgid "Tiêu đề phần nổi bật"
+msgstr "Highlight section title"
+
+msgid "Tiêu đề phụ"
+msgstr "Subtitle"
+
+msgid "Tiêu đề phụ CTA"
+msgstr "CTA subtitle"
+
+msgid "Tiêu đề tiếp cận"
+msgstr "Approach title"
+
+msgid "Tiêu đề tổng quan"
+msgstr "Overview title"
+
+msgid "Tiêu đề điều hướng nhanh"
+msgstr "Quick-nav title"
+
+msgid "Trang danh sách"
+msgstr "Listing page"
+
+msgid "Tên"
+msgstr "Name"
+
+msgid "Tên icon"
+msgstr "Icon name"
+
+msgid "Tên tác giả"
+msgstr "Author name"
+
+msgid "Tên website"
+msgstr "Website name"
+
+msgid "Tóm tắt"
+msgstr "Summary"
+
+msgid "Tệp tin"
+msgstr "File"
+
+msgid "Từ khóa SEO"
+msgstr "SEO keywords"
+
+msgid "URL nguồn"
+msgstr "Source URL"
+
+msgid "URL nhúng bản đồ"
+msgstr "Map embed URL"
+
+msgid "URL nút CTA"
+msgstr "CTA button URL"
+
+msgid "URL nút CTA chính"
+msgstr "Primary CTA button URL"
+
+msgid "URL nút CTA phụ"
+msgstr "Secondary CTA button URL"
+
+msgid "URL nút chính"
+msgstr "Primary button URL"
+
+msgid "URL nút chính (banner)"
+msgstr "Primary button URL (hero)"
+
+msgid "URL nút phụ"
+msgstr "Secondary button URL"
+
+msgid "URL nút phụ (banner)"
+msgstr "Secondary button URL (hero)"
+
+msgid "Văn bản dải trích dẫn"
+msgstr "Quote strip text"
+
+msgid "Văn bản phụ đề"
+msgstr "Eyebrow text"
+
+msgid "Đang hoạt động"
+msgstr "Active"
+
+msgid "Đã xuất bản"
+msgstr "Published"
+
+msgid "Đường dẫn (slug)"
+msgstr "Slug"
+
+msgid "Địa chỉ"
+msgstr "Address"
+
+msgid "Ảnh banner"
+msgstr "Hero image"
+
+msgid "Ảnh bìa"
+msgstr "Cover image"
+
+msgid "Ảnh card"
+msgstr "Card image"
+
+msgid "Ảnh minh họa banner"
+msgstr "Hero illustration"
+
+msgid "Ảnh nền"
+msgstr "Background image"
+
+msgid "Ảnh nền CTA"
+msgstr "CTA background image"
+
+msgid "Ảnh thu nhỏ"
+msgstr "Thumbnail"
+
+msgid "Ảnh đầu ra"
+msgstr "Output image"

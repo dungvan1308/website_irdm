@@ -16,8 +16,8 @@ class BaseModel(models.Model):
     )
     is_active = models.BooleanField(_("is active"), default=True, db_index=True)
     display_order = models.PositiveIntegerField(_("display order"), default=0, db_index=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(_("created at"), auto_now_add=True)
+    updated_at = models.DateTimeField(_("updated at"), auto_now=True)
 
     class Meta:
         abstract = True
