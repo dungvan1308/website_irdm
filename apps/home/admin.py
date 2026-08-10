@@ -2,6 +2,7 @@
 
 from django.contrib import admin
 from django.utils.html import format_html
+from django.utils.translation import gettext_lazy as _
 
 from .models import (
     AudienceSegment,
@@ -82,9 +83,9 @@ class FeaturedSectionConfigAdmin(admin.ModelAdmin):
     list_display = ("section_key", "title", "display_order", "is_visible", "is_active")
     list_editable = ("display_order", "is_visible", "is_active")
     fieldsets = (
-        ("Section", {"fields": ("section_key",)}),
-        ("Content", {"fields": ("title", "subtitle", "cta_label", "cta_url")}),
-        ("Status", {"fields": ("is_visible", "is_active", "display_order")}),
+        (_("Section"), {"fields": ("section_key",)}),
+        (_("Content"), {"fields": ("title", "subtitle", "cta_label", "cta_url")}),
+        (_("Status"), {"fields": ("is_visible", "is_active", "display_order")}),
     )
 
 
@@ -108,23 +109,23 @@ class AudienceSegmentAdmin(admin.ModelAdmin):
     inlines = [AudienceTagInline]
     readonly_fields = ("image_preview", "icon_image_preview")
     fieldsets = (
-        ("Content", {"fields": ("title", "description")}),
-        ("Icon Badge", {
+        (_("Content"), {"fields": ("title", "description")}),
+        (_("Icon Badge"), {
             "fields": ("icon_image", "icon_image_preview", "icon"),
-            "description": "Upload ảnh icon (PNG/SVG nền trong suốt, ~56×56px) hiển thị trong badge bo tròn trắng ở góc dưới ảnh card. Trường 'icon' là Heroicon name dự phòng khi chưa có ảnh.",
+            "description": _("Upload ảnh icon (PNG/SVG nền trong suốt, ~56×56px) hiển thị trong badge bo tròn trắng ở góc dưới ảnh card. Trường 'icon' là Heroicon name dự phòng khi chưa có ảnh."),
         }),
-        ("Card Image", {"fields": ("image", "image_preview")}),
-        ("CTA", {"fields": ("cta_label", "cta_url")}),
-        ("Status", {"fields": ("is_active", "display_order")}),
+        (_("Card Image"), {"fields": ("image", "image_preview")}),
+        (_("CTA"), {"fields": ("cta_label", "cta_url")}),
+        (_("Status"), {"fields": ("is_active", "display_order")}),
     )
 
-    @admin.display(description="Card image preview")
+    @admin.display(description=_("Card image preview"))
     def image_preview(self, obj):
         if obj.image:
             return format_html('<img src="{}" style="height:80px;border-radius:4px;object-fit:cover;"/>', obj.image.url)
         return "—"
 
-    @admin.display(description="Icon badge preview")
+    @admin.display(description=_("Icon badge preview"))
     def icon_image_preview(self, obj):
         if obj.icon_image:
             return format_html(
@@ -162,23 +163,23 @@ class CoreCapabilityAdmin(admin.ModelAdmin):
     list_editable = ("display_order", "is_active")
     readonly_fields = ("image_preview", "icon_image_preview")
     fieldsets = (
-        ("Content", {"fields": ("title", "description")}),
-        ("Icon", {
+        (_("Content"), {"fields": ("title", "description")}),
+        (_("Icon"), {
             "fields": ("icon_image", "icon_image_preview", "icon"),
-            "description": "Upload ảnh icon (PNG/SVG nền trong suốt, ~40×40px). Trường 'icon' là tên Heroicon dự phòng nếu không có ảnh.",
+            "description": _("Upload ảnh icon (PNG/SVG nền trong suốt, ~40×40px). Trường 'icon' là tên Heroicon dự phòng nếu không có ảnh."),
         }),
-        ("Background Image", {"fields": ("background_image", "image_preview")}),
-        ("Link", {"fields": ("link_url",), "description": "URL trang chi tiết khi click vào card, ví dụ: /vi/capability/nghien-cuu-ung-dung/"}),
-        ("Status", {"fields": ("is_active", "display_order")}),
+        (_("Background Image"), {"fields": ("background_image", "image_preview")}),
+        (_("Link"), {"fields": ("link_url",), "description": _("URL trang chi tiết khi click vào card, ví dụ: /vi/capability/nghien-cuu-ung-dung/")}),
+        (_("Status"), {"fields": ("is_active", "display_order")}),
     )
 
-    @admin.display(description="Background preview")
+    @admin.display(description=_("Background preview"))
     def image_preview(self, obj):
         if obj.background_image:
             return format_html('<img src="{}" style="height:120px;border-radius:4px;object-fit:cover;"/>', obj.background_image.url)
         return "—"
 
-    @admin.display(description="Icon preview")
+    @admin.display(description=_("Icon preview"))
     def icon_image_preview(self, obj):
         if obj.icon_image:
             return format_html('<img src="{}" style="height:40px;width:40px;object-fit:contain;background:#1e3a8a;border-radius:6px;padding:4px;"/>', obj.icon_image.url)
@@ -218,13 +219,13 @@ class KnowledgeCategoryAdmin(admin.ModelAdmin):
     list_editable = ("display_order", "is_active")
     readonly_fields = ("image_preview",)
     fieldsets = (
-        ("Content", {"fields": ("icon", "category_label", "title")}),
-        ("Image", {"fields": ("image", "image_preview")}),
-        ("CTA", {"fields": ("cta_label", "cta_url")}),
-        ("Status", {"fields": ("is_active", "display_order")}),
+        (_("Content"), {"fields": ("icon", "category_label", "title")}),
+        (_("Image"), {"fields": ("image", "image_preview")}),
+        (_("CTA"), {"fields": ("cta_label", "cta_url")}),
+        (_("Status"), {"fields": ("is_active", "display_order")}),
     )
 
-    @admin.display(description="Image preview")
+    @admin.display(description=_("Image preview"))
     def image_preview(self, obj):
         if obj.image:
             return format_html('<img src="{}" style="height:80px;border-radius:4px;object-fit:cover;"/>', obj.image.url)
@@ -238,7 +239,7 @@ class CTABannerAdmin(admin.ModelAdmin):
     list_display = ("heading", "display_order", "is_active")
     list_editable = ("display_order", "is_active")
     fieldsets = (
-        ("Content", {"fields": ("section_label", "heading", "description", "background_image")}),
-        ("CTA", {"fields": ("cta_label", "cta_url")}),
-        ("Status", {"fields": ("is_active", "display_order")}),
+        (_("Content"), {"fields": ("section_label", "heading", "description", "background_image")}),
+        (_("CTA"), {"fields": ("cta_label", "cta_url")}),
+        (_("Status"), {"fields": ("is_active", "display_order")}),
     )

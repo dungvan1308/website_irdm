@@ -2,6 +2,7 @@
 
 from django.contrib import admin
 from django.utils.html import format_html
+from django.utils.translation import gettext_lazy as _
 
 from .models import (
     KnowledgeAccordionItem,
@@ -59,7 +60,7 @@ class KnowledgeContentTypeCardInline(admin.StackedInline):
         "display_order", "is_published", "is_active",
     )
 
-    @admin.display(description="Cover preview")
+    @admin.display(description=_("Cover preview"))
     def cover_image_preview(self, obj):
         return _img_preview(obj.cover_image)
 
@@ -77,7 +78,7 @@ class KnowledgeTopicCardInline(admin.StackedInline):
         "display_order", "is_published", "is_active",
     )
 
-    @admin.display(description="Cover preview")
+    @admin.display(description=_("Cover preview"))
     def cover_image_preview(self, obj):
         return _img_preview(obj.cover_image)
 
@@ -86,8 +87,8 @@ class KnowledgeCTAButtonInline(admin.TabularInline):
     model = KnowledgeCTAButton
     extra = 1
     fields = ("text", "url", "target", "style", "icon", "display_order", "is_published", "is_active")
-    verbose_name = "CTA Button (Sẵn sàng trao đổi)"
-    verbose_name_plural = "CTA Buttons (Sẵn sàng trao đổi)"
+    verbose_name = _("Ready section CTA button")
+    verbose_name_plural = _("Ready section CTA buttons")
 
 
 # ─── KnowledgeListingPage ───────────────────────────────────────────────────────────────────
@@ -98,7 +99,7 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
     readonly_fields = ("hero_image_preview", "cta_background_image_preview")
     inlines = [KnowledgeFeaturedArticleInline, KnowledgeContentTypeCardInline, KnowledgeTopicCardInline, KnowledgeCTAButtonInline]
     fieldsets = (
-        ("Hero", {
+        (_("Hero"), {
             "fields": (
                 "section_label", "heading", "description",
                 "hero_image", "hero_image_preview",
@@ -106,12 +107,12 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "hero_cta_secondary_label", "hero_cta_secondary_url",
             ),
         }),
-        ("Filter / Search Section", {
-            "description": "Cấu hình section bộ lọc — các nhóm lọc được quản lý riêng tại Filter Groups.",
+        (_("Filter / Search Section"), {
+            "description": _("Configure the filter section; filter groups are managed separately."),
             "fields": ("search_enabled", "search_placeholder", "filter_section_heading", "filter_section_description"),
         }),
-        ("Featured Section", {
-            "description": "Cấu hình section Nội dung nổi bật — các card được quản lý qua inline bên dưới.",
+        (_("Featured Section"), {
+            "description": _("Configure the featured section; its cards are managed in the inlines below."),
             "fields": (
                 "featured_section_label",
                 "featured_section_heading",
@@ -120,8 +121,8 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "featured_bg_decoration",
             ),
         }),
-        ("Content Type Section (Khám phá theo Loại Nội Dung)", {
-            "description": "Cấu hình section Khám phá theo Loại Nội Dung — các card được quản lý qua inline bên dưới.",
+        (_("Content Type Section (Khám phá theo Loại Nội Dung)"), {
+            "description": _("Configure the content type section; its cards are managed in the inlines below."),
             "fields": (
                 "content_type_section_label",
                 "content_type_section_heading",
@@ -133,8 +134,8 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "content_type_section_cta_url",
             ),
         }),
-        ("Topic Browse Section (Khám phá theo Chủ Đề)", {
-            "description": "Cấu hình section Khám phá theo Chủ Đề — các card được quản lý qua inline bên dưới.",
+        (_("Topic Browse Section (Khám phá theo Chủ Đề)"), {
+            "description": _("Configure the topic browse section; its cards are managed in the inlines below."),
             "fields": (
                 "topic_section_label",
                 "topic_section_heading",
@@ -143,8 +144,8 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "topic_section_bg_decoration",
             ),
         }),
-        ("Publication Section (Ấn phẩm & Báo cáo)", {
-            "description": "Cấu hình section Tài liệu tải về — gồm tiêu đề section, form yêu cầu và contact block.",
+        (_("Publication Section (Ấn phẩm & Báo cáo)"), {
+            "description": _("Configure the publication section, including its heading, request form, and contact block."),
             "fields": (
                 "pub_section_label",
                 "pub_section_heading",
@@ -153,8 +154,8 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "pub_section_bg_decoration",
             ),
         }),
-        ("Publication Form", {
-            "description": "Cấu hình form 'Gửi yêu cầu nhận tài liệu'.",
+        (_("Publication Form"), {
+            "description": _("Configure the publication request form."),
             "fields": (
                 "pub_form_title",
                 "pub_form_description",
@@ -172,8 +173,8 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "pub_form_success_message",
             ),
         }),
-        ("Publication Contact Block", {
-            "description": "Cấu hình khối 'Liên hệ trao đổi với Viện IRDM' phía bên phải form.",
+        (_("Publication Contact Block"), {
+            "description": _("Configure the IRDM contact block displayed beside the request form."),
             "fields": (
                 "pub_contact_title",
                 "pub_contact_description",
@@ -186,8 +187,8 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "pub_contact_city_image",
             ),
         }),
-        ("News & Events Section (Tin tức & Sự kiện)", {
-            "description": "Cấu hình section Tin tức & Sự kiện — Tin hoạt động IRDM và Sự kiện sắp diễn ra.",
+        (_("News & Events Section (Tin tức & Sự kiện)"), {
+            "description": _("Configure the news and events section, including IRDM news and upcoming events."),
             "fields": (
                 "news_section_label",
                 "news_section_heading",
@@ -198,8 +199,8 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "news_events_heading",
             ),
         }),
-        ("Press Section (IRDM trên báo chí và diễn đàn chuyên môn)", {
-            "description": "Cấu hình section báo chí và diễn đàn chuyên môn.",
+        (_("Press Section (IRDM trên báo chí và diễn đàn chuyên môn)"), {
+            "description": _("Configure the press and professional forums section."),
             "fields": (
                 "press_section_label",
                 "press_section_heading",
@@ -207,8 +208,8 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "press_section_bg_image",
             ),
         }),
-        ("Ready Section (Sẵn sàng trao đổi)", {
-            "description": "Cấu hình section CTA. Quản lý CTA Buttons ở bên dưới (inline).",
+        (_("Ready Section (Sẵn sàng trao đổi)"), {
+            "description": _("Configure the ready-section CTA; its buttons are managed in the inline below."),
             "fields": (
                 "ready_section_is_active",
                 "ready_section_subtitle",
@@ -220,7 +221,7 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "ready_section_text_color",
             ),
         }),
-        ("CTA", {
+        (_("CTA"), {
             "fields": (
                 "cta_sub", "cta_heading",
                 "cta_background_image", "cta_background_image_preview",
@@ -228,20 +229,20 @@ class KnowledgeListingPageAdmin(admin.ModelAdmin):
                 "cta_secondary_label", "cta_secondary_url",
             ),
         }),
-        ("SEO", {
+        (_("SEO"), {
             "fields": ("meta_title", "meta_description"),
             "classes": ("collapse",),
         }),
-        ("Status", {
+        (_("Status"), {
             "fields": ("is_active", "display_order"),
         }),
     )
 
-    @admin.display(description="Hero preview")
+    @admin.display(description=_("Hero preview"))
     def hero_image_preview(self, obj):
         return _img_preview(obj.hero_image)
 
-    @admin.display(description="CTA background preview")
+    @admin.display(description=_("CTA background preview"))
     def cta_background_image_preview(self, obj):
         return _img_preview(obj.cta_background_image)
 
@@ -272,12 +273,12 @@ class KnowledgeCategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("label",)}
     readonly_fields = ("cover_image_preview",)
     fieldsets = (
-        ("Identity", {"fields": ("label", "slug", "heading", "description", "icon")}),
-        ("Media", {"fields": ("cover_image", "cover_image_preview")}),
-        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+        (_("Identity"), {"fields": ("label", "slug", "heading", "description", "icon")}),
+        (_("Media"), {"fields": ("cover_image", "cover_image_preview")}),
+        (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
-    @admin.display(description="Cover preview")
+    @admin.display(description=_("Cover preview"))
     def cover_image_preview(self, obj):
         return _img_preview(obj.cover_image)
 
@@ -291,12 +292,12 @@ class KnowledgeTopicAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("label",)}
     readonly_fields = ("cover_image_preview",)
     fieldsets = (
-        ("Identity", {"fields": ("label", "slug", "description", "icon")}),
-        ("Media", {"fields": ("cover_image", "cover_image_preview")}),
-        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+        (_("Identity"), {"fields": ("label", "slug", "description", "icon")}),
+        (_("Media"), {"fields": ("cover_image", "cover_image_preview")}),
+        (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
-    @admin.display(description="Cover preview")
+    @admin.display(description=_("Cover preview"))
     def cover_image_preview(self, obj):
         return _img_preview(obj.cover_image)
 
@@ -312,10 +313,10 @@ class KnowledgeArticleAdmin(admin.ModelAdmin):
     filter_horizontal = ("topics", "related_capabilities")
     readonly_fields = ("thumbnail_preview", "hero_image_preview")
     fieldsets = (
-        ("Identity", {"fields": ("title", "slug")}),
-        ("Content", {"fields": ("summary", "body")}),
-        ("Media", {"fields": ("thumbnail", "thumbnail_preview", "hero_image", "hero_image_preview")}),
-        ("Classification", {
+        (_("Identity"), {"fields": ("title", "slug")}),
+        (_("Content"), {"fields": ("summary", "body")}),
+        (_("Media"), {"fields": ("thumbnail", "thumbnail_preview", "hero_image", "hero_image_preview")}),
+        (_("Classification"), {
             "fields": (
                 "category", "topics",
                 "author_name", "published_date", "read_time",
@@ -323,18 +324,18 @@ class KnowledgeArticleAdmin(admin.ModelAdmin):
                 "related_capabilities",
             ),
         }),
-        ("SEO", {
+        (_("SEO"), {
             "fields": ("meta_title", "meta_description", "meta_keywords"),
             "classes": ("collapse",),
         }),
-        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+        (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
-    @admin.display(description="Thumbnail")
+    @admin.display(description=_("Thumbnail"))
     def thumbnail_preview(self, obj):
         return _img_preview(obj.thumbnail, height=60)
 
-    @admin.display(description="Hero preview")
+    @admin.display(description=_("Hero preview"))
     def hero_image_preview(self, obj):
         return _img_preview(obj.hero_image)
 
@@ -348,13 +349,13 @@ class KnowledgeDownloadAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     readonly_fields = ("cover_image_preview",)
     fieldsets = (
-        ("Identity", {"fields": ("title", "slug", "summary")}),
-        ("Media", {"fields": ("cover_image", "cover_image_preview", "file", "file_type_label", "file_size_label")}),
-        ("Classification", {"fields": ("category", "published_date")}),
-        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+        (_("Identity"), {"fields": ("title", "slug", "summary")}),
+        (_("Media"), {"fields": ("cover_image", "cover_image_preview", "file", "file_type_label", "file_size_label")}),
+        (_("Classification"), {"fields": ("category", "published_date")}),
+        (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
-    @admin.display(description="Cover preview")
+    @admin.display(description=_("Cover preview"))
     def cover_image_preview(self, obj):
         return _img_preview(obj.cover_image)
 
@@ -369,17 +370,17 @@ class KnowledgeNewsItemAdmin(admin.ModelAdmin):
     filter_horizontal = ("topics",)
     readonly_fields = ("thumbnail_preview",)
     fieldsets = (
-        ("Identity", {"fields": ("title", "slug", "summary")}),
-        ("Media", {"fields": ("thumbnail", "thumbnail_preview")}),
-        ("Classification", {"fields": ("category", "published_date", "source_url", "topics")}),
-        ("Press Section", {
-            "description": "Bật is_press_article để hiển thị bài trong section IRDM trên báo chí.",
+        (_("Identity"), {"fields": ("title", "slug", "summary")}),
+        (_("Media"), {"fields": ("thumbnail", "thumbnail_preview")}),
+        (_("Classification"), {"fields": ("category", "published_date", "source_url", "topics")}),
+        (_("Press Section"), {
+            "description": _("Enable 'press article' to show this item in the IRDM press section."),
             "fields": ("is_press_article", "cta_text", "cta_target"),
         }),
-        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+        (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
-    @admin.display(description="Thumbnail")
+    @admin.display(description=_("Thumbnail"))
     def thumbnail_preview(self, obj):
         return _img_preview(obj.thumbnail, height=60)
 
@@ -398,8 +399,8 @@ class KnowledgeFilterGroupAdmin(admin.ModelAdmin):
     list_editable = ("display_order", "is_active")
     inlines = [KnowledgeFilterItemInline]
     fieldsets = (
-        ("Group", {"fields": ("title", "param_key")}),
-        ("Status", {"fields": ("is_active", "display_order")}),
+        (_("Group"), {"fields": ("title", "param_key")}),
+        (_("Status"), {"fields": ("is_active", "display_order")}),
     )
 
 
@@ -413,24 +414,24 @@ class KnowledgeContentTypeCardAdmin(admin.ModelAdmin):
     filter_horizontal = ("tags",)
     readonly_fields = ("cover_image_preview",)
     fieldsets = (
-        ("Card", {
+        (_("Card"), {
             "fields": ("listing_page", "title", "category", "summary"),
         }),
-        ("Media", {
+        (_("Media"), {
             "fields": ("cover_image", "cover_image_preview"),
         }),
-        ("Tags", {
+        (_("Tags"), {
             "fields": ("tags",),
         }),
-        ("CTA", {
+        (_("CTA"), {
             "fields": ("cta_text", "cta_icon", "cta_url"),
         }),
-        ("Status", {
+        (_("Status"), {
             "fields": ("is_published", "is_active", "display_order"),
         }),
     )
 
-    @admin.display(description="Cover preview")
+    @admin.display(description=_("Cover preview"))
     def cover_image_preview(self, obj):
         return _img_preview(obj.cover_image)
 
@@ -443,11 +444,11 @@ class KnowledgeTopicCardTagAdmin(admin.ModelAdmin):
     list_editable = ("display_order", "is_active")
     prepopulated_fields = {"slug": ("label",)}
     fieldsets = (
-        ("Tag", {"fields": ("label", "slug", "color")}),
-        ("Status", {"fields": ("is_active", "display_order")}),
+        (_("Tag"), {"fields": ("label", "slug", "color")}),
+        (_("Status"), {"fields": ("is_active", "display_order")}),
     )
 
-    @admin.display(description="Color")
+    @admin.display(description=_("Color"))
     def color_chip(self, obj):
         return format_html(
             '<span style="display:inline-block;width:16px;height:16px;border-radius:3px;'
@@ -467,14 +468,14 @@ class KnowledgeActivityNewsAdmin(admin.ModelAdmin):
     ordering = ("display_order", "-published_date")
     readonly_fields = ("thumbnail_preview",)
     fieldsets = (
-        ("Identity", {"fields": ("title", "summary")}),
-        ("Media", {"fields": ("thumbnail", "thumbnail_preview")}),
-        ("Classification", {"fields": ("category", "published_date")}),
-        ("CTA", {"fields": ("cta_text", "cta_icon", "cta_url", "cta_target")}),
-        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+        (_("Identity"), {"fields": ("title", "summary")}),
+        (_("Media"), {"fields": ("thumbnail", "thumbnail_preview")}),
+        (_("Classification"), {"fields": ("category", "published_date")}),
+        (_("CTA"), {"fields": ("cta_text", "cta_icon", "cta_url", "cta_target")}),
+        (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
-    @admin.display(description="Thumbnail")
+    @admin.display(description=_("Thumbnail"))
     def thumbnail_preview(self, obj):
         return _img_preview(obj.thumbnail, height=60)
 
@@ -487,11 +488,11 @@ class KnowledgeEventTagAdmin(admin.ModelAdmin):
     list_editable = ("display_order", "is_active")
     prepopulated_fields = {"slug": ("label",)}
     fieldsets = (
-        ("Tag", {"fields": ("label", "slug", "color")}),
-        ("Status", {"fields": ("is_active", "display_order")}),
+        (_("Tag"), {"fields": ("label", "slug", "color")}),
+        (_("Status"), {"fields": ("is_active", "display_order")}),
     )
 
-    @admin.display(description="Color")
+    @admin.display(description=_("Color"))
     def color_chip(self, obj):
         return format_html(
             '<span style="display:inline-block;width:16px;height:16px;border-radius:3px;'
@@ -511,14 +512,14 @@ class KnowledgeEventAdmin(admin.ModelAdmin):
     filter_horizontal = ("tags",)
     readonly_fields = ("cover_image_preview",)
     fieldsets = (
-        ("Identity", {"fields": ("title", "description")}),
-        ("Media", {"fields": ("cover_image", "cover_image_preview")}),
-        ("Classification", {"fields": ("category", "event_date", "location", "tags")}),
-        ("CTA", {"fields": ("cta_text", "cta_icon", "cta_url", "cta_target")}),
-        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+        (_("Identity"), {"fields": ("title", "description")}),
+        (_("Media"), {"fields": ("cover_image", "cover_image_preview")}),
+        (_("Classification"), {"fields": ("category", "event_date", "location", "tags")}),
+        (_("CTA"), {"fields": ("cta_text", "cta_icon", "cta_url", "cta_target")}),
+        (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
-    @admin.display(description="Cover preview")
+    @admin.display(description=_("Cover preview"))
     def cover_image_preview(self, obj):
         return _img_preview(obj.cover_image)
 
@@ -533,8 +534,8 @@ class KnowledgeAccordionItemAdmin(admin.ModelAdmin):
     search_fields = ("title", "content")
     ordering = ("accordion_type", "display_order")
     fieldsets = (
-        ("Accordion", {"fields": ("accordion_type", "title", "content")}),
-        ("Status", {"fields": ("is_published", "is_active", "display_order")}),
+        (_("Accordion"), {"fields": ("accordion_type", "title", "content")}),
+        (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
 
@@ -548,23 +549,23 @@ class KnowledgeTopicCardAdmin(admin.ModelAdmin):
     filter_horizontal = ("tags",)
     readonly_fields = ("cover_image_preview",)
     fieldsets = (
-        ("Card", {
+        (_("Card"), {
             "fields": ("listing_page", "title", "topic", "description"),
         }),
-        ("Media", {
+        (_("Media"), {
             "fields": ("cover_image", "cover_image_preview", "icon"),
         }),
-        ("Tags", {
+        (_("Tags"), {
             "fields": ("tags",),
         }),
-        ("CTA", {
+        (_("CTA"), {
             "fields": ("cta_text", "cta_icon", "cta_url"),
         }),
-        ("Status", {
+        (_("Status"), {
             "fields": ("is_published", "is_active", "display_order"),
         }),
     )
 
-    @admin.display(description="Cover preview")
+    @admin.display(description=_("Cover preview"))
     def cover_image_preview(self, obj):
         return _img_preview(obj.cover_image)

@@ -1,0 +1,32 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_("Django site admin") }}{% endblock %}
+
+{% block branding %}
+<div id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_("Django administration") }}</a></div>
+{% if user.is_anonymous %}
+  {% include "admin/color_theme_toggle.html" %}
+{% endif %}
+{% endblock %}
+
+{% block nav-global %}
+  {% get_current_language as CURRENT_LANGUAGE %}
+  {% get_available_languages as AVAILABLE_LANGUAGES %}
+  <div style="display:flex;align-items:center;gap:6px;margin-left:auto;">
+    <span style="font-size:0.75rem;opacity:0.8;">{% translate "Language" %}</span>
+    {% for language_code, language_name in AVAILABLE_LANGUAGES %}
+      <form action="{% url 'set_language' %}" method="post" style="display:inline;margin:0;">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+        <input type="hidden" name="language" value="{{ language_code }}">
+        <button type="submit"
+                title="{{ language_name }}"
+                aria-label="{% blocktranslate with language=language_name %}Switch to {{ language }}{% endblocktranslate %}"
+                style="min-width:34px;padding:5px 8px;border:1px solid rgba(255,255,255,0.35);border-radius:4px;cursor:pointer;{% if language_code == CURRENT_LANGUAGE %}background:#fff;color:#417690;font-weight:700;{% else %}background:transparent;color:inherit;{% endif %}">
+          {{ language_code|upper }}
+        </button>
+      </form>
+    {% endfor %}
+  </div>
+{% endblock %}

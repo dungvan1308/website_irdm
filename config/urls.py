@@ -4,10 +4,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include, path
+from django.utils.translation import gettext_lazy as _
 
-admin.site.site_header = "Trang quản trị cho Website IRDM"
-admin.site.site_title = "Website IRDM"
-admin.site.index_title = "Quản trị nội dung"
+admin.site.site_header = _("IRDM Website administration")
+admin.site.site_title = _("IRDM Website admin")
+admin.site.index_title = _("Content administration")
 
 handler404 = "apps.common.views.error_404"
 
