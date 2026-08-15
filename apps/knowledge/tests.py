@@ -3,7 +3,12 @@ from datetime import date
 from django.test import TestCase, override_settings
 from django.urls import reverse
 
-from .models import KnowledgeActivityNews
+from .models import (
+	KnowledgeActivityNews,
+	KnowledgeContentTypeCard,
+	KnowledgeDownloadRequest,
+	KnowledgeListingPage,
+)
 
 
 @override_settings(
@@ -60,3 +65,75 @@ class KnowledgeActivityNewsDetailTests(TestCase):
 			response,
 			'class="flex-shrink-0 w-36 h-24 rounded-lg overflow-hidden bg-slate-100 block"',
 		)
+
+
+@override_settings(
+	STORAGES={
+		"default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+		"staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"},
+	}
+)
+class KnowledgeDownloadRequestTests(TestCase):
+	def setUp(self):
+		self.listing_page = KnowledgeListingPage.objects.create(
+			heading="Tri thức & Góc nhìn ngành",
+			hero_cta_primary_label="Khám phá tri thức",
+			hero_cta_primary_url="#kham-pha-loai-noi-dung",
+			hero_cta_secondary_label="Đăng ký tải tài liệu",
+			hero_cta_secondary_url="#tai-lieu-tai-ve",
+			pub_section_heading="Tài liệu tải về",
+			is_active=True,
+		)
+		KnowledgeContentTypeCard.objects.create(
+			listing_page=self.listing_page,
+			title="Báo cáo & tài liệu",
+			is_published=True,
+			is_active=True,
+		)
+
+	def test_primary_cta_targets_content_type_section(self):
+		response = self.client.get(reverse("knowledge:listing"))
+
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, 'href="#kham-pha-loai-noi-dung"')
+		self.assertContains(response, 'id="kham-pha-loai-noi-dung"', count=1)
+		self.assertNotContains(response, 'href="#featured"')
+
+	def test_download_cta_targets_publication_section(self):
+		response = self.client.get(reverse("knowledge:listing"))
+
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, 'href="#tai-lieu-tai-ve"')
+		self.assertContains(response, 'id="tai-lieu-tai-ve"')
+		self.assertContains(response, 'class="relative scroll-mt-24')
+
+	def test_valid_download_request_is_saved_and_returns_to_section(self):
+		response = self.client.post(
+			reverse("knowledge:listing"),
+			{
+				"full_name": "Nguyễn Văn A",
+				"organization": "Đơn vị A",
+				"email": "reader@example.com",
+				"note": "Quan tâm báo cáo thường niên",
+			},
+		)
+
+		self.assertRedirects(
+			response,
+			f'{reverse("knowledge:listing")}?pub_form=success#tai-lieu-tai-ve',
+			fetch_redirect_response=False,
+		)
+		self.assertTrue(
+			KnowledgeDownloadRequest.objects.filter(email="reader@example.com").exists()
+		)
+
+	def test_invalid_download_request_renders_errors_at_section(self):
+		response = self.client.post(
+			reverse("knowledge:listing"),
+			{"full_name": "", "organization": "", "email": "invalid-email"},
+		)
+
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, 'id="tai-lieu-tai-ve"')
+		self.assertIn("email", response.context["pub_form"].errors)
+		self.assertEqual(KnowledgeDownloadRequest.objects.count(), 0)
