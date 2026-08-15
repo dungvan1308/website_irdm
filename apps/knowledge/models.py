@@ -1,6 +1,7 @@
 """Knowledge & Industry Insights domain models."""
 
 from django.db import models
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
 from apps.common.models import BaseModel
@@ -338,7 +339,7 @@ class KnowledgeArticle(BaseModel):
     """A knowledge article or research insight."""
 
     title = models.CharField(_("title"), max_length=300)
-    slug = models.SlugField(_("slug"), max_length=300, unique=True, db_index=True)
+    slug = models.SlugField(_("slug"), max_length=300, unique=True)
     category = models.ForeignKey(
         KnowledgeCategory,
         on_delete=models.SET_NULL,
@@ -768,6 +769,10 @@ class KnowledgeActivityNews(BaseModel):
         _("thumbnail"), upload_to="knowledge/activity_news/", blank=True,
         help_text=_("Ảnh đại diện cho tin hoạt động."),
     )
+    hero_image = models.ImageField(
+        _("hero image"), upload_to="knowledge/activity_news/hero/", blank=True,
+        help_text=_("Ảnh lớn trên trang chi tiết; nếu trống sẽ dùng ảnh thu nhỏ."),
+    )
     category = models.ForeignKey(
         KnowledgeCategory,
         on_delete=models.SET_NULL,
@@ -777,7 +782,14 @@ class KnowledgeActivityNews(BaseModel):
         verbose_name=_("category"),
     )
     title = models.CharField(_("title"), max_length=300)
+    slug = models.SlugField(_("slug"), max_length=300, unique=True, db_index=True)
     summary = models.TextField(_("summary"), blank=True)
+    body = models.TextField(_("content"), blank=True)
+    author_name = models.CharField(_("author name"), max_length=200, blank=True)
+    read_time = models.PositiveIntegerField(
+        _("read time (minutes)"), default=3,
+        help_text=_("Thời gian đọc ước tính theo phút."),
+    )
     published_date = models.DateField(_("published date"), null=True, blank=True)
     cta_text = models.CharField(
         _("CTA text"), max_length=100, blank=True, default="Xem chi tiết",
@@ -792,6 +804,8 @@ class KnowledgeActivityNews(BaseModel):
         choices=[("_self", "Cùng tab (_self)"), ("_blank", "Tab mới (_blank)")],
         help_text=_("Mở link CTA trong tab nào, e.g. _self hoặc _blank."),
     )
+    meta_title = models.CharField(_("meta title"), max_length=200, blank=True)
+    meta_description = models.CharField(_("meta description"), max_length=300, blank=True)
     is_published = models.BooleanField(_("published"), default=False, db_index=True)
 
     class Meta(BaseModel.Meta):
@@ -800,6 +814,15 @@ class KnowledgeActivityNews(BaseModel):
 
     def __str__(self) -> str:
         return self.title
+
+    def get_absolute_url(self) -> str:
+        return reverse("knowledge:activity_detail", kwargs={"slug": self.slug})
+
+    def get_cta_url(self) -> str:
+        return self.cta_url or self.get_absolute_url()
+
+    def get_cta_target(self) -> str:
+        return self.cta_target if self.cta_url else "_self"
 
 
 # ─── Event Tag ────────────────────────────────────────────────────────────────

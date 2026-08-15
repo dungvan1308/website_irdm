@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include, path
 from django.utils.translation import gettext_lazy as _
+from django.views.generic import RedirectView
 
 admin.site.site_header = _("IRDM Website administration")
 admin.site.site_title = _("IRDM Website admin")
@@ -20,6 +21,11 @@ urlpatterns = [
     path("giai-phap/", include("apps.solution.urls", namespace="solution")),
     path("capabilities/", include("apps.capability.urls", namespace="capability")),
     path("tri-thuc-goc-nhin/", include("apps.knowledge.urls", namespace="knowledge")),
+    path(
+        "su-kien/",
+        RedirectView.as_view(url="/tri-thuc-goc-nhin/#tin-tuc-su-kien", permanent=False),
+        name="legacy_events",
+    ),
     path("chuyen-gia/", include("apps.expert.urls", namespace="expert")),
     path("lien-he/", include("apps.contact.urls", namespace="contact")),
 ]

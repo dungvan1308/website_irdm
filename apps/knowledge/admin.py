@@ -466,18 +466,36 @@ class KnowledgeActivityNewsAdmin(admin.ModelAdmin):
     list_filter = ("category", "is_published")
     search_fields = ("title", "summary")
     ordering = ("display_order", "-published_date")
-    readonly_fields = ("thumbnail_preview",)
+    prepopulated_fields = {"slug": ("title",)}
+    readonly_fields = ("thumbnail_preview", "hero_image_preview")
     fieldsets = (
-        (_("Identity"), {"fields": ("title", "summary")}),
-        (_("Media"), {"fields": ("thumbnail", "thumbnail_preview")}),
+        (_("Identity"), {"fields": ("title", "slug", "summary")}),
+        (_("Content"), {"fields": ("body", "author_name", "read_time")}),
+        (_("Media"), {
+            "fields": (
+                "thumbnail", "thumbnail_preview",
+                "hero_image", "hero_image_preview",
+            ),
+        }),
         (_("Classification"), {"fields": ("category", "published_date")}),
-        (_("CTA"), {"fields": ("cta_text", "cta_icon", "cta_url", "cta_target")}),
+        (_("CTA"), {
+            "description": _("Leave CTA URL blank to open the internal activity news detail page."),
+            "fields": ("cta_text", "cta_icon", "cta_url", "cta_target"),
+        }),
+        (_("SEO"), {
+            "fields": ("meta_title", "meta_description"),
+            "classes": ("collapse",),
+        }),
         (_("Status"), {"fields": ("is_published", "is_active", "display_order")}),
     )
 
     @admin.display(description=_("Thumbnail"))
     def thumbnail_preview(self, obj):
         return _img_preview(obj.thumbnail, height=60)
+
+    @admin.display(description=_("Hero preview"))
+    def hero_image_preview(self, obj):
+        return _img_preview(obj.hero_image, height=100)
 
 
 # ─── KnowledgeEventTag ────────────────────────────────────────────────────────

@@ -134,6 +134,27 @@ class KnowledgeService:
         )
 
     @staticmethod
+    def get_activity_news_by_slug(slug: str) -> Optional[KnowledgeActivityNews]:
+        return (
+            KnowledgeActivityNews.objects
+            .filter(slug=slug, is_active=True, is_published=True)
+            .select_related("category")
+            .first()
+        )
+
+    @staticmethod
+    def get_related_activity_news(item: KnowledgeActivityNews, limit: int = 3) -> QuerySet:
+        related_items = KnowledgeActivityNews.objects.filter(
+            is_active=True,
+            is_published=True,
+        ).exclude(pk=item.pk)
+        if item.category_id:
+            related_items = related_items.filter(category=item.category)
+        return related_items.select_related("category").order_by(
+            "display_order", "-published_date"
+        )[:limit]
+
+    @staticmethod
     def get_upcoming_events() -> QuerySet:
         """Return published upcoming events for the right column of the News & Events section."""
         return (

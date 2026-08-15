@@ -105,3 +105,19 @@ class KnowledgeArticleDetailView(TemplateView):
         context["related_articles"] = KnowledgeService.get_related_articles(article)
         context["listing_page"] = KnowledgeService.get_listing_page()
         return context
+
+
+class KnowledgeActivityNewsDetailView(TemplateView):
+    """Published activity news detail page."""
+
+    template_name = "knowledge/activity_detail.html"
+
+    def get_context_data(self, **kwargs: object) -> dict:
+        context = super().get_context_data(**kwargs)
+        activity = KnowledgeService.get_activity_news_by_slug(self.kwargs["slug"])
+        if activity is None:
+            raise Http404
+        context["activity"] = activity
+        context["related_activity_news"] = KnowledgeService.get_related_activity_news(activity)
+        context["listing_page"] = KnowledgeService.get_listing_page()
+        return context
