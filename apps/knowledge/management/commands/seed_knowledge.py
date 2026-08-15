@@ -18,6 +18,7 @@ from pathlib import Path
 from django.conf import settings
 from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
+from django.utils.text import slugify
 
 from apps.knowledge.models import (
     KnowledgeAccordionItem,
@@ -951,6 +952,7 @@ class Command(BaseCommand):
             obj, created = KnowledgeActivityNews.objects.update_or_create(
                 title=title,
                 defaults={
+                    "slug": slugify(title),
                     "summary": n.get("summary", ""),
                     "published_date": n.get("published_date"),
                     "category": category,
@@ -965,8 +967,8 @@ class Command(BaseCommand):
             if created or not obj.thumbnail:
                 asset = _load_asset(n["asset"]) if n.get("asset") else None
                 img = asset or _placeholder(f"activity-news-{i}.png", i, 600, 400)
-                slug = title[:40].lower().replace(" ", "-").replace("/", "-")
-                obj.thumbnail.save(f"knowledge/activity_news/{slug}.png", img, save=True)
+                image_slug = title[:40].lower().replace(" ", "-").replace("/", "-")
+                obj.thumbnail.save(f"knowledge/activity_news/{image_slug}.png", img, save=True)
             if created:
                 self.stdout.write(f"  ActivityNews: {obj.title[:60]}")
 
