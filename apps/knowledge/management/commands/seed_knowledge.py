@@ -393,7 +393,7 @@ FEATURED_PINS = [
         "badge_text": "Sự kiện",
         "cta_text": "Xem sự kiện",
         "cta_icon": "arrow-right",
-        "cta_url": "/su-kien/",
+        "cta_url": "",
         "display_order": 4,
     },
 ]
@@ -524,7 +524,7 @@ CONTENT_TYPE_CARDS = [
         "tag_slugs": ["y-te", "giao-duc", "suc-khoe-tam-than-wellbeing", "ai-du-lieu-chuyen-doi-so"],
         "cta_text": "Xem nội dung liên quan",
         "cta_icon": "arrow-right",
-        "cta_url": "/su-kien/",
+        "cta_url": "/tri-thuc-goc-nhin/#tin-tuc-su-kien",
         "display_order": 6,
     },
 ]
