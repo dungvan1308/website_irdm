@@ -101,7 +101,7 @@ LISTING_PAGE = {
     "hero_cta_primary_label": "Khám phá tri thức →",
     "hero_cta_primary_url": "#featured",
     "hero_cta_secondary_label": "Đăng ký tải tài liệu →",
-    "hero_cta_secondary_url": "#downloads",
+    "hero_cta_secondary_url": "#tai-lieu-tai-ve",
     "search_enabled": True,
     "filter_section_heading": "Tìm nội dung phù hợp với nhu cầu của bạn",
     "filter_section_description": "Bộ lọc giúp người đọc tìm nhanh nội dung theo mục đích sử dụng, chủ đề quan tâm và nhóm đối tác liên quan.",
@@ -385,7 +385,7 @@ FEATURED_PINS = [
         "badge_text": "Báo cáo & Tài liệu",
         "cta_text": "Đăng ký tải tài liệu",
         "cta_icon": "download",
-        "cta_url": "#downloads",
+        "cta_url": "#tai-lieu-tai-ve",
         "display_order": 3,
     },
     {
