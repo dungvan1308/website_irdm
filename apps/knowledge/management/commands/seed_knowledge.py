@@ -99,7 +99,7 @@ LISTING_PAGE = {
         "Các nội dung được biên soạn nhằm hỗ trợ người đọc tiếp cận vấn đề một cách ngắn gọn, có cơ sở và hữu ích cho quá trình ra quyết định, thiết kế chương trình hoặc tìm kiếm cơ hội hợp tác."
     ),
     "hero_cta_primary_label": "Khám phá tri thức →",
-    "hero_cta_primary_url": "#featured",
+    "hero_cta_primary_url": "#kham-pha-loai-noi-dung",
     "hero_cta_secondary_label": "Đăng ký tải tài liệu →",
     "hero_cta_secondary_url": "#tai-lieu-tai-ve",
     "search_enabled": True,

@@ -3,7 +3,12 @@ from datetime import date
 from django.test import TestCase, override_settings
 from django.urls import reverse
 
-from .models import KnowledgeActivityNews, KnowledgeDownloadRequest, KnowledgeListingPage
+from .models import (
+	KnowledgeActivityNews,
+	KnowledgeContentTypeCard,
+	KnowledgeDownloadRequest,
+	KnowledgeListingPage,
+)
 
 
 @override_settings(
@@ -72,11 +77,27 @@ class KnowledgeDownloadRequestTests(TestCase):
 	def setUp(self):
 		self.listing_page = KnowledgeListingPage.objects.create(
 			heading="Tri thức & Góc nhìn ngành",
+			hero_cta_primary_label="Khám phá tri thức",
+			hero_cta_primary_url="#kham-pha-loai-noi-dung",
 			hero_cta_secondary_label="Đăng ký tải tài liệu",
 			hero_cta_secondary_url="#tai-lieu-tai-ve",
 			pub_section_heading="Tài liệu tải về",
 			is_active=True,
 		)
+		KnowledgeContentTypeCard.objects.create(
+			listing_page=self.listing_page,
+			title="Báo cáo & tài liệu",
+			is_published=True,
+			is_active=True,
+		)
+
+	def test_primary_cta_targets_content_type_section(self):
+		response = self.client.get(reverse("knowledge:listing"))
+
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, 'href="#kham-pha-loai-noi-dung"')
+		self.assertContains(response, 'id="kham-pha-loai-noi-dung"', count=1)
+		self.assertNotContains(response, 'href="#featured"')
 
 	def test_download_cta_targets_publication_section(self):
 		response = self.client.get(reverse("knowledge:listing"))
