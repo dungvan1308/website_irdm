@@ -27,14 +27,19 @@ LISTING_PAGE = {
     "hero_eyebrow": "MẠNG LƯỚI CHUYÊN GIA IRDM",
     "hero_heading": "MẠNG LƯỚI NHÀ KHOA HỌC & CHUYÊN GIA LIÊN NGÀNH",
     "hero_description": (
-        "Viện IRDM quy tụ đội ngũ hơn 200 nhà khoa học và chuyên gia đầu ngành, "
-        "kết nối tri thức liên ngành để giải quyết những thách thức phức tạp "
-        "của xã hội và doanh nghiệp."
+        "Viện IRDM kết nối các nhà khoa học, chuyên gia thực hành, giảng viên và cố vấn "
+        "chiến lược để đồng hành cùng các bài toán trong y tế, giáo dục, dữ liệu, phát "
+        "triển con người, môi trường và đổi mới hệ thống.\n\n"
+        "Mỗi bài toán cần một tổ hợp chuyên môn phù hợp. Viện IRDM bắt đầu từ nhu cầu thực tế "
+        "của đối tác, sau đó huy động đúng năng lực chuyên gia để hỗ trợ nghiên cứu, đào tạo, "
+        "tư vấn và triển khai giải pháp có căn cứ."
     ),
-    "hero_btn1_label": "TÌM HIỂU THÊM",
-    "hero_btn1_url": "#ket-noi",
-    "hero_btn2_label": "ĐĂNG KÝ CHUYÊN GIA",
-    "hero_btn2_url": "/lien-he/",
+    "hero_btn1_label": "Tìm chuyên gia",
+    "hero_btn1_url": "#tim-kiem",
+    "hero_btn1_icon": "arrow-right",
+    "hero_btn2_label": "Xem lĩnh vực chuyên môn",
+    "hero_btn2_url": "#ban-do-chuyen-mon",
+    "hero_btn2_icon": "arrow-right",
     "process_section_label": "PHƯƠNG THỨC TIẾP CẬN",
     "process_heading": "VIỆN IRDM KẾT NỐI CHUYÊN GIA NHƯ THẾ NÀO?",
     "process_description": (
