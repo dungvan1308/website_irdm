@@ -280,7 +280,7 @@ class ResearchArea(BaseModel):
     card_cta_url = models.CharField(
         _("CTA URL"), max_length=500, blank=True,
         default="/chuyen-gia/",
-        help_text=_("Đường dẫn khi nhấn CTA, e.g. /chuyen-gia/?linh-vuc=kinh-te"),
+        help_text=_("Đường dẫn khi nhấn CTA, e.g. /chuyen-gia/?area=kinh-te#tim-kiem"),
     )
 
     class Meta(BaseModel.Meta):

@@ -16,6 +16,7 @@ class ExpertListingView(TemplateView):
 
     def get_context_data(self, **kwargs: object) -> dict:
         ctx = super().get_context_data(**kwargs)
+        area_slug = self.request.GET.get("area") or self.request.GET.get("linh-vuc", "")
         ctx["listing_page"] = ExpertService.get_listing_page()
         ctx["process_steps"] = ExpertService.get_process_steps()
         ctx["senior_experts"] = ExpertService.get_senior_experts()
@@ -25,14 +26,14 @@ class ExpertListingView(TemplateView):
         ctx["knowledge_topics"] = ExpertService.get_knowledge_topics()
         ctx["info_groups"] = ExpertService.get_info_groups()
         # Initial directory load
-        search_data = ExpertService.get_experts()
+        search_data = ExpertService.get_experts(area_slug=area_slug)
         ctx["experts"] = search_data["experts"]
         ctx["page_obj"] = search_data["page_obj"]
         ctx["has_next"] = search_data["has_next"]
         ctx["total_experts"] = search_data["total"]
         ctx["form"] = ExpertSearchForm()
         ctx["active_group"] = "all"
-        ctx["active_area"] = ""
+        ctx["active_area"] = area_slug
         ctx["active_engagement"] = ""
         return ctx
 
