@@ -133,7 +133,7 @@ AREAS = [
         ),
         "card_tags": "Kinh tế học\nChính sách kinh tế\nPhát triển bền vững",
         "card_cta_label": "Tìm chuyên gia liên quan",
-        "card_cta_url": "/chuyen-gia/?linh-vuc=kinh-te-hoc-lien-nganh",
+        "card_cta_url": "/chuyen-gia/?area=kinh-te-hoc-lien-nganh#tim-kiem",
     },
     {
         "name": "Quản trị & Lãnh đạo", "slug": "quan-tri-lanh-dao",
@@ -144,7 +144,7 @@ AREAS = [
         ),
         "card_tags": "Lãnh đạo\nQuản trị tổ chức\nDoanh nghiệp",
         "card_cta_label": "Tìm chuyên gia liên quan",
-        "card_cta_url": "/chuyen-gia/?linh-vuc=quan-tri-lanh-dao",
+        "card_cta_url": "/chuyen-gia/?area=quan-tri-lanh-dao#tim-kiem",
     },
     {
         "name": "Khoa học dữ liệu & AI", "slug": "khoa-hoc-du-lieu-ai",
@@ -155,7 +155,7 @@ AREAS = [
         ),
         "card_tags": "AI dữ liệu & chuyển đổi số\nY tế\nCơ quan quản lý",
         "card_cta_label": "Tìm chuyên gia liên quan",
-        "card_cta_url": "/chuyen-gia/?linh-vuc=khoa-hoc-du-lieu-ai",
+        "card_cta_url": "/chuyen-gia/?area=khoa-hoc-du-lieu-ai#tim-kiem",
     },
     {
         "name": "Chính sách công & Quản lý nhà nước", "slug": "chinh-sach-cong",
@@ -166,7 +166,7 @@ AREAS = [
         ),
         "card_tags": "Cơ quan quản lý\nTổ chức quốc tế\nNguồn nhân lực",
         "card_cta_label": "Tìm chuyên gia liên quan",
-        "card_cta_url": "/chuyen-gia/?linh-vuc=chinh-sach-cong",
+        "card_cta_url": "/chuyen-gia/?area=chinh-sach-cong#tim-kiem",
     },
     {
         "name": "Phát triển bền vững", "slug": "phat-trien-ben-vung",
@@ -177,7 +177,7 @@ AREAS = [
         ),
         "card_tags": "Môi trường & phát triển bền vững\nGiáo dục\nHệ thống y tế",
         "card_cta_label": "Tìm chuyên gia liên quan",
-        "card_cta_url": "/chuyen-gia/?linh-vuc=phat-trien-ben-vung",
+        "card_cta_url": "/chuyen-gia/?area=phat-trien-ben-vung#tim-kiem",
     },
     {
         "name": "Giáo dục & Đào tạo", "slug": "giao-duc-dao-tao",
@@ -188,7 +188,7 @@ AREAS = [
         ),
         "card_tags": "Giáo dục\nNguồn nhân lực\nTrường đại học",
         "card_cta_label": "Tìm chuyên gia liên quan",
-        "card_cta_url": "/chuyen-gia/?linh-vuc=giao-duc-dao-tao",
+        "card_cta_url": "/chuyen-gia/?area=giao-duc-dao-tao#tim-kiem",
     },
     {
         "name": "Y tế & Sức khỏe cộng đồng", "slug": "y-te-suc-khoe-cong-dong",
@@ -199,7 +199,7 @@ AREAS = [
         ),
         "card_tags": "Y tế\nHệ thống y tế\nSức khỏe cộng đồng",
         "card_cta_label": "Tìm chuyên gia liên quan",
-        "card_cta_url": "/chuyen-gia/?linh-vuc=y-te-suc-khoe-cong-dong",
+        "card_cta_url": "/chuyen-gia/?area=y-te-suc-khoe-cong-dong#tim-kiem",
     },
     {
         "name": "Công nghệ & Đổi mới sáng tạo", "slug": "cong-nghe-doi-moi",
@@ -210,7 +210,7 @@ AREAS = [
         ),
         "card_tags": "Công nghệ\nĐổi mới sáng tạo\nChuyển đổi số",
         "card_cta_label": "Tìm chuyên gia liên quan",
-        "card_cta_url": "/chuyen-gia/?linh-vuc=cong-nghe-doi-moi",
+        "card_cta_url": "/chuyen-gia/?area=cong-nghe-doi-moi#tim-kiem",
     },
 ]
 

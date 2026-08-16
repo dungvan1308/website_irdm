@@ -385,7 +385,7 @@ class Command(BaseCommand):
                     "display_order": data["display_order"],
                     "is_active": True,
                     "card_cta_label": "Tìm chuyên gia liên quan",
-                    "card_cta_url": f"/chuyen-gia/?linh-vuc={data['slug']}",
+                    "card_cta_url": f"/chuyen-gia/?area={data['slug']}#tim-kiem",
                 },
             )
             area_map[data["slug"]] = area

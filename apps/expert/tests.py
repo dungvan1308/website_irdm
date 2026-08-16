@@ -69,3 +69,66 @@ class ExpertListingHeroTests(TestCase):
 		self.assertContains(response, 'id="tim-kiem"', count=1)
 		self.assertContains(response, 'href="#ban-do-chuyen-mon"')
 		self.assertContains(response, 'id="ban-do-chuyen-mon"', count=1)
+
+
+@override_settings(
+	STORAGES={
+		"default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+		"staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"},
+	}
+)
+class ExpertListingAreaFilterTests(TestCase):
+	def setUp(self):
+		self.health_area = ResearchArea.objects.create(
+			name="Y tế & Quản trị y tế",
+			slug="y-te-quan-tri-y-te",
+			card_cta_url="/chuyen-gia/?area=y-te-quan-tri-y-te#tim-kiem",
+			is_active=True,
+		)
+		other_area = ResearchArea.objects.create(
+			name="Giáo dục",
+			slug="giao-duc",
+			is_active=True,
+		)
+		health_expert = Expert.objects.create(
+			name="Chuyên gia y tế",
+			slug="chuyen-gia-y-te",
+			is_active=True,
+			is_published=True,
+		)
+		other_expert = Expert.objects.create(
+			name="Chuyên gia giáo dục",
+			slug="chuyen-gia-giao-duc",
+			is_active=True,
+			is_published=True,
+		)
+		health_expert.research_areas.add(self.health_area)
+		other_expert.research_areas.add(other_area)
+
+	def test_listing_filters_by_area_query_parameter(self):
+		response = self.client.get(
+			reverse("expert:listing"),
+			{"area": self.health_area.slug},
+		)
+
+		self.assertEqual(response.context["active_area"], self.health_area.slug)
+		self.assertEqual(
+			[expert.slug for expert in response.context["experts"]],
+			["chuyen-gia-y-te"],
+		)
+		self.assertContains(
+			response,
+			'href="/chuyen-gia/?area=y-te-quan-tri-y-te#tim-kiem"',
+		)
+
+	def test_listing_supports_legacy_linh_vuc_query_parameter(self):
+		response = self.client.get(
+			reverse("expert:listing"),
+			{"linh-vuc": self.health_area.slug},
+		)
+
+		self.assertEqual(response.context["active_area"], self.health_area.slug)
+		self.assertEqual(
+			[expert.slug for expert in response.context["experts"]],
+			["chuyen-gia-y-te"],
+		)
