@@ -21,15 +21,8 @@
   {# ── Card body ──────────────────────────────────────────────────────── #}
   <div class="flex flex-col flex-1 p-6">
 
-    {# Category badge #}
-    {% if card.category %}
-      <p class="text-primary-600 text-xs font-semibold uppercase tracking-widest mb-2">
-        {{ card.category.label }}
-      </p>
-    {% endif %}
-
     {# Title #}
-    <h3 class="text-xl font-extrabold text-slate-900 leading-snug mb-3">
+    <h3 class="font-sans text-xl font-extrabold text-[#094977] leading-snug mb-3">
       {% if card.cta_url %}
         <a href="{{ card.cta_url }}" class="hover:text-primary-700 transition-colors">
           {{ card.title }}
