@@ -1,14 +1,137 @@
 from datetime import date
+import base64
+from io import BytesIO
+import shutil
+import tempfile
+from unittest.mock import patch
 
 from django.test import TestCase, override_settings
 from django.urls import reverse
+from django.core.files.uploadedfile import SimpleUploadedFile
+from django.contrib.auth import get_user_model
+from PIL import Image
 
+from .forms import KnowledgeArticleAdminForm
 from .models import (
+	KnowledgeArticle,
 	KnowledgeActivityNews,
 	KnowledgeContentTypeCard,
 	KnowledgeDownloadRequest,
 	KnowledgeListingPage,
 )
+from .rich_text import RichTextImageError, _validate_public_host, normalize_rich_text, sanitize_rich_text
+
+
+@override_settings(
+	STORAGES={
+		"default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
+		"staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage"},
+	}
+)
+class RichTextNormalizationTests(TestCase):
+	def setUp(self):
+		self.media_root = tempfile.mkdtemp()
+		self.settings_override = override_settings(MEDIA_ROOT=self.media_root)
+		self.settings_override.enable()
+
+	def tearDown(self):
+		self.settings_override.disable()
+		shutil.rmtree(self.media_root, ignore_errors=True)
+
+	def test_plain_text_is_converted_to_paragraphs(self):
+		result = normalize_rich_text("Đoạn một.\n\nĐoạn hai.\nDòng tiếp theo.")
+
+		self.assertEqual(result, "<p>Đoạn một.</p><p>Đoạn hai.<br>Dòng tiếp theo.</p>")
+		self.assertEqual(sanitize_rich_text("Nội dung từ seed."), "<p>Nội dung từ seed.</p>")
+
+	def test_unsafe_html_is_removed(self):
+		result = normalize_rich_text(
+			'<p onclick="alert(1)">Nội dung</p><script>alert(1)</script>'
+			'<a href="javascript:alert(1)">Link</a>'
+		)
+
+		self.assertIn("<p>Nội dung</p>", result)
+		self.assertNotIn("script", result)
+		self.assertNotIn("onclick", result)
+		self.assertNotIn("javascript:", result)
+
+	def test_clipboard_image_is_saved_to_media(self):
+		buffer = BytesIO()
+		Image.new("RGB", (2, 2), "red").save(buffer, format="PNG")
+		payload = base64.b64encode(buffer.getvalue()).decode("ascii")
+
+		result = normalize_rich_text(
+			f'<figure class="image"><img src="data:image/png;base64,{payload}" alt="Ảnh"><figcaption>Chú thích</figcaption></figure>'
+		)
+
+		self.assertIn('src="/media/knowledge/articles/body/', result)
+		self.assertIn("<figcaption>Chú thích</figcaption>", result)
+		self.assertNotIn("data:image", result)
+
+	def test_remote_pasted_image_is_copied_to_media(self):
+		buffer = BytesIO()
+		Image.new("RGB", (2, 2), "green").save(buffer, format="PNG")
+
+		with patch("apps.knowledge.rich_text._download_remote_image", return_value=buffer.getvalue()):
+			result = normalize_rich_text(
+				'<p>Nội dung</p><img src="https://news.example.com/photo.png" alt="Ảnh nguồn">'
+			)
+
+		self.assertIn('src="/media/knowledge/articles/body/', result)
+		self.assertNotIn("news.example.com", result)
+
+	@patch("apps.knowledge.rich_text.socket.getaddrinfo")
+	def test_private_image_host_is_rejected(self, getaddrinfo):
+		getaddrinfo.return_value = [(None, None, None, None, ("127.0.0.1", 0))]
+
+		with self.assertRaises(RichTextImageError):
+			_validate_public_host("internal.example")
+
+	def test_article_admin_form_sanitizes_body(self):
+		form = KnowledgeArticleAdminForm(data={
+			"title": "Bài rich text",
+			"slug": "bai-rich-text",
+			"body": '<h2>Tiêu đề</h2><p onclick="alert(1)">Nội dung</p>',
+			"read_time": 5,
+			"display_order": 0,
+		})
+
+		self.assertTrue(form.is_valid(), form.errors)
+		self.assertEqual(form.cleaned_data["body"], "<h2>Tiêu đề</h2><p>Nội dung</p>")
+
+	def test_article_detail_renders_sanitized_rich_html(self):
+		article = KnowledgeArticle.objects.create(
+			title="Bài hiển thị HTML",
+			slug="bai-hien-thi-html",
+			body='<h2>Tiêu đề phần</h2><p>Nội dung <strong>quan trọng</strong>.</p><script>alert(1)</script>',
+			is_published=True,
+			is_active=True,
+		)
+
+		response = self.client.get(article.get_absolute_url())
+
+		self.assertContains(response, "<h2>Tiêu đề phần</h2>", html=True)
+		self.assertContains(response, "<strong>quan trọng</strong>", html=True)
+		self.assertNotContains(response, "<script>")
+
+	def test_ckeditor_upload_requires_staff_and_stores_image(self):
+		buffer = BytesIO()
+		Image.new("RGB", (2, 2), "blue").save(buffer, format="PNG")
+		upload = SimpleUploadedFile("clipboard.png", buffer.getvalue(), content_type="image/png")
+		upload_url = reverse("ck_editor_5_upload_file")
+
+		anonymous_response = self.client.post(upload_url, {"upload": upload})
+		self.assertEqual(anonymous_response.status_code, 403)
+
+		user = get_user_model().objects.create_user(
+			username="content-editor", password="test-password", is_staff=True,
+		)
+		self.client.force_login(user)
+		upload.seek(0)
+		staff_response = self.client.post(upload_url, {"upload": upload})
+
+		self.assertEqual(staff_response.status_code, 200)
+		self.assertTrue(staff_response.json()["url"].startswith("/media/knowledge/articles/body/"))
 
 
 @override_settings(
