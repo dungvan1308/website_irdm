@@ -74,18 +74,20 @@
       {# Right column — thứ tự Figma: badge → name → tagline → tag → CTA #}
       <div class="flex-1 min-w-0 flex flex-col gap-4 lg:gap-5">
 
-        {# Badge — dòng đầu tiên của role_badges, fallback group name #}
+        {# Badge — các dòng role_badges trong cùng một khung, fallback group name #}
         {% if expert.role_badges %}
-          {% for badge in expert.role_badges.splitlines %}
-            {% if badge.strip and forloop.first %}
-              <div>
-                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 shadow-sm">
+          <div>
+            <div class="inline-flex flex-col gap-0.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 shadow-sm">
+            {% for badge in expert.role_badges.splitlines %}
+              {% if badge.strip %}
+                <span class="inline-flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0"></span>
                   {{ badge.strip }}
                 </span>
-              </div>
-            {% endif %}
-          {% endfor %}
+              {% endif %}
+            {% endfor %}
+            </div>
+          </div>
         {% elif expert.group %}
           <div>
             <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 shadow-sm">

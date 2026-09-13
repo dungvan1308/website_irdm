@@ -315,7 +315,7 @@ class ExpertAdmin(admin.ModelAdmin):
             "classes": ("collapse",),
             "description": _(
                 "hero_tagline: Tagline in đậm dưới tên. | "
-                "role_badges: Mỗi dòng 1 badge vai trò — dòng đầu tiên hiển thị badge trên hero. | "
+                "role_badges: Mỗi dòng 1 badge vai trò — tất cả các dòng sẽ hiển thị trên hero. | "
                 "ticker_text: Văn bản chạy ngang dưới hero (dùng ❖ để phân tách keyword). | "
                 "contact_cta_url: URL nút CTA trên hero. | "
                 "hero_cta_label: Nhãn nút CTA (để trống → 'Liên hệ hợp tác')."
