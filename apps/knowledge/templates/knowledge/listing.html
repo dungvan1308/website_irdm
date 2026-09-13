@@ -253,7 +253,7 @@
     {# ── Section header ──────────────────────────────────────────────────── #}
     <div class="mb-12">
       <h2 id="featured-heading"
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-4">
+          class="font-utm-banque text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-4">
         {% if listing_page and listing_page.featured_section_heading %}
           {{ listing_page.featured_section_heading }}
         {% else %}{% trans "Nội dung nổi bật" %}{% endif %}
@@ -327,7 +327,7 @@
           </p>
         {% endif %}
         <h2 id="content-type-heading"
-            class="text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight">
+          class="font-utm-banque text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight">
           {% if listing_page and listing_page.content_type_section_heading %}
             {{ listing_page.content_type_section_heading }}
           {% else %}
@@ -422,7 +422,7 @@
         </p>
       {% endif %}
       <h2 id="topic-browse-heading"
-          class="text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight">
+          class="font-utm-banque text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight">
         {% if listing_page and listing_page.topic_section_heading %}
           {{ listing_page.topic_section_heading }}
         {% else %}
@@ -463,7 +463,7 @@
         </p>
         {% if category.heading %}
           <h2 id="cat-heading-{{ category.slug }}"
-              class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight">
+              class="font-utm-banque text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight">
             {{ category.heading }}
           </h2>
         {% endif %}
@@ -534,7 +534,7 @@
         </p>
       {% endif %}
       <h2 id="pub-section-heading"
-          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-4">
+          class="font-utm-banque text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-4">
         {{ listing_page.pub_section_heading }}
       </h2>
       {% if listing_page.pub_section_description %}
@@ -853,7 +853,7 @@
         {% if listing_page and listing_page.news_section_label %}{{ listing_page.news_section_label }}{% else %}IRDM trên báo chí và diễn đàn chuyên môn{% endif %}
       </p>
       <h2 id="news-events-heading"
-          class="text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight">
+          class="font-utm-banque text-3xl sm:text-4xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight">
         {% if listing_page and listing_page.news_section_heading %}{{ listing_page.news_section_heading }}{% else %}{% trans "Tin tức & Sự kiện" %}{% endif %}
       </h2>
       {% if listing_page and listing_page.news_section_description %}
