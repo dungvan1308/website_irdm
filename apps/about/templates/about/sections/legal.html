@@ -65,7 +65,7 @@
           {# Card label #}
           {% if legal_info.org_card_label %}
             <p class="text-xs font-bold uppercase tracking-widest mb-2"
-               style="color:#1565C0;font-family:'SF Pro Display','San Francisco Display',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif">
+               style="color:#1565C0">
               {{ legal_info.org_card_label }}
             </p>
           {% endif %}
@@ -73,7 +73,7 @@
           {# Org name #}
           {% if legal_info.org_name %}
             <h3 class="font-bold mb-4"
-                style="font-size:17px;line-height:1.4;color:#094977;font-family:'SF Pro Display','San Francisco Display',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif">
+                style="font-size:17px;line-height:1.4;color:#094977">
               {{ legal_info.org_name }}
             </h3>
           {% endif %}
@@ -111,9 +111,7 @@
 
       {# ─────────────── RIGHT COLUMN ─────────────── #}
       <div class="w-full lg:w-[420px] xl:w-[460px] flex-shrink-0">
-        {# SF Pro Display = native Apple system font; falls back to system-ui on other platforms #}
-        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6"
-             style="font-family:'SF Pro Display','San Francisco Display',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif">
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
 
           {# Card header row #}
           <div class="flex items-center justify-between mb-6">
