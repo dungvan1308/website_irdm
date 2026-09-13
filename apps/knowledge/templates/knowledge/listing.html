@@ -41,7 +41,7 @@
         </div>
       {% endif %}
 
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-6">
+      <h1 class="font-utm-banque text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-6">
         {% if listing_page %}{{ listing_page.heading }}{% else %}{% trans "Tri thức & Góc nhìn ngành" %}{% endif %}
       </h1>
 
@@ -572,7 +572,7 @@
         {% else %}
           {# ── Form header ───────────────────────────────────────────────── #}
           {% if listing_page.pub_form_title %}
-            <h3 class="text-lg font-extrabold text-primary-900 uppercase tracking-tight mb-2">
+            <h3 class="font-utm-banque text-lg font-extrabold text-primary-900 uppercase tracking-tight mb-2">
               {{ listing_page.pub_form_title }}
             </h3>
           {% endif %}
@@ -705,7 +705,7 @@
 
         {# Contact info header #}
         {% if listing_page.pub_contact_title %}
-          <h3 class="text-xl sm:text-2xl font-extrabold text-primary-900 uppercase tracking-tight mb-3">
+          <h3 class="font-utm-banque text-xl sm:text-2xl font-extrabold text-primary-900 uppercase tracking-tight mb-3">
             {{ listing_page.pub_contact_title }}
           </h3>
         {% endif %}
@@ -1320,7 +1320,7 @@
           {% if listing_page.cta_sub %}
             <p class="text-orange-400 text-xs font-semibold uppercase tracking-widest mb-3">{{ listing_page.cta_sub }}</p>
           {% endif %}
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white uppercase tracking-tight leading-tight max-w-xl">
+          <h2 class="font-utm-banque text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white uppercase tracking-tight leading-tight max-w-xl">
             {{ listing_page.cta_heading }}
           </h2>
         </div>

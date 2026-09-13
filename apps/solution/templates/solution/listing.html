@@ -52,7 +52,7 @@
         </div>
       {% endif %}
 
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-5">
+      <h1 class="font-utm-banque text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-5">
         {% if listing_page %}{{ listing_page.heading }}{% else %}{% trans "Solutions" %}{% endif %}
       </h1>
       {% if listing_page and listing_page.description %}
@@ -94,7 +94,7 @@
           <span class="w-6 h-px bg-primary-400" aria-hidden="true"></span>
           {% trans "Điều hướng nhanh" %}
         </p>
-        <h2 id="quicknav-heading" class="text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight">
+        <h2 id="quicknav-heading" class="font-utm-banque text-2xl sm:text-3xl font-extrabold text-primary-900 uppercase tracking-tight">
           {{ listing_page.quicknav_heading }}
         </h2>
       </div>
@@ -168,7 +168,7 @@
             {{ listing_page.approach_label }}
           </p>
         {% endif %}
-        <h2 id="approach-heading" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-4">
+        <h2 id="approach-heading" class="font-utm-banque text-2xl sm:text-3xl lg:text-4xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-4">
           {% if listing_page and listing_page.approach_heading %}{{ listing_page.approach_heading }}{% else %}{% trans "Hướng tiếp cận" %}{% endif %}
         </h2>
         {% if listing_page and listing_page.approach_description %}
