@@ -113,7 +113,7 @@ module.exports = {
       fontFamily: {
         sans: ['SF Pro Display', 'San Francisco Display', '-apple-system', 'BlinkMacSystemFont', 'Arial', 'Helvetica', 'sans-serif'],
         display: ['SF Pro Display', 'San Francisco Display', '-apple-system', 'BlinkMacSystemFont', 'Arial', 'Helvetica', 'sans-serif'],
-        'utm-banque': ['SF Pro Display', 'San Francisco Display', '-apple-system', 'BlinkMacSystemFont', 'Arial', 'Helvetica', 'sans-serif'],
+        'utm-banque': ['Chakra Petch', 'Arial', 'Helvetica', 'sans-serif'],
       },
     },
   },
