@@ -15,6 +15,7 @@ handler404 = "apps.common.views.error_404"
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("ckeditor5/", include("django_ckeditor_5.urls")),
     path("i18n/", include("django.conf.urls.i18n")),
     path("", include("apps.home.urls", namespace="home")),
     path("ve-irdm/", include("apps.about.urls", namespace="about")),

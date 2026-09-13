@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
+from .forms import KnowledgeActivityNewsAdminForm, KnowledgeArticleAdminForm
 from .models import (
     KnowledgeAccordionItem,
     KnowledgeActivityNews,
@@ -306,6 +307,7 @@ class KnowledgeTopicAdmin(admin.ModelAdmin):
 
 @admin.register(KnowledgeArticle)
 class KnowledgeArticleAdmin(admin.ModelAdmin):
+    form = KnowledgeArticleAdminForm
     list_display = ("title", "category", "is_featured", "is_published", "display_order")
     list_filter = ("category", "topics", "is_featured", "is_published")
     search_fields = ("title", "summary")
@@ -461,6 +463,7 @@ class KnowledgeTopicCardTagAdmin(admin.ModelAdmin):
 
 @admin.register(KnowledgeActivityNews)
 class KnowledgeActivityNewsAdmin(admin.ModelAdmin):
+    form = KnowledgeActivityNewsAdminForm
     list_display = ("title", "category", "published_date", "is_published", "display_order", "is_active")
     list_editable = ("display_order", "is_published", "is_active")
     list_filter = ("category", "is_published")

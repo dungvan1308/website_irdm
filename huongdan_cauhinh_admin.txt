@@ -6,3 +6,10 @@ Tích "Show expert grid" → Lưu
 Trong mục "Lưới chuyên gia" → chọn các Lĩnh vực chuyên môn (ResearchArea) muốn hiển thị
 Vào Admin → Expert → Lĩnh vực chuyên môn → điền name, description cho từng lĩnh vực và display_order
 Vào Admin → Expert → Chuyên gia → gắn research_areas cho từng chuyên gia và đặt is_published=True
+
+
+
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py collectstatic --noinput
+sudo systemctl restart irdm

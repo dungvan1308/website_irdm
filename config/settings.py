@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_ckeditor_5",
     # Shared
     "apps.common.apps.CommonConfig",
     "apps.core.apps.CoreConfig",
@@ -157,6 +158,42 @@ STORAGES = {
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"
+CKEDITOR_5_MAX_FILE_SIZE = 10
+CKEDITOR_5_UPLOAD_FILE_TYPES = ["jpeg", "jpg", "png", "gif", "webp"]
+CKEDITOR_5_FILE_STORAGE = "apps.knowledge.storage.KnowledgeBodyImageStorage"
+CKEDITOR_5_USER_LANGUAGE = True
+CKEDITOR_5_CONFIGS = {
+    "knowledge": {
+        "language": ["en", "vi"],
+        "toolbar": {
+            "items": [
+                "undo", "redo", "|", "heading", "|", "bold", "italic", "underline",
+                "link", "|", "bulletedList", "numberedList", "blockQuote", "|",
+                "insertImage", "insertTable", "horizontalLine", "removeFormat",
+            ],
+            "shouldNotGroupWhenFull": True,
+        },
+        "heading": {
+            "options": [
+                {"model": "paragraph", "title": "Đoạn văn", "class": "ck-heading_paragraph"},
+                {"model": "heading2", "view": "h2", "title": "Tiêu đề 2", "class": "ck-heading_heading2"},
+                {"model": "heading3", "view": "h3", "title": "Tiêu đề 3", "class": "ck-heading_heading3"},
+                {"model": "heading4", "view": "h4", "title": "Tiêu đề 4", "class": "ck-heading_heading4"},
+            ],
+        },
+        "image": {
+            "toolbar": [
+                "imageTextAlternative", "toggleImageCaption", "|",
+                "imageStyle:alignLeft", "imageStyle:alignCenter", "imageStyle:alignRight",
+            ],
+        },
+        "table": {
+            "contentToolbar": ["tableColumn", "tableRow", "mergeTableCells"],
+        },
+    },
+}
 
 # ─── Logging ─────────────────────────────────────────────────────────────────
 

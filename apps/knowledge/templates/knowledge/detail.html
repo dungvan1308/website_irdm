@@ -1,5 +1,9 @@
 {% extends "layouts/base.html" %}
-{% load i18n static %}
+{% load i18n static knowledge_rich_text %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/article-content.css' %}?v=20260913" />
+{% endblock %}
 
 {% block title %}
   {% if article.meta_title %}{{ article.meta_title }}
@@ -133,9 +137,9 @@
 {# ═══════════════════════════════════════════════════════════════════════════ #}
 {% if article.body %}
 <section class="bg-white py-12 lg:py-16" aria-label="{% trans 'Article body' %}">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="prose prose-slate prose-lg max-w-none">
-      {{ article.body|linebreaks }}
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="article-content ck-content">
+      {{ article.body|rich_text }}
     </div>
   </div>
 </section>
