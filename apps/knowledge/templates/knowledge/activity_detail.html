@@ -12,7 +12,7 @@
 
 {% block meta_description %}
   {% if activity.meta_description %}{{ activity.meta_description }}
-  {% elif activity.summary %}{{ activity.summary|truncatewords:30 }}{% endif %}
+  {% elif activity.summary %}{{ activity.summary|striptags|truncatewords:30 }}{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -45,7 +45,9 @@
         </h1>
 
         {% if activity.summary %}
-          <p class="text-sm text-white/70 leading-relaxed mb-6">{{ activity.summary }}</p>
+          <div class="text-sm text-white/70 leading-relaxed mb-6 [&_p+p]:mt-2 [&_h2]:text-lg [&_h2]:font-bold [&_h3]:font-bold [&_h4]:font-bold [&_strong]:font-bold [&_a]:underline [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li+li]:mt-1 [&_figure]:my-3 [&_img]:max-h-72 [&_img]:max-w-full [&_img]:h-auto [&_img]:object-contain [&_figcaption]:mt-1 [&_figcaption]:text-xs">
+            {{ activity.summary|rich_text }}
+          </div>
         {% endif %}
 
         <div class="flex flex-wrap items-center gap-4 text-xs text-white/50">
@@ -97,7 +99,7 @@
 
 {% if activity.body %}
 <section class="bg-white py-12 lg:py-16" aria-label="{% trans 'Activity news content' %}">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="article-content ck-content">
       {{ activity.body|rich_text }}
     </div>
@@ -133,7 +135,7 @@
           <h3 class="font-bold text-slate-800 leading-snug group-hover:text-primary-700 transition-colors">
             <a href="{{ item.get_cta_url }}" target="{{ item.get_cta_target }}">{{ item.title }}</a>
           </h3>
-          {% if item.summary %}<p class="text-sm text-slate-500 leading-relaxed line-clamp-2 mt-2">{{ item.summary }}</p>{% endif %}
+          {% if item.summary %}<p class="text-sm text-slate-500 leading-relaxed line-clamp-2 mt-2">{{ item.summary|striptags }}</p>{% endif %}
         </div>
       </article>
       {% endfor %}
