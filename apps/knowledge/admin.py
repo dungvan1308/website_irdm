@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.utils.translation import gettext_lazy as _
 
-from .forms import KnowledgeActivityNewsAdminForm, KnowledgeArticleAdminForm
+from .forms import KnowledgeActivityNewsAdminForm, KnowledgeArticleAdminForm, KnowledgeNewsItemAdminForm
 from .models import (
     KnowledgeAccordionItem,
     KnowledgeActivityNews,
@@ -366,6 +366,7 @@ class KnowledgeDownloadAdmin(admin.ModelAdmin):
 
 @admin.register(KnowledgeNewsItem)
 class KnowledgeNewsItemAdmin(admin.ModelAdmin):
+    form = KnowledgeNewsItemAdminForm
     list_display = ("title", "category", "published_date", "is_published", "display_order", "is_active")
     list_editable = ("display_order", "is_published", "is_active")
     prepopulated_fields = {"slug": ("title",)}

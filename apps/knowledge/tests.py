@@ -5,19 +5,21 @@ import shutil
 import tempfile
 from unittest.mock import patch
 
+from django import forms
 from django.test import TestCase, override_settings
 from django.urls import reverse
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.contrib.auth import get_user_model
 from PIL import Image
 
-from .forms import KnowledgeArticleAdminForm
+from .forms import KnowledgeArticleAdminForm, KnowledgeNewsItemAdminForm
 from .models import (
 	KnowledgeArticle,
 	KnowledgeActivityNews,
 	KnowledgeContentTypeCard,
 	KnowledgeDownloadRequest,
 	KnowledgeListingPage,
+	KnowledgeNewsItem,
 )
 from .rich_text import RichTextImageError, _validate_public_host, normalize_rich_text, sanitize_rich_text
 
@@ -99,6 +101,24 @@ class RichTextNormalizationTests(TestCase):
 		self.assertTrue(form.is_valid(), form.errors)
 		self.assertEqual(form.cleaned_data["body"], "<h2>Tiêu đề</h2><p>Nội dung</p>")
 
+	def test_news_admin_form_uses_wide_widgets_and_sanitizes_summary(self):
+		form = KnowledgeNewsItemAdminForm(data={
+			"title": "Tin tức có tiêu đề dài",
+			"slug": "tin-tuc-co-tieu-de-dai",
+			"summary": '<p>Nội dung <strong>quan trọng</strong>.</p><script>alert(1)</script>',
+			"source_url": "https://example.com/tin-tuc",
+			"display_order": 0,
+		})
+
+		self.assertTrue(form.is_valid(), form.errors)
+		self.assertIsInstance(form.fields["title"].widget, forms.Textarea)
+		self.assertEqual(form.fields["title"].widget.attrs["rows"], 2)
+		self.assertIn("width: 100%", form.fields["source_url"].widget.attrs["style"])
+		self.assertEqual(
+			form.cleaned_data["summary"],
+			"<p>Nội dung <strong>quan trọng</strong>.</p>",
+		)
+
 	def test_article_detail_renders_sanitized_rich_html(self):
 		article = KnowledgeArticle.objects.create(
 			title="Bài hiển thị HTML",
@@ -112,6 +132,21 @@ class RichTextNormalizationTests(TestCase):
 
 		self.assertContains(response, "<h2>Tiêu đề phần</h2>", html=True)
 		self.assertContains(response, "<strong>quan trọng</strong>", html=True)
+		self.assertNotContains(response, "<script>")
+
+	def test_news_listing_renders_sanitized_rich_summary(self):
+		KnowledgeNewsItem.objects.create(
+			title="Tin có tóm tắt định dạng",
+			slug="tin-co-tom-tat-dinh-dang",
+			summary='<p>Dòng một<br>Dòng hai <strong>in đậm</strong>.</p><script>alert(1)</script>',
+			is_press_article=True,
+			is_published=True,
+			is_active=True,
+		)
+
+		response = self.client.get(reverse("knowledge:listing"))
+
+		self.assertContains(response, "Dòng một<br>Dòng hai <strong>in đậm</strong>.", html=True)
 		self.assertNotContains(response, "<script>")
 
 	def test_ckeditor_upload_requires_staff_and_stores_image(self):
