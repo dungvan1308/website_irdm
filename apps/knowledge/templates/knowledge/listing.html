@@ -1,5 +1,5 @@
 {% extends "layouts/base.html" %}
-{% load i18n static %}
+{% load i18n static knowledge_rich_text %}
 
 {% block title %}
   {% if listing_page and listing_page.meta_title %}{{ listing_page.meta_title }}
@@ -1200,7 +1200,9 @@
 
           {# Summary #}
           {% if item.summary %}
-            <p class="text-slate-500 text-sm leading-relaxed line-clamp-2 mb-4">{{ item.summary }}</p>
+            <div class="text-slate-500 text-sm leading-relaxed mb-4 [&_p+p]:mt-2 [&_strong]:font-bold [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_img]:my-2 [&_img]:max-h-48 [&_img]:max-w-full [&_img]:h-auto [&_img]:object-contain">
+              {{ item.summary|rich_text }}
+            </div>
           {% endif %}
 
           {# CTA #}

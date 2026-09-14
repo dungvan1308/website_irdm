@@ -2,7 +2,7 @@
 from django.core.exceptions import ValidationError
 from django_ckeditor_5.widgets import CKEditor5Widget
 
-from .models import KnowledgeActivityNews, KnowledgeArticle, KnowledgeDownloadRequest
+from .models import KnowledgeActivityNews, KnowledgeArticle, KnowledgeDownloadRequest, KnowledgeNewsItem
 from .rich_text import RichTextImageError, normalize_rich_text
 
 
@@ -41,6 +41,29 @@ class KnowledgeActivityNewsAdminForm(RichBodyAdminFormMixin, forms.ModelForm):
                 attrs={"class": "django_ckeditor_5"},
                 config_name="knowledge",
             ),
+        }
+
+
+class KnowledgeNewsItemAdminForm(forms.ModelForm):
+    def clean_summary(self):
+        try:
+            return normalize_rich_text(self.cleaned_data.get("summary", ""))
+        except RichTextImageError as exc:
+            raise ValidationError(str(exc)) from exc
+
+    class Meta:
+        model = KnowledgeNewsItem
+        fields = "__all__"
+        help_texts = {
+            "summary": "Có thể định dạng nội dung và dán hình ảnh. Ảnh sẽ được lưu vào thư viện media của IRDM.",
+        }
+        widgets = {
+            "title": forms.Textarea(attrs={"rows": 2, "style": "width: 100%; box-sizing: border-box;"}),
+            "summary": CKEditor5Widget(
+                attrs={"class": "django_ckeditor_5"},
+                config_name="knowledge",
+            ),
+            "source_url": forms.URLInput(attrs={"style": "width: 100%; box-sizing: border-box;"}),
         }
 
 
