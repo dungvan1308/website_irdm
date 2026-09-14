@@ -919,7 +919,7 @@
 
               {# Summary #}
               {% if item.summary %}
-                <p class="text-slate-500 text-sm leading-relaxed line-clamp-2 mb-3">{{ item.summary }}</p>
+                <p class="text-slate-500 text-sm leading-relaxed line-clamp-2 mb-3">{{ item.summary|striptags }}</p>
               {% endif %}
 
               {# CTA #}

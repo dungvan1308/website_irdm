@@ -12,7 +12,7 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from django.contrib.auth import get_user_model
 from PIL import Image
 
-from .forms import KnowledgeArticleAdminForm, KnowledgeNewsItemAdminForm
+from .forms import KnowledgeActivityNewsAdminForm, KnowledgeArticleAdminForm, KnowledgeNewsItemAdminForm
 from .models import (
 	KnowledgeArticle,
 	KnowledgeActivityNews,
@@ -200,6 +200,33 @@ class KnowledgeActivityNewsDetailTests(TestCase):
 		self.assertContains(response, self.activity.title)
 		self.assertContains(response, "Đoạn nội dung thứ nhất.")
 		self.assertTemplateUsed(response, "knowledge/activity_detail.html")
+
+	def test_activity_admin_form_uses_wide_widgets_and_sanitizes_summary(self):
+		form = KnowledgeActivityNewsAdminForm(data={
+			"title": "Tin hoạt động có tiêu đề dài",
+			"slug": "tin-hoat-dong-co-tieu-de-dai",
+			"summary": '<p>Dòng một<br>Dòng hai <strong>in đậm</strong>.</p><script>alert(1)</script>',
+			"body": "Nội dung tin hoạt động.",
+			"read_time": 5,
+			"display_order": 0,
+		})
+
+		self.assertTrue(form.is_valid(), form.errors)
+		self.assertIn("width: 100%", form.fields["title"].widget.attrs["style"])
+		self.assertIn("width: 100%", form.fields["slug"].widget.attrs["style"])
+		self.assertEqual(
+			form.cleaned_data["summary"],
+			"<p>Dòng một<br>Dòng hai <strong>in đậm</strong>.</p>",
+		)
+
+	def test_activity_detail_renders_sanitized_rich_summary(self):
+		self.activity.summary = '<p>Dòng một<br>Dòng hai <strong>in đậm</strong>.</p><script>alert(1)</script>'
+		self.activity.save(update_fields=["summary"])
+
+		response = self.client.get(self.activity.get_absolute_url())
+
+		self.assertContains(response, "Dòng một<br>Dòng hai <strong>in đậm</strong>.", html=True)
+		self.assertNotContains(response, "<script>")
 
 	def test_unpublished_activity_detail_returns_404(self):
 		self.activity.is_published = False
