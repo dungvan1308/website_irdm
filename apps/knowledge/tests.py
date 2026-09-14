@@ -199,6 +199,7 @@ class KnowledgeActivityNewsDetailTests(TestCase):
 		self.assertEqual(response.status_code, 200)
 		self.assertContains(response, self.activity.title)
 		self.assertContains(response, "Đoạn nội dung thứ nhất.")
+		self.assertContains(response, 'class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"')
 		self.assertTemplateUsed(response, "knowledge/activity_detail.html")
 
 	def test_activity_admin_form_uses_wide_widgets_and_sanitizes_summary(self):
