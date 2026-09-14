@@ -44,7 +44,7 @@
     {# Summary #}
     {% if article.summary %}
       <p class="text-slate-500 text-xs leading-relaxed mb-4 line-clamp-2">
-        {{ article.summary }}
+        {{ article.summary|striptags }}
       </p>
     {% endif %}
 

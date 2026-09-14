@@ -15,13 +15,26 @@ class RichBodyAdminFormMixin:
 
 
 class KnowledgeArticleAdminForm(RichBodyAdminFormMixin, forms.ModelForm):
+    def clean_summary(self):
+        try:
+            return normalize_rich_text(self.cleaned_data.get("summary", ""))
+        except RichTextImageError as exc:
+            raise ValidationError(str(exc)) from exc
+
     class Meta:
         model = KnowledgeArticle
         fields = "__all__"
         help_texts = {
+            "summary": "Có thể định dạng nội dung và dán hình ảnh. Ảnh sẽ được lưu vào thư viện media của IRDM.",
             "body": "Có thể dán nội dung từ website hoặc Word. Ảnh sẽ được tải về thư viện media của IRDM khi lưu.",
         }
         widgets = {
+            "title": forms.TextInput(attrs={"style": "width: 100%; box-sizing: border-box;"}),
+            "slug": forms.TextInput(attrs={"style": "width: 100%; box-sizing: border-box;"}),
+            "summary": CKEditor5Widget(
+                attrs={"class": "django_ckeditor_5"},
+                config_name="knowledge",
+            ),
             "body": CKEditor5Widget(
                 attrs={"class": "django_ckeditor_5"},
                 config_name="knowledge",
