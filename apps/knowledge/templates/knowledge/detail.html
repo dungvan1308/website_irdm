@@ -13,7 +13,7 @@
 
 {% block meta_description %}
   {% if article.meta_description %}{{ article.meta_description }}
-  {% elif article.summary %}{{ article.summary|truncatewords:30 }}{% endif %}
+  {% elif article.summary %}{{ article.summary|striptags|truncatewords:30 }}{% endif %}
 {% endblock %}
 
 {% block meta_keywords %}{% if article.meta_keywords %}{{ article.meta_keywords }}{% endif %}{% endblock %}
@@ -59,7 +59,9 @@
           </h1>
 
           {% if article.summary %}
-            <p class="text-sm text-white/70 leading-relaxed mb-6">{{ article.summary }}</p>
+            <div class="text-sm text-white/70 leading-relaxed mb-6 [&_p+p]:mt-2 [&_h2]:text-lg [&_h2]:font-bold [&_h3]:font-bold [&_h4]:font-bold [&_strong]:font-bold [&_a]:underline [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li+li]:mt-1 [&_figure]:my-3 [&_img]:max-h-72 [&_img]:max-w-full [&_img]:h-auto [&_img]:object-contain [&_figcaption]:mt-1 [&_figcaption]:text-xs">
+              {{ article.summary|rich_text }}
+            </div>
           {% endif %}
 
           {# Meta: author, date, read time #}

@@ -39,7 +39,7 @@
     {# Summary #}
     {% if article.summary %}
       <p class="text-slate-500 text-sm leading-relaxed line-clamp-3 flex-1 min-h-0">
-        {{ article.summary }}
+        {{ article.summary|striptags }}
       </p>
     {% else %}
       <div class="flex-1"></div>

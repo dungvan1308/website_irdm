@@ -93,12 +93,16 @@ class RichTextNormalizationTests(TestCase):
 		form = KnowledgeArticleAdminForm(data={
 			"title": "Bài rich text",
 			"slug": "bai-rich-text",
+			"summary": '<p>Tóm tắt <strong>in đậm</strong>.</p><script>alert(1)</script>',
 			"body": '<h2>Tiêu đề</h2><p onclick="alert(1)">Nội dung</p>',
 			"read_time": 5,
 			"display_order": 0,
 		})
 
 		self.assertTrue(form.is_valid(), form.errors)
+		self.assertIn("width: 100%", form.fields["title"].widget.attrs["style"])
+		self.assertIn("width: 100%", form.fields["slug"].widget.attrs["style"])
+		self.assertEqual(form.cleaned_data["summary"], "<p>Tóm tắt <strong>in đậm</strong>.</p>")
 		self.assertEqual(form.cleaned_data["body"], "<h2>Tiêu đề</h2><p>Nội dung</p>")
 
 	def test_news_admin_form_uses_wide_widgets_and_sanitizes_summary(self):
@@ -123,6 +127,7 @@ class RichTextNormalizationTests(TestCase):
 		article = KnowledgeArticle.objects.create(
 			title="Bài hiển thị HTML",
 			slug="bai-hien-thi-html",
+			summary='<p>Dòng một<br>Dòng hai <strong>in đậm</strong>.</p><script>alert(1)</script>',
 			body='<h2>Tiêu đề phần</h2><p>Nội dung <strong>quan trọng</strong>.</p><script>alert(1)</script>',
 			is_published=True,
 			is_active=True,
@@ -132,6 +137,7 @@ class RichTextNormalizationTests(TestCase):
 
 		self.assertContains(response, "<h2>Tiêu đề phần</h2>", html=True)
 		self.assertContains(response, "<strong>quan trọng</strong>", html=True)
+		self.assertContains(response, "Dòng một<br>Dòng hai <strong>in đậm</strong>.", html=True)
 		self.assertNotContains(response, "<script>")
 
 	def test_news_listing_renders_sanitized_rich_summary(self):
