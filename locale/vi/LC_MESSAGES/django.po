@@ -522,6 +522,68 @@ msgstr "Logo đối tác"
 msgid "partner logos"
 msgstr "Các logo đối tác"
 
+# ── Partner page configuration
+# ─────────────────────────────────────────────────────
+msgid "partner page configuration"
+msgstr "Cấu hình trang Đối tác"
+
+msgid "partner page"
+msgstr "Trang Đối tác"
+
+msgid "partner page statistic"
+msgstr "Thống kê trang Đối tác"
+
+msgid "partner page statistics"
+msgstr "Các thống kê trang Đối tác"
+
+msgid "partner cooperation item"
+msgstr "Hình thức hợp tác"
+
+msgid "partner cooperation items"
+msgstr "Các hình thức hợp tác"
+
+msgid "hero label"
+msgstr "Nhãn banner"
+
+msgid "hero note"
+msgstr "Ghi chú banner"
+
+msgid "partners label"
+msgstr "Nhãn phần đối tác"
+
+msgid "partners heading"
+msgstr "Tiêu đề phần đối tác"
+
+msgid "partners description"
+msgstr "Mô tả phần đối tác"
+
+msgid "Leave empty to display all active partner logos."
+msgstr "Để trống để hiển thị tất cả logo đối tác đang hoạt động."
+
+msgid "cooperation label"
+msgstr "Nhãn phần hợp tác"
+
+msgid "cooperation heading"
+msgstr "Tiêu đề phần hợp tác"
+
+msgid "cooperation description"
+msgstr "Mô tả phần hợp tác"
+
+msgid "CTA section label"
+msgstr "Nhãn phần CTA"
+
+msgid "CTA button label"
+msgstr "Nhãn nút CTA"
+
+msgid "CTA button URL"
+msgstr "URL nút CTA"
+
+msgid "Partners"
+msgstr "Đối tác"
+
+msgid "Cooperation"
+msgstr "Hợp tác"
+
 msgid "Featured Solutions"
 msgstr "Giải pháp nổi bật"
 

@@ -27,7 +27,10 @@ from apps.home.models import (
     KnowledgeSectionHeader,
     MethodologySectionHeader,
     MethodologyStep,
+    PartnerCooperationItem,
     PartnerLogo,
+    PartnerPageConfig,
+    PartnerPageStatistic,
     PhilosophyPrinciple,
     PhilosophySectionHeader,
     StatisticItem,
@@ -59,6 +62,7 @@ class Command(BaseCommand):
         self._seed_capabilities()
         self._seed_philosophy()
         self._seed_evidence()
+        self._seed_partner_page()
         self._seed_knowledge()
         self._seed_cta_banner()
         self.stdout.write(self.style.SUCCESS("Homepage seeding complete."))
@@ -510,6 +514,62 @@ class Command(BaseCommand):
                 defaults={
                     "value": value, "description": desc,
                     "display_order": order, "is_active": True,
+                },
+            )
+
+    def _seed_partner_page(self) -> None:
+        page = PartnerPageConfig.objects.order_by("display_order", "created_at").first()
+        if not page:
+            page = PartnerPageConfig.objects.create(
+                meta_title="Đối tác",
+                meta_description="Mạng lưới cơ quan quản lý, tổ chức y tế, trường đại học và doanh nghiệp đã đồng hành cùng Viện IRDM.",
+                hero_label="MẠNG LƯỚI HỢP TÁC",
+                hero_heading="Các tổ chức IRDM đã đồng hành",
+                hero_description="Viện IRDM đã đồng hành cùng cơ quan quản lý, tổ chức y tế, trường đại học, doanh nghiệp và đối tác trong các bài toán thực tiễn.",
+                hero_note="Mỗi quan hệ hợp tác được xây dựng trên sự thấu hiểu bối cảnh, mục tiêu rõ ràng và cam kết tạo ra kết quả có thể ứng dụng.",
+                partners_label="ĐỐI TÁC TIÊU BIỂU",
+                partners_heading="Một mạng lưới đa ngành, cùng chung mục tiêu phát triển",
+                partners_description="IRDM trân trọng sự tin tưởng của các cơ quan, cơ sở y tế, trường đại học và doanh nghiệp trong những chương trình nghiên cứu và phát triển năng lực.",
+                cooperation_label="CÁCH THỨC ĐỒNG HÀNH",
+                cooperation_heading="Hợp tác từ bài toán thực tiễn",
+                cooperation_description="IRDM cùng đối tác làm rõ nhu cầu, thiết kế hướng tiếp cận và chuyển hóa kết quả thành giải pháp có thể triển khai.",
+                cta_label="CÙNG IRDM TẠO GIÁ TRỊ",
+                cta_heading="Bạn đang tìm kiếm một đối tác chuyên môn phù hợp?",
+                cta_description="Hãy chia sẻ bài toán của tổ chức để cùng xác định hướng hợp tác thiết thực.",
+                cta_button_label="Trao đổi cùng IRDM",
+                cta_button_url="/lien-he/",
+                is_active=True,
+            )
+        if not page.partner_logos.exists():
+            page.partner_logos.set(PartnerLogo.objects.filter(is_active=True))
+
+        for value, label, order in [
+            ("11+", "Đối tác & tổ chức", 10),
+            ("5+", "Lĩnh vực chuyên môn", 20),
+            ("7", "Năng lực cốt lõi", 30),
+            ("TP.HCM", "Trụ sở chính", 40),
+        ]:
+            PartnerPageStatistic.objects.get_or_create(
+                page=page,
+                label=label,
+                defaults={"value": value, "display_order": order, "is_active": True},
+            )
+
+        cooperation_items = [
+            (1, "Nghiên cứu ứng dụng", "Khảo sát, phân tích dữ liệu và xây dựng bằng chứng phục vụ hoạch định và ra quyết định."),
+            (2, "Tư vấn và thiết kế giải pháp", "Đồng thiết kế chương trình, mô hình và lộ trình phù hợp với bối cảnh vận hành của tổ chức."),
+            (3, "Đào tạo và phát triển năng lực", "Xây dựng năng lực đội ngũ thông qua đào tạo, tập huấn và đồng hành triển khai tại đơn vị."),
+            (4, "Kết nối chuyên gia", "Kết nối tri thức liên ngành và mạng lưới chuyên gia cho các sáng kiến cần chiều sâu chuyên môn."),
+        ]
+        for number, title, description in cooperation_items:
+            PartnerCooperationItem.objects.get_or_create(
+                page=page,
+                number=number,
+                defaults={
+                    "title": title,
+                    "description": description,
+                    "display_order": number * 10,
+                    "is_active": True,
                 },
             )
 

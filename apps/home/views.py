@@ -31,6 +31,27 @@ class HomePageView(TemplateView):
         return context
 
 
+class PartnerPageView(TemplateView):
+    """Public partner page built from its dedicated CMS configuration."""
+
+    template_name = "home/partners.html"
+
+    def get_context_data(self, **kwargs: object) -> dict:
+        context = super().get_context_data(**kwargs)
+        partner_page = HomeService.get_partner_page()
+        context["partner_page"] = partner_page
+        context["partner_logos"] = HomeService.get_partner_page_logos(partner_page)
+        context["partner_statistics"] = (
+            partner_page.statistics.filter(is_active=True).order_by("display_order")
+            if partner_page else []
+        )
+        context["cooperation_items"] = (
+            partner_page.cooperation_items.filter(is_active=True).order_by("display_order")
+            if partner_page else []
+        )
+        return context
+
+
 class FeaturedSectionView(TemplateView):
     """HTMX partial view — returns the items grid for one featured section."""
 
