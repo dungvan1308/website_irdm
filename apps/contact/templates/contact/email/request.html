@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><title>Yêu cầu hợp tác mới</title></head>
+<body style="margin:0;background:#f1f5f9;font-family:Arial,sans-serif;color:#1e293b;">
+  <div style="max-width:680px;margin:0 auto;padding:24px;">
+    <div style="background:#094977;color:#fff;padding:22px 26px;">
+      <div style="font-size:12px;font-weight:700;text-transform:uppercase;color:#fed7aa;">Website IRDM</div>
+      <h1 style="margin:8px 0 0;font-size:22px;">Yêu cầu hợp tác mới</h1>
+    </div>
+    <div style="background:#fff;padding:26px;border:1px solid #e2e8f0;">
+      <table role="presentation" style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.5;">
+        <tr><td style="padding:7px 12px 7px 0;color:#64748b;width:170px;">Mã yêu cầu</td><td style="padding:7px 0;font-weight:600;">{{ contact_request.pk }}</td></tr>
+        <tr><td style="padding:7px 12px 7px 0;color:#64748b;">Thời gian gửi</td><td style="padding:7px 0;">{{ contact_request.created_at|date:"d/m/Y H:i" }}</td></tr>
+        <tr><td style="padding:7px 12px 7px 0;color:#64748b;">Họ và tên</td><td style="padding:7px 0;font-weight:600;">{{ contact_request.full_name }}</td></tr>
+        <tr><td style="padding:7px 12px 7px 0;color:#64748b;">Email</td><td style="padding:7px 0;"><a href="mailto:{{ contact_request.email }}">{{ contact_request.email }}</a></td></tr>
+        <tr><td style="padding:7px 12px 7px 0;color:#64748b;">Số điện thoại</td><td style="padding:7px 0;">{{ contact_request.phone|default:"Không cung cấp" }}</td></tr>
+        <tr><td style="padding:7px 12px 7px 0;color:#64748b;">Cơ quan / Tổ chức</td><td style="padding:7px 0;">{{ contact_request.organization|default:"Không cung cấp" }}</td></tr>
+        <tr><td style="padding:7px 12px 7px 0;color:#64748b;">Nhu cầu trao đổi</td><td style="padding:7px 0;">{{ contact_request.get_inquiry_type_display }}</td></tr>
+        <tr><td style="padding:7px 12px 7px 0;color:#64748b;">Trang gửi yêu cầu</td><td style="padding:7px 0;word-break:break-all;">{{ contact_request.source_url|default:"Không xác định" }}</td></tr>
+      </table>
+      <h2 style="margin:24px 0 8px;font-size:16px;color:#094977;">Nội dung trao đổi</h2>
+      <div style="padding:16px;background:#f8fafc;border-left:4px solid #ec6d29;white-space:pre-wrap;font-size:14px;line-height:1.6;">{{ contact_request.message }}</div>
+      <p style="margin:22px 0 0;color:#64748b;font-size:12px;">Trả lời trực tiếp email này để liên hệ với người gửi.</p>
+    </div>
+  </div>
+</body>
+</html>

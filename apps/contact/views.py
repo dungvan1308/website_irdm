@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.views import View
 
 from .forms import ContactRequestForm
+from .services import send_contact_notification
 
 
 class ContactPageView(View):
@@ -27,6 +28,7 @@ class ContactPageView(View):
 			contact_request = form.save(commit=False)
 			contact_request.source_url = request.POST.get("source_url", "")[:500]
 			contact_request.save()
+			send_contact_notification(contact_request)
 			return redirect(f"{reverse('contact:index')}?sent=1#contact-form")
 
 		return render(

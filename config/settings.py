@@ -130,6 +130,13 @@ TIME_ZONE = env("TIME_ZONE", default="UTC")
 USE_I18N = True
 USE_TZ = True
 
+# SMTP connection details are managed in CMS. This key encrypts the stored App Password.
+EMAIL_CREDENTIAL_KEY = env("EMAIL_CREDENTIAL_KEY", default=SECRET_KEY)
+EMAIL_BACKEND = env(
+    "EMAIL_BACKEND",
+    default="django.core.mail.backends.smtp.EmailBackend",
+)
+
 LANGUAGES = [
     ("en", "English"),
     ("vi", "Tiếng Việt"),

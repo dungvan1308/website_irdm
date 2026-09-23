@@ -928,3 +928,20 @@ Internet (port 80/443)
 ---
 
 *Tài liệu chuẩn hóa cho cấu trúc `/opt/hrpsolution/` (không lồng thư mục con repo).*
+
+
+
+
+Đăng nhập Google Account.
+
+Mở Security / Bảo mật.
+
+Trong phần How you sign in to Google, bật 2-Step Verification / Xác minh 2 bước.
+
+Sau khi bật xong, mở trực tiếp:
+https://myaccount.google.com/apppasswords
+
+Google có thể yêu cầu đăng nhập lại.
+
+Nhập tên ứng dụng, ví dụ:
+

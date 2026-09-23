@@ -235,3 +235,23 @@ EOF
 
 psql -h localhost -U irdm_user -d irdm \
 -f /opt/irdm/website_irdm/DataBase/irdm_20260729_pc.sql
+
+
+
+
+# 1. Backup database trước
+pg_dump ...
+
+# 2. Cập nhật source và dependency
+pip install -r requirements.txt
+
+# 3. Cấu hình EMAIL_CREDENTIAL_KEY trong .env
+
+# 4. Chạy migration một lần
+python manage.py migrate
+
+# 5. Kiểm tra
+python manage.py showmigrations knowledge contact
+
+# 6. Restart ứng dụng
+sudo systemctl restart irdm

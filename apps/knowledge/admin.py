@@ -21,6 +21,7 @@ from .models import (
     KnowledgeFilterItem,
     KnowledgeListingPage,
     KnowledgeNewsItem,
+    KnowledgePartnerGroup,
     KnowledgeTopic,
     KnowledgeTopicCard,
     KnowledgeTopicCardTag,
@@ -303,16 +304,25 @@ class KnowledgeTopicAdmin(admin.ModelAdmin):
         return _img_preview(obj.cover_image)
 
 
+# ─── KnowledgePartnerGroup ───────────────────────────────────────────────────
+
+@admin.register(KnowledgePartnerGroup)
+class KnowledgePartnerGroupAdmin(admin.ModelAdmin):
+    list_display = ("label", "slug", "display_order", "is_active")
+    list_editable = ("display_order", "is_active")
+    prepopulated_fields = {"slug": ("label",)}
+
+
 # ─── KnowledgeArticle ─────────────────────────────────────────────────────────
 
 @admin.register(KnowledgeArticle)
 class KnowledgeArticleAdmin(admin.ModelAdmin):
     form = KnowledgeArticleAdminForm
     list_display = ("title", "category", "is_featured", "is_published", "display_order")
-    list_filter = ("category", "topics", "is_featured", "is_published")
+    list_filter = ("category", "topics", "partner_groups", "is_featured", "is_published")
     search_fields = ("title", "summary")
     prepopulated_fields = {"slug": ("title",)}
-    filter_horizontal = ("topics", "related_capabilities")
+    filter_horizontal = ("topics", "partner_groups", "related_capabilities")
     readonly_fields = ("thumbnail_preview", "hero_image_preview")
     fieldsets = (
         (_("Identity"), {"fields": ("title", "slug")}),
@@ -320,7 +330,7 @@ class KnowledgeArticleAdmin(admin.ModelAdmin):
         (_("Media"), {"fields": ("thumbnail", "thumbnail_preview", "hero_image", "hero_image_preview")}),
         (_("Classification"), {
             "fields": (
-                "category", "topics",
+                "category", "topics", "partner_groups",
                 "author_name", "published_date", "read_time",
                 "is_featured",
                 "related_capabilities",

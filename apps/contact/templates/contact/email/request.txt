@@ -1,0 +1,15 @@
+YÊU CẦU HỢP TÁC MỚI TỪ WEBSITE IRDM
+
+Mã yêu cầu: {{ contact_request.pk }}
+Thời gian gửi: {{ contact_request.created_at|date:"d/m/Y H:i" }}
+Họ và tên: {{ contact_request.full_name }}
+Email: {{ contact_request.email }}
+Số điện thoại: {{ contact_request.phone|default:"Không cung cấp" }}
+Cơ quan / Tổ chức: {{ contact_request.organization|default:"Không cung cấp" }}
+Nhu cầu trao đổi: {{ contact_request.get_inquiry_type_display }}
+Trang gửi yêu cầu: {{ contact_request.source_url|default:"Không xác định" }}
+
+NỘI DUNG TRAO ĐỔI
+{{ contact_request.message }}
+
+Bạn có thể trả lời trực tiếp email này để liên hệ với người gửi.

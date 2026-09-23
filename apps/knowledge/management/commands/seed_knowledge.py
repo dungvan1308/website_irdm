@@ -35,6 +35,7 @@ from apps.knowledge.models import (
     KnowledgeFilterItem,
     KnowledgeListingPage,
     KnowledgeNewsItem,
+    KnowledgePartnerGroup,
     KnowledgeTopic,
     KnowledgeTopicCard,
     KnowledgeTopicCardTag,
@@ -208,6 +209,25 @@ TOPICS = [
         "display_order": 6,
     },
 ]
+
+PARTNER_GROUPS = [
+    {"slug": "co-quan-quan-ly", "label": "Cơ quan quản lý", "display_order": 1},
+    {"slug": "he-thong-y-te", "label": "Hệ thống y tế", "display_order": 2},
+    {"slug": "truong-dai-hoc", "label": "Trường đại học", "display_order": 3},
+    {"slug": "doanh-nghiep", "label": "Doanh nghiệp", "display_order": 4},
+    {"slug": "to-chuc-quoc-te", "label": "Tổ chức quốc tế", "display_order": 5},
+]
+
+ARTICLE_PARTNER_GROUPS = {
+    "vi-sao-du-lieu-benh-vien-chua-de-chuyen-thanh-khcn": ["co-quan-quan-ly", "he-thong-y-te"],
+    "suc-khoe-tam-than-nhan-vien-y-te-chiu-dung-khong-ben-vung": ["he-thong-y-te"],
+    "green-university-green-hospital-quan-tri-ben-vung": ["he-thong-y-te", "truong-dai-hoc"],
+    "cac-su-kien-chuyen-mon-sap-dien-ra-irdm": ["co-quan-quan-ly", "truong-dai-hoc", "doanh-nghiep", "to-chuc-quoc-te"],
+    "cai-cach-he-thong-bao-hiem-y-te-bai-hoc-quoc-te": ["co-quan-quan-ly", "he-thong-y-te", "to-chuc-quoc-te"],
+    "thiet-ke-chuong-trinh-dao-tao-nang-luc-lanh-dao-y-te": ["he-thong-y-te", "truong-dai-hoc"],
+    "ai-trong-chan-doan-hinh-anh-y-te": ["he-thong-y-te", "doanh-nghiep"],
+    "nhan-luc-y-te-tuong-lai-ky-nang-can-thiet": ["he-thong-y-te", "truong-dai-hoc"],
+}
 
 # ─── Categories ───────────────────────────────────────────────────────────────
 
@@ -761,6 +781,21 @@ class Command(BaseCommand):
             if created:
                 self.stdout.write(f"  Topic: {obj.label}")
 
+        # ── Partner groups ────────────────────────────────────────────────────
+        partner_group_map: dict[str, KnowledgePartnerGroup] = {}
+        for partner_group in PARTNER_GROUPS:
+            obj, created = KnowledgePartnerGroup.objects.update_or_create(
+                slug=partner_group["slug"],
+                defaults={
+                    "label": partner_group["label"],
+                    "is_active": True,
+                    "display_order": partner_group["display_order"],
+                },
+            )
+            partner_group_map[obj.slug] = obj
+            if created:
+                self.stdout.write(f"  Partner group: {obj.label}")
+
         # ── Categories ────────────────────────────────────────────────────────
         cat_map: dict[str, KnowledgeCategory] = {}
         for i, c in enumerate(CATEGORIES):
@@ -806,6 +841,11 @@ class Command(BaseCommand):
                 },
             )
             obj.topics.set([topic_map[s] for s in a.get("topic_slugs", []) if s in topic_map])
+            obj.partner_groups.set([
+                partner_group_map[slug]
+                for slug in ARTICLE_PARTNER_GROUPS.get(obj.slug, [])
+                if slug in partner_group_map
+            ])
             if created or not obj.thumbnail:
                 asset = _load_asset(a["asset"]) if a.get("asset") else None
                 img = asset or _placeholder(f"{obj.slug}.png", i, 600, 400)

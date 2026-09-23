@@ -279,10 +279,10 @@ class KnowledgeService:
         if ctype_values:
             qs = qs.filter(category__slug__in=ctype_values)
         if partner_values:
-            qs = qs.filter(topics__slug__in=partner_values)
+            qs = qs.filter(partner_groups__slug__in=partner_values)
         return (
             qs.select_related("category")
-            .prefetch_related("topics")
+            .prefetch_related("topics", "partner_groups")
             .distinct()
             .order_by("display_order", "-published_date")
         )

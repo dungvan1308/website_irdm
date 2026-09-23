@@ -1,7 +1,9 @@
 from django import forms
+from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
-from .models import ContactRequest
+from .models import ContactRequest, EmailSettings
+from .services import encrypt_password
 
 
 INPUT_CLASSES = (
@@ -44,3 +46,41 @@ class ContactRequestForm(forms.ModelForm):
 		if len(message) < 20:
 			raise forms.ValidationError(_("Vui lòng nhập nội dung ít nhất 20 ký tự."))
 		return message
+
+
+class EmailSettingsAdminForm(forms.ModelForm):
+	smtp_password = forms.CharField(
+		label=_("SMTP App Password"),
+		required=False,
+		widget=forms.PasswordInput(render_value=False, attrs={"autocomplete": "new-password"}),
+		help_text=_("Leave blank to keep the saved password. For Gmail, use a 16-character App Password."),
+	)
+
+	class Meta:
+		model = EmailSettings
+		fields = "__all__"
+
+	def clean(self):
+		cleaned_data = super().clean()
+		password = cleaned_data.get("smtp_password")
+		if password and not settings.EMAIL_CREDENTIAL_KEY:
+			raise forms.ValidationError(
+				_("EMAIL_CREDENTIAL_KEY must be configured in .env before saving an SMTP password."),
+			)
+		if cleaned_data.get("enabled"):
+			for field_name in ("host", "username", "from_email", "contact_recipient"):
+				if not cleaned_data.get(field_name):
+					self.add_error(field_name, _("This field is required when email notifications are enabled."))
+			if not password and not self.instance.encrypted_password:
+				self.add_error("smtp_password", _("Enter an SMTP App Password to enable email notifications."))
+		return cleaned_data
+
+	def save(self, commit=True):
+		instance = super().save(commit=False)
+		password = self.cleaned_data.get("smtp_password")
+		if password:
+			instance.encrypted_password = encrypt_password(password)
+		if commit:
+			instance.save()
+			self.save_m2m()
+		return instance
