@@ -20,8 +20,32 @@ from .models import (
 	KnowledgeDownloadRequest,
 	KnowledgeListingPage,
 	KnowledgeNewsItem,
+	KnowledgePartnerGroup,
 )
 from .rich_text import RichTextImageError, _validate_public_host, normalize_rich_text, sanitize_rich_text
+from .services import KnowledgeService
+
+
+class KnowledgePartnerFilterTests(TestCase):
+	def setUp(self):
+		self.health_system = KnowledgePartnerGroup.objects.get(slug="he-thong-y-te")
+		self.article = KnowledgeArticle.objects.create(
+			title="Năng lực quản trị bệnh viện",
+			slug="nang-luc-quan-tri-benh-vien",
+			is_published=True,
+			is_active=True,
+		)
+		self.article.partner_groups.add(self.health_system)
+
+	def test_filter_articles_by_partner_group(self):
+		results = KnowledgeService.filter_articles_multi({"partner": ["he-thong-y-te"]})
+
+		self.assertQuerySetEqual(results, [self.article])
+
+	def test_filter_articles_by_unassigned_partner_group_returns_empty(self):
+		results = KnowledgeService.filter_articles_multi({"partner": ["doanh-nghiep"]})
+
+		self.assertFalse(results.exists())
 
 
 @override_settings(

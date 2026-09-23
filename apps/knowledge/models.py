@@ -333,6 +333,22 @@ class KnowledgeTopic(BaseModel):
         return self.label
 
 
+# ─── Partner Group ───────────────────────────────────────────────────────────
+
+class KnowledgePartnerGroup(BaseModel):
+    """An audience or partner group used to classify knowledge articles."""
+
+    label = models.CharField(_("label"), max_length=200)
+    slug = models.SlugField(_("slug"), max_length=200, unique=True, db_index=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("knowledge partner group")
+        verbose_name_plural = _("knowledge partner groups")
+
+    def __str__(self) -> str:
+        return self.label
+
+
 # ─── Article ──────────────────────────────────────────────────────────────────
 
 class KnowledgeArticle(BaseModel):
@@ -353,6 +369,12 @@ class KnowledgeArticle(BaseModel):
         blank=True,
         related_name="articles",
         verbose_name=_("topics"),
+    )
+    partner_groups = models.ManyToManyField(
+        KnowledgePartnerGroup,
+        blank=True,
+        related_name="articles",
+        verbose_name=_("partner groups"),
     )
     summary = models.TextField(_("summary"), blank=True)
     body = models.TextField(_("body"), blank=True)
