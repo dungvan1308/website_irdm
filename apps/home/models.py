@@ -369,6 +369,85 @@ class EvidenceSectionHeader(BaseModel):
         return self.heading
 
 
+# ─── Partner Page ────────────────────────────────────────────────────────────
+
+class PartnerPageConfig(BaseModel):
+    """CMS configuration dedicated to the public partner page."""
+
+    meta_title = models.CharField(_("meta title"), max_length=200, default="Đối tác")
+    meta_description = models.CharField(_("meta description"), max_length=300, blank=True)
+    hero_label = models.CharField(_("hero label"), max_length=200, blank=True)
+    hero_heading = models.CharField(_("hero heading"), max_length=300)
+    hero_description = models.TextField(_("hero description"), blank=True)
+    hero_note = models.TextField(_("hero note"), blank=True)
+    partners_label = models.CharField(_("partners label"), max_length=100, blank=True)
+    partners_heading = models.CharField(_("partners heading"), max_length=300)
+    partners_description = models.TextField(_("partners description"), blank=True)
+    partner_logos = models.ManyToManyField(
+        PartnerLogo,
+        blank=True,
+        related_name="partner_pages",
+        verbose_name=_("partner logos"),
+        help_text=_("Leave empty to display all active partner logos."),
+    )
+    cooperation_label = models.CharField(_("cooperation label"), max_length=100, blank=True)
+    cooperation_heading = models.CharField(_("cooperation heading"), max_length=300)
+    cooperation_description = models.TextField(_("cooperation description"), blank=True)
+    cta_label = models.CharField(_("CTA section label"), max_length=100, blank=True)
+    cta_heading = models.CharField(_("CTA heading"), max_length=300)
+    cta_description = models.TextField(_("CTA description"), blank=True)
+    cta_button_label = models.CharField(_("CTA button label"), max_length=100)
+    cta_button_url = models.CharField(_("CTA button URL"), max_length=500, default="/lien-he/")
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("partner page configuration")
+        verbose_name_plural = _("partner page configuration")
+
+    def __str__(self) -> str:
+        return self.hero_heading
+
+
+class PartnerPageStatistic(BaseModel):
+    """A statistic displayed only on the partner page."""
+
+    page = models.ForeignKey(
+        PartnerPageConfig,
+        on_delete=models.CASCADE,
+        related_name="statistics",
+        verbose_name=_("partner page"),
+    )
+    value = models.CharField(_("value"), max_length=50)
+    label = models.CharField(_("label"), max_length=150)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("partner page statistic")
+        verbose_name_plural = _("partner page statistics")
+
+    def __str__(self) -> str:
+        return f"{self.value} — {self.label}"
+
+
+class PartnerCooperationItem(BaseModel):
+    """A cooperation format displayed only on the partner page."""
+
+    page = models.ForeignKey(
+        PartnerPageConfig,
+        on_delete=models.CASCADE,
+        related_name="cooperation_items",
+        verbose_name=_("partner page"),
+    )
+    number = models.PositiveSmallIntegerField(_("number"))
+    title = models.CharField(_("title"), max_length=200)
+    description = models.TextField(_("description"), blank=True)
+
+    class Meta(BaseModel.Meta):
+        verbose_name = _("partner cooperation item")
+        verbose_name_plural = _("partner cooperation items")
+
+    def __str__(self) -> str:
+        return f"{self.number:02d}. {self.title}"
+
+
 # ─── Knowledge Section ────────────────────────────────────────────────────────
 
 class KnowledgeSectionHeader(BaseModel):

@@ -18,6 +18,7 @@ from .models import (
     MethodologySectionHeader,
     MethodologyStep,
     PartnerLogo,
+    PartnerPageConfig,
     PhilosophyPrinciple,
     PhilosophySectionHeader,
     StatisticItem,
@@ -46,6 +47,23 @@ class HomeService:
     def get_partner_logos() -> list[PartnerLogo]:
         """Return active partner logos ordered by display_order."""
         return list(PartnerLogo.objects.filter(is_active=True))
+
+    @staticmethod
+    def get_partner_page() -> Optional[PartnerPageConfig]:
+        """Return the active partner page with its dedicated CMS content."""
+        return (
+            PartnerPageConfig.objects
+            .filter(is_active=True)
+            .prefetch_related("partner_logos", "statistics", "cooperation_items")
+            .first()
+        )
+
+    @staticmethod
+    def get_partner_page_logos(page: Optional[PartnerPageConfig]) -> list[PartnerLogo]:
+        """Return selected active logos, or all active logos when none are selected."""
+        if page and page.partner_logos.exists():
+            return list(page.partner_logos.filter(is_active=True).order_by("display_order"))
+        return HomeService.get_partner_logos()
 
     @staticmethod
     def get_featured_section(section_key: str) -> Optional[FeaturedSectionConfig]:

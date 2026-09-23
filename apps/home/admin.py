@@ -19,7 +19,10 @@ from .models import (
     KnowledgeSectionHeader,
     MethodologySectionHeader,
     MethodologyStep,
+    PartnerCooperationItem,
     PartnerLogo,
+    PartnerPageConfig,
+    PartnerPageStatistic,
     PhilosophyPrinciple,
     PhilosophySectionHeader,
     StatisticItem,
@@ -204,6 +207,39 @@ class PhilosophyPrincipleAdmin(admin.ModelAdmin):
 @admin.register(EvidenceSectionHeader)
 class EvidenceSectionHeaderAdmin(admin.ModelAdmin):
     list_display = ("heading", "is_active")
+
+
+class PartnerPageStatisticInline(admin.TabularInline):
+    model = PartnerPageStatistic
+    extra = 0
+    fields = ("value", "label", "display_order", "is_active")
+
+
+class PartnerCooperationItemInline(admin.TabularInline):
+    model = PartnerCooperationItem
+    extra = 0
+    fields = ("number", "title", "description", "display_order", "is_active")
+
+
+@admin.register(PartnerPageConfig)
+class PartnerPageConfigAdmin(admin.ModelAdmin):
+    inlines = (PartnerPageStatisticInline, PartnerCooperationItemInline)
+    filter_horizontal = ("partner_logos",)
+    list_display = ("hero_heading", "is_active")
+    fieldsets = (
+        (_("SEO"), {"fields": ("meta_title", "meta_description")} ),
+        (_("Hero"), {"fields": ("hero_label", "hero_heading", "hero_description", "hero_note")} ),
+        (_("Partners"), {"fields": ("partners_label", "partners_heading", "partners_description", "partner_logos")} ),
+        (_("Cooperation"), {"fields": ("cooperation_label", "cooperation_heading", "cooperation_description")} ),
+        (_("CTA"), {"fields": ("cta_label", "cta_heading", "cta_description", "cta_button_label", "cta_button_url")} ),
+        (_("Status"), {"fields": ("is_active", "display_order")} ),
+    )
+
+    def has_add_permission(self, request):
+        return not PartnerPageConfig.objects.exists()
+
+    def has_delete_permission(self, request, obj=None):
+        return False
 
 
 # ─── Knowledge ────────────────────────────────────────────────────────────────
