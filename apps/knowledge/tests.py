@@ -16,6 +16,7 @@ from .forms import KnowledgeActivityNewsAdminForm, KnowledgeArticleAdminForm, Kn
 from .models import (
 	KnowledgeArticle,
 	KnowledgeActivityNews,
+	KnowledgeCategory,
 	KnowledgeContentTypeCard,
 	KnowledgeDownloadRequest,
 	KnowledgeListingPage,
@@ -46,6 +47,19 @@ class KnowledgePartnerFilterTests(TestCase):
 		results = KnowledgeService.filter_articles_multi({"partner": ["doanh-nghiep"]})
 
 		self.assertFalse(results.exists())
+
+	def test_filter_by_content_type_matches_label_when_slug_lost_diacritics(self):
+		category = KnowledgeCategory.objects.create(
+			label="Báo cáo & tài liệu", slug="bo-co-ti-liu", is_published=True, is_active=True,
+		)
+		article = KnowledgeArticle.objects.create(
+			title="Kỷ yếu hội thảo", slug="ky-yeu-hoi-thao", category=category,
+			is_published=True, is_active=True,
+		)
+
+		results = KnowledgeService.filter_articles_multi({"ctype": ["bao-cao-tai-lieu"]})
+
+		self.assertQuerySetEqual(results, [article])
 
 
 @override_settings(
@@ -355,6 +369,17 @@ class KnowledgeDownloadRequestTests(TestCase):
 		self.assertContains(response, 'href="#kham-pha-loai-noi-dung"')
 		self.assertContains(response, 'id="kham-pha-loai-noi-dung"', count=1)
 		self.assertNotContains(response, 'href="#featured"')
+
+	def test_search_renders_results_section_with_scroll_target(self):
+		response = self.client.get(reverse("knowledge:listing"), {"search": "báo cáo"})
+
+		self.assertContains(response, 'id="ket-qua-tim-kiem"', count=1)
+		self.assertContains(response, "scrollIntoView")
+
+	def test_listing_without_filter_has_no_results_scroll_target(self):
+		response = self.client.get(reverse("knowledge:listing"))
+
+		self.assertNotContains(response, 'id="ket-qua-tim-kiem"')
 
 	def test_download_cta_targets_publication_section(self):
 		response = self.client.get(reverse("knowledge:listing"))

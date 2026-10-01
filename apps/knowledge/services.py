@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Optional
 
 from django.db.models import Prefetch, QuerySet
+from django.utils.text import slugify
 
 from .models import (
     KnowledgeAccordionItem,
@@ -20,9 +21,27 @@ from .models import (
     KnowledgeFilterItem,
     KnowledgeListingPage,
     KnowledgeNewsItem,
+    KnowledgePartnerGroup,
     KnowledgeTopic,
     KnowledgeTopicCard,
 )
+
+
+def _slugify_vi(text: str) -> str:
+    return slugify(text.replace("đ", "d").replace("Đ", "D"))
+
+
+def _resolve_slugs(model, values: list[str]) -> list[str]:
+    """Return slugs matching filter values by slug or by slugified label.
+
+    Admin slug autofill drops Vietnamese letters ("Báo cáo" -> "bo-co"), so a stored
+    slug can differ from the filter value derived from the label.
+    """
+    wanted = set(values)
+    return [
+        obj.slug for obj in model.objects.all()
+        if obj.slug in wanted or _slugify_vi(obj.label) in wanted
+    ]
 
 
 class KnowledgeService:
@@ -275,11 +294,11 @@ class KnowledgeService:
         ctype_values = active_filters.get("ctype", [])
         partner_values = active_filters.get("partner", [])
         if topic_values:
-            qs = qs.filter(topics__slug__in=topic_values)
+            qs = qs.filter(topics__slug__in=_resolve_slugs(KnowledgeTopic, topic_values))
         if ctype_values:
-            qs = qs.filter(category__slug__in=ctype_values)
+            qs = qs.filter(category__slug__in=_resolve_slugs(KnowledgeCategory, ctype_values))
         if partner_values:
-            qs = qs.filter(partner_groups__slug__in=partner_values)
+            qs = qs.filter(partner_groups__slug__in=_resolve_slugs(KnowledgePartnerGroup, partner_values))
         return (
             qs.select_related("category")
             .prefetch_related("topics", "partner_groups")
