@@ -2,12 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict R1bcdK2TnROP4sbPkNmoXj1bhLga3r4gdQA7nI7h5aQoPfl5IAepaoazu1lxpfo
+\restrict fR0Pv30U09DTARHuRWZ3D0Hc9zEFDrRDDAybgHt119WWkrXuMTgzXGUhEhmYF8Y
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.3
 
--- Started on 2026-08-16 23:12:51
+-- Started on 2026-10-01 23:26:58
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -22,7 +22,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 5 (class 2615 OID 311529)
+-- TOC entry 5 (class 2615 OID 726558)
 -- Name: public; Type: SCHEMA; Schema: -; Owner: irdm_user
 --
 
@@ -32,7 +32,7 @@ SET row_security = off;
 ALTER SCHEMA public OWNER TO irdm_user;
 
 --
--- TOC entry 6496 (class 0 OID 0)
+-- TOC entry 6588 (class 0 OID 0)
 -- Dependencies: 5
 -- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: irdm_user
 --
@@ -45,7 +45,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 219 (class 1259 OID 311531)
+-- TOC entry 219 (class 1259 OID 726560)
 -- Name: about_aboutcapabilityecosystem; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -73,7 +73,7 @@ CREATE TABLE public.about_aboutcapabilityecosystem (
 ALTER TABLE public.about_aboutcapabilityecosystem OWNER TO irdm_user;
 
 --
--- TOC entry 220 (class 1259 OID 311553)
+-- TOC entry 220 (class 1259 OID 726582)
 -- Name: about_aboutcontactbanner; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -105,7 +105,7 @@ CREATE TABLE public.about_aboutcontactbanner (
 ALTER TABLE public.about_aboutcontactbanner OWNER TO irdm_user;
 
 --
--- TOC entry 221 (class 1259 OID 311579)
+-- TOC entry 221 (class 1259 OID 726608)
 -- Name: about_aboutcontactbannerstat; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -126,7 +126,7 @@ CREATE TABLE public.about_aboutcontactbannerstat (
 ALTER TABLE public.about_aboutcontactbannerstat OWNER TO irdm_user;
 
 --
--- TOC entry 222 (class 1259 OID 311592)
+-- TOC entry 222 (class 1259 OID 726621)
 -- Name: about_aboutcorevalue; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -148,7 +148,7 @@ CREATE TABLE public.about_aboutcorevalue (
 ALTER TABLE public.about_aboutcorevalue OWNER TO irdm_user;
 
 --
--- TOC entry 223 (class 1259 OID 311608)
+-- TOC entry 223 (class 1259 OID 726637)
 -- Name: about_aboutcorevaluesection; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -169,7 +169,7 @@ CREATE TABLE public.about_aboutcorevaluesection (
 ALTER TABLE public.about_aboutcorevaluesection OWNER TO irdm_user;
 
 --
--- TOC entry 224 (class 1259 OID 311623)
+-- TOC entry 224 (class 1259 OID 726652)
 -- Name: about_aboutctabanner; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -193,7 +193,7 @@ CREATE TABLE public.about_aboutctabanner (
 ALTER TABLE public.about_aboutctabanner OWNER TO irdm_user;
 
 --
--- TOC entry 225 (class 1259 OID 311641)
+-- TOC entry 225 (class 1259 OID 726670)
 -- Name: about_aboutecosystempartnergroup; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -213,7 +213,7 @@ CREATE TABLE public.about_aboutecosystempartnergroup (
 ALTER TABLE public.about_aboutecosystempartnergroup OWNER TO irdm_user;
 
 --
--- TOC entry 226 (class 1259 OID 311653)
+-- TOC entry 226 (class 1259 OID 726682)
 -- Name: about_aboutecosystempartneritem; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -233,7 +233,7 @@ CREATE TABLE public.about_aboutecosystempartneritem (
 ALTER TABLE public.about_aboutecosystempartneritem OWNER TO irdm_user;
 
 --
--- TOC entry 227 (class 1259 OID 311665)
+-- TOC entry 227 (class 1259 OID 726694)
 -- Name: about_aboutecosystemstatistic; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -253,7 +253,7 @@ CREATE TABLE public.about_aboutecosystemstatistic (
 ALTER TABLE public.about_aboutecosystemstatistic OWNER TO irdm_user;
 
 --
--- TOC entry 228 (class 1259 OID 311677)
+-- TOC entry 228 (class 1259 OID 726706)
 -- Name: about_abouthero; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -283,7 +283,7 @@ CREATE TABLE public.about_abouthero (
 ALTER TABLE public.about_abouthero OWNER TO irdm_user;
 
 --
--- TOC entry 229 (class 1259 OID 311701)
+-- TOC entry 229 (class 1259 OID 726730)
 -- Name: about_aboutherostatistic; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -304,7 +304,7 @@ CREATE TABLE public.about_aboutherostatistic (
 ALTER TABLE public.about_aboutherostatistic OWNER TO irdm_user;
 
 --
--- TOC entry 230 (class 1259 OID 311714)
+-- TOC entry 230 (class 1259 OID 726743)
 -- Name: about_abouthighlightcard; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -327,7 +327,7 @@ CREATE TABLE public.about_abouthighlightcard (
 ALTER TABLE public.about_abouthighlightcard OWNER TO irdm_user;
 
 --
--- TOC entry 231 (class 1259 OID 311731)
+-- TOC entry 231 (class 1259 OID 726760)
 -- Name: about_aboutintroduction; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -351,7 +351,7 @@ CREATE TABLE public.about_aboutintroduction (
 ALTER TABLE public.about_aboutintroduction OWNER TO irdm_user;
 
 --
--- TOC entry 232 (class 1259 OID 311749)
+-- TOC entry 232 (class 1259 OID 726778)
 -- Name: about_aboutlegalbadge; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -370,7 +370,7 @@ CREATE TABLE public.about_aboutlegalbadge (
 ALTER TABLE public.about_aboutlegalbadge OWNER TO irdm_user;
 
 --
--- TOC entry 233 (class 1259 OID 311760)
+-- TOC entry 233 (class 1259 OID 726789)
 -- Name: about_aboutlegalinfo; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -398,7 +398,7 @@ CREATE TABLE public.about_aboutlegalinfo (
 ALTER TABLE public.about_aboutlegalinfo OWNER TO irdm_user;
 
 --
--- TOC entry 234 (class 1259 OID 311782)
+-- TOC entry 234 (class 1259 OID 726811)
 -- Name: about_aboutlegalorgattribute; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -418,7 +418,7 @@ CREATE TABLE public.about_aboutlegalorgattribute (
 ALTER TABLE public.about_aboutlegalorgattribute OWNER TO irdm_user;
 
 --
--- TOC entry 235 (class 1259 OID 311796)
+-- TOC entry 235 (class 1259 OID 726825)
 -- Name: about_aboutlegaltimelineitem; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -442,7 +442,7 @@ CREATE TABLE public.about_aboutlegaltimelineitem (
 ALTER TABLE public.about_aboutlegaltimelineitem OWNER TO irdm_user;
 
 --
--- TOC entry 236 (class 1259 OID 311814)
+-- TOC entry 236 (class 1259 OID 726843)
 -- Name: about_aboutnetworksectionheader; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -464,7 +464,7 @@ CREATE TABLE public.about_aboutnetworksectionheader (
 ALTER TABLE public.about_aboutnetworksectionheader OWNER TO irdm_user;
 
 --
--- TOC entry 237 (class 1259 OID 311830)
+-- TOC entry 237 (class 1259 OID 726859)
 -- Name: about_aboutorgstructurebulletitem; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -483,7 +483,7 @@ CREATE TABLE public.about_aboutorgstructurebulletitem (
 ALTER TABLE public.about_aboutorgstructurebulletitem OWNER TO irdm_user;
 
 --
--- TOC entry 238 (class 1259 OID 311841)
+-- TOC entry 238 (class 1259 OID 726870)
 -- Name: about_aboutorgstructurecard; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -507,7 +507,7 @@ CREATE TABLE public.about_aboutorgstructurecard (
 ALTER TABLE public.about_aboutorgstructurecard OWNER TO irdm_user;
 
 --
--- TOC entry 239 (class 1259 OID 311859)
+-- TOC entry 239 (class 1259 OID 726888)
 -- Name: about_aboutorgstructuresection; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -532,7 +532,7 @@ CREATE TABLE public.about_aboutorgstructuresection (
 ALTER TABLE public.about_aboutorgstructuresection OWNER TO irdm_user;
 
 --
--- TOC entry 240 (class 1259 OID 311878)
+-- TOC entry 240 (class 1259 OID 726907)
 -- Name: about_aboutpageseo; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -555,7 +555,7 @@ CREATE TABLE public.about_aboutpageseo (
 ALTER TABLE public.about_aboutpageseo OWNER TO irdm_user;
 
 --
--- TOC entry 241 (class 1259 OID 311895)
+-- TOC entry 241 (class 1259 OID 726924)
 -- Name: about_aboutpartnerbenefit; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -579,7 +579,7 @@ CREATE TABLE public.about_aboutpartnerbenefit (
 ALTER TABLE public.about_aboutpartnerbenefit OWNER TO irdm_user;
 
 --
--- TOC entry 242 (class 1259 OID 311913)
+-- TOC entry 242 (class 1259 OID 726942)
 -- Name: about_aboutpartnerbenefitsection; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -604,7 +604,7 @@ CREATE TABLE public.about_aboutpartnerbenefitsection (
 ALTER TABLE public.about_aboutpartnerbenefitsection OWNER TO irdm_user;
 
 --
--- TOC entry 243 (class 1259 OID 311932)
+-- TOC entry 243 (class 1259 OID 726961)
 -- Name: about_aboutprofessionalnetwork; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -627,7 +627,7 @@ CREATE TABLE public.about_aboutprofessionalnetwork (
 ALTER TABLE public.about_aboutprofessionalnetwork OWNER TO irdm_user;
 
 --
--- TOC entry 244 (class 1259 OID 311949)
+-- TOC entry 244 (class 1259 OID 726978)
 -- Name: about_aboutpurpose; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -655,7 +655,7 @@ CREATE TABLE public.about_aboutpurpose (
 ALTER TABLE public.about_aboutpurpose OWNER TO irdm_user;
 
 --
--- TOC entry 245 (class 1259 OID 311971)
+-- TOC entry 245 (class 1259 OID 727000)
 -- Name: about_abouttargetaudience; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -680,7 +680,7 @@ CREATE TABLE public.about_abouttargetaudience (
 ALTER TABLE public.about_abouttargetaudience OWNER TO irdm_user;
 
 --
--- TOC entry 246 (class 1259 OID 311990)
+-- TOC entry 246 (class 1259 OID 727019)
 -- Name: about_abouttargetaudiencesection; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -704,7 +704,7 @@ CREATE TABLE public.about_abouttargetaudiencesection (
 ALTER TABLE public.about_abouttargetaudiencesection OWNER TO irdm_user;
 
 --
--- TOC entry 247 (class 1259 OID 312008)
+-- TOC entry 247 (class 1259 OID 727037)
 -- Name: about_aboutvisionmission; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -727,7 +727,7 @@ CREATE TABLE public.about_aboutvisionmission (
 ALTER TABLE public.about_aboutvisionmission OWNER TO irdm_user;
 
 --
--- TOC entry 248 (class 1259 OID 312025)
+-- TOC entry 248 (class 1259 OID 727054)
 -- Name: about_aboutvisionmissioncard; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -752,7 +752,7 @@ CREATE TABLE public.about_aboutvisionmissioncard (
 ALTER TABLE public.about_aboutvisionmissioncard OWNER TO irdm_user;
 
 --
--- TOC entry 249 (class 1259 OID 312044)
+-- TOC entry 249 (class 1259 OID 727073)
 -- Name: about_aboutvisionmissionicon; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -772,7 +772,7 @@ CREATE TABLE public.about_aboutvisionmissionicon (
 ALTER TABLE public.about_aboutvisionmissionicon OWNER TO irdm_user;
 
 --
--- TOC entry 250 (class 1259 OID 312056)
+-- TOC entry 250 (class 1259 OID 727085)
 -- Name: auth_group; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -785,7 +785,7 @@ CREATE TABLE public.auth_group (
 ALTER TABLE public.auth_group OWNER TO irdm_user;
 
 --
--- TOC entry 251 (class 1259 OID 312061)
+-- TOC entry 251 (class 1259 OID 727090)
 -- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -800,7 +800,7 @@ ALTER TABLE public.auth_group ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTI
 
 
 --
--- TOC entry 252 (class 1259 OID 312062)
+-- TOC entry 252 (class 1259 OID 727091)
 -- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -814,7 +814,7 @@ CREATE TABLE public.auth_group_permissions (
 ALTER TABLE public.auth_group_permissions OWNER TO irdm_user;
 
 --
--- TOC entry 253 (class 1259 OID 312068)
+-- TOC entry 253 (class 1259 OID 727097)
 -- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -829,7 +829,7 @@ ALTER TABLE public.auth_group_permissions ALTER COLUMN id ADD GENERATED BY DEFAU
 
 
 --
--- TOC entry 254 (class 1259 OID 312069)
+-- TOC entry 254 (class 1259 OID 727098)
 -- Name: auth_permission; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -844,7 +844,7 @@ CREATE TABLE public.auth_permission (
 ALTER TABLE public.auth_permission OWNER TO irdm_user;
 
 --
--- TOC entry 255 (class 1259 OID 312076)
+-- TOC entry 255 (class 1259 OID 727105)
 -- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -859,7 +859,7 @@ ALTER TABLE public.auth_permission ALTER COLUMN id ADD GENERATED BY DEFAULT AS I
 
 
 --
--- TOC entry 256 (class 1259 OID 312077)
+-- TOC entry 256 (class 1259 OID 727106)
 -- Name: auth_user; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -881,7 +881,7 @@ CREATE TABLE public.auth_user (
 ALTER TABLE public.auth_user OWNER TO irdm_user;
 
 --
--- TOC entry 257 (class 1259 OID 312092)
+-- TOC entry 257 (class 1259 OID 727121)
 -- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -895,7 +895,7 @@ CREATE TABLE public.auth_user_groups (
 ALTER TABLE public.auth_user_groups OWNER TO irdm_user;
 
 --
--- TOC entry 258 (class 1259 OID 312098)
+-- TOC entry 258 (class 1259 OID 727127)
 -- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -910,7 +910,7 @@ ALTER TABLE public.auth_user_groups ALTER COLUMN id ADD GENERATED BY DEFAULT AS 
 
 
 --
--- TOC entry 259 (class 1259 OID 312099)
+-- TOC entry 259 (class 1259 OID 727128)
 -- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -925,7 +925,7 @@ ALTER TABLE public.auth_user ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTIT
 
 
 --
--- TOC entry 260 (class 1259 OID 312100)
+-- TOC entry 260 (class 1259 OID 727129)
 -- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -939,7 +939,7 @@ CREATE TABLE public.auth_user_user_permissions (
 ALTER TABLE public.auth_user_user_permissions OWNER TO irdm_user;
 
 --
--- TOC entry 261 (class 1259 OID 312106)
+-- TOC entry 261 (class 1259 OID 727135)
 -- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -954,7 +954,7 @@ ALTER TABLE public.auth_user_user_permissions ALTER COLUMN id ADD GENERATED BY D
 
 
 --
--- TOC entry 262 (class 1259 OID 312107)
+-- TOC entry 262 (class 1259 OID 727136)
 -- Name: capability_capability; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -987,7 +987,6 @@ CREATE TABLE public.capability_capability (
     card_icon character varying(100) NOT NULL,
     need_section_intro text NOT NULL,
     what_is_image character varying(100) NOT NULL,
-    icon_name character varying(50) NOT NULL,
     CONSTRAINT capability_capability_display_order_check CHECK ((display_order >= 0))
 );
 
@@ -995,7 +994,7 @@ CREATE TABLE public.capability_capability (
 ALTER TABLE public.capability_capability OWNER TO irdm_user;
 
 --
--- TOC entry 263 (class 1259 OID 312142)
+-- TOC entry 263 (class 1259 OID 727170)
 -- Name: capability_capabilitycasestudy; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1023,7 +1022,7 @@ CREATE TABLE public.capability_capabilitycasestudy (
 ALTER TABLE public.capability_capabilitycasestudy OWNER TO irdm_user;
 
 --
--- TOC entry 264 (class 1259 OID 312164)
+-- TOC entry 264 (class 1259 OID 727192)
 -- Name: capability_capabilitycasestudytag; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1042,7 +1041,7 @@ CREATE TABLE public.capability_capabilitycasestudytag (
 ALTER TABLE public.capability_capabilitycasestudytag OWNER TO irdm_user;
 
 --
--- TOC entry 265 (class 1259 OID 312175)
+-- TOC entry 265 (class 1259 OID 727203)
 -- Name: capability_capabilityfeature; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1061,7 +1060,7 @@ CREATE TABLE public.capability_capabilityfeature (
 ALTER TABLE public.capability_capabilityfeature OWNER TO irdm_user;
 
 --
--- TOC entry 266 (class 1259 OID 312186)
+-- TOC entry 266 (class 1259 OID 727214)
 -- Name: capability_capabilityhowstep; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1083,7 +1082,7 @@ CREATE TABLE public.capability_capabilityhowstep (
 ALTER TABLE public.capability_capabilityhowstep OWNER TO irdm_user;
 
 --
--- TOC entry 267 (class 1259 OID 312202)
+-- TOC entry 267 (class 1259 OID 727230)
 -- Name: capability_capabilitylistingpage; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1116,7 +1115,7 @@ CREATE TABLE public.capability_capabilitylistingpage (
 ALTER TABLE public.capability_capabilitylistingpage OWNER TO irdm_user;
 
 --
--- TOC entry 268 (class 1259 OID 312229)
+-- TOC entry 268 (class 1259 OID 727257)
 -- Name: capability_capabilityneeditem; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1137,7 +1136,7 @@ CREATE TABLE public.capability_capabilityneeditem (
 ALTER TABLE public.capability_capabilityneeditem OWNER TO irdm_user;
 
 --
--- TOC entry 269 (class 1259 OID 312244)
+-- TOC entry 269 (class 1259 OID 727272)
 -- Name: capability_capabilityoutput; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1158,7 +1157,7 @@ CREATE TABLE public.capability_capabilityoutput (
 ALTER TABLE public.capability_capabilityoutput OWNER TO irdm_user;
 
 --
--- TOC entry 362 (class 1259 OID 334694)
+-- TOC entry 270 (class 1259 OID 727287)
 -- Name: contact_contactrequest; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1173,14 +1172,19 @@ CREATE TABLE public.contact_contactrequest (
     status character varying(20) NOT NULL,
     source_url character varying(500) NOT NULL,
     created_at timestamp with time zone NOT NULL,
-    updated_at timestamp with time zone NOT NULL
+    updated_at timestamp with time zone NOT NULL,
+    notification_attempts integer NOT NULL,
+    notification_error text NOT NULL,
+    notification_sent_at timestamp with time zone,
+    notification_status character varying(20) NOT NULL,
+    CONSTRAINT contact_contactrequest_notification_attempts_check CHECK ((notification_attempts >= 0))
 );
 
 
 ALTER TABLE public.contact_contactrequest OWNER TO irdm_user;
 
 --
--- TOC entry 361 (class 1259 OID 334693)
+-- TOC entry 271 (class 1259 OID 727307)
 -- Name: contact_contactrequest_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -1195,7 +1199,49 @@ ALTER TABLE public.contact_contactrequest ALTER COLUMN id ADD GENERATED BY DEFAU
 
 
 --
--- TOC entry 270 (class 1259 OID 312259)
+-- TOC entry 272 (class 1259 OID 727308)
+-- Name: contact_emailsettings; Type: TABLE; Schema: public; Owner: irdm_user
+--
+
+CREATE TABLE public.contact_emailsettings (
+    id bigint NOT NULL,
+    enabled boolean NOT NULL,
+    host character varying(255) NOT NULL,
+    port integer NOT NULL,
+    security character varying(10) NOT NULL,
+    username character varying(254) NOT NULL,
+    encrypted_password text NOT NULL,
+    from_name character varying(100) NOT NULL,
+    from_email character varying(254) NOT NULL,
+    contact_recipient character varying(254) NOT NULL,
+    timeout integer NOT NULL,
+    last_tested_at timestamp with time zone,
+    last_test_succeeded boolean,
+    last_test_message character varying(500) NOT NULL,
+    CONSTRAINT contact_emailsettings_port_check CHECK ((port >= 0)),
+    CONSTRAINT contact_emailsettings_timeout_check CHECK ((timeout >= 0))
+);
+
+
+ALTER TABLE public.contact_emailsettings OWNER TO irdm_user;
+
+--
+-- TOC entry 273 (class 1259 OID 727327)
+-- Name: contact_emailsettings_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE public.contact_emailsettings ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
+    SEQUENCE NAME public.contact_emailsettings_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- TOC entry 274 (class 1259 OID 727328)
 -- Name: core_footerlink; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1216,7 +1262,7 @@ CREATE TABLE public.core_footerlink (
 ALTER TABLE public.core_footerlink OWNER TO irdm_user;
 
 --
--- TOC entry 271 (class 1259 OID 312274)
+-- TOC entry 275 (class 1259 OID 727343)
 -- Name: core_footersection; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1234,7 +1280,7 @@ CREATE TABLE public.core_footersection (
 ALTER TABLE public.core_footersection OWNER TO irdm_user;
 
 --
--- TOC entry 272 (class 1259 OID 312284)
+-- TOC entry 276 (class 1259 OID 727353)
 -- Name: core_menuitem; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1256,7 +1302,7 @@ CREATE TABLE public.core_menuitem (
 ALTER TABLE public.core_menuitem OWNER TO irdm_user;
 
 --
--- TOC entry 273 (class 1259 OID 312299)
+-- TOC entry 277 (class 1259 OID 727368)
 -- Name: core_sitesettings; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1288,7 +1334,7 @@ CREATE TABLE public.core_sitesettings (
 ALTER TABLE public.core_sitesettings OWNER TO irdm_user;
 
 --
--- TOC entry 274 (class 1259 OID 312325)
+-- TOC entry 278 (class 1259 OID 727394)
 -- Name: django_admin_log; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1308,7 +1354,7 @@ CREATE TABLE public.django_admin_log (
 ALTER TABLE public.django_admin_log OWNER TO irdm_user;
 
 --
--- TOC entry 275 (class 1259 OID 312337)
+-- TOC entry 279 (class 1259 OID 727406)
 -- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -1323,7 +1369,7 @@ ALTER TABLE public.django_admin_log ALTER COLUMN id ADD GENERATED BY DEFAULT AS 
 
 
 --
--- TOC entry 276 (class 1259 OID 312338)
+-- TOC entry 280 (class 1259 OID 727407)
 -- Name: django_content_type; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1337,7 +1383,7 @@ CREATE TABLE public.django_content_type (
 ALTER TABLE public.django_content_type OWNER TO irdm_user;
 
 --
--- TOC entry 277 (class 1259 OID 312344)
+-- TOC entry 281 (class 1259 OID 727413)
 -- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -1352,7 +1398,7 @@ ALTER TABLE public.django_content_type ALTER COLUMN id ADD GENERATED BY DEFAULT 
 
 
 --
--- TOC entry 278 (class 1259 OID 312345)
+-- TOC entry 282 (class 1259 OID 727414)
 -- Name: django_migrations; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1367,7 +1413,7 @@ CREATE TABLE public.django_migrations (
 ALTER TABLE public.django_migrations OWNER TO irdm_user;
 
 --
--- TOC entry 279 (class 1259 OID 312354)
+-- TOC entry 283 (class 1259 OID 727423)
 -- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -1382,7 +1428,7 @@ ALTER TABLE public.django_migrations ALTER COLUMN id ADD GENERATED BY DEFAULT AS
 
 
 --
--- TOC entry 280 (class 1259 OID 312355)
+-- TOC entry 284 (class 1259 OID 727424)
 -- Name: django_session; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1396,7 +1442,7 @@ CREATE TABLE public.django_session (
 ALTER TABLE public.django_session OWNER TO irdm_user;
 
 --
--- TOC entry 281 (class 1259 OID 312363)
+-- TOC entry 285 (class 1259 OID 727432)
 -- Name: expert_association; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1424,7 +1470,7 @@ CREATE TABLE public.expert_association (
 ALTER TABLE public.expert_association OWNER TO irdm_user;
 
 --
--- TOC entry 282 (class 1259 OID 312385)
+-- TOC entry 286 (class 1259 OID 727454)
 -- Name: expert_engagementtype; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1444,7 +1490,7 @@ CREATE TABLE public.expert_engagementtype (
 ALTER TABLE public.expert_engagementtype OWNER TO irdm_user;
 
 --
--- TOC entry 283 (class 1259 OID 312399)
+-- TOC entry 287 (class 1259 OID 727468)
 -- Name: expert_expert; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1492,7 +1538,7 @@ CREATE TABLE public.expert_expert (
 ALTER TABLE public.expert_expert OWNER TO irdm_user;
 
 --
--- TOC entry 284 (class 1259 OID 312440)
+-- TOC entry 288 (class 1259 OID 727509)
 -- Name: expert_expert_engagement_types; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1506,7 +1552,7 @@ CREATE TABLE public.expert_expert_engagement_types (
 ALTER TABLE public.expert_expert_engagement_types OWNER TO irdm_user;
 
 --
--- TOC entry 285 (class 1259 OID 312446)
+-- TOC entry 289 (class 1259 OID 727515)
 -- Name: expert_expert_engagement_types_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -1521,7 +1567,7 @@ ALTER TABLE public.expert_expert_engagement_types ALTER COLUMN id ADD GENERATED 
 
 
 --
--- TOC entry 286 (class 1259 OID 312447)
+-- TOC entry 290 (class 1259 OID 727516)
 -- Name: expert_expert_knowledge_topics; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1535,7 +1581,7 @@ CREATE TABLE public.expert_expert_knowledge_topics (
 ALTER TABLE public.expert_expert_knowledge_topics OWNER TO irdm_user;
 
 --
--- TOC entry 287 (class 1259 OID 312453)
+-- TOC entry 291 (class 1259 OID 727522)
 -- Name: expert_expert_knowledge_topics_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -1550,7 +1596,7 @@ ALTER TABLE public.expert_expert_knowledge_topics ALTER COLUMN id ADD GENERATED 
 
 
 --
--- TOC entry 288 (class 1259 OID 312454)
+-- TOC entry 292 (class 1259 OID 727523)
 -- Name: expert_expert_research_areas; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1564,7 +1610,7 @@ CREATE TABLE public.expert_expert_research_areas (
 ALTER TABLE public.expert_expert_research_areas OWNER TO irdm_user;
 
 --
--- TOC entry 289 (class 1259 OID 312460)
+-- TOC entry 293 (class 1259 OID 727529)
 -- Name: expert_expert_research_areas_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -1579,7 +1625,7 @@ ALTER TABLE public.expert_expert_research_areas ALTER COLUMN id ADD GENERATED BY
 
 
 --
--- TOC entry 290 (class 1259 OID 312461)
+-- TOC entry 294 (class 1259 OID 727530)
 -- Name: expert_expertgroup; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1599,7 +1645,7 @@ CREATE TABLE public.expert_expertgroup (
 ALTER TABLE public.expert_expertgroup OWNER TO irdm_user;
 
 --
--- TOC entry 291 (class 1259 OID 312475)
+-- TOC entry 295 (class 1259 OID 727544)
 -- Name: expert_expertlistingpage; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1670,7 +1716,7 @@ CREATE TABLE public.expert_expertlistingpage (
 ALTER TABLE public.expert_expertlistingpage OWNER TO irdm_user;
 
 --
--- TOC entry 292 (class 1259 OID 312540)
+-- TOC entry 296 (class 1259 OID 727609)
 -- Name: expert_infogroup; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1699,7 +1745,7 @@ CREATE TABLE public.expert_infogroup (
 ALTER TABLE public.expert_infogroup OWNER TO irdm_user;
 
 --
--- TOC entry 293 (class 1259 OID 312563)
+-- TOC entry 297 (class 1259 OID 727632)
 -- Name: expert_infogroup_expert_direct_members; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1713,7 +1759,7 @@ CREATE TABLE public.expert_infogroup_expert_direct_members (
 ALTER TABLE public.expert_infogroup_expert_direct_members OWNER TO irdm_user;
 
 --
--- TOC entry 294 (class 1259 OID 312569)
+-- TOC entry 298 (class 1259 OID 727638)
 -- Name: expert_infogroup_expert_direct_members_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -1728,7 +1774,7 @@ ALTER TABLE public.expert_infogroup_expert_direct_members ALTER COLUMN id ADD GE
 
 
 --
--- TOC entry 295 (class 1259 OID 312570)
+-- TOC entry 299 (class 1259 OID 727639)
 -- Name: expert_infogroup_expert_research_areas; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1742,7 +1788,7 @@ CREATE TABLE public.expert_infogroup_expert_research_areas (
 ALTER TABLE public.expert_infogroup_expert_research_areas OWNER TO irdm_user;
 
 --
--- TOC entry 296 (class 1259 OID 312576)
+-- TOC entry 300 (class 1259 OID 727645)
 -- Name: expert_infogroup_expert_research_areas_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -1757,7 +1803,7 @@ ALTER TABLE public.expert_infogroup_expert_research_areas ALTER COLUMN id ADD GE
 
 
 --
--- TOC entry 297 (class 1259 OID 312577)
+-- TOC entry 301 (class 1259 OID 727646)
 -- Name: expert_infogroupblock; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1781,7 +1827,7 @@ CREATE TABLE public.expert_infogroupblock (
 ALTER TABLE public.expert_infogroupblock OWNER TO irdm_user;
 
 --
--- TOC entry 298 (class 1259 OID 312595)
+-- TOC entry 302 (class 1259 OID 727664)
 -- Name: expert_infogroupmember; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1807,7 +1853,7 @@ CREATE TABLE public.expert_infogroupmember (
 ALTER TABLE public.expert_infogroupmember OWNER TO irdm_user;
 
 --
--- TOC entry 299 (class 1259 OID 312615)
+-- TOC entry 303 (class 1259 OID 727684)
 -- Name: expert_knowledgetopic; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1831,7 +1877,7 @@ CREATE TABLE public.expert_knowledgetopic (
 ALTER TABLE public.expert_knowledgetopic OWNER TO irdm_user;
 
 --
--- TOC entry 300 (class 1259 OID 312633)
+-- TOC entry 304 (class 1259 OID 727702)
 -- Name: expert_orgnode; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1856,7 +1902,7 @@ CREATE TABLE public.expert_orgnode (
 ALTER TABLE public.expert_orgnode OWNER TO irdm_user;
 
 --
--- TOC entry 301 (class 1259 OID 312651)
+-- TOC entry 305 (class 1259 OID 727720)
 -- Name: expert_processstep; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1878,7 +1924,7 @@ CREATE TABLE public.expert_processstep (
 ALTER TABLE public.expert_processstep OWNER TO irdm_user;
 
 --
--- TOC entry 302 (class 1259 OID 312667)
+-- TOC entry 306 (class 1259 OID 727736)
 -- Name: expert_researcharea; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1904,7 +1950,7 @@ CREATE TABLE public.expert_researcharea (
 ALTER TABLE public.expert_researcharea OWNER TO irdm_user;
 
 --
--- TOC entry 303 (class 1259 OID 312687)
+-- TOC entry 307 (class 1259 OID 727756)
 -- Name: home_audiencesectionheader; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1926,7 +1972,7 @@ CREATE TABLE public.home_audiencesectionheader (
 ALTER TABLE public.home_audiencesectionheader OWNER TO irdm_user;
 
 --
--- TOC entry 304 (class 1259 OID 312703)
+-- TOC entry 308 (class 1259 OID 727772)
 -- Name: home_audiencesegment; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1950,7 +1996,7 @@ CREATE TABLE public.home_audiencesegment (
 ALTER TABLE public.home_audiencesegment OWNER TO irdm_user;
 
 --
--- TOC entry 305 (class 1259 OID 312721)
+-- TOC entry 309 (class 1259 OID 727790)
 -- Name: home_audiencetag; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1969,7 +2015,7 @@ CREATE TABLE public.home_audiencetag (
 ALTER TABLE public.home_audiencetag OWNER TO irdm_user;
 
 --
--- TOC entry 306 (class 1259 OID 312732)
+-- TOC entry 310 (class 1259 OID 727801)
 -- Name: home_capabilitiessectionheader; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -1991,7 +2037,7 @@ CREATE TABLE public.home_capabilitiessectionheader (
 ALTER TABLE public.home_capabilitiessectionheader OWNER TO irdm_user;
 
 --
--- TOC entry 307 (class 1259 OID 312748)
+-- TOC entry 311 (class 1259 OID 727817)
 -- Name: home_corecapability; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2014,7 +2060,7 @@ CREATE TABLE public.home_corecapability (
 ALTER TABLE public.home_corecapability OWNER TO irdm_user;
 
 --
--- TOC entry 308 (class 1259 OID 312765)
+-- TOC entry 312 (class 1259 OID 727834)
 -- Name: home_ctabanner; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2037,7 +2083,7 @@ CREATE TABLE public.home_ctabanner (
 ALTER TABLE public.home_ctabanner OWNER TO irdm_user;
 
 --
--- TOC entry 309 (class 1259 OID 312782)
+-- TOC entry 313 (class 1259 OID 727851)
 -- Name: home_evidencesectionheader; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2060,7 +2106,7 @@ CREATE TABLE public.home_evidencesectionheader (
 ALTER TABLE public.home_evidencesectionheader OWNER TO irdm_user;
 
 --
--- TOC entry 310 (class 1259 OID 312799)
+-- TOC entry 314 (class 1259 OID 727868)
 -- Name: home_featuredsectionconfig; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2083,7 +2129,7 @@ CREATE TABLE public.home_featuredsectionconfig (
 ALTER TABLE public.home_featuredsectionconfig OWNER TO irdm_user;
 
 --
--- TOC entry 311 (class 1259 OID 312816)
+-- TOC entry 315 (class 1259 OID 727885)
 -- Name: home_heropilltag; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2102,7 +2148,7 @@ CREATE TABLE public.home_heropilltag (
 ALTER TABLE public.home_heropilltag OWNER TO irdm_user;
 
 --
--- TOC entry 312 (class 1259 OID 312827)
+-- TOC entry 316 (class 1259 OID 727896)
 -- Name: home_herosection; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2132,7 +2178,7 @@ CREATE TABLE public.home_herosection (
 ALTER TABLE public.home_herosection OWNER TO irdm_user;
 
 --
--- TOC entry 313 (class 1259 OID 312851)
+-- TOC entry 317 (class 1259 OID 727920)
 -- Name: home_knowledgecategory; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2155,7 +2201,7 @@ CREATE TABLE public.home_knowledgecategory (
 ALTER TABLE public.home_knowledgecategory OWNER TO irdm_user;
 
 --
--- TOC entry 314 (class 1259 OID 312868)
+-- TOC entry 318 (class 1259 OID 727937)
 -- Name: home_knowledgesectionheader; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2177,7 +2223,7 @@ CREATE TABLE public.home_knowledgesectionheader (
 ALTER TABLE public.home_knowledgesectionheader OWNER TO irdm_user;
 
 --
--- TOC entry 315 (class 1259 OID 312884)
+-- TOC entry 319 (class 1259 OID 727953)
 -- Name: home_methodologysectionheader; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2199,7 +2245,7 @@ CREATE TABLE public.home_methodologysectionheader (
 ALTER TABLE public.home_methodologysectionheader OWNER TO irdm_user;
 
 --
--- TOC entry 316 (class 1259 OID 312900)
+-- TOC entry 320 (class 1259 OID 727969)
 -- Name: home_methodologystep; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2221,7 +2267,29 @@ CREATE TABLE public.home_methodologystep (
 ALTER TABLE public.home_methodologystep OWNER TO irdm_user;
 
 --
--- TOC entry 317 (class 1259 OID 312916)
+-- TOC entry 321 (class 1259 OID 727985)
+-- Name: home_partnercooperationitem; Type: TABLE; Schema: public; Owner: irdm_user
+--
+
+CREATE TABLE public.home_partnercooperationitem (
+    id uuid NOT NULL,
+    is_active boolean NOT NULL,
+    display_order integer NOT NULL,
+    created_at timestamp with time zone NOT NULL,
+    updated_at timestamp with time zone NOT NULL,
+    number smallint NOT NULL,
+    title character varying(200) NOT NULL,
+    description text NOT NULL,
+    page_id uuid NOT NULL,
+    CONSTRAINT home_partnercooperationitem_display_order_check CHECK ((display_order >= 0)),
+    CONSTRAINT home_partnercooperationitem_number_check CHECK ((number >= 0))
+);
+
+
+ALTER TABLE public.home_partnercooperationitem OWNER TO irdm_user;
+
+--
+-- TOC entry 322 (class 1259 OID 728001)
 -- Name: home_partnerlogo; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2241,7 +2309,90 @@ CREATE TABLE public.home_partnerlogo (
 ALTER TABLE public.home_partnerlogo OWNER TO irdm_user;
 
 --
--- TOC entry 318 (class 1259 OID 312930)
+-- TOC entry 323 (class 1259 OID 728015)
+-- Name: home_partnerpageconfig; Type: TABLE; Schema: public; Owner: irdm_user
+--
+
+CREATE TABLE public.home_partnerpageconfig (
+    id uuid NOT NULL,
+    is_active boolean NOT NULL,
+    display_order integer NOT NULL,
+    created_at timestamp with time zone NOT NULL,
+    updated_at timestamp with time zone NOT NULL,
+    meta_title character varying(200) NOT NULL,
+    meta_description character varying(300) NOT NULL,
+    hero_label character varying(200) NOT NULL,
+    hero_heading character varying(300) NOT NULL,
+    hero_description text NOT NULL,
+    hero_note text NOT NULL,
+    partners_label character varying(100) NOT NULL,
+    partners_heading character varying(300) NOT NULL,
+    partners_description text NOT NULL,
+    cooperation_label character varying(100) NOT NULL,
+    cooperation_heading character varying(300) NOT NULL,
+    cooperation_description text NOT NULL,
+    cta_label character varying(100) NOT NULL,
+    cta_heading character varying(300) NOT NULL,
+    cta_description text NOT NULL,
+    cta_button_label character varying(100) NOT NULL,
+    cta_button_url character varying(500) NOT NULL,
+    CONSTRAINT home_partnerpageconfig_display_order_check CHECK ((display_order >= 0))
+);
+
+
+ALTER TABLE public.home_partnerpageconfig OWNER TO irdm_user;
+
+--
+-- TOC entry 324 (class 1259 OID 728043)
+-- Name: home_partnerpageconfig_partner_logos; Type: TABLE; Schema: public; Owner: irdm_user
+--
+
+CREATE TABLE public.home_partnerpageconfig_partner_logos (
+    id bigint NOT NULL,
+    partnerpageconfig_id uuid CONSTRAINT home_partnerpageconfig_partner_lo_partnerpageconfig_id_not_null NOT NULL,
+    partnerlogo_id uuid NOT NULL
+);
+
+
+ALTER TABLE public.home_partnerpageconfig_partner_logos OWNER TO irdm_user;
+
+--
+-- TOC entry 325 (class 1259 OID 728049)
+-- Name: home_partnerpageconfig_partner_logos_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE public.home_partnerpageconfig_partner_logos ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
+    SEQUENCE NAME public.home_partnerpageconfig_partner_logos_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- TOC entry 326 (class 1259 OID 728050)
+-- Name: home_partnerpagestatistic; Type: TABLE; Schema: public; Owner: irdm_user
+--
+
+CREATE TABLE public.home_partnerpagestatistic (
+    id uuid NOT NULL,
+    is_active boolean NOT NULL,
+    display_order integer NOT NULL,
+    created_at timestamp with time zone NOT NULL,
+    updated_at timestamp with time zone NOT NULL,
+    value character varying(50) NOT NULL,
+    label character varying(150) NOT NULL,
+    page_id uuid NOT NULL,
+    CONSTRAINT home_partnerpagestatistic_display_order_check CHECK ((display_order >= 0))
+);
+
+
+ALTER TABLE public.home_partnerpagestatistic OWNER TO irdm_user;
+
+--
+-- TOC entry 327 (class 1259 OID 728062)
 -- Name: home_philosophyprinciple; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2263,7 +2414,7 @@ CREATE TABLE public.home_philosophyprinciple (
 ALTER TABLE public.home_philosophyprinciple OWNER TO irdm_user;
 
 --
--- TOC entry 319 (class 1259 OID 312946)
+-- TOC entry 328 (class 1259 OID 728078)
 -- Name: home_philosophysectionheader; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2283,7 +2434,7 @@ CREATE TABLE public.home_philosophysectionheader (
 ALTER TABLE public.home_philosophysectionheader OWNER TO irdm_user;
 
 --
--- TOC entry 320 (class 1259 OID 312960)
+-- TOC entry 329 (class 1259 OID 728092)
 -- Name: home_statisticitem; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2304,7 +2455,7 @@ CREATE TABLE public.home_statisticitem (
 ALTER TABLE public.home_statisticitem OWNER TO irdm_user;
 
 --
--- TOC entry 321 (class 1259 OID 312975)
+-- TOC entry 330 (class 1259 OID 728107)
 -- Name: knowledge_knowledgeaccordionitem; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2325,7 +2476,7 @@ CREATE TABLE public.knowledge_knowledgeaccordionitem (
 ALTER TABLE public.knowledge_knowledgeaccordionitem OWNER TO irdm_user;
 
 --
--- TOC entry 322 (class 1259 OID 312990)
+-- TOC entry 331 (class 1259 OID 728122)
 -- Name: knowledge_knowledgeactivitynews; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2360,7 +2511,7 @@ CREATE TABLE public.knowledge_knowledgeactivitynews (
 ALTER TABLE public.knowledge_knowledgeactivitynews OWNER TO irdm_user;
 
 --
--- TOC entry 323 (class 1259 OID 313009)
+-- TOC entry 332 (class 1259 OID 728149)
 -- Name: knowledge_knowledgearticle; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2393,7 +2544,36 @@ CREATE TABLE public.knowledge_knowledgearticle (
 ALTER TABLE public.knowledge_knowledgearticle OWNER TO irdm_user;
 
 --
--- TOC entry 324 (class 1259 OID 313034)
+-- TOC entry 333 (class 1259 OID 728174)
+-- Name: knowledge_knowledgearticle_partner_groups; Type: TABLE; Schema: public; Owner: irdm_user
+--
+
+CREATE TABLE public.knowledge_knowledgearticle_partner_groups (
+    id bigint NOT NULL,
+    knowledgearticle_id uuid CONSTRAINT knowledge_knowledgearticle_partner_knowledgearticle_id_not_null NOT NULL,
+    knowledgepartnergroup_id uuid CONSTRAINT knowledge_knowledgearticle_pa_knowledgepartnergroup_id_not_null NOT NULL
+);
+
+
+ALTER TABLE public.knowledge_knowledgearticle_partner_groups OWNER TO irdm_user;
+
+--
+-- TOC entry 334 (class 1259 OID 728180)
+-- Name: knowledge_knowledgearticle_partner_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE public.knowledge_knowledgearticle_partner_groups ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
+    SEQUENCE NAME public.knowledge_knowledgearticle_partner_groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- TOC entry 335 (class 1259 OID 728181)
 -- Name: knowledge_knowledgearticle_related_capabilities; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2407,7 +2587,7 @@ CREATE TABLE public.knowledge_knowledgearticle_related_capabilities (
 ALTER TABLE public.knowledge_knowledgearticle_related_capabilities OWNER TO irdm_user;
 
 --
--- TOC entry 325 (class 1259 OID 313040)
+-- TOC entry 336 (class 1259 OID 728187)
 -- Name: knowledge_knowledgearticle_related_capabilities_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -2422,7 +2602,7 @@ ALTER TABLE public.knowledge_knowledgearticle_related_capabilities ALTER COLUMN 
 
 
 --
--- TOC entry 326 (class 1259 OID 313041)
+-- TOC entry 337 (class 1259 OID 728188)
 -- Name: knowledge_knowledgearticle_topics; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2436,7 +2616,7 @@ CREATE TABLE public.knowledge_knowledgearticle_topics (
 ALTER TABLE public.knowledge_knowledgearticle_topics OWNER TO irdm_user;
 
 --
--- TOC entry 327 (class 1259 OID 313047)
+-- TOC entry 338 (class 1259 OID 728194)
 -- Name: knowledge_knowledgearticle_topics_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -2451,7 +2631,7 @@ ALTER TABLE public.knowledge_knowledgearticle_topics ALTER COLUMN id ADD GENERAT
 
 
 --
--- TOC entry 328 (class 1259 OID 313048)
+-- TOC entry 339 (class 1259 OID 728195)
 -- Name: knowledge_knowledgecategory; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2475,7 +2655,7 @@ CREATE TABLE public.knowledge_knowledgecategory (
 ALTER TABLE public.knowledge_knowledgecategory OWNER TO irdm_user;
 
 --
--- TOC entry 329 (class 1259 OID 313066)
+-- TOC entry 340 (class 1259 OID 728213)
 -- Name: knowledge_knowledgecontenttypecard; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2501,7 +2681,7 @@ CREATE TABLE public.knowledge_knowledgecontenttypecard (
 ALTER TABLE public.knowledge_knowledgecontenttypecard OWNER TO irdm_user;
 
 --
--- TOC entry 330 (class 1259 OID 313085)
+-- TOC entry 341 (class 1259 OID 728232)
 -- Name: knowledge_knowledgecontenttypecard_tags; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2515,7 +2695,7 @@ CREATE TABLE public.knowledge_knowledgecontenttypecard_tags (
 ALTER TABLE public.knowledge_knowledgecontenttypecard_tags OWNER TO irdm_user;
 
 --
--- TOC entry 331 (class 1259 OID 313091)
+-- TOC entry 342 (class 1259 OID 728238)
 -- Name: knowledge_knowledgecontenttypecard_tags_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -2530,7 +2710,7 @@ ALTER TABLE public.knowledge_knowledgecontenttypecard_tags ALTER COLUMN id ADD G
 
 
 --
--- TOC entry 332 (class 1259 OID 313092)
+-- TOC entry 343 (class 1259 OID 728239)
 -- Name: knowledge_knowledgectabutton; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2554,7 +2734,7 @@ CREATE TABLE public.knowledge_knowledgectabutton (
 ALTER TABLE public.knowledge_knowledgectabutton OWNER TO irdm_user;
 
 --
--- TOC entry 333 (class 1259 OID 313110)
+-- TOC entry 344 (class 1259 OID 728257)
 -- Name: knowledge_knowledgedownload; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2581,7 +2761,7 @@ CREATE TABLE public.knowledge_knowledgedownload (
 ALTER TABLE public.knowledge_knowledgedownload OWNER TO irdm_user;
 
 --
--- TOC entry 334 (class 1259 OID 313129)
+-- TOC entry 345 (class 1259 OID 728276)
 -- Name: knowledge_knowledgedownloadrequest; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2598,7 +2778,7 @@ CREATE TABLE public.knowledge_knowledgedownloadrequest (
 ALTER TABLE public.knowledge_knowledgedownloadrequest OWNER TO irdm_user;
 
 --
--- TOC entry 335 (class 1259 OID 313140)
+-- TOC entry 346 (class 1259 OID 728287)
 -- Name: knowledge_knowledgedownloadrequest_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -2613,7 +2793,7 @@ ALTER TABLE public.knowledge_knowledgedownloadrequest ALTER COLUMN id ADD GENERA
 
 
 --
--- TOC entry 336 (class 1259 OID 313141)
+-- TOC entry 347 (class 1259 OID 728288)
 -- Name: knowledge_knowledgeevent; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2641,7 +2821,7 @@ CREATE TABLE public.knowledge_knowledgeevent (
 ALTER TABLE public.knowledge_knowledgeevent OWNER TO irdm_user;
 
 --
--- TOC entry 337 (class 1259 OID 313162)
+-- TOC entry 348 (class 1259 OID 728309)
 -- Name: knowledge_knowledgeevent_tags; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2655,7 +2835,7 @@ CREATE TABLE public.knowledge_knowledgeevent_tags (
 ALTER TABLE public.knowledge_knowledgeevent_tags OWNER TO irdm_user;
 
 --
--- TOC entry 338 (class 1259 OID 313168)
+-- TOC entry 349 (class 1259 OID 728315)
 -- Name: knowledge_knowledgeevent_tags_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -2670,7 +2850,7 @@ ALTER TABLE public.knowledge_knowledgeevent_tags ALTER COLUMN id ADD GENERATED B
 
 
 --
--- TOC entry 339 (class 1259 OID 313169)
+-- TOC entry 350 (class 1259 OID 728316)
 -- Name: knowledge_knowledgeeventtag; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2690,7 +2870,7 @@ CREATE TABLE public.knowledge_knowledgeeventtag (
 ALTER TABLE public.knowledge_knowledgeeventtag OWNER TO irdm_user;
 
 --
--- TOC entry 340 (class 1259 OID 313181)
+-- TOC entry 351 (class 1259 OID 728328)
 -- Name: knowledge_knowledgefeaturedarticle; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2713,7 +2893,7 @@ CREATE TABLE public.knowledge_knowledgefeaturedarticle (
 ALTER TABLE public.knowledge_knowledgefeaturedarticle OWNER TO irdm_user;
 
 --
--- TOC entry 341 (class 1259 OID 313198)
+-- TOC entry 352 (class 1259 OID 728345)
 -- Name: knowledge_knowledgefiltergroup; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2732,7 +2912,7 @@ CREATE TABLE public.knowledge_knowledgefiltergroup (
 ALTER TABLE public.knowledge_knowledgefiltergroup OWNER TO irdm_user;
 
 --
--- TOC entry 342 (class 1259 OID 313209)
+-- TOC entry 353 (class 1259 OID 728356)
 -- Name: knowledge_knowledgefilteritem; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2754,7 +2934,7 @@ CREATE TABLE public.knowledge_knowledgefilteritem (
 ALTER TABLE public.knowledge_knowledgefilteritem OWNER TO irdm_user;
 
 --
--- TOC entry 343 (class 1259 OID 313223)
+-- TOC entry 354 (class 1259 OID 728370)
 -- Name: knowledge_knowledgelistingpage; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2857,7 +3037,7 @@ CREATE TABLE public.knowledge_knowledgelistingpage (
 ALTER TABLE public.knowledge_knowledgelistingpage OWNER TO irdm_user;
 
 --
--- TOC entry 344 (class 1259 OID 313328)
+-- TOC entry 355 (class 1259 OID 728475)
 -- Name: knowledge_knowledgenewsitem; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2885,7 +3065,7 @@ CREATE TABLE public.knowledge_knowledgenewsitem (
 ALTER TABLE public.knowledge_knowledgenewsitem OWNER TO irdm_user;
 
 --
--- TOC entry 345 (class 1259 OID 313348)
+-- TOC entry 356 (class 1259 OID 728495)
 -- Name: knowledge_knowledgenewsitem_topics; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2899,7 +3079,7 @@ CREATE TABLE public.knowledge_knowledgenewsitem_topics (
 ALTER TABLE public.knowledge_knowledgenewsitem_topics OWNER TO irdm_user;
 
 --
--- TOC entry 346 (class 1259 OID 313354)
+-- TOC entry 357 (class 1259 OID 728501)
 -- Name: knowledge_knowledgenewsitem_topics_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -2914,7 +3094,26 @@ ALTER TABLE public.knowledge_knowledgenewsitem_topics ALTER COLUMN id ADD GENERA
 
 
 --
--- TOC entry 347 (class 1259 OID 313355)
+-- TOC entry 358 (class 1259 OID 728502)
+-- Name: knowledge_knowledgepartnergroup; Type: TABLE; Schema: public; Owner: irdm_user
+--
+
+CREATE TABLE public.knowledge_knowledgepartnergroup (
+    id uuid NOT NULL,
+    is_active boolean NOT NULL,
+    display_order integer NOT NULL,
+    created_at timestamp with time zone NOT NULL,
+    updated_at timestamp with time zone NOT NULL,
+    label character varying(200) NOT NULL,
+    slug character varying(200) NOT NULL,
+    CONSTRAINT knowledge_knowledgepartnergroup_display_order_check CHECK ((display_order >= 0))
+);
+
+
+ALTER TABLE public.knowledge_knowledgepartnergroup OWNER TO irdm_user;
+
+--
+-- TOC entry 359 (class 1259 OID 728513)
 -- Name: knowledge_knowledgetopic; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2937,7 +3136,7 @@ CREATE TABLE public.knowledge_knowledgetopic (
 ALTER TABLE public.knowledge_knowledgetopic OWNER TO irdm_user;
 
 --
--- TOC entry 348 (class 1259 OID 313372)
+-- TOC entry 360 (class 1259 OID 728530)
 -- Name: knowledge_knowledgetopiccard; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2964,7 +3163,7 @@ CREATE TABLE public.knowledge_knowledgetopiccard (
 ALTER TABLE public.knowledge_knowledgetopiccard OWNER TO irdm_user;
 
 --
--- TOC entry 349 (class 1259 OID 313392)
+-- TOC entry 361 (class 1259 OID 728550)
 -- Name: knowledge_knowledgetopiccard_tags; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -2978,7 +3177,7 @@ CREATE TABLE public.knowledge_knowledgetopiccard_tags (
 ALTER TABLE public.knowledge_knowledgetopiccard_tags OWNER TO irdm_user;
 
 --
--- TOC entry 350 (class 1259 OID 313398)
+-- TOC entry 362 (class 1259 OID 728556)
 -- Name: knowledge_knowledgetopiccard_tags_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -2993,7 +3192,7 @@ ALTER TABLE public.knowledge_knowledgetopiccard_tags ALTER COLUMN id ADD GENERAT
 
 
 --
--- TOC entry 351 (class 1259 OID 313399)
+-- TOC entry 363 (class 1259 OID 728557)
 -- Name: knowledge_knowledgetopiccardtag; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -3013,7 +3212,7 @@ CREATE TABLE public.knowledge_knowledgetopiccardtag (
 ALTER TABLE public.knowledge_knowledgetopiccardtag OWNER TO irdm_user;
 
 --
--- TOC entry 352 (class 1259 OID 313411)
+-- TOC entry 364 (class 1259 OID 728569)
 -- Name: solution_solution; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -3053,7 +3252,7 @@ CREATE TABLE public.solution_solution (
 ALTER TABLE public.solution_solution OWNER TO irdm_user;
 
 --
--- TOC entry 353 (class 1259 OID 313445)
+-- TOC entry 365 (class 1259 OID 728603)
 -- Name: solution_solution_related_capabilities; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -3067,7 +3266,7 @@ CREATE TABLE public.solution_solution_related_capabilities (
 ALTER TABLE public.solution_solution_related_capabilities OWNER TO irdm_user;
 
 --
--- TOC entry 354 (class 1259 OID 313451)
+-- TOC entry 366 (class 1259 OID 728609)
 -- Name: solution_solution_related_capabilities_id_seq; Type: SEQUENCE; Schema: public; Owner: irdm_user
 --
 
@@ -3082,7 +3281,7 @@ ALTER TABLE public.solution_solution_related_capabilities ALTER COLUMN id ADD GE
 
 
 --
--- TOC entry 355 (class 1259 OID 313452)
+-- TOC entry 367 (class 1259 OID 728610)
 -- Name: solution_solutionapproachstep; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -3104,7 +3303,7 @@ CREATE TABLE public.solution_solutionapproachstep (
 ALTER TABLE public.solution_solutionapproachstep OWNER TO irdm_user;
 
 --
--- TOC entry 356 (class 1259 OID 313468)
+-- TOC entry 368 (class 1259 OID 728626)
 -- Name: solution_solutionchallenge; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -3125,7 +3324,7 @@ CREATE TABLE public.solution_solutionchallenge (
 ALTER TABLE public.solution_solutionchallenge OWNER TO irdm_user;
 
 --
--- TOC entry 357 (class 1259 OID 313483)
+-- TOC entry 369 (class 1259 OID 728641)
 -- Name: solution_solutionfeature; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -3144,7 +3343,7 @@ CREATE TABLE public.solution_solutionfeature (
 ALTER TABLE public.solution_solutionfeature OWNER TO irdm_user;
 
 --
--- TOC entry 358 (class 1259 OID 313494)
+-- TOC entry 370 (class 1259 OID 728652)
 -- Name: solution_solutionlistingpage; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -3176,7 +3375,7 @@ CREATE TABLE public.solution_solutionlistingpage (
 ALTER TABLE public.solution_solutionlistingpage OWNER TO irdm_user;
 
 --
--- TOC entry 359 (class 1259 OID 313520)
+-- TOC entry 371 (class 1259 OID 728678)
 -- Name: solution_solutionmethodologystep; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -3197,7 +3396,7 @@ CREATE TABLE public.solution_solutionmethodologystep (
 ALTER TABLE public.solution_solutionmethodologystep OWNER TO irdm_user;
 
 --
--- TOC entry 360 (class 1259 OID 313535)
+-- TOC entry 372 (class 1259 OID 728693)
 -- Name: solution_solutionoutput; Type: TABLE; Schema: public; Owner: irdm_user
 --
 
@@ -3219,7 +3418,7 @@ CREATE TABLE public.solution_solutionoutput (
 ALTER TABLE public.solution_solutionoutput OWNER TO irdm_user;
 
 --
--- TOC entry 6347 (class 0 OID 311531)
+-- TOC entry 6429 (class 0 OID 726560)
 -- Dependencies: 219
 -- Data for Name: about_aboutcapabilityecosystem; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3230,7 +3429,7 @@ COPY public.about_aboutcapabilityecosystem (id, is_active, display_order, create
 
 
 --
--- TOC entry 6348 (class 0 OID 311553)
+-- TOC entry 6430 (class 0 OID 726582)
 -- Dependencies: 220
 -- Data for Name: about_aboutcontactbanner; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3241,7 +3440,7 @@ COPY public.about_aboutcontactbanner (id, is_active, display_order, created_at, 
 
 
 --
--- TOC entry 6349 (class 0 OID 311579)
+-- TOC entry 6431 (class 0 OID 726608)
 -- Dependencies: 221
 -- Data for Name: about_aboutcontactbannerstat; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3255,7 +3454,7 @@ cc25f6ef-5d58-4166-95a4-2e46b28b99db	t	0	2026-08-02 23:50:44.551212+07	2026-08-0
 
 
 --
--- TOC entry 6350 (class 0 OID 311592)
+-- TOC entry 6432 (class 0 OID 726621)
 -- Dependencies: 222
 -- Data for Name: about_aboutcorevalue; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3275,7 +3474,7 @@ b532db23-20e1-4ab4-ac5b-809c762ef650	t	3	2026-08-02 11:22:36.644348+07	2026-08-0
 
 
 --
--- TOC entry 6351 (class 0 OID 311608)
+-- TOC entry 6433 (class 0 OID 726637)
 -- Dependencies: 223
 -- Data for Name: about_aboutcorevaluesection; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3286,7 +3485,7 @@ COPY public.about_aboutcorevaluesection (id, is_active, display_order, created_a
 
 
 --
--- TOC entry 6352 (class 0 OID 311623)
+-- TOC entry 6434 (class 0 OID 726652)
 -- Dependencies: 224
 -- Data for Name: about_aboutctabanner; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3297,7 +3496,7 @@ COPY public.about_aboutctabanner (id, is_active, display_order, created_at, upda
 
 
 --
--- TOC entry 6353 (class 0 OID 311641)
+-- TOC entry 6435 (class 0 OID 726670)
 -- Dependencies: 225
 -- Data for Name: about_aboutecosystempartnergroup; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3311,7 +3510,7 @@ f9e8667f-a1eb-4ccb-b612-6ac5f65ab4d1	t	3	2026-08-02 22:58:23.472166+07	2026-08-0
 
 
 --
--- TOC entry 6354 (class 0 OID 311653)
+-- TOC entry 6436 (class 0 OID 726682)
 -- Dependencies: 226
 -- Data for Name: about_aboutecosystempartneritem; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3337,7 +3536,7 @@ c2e710fb-ab00-4e31-8574-3b164c41d65e	t	2	2026-08-02 22:58:23.4746+07	2026-08-02 
 
 
 --
--- TOC entry 6355 (class 0 OID 311665)
+-- TOC entry 6437 (class 0 OID 726694)
 -- Dependencies: 227
 -- Data for Name: about_aboutecosystemstatistic; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3351,31 +3550,31 @@ a1acd40d-d5c9-4e06-b3c0-7ae4f8934975	t	3	2026-08-02 22:58:23.479245+07	2026-08-0
 
 
 --
--- TOC entry 6356 (class 0 OID 311677)
+-- TOC entry 6438 (class 0 OID 726706)
 -- Dependencies: 228
 -- Data for Name: about_abouthero; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.about_abouthero (id, is_active, display_order, created_at, updated_at, eyebrow, title, subtitle, description, background_image, foreground_image, primary_cta_label, primary_cta_url, secondary_cta_label, secondary_cta_url, quote_show, quote_text, quote_icon) FROM stdin;
-52922ea4-afcd-4a8b-9103-c39885043dfc	t	0	2026-08-01 22:57:52.911285+07	2026-08-02 23:50:44.456471+07	Viện nghiên cứu, khoa học, công nghệ và đổi mới sáng tạo định hướng ứng dụng	VỀ IRDM	Kết nối Tri thức — Kiến tạo Tác động	Kết nối nghiên cứu, dữ liệu, công nghệ và phát triển con người để kiến tạo giải pháp có thể triển khai.\n\nIRDM đồng hành cùng cơ quan quản lý, hệ thống y tế, cơ sở giáo dục, doanh nghiệp và tổ chức quốc tế trong các bài toán cần bằng chứng khoa học, dữ liệu đáng tin cậy, năng lực chuyên gia phù hợp và lộ trình triển khai sát bối cảnh thực tiễn.	about/hero/VeIRDM.png		Khám phá năng lực IRDM	/capabilities/	Xem Giải pháp	/giai-phap/	t	TỪ NGHIÊN CỨU ĐẾN TÁC ĐỘNG Ở TẦM HỆ THỐNG	about/hero/quote/Group.png
+52922ea4-afcd-4a8b-9103-c39885043dfc	t	0	2026-08-01 22:57:52.911285+07	2026-09-13 10:22:48.670207+07	Viện nghiên cứu, khoa học, công nghệ và đổi mới sáng tạo định hướng ứng dụng	VỀ IRDM	Kết nối Tri thức — Kiến tạo Tác động	Kết nối nghiên cứu, dữ liệu, công nghệ và phát triển con người để kiến tạo giải pháp có thể triển khai.\r\n\r\nIRDM đồng hành cùng cơ quan quản lý, hệ thống y tế, cơ sở giáo dục, doanh nghiệp và tổ chức quốc tế trong các bài toán cần bằng chứng khoa học, dữ liệu đáng tin cậy, năng lực chuyên gia phù hợp và lộ trình triển khai sát bối cảnh thực tiễn.	about/hero/VeIRDM.png		Khám phá năng lực IRDM	/capabilities/	Xem Giải pháp	/giai-phap/	t	TỪ NGHIÊN CỨU ĐẾN TÁC ĐỘNG Ở TẦM HỆ THỐNG	about/hero/quote/Group.png
 \.
 
 
 --
--- TOC entry 6357 (class 0 OID 311701)
+-- TOC entry 6439 (class 0 OID 726730)
 -- Dependencies: 229
 -- Data for Name: about_aboutherostatistic; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.about_aboutherostatistic (id, is_active, display_order, created_at, updated_at, number, label, animation_enabled, hero_id) FROM stdin;
-ecd8d082-d485-4cfb-94a1-13450bc65519	t	0	2026-08-01 22:57:52.915631+07	2026-08-01 22:57:52.915636+07	500+	Chuyên gia	t	52922ea4-afcd-4a8b-9103-c39885043dfc
-12bfd77f-560e-49c0-a683-ebbee939ab09	t	1	2026-08-01 22:57:52.917076+07	2026-08-01 22:57:52.917083+07	50+	Dự án	t	52922ea4-afcd-4a8b-9103-c39885043dfc
-804b34dc-3399-4427-ae2d-1e6540d5c29b	t	2	2026-08-01 22:57:52.91831+07	2026-08-01 22:57:52.918315+07	10+	Năm	t	52922ea4-afcd-4a8b-9103-c39885043dfc
+ecd8d082-d485-4cfb-94a1-13450bc65519	t	0	2026-08-01 22:57:52.915631+07	2026-09-13 10:22:48.671034+07	33+	Chuyên gia	t	52922ea4-afcd-4a8b-9103-c39885043dfc
+12bfd77f-560e-49c0-a683-ebbee939ab09	t	1	2026-08-01 22:57:52.917076+07	2026-09-13 10:22:48.671572+07	30+	Dự án	t	52922ea4-afcd-4a8b-9103-c39885043dfc
+804b34dc-3399-4427-ae2d-1e6540d5c29b	t	2	2026-08-01 22:57:52.91831+07	2026-09-13 10:22:48.671971+07	6+	Năm	t	52922ea4-afcd-4a8b-9103-c39885043dfc
 \.
 
 
 --
--- TOC entry 6358 (class 0 OID 311714)
+-- TOC entry 6440 (class 0 OID 726743)
 -- Dependencies: 230
 -- Data for Name: about_abouthighlightcard; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3388,7 +3587,7 @@ f7ac35b5-2f6b-4159-865b-509b7e70e3b8	t	0	2026-08-01 23:39:16.099193+07	2026-08-0
 
 
 --
--- TOC entry 6359 (class 0 OID 311731)
+-- TOC entry 6441 (class 0 OID 726760)
 -- Dependencies: 231
 -- Data for Name: about_aboutintroduction; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3399,7 +3598,7 @@ COPY public.about_aboutintroduction (id, is_active, display_order, created_at, u
 
 
 --
--- TOC entry 6360 (class 0 OID 311749)
+-- TOC entry 6442 (class 0 OID 726778)
 -- Dependencies: 232
 -- Data for Name: about_aboutlegalbadge; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3412,18 +3611,18 @@ fb28c168-7d17-4e6b-9656-e5ba352607da	t	1	2026-08-02 23:50:44.488179+07	2026-08-0
 
 
 --
--- TOC entry 6361 (class 0 OID 311760)
+-- TOC entry 6443 (class 0 OID 726789)
 -- Dependencies: 233
 -- Data for Name: about_aboutlegalinfo; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.about_aboutlegalinfo (id, is_active, display_order, created_at, updated_at, section_label, title, description, image, image_alt, background_image, footer_note, footer_note_show, org_card_label, org_name, timeline_card_title) FROM stdin;
-db58ab1f-0c0b-4e80-9584-e606d9722293	t	0	2026-08-02 11:46:34.108608+07	2026-08-02 23:50:44.482019+07	THÔNG TIN PHÁP LÝ	PHÁP LÝ VÀ PHẠM VI HOẠT ĐỘNG	IRDM là tổ chức khoa học và công nghệ được thành lập, đăng ký hoạt động và vận hành theo các quy định pháp luật hiện hành liên quan đến tổ chức khoa học và công nghệ tại Việt Nam.	about/legal/PhapLy.png			Lưu ý trước khi public: Đối chiếu lần cuối thông tin pháp lý với bản scan/hồ sơ gốc của IRDM và đồng bộ với footer/trang Liên hệ.	t	THÔNG TIN TỔ CHỨC	Viện Nghiên cứu Phát triển Nguồn lực Việt	CỘT MỐC PHÁP LÝ
+db58ab1f-0c0b-4e80-9584-e606d9722293	t	0	2026-08-02 11:46:34.108608+07	2026-09-13 18:30:31.316642+07	THÔNG TIN PHÁP LÝ	PHÁP LÝ VÀ PHẠM VI HOẠT ĐỘNG	IRDM là tổ chức khoa học và công nghệ được thành lập, đăng ký hoạt động và vận hành theo các quy định pháp luật hiện hành liên quan đến tổ chức khoa học và công nghệ tại Việt Nam.	about/legal/PhapLy.png				t	THÔNG TIN TỔ CHỨC	Viện Nghiên cứu Phát triển Nguồn lực Việt	CỘT MỐC PHÁP LÝ
 \.
 
 
 --
--- TOC entry 6362 (class 0 OID 311782)
+-- TOC entry 6444 (class 0 OID 726811)
 -- Dependencies: 234
 -- Data for Name: about_aboutlegalorgattribute; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3435,7 +3634,7 @@ a9d07ae5-9aa3-4ec0-9562-f7aae03fe013	t	0	2026-08-02 23:50:44.491369+07	2026-08-0
 
 
 --
--- TOC entry 6363 (class 0 OID 311796)
+-- TOC entry 6445 (class 0 OID 726825)
 -- Dependencies: 235
 -- Data for Name: about_aboutlegaltimelineitem; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3449,7 +3648,7 @@ COPY public.about_aboutlegaltimelineitem (id, is_active, display_order, created_
 
 
 --
--- TOC entry 6364 (class 0 OID 311814)
+-- TOC entry 6446 (class 0 OID 726843)
 -- Dependencies: 236
 -- Data for Name: about_aboutnetworksectionheader; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3460,7 +3659,7 @@ COPY public.about_aboutnetworksectionheader (id, is_active, display_order, creat
 
 
 --
--- TOC entry 6365 (class 0 OID 311830)
+-- TOC entry 6447 (class 0 OID 726859)
 -- Dependencies: 237
 -- Data for Name: about_aboutorgstructurebulletitem; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3485,7 +3684,7 @@ add936fe-9205-41e1-b7a7-7db1f28a97d5	t	2	2026-08-02 21:48:41.932039+07	2026-08-0
 
 
 --
--- TOC entry 6366 (class 0 OID 311841)
+-- TOC entry 6448 (class 0 OID 726870)
 -- Dependencies: 238
 -- Data for Name: about_aboutorgstructurecard; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3500,7 +3699,7 @@ a95d5674-6c4d-402a-ab03-c22767c98167	t	0	2026-08-02 21:48:41.911018+07	2026-08-0
 
 
 --
--- TOC entry 6367 (class 0 OID 311859)
+-- TOC entry 6449 (class 0 OID 726888)
 -- Dependencies: 239
 -- Data for Name: about_aboutorgstructuresection; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3511,7 +3710,7 @@ a33d33cb-157c-4550-b82a-cfd0b62a3a4a	t	0	2026-08-02 21:48:41.908222+07	2026-08-0
 
 
 --
--- TOC entry 6368 (class 0 OID 311878)
+-- TOC entry 6450 (class 0 OID 726907)
 -- Dependencies: 240
 -- Data for Name: about_aboutpageseo; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3522,7 +3721,7 @@ d78c52a0-a823-48eb-accb-2675d4bd2880	t	0	2026-08-01 22:39:29.776594+07	2026-08-0
 
 
 --
--- TOC entry 6369 (class 0 OID 311895)
+-- TOC entry 6451 (class 0 OID 726924)
 -- Dependencies: 241
 -- Data for Name: about_aboutpartnerbenefit; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3542,7 +3741,7 @@ c1c44cdb-d752-43ef-9627-2e9ac51f3b25	f	3	2026-08-01 22:39:29.836634+07	2026-08-0
 
 
 --
--- TOC entry 6370 (class 0 OID 311913)
+-- TOC entry 6452 (class 0 OID 726942)
 -- Dependencies: 242
 -- Data for Name: about_aboutpartnerbenefitsection; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3553,7 +3752,7 @@ ff301a18-4464-49bd-ad62-cfae30c0b2a9	t	0	2026-08-01 22:39:29.829997+07	2026-08-0
 
 
 --
--- TOC entry 6371 (class 0 OID 311932)
+-- TOC entry 6453 (class 0 OID 726961)
 -- Dependencies: 243
 -- Data for Name: about_aboutprofessionalnetwork; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3571,7 +3770,7 @@ d57c7287-ef0c-4f4f-8ca6-f55c040ddd7e	t	7	2026-08-01 22:39:29.846249+07	2026-08-0
 
 
 --
--- TOC entry 6372 (class 0 OID 311949)
+-- TOC entry 6454 (class 0 OID 726978)
 -- Dependencies: 244
 -- Data for Name: about_aboutpurpose; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3582,7 +3781,7 @@ COPY public.about_aboutpurpose (id, is_active, display_order, created_at, update
 
 
 --
--- TOC entry 6373 (class 0 OID 311971)
+-- TOC entry 6455 (class 0 OID 727000)
 -- Dependencies: 245
 -- Data for Name: about_abouttargetaudience; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3597,7 +3796,7 @@ da3194d8-0e2a-4073-a9ae-c950aa28941b	t	4	2026-08-02 22:33:53.78098+07	2026-08-02
 
 
 --
--- TOC entry 6374 (class 0 OID 311990)
+-- TOC entry 6456 (class 0 OID 727019)
 -- Dependencies: 246
 -- Data for Name: about_abouttargetaudiencesection; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3608,7 +3807,7 @@ COPY public.about_abouttargetaudiencesection (id, is_active, display_order, crea
 
 
 --
--- TOC entry 6375 (class 0 OID 312008)
+-- TOC entry 6457 (class 0 OID 727037)
 -- Dependencies: 247
 -- Data for Name: about_aboutvisionmission; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3619,7 +3818,7 @@ b07dcc08-76e9-4243-9ed5-740590fa1e95	t	0	2026-08-02 10:34:19.457024+07	2026-08-0
 
 
 --
--- TOC entry 6376 (class 0 OID 312025)
+-- TOC entry 6458 (class 0 OID 727054)
 -- Dependencies: 248
 -- Data for Name: about_aboutvisionmissioncard; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3632,7 +3831,7 @@ COPY public.about_aboutvisionmissioncard (id, is_active, display_order, created_
 
 
 --
--- TOC entry 6377 (class 0 OID 312044)
+-- TOC entry 6459 (class 0 OID 727073)
 -- Dependencies: 249
 -- Data for Name: about_aboutvisionmissionicon; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3646,7 +3845,7 @@ COPY public.about_aboutvisionmissionicon (id, is_active, display_order, created_
 
 
 --
--- TOC entry 6378 (class 0 OID 312056)
+-- TOC entry 6460 (class 0 OID 727085)
 -- Dependencies: 250
 -- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3656,7 +3855,7 @@ COPY public.auth_group (id, name) FROM stdin;
 
 
 --
--- TOC entry 6380 (class 0 OID 312062)
+-- TOC entry 6462 (class 0 OID 727091)
 -- Dependencies: 252
 -- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -3666,7 +3865,7 @@ COPY public.auth_group_permissions (id, group_id, permission_id) FROM stdin;
 
 
 --
--- TOC entry 6382 (class 0 OID 312069)
+-- TOC entry 6464 (class 0 OID 727098)
 -- Dependencies: 254
 -- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -4096,22 +4295,42 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 426	Can change contact request	107	change_contactrequest
 427	Can delete contact request	107	delete_contactrequest
 428	Can view contact request	107	view_contactrequest
+429	Can add email configuration	108	add_emailsettings
+430	Can change email configuration	108	change_emailsettings
+431	Can delete email configuration	108	delete_emailsettings
+432	Can view email configuration	108	view_emailsettings
+433	Can add knowledge partner group	109	add_knowledgepartnergroup
+434	Can change knowledge partner group	109	change_knowledgepartnergroup
+435	Can delete knowledge partner group	109	delete_knowledgepartnergroup
+436	Can view knowledge partner group	109	view_knowledgepartnergroup
+437	Can add partner page statistic	110	add_partnerpagestatistic
+438	Can change partner page statistic	110	change_partnerpagestatistic
+439	Can delete partner page statistic	110	delete_partnerpagestatistic
+440	Can view partner page statistic	110	view_partnerpagestatistic
+441	Can add partner cooperation item	111	add_partnercooperationitem
+442	Can change partner cooperation item	111	change_partnercooperationitem
+443	Can delete partner cooperation item	111	delete_partnercooperationitem
+444	Can view partner cooperation item	111	view_partnercooperationitem
+445	Can add partner page configuration	112	add_partnerpageconfig
+446	Can change partner page configuration	112	change_partnerpageconfig
+447	Can delete partner page configuration	112	delete_partnerpageconfig
+448	Can view partner page configuration	112	view_partnerpageconfig
 \.
 
 
 --
--- TOC entry 6384 (class 0 OID 312077)
+-- TOC entry 6466 (class 0 OID 727106)
 -- Dependencies: 256
 -- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
-1	pbkdf2_sha256$1000000$a558al4x3g4iBdJfyfjtpp$QfsH1eBfHDrVgsytW4KPbC6aTDBR3HO8zN2M96ZnA1s=	2026-08-09 23:40:51.269671+07	t	admin			admin@gmail.com	t	t	2026-07-02 21:42:09.329047+07
+1	pbkdf2_sha256$1000000$a558al4x3g4iBdJfyfjtpp$QfsH1eBfHDrVgsytW4KPbC6aTDBR3HO8zN2M96ZnA1s=	2026-10-01 21:16:26.878978+07	t	admin			admin@gmail.com	t	t	2026-07-02 21:42:09.329047+07
 \.
 
 
 --
--- TOC entry 6385 (class 0 OID 312092)
+-- TOC entry 6467 (class 0 OID 727121)
 -- Dependencies: 257
 -- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -4121,7 +4340,7 @@ COPY public.auth_user_groups (id, user_id, group_id) FROM stdin;
 
 
 --
--- TOC entry 6388 (class 0 OID 312100)
+-- TOC entry 6470 (class 0 OID 727129)
 -- Dependencies: 260
 -- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -4131,24 +4350,24 @@ COPY public.auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
 
 
 --
--- TOC entry 6390 (class 0 OID 312107)
+-- TOC entry 6472 (class 0 OID 727136)
 -- Dependencies: 262
 -- Data for Name: capability_capability; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
-COPY public.capability_capability (id, is_active, display_order, created_at, updated_at, title, slug, summary, thumbnail, hero_image, section_label, description, what_is_label, what_is_description, need_section_label, how_label, output_label, cta_primary_label, cta_primary_url, cta_secondary_label, cta_secondary_url, is_published, meta_title, meta_description, meta_keywords, card_icon, need_section_intro, what_is_image, icon_name) FROM stdin;
-5ab16d24-513c-49d2-b2d8-4e63575d6ca5	t	4	2026-07-04 22:17:18.703826+07	2026-07-18 09:23:58.570851+07	Sức khỏe tâm thần & wellbeing	suc-khoe-tam-than-va-wellbeing	Phát triển các sáng kiến phòng ngừa, nâng đỡ tâm lý - xã hội, năng lực phục hồi và môi trường học tập - làm việc lành mạnh.	capability/thumbnails/Homepage_SucKhoe_TamThan.png		Nền tảng chuyên môn	Phát triển các sáng kiến phòng ngừa, nâng đỡ tâm lý - xã hội, năng lực phục hồi và môi trường học tập - làm việc lành mạnh.	Năng lực này là gì?	Đây là năng lực giúp tổ chức xây dựng môi trường học tập và làm việc hỗ trợ sức khỏe tâm thần, thông qua các chương trình phòng ngừa, can thiệp sớm và nâng cao năng lực phục hồi cho cá nhân và tập thể.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	Sức khỏe tâm thần & wellbeing — IRDM	Phát triển sáng kiến phòng ngừa, nâng đỡ tâm lý - xã hội và năng lực phục hồi cho tổ chức và cộng đồng.		capability/icons/heart-hand-icon.png		capability/what-is/Capality_NangLucNayLaGi_mDA2yFb.png	
-6be3c227-fe07-4f5d-94cc-d5e2332ecf02	t	5	2026-07-04 22:17:18.714269+07	2026-07-18 09:36:32.789197+07	ESG, Green University & Green Hospital	esg-green-university-va-green-hospital	Đồng hành cùng tổ chức xây dựng lộ trình phát triển bền vững, kết nối quản trị, con người, môi trường và trách nhiệm xã hội.	capability/thumbnails/Homepage_DaiHoc.png		Nền tảng chuyên môn	Đồng hành cùng tổ chức xây dựng lộ trình phát triển bền vững, kết nối quản trị, con người, môi trường và trách nhiệm xã hội.	Năng lực này là gì?	Đây là năng lực hỗ trợ tổ chức thiết kế và triển khai chiến lược phát triển bền vững theo tiêu chuẩn ESG (Môi trường - Xã hội - Quản trị), tích hợp các mục tiêu bền vững vào hoạt động vận hành và quản lý tổ chức.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	ESG, Green University & Green Hospital — IRDM	Đồng hành xây dựng lộ trình ESG, phát triển bền vững cho bệnh viện và cơ sở giáo dục đại học.		capability/icons/univer_icon.png		capability/what-is/ESG_Nanglucnaylagi.png	
-303c00b4-4917-41d4-8fa4-c014a9c0da18	t	6	2026-07-04 22:17:18.723117+07	2026-07-18 22:09:14.491068+07	Phổ biến tri thức & truyền thông cộng đồng	pho-bien-tri-thuc-va-truyen-thong-cong-dong	Chuyển hóa nghiên cứu, dữ liệu và hiểu biết chuyên môn thành nội dung dễ tiếp cận, có giá trị ứng dụng cho cộng đồng và đối tác.	capability/thumbnails/Homepage_PhoBienKienThuc.png		Nền tảng chuyên môn	Chuyển hóa nghiên cứu, dữ liệu và hiểu biết chuyên môn thành nội dung dễ tiếp cận, có giá trị ứng dụng cho cộng đồng và đối tác.	Năng lực này là gì?	Đây là năng lực biên dịch tri thức khoa học và chuyên môn thành ngôn ngữ phù hợp với từng nhóm đối tượng, kết hợp truyền thông chiến lược để tạo tác động xã hội và thay đổi hành vi trong cộng đồng.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	Phổ biến tri thức & truyền thông cộng đồng — IRDM	Chuyển hóa nghiên cứu và dữ liệu thành nội dung dễ tiếp cận, có tác động xã hội cho cộng đồng và đối tác.		capability/icons/heroicons_book-open.png		capability/what-is/Capality_NangLucNayLaGi_beObLws.png	
-7e373022-f6d5-4fe4-8011-b2a84b1e0126	t	1	2026-07-04 22:17:18.649633+07	2026-07-18 08:49:31.071298+07	Nghiên cứu ứng dụng & khoa học dữ liệu	nghien-cuu-ung-dung-va-khoa-hoc-du-lieu	Chuyển hóa vấn đề thực tiễn thành câu hỏi nghiên cứu, dữ liệu thành tri thức, và kết quả phân tích thành căn cứ cho quản trị, chính sách và hành động.	capability/thumbnails/Nghiên_cứu_ứng_dụng__khoa_học_dữ_liệu.png	capability/hero/Homepage_nghiencuu_khoahoa.png	Nền tảng chuyên môn	Chuyển hóa vấn đề thực tiễn thành câu hỏi nghiên cứu, dữ liệu thành tri thức và kết quả phân tích thành căn cứ cho quản trị, chính sách và hành động.	Năng lực này là gì?	Đây là năng lực giúp tổ chức hiểu đúng vấn đề, tổ chức dữ liệu có ý nghĩa và tạo bằng chứng đủ tin cậy để định hướng quyết định, cải tiến chương trình hoặc xây dựng nhiệm vụ khoa học, công nghệ và đổi mới sáng tạo.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	Nghiên cứu ứng dụng & khoa học dữ liệu — IRDM	Chuyển hóa vấn đề thực tiễn thành câu hỏi nghiên cứu và bằng chứng cho quản trị, chính sách và hành động.		capability/icons/light-bulb-icon.png	Viện IRDM tiếp cận mỗi dự án như một tiến trình đi từ bằng chứng, đồng thiết kế và chuyển hóa thành giải pháp có thể triển khai. Logic này giúp các sáng kiến không dừng ở ý tưởng hoặc báo cáo, mà có khả năng đi vào thực tế vận hành.	capability/what-is/Capality_NangLucNayLaGi.png	
-5c66a894-c096-431f-812d-5700d3c94cc7	t	2	2026-07-04 22:17:18.6832+07	2026-07-18 09:03:31.898938+07	AI, y tế số & hỗ trợ ra quyết định	ai-y-te-so-va-ho-tro-ra-quyet-dinh	Hỗ trợ tổ chức nhận diện use case, đánh giá dữ liệu, thiết kế lộ trình thí điểm và phối hợp phát triển công cụ số hoặc AI phù hợp với bối cảnh triển khai.	capability/thumbnails/ChatGPT_AI_YTe_So.png	capability/hero/homepage_AI.png	Nền tảng chuyên môn	Hỗ trợ tổ chức nhận diện các bài toán ứng dụng cụ thể, đánh giá dữ liệu, thiết kế lộ trình thí điểm và phối hợp phát triển công cụ số hoặc AI phù hợp với bối cảnh triển khai.	Năng lực này là gì?	Đây là năng lực kết nối dữ liệu, công nghệ số và hiểu biết về hệ thống để giúp tổ chức tiếp cận chuyển đổi số hoặc AI theo hướng có kiểm soát, có căn cứ và phù hợp với năng lực triển khai.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	AI, y tế số & hỗ trợ ra quyết định — IRDM	Hỗ trợ tổ chức nhận diện use case AI, đánh giá dữ liệu và thiết kế lộ trình thí điểm chuyển đổi số phù hợp.		capability/icons/brain-icon.png		capability/what-is/Capality_NangLucNayLaGi_vSM0qVY.png	
-692ac4e1-bc3d-4186-a610-92fe26fa7638	t	3	2026-07-04 22:17:18.693107+07	2026-07-18 09:13:07.764787+07	Giáo dục & phát triển năng lực	giao-duc-va-phat-trien-nang-luc	Thiết kế chương trình học tập, tập huấn và phát triển năng lực theo hướng ứng dụng, gắn với thay đổi hành vi và mục tiêu phát triển dài hạn.	capability/thumbnails/Homepage_GiaoDuc.png	capability/hero/Homepage_GiaoDuc.png	Nền tảng chuyên môn	Thiết kế chương trình học tập, tập huấn và phát triển năng lực theo hướng ứng dụng, cá nhân hóa, gắn với thay đổi hành vi và mục tiêu phát triển dài hạn.	Năng lực này là gì?	Đây là năng lực giúp tổ chức chuyển nhu cầu phát triển con người thành chương trình học tập có cấu trúc, phù hợp bối cảnh và hướng tới thay đổi hành vi trong công việc, học tập hoặc quản trị.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	Giáo dục & phát triển năng lực — IRDM	Thiết kế chương trình học tập, tập huấn và phát triển năng lực theo hướng ứng dụng, gắn với thay đổi hành vi.		capability/icons/Vector.png		capability/what-is/Capality_NangLucNayLaGi_wnnco8A.png	
-2c2afc67-a579-4f42-ab1c-53491b6e6666	t	7	2026-07-04 22:17:18.734899+07	2026-07-18 22:18:22.826641+07	Sức khỏe môi trường & mô hình can thiệp phục hồi	suc-khoe-moi-truong-va-mo-hinh-can-thiep-phuc-hoi	Kết nối môi trường sống, sức khỏe thể chất, sức khỏe tâm thần và trải nghiệm phục hồi để phát triển các chương trình phù hợp với bối cảnh tổ chức.	capability/thumbnails/Homepage_SucKhoe_MoiTruong.png		Nền tảng chuyên môn	Kết nối môi trường sống, sức khỏe thể chất, sức khỏe tâm thần và trải nghiệm phục hồi để phát triển các chương trình phù hợp với bối cảnh tổ chức.	Năng lực này là gì?	Đây là năng lực tích hợp các yếu tố môi trường vật lý, xã hội và tâm lý để thiết kế các mô hình can thiệp phục hồi toàn diện, phù hợp với đặc thù từng tổ chức và cộng đồng.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	Sức khỏe môi trường & mô hình can thiệp phục hồi — IRDM	Kết nối môi trường sống, sức khỏe và trải nghiệm phục hồi để phát triển chương trình can thiệp phù hợp.		capability/icons/Wind.png		capability/what-is/Capality_NangLucNayLaGi_Kec2QZ4.png	
+COPY public.capability_capability (id, is_active, display_order, created_at, updated_at, title, slug, summary, thumbnail, hero_image, section_label, description, what_is_label, what_is_description, need_section_label, how_label, output_label, cta_primary_label, cta_primary_url, cta_secondary_label, cta_secondary_url, is_published, meta_title, meta_description, meta_keywords, card_icon, need_section_intro, what_is_image) FROM stdin;
+5ab16d24-513c-49d2-b2d8-4e63575d6ca5	t	4	2026-07-04 22:17:18.703826+07	2026-07-18 09:23:58.570851+07	Sức khỏe tâm thần & wellbeing	suc-khoe-tam-than-va-wellbeing	Phát triển các sáng kiến phòng ngừa, nâng đỡ tâm lý - xã hội, năng lực phục hồi và môi trường học tập - làm việc lành mạnh.	capability/thumbnails/Homepage_SucKhoe_TamThan.png		Nền tảng chuyên môn	Phát triển các sáng kiến phòng ngừa, nâng đỡ tâm lý - xã hội, năng lực phục hồi và môi trường học tập - làm việc lành mạnh.	Năng lực này là gì?	Đây là năng lực giúp tổ chức xây dựng môi trường học tập và làm việc hỗ trợ sức khỏe tâm thần, thông qua các chương trình phòng ngừa, can thiệp sớm và nâng cao năng lực phục hồi cho cá nhân và tập thể.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	Sức khỏe tâm thần & wellbeing — IRDM	Phát triển sáng kiến phòng ngừa, nâng đỡ tâm lý - xã hội và năng lực phục hồi cho tổ chức và cộng đồng.		capability/icons/heart-hand-icon.png		capability/what-is/Capality_NangLucNayLaGi_mDA2yFb.png
+6be3c227-fe07-4f5d-94cc-d5e2332ecf02	t	5	2026-07-04 22:17:18.714269+07	2026-07-18 09:36:32.789197+07	ESG, Green University & Green Hospital	esg-green-university-va-green-hospital	Đồng hành cùng tổ chức xây dựng lộ trình phát triển bền vững, kết nối quản trị, con người, môi trường và trách nhiệm xã hội.	capability/thumbnails/Homepage_DaiHoc.png		Nền tảng chuyên môn	Đồng hành cùng tổ chức xây dựng lộ trình phát triển bền vững, kết nối quản trị, con người, môi trường và trách nhiệm xã hội.	Năng lực này là gì?	Đây là năng lực hỗ trợ tổ chức thiết kế và triển khai chiến lược phát triển bền vững theo tiêu chuẩn ESG (Môi trường - Xã hội - Quản trị), tích hợp các mục tiêu bền vững vào hoạt động vận hành và quản lý tổ chức.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	ESG, Green University & Green Hospital — IRDM	Đồng hành xây dựng lộ trình ESG, phát triển bền vững cho bệnh viện và cơ sở giáo dục đại học.		capability/icons/univer_icon.png		capability/what-is/ESG_Nanglucnaylagi.png
+303c00b4-4917-41d4-8fa4-c014a9c0da18	t	6	2026-07-04 22:17:18.723117+07	2026-07-18 22:09:14.491068+07	Phổ biến tri thức & truyền thông cộng đồng	pho-bien-tri-thuc-va-truyen-thong-cong-dong	Chuyển hóa nghiên cứu, dữ liệu và hiểu biết chuyên môn thành nội dung dễ tiếp cận, có giá trị ứng dụng cho cộng đồng và đối tác.	capability/thumbnails/Homepage_PhoBienKienThuc.png		Nền tảng chuyên môn	Chuyển hóa nghiên cứu, dữ liệu và hiểu biết chuyên môn thành nội dung dễ tiếp cận, có giá trị ứng dụng cho cộng đồng và đối tác.	Năng lực này là gì?	Đây là năng lực biên dịch tri thức khoa học và chuyên môn thành ngôn ngữ phù hợp với từng nhóm đối tượng, kết hợp truyền thông chiến lược để tạo tác động xã hội và thay đổi hành vi trong cộng đồng.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	Phổ biến tri thức & truyền thông cộng đồng — IRDM	Chuyển hóa nghiên cứu và dữ liệu thành nội dung dễ tiếp cận, có tác động xã hội cho cộng đồng và đối tác.		capability/icons/heroicons_book-open.png		capability/what-is/Capality_NangLucNayLaGi_beObLws.png
+7e373022-f6d5-4fe4-8011-b2a84b1e0126	t	1	2026-07-04 22:17:18.649633+07	2026-07-18 08:49:31.071298+07	Nghiên cứu ứng dụng & khoa học dữ liệu	nghien-cuu-ung-dung-va-khoa-hoc-du-lieu	Chuyển hóa vấn đề thực tiễn thành câu hỏi nghiên cứu, dữ liệu thành tri thức, và kết quả phân tích thành căn cứ cho quản trị, chính sách và hành động.	capability/thumbnails/Nghiên_cứu_ứng_dụng__khoa_học_dữ_liệu.png	capability/hero/Homepage_nghiencuu_khoahoa.png	Nền tảng chuyên môn	Chuyển hóa vấn đề thực tiễn thành câu hỏi nghiên cứu, dữ liệu thành tri thức và kết quả phân tích thành căn cứ cho quản trị, chính sách và hành động.	Năng lực này là gì?	Đây là năng lực giúp tổ chức hiểu đúng vấn đề, tổ chức dữ liệu có ý nghĩa và tạo bằng chứng đủ tin cậy để định hướng quyết định, cải tiến chương trình hoặc xây dựng nhiệm vụ khoa học, công nghệ và đổi mới sáng tạo.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	Nghiên cứu ứng dụng & khoa học dữ liệu — IRDM	Chuyển hóa vấn đề thực tiễn thành câu hỏi nghiên cứu và bằng chứng cho quản trị, chính sách và hành động.		capability/icons/light-bulb-icon.png	Viện IRDM tiếp cận mỗi dự án như một tiến trình đi từ bằng chứng, đồng thiết kế và chuyển hóa thành giải pháp có thể triển khai. Logic này giúp các sáng kiến không dừng ở ý tưởng hoặc báo cáo, mà có khả năng đi vào thực tế vận hành.	capability/what-is/Capality_NangLucNayLaGi.png
+5c66a894-c096-431f-812d-5700d3c94cc7	t	2	2026-07-04 22:17:18.6832+07	2026-07-18 09:03:31.898938+07	AI, y tế số & hỗ trợ ra quyết định	ai-y-te-so-va-ho-tro-ra-quyet-dinh	Hỗ trợ tổ chức nhận diện use case, đánh giá dữ liệu, thiết kế lộ trình thí điểm và phối hợp phát triển công cụ số hoặc AI phù hợp với bối cảnh triển khai.	capability/thumbnails/ChatGPT_AI_YTe_So.png	capability/hero/homepage_AI.png	Nền tảng chuyên môn	Hỗ trợ tổ chức nhận diện các bài toán ứng dụng cụ thể, đánh giá dữ liệu, thiết kế lộ trình thí điểm và phối hợp phát triển công cụ số hoặc AI phù hợp với bối cảnh triển khai.	Năng lực này là gì?	Đây là năng lực kết nối dữ liệu, công nghệ số và hiểu biết về hệ thống để giúp tổ chức tiếp cận chuyển đổi số hoặc AI theo hướng có kiểm soát, có căn cứ và phù hợp với năng lực triển khai.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	AI, y tế số & hỗ trợ ra quyết định — IRDM	Hỗ trợ tổ chức nhận diện use case AI, đánh giá dữ liệu và thiết kế lộ trình thí điểm chuyển đổi số phù hợp.		capability/icons/brain-icon.png		capability/what-is/Capality_NangLucNayLaGi_vSM0qVY.png
+692ac4e1-bc3d-4186-a610-92fe26fa7638	t	3	2026-07-04 22:17:18.693107+07	2026-07-18 09:13:07.764787+07	Giáo dục & phát triển năng lực	giao-duc-va-phat-trien-nang-luc	Thiết kế chương trình học tập, tập huấn và phát triển năng lực theo hướng ứng dụng, gắn với thay đổi hành vi và mục tiêu phát triển dài hạn.	capability/thumbnails/Homepage_GiaoDuc.png	capability/hero/Homepage_GiaoDuc.png	Nền tảng chuyên môn	Thiết kế chương trình học tập, tập huấn và phát triển năng lực theo hướng ứng dụng, cá nhân hóa, gắn với thay đổi hành vi và mục tiêu phát triển dài hạn.	Năng lực này là gì?	Đây là năng lực giúp tổ chức chuyển nhu cầu phát triển con người thành chương trình học tập có cấu trúc, phù hợp bối cảnh và hướng tới thay đổi hành vi trong công việc, học tập hoặc quản trị.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	Giáo dục & phát triển năng lực — IRDM	Thiết kế chương trình học tập, tập huấn và phát triển năng lực theo hướng ứng dụng, gắn với thay đổi hành vi.		capability/icons/Vector.png		capability/what-is/Capality_NangLucNayLaGi_wnnco8A.png
+2c2afc67-a579-4f42-ab1c-53491b6e6666	t	7	2026-07-04 22:17:18.734899+07	2026-07-18 22:18:22.826641+07	Sức khỏe môi trường & mô hình can thiệp phục hồi	suc-khoe-moi-truong-va-mo-hinh-can-thiep-phuc-hoi	Kết nối môi trường sống, sức khỏe thể chất, sức khỏe tâm thần và trải nghiệm phục hồi để phát triển các chương trình phù hợp với bối cảnh tổ chức.	capability/thumbnails/Homepage_SucKhoe_MoiTruong.png		Nền tảng chuyên môn	Kết nối môi trường sống, sức khỏe thể chất, sức khỏe tâm thần và trải nghiệm phục hồi để phát triển các chương trình phù hợp với bối cảnh tổ chức.	Năng lực này là gì?	Đây là năng lực tích hợp các yếu tố môi trường vật lý, xã hội và tâm lý để thiết kế các mô hình can thiệp phục hồi toàn diện, phù hợp với đặc thù từng tổ chức và cộng đồng.	Khi nào tổ chức cần năng lực này?	Viện IRDM đồng hành như thế nào?	Đầu ra có thể bao gồm	Khám phá thêm Giải pháp	/giai-phap/	Xem thêm tin IRDM	/tin-tuc/	t	Sức khỏe môi trường & mô hình can thiệp phục hồi — IRDM	Kết nối môi trường sống, sức khỏe và trải nghiệm phục hồi để phát triển chương trình can thiệp phù hợp.		capability/icons/Wind.png		capability/what-is/Capality_NangLucNayLaGi_Kec2QZ4.png
 \.
 
 
 --
--- TOC entry 6391 (class 0 OID 312142)
+-- TOC entry 6473 (class 0 OID 727170)
 -- Dependencies: 263
 -- Data for Name: capability_capabilitycasestudy; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -4165,7 +4384,7 @@ COPY public.capability_capabilitycasestudy (id, is_active, display_order, create
 
 
 --
--- TOC entry 6392 (class 0 OID 312164)
+-- TOC entry 6474 (class 0 OID 727192)
 -- Dependencies: 264
 -- Data for Name: capability_capabilitycasestudytag; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -4196,7 +4415,7 @@ eee00196-12b4-49b0-bfd4-521c3c6b7f47	t	1	2026-07-11 15:18:18.858888+07	2026-07-1
 
 
 --
--- TOC entry 6393 (class 0 OID 312175)
+-- TOC entry 6475 (class 0 OID 727203)
 -- Dependencies: 265
 -- Data for Name: capability_capabilityfeature; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -4237,7 +4456,7 @@ b9d2fe3d-8d99-45b9-b35a-5e048b3851a6	t	3	2026-07-11 15:18:18.851395+07	2026-07-1
 
 
 --
--- TOC entry 6394 (class 0 OID 312186)
+-- TOC entry 6476 (class 0 OID 727214)
 -- Dependencies: 266
 -- Data for Name: capability_capabilityhowstep; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -4275,7 +4494,7 @@ c1e38225-84f5-49dc-8f88-9cb82c601b04	f	4	2026-07-11 15:18:18.855103+07	2026-07-1
 
 
 --
--- TOC entry 6395 (class 0 OID 312202)
+-- TOC entry 6477 (class 0 OID 727230)
 -- Dependencies: 267
 -- Data for Name: capability_capabilitylistingpage; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -4286,7 +4505,7 @@ COPY public.capability_capabilitylistingpage (id, is_active, display_order, crea
 
 
 --
--- TOC entry 6396 (class 0 OID 312229)
+-- TOC entry 6478 (class 0 OID 727257)
 -- Dependencies: 268
 -- Data for Name: capability_capabilityneeditem; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -4322,7 +4541,7 @@ f88c3f31-ff1b-4ec2-882c-a135f6d5e957	t	3	2026-07-11 15:18:18.853281+07	2026-07-1
 
 
 --
--- TOC entry 6397 (class 0 OID 312244)
+-- TOC entry 6479 (class 0 OID 727272)
 -- Dependencies: 269
 -- Data for Name: capability_capabilityoutput; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
@@ -4360,19 +4579,30 @@ ee6bf0b0-fa26-49b4-a262-847fd0a1d969	t	3	2026-07-11 15:18:18.856644+07	2026-07-1
 
 
 --
--- TOC entry 6490 (class 0 OID 334694)
--- Dependencies: 362
+-- TOC entry 6480 (class 0 OID 727287)
+-- Dependencies: 270
 -- Data for Name: contact_contactrequest; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
-COPY public.contact_contactrequest (id, full_name, email, phone, organization, inquiry_type, message, status, source_url, created_at, updated_at) FROM stdin;
-1	Dũng Nguyễn Văn	bluesky775177@gmail.com	0912027023	Trưởng phòng Tổ chức Hành chính - Viện IRDM / Chuyên viên Điều phối dự án / Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng.	other	111rtertertertertert	new	/lien-he/	2026-08-10 22:30:50.737341+07	2026-08-10 22:30:50.737356+07
+COPY public.contact_contactrequest (id, full_name, email, phone, organization, inquiry_type, message, status, source_url, created_at, updated_at, notification_attempts, notification_error, notification_sent_at, notification_status) FROM stdin;
+1	Dũng Nguyễn Văn	bluesky775177@gmail.com	0912027023	Trưởng phòng Tổ chức Hành chính - Viện IRDM / Chuyên viên Điều phối dự án / Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng.	other	111rtertertertertert	new	/lien-he/	2026-08-10 22:30:50.737341+07	2026-08-10 22:30:50.737356+07	0		\N	pending
 \.
 
 
 --
--- TOC entry 6398 (class 0 OID 312259)
--- Dependencies: 270
+-- TOC entry 6482 (class 0 OID 727308)
+-- Dependencies: 272
+-- Data for Name: contact_emailsettings; Type: TABLE DATA; Schema: public; Owner: irdm_user
+--
+
+COPY public.contact_emailsettings (id, enabled, host, port, security, username, encrypted_password, from_name, from_email, contact_recipient, timeout, last_tested_at, last_test_succeeded, last_test_message) FROM stdin;
+1	f	smtp.gmail.com	587	tls	supportirdm@gmail.com		Website IRDM	supportirdm@gmail.com	vienncptnlv@irdm.edu.vn	10	\N	\N	
+\.
+
+
+--
+-- TOC entry 6484 (class 0 OID 727328)
+-- Dependencies: 274
 -- Data for Name: core_footerlink; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -4389,29 +4619,29 @@ b4ac7e33-f54a-48d3-9a33-7dbeb91a9a94	t	120	2026-07-03 22:44:05.473946+07	2026-07
 e0b16136-1560-438f-afc6-df676386db24	t	10	2026-07-05 22:18:18.66637+07	2026-07-05 22:18:18.666376+07	Cơ quan quản lý & Chính sách	/giai-phap/co-quan-quan-ly-va-chinh-sach/	f	1a6f006e-56e7-4075-8e2e-01286cf65dbc
 8224a88d-cb96-4cdd-b875-6ffc351e55d9	t	30	2026-07-05 22:18:18.668922+07	2026-07-05 22:18:18.668927+07	Trường đại học & Giáo dục	/giai-phap/truong-dai-hoc-va-giao-duc/	f	1a6f006e-56e7-4075-8e2e-01286cf65dbc
 6ff6e1ed-a83e-41de-9096-3fe85237a85b	t	50	2026-07-05 22:18:18.670058+07	2026-07-05 22:18:18.670062+07	Tổ chức quốc tế & NGO	/giai-phap/to-chuc-quoc-te-va-ngo/	f	1a6f006e-56e7-4075-8e2e-01286cf65dbc
-af448e48-13f2-4848-b389-6ba5718bf157	t	100	2026-07-03 22:44:05.469241+07	2026-07-03 22:44:05.469245+07	Xuất bản & Tài liệu	/tri-thuc-goc-nhin/	f	5412024d-49d3-48c5-9573-39e2e71585bd
-5ac6038a-d3cd-4dc4-a97c-08ab8a1f0528	t	110	2026-07-03 22:44:05.470002+07	2026-07-03 22:44:05.470007+07	Sự kiện & Diễn đàn	/tri-thuc-goc-nhin/	f	5412024d-49d3-48c5-9573-39e2e71585bd
-bf58f5cf-aea5-4ffe-bd80-5d255fdd8fe5	t	120	2026-07-03 22:44:05.470684+07	2026-07-03 22:44:05.470688+07	Góc nhìn từ Đối tác	/tri-thuc-goc-nhin/	f	5412024d-49d3-48c5-9573-39e2e71585bd
-dc881eab-1f69-4549-8af7-b1ca2a674f79	t	130	2026-07-03 22:44:05.471365+07	2026-07-03 22:44:05.471369+07	Truyền thông	/tri-thuc-goc-nhin/	f	5412024d-49d3-48c5-9573-39e2e71585bd
+bf58f5cf-aea5-4ffe-bd80-5d255fdd8fe5	t	120	2026-07-03 22:44:05.470684+07	2026-09-24 09:15:06.531929+07	Góc nhìn từ Đối tác	/tri-thuc-goc-nhin/?search=&partner=co-quan-quan-ly&partner=he-thong-y-te&partner=truong-dai-hoc&partner=doanh-nghiep&partner=to-chuc-quoc-te	f	5412024d-49d3-48c5-9573-39e2e71585bd
+dc881eab-1f69-4549-8af7-b1ca2a674f79	t	130	2026-07-03 22:44:05.471365+07	2026-09-24 09:15:45.425101+07	Truyền thông	/tri-thuc-goc-nhin/#bao-chi-dien-dan	f	5412024d-49d3-48c5-9573-39e2e71585bd
+af448e48-13f2-4848-b389-6ba5718bf157	t	100	2026-07-03 22:44:05.469241+07	2026-09-24 09:17:00.400591+07	Xuất bản & Tài liệu	/tri-thuc-goc-nhin/?ctype=bao-cao-tai-lieu	f	5412024d-49d3-48c5-9573-39e2e71585bd
+5ac6038a-d3cd-4dc4-a97c-08ab8a1f0528	t	110	2026-07-03 22:44:05.470002+07	2026-09-24 09:17:00.402721+07	Sự kiện & Diễn đàn	/tri-thuc-goc-nhin/#tin-tuc-su-kien	f	5412024d-49d3-48c5-9573-39e2e71585bd
 \.
 
 
 --
--- TOC entry 6399 (class 0 OID 312274)
--- Dependencies: 271
+-- TOC entry 6485 (class 0 OID 727343)
+-- Dependencies: 275
 -- Data for Name: core_footersection; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.core_footersection (id, is_active, display_order, created_at, updated_at, title) FROM stdin;
 1a6f006e-56e7-4075-8e2e-01286cf65dbc	t	100	2026-07-03 22:44:05.460047+07	2026-07-03 22:44:05.460052+07	Giải pháp
-5412024d-49d3-48c5-9573-39e2e71585bd	t	110	2026-07-03 22:44:05.468373+07	2026-07-03 22:44:05.468378+07	Tri thức & Góc nhìn
 b50e2dc9-0312-44aa-9c57-2ddd39e9c41c	t	120	2026-07-03 22:44:05.471918+07	2026-07-03 22:44:05.471922+07	Về IRDM
+5412024d-49d3-48c5-9573-39e2e71585bd	t	110	2026-07-03 22:44:05.468373+07	2026-09-24 09:17:00.397807+07	Tri thức & Góc nhìn
 \.
 
 
 --
--- TOC entry 6400 (class 0 OID 312284)
--- Dependencies: 272
+-- TOC entry 6486 (class 0 OID 727353)
+-- Dependencies: 276
 -- Data for Name: core_menuitem; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -4424,30 +4654,30 @@ COPY public.core_menuitem (id, is_active, display_order, created_at, updated_at,
 29caf2a9-dafe-4b3e-b6d9-3a26bf3497fb	t	30	2026-07-05 22:18:18.660853+07	2026-07-05 22:18:18.660864+07	footer	Năng lực cốt lõi	/capabilities/	f	\N
 c6038502-4255-4402-b1d7-23d3646778e2	t	40	2026-07-03 22:44:05.451396+07	2026-07-03 22:44:05.4514+07	header	Tri thức & Góc nhìn	/tri-thuc-goc-nhin/	f	\N
 7af5255c-d8b5-4e5c-8129-136c9d3f53d2	t	30	2026-07-03 22:44:05.456765+07	2026-07-09 21:43:47.539083+07	footer	Tri thức & Góc nhìn	/tri-thuc-goc-nhin/	f	\N
-881e2229-5da7-4af3-add6-0354e23adf08	t	40	2026-07-03 22:44:05.457434+07	2026-07-09 21:44:19.056515+07	footer	Đội ngũ chuyên gia	/capabilities/	f	\N
 b1f58622-3eb9-4b1c-b63f-2926061fbf1e	t	50	2026-07-03 22:44:05.452208+07	2026-07-09 21:46:13.002914+07	header	Đội ngũ chuyên gia	/chuyen-gia/	f	\N
 5302c200-b656-46c1-9a97-a924ae4b5b42	t	60	2026-07-03 22:44:05.454117+07	2026-07-09 21:46:20.620309+07	header	Về IRDM	/ve-irdm/	f	\N
 7dca3fbe-c49d-45fe-918a-fe62c71c209e	t	50	2026-07-03 22:44:05.45811+07	2026-07-09 21:44:36.28425+07	footer	Về IRDM	/ve-irdm/	f	\N
 7303d1d2-d0d8-46ca-8e54-fc85cd6f3fe2	f	50	2026-07-05 22:18:18.662952+07	2026-07-29 23:37:01.819152+07	footer	Liên hệ	/lien-he/	f	\N
 e9f0d73d-575b-4cae-84e9-7bcaebaa97e5	f	50	2026-07-03 22:44:05.45324+07	2026-07-29 23:37:01.829731+07	header	Đối tác & Khách hàng	/capabilities/	f	\N
 e07c5d49-73a2-4433-b9e3-aea9dae9d795	f	70	2026-07-05 22:18:18.65884+07	2026-07-29 23:37:01.831238+07	header	Liên hệ	/lien-he/	f	\N
+881e2229-5da7-4af3-add6-0354e23adf08	t	40	2026-07-03 22:44:05.457434+07	2026-09-23 22:41:35.60953+07	footer	Đội ngũ chuyên gia	/chuyen-gia/	f	\N
 \.
 
 
 --
--- TOC entry 6401 (class 0 OID 312299)
--- Dependencies: 273
+-- TOC entry 6487 (class 0 OID 727368)
+-- Dependencies: 277
 -- Data for Name: core_sitesettings; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.core_sitesettings (id, is_active, display_order, created_at, updated_at, site_name, site_tagline, site_description, logo, logo_white, favicon, email, phone, address, linkedin_url, twitter_url, facebook_url, youtube_url, map_embed_url, operating_hours) FROM stdin;
-91920ceb-3611-4e81-866f-81083b64ff5e	t	0	2026-07-03 22:44:05.443041+07	2026-07-11 15:37:45.99958+07	IRDM	Viện Nghiên cứu Phát triển Nguồn lực Việt	Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) là tổ chức Khoa học, Công nghệ và Đổi mới sáng tạo, hoạt động nghiên cứu tập trung các lĩnh vực Y tế – Giáo dục – Môi trường trong bối cảnh ứng dụng công nghệ số.\r\nViện IRDM được thành lập theo Quyết định số 1111/QĐ-LHHVN ngày 01/11/2019 của Liên Hiệp các Hội Khoa học và Kỹ thuẫt Việt Nam; Được cấp Chứng nhận Đăng ký hoạt động Khoa học và Công nghệ số A – 2157 do Bộ Khoa học và Công nghệ cấp ngày 29/11/2019.	core/logo/irdm-logo_4mTqWOo_75LRxGU.png	core/logo/irdm-logo-white_fx1zQBu_NRkI90o.png		vienncptnlv@irdm.edu.vn	(+84) 33 656 7701	8C Trần Huy Liệu, Phường Phú Nhuận, TP.HCM	https://linkedin.com/company/irdm		https://facebook.com/irdm	https://youtube.com/@irdm	https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.418742898547!2d106.67854097579797!3d10.779498258849395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3a9d8b6fb5%3A0x8f5b7c2a1e4d3c9b!2s8C%20Tr%E1%BA%A7n%20Huy%20Li%E1%BB%87u%2C%20Ph%C6%B0%E1%BB%9Dng%20Ph%C3%BA%20Nhu%E1%BA%ADn%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh!5e0!3m2!1svi!2svn!4v1720000000000!5m2!1svi!2svn	Thứ 2 đến Thứ 6 | 8h00 – 17h00
+91920ceb-3611-4e81-866f-81083b64ff5e	t	0	2026-07-03 22:44:05.443041+07	2026-09-13 21:55:45.477122+07	IRDM	Viện Nghiên cứu Phát triển Nguồn lực Việt	Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) là tổ chức Khoa học, Công nghệ và Đổi mới sáng tạo, hoạt động nghiên cứu tập trung các lĩnh vực Y tế – Giáo dục – Môi trường trong bối cảnh ứng dụng công nghệ số.\r\nViện IRDM được thành lập theo Quyết định số 1111/QĐ-LHHVN ngày 01/11/2019 của Liên Hiệp các Hội Khoa học và Kỹ thuẫt Việt Nam; Được cấp Chứng nhận Đăng ký hoạt động Khoa học và Công nghệ số A – 2157 do Bộ Khoa học và Công nghệ cấp ngày 29/11/2019.	core/logo/irdm-logo_4mTqWOo_75LRxGU.png	core/logo/46de47aca0751b4eb733b1e8d8dbb3920981299b.png		vienncptnlv@irdm.edu.vn	(+84) 33 656 7701	8C Trần Huy Liệu, Phường Phú Nhuận, TP.HCM	https://linkedin.com/company/irdm		https://facebook.com/irdm	https://youtube.com/@irdm	https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.418742898547!2d106.67854097579797!3d10.779498258849395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3a9d8b6fb5%3A0x8f5b7c2a1e4d3c9b!2s8C%20Tr%E1%BA%A7n%20Huy%20Li%E1%BB%87u%2C%20Ph%C6%B0%E1%BB%9Dng%20Ph%C3%BA%20Nhu%E1%BA%ADn%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh!5e0!3m2!1svi!2svn!4v1720000000000!5m2!1svi!2svn	Thứ 2 đến Thứ 6 | 8h00 – 17h00
 \.
 
 
 --
--- TOC entry 6402 (class 0 OID 312325)
--- Dependencies: 274
+-- TOC entry 6488 (class 0 OID 727394)
+-- Dependencies: 278
 -- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -4963,6 +5193,17 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 646	2026-08-16 22:22:12.112767+07	88999316-8f8d-4ca0-9438-82d9df238d59	Prof. Richard Thompson	2	[{"changed": {"fields": ["Is active"]}}]	64	1
 651	2026-08-16 22:24:26.092012+07	06f55fd9-7ccb-4bda-83d3-8d96d3ac8a69	TS. Cao Xuân Hưng	2	[{"changed": {"fields": ["Is active"]}}]	64	1
 656	2026-08-16 22:28:18.244138+07	bb812c25-fe79-4803-a18f-91e2f890dead	PGS.TS. Nguyễn Thị Vân Hạnh	2	[{"changed": {"fields": ["Avatar", "Hero avatar"]}}]	64	1
+659	2026-09-12 23:12:09.124974+07	a77bf886-849b-455b-852a-2df8b6b58fa0	Dr. Sarah Chen	3		64	1
+664	2026-09-12 23:14:20.292361+07	e2f886bb-a017-458f-b4f8-311f0d800fee	TS. Hoàng Văn Thành	3		64	1
+669	2026-09-12 23:15:55.074458+07	eb7bef3e-f94f-49f9-87f3-37f367ab994e	GS.TS. Đinh Văn Phúc	3		64	1
+674	2026-09-12 23:17:09.253641+07	d37db12f-a3b6-4dc9-aa60-b475590ed25f	TS. Đặng Thị Minh Châu	3		64	1
+679	2026-09-12 23:25:44.746931+07	488642b9-e9d2-4d1e-84b1-248ea22aea91	Y tế	1	[{"added": {}}]	67	1
+684	2026-09-13 00:06:30.000454+07	1f0e3ce8-3d01-4db5-b1b7-8f4d0e4be2a8	Xã hội học sức khỏe	1	[{"added": {}}]	67	1
+689	2026-09-13 09:03:49.47432+07	fba3b5d1-c948-4b39-89ff-cc6cc8069107	Viện phát triển nguồn nhân lực IRDM nâng tầm nguồn lực Việt	1	[{"added": {}}]	49	1
+694	2026-09-13 09:10:17.805487+07	3d230c3c-c03d-4c9c-9b47-9775c2d958bd	IRDM hoàn thành báo cáo đánh giá nhu cầu năng lực nhân lực y tế TP.HCM	2	[{"changed": {"fields": ["Is press article"]}}]	49	1
+705	2026-09-13 09:16:31.826845+07	dd2574c1-19ff-4f8e-902f-04feff7bd480	FPT IS cùng IRDM ứng dụng công nghệ tối ưu hóa hoạt động giảng dạy	2	[{"changed": {"fields": ["Published date", "Is press article"]}}]	49	1
+709	2026-09-13 09:30:56.620682+07	c898ff66-dc82-4d6f-80c8-8310f4a629ee	Viện Nghiên cứu Phát triển nguồn lực Việt nâng cao chất lượng nguồn nhân lực trẻ	2	[{"changed": {"fields": ["Topics", "Display order"]}}]	49	1
+714	2026-09-13 09:31:24.696244+07	c898ff66-dc82-4d6f-80c8-8310f4a629ee	Viện Nghiên cứu Phát triển nguồn lực Việt nâng cao chất lượng nguồn nhân lực trẻ	2	[{"changed": {"fields": ["Display order"]}}]	49	1
 481	2026-08-09 20:24:07.500481+07	0db45da2-e1eb-430a-9723-3613884caa59	Công nghệ thông tin y tế	1	[{"added": {}}]	67	1
 486	2026-08-09 20:25:05.23979+07	81ff75df-d125-416d-b101-5c93cad4705b	Trung tâm dữ liệu	1	[{"added": {}}]	67	1
 491	2026-08-09 20:26:02.97072+07	56ffbe1f-789a-439f-acce-3b39f1b59e64	Đồng thiết kế giải pháp	1	[{"added": {}}]	67	1
@@ -4999,6 +5240,18 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 647	2026-08-16 22:22:23.633588+07	95eef455-b009-4c6f-907e-91673dd3f1a8	TS. Lý Thị Kim Ngân	2	[{"changed": {"fields": ["Is active"]}}]	64	1
 652	2026-08-16 22:24:38.836537+07	a77bf886-849b-455b-852a-2df8b6b58fa0	Dr. Sarah Chen	2	[{"changed": {"fields": ["Is active"]}}]	64	1
 657	2026-08-16 22:31:42.86183+07	765a906e-fd8b-4b8b-9788-07cc411e2854	TS. Phạm Thị Thủy	3		64	1
+660	2026-09-12 23:13:05.197117+07	5bcb6772-6263-4add-a5f3-95054fd00246	TS. Vũ Thị Lan	3		64	1
+665	2026-09-12 23:14:37.341349+07	88999316-8f8d-4ca0-9438-82d9df238d59	Prof. Richard Thompson	3		64	1
+670	2026-09-12 23:16:08.896462+07	e661b4e7-3380-4305-9404-c2f437fe1aba	TS. Phạm Thị Lan Anh	3		64	1
+675	2026-09-12 23:17:54.280056+07	4bfedb13-2989-40cb-a435-0c3314c0f5c3	PGS.TS. Trần Thị Bình	3		64	1
+680	2026-09-12 23:26:51.257037+07	7a442992-c910-47e8-b627-afd0e7ce4c83	TS.DS. Trần Lê Diễm Anh	2	[{"changed": {"fields": ["Profile tagline", "Engagement types"]}}]	64	1
+685	2026-09-13 00:07:01.663662+07	35a93874-2fb1-4a80-8d93-b77080532f25	Giáo dục	1	[{"added": {}}]	67	1
+690	2026-09-13 09:04:16.95621+07	fba3b5d1-c948-4b39-89ff-cc6cc8069107	Viện phát triển nguồn nhân lực IRDM nâng tầm nguồn lực Việt	2	[{"changed": {"fields": ["Published"]}}]	49	1
+695	2026-09-13 09:12:07.044434+07	c898ff66-dc82-4d6f-80c8-8310f4a629ee	Viện Nghiên cứu Phát triển nguồn lực Việt nâng cao chất lượng nguồn nhân lực trẻ	1	[{"added": {}}]	49	1
+706	2026-09-13 09:19:14.509267+07	a6b5ae10-69cf-4ae1-bca6-84f7961820ad	IRDM cùng FPT IS vận hành Nền tảng tự học thông minh IRDM Smart Learning	1	[{"added": {}}]	49	1
+710	2026-09-13 09:31:24.692135+07	dd2574c1-19ff-4f8e-902f-04feff7bd480	FPT IS cùng IRDM ứng dụng công nghệ tối ưu hóa hoạt động giảng dạy	2	[{"changed": {"fields": ["Display order"]}}]	49	1
+711	2026-09-13 09:31:24.693842+07	a6b5ae10-69cf-4ae1-bca6-84f7961820ad	IRDM cùng FPT IS vận hành Nền tảng tự học thông minh IRDM Smart Learning	2	[{"changed": {"fields": ["Display order"]}}]	49	1
+712	2026-09-13 09:31:24.694652+07	9042ce97-eb9a-45a2-84f1-c1b22a575e7f	IRDM cùng FPT IS triển khai nền tảng tự học thông minh	2	[{"changed": {"fields": ["Display order"]}}]	49	1
 482	2026-08-09 20:24:20.327282+07	3ced7fe5-5778-4609-ae86-e7309d89c22b	Chuyển đổi số bệnh viện	1	[{"added": {}}]	67	1
 487	2026-08-09 20:25:16.302477+07	fc9b0ed2-2303-4b65-86a4-1229d364abe7	Y tin học	1	[{"added": {}}]	67	1
 492	2026-08-09 20:27:19.350067+07	722d2f3a-b0f0-48c0-a162-e69c53923476	ThS. Nguyễn Quốc Định	2	[{"changed": {"fields": ["Knowledge topics"]}}]	64	1
@@ -5035,6 +5288,17 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 648	2026-08-16 22:23:00.422411+07	d53433ba-b9d8-4441-83e8-14f9693736b5	Dr. Yoshida Kenji	2	[{"changed": {"fields": ["Is active"]}}]	64	1
 653	2026-08-16 22:24:55.524781+07	f545466a-f5e5-4312-b277-5beb577cfa3d	TS. Nguyễn Bảo Long	2	[{"changed": {"fields": ["Is active"]}}]	64	1
 658	2026-08-16 22:33:10.533984+07	8083be18-e5b7-4a0f-a1d9-68f8a0135d05	ThS. Trịnh Thúy Linh	3		64	1
+661	2026-09-12 23:13:22.280041+07	cc2c8d15-3a91-4485-81ef-8fcef5ea4a25	GS.TS. Nguyễn Văn An	3		64	1
+666	2026-09-12 23:14:49.756899+07	95eef455-b009-4c6f-907e-91673dd3f1a8	TS. Lý Thị Kim Ngân	3		64	1
+671	2026-09-12 23:16:25.441098+07	06f55fd9-7ccb-4bda-83d3-8d96d3ac8a69	TS. Cao Xuân Hưng	3		64	1
+676	2026-09-12 23:18:15.914868+07	162d63f1-2d74-436c-b497-12b6f71fd9f7	TS. Lê Minh Châu	3		64	1
+681	2026-09-12 23:28:27.787576+07	7a442992-c910-47e8-b627-afd0e7ce4c83	TS.DS. Trần Lê Diễm Anh	2	[{"changed": {"fields": ["Profile tagline", "Role badges"]}}]	64	1
+686	2026-09-13 00:07:31.247942+07	74a1f848-c854-4ffa-adaa-d0621ca98f09	Nghiên cứu ứng dụng	1	[{"added": {}}]	67	1
+691	2026-09-13 09:05:10.950352+07	fba3b5d1-c948-4b39-89ff-cc6cc8069107	Viện phát triển nguồn nhân lực IRDM nâng tầm nguồn lực Việt	2	[{"changed": {"fields": ["Published date", "Topics", "Is press article"]}}]	49	1
+696	2026-09-13 09:14:19.789045+07	dd2574c1-19ff-4f8e-902f-04feff7bd480	FPT IS cùng IRDM ứng dụng công nghệ tối ưu hóa hoạt động giảng dạy	1	[{"added": {}}]	49	1
+707	2026-09-13 09:21:58.889146+07	9042ce97-eb9a-45a2-84f1-c1b22a575e7f	IRDM cùng FPT IS triển khai nền tảng tự học thông minh	1	[{"added": {}}]	49	1
+713	2026-09-13 09:31:24.695471+07	3974a581-0aab-4735-9ad8-89aeee5bdb62	Nâng cao chất lượng nguồn nhân lực trẻ Việt Nam trong giai đoạn “vàng”	2	[{"changed": {"fields": ["Display order"]}}]	49	1
+717	2026-09-13 09:39:48.651804+07	d30797e2-ab0e-42a3-88c4-440d3cd8db07	Talkshow Làm chủ thời gian làm chủ cuộc đời	1	[{"added": {}}]	49	1
 483	2026-08-09 20:24:31.201809+07	3fb0bc8e-3279-4178-8264-99e9f448f0c6	Quản trị dữ liệu y tế	1	[{"added": {}}]	67	1
 488	2026-08-09 20:25:28.865115+07	eb95f406-d6d4-4fe7-a4a4-4842743487cb	SNOMED CT	1	[{"added": {}}]	67	1
 493	2026-08-09 20:33:04.827235+07	9ee63c75-b024-4fbb-90a8-1798cb6ceaaa	ThS. Bùi Thanh Tùng	2	[{"changed": {"fields": ["Hero avatar", "Profile tagline", "Full bio", "Role badges", "Ticker bar text", "Stat 1 \\u2014 value", "Stat 1 \\u2014 label", "Experience highlights", "Discussion topics", "Notable projects", "Card specialty label", "Engagement types"]}}]	64	1
@@ -5070,6 +5334,17 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 644	2026-08-16 22:21:10.820422+07	b79cdef4-3435-4990-9252-1791aedd6d2e	TS. Đỗ Thị Hương	2	[{"changed": {"fields": ["Is active"]}}]	64	1
 649	2026-08-16 22:23:56.97937+07	eb7bef3e-f94f-49f9-87f3-37f367ab994e	GS.TS. Đinh Văn Phúc	2	[{"changed": {"fields": ["Is active"]}}]	64	1
 654	2026-08-16 22:25:39.736134+07	d37db12f-a3b6-4dc9-aa60-b475590ed25f	TS. Đặng Thị Minh Châu	2	[{"changed": {"fields": ["Is active"]}}]	64	1
+662	2026-09-12 23:13:47.429934+07	82f35f80-7d8e-4b7c-9dfc-e0c27c6abf22	GS. Ngô Quang Minh	3		64	1
+667	2026-09-12 23:15:09.664534+07	d53433ba-b9d8-4441-83e8-14f9693736b5	Dr. Yoshida Kenji	3		64	1
+672	2026-09-12 23:16:39.790244+07	2664691b-c5df-4ae9-b521-0185b31cce4d	PGS.TS. Lê Thị Thanh Huyền	3		64	1
+677	2026-09-12 23:18:36.014998+07	8b00b6e5-4263-492f-9dde-866efa62f049	PGS.TS. Phạm Đức Hùng	3		64	1
+682	2026-09-12 23:40:02.688685+07	7a442992-c910-47e8-b627-afd0e7ce4c83	TS.DS. Trần Lê Diễm Anh	2	[]	64	1
+687	2026-09-13 00:07:59.783412+07	450e69ac-698c-4a0e-9912-a566376e412e	Healthcare Transformation	1	[{"added": {}}]	67	1
+692	2026-09-13 09:06:12.278974+07	fba3b5d1-c948-4b39-89ff-cc6cc8069107	Viện phát triển nguồn nhân lực IRDM nâng tầm nguồn lực Việt	2	[{"changed": {"fields": ["Display order"]}}]	49	1
+697	2026-09-13 09:15:34.826183+07	b9110896-1e6c-4526-9d67-3c981c4b3e91	IRDM cung cấp dịch vụ thư ký khoa học cho Bệnh viện Nguyễn Tri Phương	2	[{"changed": {"fields": ["Published"]}}]	49	1
+698	2026-09-13 09:15:34.828112+07	3d230c3c-c03d-4c9c-9b47-9775c2d958bd	IRDM hoàn thành báo cáo đánh giá nhu cầu năng lực nhân lực y tế TP.HCM	2	[{"changed": {"fields": ["Published"]}}]	49	1
+699	2026-09-13 09:15:34.829107+07	d4855ea0-1c40-4055-8dd9-51ccb89e7278	IRDM ký kết hợp tác với Đại học Y Dược TP.HCM trong nghiên cứu ứng dụng	2	[{"changed": {"fields": ["Published"]}}]	49	1
+700	2026-09-13 09:15:34.830016+07	decc660b-f349-42ec-bc0e-5728e6535406	Tóm lược Hội thảo Wellbeing trong y tế và giáo dục 2024	2	[{"changed": {"fields": ["Published"]}}]	49	1
 484	2026-08-09 20:24:43.550227+07	3c3aaa40-9337-4ae9-93a1-fae3ca3a0629	Hệ thống thông tin bệnh viện	1	[{"added": {}}]	67	1
 489	2026-08-09 20:25:39.453098+07	16c03e2f-5966-4431-857b-90b1b9389b96	Tư vấn chiến lược	1	[{"added": {}}]	67	1
 494	2026-08-09 20:33:14.969261+07	19167bf9-c0f8-4ec4-a84e-7589b0990d84	Digital Transformation	1	[{"added": {}}]	67	1
@@ -5105,12 +5380,118 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 645	2026-08-16 22:21:46.696262+07	7c089591-38b6-43a5-a990-f7b03c9d6d21	TS. Bùi Thị Thu Hà	2	[{"changed": {"fields": ["Is active"]}}]	64	1
 650	2026-08-16 22:24:12.554116+07	e661b4e7-3380-4305-9404-c2f437fe1aba	TS. Phạm Thị Lan Anh	2	[{"changed": {"fields": ["Is active"]}}]	64	1
 655	2026-08-16 22:26:10.185399+07	2664691b-c5df-4ae9-b521-0185b31cce4d	PGS.TS. Lê Thị Thanh Huyền	2	[{"changed": {"fields": ["Is active"]}}]	64	1
+663	2026-09-12 23:13:58.356307+07	b79cdef4-3435-4990-9252-1791aedd6d2e	TS. Đỗ Thị Hương	3		64	1
+668	2026-09-12 23:15:37.984159+07	7c089591-38b6-43a5-a990-f7b03c9d6d21	TS. Bùi Thị Thu Hà	3		64	1
+673	2026-09-12 23:16:57.331605+07	f545466a-f5e5-4312-b277-5beb577cfa3d	TS. Nguyễn Bảo Long	3		64	1
+678	2026-09-12 23:24:05.622471+07	a6963f56-9ff9-42bb-a9cb-6f0101a8ff69	Thiết kế nghiên cứu	1	[{"added": {}}]	67	1
+683	2026-09-13 00:05:21.137073+07	7a442992-c910-47e8-b627-afd0e7ce4c83	TS.DS. Trần Lê Diễm Anh	2	[{"changed": {"fields": ["Full bio", "Hero tagline", "Research areas", "Knowledge topics"]}}]	64	1
+688	2026-09-13 00:09:54.990173+07	7a442992-c910-47e8-b627-afd0e7ce4c83	TS.DS. Trần Lê Diễm Anh	2	[{"changed": {"fields": ["Knowledge topics"]}}]	64	1
+693	2026-09-13 09:09:22.720092+07	3d230c3c-c03d-4c9c-9b47-9775c2d958bd	IRDM hoàn thành báo cáo đánh giá nhu cầu năng lực nhân lực y tế TP.HCM	2	[{"changed": {"fields": ["Is press article"]}}]	49	1
+701	2026-09-13 09:15:34.832716+07	fa1b9905-6cd4-4427-801c-25f714eaab59	Chuyên gia IRDM: 'Wellbeing không phải là phúc lợi, mà là đầu tư cho năng lực phục hồi'	2	[{"changed": {"fields": ["Published"]}}]	49	1
+702	2026-09-13 09:15:34.83384+07	84afad0a-d000-4281-b03f-25edb954ebbf	Dữ liệu bệnh viện và bài toán chuyển đổi số: góc nhìn từ nghiên cứu ứng dụng	2	[{"changed": {"fields": ["Published"]}}]	49	1
+703	2026-09-13 09:15:34.834495+07	dce5f7ee-1332-46b0-9f2a-3b0166a10add	IRDM tham luận tại Hội nghị Quốc gia về đổi mới sáng tạo trong y tế và giáo dục 2024	2	[{"changed": {"fields": ["Published"]}}]	49	1
+704	2026-09-13 09:15:34.835103+07	8ac83a5a-2b90-4c83-a261-72149d2e553f	Báo cáo mới về xu hướng ESG tại Việt Nam 2024	2	[{"changed": {"fields": ["Published"]}}]	49	1
+708	2026-09-13 09:28:00.968756+07	3974a581-0aab-4735-9ad8-89aeee5bdb62	Nâng cao chất lượng nguồn nhân lực trẻ Việt Nam trong giai đoạn “vàng”	1	[{"added": {}}]	49	1
+715	2026-09-13 09:31:24.697188+07	fba3b5d1-c948-4b39-89ff-cc6cc8069107	Viện phát triển nguồn nhân lực IRDM nâng tầm nguồn lực Việt	2	[{"changed": {"fields": ["Display order"]}}]	49	1
+716	2026-09-13 09:32:30.849353+07	3974a581-0aab-4735-9ad8-89aeee5bdb62	Nâng cao chất lượng nguồn nhân lực trẻ Việt Nam trong giai đoạn “vàng”	2	[{"changed": {"fields": ["Published date", "Is press article"]}}]	49	1
+718	2026-09-13 09:42:30.284699+07	73edc6d1-919c-49cc-b411-e99b097edbe7	HỘI THẢO “VỮNG NỘI LỰC – CHẠM ĐÍCH ĐẾN” DÀNH CHO SINH VIÊN TRƯỜNG ĐẠI HỌC Y KHOA PHẠM NGỌC THẠCH	1	[{"added": {}}]	49	1
+719	2026-09-13 09:48:31.294424+07	37e0f9a7-05a9-4c9d-ad24-573caee4b79a	Hội thảo “Kiên định với mục tiêu nghề nghiệp và phát triển kỹ năng kiên cường trong kỷ nguyên công nghệ và AI”	1	[{"added": {}}]	49	1
+720	2026-09-13 09:51:46.324272+07	8a1bb945-3c44-44b2-8d35-f2aca3ab81c3	BLOOMHUB – Mô hình học tập và đổi mới tích hợp	1	[{"added": {}}]	49	1
+721	2026-09-13 09:54:17.375127+07	94922265-aba4-4be9-8057-a744b4f97ace	BloomHub - Mô hình học tập và đổi mới tích hợp	1	[{"added": {}}]	49	1
+722	2026-09-13 09:55:05.289912+07	94922265-aba4-4be9-8057-a744b4f97ace	BloomHub - Mô hình học tập và đổi mới tích hợp	2	[{"changed": {"fields": ["Thumbnail"]}}]	49	1
+723	2026-09-13 09:56:59.565101+07	43f46c48-a63f-44c2-a156-7fefd004adb4	Viện Nghiên cứu Phát triển Nguồn lực Việt ra mắt mô hình BloomHub, thúc đẩy học tập và đổi mới sáng tạo	1	[{"added": {}}]	49	1
+724	2026-09-13 09:59:06.377692+07	6ef20b0e-2233-456c-99b7-94cbf4a657ac	Khai trương BloomHub - khu phức hợp học tập dành cho thế hệ trẻ Việt Nam	1	[{"added": {}}]	49	1
+725	2026-09-13 10:00:31.26226+07	27897682-97f9-42ea-b061-44848a1c22a0	Ra mắt BloomHub-mô hình học tập đổi mới tích hợp	1	[{"added": {}}]	49	1
+726	2026-09-13 10:01:33.202904+07	78b12f50-0269-4c40-a95b-e3d7edfd02b0	Ra mắt BloomHub - mô hình học tập đột phá với công nghệ tích hợp tiên tiến	1	[{"added": {}}]	49	1
+727	2026-09-13 10:02:34.695746+07	8301a70a-9509-4939-a755-783be50ae00c	Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) ra mắt khu phức hợp học tập, chia sẻ và đổi mới BloomHub	1	[{"added": {}}]	49	1
+728	2026-09-13 10:16:59.781857+07	7a442992-c910-47e8-b627-afd0e7ce4c83	TS.DS. Trần Lê Diễm Anh	2	[{"changed": {"fields": ["Research areas"]}}]	64	1
+729	2026-09-13 10:22:48.67251+07	52922ea4-afcd-4a8b-9103-c39885043dfc	VỀ IRDM	2	[{"changed": {"fields": ["Description"]}}, {"changed": {"name": "hero statistic", "object": "33+ \\u2014 Chuy\\u00ean gia", "fields": ["Number"]}}, {"changed": {"name": "hero statistic", "object": "30+ \\u2014 D\\u1ef1 \\u00e1n", "fields": ["Number"]}}, {"changed": {"name": "hero statistic", "object": "6+ \\u2014 N\\u0103m", "fields": ["Number"]}}]	88	1
+730	2026-09-13 18:30:31.319568+07	db58ab1f-0c0b-4e80-9584-e606d9722293	PHÁP LÝ VÀ PHẠM VI HOẠT ĐỘNG	2	[{"changed": {"fields": ["Footer note"]}}]	92	1
+731	2026-09-13 21:31:14.36805+07	a2a9cac5-e458-400b-b88f-5c23309f1e3e	Vì sao dữ liệu bệnh viện chưa dễ chuyển thành nhiệm vụ KH,CN&ĐMST?	2	[{"changed": {"fields": ["Body"]}}]	47	1
+732	2026-09-13 21:33:05.802076+07	a2a9cac5-e458-400b-b88f-5c23309f1e3e	Vì sao dữ liệu bệnh viện chưa dễ chuyển thành nhiệm vụ KH,CN&ĐMST?	2	[{"changed": {"fields": ["Body"]}}]	47	1
+733	2026-09-13 21:34:10.747103+07	87f80728-6318-4325-90b7-3d3085207709	Cải cách hệ thống bảo hiểm y tế: Bài học từ các mô hình quốc tế	2	[{"changed": {"fields": ["Body"]}}]	47	1
+734	2026-09-13 21:34:55.229927+07	eca018e3-78a1-43e5-b5ef-6bd8cd5d8c04	Sức khỏe tâm thần nhân viên y tế: khi "chịu đựng tốt" không còn là chiến lược bền vững	2	[{"changed": {"fields": ["Body"]}}]	47	1
+735	2026-09-13 21:35:51.569944+07	e0fa3f97-31a5-4353-8a38-93e86d8673fb	Thiết kế chương trình đào tạo năng lực lãnh đạo y tế theo chuẩn năng lực	2	[{"changed": {"fields": ["Body"]}}]	47	1
+736	2026-09-13 21:55:45.480335+07	91920ceb-3611-4e81-866f-81083b64ff5e	IRDM	2	[{"changed": {"fields": ["Logo (white)"]}}]	7	1
+737	2026-09-14 10:41:50.025158+07	7a442992-c910-47e8-b627-afd0e7ce4c83	TS.DS. Trần Lê Diễm Anh	2	[{"changed": {"fields": ["Ticker bar text"]}}]	64	1
+738	2026-09-14 11:58:04.276789+07	7a442992-c910-47e8-b627-afd0e7ce4c83	TS.DS. Trần Lê Diễm Anh	2	[{"changed": {"fields": ["Card specialty label"]}}]	64	1
+739	2026-09-14 12:06:06.105996+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	1	[{"added": {}}]	59	1
+768	2026-09-17 14:44:32.740545+07	52768a3a-de8e-4495-8ea3-280daab55772	IRDM tổ chức talkshow học thuật “Công bố khoa học: Thước đo năng lực hay áp lực học thuật?”	2	[{"changed": {"fields": ["Content"]}}]	59	1
+740	2026-09-14 12:26:03.319324+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Content"]}}]	59	1
+741	2026-09-14 12:45:36.838882+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Content", "Read time (minutes)"]}}]	59	1
+742	2026-09-14 12:52:14.50072+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Summary", "Content"]}}]	59	1
+743	2026-09-14 12:52:59.604326+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Summary", "Content"]}}]	59	1
+744	2026-09-14 12:54:41.256362+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Summary", "Content"]}}]	59	1
+745	2026-09-14 12:57:39.229025+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Content"]}}]	59	1
+746	2026-09-14 22:48:54.089152+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Summary", "Content"]}}]	59	1
+747	2026-09-15 08:59:06.260034+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Summary", "Content"]}}]	59	1
+748	2026-09-15 09:00:42.502427+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Content"]}}]	59	1
+749	2026-09-15 09:05:27.0497+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Content"]}}]	59	1
+750	2026-09-15 09:06:55.632552+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Content"]}}]	59	1
+751	2026-09-15 09:08:09.927867+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Content"]}}]	59	1
+752	2026-09-17 12:20:38.091907+07	8044006a-9b23-40bf-9b48-b70473cac5f1	IRDM báo cáo nghiệm thu nhiệm vụ chuyển đổi số trong quản lý hoạt động khoa học và công nghệ ngành Y tế TP.HCM	1	[{"added": {}}]	59	1
+753	2026-09-17 12:21:06.443424+07	49ba24be-3bc5-4500-af47-42388c2376cc	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	2	[{"changed": {"fields": ["Content", "Display order"]}}]	59	1
+754	2026-09-17 12:27:21.666586+07	8044006a-9b23-40bf-9b48-b70473cac5f1	IRDM báo cáo nghiệm thu nhiệm vụ chuyển đổi số trong quản lý hoạt động khoa học và công nghệ ngành Y tế TP.HCM	2	[{"changed": {"fields": ["Content"]}}]	59	1
+755	2026-09-17 12:32:47.528507+07	8044006a-9b23-40bf-9b48-b70473cac5f1	IRDM báo cáo nghiệm thu nhiệm vụ chuyển đổi số trong quản lý hoạt động khoa học và công nghệ ngành Y tế TP.HCM	2	[{"changed": {"fields": ["Content"]}}]	59	1
+756	2026-09-17 12:33:33.138959+07	8044006a-9b23-40bf-9b48-b70473cac5f1	IRDM báo cáo nghiệm thu nhiệm vụ chuyển đổi số trong quản lý hoạt động khoa học và công nghệ ngành Y tế TP.HCM	2	[{"changed": {"fields": ["Content"]}}]	59	1
+757	2026-09-17 12:35:50.762477+07	8044006a-9b23-40bf-9b48-b70473cac5f1	IRDM báo cáo nghiệm thu nhiệm vụ chuyển đổi số trong quản lý hoạt động khoa học và công nghệ ngành Y tế TP.HCM	2	[{"changed": {"fields": ["Content"]}}]	59	1
+758	2026-09-17 12:37:15.49375+07	93f7dd11-256f-4775-8020-2c292277a178	IRDM ký kết hợp tác với Bệnh viện Răng Hàm Mặt TP.HCM thúc đẩy hoạt động khoa học công nghệ, đổi mới sáng tạo và chuyển đổi số	1	[{"added": {}}]	59	1
+759	2026-09-17 12:37:58.171807+07	93f7dd11-256f-4775-8020-2c292277a178	IRDM ký kết hợp tác với Bệnh viện Răng Hàm Mặt TP.HCM thúc đẩy hoạt động khoa học công nghệ, đổi mới sáng tạo và chuyển đổi số	2	[{"changed": {"fields": ["Category"]}}]	59	1
+760	2026-09-17 12:38:51.918077+07	93f7dd11-256f-4775-8020-2c292277a178	IRDM ký kết hợp tác với Bệnh viện Răng Hàm Mặt TP.HCM thúc đẩy hoạt động khoa học công nghệ, đổi mới sáng tạo và chuyển đổi số	2	[{"changed": {"fields": ["Published", "Display order"]}}]	59	1
+761	2026-09-17 12:45:03.488406+07	93f7dd11-256f-4775-8020-2c292277a178	IRDM ký kết hợp tác với Bệnh viện Răng Hàm Mặt TP.HCM thúc đẩy hoạt động khoa học công nghệ, đổi mới sáng tạo và chuyển đổi số	2	[{"changed": {"fields": ["Summary", "Content", "Author name", "Thumbnail", "Published date"]}}]	59	1
+762	2026-09-17 12:46:56.945617+07	93f7dd11-256f-4775-8020-2c292277a178	IRDM ký kết hợp tác với Bệnh viện Răng Hàm Mặt TP.HCM thúc đẩy hoạt động khoa học công nghệ, đổi mới sáng tạo và chuyển đổi số	2	[{"changed": {"fields": ["Content"]}}]	59	1
+763	2026-09-17 12:53:38.125597+07	ab012c19-4394-4286-89a6-a0697a33a045	IRDM phối hợp Sở Y tế TP.HCM tổ chức khóa học Search Inside Yourself cho đội ngũ lãnh đạo ngành Y tế TP.HCM	1	[{"added": {}}]	59	1
+764	2026-09-17 12:53:54.166279+07	ab012c19-4394-4286-89a6-a0697a33a045	IRDM phối hợp Sở Y tế TP.HCM tổ chức khóa học Search Inside Yourself cho đội ngũ lãnh đạo ngành Y tế TP.HCM	2	[{"changed": {"fields": ["Content", "Published", "Display order"]}}]	59	1
+765	2026-09-17 13:06:36.933144+07	52768a3a-de8e-4495-8ea3-280daab55772	IRDM tổ chức talkshow học thuật “Công bố khoa học: Thước đo năng lực hay áp lực học thuật?”	1	[{"added": {}}]	59	1
+766	2026-09-17 13:08:27.076452+07	ab012c19-4394-4286-89a6-a0697a33a045	IRDM phối hợp Sở Y tế TP.HCM tổ chức khóa học Search Inside Yourself cho đội ngũ lãnh đạo ngành Y tế TP.HCM	2	[{"changed": {"fields": ["Content", "Published date"]}}]	59	1
+767	2026-09-17 13:09:02.982394+07	52768a3a-de8e-4495-8ea3-280daab55772	IRDM tổ chức talkshow học thuật “Công bố khoa học: Thước đo năng lực hay áp lực học thuật?”	2	[{"changed": {"fields": ["Content"]}}]	59	1
+769	2026-09-17 17:26:20.300166+07	52768a3a-de8e-4495-8ea3-280daab55772	IRDM tổ chức talkshow học thuật “Công bố khoa học: Thước đo năng lực hay áp lực học thuật?”	2	[{"changed": {"fields": ["Content"]}}]	59	1
+770	2026-09-18 11:36:44.349355+07	37d45d12-b396-4917-9c48-51d30da8c35f	Sơ đồ chùm bài đề xuất	1	[{"added": {}}]	47	1
+771	2026-09-18 12:04:17.242524+07	37d45d12-b396-4917-9c48-51d30da8c35f	Sơ đồ chùm bài đề xuất	2	[{"changed": {"fields": ["Body"]}}]	47	1
+772	2026-09-18 12:08:02.891387+07	37d45d12-b396-4917-9c48-51d30da8c35f	Sơ đồ chùm bài đề xuất	2	[{"changed": {"fields": ["Body"]}}]	47	1
+773	2026-09-23 12:17:42.046453+07	52768a3a-de8e-4495-8ea3-280daab55772	IRDM tổ chức talkshow học thuật “Công bố khoa học: Thước đo năng lực hay áp lực học thuật?”	2	[{"changed": {"fields": ["Content"]}}]	59	1
+774	2026-09-23 12:20:07.504515+07	0ced2aa4-0552-48ad-9af6-bf3d771c50d3	Xã hội học & chính sách công	2	[{"changed": {"fields": ["Is active"]}}]	69	1
+775	2026-09-23 12:25:48.064139+07	04752e52-8b5d-4379-80ba-efa6089aa752	THS. Trịnh Hải Linh	2	[{"changed": {"fields": ["Display order"]}}]	64	1
+776	2026-09-23 12:25:48.069811+07	77df01e0-f60e-4ddc-8a92-9786fcb9b30b	MS. Trần Thị Thể Thanh	2	[{"changed": {"fields": ["Display order"]}}]	64	1
+777	2026-09-23 12:25:48.073689+07	5e834e6b-7d63-4416-b323-80a1758300b1	GS.TS.BS. Phạm Lê An	2	[{"changed": {"fields": ["Display order"]}}]	64	1
+778	2026-09-23 12:25:48.07782+07	81d5f380-1962-4904-bd36-7b02753156b3	PGS.TS. Phan Thị Mai Hương	2	[{"changed": {"fields": ["Display order"]}}]	64	1
+779	2026-09-23 12:31:05.981385+07	0320a7f6-ea8e-434e-b1b5-b1492092aff7	PGS.TS. Lê Quang Minh	2	[{"changed": {"fields": ["Hero avatar"]}}]	64	1
+780	2026-09-23 12:32:11.877583+07	0320a7f6-ea8e-434e-b1b5-b1492092aff7	PGS.TS. Lê Quang Minh	2	[{"changed": {"fields": ["Hero avatar"]}}]	64	1
+781	2026-09-23 14:09:47.436279+07	d3fbc854-e31d-45db-98f9-21759ab402ca	Các sự kiện chuyên môn sắp diễn ra tại Viện IRDM	2	[{"changed": {"fields": ["Summary", "Topics"]}}]	47	1
+782	2026-09-23 14:27:39.806382+07	94922265-aba4-4be9-8057-a744b4f97ace	BloomHub - Mô hình học tập và đổi mới tích hợp	2	[{"changed": {"fields": ["Summary", "Category", "Topics"]}}]	49	1
+783	2026-09-23 14:28:34.024818+07	94922265-aba4-4be9-8057-a744b4f97ace	BloomHub - Mô hình học tập và đổi mới tích hợp	2	[{"changed": {"fields": ["Category", "Topics"]}}]	49	1
+784	2026-09-23 21:07:14.277499+07	49d8dbf2-a4c1-4da5-86b8-88a9d1b57aa3	Tri thức & Diễn đàn chuyên môn	2	[{"changed": {"fields": ["CTA URL"]}}]	22	1
+785	2026-09-23 21:13:20.579221+07	39cdc344-cf89-4053-b28b-e6903c1a62bb	XUẤT BẢN & TÀI LIỆU	2	[{"changed": {"fields": ["CTA URL"]}}]	21	1
+786	2026-09-23 21:15:26.657102+07	012a8f47-c9ba-47cd-9be5-9ea4371025a5	SỰ KIỆN & DIỄN ĐÀN	2	[{"changed": {"fields": ["CTA URL"]}}]	21	1
+787	2026-09-23 21:29:44.643232+07	56ee9c96-4a13-488c-bd10-ebd170c665f4	GÓC NHÌN TỪ ĐỐI TÁC	2	[{"changed": {"fields": ["CTA URL"]}}]	21	1
+788	2026-09-23 21:43:41.140612+07	04601715-d68b-41cf-92be-418fa35245f8	TRUYỀN THÔNG	2	[{"changed": {"fields": ["CTA URL"]}}]	21	1
+789	2026-09-23 22:28:18.14732+07	271e7b1e-4949-47d2-935b-8c749d75114d	Cơ quan quản lý & Chính sách	2	[{"changed": {"fields": ["CTA URL"]}}]	16	1
+790	2026-09-23 22:41:35.612803+07	881e2229-5da7-4af3-add6-0354e23adf08	Footer (điều hướng dưới) — Đội ngũ chuyên gia	2	[{"changed": {"fields": ["URL"]}}]	10	1
+791	2026-09-24 09:15:06.53418+07	5412024d-49d3-48c5-9573-39e2e71585bd	Tri thức & Góc nhìn	2	[{"changed": {"name": "footer link", "object": "Tri th\\u1ee9c & G\\u00f3c nh\\u00ecn \\u2014 G\\u00f3c nh\\u00ecn t\\u1eeb \\u0110\\u1ed1i t\\u00e1c", "fields": ["URL"]}}]	9	1
+792	2026-09-24 09:15:45.426479+07	5412024d-49d3-48c5-9573-39e2e71585bd	Tri thức & Góc nhìn	2	[{"changed": {"name": "footer link", "object": "Tri th\\u1ee9c & G\\u00f3c nh\\u00ecn \\u2014 Truy\\u1ec1n th\\u00f4ng", "fields": ["URL"]}}]	9	1
+793	2026-09-24 09:17:00.405852+07	5412024d-49d3-48c5-9573-39e2e71585bd	Tri thức & Góc nhìn	2	[{"changed": {"name": "footer link", "object": "Tri th\\u1ee9c & G\\u00f3c nh\\u00ecn \\u2014 Xu\\u1ea5t b\\u1ea3n & T\\u00e0i li\\u1ec7u", "fields": ["URL"]}}, {"changed": {"name": "footer link", "object": "Tri th\\u1ee9c & G\\u00f3c nh\\u00ecn \\u2014 S\\u1ef1 ki\\u1ec7n & Di\\u1ec5n \\u0111\\u00e0n", "fields": ["URL"]}}]	9	1
+794	2026-09-24 20:53:53.838889+07	16d11c46-9090-47c7-b1b2-81d204aaf8c2	Bệnh viện Ung bướu TP.HCM	1	[{"added": {}}]	13	1
+795	2026-09-24 21:01:20.733987+07	8b89afb1-c381-4e2e-9c10-bfff8b34f3d1	Bệnh viện Nhân dân Gia Định	1	[{"added": {}}]	13	1
+796	2026-09-24 21:02:33.738902+07	b613700e-6889-4561-b893-7877fefb04d5	Bệnh viện Đa Khoa Khánh Hội	1	[{"added": {}}]	13	1
+797	2026-09-24 21:06:03.179065+07	0ab82382-8f19-4bb9-9adc-1d1fe4b68899	Bệnh viện Từ Dũ	1	[{"added": {}}]	13	1
+798	2026-09-24 21:08:10.931367+07	5f452290-466a-4861-98ff-50b2b181297c	Bệnh viện 115	1	[{"added": {}}]	13	1
+799	2026-09-24 21:12:01.978828+07	2a94ec06-fbde-4b97-91c3-16e334babc94	Bệnh viện Răng Hàm Mặt Trung Ương	1	[{"added": {}}]	13	1
+800	2026-09-24 21:14:01.962714+07	481b87ea-e909-40cf-92a0-0b4c733de454	Bệnh viện Hùng Vương	1	[{"added": {}}]	13	1
+801	2026-09-24 21:14:57.18161+07	7d66b010-daf1-4d98-ad02-84d4b2230cc3	Bệnh viện Bệnh Nhiệt đới	1	[{"added": {}}]	13	1
+802	2026-09-25 13:06:09.257206+07	80fcf6b0-7ae7-445f-a184-0cbbd5672330	Báo cáo & tài liệu	1	[{"added": {}}]	44	1
+803	2026-09-25 13:25:53.323172+07	f32aad52-f97c-4d90-bd97-770a9058eb12	KỶ YẾU - HỘI THẢO QUỐC TẾ VỀ TÂM LÝ HỌC TRƯỜNG HỌC LẦN THỨ 7	1	[{"added": {}}]	59	1
+804	2026-09-25 13:29:13.839714+07	679ec873-53fd-4b3f-bd58-2480e813aa95	KỶ YẾU - HỘI THẢO QUỐC TẾ VỀ TÂM LÝ HỌC TRƯỜNG HỌC LẦN THỨ 7	1	[{"added": {}}]	47	1
+805	2026-09-25 13:32:12.79139+07	679ec873-53fd-4b3f-bd58-2480e813aa95	KỶ YẾU - HỘI THẢO QUỐC TẾ VỀ TÂM LÝ HỌC TRƯỜNG HỌC LẦN THỨ 7	2	[{"changed": {"fields": ["Body", "Read time (minutes)"]}}]	47	1
+806	2026-09-28 11:13:18.676649+07	679ec873-53fd-4b3f-bd58-2480e813aa95	KỶ YẾU - HỘI THẢO QUỐC TẾ VỀ TÂM LÝ HỌC TRƯỜNG HỌC LẦN THỨ 7	2	[{"changed": {"fields": ["Body"]}}]	47	1
+807	2026-10-01 22:08:18.157638+07	679ec873-53fd-4b3f-bd58-2480e813aa95	KỶ YẾU - HỘI THẢO QUỐC TẾ VỀ TÂM LÝ HỌC TRƯỜNG HỌC LẦN THỨ 7	2	[{"changed": {"fields": ["Summary", "Body"]}}]	47	1
+808	2026-10-01 22:16:12.282742+07	679ec873-53fd-4b3f-bd58-2480e813aa95	KỶ YẾU - HỘI THẢO QUỐC TẾ VỀ TÂM LÝ HỌC TRƯỜNG HỌC LẦN THỨ 7	2	[{"changed": {"fields": ["Body"]}}]	47	1
+809	2026-10-01 22:16:46.522299+07	679ec873-53fd-4b3f-bd58-2480e813aa95	KỶ YẾU - HỘI THẢO QUỐC TẾ VỀ TÂM LÝ HỌC TRƯỜNG HỌC LẦN THỨ 7	2	[{"changed": {"fields": ["Summary", "Body"]}}]	47	1
 \.
 
 
 --
--- TOC entry 6404 (class 0 OID 312338)
--- Dependencies: 276
+-- TOC entry 6490 (class 0 OID 727407)
+-- Dependencies: 280
 -- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -5221,12 +5602,17 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 105	about	aboutorgstructurebulletitem
 106	about	aboutcontactbannerstat
 107	contact	contactrequest
+108	contact	emailsettings
+109	knowledge	knowledgepartnergroup
+110	home	partnerpagestatistic
+111	home	partnercooperationitem
+112	home	partnerpageconfig
 \.
 
 
 --
--- TOC entry 6406 (class 0 OID 312345)
--- Dependencies: 278
+-- TOC entry 6492 (class 0 OID 727414)
+-- Dependencies: 282
 -- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -5325,12 +5711,23 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 96	contact	0001_initial	2026-08-09 23:37:05.899046+07
 97	knowledge	0012_activity_news_detail_fields	2026-08-15 23:01:27.909205+07
 98	expert	0025_normalize_research_area_cta_urls	2026-08-16 23:06:53.444869+07
+99	about	0014_alter_aboutcapabilityecosystem_created_at_and_more	2026-09-12 23:03:06.4813+07
+100	capability	0007_remove_capability_icon_name_and_more	2026-09-12 23:03:06.690305+07
+101	core	0004_alter_footerlink_created_at_and_more	2026-09-12 23:03:06.714024+07
+102	expert	0026_alter_association_created_at_and_more	2026-09-12 23:03:06.896573+07
+103	home	0009_alter_audiencesectionheader_created_at_and_more	2026-09-12 23:03:06.955296+07
+104	knowledge	0013_alter_knowledgeaccordionitem_created_at_and_more	2026-09-12 23:03:07.210501+07
+105	solution	0007_alter_solution_created_at_alter_solution_updated_at_and_more	2026-09-12 23:03:07.281805+07
+106	knowledge	0014_convert_body_to_rich_html	2026-09-13 19:16:55.14391+07
+107	contact	0002_emailsettings_contactrequest_notification_attempts_and_more	2026-09-23 22:59:31.159933+07
+108	knowledge	0015_knowledgepartnergroup_and_more	2026-09-23 22:59:31.317772+07
+109	home	0010_partnerpageconfig_partnercooperationitem_and_more	2026-09-23 23:30:25.982864+07
 \.
 
 
 --
--- TOC entry 6408 (class 0 OID 312355)
--- Dependencies: 280
+-- TOC entry 6494 (class 0 OID 727424)
+-- Dependencies: 284
 -- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -5341,12 +5738,21 @@ gz1n5eg4vvrlj02pcj5mix95uwtta2qj	.eJxVjMsOwiAQRf-FtSEzlEfr0r3fQIYBpGogKe3K-O_apA
 7fmlawasq2l56o6nal69728nn5q83m90	.eJxVjMsOwiAQRf-FtSEzlEfr0r3fQIYBpGogKe3K-O_apAvd3nPOfQlP21r81tPi5yjOAsXpdwvEj1R3EO9Ub01yq-syB7kr8qBdXltMz8vh_h0U6uVbk046BhjQ2CEBRKcNpElpE4CVy0plAnY4IjmwaFXmcRqsQ2SDOugg3h_CdjbA:1wovWn:fO3jgbJxOas8oDrykl41nxKU4LJcPzDkPtgOp8cCZJ8	2026-08-12 11:04:21.417315+07
 mu54zshk2098opvrr7qxg2no3rkdu1c3	.eJxVjMsKwjAQAP9lzxJq3unRe78hJLsbU5UUmvYk_rsUetDrzDBviGnfatw7r3EmGOEKl1-WEz65HYIeqd0XgUvb1jmLIxGn7WJaiF-3s_0b1NQrjBAkhSxZW2vYkQqK2OqBaFDSEJMvWIzBJEl5XST7xJqcc-gCaq-Kgs8X8EI4VA:1wsydu:6awn0Otfh6zmB4_bqyGFKjdGoUCn1gHTTbSoyZqj3Yc	2026-08-23 15:12:26.442476+07
 r4hgzbxssqf8hdbq3loao8wnlvetc20r	.eJxVjMsKwjAQAP9lzxJq3unRe78hJLsbU5UUmvYk_rsUetDrzDBviGnfatw7r3EmGOEKl1-WEz65HYIeqd0XgUvb1jmLIxGn7WJaiF-3s_0b1NQrjBAkhSxZW2vYkQqK2OqBaFDSEJMvWIzBJEl5XST7xJqcc-gCaq-Kgs8X8EI4VA:1wt6Zv:S9s6knPAGgkWUuQJpCJVOMNAkUNtTjhs6OgYmQGO0Ug	2026-08-23 23:40:51.270984+07
+7c1nzlpnc8bhlw0nj1flqfmouidv15s8	.eJxVjMsKwjAQAP9lzxJq3unRe78hJLsbU5UUmvYk_rsUetDrzDBviGnfatw7r3EmGOEKl1-WEz65HYIeqd0XgUvb1jmLIxGn7WJaiF-3s_0b1NQrjBAkhSxZW2vYkQqK2OqBaFDSEJMvWIzBJEl5XST7xJqcc-gCaq-Kgs8X8EI4VA:1x5QJq:Iib72Jyz5gNsf6zjrLMFbb_8Vniqz-o57_06sHLk0dc	2026-09-26 23:11:10.740035+07
+ip2vzuzirtakqd0xor0pv2pz6ghbuxea	.eJxVjMsKwjAQAP9lzxJq3unRe78hJLsbU5UUmvYk_rsUetDrzDBviGnfatw7r3EmGOEKl1-WEz65HYIeqd0XgUvb1jmLIxGn7WJaiF-3s_0b1NQrjBAkhSxZW2vYkQqK2OqBaFDSEJMvWIzBJEl5XST7xJqcc-gCaq-Kgs8X8EI4VA:1x5j9P:j7_JwMapkfpl0ZY0Nxn-md3BwT0RIP1LOw7sB_JaWnQ	2026-09-27 19:17:39.766136+07
+uxm3hf8kfhg1o2tg6a4r5cfvrlf81ix5	.eJxVjMsOwiAQRf-FtSHDG1y69xsIzIBUDU1KuzL-uzbpQrf3nHNfLKZtbXEbZYkTsTMT7PS75YSP0ndA99RvM8e5r8uU-a7wgw5-nak8L4f7d9DSaN8anPGSJBiPiFL5UFKoCEHU6rQBIEXW66CzkgBO2krCea0CuVy0hcLeH8FSNu4:1x5lvJ:_-QI9Q5Tk_NsGDkDzTr009pjCtiK1oLYoHThtVwFrjo	2026-09-27 22:15:17.389171+07
+chvu53j3m68yhf2luml2da29airohuk8	.eJxVjMsOwiAQRf-FtSHDG1y69xsIzIBUDU1KuzL-uzbpQrf3nHNfLKZtbXEbZYkTsTMT7PS75YSP0ndA99RvM8e5r8uU-a7wgw5-nak8L4f7d9DSaN8anPGSJBiPiFL5UFKoCEHU6rQBIEXW66CzkgBO2krCea0CuVy0hcLeH8FSNu4:1x5xXh:hLV_tw-4fHbhJYqtCT_X70ODfyBkc2dS1M2e0e7GPVs	2026-09-28 10:39:41.811149+07
+e3dos8kt7hriuzbjnfpnii0frw2ls3fm	.eJxVjMsOwiAQRf-FtSHDG1y69xsIzIBUDU1KuzL-uzbpQrf3nHNfLKZtbXEbZYkTsTMT7PS75YSP0ndA99RvM8e5r8uU-a7wgw5-nak8L4f7d9DSaN8anPGSJBiPiFL5UFKoCEHU6rQBIEXW66CzkgBO2krCea0CuVy0hcLeH8FSNu4:1x6IPz:GJWetnLil8r8IXwpyNZdAi_pdqCAVwFfMBV8C2mBTxI	2026-09-29 08:57:07.164116+07
+gn6un3j3wun7xha6gc7ysxrlu6eay1by	.eJxVjMsOwiAQRf-FtSHDG1y69xsIzIBUDU1KuzL-uzbpQrf3nHNfLKZtbXEbZYkTsTMT7PS75YSP0ndA99RvM8e5r8uU-a7wgw5-nak8L4f7d9DSaN8anPGSJBiPiFL5UFKoCEHU6rQBIEXW66CzkgBO2krCea0CuVy0hcLeH8FSNu4:1x9F5l:ToOzZryKZPqKwSfFHP-hMvMNcLoUlYB01fWNVinrhqc	2026-10-07 12:00:25.471192+07
+n25taby26aelh93j2zt4w0tcr7ablh5u	.eJxVjMsOwiAQRf-FtSHDG1y69xsIzIBUDU1KuzL-uzbpQrf3nHNfLKZtbXEbZYkTsTMT7PS75YSP0ndA99RvM8e5r8uU-a7wgw5-nak8L4f7d9DSaN8anPGSJBiPiFL5UFKoCEHU6rQBIEXW66CzkgBO2krCea0CuVy0hcLeH8FSNu4:1x9YkX:3X0MNn6ts_PkIK0s10L2r19QKBlCynqbyi0Ou8-Jh60	2026-10-08 08:59:49.47271+07
+7izbayo46h9wtzkt18l5ou61xq4ceqaf	.eJxVjMsOwiAQRf-FtSHDG1y69xsIzIBUDU1KuzL-uzbpQrf3nHNfLKZtbXEbZYkTsTMT7PS75YSP0ndA99RvM8e5r8uU-a7wgw5-nak8L4f7d9DSaN8anPGSJBiPiFL5UFKoCEHU6rQBIEXW66CzkgBO2krCea0CuVy0hcLeH8FSNu4:1xB2h6:Ypw6a7103P38Wk3ss27C-cBs6ru0XTW15V0MWYI0yEY	2026-10-12 11:10:24.319952+07
+x6w4lx5fispb1zodm996uohhh6mf69st	.eJxVjMsKwjAQAP9lzxJq3unRe78hJLsbU5UUmvYk_rsUetDrzDBviGnfatw7r3EmGOEKl1-WEz65HYIeqd0XgUvb1jmLIxGn7WJaiF-3s_0b1NQrjBAkhSxZW2vYkQqK2OqBaFDSEJMvWIzBJEl5XST7xJqcc-gCaq-Kgs8X8EI4VA:1xCHaE:xamxxuX__RYaQ1b0X4CQRXpEMa05tAOnCLTf-crTpRQ	2026-10-15 21:16:26.881713+07
 \.
 
 
 --
--- TOC entry 6409 (class 0 OID 312363)
--- Dependencies: 281
+-- TOC entry 6495 (class 0 OID 727432)
+-- Dependencies: 285
 -- Data for Name: expert_association; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -5357,8 +5763,8 @@ bdfd86e3-ec2d-4e81-91ec-26df59adb992	t	2	2026-07-29 23:47:53.57254+07	2026-08-03
 
 
 --
--- TOC entry 6410 (class 0 OID 312385)
--- Dependencies: 282
+-- TOC entry 6496 (class 0 OID 727454)
+-- Dependencies: 286
 -- Data for Name: expert_engagementtype; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -5369,13 +5775,13 @@ c34213a5-00ad-42b1-85ab-f30fce3f6ad5	t	3	2026-07-28 23:36:07.620498+07	2026-07-2
 a01de170-27f6-477c-a710-00a7d6f68268	t	4	2026-07-28 23:36:07.621143+07	2026-07-28 23:36:07.621147+07	Phản biện khoa học	phan-bien-khoa-hoc	
 2d4498c3-376d-475d-a425-65caf86d6db5	t	5	2026-07-28 23:36:07.621748+07	2026-07-28 23:36:07.621752+07	Đồng thiết kế giải pháp	dong-thiet-ke-giai-phap	
 828b7678-6bbb-4201-9e24-5d3db24a4dcd	t	6	2026-07-28 23:36:07.622614+07	2026-07-28 23:36:07.622619+07	Triển khai & đánh giá chương trình	trien-khai-danh-gia	
-0ced2aa4-0552-48ad-9af6-bf3d771c50d3	f	7	2026-08-09 15:46:30.356011+07	2026-08-09 15:46:30.356024+07	Xã hội học & chính sách công	xa-hi-hc-chinh-sach-cong	Xã hội học & chính sách công
+0ced2aa4-0552-48ad-9af6-bf3d771c50d3	t	7	2026-08-09 15:46:30.356011+07	2026-09-23 12:20:07.501114+07	Xã hội học & chính sách công	xa-hi-hc-chinh-sach-cong	Xã hội học & chính sách công
 \.
 
 
 --
--- TOC entry 6411 (class 0 OID 312399)
--- Dependencies: 283
+-- TOC entry 6497 (class 0 OID 727468)
+-- Dependencies: 287
 -- Data for Name: expert_expert; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -5385,35 +5791,13 @@ a502b2c7-b3b8-4383-a12e-9c069de367c9	t	12	2026-07-27 17:43:39.085151+07	2026-07-
 96d80975-dbfe-4f48-95df-2d31e6cc6ede	t	22	2026-07-27 17:43:39.160426+07	2026-07-28 23:36:07.708412+07	Trương Văn Khoa	truong-van-khoa	GS.TS.	Giáo sư Toán học Ứng dụng	Đại học Khoa học Tự nhiên		Nhà toán học ứng dụng chuyên về mô hình hóa kinh tế và dự báo tài chính, thành viên Hội Toán học Việt Nam.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/															
 0dac0759-934b-4704-97eb-527515f578ea	t	23	2026-07-27 17:43:39.167275+07	2026-07-28 23:36:07.710313+07	Phan Thị Ngọc Linh	phan-thi-ngoc-linh	TS.	Chuyên gia Dinh dưỡng Cộng đồng	Viện Dinh dưỡng Quốc gia		Chuyên gia dinh dưỡng và an toàn thực phẩm, chủ nhiệm nhiều đề tài nghiên cứu cấp quốc gia về dinh dưỡng học sinh.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/															
 a7438e8f-5301-453e-b2be-212f786a8802	t	24	2026-07-27 17:43:39.172366+07	2026-07-28 23:36:07.71219+07	Michael Park	michael-park	Prof.	Professor of Digital Transformation	KAIST		Pioneer in digital transformation research with 20+ years studying technology adoption in emerging economies.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150		/lien-he/															
-162d63f1-2d74-436c-b497-12b6f71fd9f7	t	3	2026-07-27 17:43:39.016567+07	2026-07-31 22:19:52.517329+07	Lê Minh Châu	le-minh-chau	TS.	Tiến sĩ Khoa học Dữ liệu	Đại học Bách khoa Hà Nội		Chuyên gia AI và phân tích dữ liệu lớn, từng làm việc tại MIT Media Lab và Google Research. Hiện đang dẫn dắt nhóm nghiên cứu AI ứng dụng trong y tế và giáo dục.				f	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/															
-8b00b6e5-4263-492f-9dde-866efa62f049	t	4	2026-07-27 17:43:39.024389+07	2026-07-31 22:20:13.130236+07	Phạm Đức Hùng	pham-uc-hung	PGS.TS.	Phó Giáo sư Chính sách Công	Học viện Hành chính Quốc gia		Chuyên gia về cải cách hành chính và quản trị nhà nước với 20 năm kinh nghiệm tư vấn chính phủ.				f	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c		/lien-he/															
-5bcb6772-6263-4add-a5f3-95054fd00246	f	5	2026-07-27 17:43:39.034892+07	2026-08-16 22:18:47.577859+07	Vũ Thị Lan	vu-thi-lan	TS.	Tiến sĩ Y tế Cộng đồng	Đại học Y Hà Nội		Nhà nghiên cứu y tế công cộng, chuyên gia về dinh dưỡng cộng đồng và can thiệp hành vi sức khỏe.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/															
-82f35f80-7d8e-4b7c-9dfc-e0c27c6abf22	f	6	2026-07-27 17:43:39.040919+07	2026-08-16 22:19:36.992828+07	Ngô Quang Minh	ngo-quang-minh	GS.	Giáo sư Giáo dục học	Đại học Sư phạm Hà Nội		Chuyên gia hàng đầu về cải cách giáo dục và đào tạo giáo viên, cố vấn Bộ Giáo dục và Đào tạo.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd		/lien-he/															
-e2f886bb-a017-458f-b4f8-311f0d800fee	f	8	2026-07-27 17:43:39.054909+07	2026-08-16 22:20:08.203607+07	Hoàng Văn Thành	hoang-van-thanh	TS.	Giám đốc Chuyển đổi số	Tập đoàn FPT		Lãnh đạo chuyển đổi số với 15 năm kinh nghiệm triển khai giải pháp công nghệ cho doanh nghiệp lớn.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba		/lien-he/															
-7c089591-38b6-43a5-a990-f7b03c9d6d21	f	14	2026-07-27 17:43:39.102249+07	2026-08-16 22:21:46.695404+07	Bùi Thị Thu Hà	bui-thi-thu-ha	TS.	Chuyên gia Phát triển Tổ chức	Công ty Tư vấn McKinsey Vietnam		Chuyên gia tư vấn chiến lược với hơn 18 năm kinh nghiệm giúp doanh nghiệp Việt Nam nâng cao năng lực cạnh tranh.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba		/lien-he/															
-88999316-8f8d-4ca0-9438-82d9df238d59	f	10	2026-07-27 17:43:39.069274+07	2026-08-16 22:22:12.111873+07	Richard Thompson	richard-thompson	Prof.	Professor of International Economics	University of Melbourne		International expert on economic development in Southeast Asia with 30+ years of research experience.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150		/lien-he/															
-95eef455-b009-4c6f-907e-91673dd3f1a8	f	11	2026-07-27 17:43:39.075405+07	2026-08-16 22:22:23.632593+07	Lý Thị Kim Ngân	ly-thi-kim-ngan	TS.	Chuyên gia Tài chính Công	Học viện Tài chính		Chuyên gia tài chính công và ngân sách nhà nước, từng tư vấn cho Bộ Tài chính về cải cách thuế.				t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c		/lien-he/															
-d53433ba-b9d8-4441-83e8-14f9693736b5	f	13	2026-07-27 17:43:39.092419+07	2026-08-16 22:23:00.421226+07	Yoshida Kenji	yoshida-kenji	Dr.	Senior Researcher	JICA Research Institute		Japanese development economist specializing in education policy reform and human capital development in Asia.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150		/lien-he/															
-eb7bef3e-f94f-49f9-87f3-37f367ab994e	f	15	2026-07-27 17:43:39.110064+07	2026-08-16 22:23:56.978292+07	Đinh Văn Phúc	inh-van-phuc	GS.TS.	Giáo sư Y học Dự phòng	Đại học Y Dược TP.HCM		Chuyên gia y học dự phòng và dịch tễ học, trưởng nhóm nghiên cứu về bệnh không lây nhiễm tại Việt Nam.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/															
-e661b4e7-3380-4305-9404-c2f437fe1aba	f	16	2026-07-27 17:43:39.11934+07	2026-08-16 22:24:12.55308+07	Phạm Thị Lan Anh	pham-thi-lan-anh	TS.	Chuyên gia Lãnh đạo Phụ nữ	Hội Liên hiệp Phụ nữ Việt Nam		Chuyên gia về bình đẳng giới và lãnh đạo phụ nữ trong khu vực công và tư nhân.				t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c		/lien-he/															
-06f55fd9-7ccb-4bda-83d3-8d96d3ac8a69	f	17	2026-07-27 17:43:39.126555+07	2026-08-16 22:24:26.091048+07	Cao Xuân Hưng	cao-xuan-hung	TS.	Giám đốc Sản phẩm	VNG Corporation		Nhà lãnh đạo sản phẩm công nghệ với kinh nghiệm xây dựng nền tảng số phục vụ hàng triệu người dùng.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba		/lien-he/															
-a77bf886-849b-455b-852a-2df8b6b58fa0	f	18	2026-07-27 17:43:39.134357+07	2026-08-16 22:24:38.835616+07	Sarah Chen	sarah-chen	Dr.	Associate Professor of Development Studies	National University of Singapore		Researcher in sustainable development and urban governance with extensive fieldwork across Southeast Asia.				t	f	f	53d588f5-b4ad-4059-bbcb-2a6f54b67150		/lien-he/															
-f545466a-f5e5-4312-b277-5beb577cfa3d	f	20	2026-07-27 17:43:39.148286+07	2026-08-16 22:24:55.523789+07	Nguyễn Bảo Long	nguyen-bao-long	TS.	Chuyên gia ESG & Bền vững	KPMG Vietnam		Chuyên gia về báo cáo ESG và chiến lược phát triển bền vững cho các tập đoàn đa quốc gia tại Việt Nam.				t	f	f	f5b73ea9-c9e3-4f8a-908f-e725e2123cba		/lien-he/															
-d37db12f-a3b6-4dc9-aa60-b475590ed25f	f	21	2026-07-27 17:43:39.153912+07	2026-08-16 22:25:39.734849+07	Đặng Thị Minh Châu	ang-thi-minh-chau	TS.	Chuyên gia Tâm lý Tổ chức	Đại học Khoa học Xã hội và Nhân văn TP.HCM		Nhà tâm lý học tổ chức với chuyên môn về văn hóa doanh nghiệp, quản lý thay đổi và phát triển lãnh đạo.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd		/lien-he/															
-2664691b-c5df-4ae9-b521-0185b31cce4d	f	19	2026-07-27 17:43:39.141063+07	2026-08-16 22:26:10.184394+07	Lê Thị Thanh Huyền	le-thi-thanh-huyen	PGS.TS.	Phó Giáo sư Kinh tế Lao động	Viện Khoa học Lao động và Xã hội		Chuyên gia kinh tế lao động và an sinh xã hội, nghiên cứu về thị trường lao động và kỹ năng nghề.				t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/															
 6c3770a1-da0e-40ca-bd75-c37091d43431	t	25	2026-07-27 17:43:39.178+07	2026-07-28 23:36:07.714987+07	Võ Thị Thanh Tâm	vo-thi-thanh-tam	PGS.TS.	Phó Giáo sư Quản trị Y tế	Đại học Y tế Công cộng		Chuyên gia quản trị bệnh viện và chính sách y tế, tư vấn cải cách hệ thống y tế cho nhiều tỉnh thành.				t	f	f	0490c13d-38a8-445a-9c19-a93227978afd		/lien-he/															
 858ac4bd-6f40-4bc3-b726-50c42d9cfe32	t	13	2026-07-29 22:39:48.492959+07	2026-07-29 22:39:48.492968+07	Nguyễn Ngọc Liêm	nguyen-ngoc-liem	Kỹ sư								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/															
 2486a510-13b5-40c4-aafe-d016ee99a05f	t	29	2026-07-29 22:39:48.540014+07	2026-07-29 22:39:48.54002+07	Lê Thị Lan Anh	le-thi-lan-anh	ThS.								t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/															
-cc2c8d15-3a91-4485-81ef-8fcef5ea4a25	t	1	2026-07-27 17:43:38.979296+07	2026-07-31 22:02:26.242275+07	Nguyễn Văn An	nguyen-van-an	GS.TS.	Giáo sư Kinh tế học	Đại học Kinh tế Quốc dân		Chuyên gia hàng đầu về kinh tế phát triển với hơn 25 năm kinh nghiệm nghiên cứu và tư vấn chính sách. Từng là cố vấn cho các tổ chức quốc tế như World Bank và ADB.				f	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/															
-4bfedb13-2989-40cb-a435-0c3314c0f5c3	t	2	2026-07-27 17:43:39.008155+07	2026-07-31 22:19:41.334325+07	Trần Thị Bình	tran-thi-binh	PGS.TS.	Phó Giáo sư Quản trị Kinh doanh	Đại học Ngoại thương		Chuyên gia về quản trị doanh nghiệp và chuyển đổi số với nhiều công trình nghiên cứu được quốc tế công nhận. Tác giả của 3 cuốn sách về lãnh đạo trong thời đại số.				f	f	f	0490c13d-38a8-445a-9c19-a93227978afd		/lien-he/															
-5e834e6b-7d63-4416-b323-80a1758300b1	t	1	2026-07-29 22:39:48.44205+07	2026-08-04 22:59:13.623753+07	Phạm Lê An	pham-le-an	GS.TS.BS.	Y tế & quản trị y tế		expert/avatars/PhamLeAn.png	Nhà khoa học và chuyên gia cao cấp về Y học gia đình, sức khỏe cộng đồng và phát triển hệ thống Y tế – Giáo dục	GS.TS.BS. Phạm Lê An là chuyên gia hàng đầu trong lĩnh vực Y học gia đình, y tế cộng đồng và giáo dục y khoa tại Việt Nam. Với định hướng tiếp cận hệ thống và chăm sóc toàn diện, ông tập trung thúc đẩy các mô hình chăm sóc sức khỏe ban đầu, phát triển năng lực nhân lực y tế và kết nối liên ngành giữa Y tế – Giáo dục – Xã hội trong bối cảnh phát triển bền vững và hậu đại dịch.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Y tế & quản trị y tế	/lien-he/	Phát triển mô hình Y học gia đình và chăm sóc sức khỏe ban đầu\r\nSức khỏe cộng đồng và sức khỏe môi trường\r\nThiết kế và đánh giá dịch vụ Y tế\r\nGiáo dục y khoa và phát triển năng lực nhân lực Y tế\r\nSức khỏe tâm thần học đường và cộng đồng\r\nChính sách y tế và phát triển hệ thống chăm sóc toàn diện	Hơn 30 năm kinh nghiệm trong giảng dạy, nghiên cứu và phát triển hệ thống Y tế. Giáo sư Nhi khoa, Đại học Y Dược TP.HCM. Từng giữ nhiều vai trò lãnh đạo tại Đại học Y Dược TP.HCM như Trưởng Trung tâm Y học Gia đình, Phó Phòng Sau đại học và phụ trách Trung tâm Hỗ trợ dự án & đổi mới sáng tạo. Cố vấn chuyên môn và nghiên cứu khoa học tại IRDM từ năm 2022. Chủ biên nhiều giáo trình nền tảng cho đào tạo bác sĩ gia đình và nhân lực y tế tuyến đầu.		Chủ trì và tham gia các nghiên cứu về sức khỏe cộng đồng, sức khỏe hô hấp và sức khỏe tâm thần tại Việt Nam.\r\nDự án FRESH AIR (EU) về can thiệp hô hấp trong bối cảnh thiếu nguồn lực.\r\nDự án giảm ô nhiễm không khí và tăng cường sức khỏe trẻ em TP.HCM hợp tác với Đại học Purdue (Mỹ).\r\nNghiên cứu phát triển mô hình hỗ trợ tâm lý học đường và chăm sóc liên tục từ gia đình – nhà trường – y tế.\r\nCông bố hơn 150 bài báo khoa học, trong đó có hơn 50 bài quốc tế thuộc hệ thống ISI/Scopus.		Năm kinh nghiệm	30+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG			
 8ba10eec-7416-4b9a-93f1-3bd09f5c7778	t	33	2026-07-29 22:39:48.549807+07	2026-08-09 21:58:57.128136+07	Nguyễn Thị Thanh Hương	nguyen-thi-thanh-huong	ThS.			expert/avatars/NguyenThiThanhHuong.jpg		ThS. Nguyễn Thị Thanh Hương là chuyên gia trong lĩnh vực quản trị nhân sự, phát triển lãnh đạo và phát triển tổ chức. Sau hơn 20 năm làm việc trong ngành tư vấn nhân sự, bà thành lập Liberal Leadership Organization (LLO), tổ chức tập trung vào các chương trình phát triển trí tuệ cảm xúc và năng lực lãnh đạo. Trước đó, bà là đồng sáng lập và từng giữ vị trí Phó Tổng Giám đốc Talentnet. Hoạt động chuyên môn của bà hướng đến việc giúp các nhà lãnh đạo nâng cao khả năng thấu hiểu bản thân, khai phóng tiềm năng và dẫn dắt đội ngũ bằng sự thấu cảm.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/	Phát triển năng lực lãnh đạo\r\nLãnh đạo bằng sự thấu cảm\r\nXây dựng và phát triển đội ngũ\r\nPhát triển văn hóa lãnh đạo\r\nTrí tuệ cảm xúc dành cho nhà quản lý\r\nThấu hiểu bản thân và phát triển nội lực lãnh đạo\r\nQuản trị con người trong tổ chức\r\nHành trình phát triển cá nhân của nhà lãnh đạo	Hơn 20 năm kinh nghiệm trong lĩnh vực tư vấn nhân sự, quản trị và phát triển lãnh đạo.\r\nNhà sáng lập và Tổng Giám đốc Liberal Leadership Organization (LLO).\r\nĐồng sáng lập và nguyên Phó Tổng Giám đốc Talentnet.\r\nPhát triển các chương trình đào tạo về trí tuệ cảm xúc và năng lực lãnh đạo.\r\nLà EQ Master Trainer và thành viên của International Coaching Federation (ICF).		Thành lập và điều hành Liberal Leadership Organization, phát triển các chương trình đào tạo chuyên sâu về EQ và Leadership.\r\nXây dựng các chương trình kết hợp giáo trình quốc tế, kiến thức nền tảng và trải nghiệm cá nhân nhằm hỗ trợ quá trình phát triển lâu dài của người học.\r\nĐồng hành cùng các nhà lãnh đạo trong quá trình thấu hiểu bản thân, khai phóng tiềm năng và phát triển khả năng dẫn dắt đội ngũ.\r\nTham gia chia sẻ chuyên môn về lãnh đạo tỉnh thức, nội lực lãnh đạo và vai trò của trí tuệ cảm xúc trong quản trị.	Nhà khoa học/chuyên gia	Năm kinh nghiệm	20+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/NguyenThiThanhHuong.jpg	Chuyên gia quản trị nhân sự và phát triển lãnh đạo với hơn 20 năm kinh nghiệm tư vấn, quản lý và đồng hành cùng các tổ chức.
 55dae78f-50c7-4bec-8975-998d7d55dba2	t	7	2026-07-29 22:39:48.47286+07	2026-08-05 22:52:33.252687+07	Nguyễn Thanh Bình	nguyen-thanh-binh	PGS.TS.	Chuyên gia AI & dữ liệu		expert/avatars/NguyenThanhBinh.jpg	Chuyên gia về AI, khai phá dữ liệu và ứng dụng công nghệ trong y tế số.	PGS.TS. Nguyễn Thanh Bình là chuyên gia trong lĩnh vực trí tuệ nhân tạo, khoa học dữ liệu và toán học ứng dụng. Ông hiện là giảng viên Khoa Toán – Tin học, Trường Đại học Khoa học Tự nhiên (ĐHQG TP.HCM). Sau khi hoàn thành chương trình Tiến sĩ loại xuất sắc tại École Polytechnique (Pháp), ông trở về Việt Nam để giảng dạy, nghiên cứu và phát triển các hướng ứng dụng AI trong công nghiệp, môi trường, xử lý ngôn ngữ tự nhiên và chuyển đổi số. Hoạt động nghiên cứu của ông tập trung vào việc kết nối giữa trường đại học và doanh nghiệp nhằm chuyển giao các thành quả khoa học thành các giải pháp có giá trị thực tiễn.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/	Trí tuệ nhân tạo (AI)\r\nKhoa học dữ liệu và phân tích dữ liệu lớn\r\nXử lý ngôn ngữ tự nhiên (NLP)\r\nAI trong môi trường và đô thị thông minh\r\nMachine Learning và Deep Learning\r\nComputer Vision\r\nAI trong sản xuất công nghiệp\r\nThiết kế thuật toán và tối ưu hóa mô hình AI	Phó Giáo sư, Tiến sĩ Khoa học máy tính.\r\nThủ khoa tốt nghiệp ngành Toán – Tin học, Trường ĐH Khoa học Tự nhiên TP.HCM (2008).\r\nThạc sĩ Toán ứng dụng, Đại học Orléans (Pháp).\r\nTiến sĩ loại xuất sắc tại École Polytechnique (Pháp) năm 2013.\r\nHơn 11 năm giảng dạy và nghiên cứu tại Trường ĐH Khoa học Tự nhiên (ĐHQG TP.HCM).\r\nCó hơn 50 công bố khoa học quốc tế trên các tạp chí SCI và hội nghị quốc tế uy tín.\r\nChủ trì và tham gia nhiều nghiên cứu chuyển giao AI cho doanh nghiệp và cơ quan quản lý.		Đồng tác giả bằng sáng chế tại Hoa Kỳ về hệ thống đánh giá chất lượng sợi vải tự động bằng máy đo quang phổ (2021).\r\nPhát triển các mô hình AI dự đoán lỗi kỹ thuật và đánh giá chất lượng trong sản xuất công nghiệp.\r\nChủ trì nghiên cứu "Multi-source Machine Learning for AQI Estimation", ứng dụng IoT và Machine Learning để dự báo chất lượng không khí tại TP.HCM (IEEE Big Data 2021).\r\nCông bố các nghiên cứu về phân tích cảm xúc tiếng Việt và hệ thống hỏi – đáp trên tri thức bằng mô hình BERT tại các hội nghị quốc tế SoMeT và ICONIP 2021.\r\nCó hơn 50 công bố quốc tế trên các tạp chí SCI Q1 như SIAM Review, Knowledge-Based Systems, Information Sciences và Neurocomputing.		Năm kinh nghiệm	11+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế				Phó Giáo sư, Tiến sĩ Khoa học máy tính và Toán ứng dụng với chuyên môn về trí tuệ nhân tạo, học máy và chuyển giao các mô hình AI vào giải quyết bài toán thực tiễn
-7a442992-c910-47e8-b627-afd0e7ce4c83	t	4	2026-07-29 22:39:48.461006+07	2026-08-04 23:08:22.357405+07	Trần Lê Diễm Anh	tran-le-diem-anh	TS.DS.	Chuyên gia học tập ứng dụng	Phó Chủ tịch Hội Đồng Quản lý Viện IRDM  Viện trưởng Viện IRDM  Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	expert/avatars/TranLeDiemAnh.jpg	Nhà khoa học và chuyên gia liên ngành về quản trị y tế, sức khỏe tâm thần và phát triển hệ thống Y tế – Giáo dục	Chuyển hóa tri thức thành trải nghiệm học tập, E-Learning và phát triển năng lực.			t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Giáo dục & y tế	/lien-he/	Quản trị và phát triển hệ thống Y tế;\r\nSức khỏe tâm thần học đường;\r\nNghiên cứu và phát triển chính sách xã hội sức khỏe.\r\nLeadership & wellbeing cho nhân sự Y tế;\r\nPhát triển năng lực liên ngành;	Hơn 22 năm kinh nghiệm trong lĩnh vực dược phẩm, chăm sóc sức khỏe và phát triển hệ thống Y tế. Từng đảm nhiệm các vị trí lãnh đạo cấp cao tại Roche, Johnson & Johnson, MSD/Merck, Menarini và Chemo Iberica SA. Giảng viên đồng thỉnh giảng Trường Dược – Đại học Y Dược TP.HCM. Tác giả và đồng tác giả nhiều nghiên cứu về sức khỏe tâm thần, xã hội học sức khỏe và phát triển hệ thống Y tế – Giáo dục. Chủ trì và tham gia các sáng kiến nghiên cứu ứng dụng, chuyển đổi số và phát triển năng lực trong lĩnh vực Y tế – Giáo dục.	TS.DS. Trần Lê Diễm Anh là nhà khoa học và chuyên gia liên ngành tập trung vào quản trị y tế, sức khỏe tâm thần và phát triển hệ thống Y tế – Giáo dục từ góc nhìn xã hội học và phát triển con người. TS. DS. Diễm Anh hiện là Viện trưởng IRDM, đồng thời tham gia nghiên cứu, đào tạo và phát triển các sáng kiến liên ngành hướng tới wellbeing và phát triển bền vững	Chủ trì và phát triển các nghiên cứu về sức khỏe tâm thần sinh viên khối ngành Y tế từ góc nhìn xã hội học.\r\nTham gia nhiệm vụ khoa học công nghệ “Ứng dụng chuyển đổi số trong quản lý, phê duyệt, giám sát hoạt động khoa học công nghệ ngành Y tế tại TP.HCM” (2024–2025).\r\nPhát triển các chương trình leadership và wellbeing cho nhân sự Y tế trong bối cảnh hậu COVID-19.\r\nTriển khai các sáng kiến liên ngành về xã hội học sức khỏe, phát triển hệ thống Y tế bền vững và nâng cao năng lực nguồn nhân lực Y tế – Giáo dục.\r\nCó sáng kiến và triển khai các nhiệm vụ ứng dụng AI trong hỗ trợ chẩn đoán, quản lý, phòng ngừa và dự báo bệnh tật.		Năm kinh nghiệm	22+					QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG			
 a78667f1-f6cc-407c-8079-eb9a2beed0d1	t	15	2026-07-29 22:39:48.500403+07	2026-08-05 22:24:36.746909+07	Nguyễn Đức Tuấn	nguyen-duc-tuan	GS.TS.DS.	Nhà khoa học/chuyên gia		expert/avatars/GS_NguyenDucTuan.jpg	Nhà khoa học và chuyên gia cao cấp về quản trị Giáo dục đại học ngành Dược, kiểm soát chất lượng dược phẩm và phát triển hệ thống đào tạo Y Dược.	GS.TS. Nguyễn Đức Tuấn là chuyên gia đầu ngành trong lĩnh vực kiểm nghiệm thuốc, phân tích dược chất và quản lý chất lượng Giáo dục đại học ngành Dược tại Việt Nam. Với nền tảng nghiên cứu chuyên sâu kết hợp kinh nghiệm quản trị học thuật và phát triển hệ thống đảm bảo chất lượng, ông tập trung thúc đẩy đổi mới đào tạo Dược, nghiên cứu phát triển thuốc và ứng dụng khoa học phân tích trong kiểm soát chất lượng dược phẩm – thực phẩm – sản phẩm chăm sóc sức khỏe.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	AI, dữ liệu & chuyển đổi số	/lien-he/	Đảm bảo và kiểm định chất lượng Giáo dục đại học\r\nKiểm nghiệm và tiêu chuẩn hóa dược phẩm – thực phẩm – sản phẩm chăm sóc sức khỏe\r\nNghiên cứu kinh tế Y tế và hành vi sử dụng thuốc\r\nPhát triển chương trình đào tạo ngành Y Dược theo chuẩn quốc tế\r\nPhân tích dược chất, tạp chất và chất đánh dấu sinh học\r\nTư vấn phát triển sản phẩm và hệ thống kiểm soát chất lượng	Giáo sư, Tiến sĩ Dược học; Phó Trưởng Khoa Dược và Trưởng Bộ môn Phân tích – Kiểm nghiệm, Đại học Y Dược TP.HCM.\r\nHơn 30 năm kinh nghiệm trong nghiên cứu, giảng dạy và phát triển hệ thống đảm bảo chất lượng đào tạo ngành Dược.\r\nTừng phụ trách Đơn vị Đảm bảo chất lượng Giáo dục Khoa Dược – Đại học Y Dược TP.HCM.\r\nCó nhiều giai đoạn nghiên cứu sau tiến sĩ tại Đại học Innsbruck (Áo) và Đại học Osaka (Nhật Bản).\r\nTham gia biên soạn Dược điển Việt Nam các phiên bản IV, V và VI.		Chủ trì và tham gia nhiều đề tài cấp Nhà nước, cấp Thành phố về kiểm nghiệm thuốc, tiêu chuẩn hóa dược chất và phát triển hệ thống phân tích dược phẩm.\r\nXây dựng quy trình kiểm nghiệm và tiêu chuẩn hóa nguyên liệu, thành phẩm đưa vào Dược điển Việt Nam.\r\nPhát triển các quy trình HPLC, CE, LC-MS/MS trong phân tích dược chất và chất chuyển hóa sinh học.\r\nTriển khai hoạt động đảm bảo chất lượng đào tạo ngành Dược theo chuẩn AUN-QA.\r\nCông bố hơn 100 bài báo khoa học và hướng dẫn nhiều nghiên cứu sinh, học viên cao học trong lĩnh vực Dược học và kiểm nghiệm thuốc.		Năm kinh nghiệm	30+			Phạm vi nghiên cứu và hợp tác quốc tế	Việt Nam	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/GS_NguyenDucTuan.jpg	
-0320a7f6-ea8e-434e-b1b5-b1492092aff7	t	0	2026-07-29 22:39:48.49661+07	2026-08-05 23:52:50.823092+07	Lê Quang Minh	le-quang-minh	PGS.TS.	Nhà khoa học giáo dục	Thành viên Hội đồng quản lý IRDM	expert/avatars/PGS_LeQuangMinh.jpg	Đồng hành định hướng học thuật và phát triển năng lực trong giáo dục đại học	PGS.TS. Lê Quang Minh là chuyên gia hàng đầu trong lĩnh vực quản trị đại học, đảm bảo chất lượng Giáo dục, phát triển chính sách công và quản lý môi trường. Với hơn 40 năm kinh nghiệm nghiên cứu, giảng dạy và điều hành tại các cơ sở Giáo dục lớn của Việt Nam, ông từng giữ nhiều vị trí lãnh đạo trọng yếu như Hiệu trưởng Đại học Cần Thơ, Phó Giám đốc ĐHQG TP.HCM và Kiểm định viên trưởng AUN-QA. Ông đồng thời là chuyên gia tư vấn cho nhiều chương trình hợp tác quốc tế về phát triển Giáo dục, quản trị đại học và phát triển bền vững tại khu vực ASEAN.			t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/	Chiến lược phát triển Giáo dục đại học\r\nPhát triển chương trình đào tạo theo chuẩn đầu ra và OBE\r\nChính sách công về Giáo dục và phát triển nguồn nhân lực\r\nThiết kế hệ thống đảm bảo chất lượng và kiểm định Giáo dục\r\nQuản trị đại học và phát triển lãnh đạo Giáo dục\r\nQuản lý môi trường, biến đổi khí hậu và phát triển bền vững	Nguyên Hiệu trưởng Đại học Cần Thơ; nguyên Phó Giám đốc ĐHQG TP.HCM.\r\nChủ tịch Hội đồng Đảm bảo Chất lượng ĐHQG TP.HCM và Kiểm định viên trưởng AUN-QA.\r\nHơn 40 năm kinh nghiệm trong quản trị đại học, phát triển chương trình đào tạo và hợp tác quốc tế.\r\nChủ trì nhiều dự án quốc tế quy mô lớn với tổng ngân sách hàng chục triệu Euro và Dollar từ Hà Lan, Bỉ, Canada và các tổ chức quốc tế.\r\nĐại biểu Quốc hội khóa X, XI; cố vấn cao cấp cho UB Văn hóa – Giáo dục Quốc hội và ĐHQG TP.HCM.	Thành viên Hội đồng quản lý IRDM\r\nNhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	Chủ nhiệm các dự án phát triển đại học quốc tế như VLIR (Bỉ), MHO (Hà Lan), VSEP (Canada).\r\nThiết kế và triển khai chương trình Thạc sĩ Quản lý Môi trường và Biến đổi khí hậu hợp tác với Đại học Aarhus (Đan Mạch) và Đại học Duke (Hoa Kỳ).\r\nĐồng thiết kế và huấn luyện triển khai mô hình đào tạo Outcome-Based Education cho nhiều trường đại học trong ASEAN.\r\nTư vấn và đào tạo xây dựng hệ thống đảm bảo chất lượng nội bộ cho hơn 100 trường đại học và cao đẳng tại Việt Nam.\r\nChủ trì và tham gia nhiều nghiên cứu về quản lý tài nguyên nước, cải tạo đất phèn, phát triển bền vững vùng Đồng bằng sông Cửu Long.		Năm kinh nghiệm	40+	Trường đại học tư vấn	100+	Phạm vi nghiên cứu và hợp tác quốc tế	ASEAN				Chuyên gia cao cấp về quản trị đại học, kiểm định chất lượng Giáo dục và phát triển chính sách công – môi trường tại Việt Nam và ASEAN
 11a4ef9f-bb10-487a-8ced-a0d0caacbf1e	t	3	2026-07-29 22:39:48.458409+07	2026-08-06 22:33:59.001093+07	Trần Thị Minh Hạnh	tran-thi-minh-hanh	TS.BS.	Nhà khoa học/chuyên gia		expert/avatars/TranThiMinhHanh.jpg		TS.BS. Trần Thị Minh Hạnh là chuyên gia trong lĩnh vực dinh dưỡng cộng đồng, sức khỏe học đường và chăm sóc sức khỏe dự phòng. Với hơn 30 năm kinh nghiệm trong nghiên cứu, quản lý chuyên môn và triển khai chương trình dinh dưỡng tại bệnh viện, trường học và cộng đồng, bà tập trung thúc đẩy các mô hình chăm sóc sức khỏe toàn diện, nâng cao chất lượng sống và phát triển sức khỏe bền vững cho trẻ em, phụ nữ và cộng đồng đô thị.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/	Dinh dưỡng cộng đồng và sức khỏe học đường\r\nChăm sóc dinh dưỡng cho trẻ em và phụ nữ\r\nĐánh giá tình trạng dinh dưỡng và sức khỏe cộng đồng\r\nPhòng chống thừa cân – béo phì và thiếu vi chất dinh dưỡng\r\nPhát triển chương trình sức khỏe học đường và TTGDSK\r\nNghiên cứu dịch tễ học dinh dưỡng và hành vi sức khỏe	Hơn 30 năm kinh nghiệm trong lĩnh vực dinh dưỡng cộng đồng và chăm sóc sức khỏe dự phòng.\r\nNguyên Phó Giám đốc Trung tâm Dinh dưỡng TP.HCM.\r\nNguyên Trưởng khoa Dinh dưỡng lâm sàng – Bệnh viện Hoàn Mỹ Sài Gòn.\r\nTừng giữ vai trò lãnh đạo chuyên môn tại Trung tâm Dinh dưỡng TP.HCM trong các chương trình sức khỏe học đường và dinh dưỡng cộng đồng quy mô lớn.\r\nCông bố nhiều nghiên cứu quốc tế và trong nước về dinh dưỡng, béo phì, sức khỏe học đường và sức khỏe cộng đồng.		Triển khai các nghiên cứu quy mô lớn về thừa cân – béo phì, thiếu vi chất dinh dưỡng và sức khỏe học đường tại TP.HCM.\r\nTham gia các nghiên cứu quốc tế về dinh dưỡng trẻ em, nguy cơ tim mạch và hành vi sức khỏe vị thành niên tại Việt Nam.\r\nPhát triển và triển khai các chương trình đánh giá tình trạng dinh dưỡng, thiếu máu và thiếu vi chất cho học sinh, phụ nữ mang thai, phụ nữ cho con bú và nhóm lao động nhập cư tại TP.HCM\r\nĐồng tác giả nhiều nghiên cứu công bố trên International Journal of Pediatric Obesity, European Journal of Clinical Nutrition và Journal of Public Health Nutrition.\r\nChủ biên và tham gia biên soạn các tài liệu, sách hướng dẫn dinh dưỡng cộng đồng và thực hành dinh dưỡng tại Việt Nam.		Năm kinh nghiệm	30+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/TranThiMinhHanh.jpg	Chuyên gia về dinh dưỡng cộng đồng, sức khỏe học đường và phát triển chương trình chăm sóc sức khỏe toàn diện.
-81d5f380-1962-4904-bd36-7b02753156b3	t	1	2026-07-29 22:39:48.524025+07	2026-08-06 22:24:50.926995+07	Phan Thị Mai Hương	phan-thi-mai-huong	PGS.TS.	Nhà khoa học/chuyên gia; Giảng viên & chuyên gia học tập ứng dụng		expert/avatars/PhanThiMaiHuong.png	Nghiên cứu và ứng dụng tâm lý học trong phát triển con người và wellbeing.	PGS.TS. Phan Thị Mai Hương là nhà nghiên cứu tâm lý học với hơn 30 năm kinh nghiệm trong nghiên cứu, giảng dạy và hướng dẫn khoa học. Các hướng nghiên cứu nổi bật của bà tập trung vào cảm xúc, trí tuệ cảm xúc, hạnh phúc, wellbeing, tâm lý học lao động và những yếu tố tâm lý ảnh hưởng đến học tập, công việc và chất lượng cuộc sống. Tại IRDM, bà tham gia với vai trò chuyên gia nghiên cứu, đóng góp chuyên môn trong thiết kế nghiên cứu và phản biện khoa học cho các sáng kiến về sức khỏe tâm thần và phát triển con người.			t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Tâm lý & sức khỏe tâm thần	/lien-he/	Đánh giá sức khỏe tinh thần và wellbeing trong trường học, tổ chức và cộng đồng\r\nHạnh phúc học đường và trải nghiệm tâm lý của người học\r\nKiệt sức nghề nghiệp và chất lượng cuộc sống trong công việc\r\nTrí tuệ cảm xúc và hành vi xã hội của thanh thiếu niên\r\nCảm xúc, sự hài lòng và hiệu quả làm việc của người lao động\r\nThiết kế nghiên cứu, xây dựng thang đo và công cụ đánh giá tâm lý	Được công nhận học hàm Phó Giáo sư năm 2009 và nhận học vị Tiến sĩ Tâm lý học năm 2002.\r\nCó nền tảng đào tạo chuyên sâu về Tâm lý học tại Trường Đại học Tổng hợp Quốc gia Leningrad, Đại học Quốc gia Seoul và Viện Tâm lý học – Viện Khoa học Xã hội Việt Nam.\r\nCó nhiều năm giảng dạy và hướng dẫn khoa học tại Trường Đại học KHXH&NV Hà Nội, Học viện Khoa học Xã hội, Trường Đại học Sư phạm Hà Nội và Trường Đại học Sư phạm TP.HCM.\r\nLà chuyên gia nghiên cứu tại Viện IRDM từ năm 2022.\r\nChủ trì và tham gia nhiều nhiệm vụ khoa học cấp Nhà nước, cấp Bộ về trí tuệ cảm xúc, cảm xúc trong công việc, hạnh phúc học đường, đổi mới giáo dục và chất lượng cuộc sống nghề nghiệp.		Chủ trì đề tài cấp Nhà nước về trí tuệ cảm xúc và mối quan hệ với hành vi xã hội của thanh thiếu niên, góp phần làm rõ vai trò của năng lực cảm xúc trong quá trình phát triển và thích ứng xã hội của người trẻ.\r\nChủ trì đề tài cấp Bộ về cảm xúc tại nơi làm việc và ảnh hưởng đến hành vi thực hiện công việc của người lao động, kết nối nghiên cứu tâm lý với các vấn đề hiệu quả làm việc và chất lượng môi trường tổ chức.\r\nChủ trì đề tài cấp Bộ về tâm thế của giáo viên phổ thông đối với đổi mới giáo dục, đồng thời phát triển thang đo phục vụ nghiên cứu và đánh giá thực tiễn.\r\nThực hiện chuỗi nghiên cứu về hạnh phúc học đường, bao gồm cảm nhận hạnh phúc của học sinh và các yếu tố trường học có khả năng dự báo trải nghiệm tích cực của trẻ khi đến trường.\r\nĐồng thực hiện các nghiên cứu về kiệt sức làm cha mẹ trong đại dịch COVID-19, cung cấp bằng chứng về áp lực tâm lý và những yếu tố liên quan đến wellbeing của gia đình trong bối cảnh khủng hoảng.\r\nCông bố các chuyên khảo và tài liệu như Cảm xúc tại nơi làm việc, Phương pháp nghiên cứu trong Tâm lý học và các nghiên cứu về tâm lý người lao động, cư dân ven đô và cộng đồng trong quá trình đô thị hóa.		Năm kinh nghiệm	30+			Phạm vi nghiên cứu và hợp tác quốc tế	Việt Nam	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/PhanThiMaiHuong.png	Nhà khoa học và chuyên gia cao cấp về tâm lý học, cảm xúc, wellbeing và sức khỏe tinh thần trong giáo dục và môi trường làm việc.
 767afe2b-67b0-4078-88ad-28d0d8bc209f	t	2	2026-07-29 22:39:48.453716+07	2026-08-06 22:44:00.43211+07	Ngô Gia Lương	ngo-gia-luong	TS.	Chuyên gia y tế & kinh tế		expert/avatars/NgoGiaLuong.jpg	Chuyên gia về quản trị y tế, kinh tế y tế và phân tích tác động của chính sách y tế.	TS. Ngô Gia Lương là chuyên gia liên ngành trong quản trị y tế, kinh tế y tế và đào tạo nguồn nhân lực Y – Dược, với hơn 40 năm kinh nghiệm làm việc trong các trường đại học và cơ sở đào tạo khối sức khỏe. Với nền tảng chuyên môn về hóa học, quản trị học và kinh tế học, ông tập trung kết nối khoa học sức khỏe với quản trị, tổ chức và phân tích hiệu quả nhằm hỗ trợ phát triển chương trình đào tạo, dịch vụ y tế và mô hình vận hành phù hợp với bối cảnh thực tiễn. Tại IRDM, ông đồng hành trong tư vấn chiến lược và đồng thiết kế các giải pháp liên quan đến giáo dục y tế, quản trị bệnh viện và phát triển tổ chức học tập trong ngành Y.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Y tế & quản trị y tế; Môi trường & phát triển bền vững; Quản trị kinh tế & tác động xã hội	/lien-he/	Quản trị bệnh viện và quản lý dịch vụ y tế\r\nThiết kế, cải tiến chương trình đào tạo nhân lực Y – Dược\r\nXây dựng tổ chức học tập trong bệnh viện và cơ sở đào tạo y khoa\r\nPhát triển dịch vụ khoa học – công nghệ trong lĩnh vực y tế\r\nKinh tế y tế và phân tích hiệu quả sử dụng nguồn lực\r\nPhát triển năng lực quản lý cho cán bộ y tế\r\nKết nối khoa học sức khỏe với quản trị và kinh tế\r\nChuyển đổi và cải tiến hệ thống giáo dục, dịch vụ y tế	Hơn 40 năm kinh nghiệm giảng dạy, quản lý đào tạo và phát triển chương trình trong các trường đại học Y – Dược.\r\nTừng là Phó Trưởng khoa Quản trị bệnh viện tại Trường Đại học Hùng Vương.\r\nTừng là giảng viên chính tại Trường Đại học Y khoa Phạm Ngọc Thạch.\r\nCó nhiều năm công tác tại Trung tâm Đào tạo và Bồi dưỡng cán bộ Y tế TP.HCM, trực tiếp tham gia đào tạo, huấn luyện đội ngũ cán bộ y tế.\r\nHiện tham gia giảng dạy thỉnh giảng tại nhiều cơ sở đại học như Đại học Kinh tế TP.HCM, Đại học Gia Định và Đại học Hoa Sen.\r\nTừng được cử đi thực tập và nghiên cứu tại các cơ sở học thuật ở Bỉ như FUNDP Namur, Louvain và Bruxelles, với các nội dung liên quan đến sinh học phân tử và ứng dụng quản lý trong y tế.		Tham gia xây dựng và giảng dạy các chương trình về quản trị bệnh viện, kinh tế y tế và quản lý y tế liên ngành, kết nối kiến thức chuyên môn sức khỏe với tư duy quản trị và sử dụng nguồn lực.\r\nTham gia đào tạo và bồi dưỡng hàng nghìn cán bộ y tế tại TP.HCM trong quá trình công tác tại Trung tâm Đào tạo và Bồi dưỡng cán bộ Y tế TP.HCM.\r\nPhát triển nội dung giảng dạy đa cấp độ, từ đào tạo kỹ thuật viên y tế, cử nhân đến học viên sau đại học trong các lĩnh vực khoa học sức khỏe, kinh tế và quản trị.\r\nThúc đẩy cách tiếp cận liên ngành giữa y học, quản trị và kinh tế, góp phần định hình tư duy cải tiến chương trình đào tạo và dịch vụ y tế.\r\nTại IRDM, tham gia tư vấn và đồng thiết kế các chương trình về giáo dục y tế, quản trị bệnh viện, phát triển dịch vụ khoa học – công nghệ và tổ chức học tập ngành Y.		Năm kinh nghiệm	40+					QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/NgoGiaLuong_1.jpg	Chuyên gia liên ngành về quản trị y tế, kinh tế y tế, đào tạo nhân lực Y – Dược và phát triển hệ thống chăm sóc sức khỏe bền vững.
 dd4d7f32-1eaa-4a4e-8ea6-6a48ccf87e3c	t	3	2026-07-29 22:39:48.529043+07	2026-08-09 00:07:02.235131+07	Phạm Đức Trọng	pham-duc-trong	TS.	Nhà nghiên cứu xã hội học		expert/avatars/PhamDucTrong.jpg	Phân tích bối cảnh xã hội, nhóm thụ hưởng và tác động chính sách.	TS. Phạm Đức Trọng là chuyên gia xã hội học ứng dụng với hơn 30 năm kinh nghiệm nghiên cứu, giảng dạy và triển khai các chương trình can thiệp cộng đồng trong lĩnh vực Y tế công cộng, HIV/AIDS và phát triển xã hội. Ông từng giữ nhiều vai trò học thuật và quản lý tại Trường Đại học KHXH&NV – ĐHQG TP.HCM và hiện là Chủ tịch Hội đồng Quản lý IRDM. Với định hướng nghiên cứu ứng dụng và tiếp cận cộng đồng, ông tập trung vào các vấn đề chính sách xã hội, hành vi sức khỏe và đánh giá tác động xã hội trong bối cảnh đô thị và nhóm yếu thế.			t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Xã hội học & chính sách công	/lien-he/	Chính sách Y tế cộng đồng và hành vi sức khỏe\r\nĐánh giá tác động xã hội của chương trình/dự án\r\nThiết kế nghiên cứu cộng đồng và nghiên cứu định tính\r\nNghiên cứu xã hội học ứng dụng\r\nHIV/AIDS và nhóm yếu thế\r\nPhát triển hệ thống hỗ trợ cộng đồng trong bối cảnh đô thị	Chủ tịch Hội đồng Quản lý và Chủ tịch Hội đồng Khoa học IRDM từ năm 2020.\r\nNguyên Trưởng khoa Xã hội học – Trường Đại học KHXH&NV, ĐHQG TP.HCM.\r\nHơn 30 năm kinh nghiệm nghiên cứu và đào tạo trong lĩnh vực xã hội học ứng dụng và phát triển cộng đồng.\r\nĐã hướng dẫn thành công nhiều học viên cao học và nghiên cứu sinh ngành Xã hội học.\r\nHợp tác triển khai nhiều nghiên cứu với World Bank, CDC Hoa Kỳ, FHI và các cơ quan quản lý tại TP.HCM.		Chủ trì và tham gia nhiều nghiên cứu đánh giá hiệu quả chương trình phòng chống HIV/AIDS tại TP.HCM với sự hỗ trợ của World Bank, CDC Hoa Kỳ và FHI.\r\nTriển khai chương trình hồi gia và hỗ trợ tái hòa nhập cộng đồng cho người sau cai nghiện tại TP.HCM.\r\nThực hiện các nghiên cứu về hành vi nguy cơ, lây nhiễm HIV ở nhóm MSM và các nhóm nguy cơ cao tại đô thị.\r\nChủ nhiệm nghiên cứu đánh giá tác động của khu công nghiệp Sóng Thần đến đời sống cộng đồng dân cư khu vực lân cận.\r\nTham gia nghiên cứu về hành vi khán giả truyền hình và các xu hướng xã hội đô thị tại TP.HCM.	Chủ tịch Hội đồng quản lý IRDM Nhà khoa học/chuyên gia	Năm kinh nghiệm	30+					QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG			Chuyên gia về xã hội học ứng dụng, chính sách Y tế cộng đồng và đánh giá tác động xã hội.
 eb0fa648-67ab-4716-84ae-9e28c7e9e779	t	19	2026-07-29 22:39:48.51307+07	2026-08-09 00:04:06.375535+07	Nguyễn Thị Minh	nguyen-thi-minh	TS.	Nhà khoa học/chuyên gia		expert/avatars/NguyenThiMinh.png		ThS. Nguyễn Minh Hương là chuyên gia truyền thông, nhà quản lý và giảng viên với hơn 20 năm kinh nghiệm trong điều hành doanh nghiệp, phát triển con người và đào tạo kỹ năng ứng dụng. Bà hiện là Tổng Giám đốc Golden Communication Group, đồng thời tham gia giảng dạy và huấn luyện về lãnh đạo, giao tiếp, thuyết trình, quản lý con người, quản trị cảm xúc và nâng cao hiệu suất làm việc. Tại IRDM, bà đồng hành trong thiết kế định hướng và triển khai các chương trình đào tạo nhằm phát triển năng lực cá nhân, đội ngũ và tổ chức.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/	Phát triển năng lực lãnh đạo và quản lý con người\r\nQuản trị cảm xúc trong môi trường làm việc\r\nQuản trị cảm xúc trong môi trường làm việc\r\nKỹ năng diễn giả dành cho giảng viên, chuyên gia và nhà quản lý\r\nGiao tiếp, thuyết trình và nói trước công chúng\r\nNâng cao hiệu suất và năng lực phối hợp của đội ngũ\r\nCoaching phát triển cá nhân và năng lực nghề nghiệp	Tổng Giám đốc Golden Communication Group từ năm 2006 đến nay, phụ trách hoạt động truyền thông và marketing.\r\nTừng giữ các vị trí quản lý về văn hóa, truyền thông và quan hệ quốc tế tại Nhà Văn hóa Thanh niên và Nhà Văn hóa Sinh viên TP.HCM.\r\nTừng là Ủy viên Ban Văn hóa – Xã hội, Hội đồng Nhân dân TP.HCM giai đoạn 2004–2009.\r\nCó kinh nghiệm làm MC và biên tập viên tại Đài Truyền hình TP.HCM.\r\nLà giảng viên chính tại IRDM từ năm 2020, phụ trách các chủ đề về diễn giả, lãnh đạo, giao tiếp, thuyết trình, quản lý con người và quản trị cảm xúc.\r\nGiảng viên thỉnh giảng tại Đại học Văn hóa TP.HCM, Đại học Tôn Đức Thắng, Đại học Y Dược TP.HCM và Khoa Y – ĐHQG TP.HCM.\r\nĐược đào tạo về NLP Master Coaching, Timeline Therapy và Transformative Coaching theo các chương trình quốc tế.		Thiết kế và giảng dạy các chương trình kỹ năng mềm dành cho giảng viên tại IRDM, tập trung vào năng lực diễn giả, lãnh đạo, giao tiếp, thuyết trình, quản lý con người và quản trị cảm xúc.\r\nGiảng dạy các chương trình kỹ năng làm việc và nâng cao hiệu suất cho người học trong khối ngành sức khỏe tại Đại học Y Dược TP.HCM và Khoa Y – ĐHQG TP.HCM.\r\nTham gia huấn luyện về truyền thông, giao tiếp và phát triển con người cho các tổ chức như Tập đoàn Y khoa Hoàn Mỹ, Sendo, Ngọc Dung Beauty, Báo Tuổi Trẻ, Mitani Sangyo ACSD, Dragon Capital và Manulife Việt Nam.\r\nTham gia với vai trò diễn giả trong các hoạt động chuyên môn về truyền thông và media của MMA Việt Nam.\r\nĐiều hành các hoạt động truyền thông – marketing của Golden Communication Group, kết nối kinh nghiệm quản trị thực tiễn với hoạt động đào tạo và phát triển đội ngũ.	Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	Năm kinh nghiệm	20+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG			Chuyên gia học tập ứng dụng về truyền thông, phát triển năng lực lãnh đạo, giao tiếp và hiệu quả làm việc trong tổ chức.
@@ -5429,10 +5813,8 @@ e4f1b232-f338-4822-a71a-dc7108e34ff2	t	7	2026-07-29 23:27:17.366313+07	2026-08-0
 722d2f3a-b0f0-48c0-a162-e69c53923476	t	6	2026-07-29 22:39:48.469407+07	2026-08-09 20:27:19.344764+07	Nguyễn Quốc Định	nguyen-quoc-dinh	ThS.			expert/avatars/NguyenQuocDinh_1.jpg		ThS. Nguyễn Quốc Định là chuyên gia về công nghệ thông tin y tế, quản trị hệ thống và chuyển đổi số bệnh viện. Ông tốt nghiệp Thạc sĩ Khoa học máy tính tại Học viện Kỹ thuật Quân sự năm 2019, sau quá trình đào tạo chuyên ngành công nghệ phần mềm. Ông có gần 20 năm kinh nghiệm trong xây dựng và quản trị trung tâm dữ liệu, quản lý công nghệ thông tin bệnh viện và triển khai các chương trình chuyển đổi số trong y tế. Từ năm 2022, ông giữ vị trí Phó Giám đốc Bệnh viện Gia An 115, phụ trách công nghệ thông tin và chuyển đổi số; đồng thời tham gia hoạt động nghiên cứu tại Viện Nghiên cứu Phát triển nguồn lực Việt từ năm 2023.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Y tế & quản trị y tế; AI, dữ liệu & chuyển đổi số	/lien-he/	Chiến lược chuyển đổi số bệnh viện\r\nXây dựng và vận hành hệ thống thông tin bệnh viện\r\nHệ thống hỗ trợ ra quyết định lâm sàng\r\nHạ tầng trung tâm dữ liệu và an toàn hệ thống\r\nQuản trị công nghệ thông tin trong cơ sở y tế\r\nQuản trị và khai thác dữ liệu y tế\r\nChuẩn hóa dữ liệu và thuật ngữ y khoa\r\nĐào tạo y tin học và năng lực chuyển đổi số cho đội ngũ y tế	Thạc sĩ Khoa học máy tính, Học viện Kỹ thuật Quân sự, năm 2019.\r\nGần 20 năm kinh nghiệm trong công nghệ thông tin, quản trị hệ thống và chuyển đổi số.\r\nPhó Giám đốc Bệnh viện Gia An 115, phụ trách công nghệ thông tin và chuyển đổi số từ năm 2022 đến nay.\r\nTừng giữ vị trí Phó phòng Công nghệ thông tin tại Bệnh viện Đại học Y Dược TP.HCM trong giai đoạn 2010–2022.\r\nCó kinh nghiệm xây dựng và quản trị hệ thống trung tâm dữ liệu tại VDC trong giai đoạn 2005–2010.\r\nTham gia nghiên cứu và triển khai các hệ thống hỗ trợ ra quyết định lâm sàng, quản trị bệnh viện và đào tạo chuyển đổi số trong y tế.		Tham gia nghiên cứu nhận dạng dấu hiệu bất thường của gan từ hình ảnh MRI và CT bằng thị giác máy tính, trong chương trình hợp tác giữa Trường Đại học Bách khoa và Bệnh viện Đại học Y Dược TP.HCM.\r\nTham gia xây dựng bệnh án theo bệnh và phác đồ, ánh xạ với hệ thống thuật ngữ SNOMED CT để hỗ trợ ra quyết định lâm sàng tại Bệnh viện Đại học Y Dược TP.HCM.\r\nTham gia đề án xây dựng hệ thống quản trị bệnh viện và hệ thống hỗ trợ ra quyết định cho lãnh đạo.\r\nTham gia xây dựng hệ thống y học gia đình phục vụ giảng dạy, nghiên cứu và thực nghiệm.\r\nTham gia nghiên cứu hệ thống đào tạo chuyển đổi số thí điểm ngành Y tin, kết nối tri thức y tế, công nghệ thông tin và quản trị.	Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	Năm kinh nghiệm	20+					QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/NguyenQuocDinh_1.jpg	Chuyên gia công nghệ thông tin y tế và chuyển đổi số bệnh viện với gần 20 năm kinh nghiệm xây dựng, quản trị và phát triển hệ thống số trong lĩnh vực y tế.
 b2f5c1ea-5835-4c1e-9c29-805b2c2d322b	t	32	2026-07-29 22:39:48.547712+07	2026-08-09 21:50:57.504144+07	Nguyễn Thị Bích Hà	nguyen-thi-bich-ha	ThS.			expert/avatars/NguyenThiBichHa.png		ThS. Nguyễn Thị Bích Hà là chuyên gia trong lĩnh vực giáo dục giá trị sống, phát triển con người và chăm sóc sức khỏe toàn diện với nền tảng liên ngành giữa kinh tế, quản trị kinh doanh, huấn luyện sức khỏe và tâm lý – giáo dục ứng dụng. Bà có nhiều năm kinh nghiệm thiết kế và triển khai các chương trình phát triển năng lực cá nhân, wellbeing và giáo dục giá trị sống cho học sinh, sinh viên, doanh nghiệp và cộng đồng tại Việt Nam.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Quản trị nhân sự & tổ chức Tâm lý & sức khỏe tâm thần	/lien-he/	Giáo dục giá trị sống và phát triển năng lực cá nhân\r\nQuản trị bản thân và phát triển nội lực cá nhân\r\nXây dựng lối sống lành mạnh và cân bằng\r\nWellbeing và chăm sóc sức khỏe toàn diện\r\nGiáo dục cảm xúc – xã hội (SEL)\r\nPhát triển cộng đồng học tập tích cực và nhân văn	Thành viên Hội đồng quản trị Hiệp hội Giáo dục các Giá trị sống Quốc tế (ALIVE).\r\nChi Hội trưởng Chi hội Khoa học Tâm lý Giáo dục các Giá trị sống (LVEC).\r\nGiảng viên chương trình “Quản trị Bản thân để Thành công” – Đại học FPT.\r\nPhó Giám đốc Trung tâm Nghiên cứu và Tư vấn Các giá trị sống (LVRC).\r\nCó nền tảng đào tạo liên ngành về Quản trị kinh doanh, Kinh tế ứng dụng, Y học cổ truyền, châm cứu và huấn luyện sức khỏe toàn diện tại Việt Nam, Hoa Kỳ và Ấn Độ.		Đồng hành phát triển và triển khai Chương trình Giáo dục các Giá trị sống Việt Nam (LVEP) trong nhiều năm với vai trò tập huấn viên và điều phối hoạt động chuyên môn.\r\nTham gia điều hành và phát triển Hiệp hội Giáo dục các Giá trị sống Quốc tế (ALIVE) và Chi hội Khoa học Tâm lý Giáo dục các Giá trị sống tại Việt Nam.\r\nGiảng dạy chương trình “Quản trị Bản thân để Thành công” tại Đại học FPT, tập trung vào phát triển nội lực, giá trị sống và wellbeing cho sinh viên.\r\nTham gia biên dịch và phát triển tài liệu giáo dục giá trị sống, tiêu biểu là sách “Những Giá trị sống dành cho trẻ từ 8 đến 14 tuổi” – NXB Trẻ.	Giảng viên & Chuyên gia học tập ứng dụng					Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/NguyenThiBichHa_1.png	Chuyên gia về giáo dục giá trị sống, phát triển con người và chăm sóc sức khỏe toàn diện trong môi trường học tập và cộng đồng.
 a14a0b20-9b70-4821-970e-e6f505bdbcb9	t	19	2026-07-29 23:27:17.396171+07	2026-08-09 22:29:33.573092+07	Trần Tuấn Hùng	gv-tran-tuan-hung	Mr.			expert/avatars/TranTheHung.png		Mr. Trần Tuấn Hùng là chuyên gia về tài chính, kế toán, quản trị doanh nghiệp và quản trị rủi ro với hơn 20 năm kinh nghiệm tại các doanh nghiệp đa quốc gia trong lĩnh vực dược phẩm, ngân hàng và chăm sóc sức khỏe. Tốt nghiệp Đại học Kinh tế TP.HCM, sở hữu Chứng chỉ Kiểm toán viên do Bộ Tài chính cấp và hoàn thành chương trình phát triển lãnh đạo tại INSEAD Singapore, anh có kinh nghiệm điều hành ở các vị trí quản lý cấp cao và hiện là Tổng Giám đốc Pierre Fabre Việt Nam. Hoạt động chuyên môn của anh tập trung vào quản trị tài chính, quản trị rủi ro, phát triển chiến lược kinh doanh và nâng cao năng lực quản trị doanh nghiệp trong bối cảnh chuyển đổi và tăng trưởng bền vững.			t	f	f	\N		/lien-he/	Quản trị tài chính doanh nghiệp\r\nChiến lược kinh doanh và quản trị điều hành\r\nRa quyết định dựa trên dữ liệu tài chính\r\nQuản trị hiệu quả hoạt động và tăng trưởng bền vững\r\nQuản trị rủi ro và kiểm soát nội bộ\r\nKế toán – kiểm toán trong doanh nghiệp hiện đại\r\nLãnh đạo doanh nghiệp trong bối cảnh chuyển đổi\r\nPhát triển năng lực quản lý cho đội ngũ lãnh đạo trẻ	Hơn 20 năm kinh nghiệm trong lĩnh vực tài chính, kế toán, kiểm toán và quản trị doanh nghiệp tại các tập đoàn đa quốc gia.\r\nHiện là Tổng Giám đốc Công ty TNHH Pierre Fabre Việt Nam.\r\nTừng giữ các vị trí quản lý cấp cao tại Pfizer Việt Nam và Hong Leong Bank Việt Nam.\r\nChứng chỉ Kiểm toán viên do Bộ Tài chính cấp.\r\nHoàn thành chương trình Leadership Development tại INSEAD Singapore.\r\nCó kinh nghiệm xây dựng chiến lược tài chính, quản trị rủi ro và điều hành doanh nghiệp trong môi trường quốc tế.		Lãnh đạo hoạt động điều hành và phát triển chiến lược tại Pierre Fabre Việt Nam.\r\nTham gia xây dựng và triển khai các hệ thống quản trị tài chính, kiểm soát nội bộ và quản trị rủi ro tại các doanh nghiệp đa quốc gia.\r\nĐồng hành cùng các chương trình đào tạo và chia sẻ về tài chính doanh nghiệp, quản trị điều hành và phát triển năng lực lãnh đạo cho nhà quản lý và người học.\r\nThúc đẩy các sáng kiến nâng cao hiệu quả vận hành, tối ưu nguồn lực và quản trị tăng trưởng trong doanh nghiệp.\r\nChia sẻ kinh nghiệm thực tiễn về quản trị doanh nghiệp, quản trị tài chính và phát triển nghề nghiệp trong môi trường quốc tế.	Giảng viên & chuyên gia học tập ứng dụng	Năm kinh nghiệm	20+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/TranTuanHung_1.png	Chuyên gia tài chính, quản trị doanh nghiệp và quản trị rủi ro với hơn 20 năm kinh nghiệm điều hành tại các tập đoàn đa quốc gia.
-77df01e0-f60e-4ddc-8a92-9786fcb9b30b	t	0	2026-08-09 22:34:50.918946+07	2026-08-16 22:10:26.478199+07	Trần Thị Thể Thanh	trn-th-th-thanh	MS.			expert/avatars/TranThiTheThanh.jpg		Ms. Trần Thị Thể Thanh là chuyên gia về quản trị nhân sự, phát triển tổ chức và phát triển năng lực lãnh đạo với hơn 20 năm kinh nghiệm tại các tập đoàn đa quốc gia. Hoạt động chuyên môn của bà tập trung vào xây dựng chiến lược nhân sự, phát triển đội ngũ kế thừa, đào tạo lãnh đạo và phát triển văn hóa tổ chức. Với nền tảng đào tạo quốc tế cùng kinh nghiệm triển khai các chương trình phát triển năng lực trong nhiều ngành nghề, bà đồng hành cùng doanh nghiệp và tổ chức trong việc xây dựng đội ngũ lãnh đạo, nâng cao năng lực quản trị và phát triển nguồn nhân lực theo hướng bền vững.			t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c		/lien-he/	Xây dựng chiến lược nhân sự và phát triển tổ chức\r\nCoaching và phát triển năng lực quản lý\r\nQuản trị nhân tài và phát triển nghề nghiệp\r\nLãnh đạo trong bối cảnh chuyển đổi tổ chức\r\nPhát triển lãnh đạo và đội ngũ kế thừa\r\nXây dựng văn hóa doanh nghiệp và gắn kết nhân viên\r\nThiết kế chương trình đào tạo và phát triển năng lực\r\nPhát triển nguồn nhân lực cho ngành dịch vụ, khách sạn và du lịch	Hơn 20 năm kinh nghiệm quản trị nhân sự tại các tập đoàn đa quốc gia trong lĩnh vực khách sạn, dược phẩm và hàng tiêu dùng nhanh.\r\nTừng đảm nhiệm các vị trí lãnh đạo cấp cao về nhân sự và phát triển tổ chức.\r\nTham gia các dự án phát triển năng lực nghề nghiệp cùng Tổng cục Du lịch Việt Nam trong lĩnh vực du lịch và khách sạn.\r\nHoàn thành nhiều chương trình đào tạo quốc tế về quản trị nhân sự, phát triển lãnh đạo và phát triển tổ chức tại American Hotel & Lodging Association, Eliza Business School (Đại học Melbourne), Corporate Executive Board, Designed Learning Institute và Center for Creative Leadership (CCL).\r\nLà giảng viên được chứng nhận cho các chương trình phát triển lãnh đạo của Development Dimensions International (DDI) và Emergenetics® Profile.		Đồng hành xây dựng và triển khai các chương trình phát triển lãnh đạo và phát triển nguồn nhân lực tại các tập đoàn đa quốc gia trong lĩnh vực khách sạn, dược phẩm và FMCG.\r\nHợp tác với Tổng cục Du lịch Việt Nam trong các chương trình phát triển kỹ năng dành cho đội ngũ hướng dẫn viên và chuyên gia ngành du lịch – khách sạn.\r\nTriển khai các chương trình đào tạo, coaching và phát triển đội ngũ quản lý dựa trên các phương pháp của Development Dimensions International (DDI) và Emergenetics®.\r\nThiết kế và dẫn dắt các chương trình phát triển lãnh đạo, nâng cao năng lực quản lý và xây dựng đội ngũ kế thừa trong doanh nghiệp.\r\nTư vấn xây dựng văn hóa tổ chức, phát triển nhân tài và nâng cao hiệu quả quản trị nguồn nhân lực.	Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	Năm kinh nghiệm	20+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/TranThiTheThanh.jpg	Chuyên gia phát triển nguồn nhân lực và lãnh đạo với hơn 20 năm kinh nghiệm trong các tập đoàn đa quốc gia thuộc lĩnh vực khách sạn, dược phẩm và hàng tiêu dùng nhanh.
 bb812c25-fe79-4803-a18f-91e2f890dead	t	16	2026-07-29 22:39:48.503259+07	2026-08-16 22:28:18.232922+07	Nguyễn Thị Vân Hạnh	nguyen-thi-van-hanh	PGS.TS.	Nhà khoa học/chuyên gia		expert/avatars/NguyenThiVanHanh.jpg		PGS.TS. Nguyễn Thị Vân Hạnh là nhà nghiên cứu và giảng viên xã hội học với hơn 20 năm kinh nghiệm trong nghiên cứu, giảng dạy và hướng dẫn khoa học tại Đại học Quốc gia Hà Nội và Đại học Quốc gia TP.HCM. Các hướng nghiên cứu nổi bật của bà tập trung vào xã hội học du lịch, phát triển du lịch bền vững, giới trong quản lý và du lịch, hành vi du khách, du lịch thông minh và tác động của công nghệ đối với ngành du lịch. Với nền tảng nghiên cứu quốc tế và kinh nghiệm hướng dẫn nhiều học viên cao học, nghiên cứu sinh, bà có thế mạnh trong thiết kế nghiên cứu, phát triển năng lực học thuật và chuyển hóa kết quả nghiên cứu thành hàm ý cho đào tạo, quản lý và phát triển ngành.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/	Thiết kế và triển khai nghiên cứu xã hội học ứng dụng\r\nỨng dụng công nghệ, AI và thực tế ảo trong du lịch\r\nPhát triển du lịch nông nghiệp, du lịch đêm và du lịch văn hóa\r\nPhát triển năng lực nghiên cứu cho giảng viên, học viên và nghiên cứu sinh\r\nPhát triển du lịch bền vững và du lịch dựa vào cộng đồng\r\nHành vi, trải nghiệm và quyết định của du khách\r\nGiới, cơ hội nghề nghiệp và môi trường làm việc trong ngành du lịch\r\nThiết kế chương trình đào tạo và học liệu liên ngành về du lịch – xã hội – công nghệ	Phó Giáo sư từ năm 2014 và Tiến sĩ Xã hội học từ năm 2008.\r\nHơn 20 năm giảng dạy tại Trường Đại học KHXH&NV – ĐHQG Hà Nội và Trường Đại học KHXH&NV – ĐHQG TP.HCM.\r\nHiện công tác tại Viện Nghiên cứu Khoa học Xã hội và Nhân văn, Trường Đại học KHXH&NV – ĐHQG TP.HCM.\r\nTừng tham gia các chương trình nghiên cứu và trao đổi học thuật tại University of Queensland, Seoul National University, University of Findlay và National Taiwan University.\r\nChủ trì nhiều đề tài về động lực làm việc trong trường đại học, hành vi ứng dụng công nghệ của du khách và phát triển du lịch đêm; tham gia các đề tài cấp Nhà nước về lãnh đạo, công tác xã hội, du lịch nông nghiệp và phát triển địa phương.\r\nHướng dẫn nhiều luận án tiến sĩ và luận văn thạc sĩ trong các lĩnh vực xã hội học, du lịch, giáo dục, lao động và phát triển cộng đồng.		Chủ trì đề tài “Xu hướng ứng dụng công nghệ trong hành vi du lịch của du khách”, phân tích sự thay đổi trong tìm kiếm thông tin, trải nghiệm và lựa chọn dịch vụ của du khách trong bối cảnh số hóa.\r\nChủ trì đề tài “Phát triển du lịch đêm ở Duyên hải Nam Trung Bộ”, đánh giá tiềm năng, cơ sở hạ tầng, sản phẩm, trải nghiệm du khách và đề xuất hướng phát triển phù hợp cho các đô thị ven biển.\r\nTham gia đề tài cấp Nhà nước về phát triển chuỗi giá trị du lịch nông nghiệp tại Đồng bằng sông Cửu Long, kết nối doanh nghiệp, cộng đồng địa phương và phát triển bền vững.\r\nTham gia xây dựng mô hình phát triển du lịch thị xã Tân Châu, gắn du lịch sinh thái, văn hóa và cộng đồng với định hướng phát triển địa phương.\r\nPhát triển chuỗi nghiên cứu về du lịch thực tế ảo và du lịch thông minh, bao gồm mức độ sẵn sàng của doanh nghiệp, sự chấp nhận công nghệ và ý định sử dụng của du khách.\r\nThực hiện nhiều nghiên cứu về giới trong quản lý và nghề nghiệp du lịch, đặc biệt là khó khăn nghề nghiệp, định kiến xã hội và sự hỗ trợ đối với nữ quản lý, nữ hướng dẫn viên.		Năm kinh nghiệm	20+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/NguyenThiVanHanh.jpg	Nhà khoa học và chuyên gia về xã hội học du lịch, phát triển du lịch bền vững, ứng dụng công nghệ và phát triển năng lực nghiên cứu trong giáo dục đại học.
 9ee63c75-b024-4fbb-90a8-1798cb6ceaaa	t	11	2026-07-29 22:39:48.485888+07	2026-08-09 20:35:19.701679+07	Bùi Thanh Tùng	bui-thanh-tung	ThS.			expert/avatars/BuiThanhTung.png		ThS. Bùi Thanh Tùng là chuyên gia trong lĩnh vực chuyển đổi số và phát triển giải pháp công nghệ ứng dụng cho doanh nghiệp và cơ quan quản lý nhà nước. Với nền tảng quản trị kinh doanh cùng nhiều năm kinh nghiệm vận hành doanh nghiệp công nghệ, ông tập trung vào các giải pháp quản trị dữ liệu, nền tảng số và ứng dụng công nghệ nhằm tối ưu quy trình vận hành, truyền thông và quản lý tổ chức trong bối cảnh chuyển đổi số.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	AI, dữ liệu & chuyển đổi số	/lien-he/	Chuyển đổi số cho tổ chức và doanh nghiệp\r\nHệ thống dữ liệu và quản lý nội dung số\r\nỨng dụng công nghệ trong truyền thông và điều hành\r\nThiết kế và triển khai nền tảng quản trị trực tuyến\r\nTối ưu quy trình vận hành và quản trị thông tin\r\nPhát triển giải pháp công nghệ phục vụ quản trị tổ chức	Tổng Giám đốc Công ty Cổ phần Công nghệ TekNix từ năm 2021.\r\nHơn 10 năm kinh nghiệm trong lĩnh vực kỹ thuật, quản lý dự án và vận hành doanh nghiệp công nghệ.\r\nTừng đảm nhiệm các vai trò quản lý kỹ thuật, điều hành và phát triển kinh doanh tại nhiều doanh nghiệp công nghệ và kỹ thuật khu vực phía Nam.\r\nCó kinh nghiệm triển khai các nền tảng số phục vụ quản lý điều hành, truyền thông trực tuyến và chuyển đổi quy trình tổ chức.		Phát triển và triển khai “Hệ thống quản lý, xét duyệt nội dung truyền thanh trực tuyến 4.0” ứng dụng web đa nền tảng cho nhiều tỉnh thành như Bà Rịa – Vũng Tàu, Long An, Bến Tre và Cà Mau.\r\nĐiều hành và phát triển hoạt động của TekNix trong lĩnh vực giải pháp công nghệ và chuyển đổi số cho doanh nghiệp và khu vực công.\r\nTham gia triển khai các giải pháp quản trị kỹ thuật, vận hành hệ thống và quản lý dữ liệu tại các doanh nghiệp kỹ thuật và thương mại khu vực phía Nam.	Nhà khoa học/chuyên gia/ Giảng viên & Chuyên gia học tập ứng dụng	Năm kinh nghiệm	10+					QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/BuiThanhTung_1.png	Chuyên gia về chuyển đổi số, phát triển nền tảng công nghệ và giải pháp quản trị số cho tổ chức và doanh nghiệp.
-04752e52-8b5d-4379-80ba-efa6089aa752	t	0	2026-08-09 20:59:39.483692+07	2026-08-09 21:19:43.856912+07	Trịnh Hải Linh	trinh-hai-linh	THS.			expert/avatars/TrinhHaiLinh.jpg		ThS. Trịnh Hải Linh là chuyên gia về tâm lý giáo dục, phát triển con người và thiết kế chương trình học tập ứng dụng. Bà tốt nghiệp Thạc sĩ Kinh tế chuyên ngành Ngân hàng – Tài chính tại Paris Dauphine University và ESCP Europe, đồng thời hoàn thành chương trình sau đại học về khoa học tâm lý tại Arden University, Vương quốc Anh. Sau hơn một thập kỷ làm việc trong lĩnh vực tài chính – đầu tư, bà chuyển hướng sang tâm lý và giáo dục, tập trung vào hướng nghiệp, sức khỏe tinh thần, phát triển năng lực cá nhân và kỹ năng cảm xúc – xã hội. Với nền tảng liên ngành giữa tài chính, tâm lý và giáo dục, bà đồng hành cùng người học và tổ chức trong việc xây dựng các chương trình phát triển con người có chiều sâu, phù hợp với bối cảnh thực tế và hướng đến sự phát triển bền vững.			t	f	f	0122e571-d2d9-4085-81ac-6cce3df19edf	Giáo dục & phát triển năng lực; Tâm lý & sức khỏe tâm thần	/lien-he/	Tâm lý giáo dục và phát triển người học\r\nHướng nghiệp và ra quyết định nghề nghiệp\r\nNhận diện giá trị cá nhân và định hướng phát triển bản thân\r\nNâng cao năng lực tự nhận thức và khả năng thích ứng\r\nKết nối tâm lý học với giáo dục và phát triển nghề nghiệp\r\nSức khỏe tinh thần trong học tập và công việc\r\nPhát triển kỹ năng cảm xúc – xã hội\r\nThiết kế chương trình giáo dục khai phóng\r\nPhát triển năng lực cho học sinh, sinh viên và người đi làm	Được đào tạo sau đại học trong các lĩnh vực ngân hàng – tài chính và khoa học tâm lý tại Pháp và Vương quốc Anh.\r\nCó hơn một thập kỷ kinh nghiệm làm việc tại các tổ chức tài chính và đầu tư như Standard Chartered Bank, Indochina Capital và Vietcombank Securities.\r\nTừng đảm nhiệm các vị trí quản lý trong lĩnh vực vận hành tài chính, đầu tư và quản trị doanh nghiệp.\r\nCó hơn 12 năm hoạt động trong lĩnh vực tâm lý giáo dục và phát triển con người.\r\nLà Chủ tịch kiêm Đồng sáng lập Talent Edu.\r\nCó kinh nghiệm thiết kế và triển khai các chương trình về hướng nghiệp, sức khỏe tinh thần, phát triển năng lực cá nhân và kỹ năng cảm xúc – xã hội cho học sinh, sinh viên và người đi làm.		Đồng sáng lập và điều hành Talent Edu, tổ chức phát triển các chương trình tâm lý giáo dục và phát triển con người.\r\nThiết kế và triển khai các chương trình hướng nghiệp, hỗ trợ người học nhận diện năng lực, giá trị cá nhân và lựa chọn định hướng phù hợp.\r\nXây dựng các chương trình về sức khỏe tinh thần, kỹ năng cảm xúc – xã hội và phát triển bản thân cho học sinh, sinh viên và người đi làm.\r\nPhát triển các hoạt động giáo dục khai phóng nhằm tăng cường khả năng tự nhận thức, kết nối nội tại và năng lực ra quyết định.\r\nTham gia chia sẻ, đào tạo và đồng hành trong các chương trình phát triển năng lực cá nhân và nghề nghiệp.	Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	Năm kinh nghiệm	12+					QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/TrinhHaiLinh.jpg	Chuyên gia tâm lý giáo dục và phát triển con người với nền tảng liên ngành về tài chính, hướng nghiệp, sức khỏe tinh thần và năng lực cảm xúc – xã hội.
 7c7ad3df-ccd0-49c6-a73b-58eb01eb7cc2	t	20	2026-07-29 22:39:48.515564+07	2026-08-09 20:42:46.261919+07	Lương Dũng Nhân	luong-dung-nhan	ThS.			expert/avatars/LuongDungNhan.png		ThS. Lương Dũng Nhân là chuyên gia đào tạo và tư vấn về ứng dụng AI tạo sinh trong giáo dục, phát triển cá nhân và môi trường doanh nghiệp. Với nền tảng Thạc sĩ Lãnh đạo Giáo dục tại University of Queensland và định hướng nghiên cứu tiến sĩ về Generative AI trong giáo dục tại Edgewood College, ông tập trung phát triển năng lực tư duy cùng AI, xây dựng prompt, khai thác mô hình ngôn ngữ lớn và thiết kế quy trình ứng dụng AI cho các hoạt động chuyên môn. Thông qua AIMastermind và các chương trình đào tạo thực tiễn, ông theo đuổi cách tiếp cận AI toàn diện, có phương pháp, lấy con người làm trung tâm và gắn với tiêu chuẩn chất lượng của từng tổ chức.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/	Ứng dụng AI tạo sinh trong công việc văn phòng và quản trị tổ chức\r\nPhát triển năng lực tư duy, phân tích và sáng tạo cùng AI\r\nThiết kế quy trình AI cho nhân sự, marketing, nghiên cứu và phát triển sản phẩm tri thức\r\nKiểm chứng, đánh giá và hoàn thiện nội dung do AI tạo ra\r\nThiết kế prompt và mega-prompt cho mô hình ngôn ngữ lớn\r\nỨng dụng AI trong giảng dạy, quản lý giáo dục và phát triển học liệu\r\nChuẩn bị, cấu trúc và khai thác dữ liệu ngôn ngữ cho AI\r\nXây dựng nguyên tắc sử dụng AI có chất lượng, có trách nhiệm và không gây hại	Thạc sĩ Lãnh đạo Giáo dục tại University of Queensland, Úc.\r\nĐang theo học chương trình nghiên cứu sinh tiến sĩ về Generative AI trong giáo dục tại Edgewood College, Hoa Kỳ.\r\nSáng lập viên, thành viên Hội đồng quản trị và Giám đốc Đào tạo của Hệ thống Giáo dục ATY từ năm 2011.\r\nNhà nghiên cứu và giảng viên tại Viện Nghiên cứu Phát triển Bồi dưỡng Tài năng trẻ từ năm 2015.\r\nKhởi xướng AIMastermind từ cuối năm 2023, tập trung đào tạo và tư vấn ứng dụng AI cho cá nhân, tổ chức và doanh nghiệp.\r\nĐồng sáng lập, CEO WISEDUCATION từ năm 2024, phát triển các chương trình về tâm lý học và giáo dục học ứng dụng.\r\nCó kinh nghiệm thiết kế và triển khai các chương trình AI cho báo chí, giáo dục, công nghệ, bất động sản, khách sạn và thực hành tâm lý học.		Sáng lập AIMastermind, phát triển phương pháp tiếp cận ứng dụng AI toàn diện và nhân bản cho công việc, doanh nghiệp và phát triển cá nhân.\r\nXây dựng bộ phương pháp “9 nguyên lý chỉ huy AI”, hướng dẫn người dùng phát triển prompt từ yêu cầu cơ bản đến mega-prompt phức tạp cho chatbot AI.\r\nPhát triển framework W.I.S.E.A.I, hệ thống hóa sáu nhóm cơ hội ứng dụng AI trong công việc cá nhân và doanh nghiệp.\r\nXây dựng “8 quy tắc vận dụng AI hiệu quả”, nhấn mạnh chất lượng đầu ra, trách nhiệm của người sử dụng và hạn chế các tác động không mong muốn.\r\nPhát triển công thức IF-SIP để chuẩn bị tri thức và dữ liệu nguyên bản cho AI, hướng tới đầu ra phù hợp với nhu cầu cá nhân, tiêu chuẩn chuyên môn và yêu cầu tổ chức.\r\nXây dựng checklist FACTUAL để kiểm tra, hiệu chỉnh và hoàn thiện nội dung do AI tạo ra.\r\nTác giả sách Lối tắt khôn ngoan: Vượt trội cùng AI và Design Thinking (2024), kết nối AI tạo sinh với tư duy thiết kế và năng lực giải quyết vấn đề.	Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng							QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/LuongDungNhan_1.jpg	Chuyên gia học tập ứng dụng về AI tạo sinh, thiết kế trải nghiệm học tập và phát triển năng lực làm việc cùng AI trong giáo dục và doanh nghiệp.
 0b8fec46-7f9c-485e-9e61-2e36704a3d88	t	24	2026-07-29 22:39:48.526569+07	2026-08-09 21:28:14.289541+07	Ngô Minh Uy	ngo-minh-uy	ThS.	Chuyên gia học tập ứng dụng		expert/avatars/NgoMinhUy.jpg	Chuyên gia thiết kế và triển khai chương trình hỗ trợ tâm lý và wellbeing.	ThS. Ngô Minh Uy là chuyên gia về tâm lý học ứng dụng, tham vấn tâm lý và phát triển năng lực tổ chức với gần 25 năm kinh nghiệm giảng dạy, huấn luyện và tư vấn tại Việt Nam và quốc tế. Tốt nghiệp Thạc sĩ chuyên ngành Tham vấn tâm lý tại Đại học Assumption (Thái Lan), ông có nhiều năm đồng hành cùng các doanh nghiệp, bệnh viện, trường học và tổ chức xã hội trong các lĩnh vực sức khỏe tâm thần, giáo dục cảm xúc – xã hội (SEL), phát triển lãnh đạo, tâm lý tổ chức và wellbeing. Ông là Nhà sáng lập Trung tâm WeLink, từng giữ vai trò Tổng Thư ký Hội Khoa học Tâm lý – Giáo dục TP.HCM và tham gia nhiều chương trình hợp tác quốc tế về đào tạo và phát triển nghề nghiệp trong lĩnh vực tâm lý học.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Tâm lý & sức khỏe tâm thần	/lien-he/	Tham vấn tâm lý\r\nGiáo dục cảm xúc – xã hội (SEL)\r\nPhát triển lãnh đạo và quản lý con người\r\nQuản lý stress và sức khỏe tinh thần tại nơi làm việc\r\nSức khỏe tâm thần cộng đồng\r\nTâm lý tổ chức và wellbeing\r\nPhát triển kỹ năng mềm\r\nXây dựng tổ chức học tập và phát triển nguồn nhân lực	Gần 25 năm kinh nghiệm trong lĩnh vực tham vấn tâm lý, đào tạo và phát triển năng lực tổ chức.\r\nThạc sĩ chuyên ngành Tham vấn tâm lý, Đại học Assumption (Thái Lan).\r\nNhà sáng lập Trung tâm WeLink về tâm lý học ứng dụng.\r\nTừng giữ vai trò Tổng Thư ký Hội Khoa học Tâm lý – Giáo dục TP.HCM và tham gia điều hành CASP-V.\r\nCó kinh nghiệm tư vấn, huấn luyện cho doanh nghiệp, bệnh viện, trường học và tổ chức phi lợi nhuận trong và ngoài nước.\r\nTham gia nhiều chương trình hợp tác quốc tế về đào tạo và phát triển nghề nghiệp trong lĩnh vực tâm lý học.		Thiết kế, điều phối và huấn luyện hơn 30 chương trình đào tạo về tâm lý học ứng dụng cho lãnh đạo, nhân sự, giáo viên, bác sĩ và nhân viên y tế tại nhiều địa phương trên cả nước.\r\nTư vấn cho các bệnh viện và tổ chức y tế trong các chương trình hỗ trợ tâm lý người bệnh, giao tiếp trong môi trường bệnh viện và chăm sóc sức khỏe tinh thần cho nhân viên y tế.\r\nĐồng sáng lập Chương trình phát triển kinh nghiệm nghề nghiệp tâm lý học VPPD hợp tác với Đại học John Carroll (Hoa Kỳ).\r\nHuấn luyện và tư vấn cho nhiều doanh nghiệp, trường đại học và tổ chức như Petro Secco, Doosan, Duy Tân, OPV, HOSREM, RMIT và Đại học Hoa Sen về phát triển năng lực cảm xúc – xã hội, tâm lý tổ chức và kỹ năng lãnh đạo.\r\nĐồng hành cùng IRDM trong các chương trình đào tạo lãnh đạo, giáo dục SEL, phát triển tổ chức học tập và nâng cao năng lực nguồn nhân lực cho lĩnh vực y tế, giáo dục và phát triển xã hội.	Nhà khoa học/chuyên gia;\r\nGiảng viên & chuyên gia học tập ứng dụng	Năm kinh nghiệm	25+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/NgoMinhUy_1.jpg	Chuyên gia tâm lý học ứng dụng, sức khỏe tâm thần và phát triển năng lực con người với gần 25 năm kinh nghiệm tham vấn, đào tạo và phát triển tổ chức.
 f51aed81-7ebf-428f-bdb4-70b0d54514a2	t	10	2026-07-29 23:27:17.37398+07	2026-08-09 22:08:10.73316+07	Lê Ngọc Thiên Phương	gv-le-ngoc-thien-phuong	ThS.			expert/avatars/LeNgocThienPhuong.jpg		ThS. Lê Ngọc Thiên Phương là chuyên gia về quản trị nhân sự chiến lược, phát triển tổ chức, trách nhiệm xã hội doanh nghiệp và sản xuất bền vững. Tốt nghiệp Thạc sĩ Quản trị Kinh doanh chuyên ngành Quản trị Nhân sự chiến lược tại Maastricht School of Management, Hà Lan, bà có hơn 20 năm kinh nghiệm đảm nhiệm các vị trí quản lý cấp cao tại Nike, Sanofi, AIG và DFS Group. Hoạt động chuyên môn của bà tập trung vào xây dựng chiến lược nhân sự, phát triển năng lực lãnh đạo, quản trị thay đổi, kết nối đa bên và cải thiện điều kiện lao động trong chuỗi cung ứng. Với cách tiếp cận lấy con người làm trung tâm, bà đồng hành cùng tổ chức trong việc kết nối hiệu quả vận hành với trách nhiệm xã hội và phát triển bền vững.			t	f	f	0122e571-d2d9-4085-81ac-6cce3df19edf		/lien-he/	Xây dựng chiến lược nhân sự gắn với chiến lược tổ chức\r\nQuản trị thay đổi lấy con người làm trung tâm\r\nTrách nhiệm xã hội doanh nghiệp và phát triển cộng đồng\r\nQuan hệ công nghiệp và đối thoại tại nơi làm việc\r\nKết nối đa bên trong các chương trình phát triển bền vững\r\nPhát triển năng lực lãnh đạo và đội ngũ kế thừa\r\nXây dựng văn hóa tổ chức và môi trường làm việc bền vững\r\nQuản trị lao động trong chuỗi cung ứng\r\nQuản trị khủng hoảng và truyền thông nội bộ\r\nPhát triển nghề nghiệp và năng lực lãnh đạo nữ	Hơn 20 năm kinh nghiệm trong quản trị nhân sự, trách nhiệm xã hội doanh nghiệp và phát triển bền vững tại các tập đoàn đa quốc gia.\r\nTừng đảm nhiệm các vị trí Giám đốc Nhân sự khu vực Đông Dương, Trưởng đại diện Trách nhiệm xã hội doanh nghiệp và Giám đốc Hiệu quả Hoạt động Sản xuất Bền vững.\r\nCó kinh nghiệm làm việc tại Nike, Sanofi, AIG và DFS Group.\r\nTham gia xây dựng và triển khai chiến lược sản xuất bền vững cho chuỗi cung ứng tại Việt Nam và khu vực Đông Nam Á.\r\nCó kinh nghiệm phối hợp với các tổ chức quốc tế như ILO, World Bank, UNICEF và UNDP trong các chương trình về lao động, môi trường và phát triển cộng đồng.\r\nCó thế mạnh trong quản lý khủng hoảng, kết nối đa bên, phát triển đội ngũ và dẫn dắt các chương trình chuyển đổi tổ chức.		Tham gia xây dựng chiến lược sản xuất bền vững cho chuỗi cung ứng của Nike tại Việt Nam và khu vực Đông Nam Á.\r\nPhối hợp triển khai các sáng kiến cải thiện điều kiện lao động, hiệu quả vận hành và trách nhiệm xã hội tại hệ thống nhà máy trong chuỗi cung ứng.\r\nKết nối doanh nghiệp, nhà máy, tổ chức quốc tế và các bên liên quan trong những chương trình về lao động, môi trường và quan hệ công nghiệp.\r\nThiết kế và triển khai các hoạt động đào tạo, tư vấn và phát triển năng lực cho đội ngũ quản lý, nhân sự và người lao động.\r\nTham gia xây dựng chiến lược nhân sự, quản lý khủng hoảng và phát triển tổ chức tại các tập đoàn đa quốc gia thuộc nhiều lĩnh vực.\r\nCố vấn và đào tạo về lãnh đạo nhân văn, phát triển nghề nghiệp và quản trị tổ chức lấy con người làm trung tâm.	Giảng viên & chuyên gia học tập ứng dụng	Năm kinh nghiệm	20+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/NguyenThiThanhHuong_wbIpOq1.jpg	Chuyên gia quản trị nhân sự và phát triển bền vững với hơn 20 năm kinh nghiệm dẫn dắt các sáng kiến về con người, chuỗi cung ứng và trách nhiệm xã hội tại các tập đoàn đa quốc gia.
@@ -5443,23 +5825,22 @@ e68cb480-9541-41b4-b9b0-5a248684757d	t	34	2026-07-29 22:39:48.551762+07	2026-08-
 ce5dba86-d252-497e-82be-9ddce6d30f30	t	31	2026-07-29 22:39:48.545324+07	2026-08-09 21:41:56.96326+07	Nguyễn Minh Hương	nguyen-minh-huong	ThS.			expert/avatars/NguyenMinhHuong.jpg		ThS. Nguyễn Minh Hương là chuyên gia trong lĩnh vực truyền thông, marketing và phát triển con người với hơn 20 năm kinh nghiệm điều hành doanh nghiệp truyền thông và đào tạo kỹ năng ứng dụng tại Việt Nam. Với nền tảng liên ngành giữa truyền thông, văn hóa, giáo dục và coaching, bà tập trung vào các chương trình phát triển năng lực lãnh đạo, giao tiếp, quản trị cảm xúc và xây dựng hình ảnh chuyên nghiệp cho cá nhân và tổ chức trong bối cảnh chuyển đổi xã hội và môi trường làm việc hiện đại.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/	Kỹ năng lãnh đạo và phát triển đội ngũ\r\nQuản trị cảm xúc và phát triển nội lực cá nhân\r\nNâng cao hiệu suất làm việc và văn hóa doanh nghiệp\r\nGiao tiếp, thuyết trình và xây dựng hình ảnh chuyên nghiệp\r\nTruyền thông thương hiệu và truyền thông tổ chức	CEO Golden Communication Group với hệ sinh thái gồm nhiều công ty truyền thông và marketing tại Việt Nam.\r\nHơn 20 năm kinh nghiệm trong lĩnh vực truyền thông, marketing, tổ chức sự kiện và phát triển thương hiệu.\r\nTừng là MC và biên tập viên Đài Truyền hình TP.HCM, đồng thời giữ nhiều vai trò quản lý văn hóa – truyền thông tại Nhà Văn hóa Thanh niên và Nhà Văn hóa Sinh viên TP.HCM.\r\nGiảng viên và diễn giả về kỹ năng lãnh đạo, giao tiếp, quản lý cảm xúc và phát triển con người tại nhiều trường đại học và doanh nghiệp lớn.\r\nĐược đào tạo chuyên sâu về NLP Coaching, Timeline Therapy và Transformative Coaching theo chuẩn quốc tế.		Điều hành và phát triển Golden Communication Group trở thành hệ sinh thái truyền thông – marketing đa lĩnh vực với nhiều hoạt động đào tạo, truyền thông và tổ chức sự kiện tại Việt Nam.\r\nThiết kế và giảng dạy các chương trình kỹ năng lãnh đạo, giao tiếp, thuyết trình, quản trị cảm xúc và phát triển con người tại IRDM, Đại học Y Dược TP.HCM, Đại học Quốc gia TP.HCM và nhiều tổ chức doanh nghiệp.\r\nHuấn luyện và đồng hành phát triển đội ngũ cho nhiều doanh nghiệp lớn như Tập đoàn Y khoa Hoàn Mỹ, Manulife Việt Nam, Dragon Capital, Sendo và Ngọc Dung Beauty.\r\nTham gia hoạt động diễn giả và chuyên gia truyền thông tại MMA (Mobile Marketing Association Vietnam) cùng nhiều diễn đàn chuyên môn về truyền thông và phát triển tổ chức.	Giảng viên & Chuyên gia học tập ứng dụng	Năm kinh nghiệm	20+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/NguyenMinhHuong.jpg	Chuyên gia về truyền thông, phát triển con người và nâng cao năng lực lãnh đạo – giao tiếp trong tổ chức hiện đại.
 1ce9b61f-1e94-4c61-bc68-de6f6eabab89	t	12	2026-07-29 22:39:48.489531+07	2026-08-09 22:22:08.7686+07	Minh Nguyễn	minh-nguyen	Kỹ sư			expert/avatars/KySuMinhNguyen.png		Kỹ sư Minh Nguyễn là chuyên gia trong lĩnh vực công nghệ thông tin, hệ thống mạng và chuyển đổi số với hơn 20 năm kinh nghiệm lãnh đạo, quản lý doanh nghiệp công nghệ. Tốt nghiệp Cử nhân Khoa học máy tính tại Đại học Melbourne (Australia), ông hiện là Giám đốc Công ty Green IT Solution. Hoạt động chuyên môn tập trung vào phát triển hạ tầng công nghệ, hệ thống mạng và đào tạo các chủ đề liên quan đến AI và Blockchain.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/	Trí tuệ nhân tạo (AI)\r\nHệ thống mạng\r\nChuyển đổi số\r\nBlockchain\r\nHạ tầng công nghệ thông tin	Tốt nghiệp Cử nhân Khoa học máy tính, Đại học Melbourne (Australia).\r\nHiện là Giám đốc Công ty Green IT Solution.\r\nHơn 20 năm kinh nghiệm lãnh đạo và quản lý doanh nghiệp trong lĩnh vực công nghệ thông tin và hệ thống mạng.\r\nTham gia đào tạo các chủ đề về AI và Blockchain.		Điều hành hoạt động của Công ty Green IT Solution.\r\nTham gia đào tạo về AI và Blockchain.\r\nCó hơn 20 năm kinh nghiệm quản lý và phát triển doanh nghiệp trong lĩnh vực hệ thống mạng và công nghệ thông tin.	Nhà khoa học/chuyên gia	Năm kinh nghiệm	20+					QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/KySuMinhNguyen.png	Chuyên gia về công nghệ thông tin, hạ tầng hệ thống và đào tạo AI với hơn 20 năm kinh nghiệm quản lý doanh nghiệp công nghệ.
 97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	t	5	2026-07-29 22:39:48.481383+07	2026-08-10 21:06:32.771256+07	Tạ Thị Phấn	ta-thi-phan	ThS.	Chuyên gia dữ liệu & điều phối chuyên môn	Trưởng phòng Tổ chức Hành chính - Viện IRDM / Chuyên viên Điều phối dự án / Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng.	expert/avatars/TaThiPhan_bw1bezj.jpg	ThS. Tạ Thị Phấn là nhà nghiên cứu xã hội học ứng dụng, có kinh nghiệm triển khai nhiều đề tài, dự án khoa học và phát triển tại Việt Nam. Cô theo đuổi hướng nghiên cứu liên ngành trong các lĩnh vực y tế, giáo dục, văn hóa, xã hội, con người và phát triển đô thị; đồng thời tập trung vào các vấn đề về chính sách công, nguồn nhân lực, lao động việc làm và chuyển đổi số. Với nền tảng chuyên sâu về xã hội học và nghiên cứu phát triển, cô chú trọng kết nối bằng chứng khoa học với nhu cầu quản trị và thực tiễn cộng đồng, hướng đến các giải pháp có tính ứng dụng.				t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	AI, dữ liệu & chuyển đổi số	/lien-he/	Tư vấn nhiệm vụ KH,CN&ĐMST cấp tỉnh/thành phố\r\nNghiên cứu liên ngành y tế – giáo dục – văn hóa \r\nNguồn nhân lực, lao động và định hướng nghề nghiệp\r\nXã hội học ứng dụng và nghiên cứu cộng đồng\r\nChuyển đổi số trong quản trị xã hội và tổ chức\r\nTrách nhiệm xã hội và phát triển bền vững	Hơn 10 năm kinh nghiệm trong nghiên cứu xã hội học ứng dụng, điều phối đề tài, dự án khoa học và các chương trình phát triển cộng đồng.\r\nHiện đảm nhiệm công tác điều phối khoa học, quản lý dự án và Trưởng phòng Tổ chức – Hành chính tại IRDM, với thế mạnh kết nối chuyên gia, đối tác và tổ chức triển khai nghiên cứu.\r\nTừng là nghiên cứu viên tại Trung tâm Nghiên cứu Đô thị và Phát triển và Viện Nghiên cứu Đời sống Xã hội, có nền tảng vững về khảo sát, phân tích xã hội và nghiên cứu chính sách.\r\nCó kinh nghiệm nghiên cứu liên ngành trong các lĩnh vực y tế, giáo dục, văn hóa, lao động, nguồn nhân lực, trách nhiệm xã hội doanh nghiệp, chuyển đổi số và phát triển đô thị.\r\nThế mạnh nổi bật là kết nối bằng chứng khoa học với nhu cầu quản trị và thực tiễn, chuyển hóa kết quả nghiên cứu thành mô hình, quy trình và giải pháp có khả năng ứng dụng.	AI, dữ liệu & chuyển đổi số; Giáo dục & phát triển năng lực; Xã hội học & chính sách công; Quản trị kinh tế & tác động xã hội	Quyền đồng tác giả “Phần mềm quản lý hoạt động khoa học công nghệ ngành Y tế tại Thành phố Hồ Chí Minh”\r\nĐồng Tác giả “Tạo động lực làm việc cho cán bộ, công chức, viên chức gắn bó với chính quyền thành phố Hồ Chí Minh trong quá trình chuyển đổi số hiện nay”\r\nĐồng tác giả “Nhà ở xã hội của nữ công nhân trong các khu công nghiệp, khu chế xuất tại Thành phố Hồ Chí Minh – Góc nhìn giới trong quy hoạch đô thị trước sáp nhập địa giới hành chính”\r\nChủ nhiệm đề tài “Nhận diện xu hướng lựa chọn giá trị sống thông qua hành vi xác định mục tiêu nghề nghiệp của sinh viên tại TP.HCM hiện nay”.\r\nThành viên chính, Thư ký khoa học nhiệm vụ “Ứng dụng chuyển đổi số trong quản lý, phê duyệt, giám sát hoạt động khoa học công nghệ ngành Y tế tại Thành phố Hồ Chí Minh”\r\nThành viên chính nhiệm vụ “Bức khảm các tiểu văn hóa tại thành phố Hồ Chí Minh”\r\nThành viên chính nhiệm vụ “Nghiên cứu đề xuất các giải pháp tạo lập bản sắc quy hoạch – kiến trúc cho một số khu vực trọng điểm của tỉnh Bình Dương trong tương lai”\r\nThành viên chính nhiệm vụ “Nghiên cứu nhận thức, năng lực của nguồn nhân lực trẻ và đề xuất giải pháp đáp ứng yêu cầu tuyển dụng của doanh nghiệp trong bối cảnh cách mạng công nghiệp lần thứ tư tại thành phố Hồ Chí Minh”\r\nThành viên chính, Thư ký khoa học nhiệm vụ “Đánh giá thực trạng công tác quản lý và các phương thức tập hợp người lao động tham gia cung ứng dịch vụ xe sử dụng nền tảng ứng dụng công nghệ trên địa bàn Thành phố Hồ Chí Minh”\r\nThành viên chính, Thư ký khoa học “Nghiên cứu đề xuất giải pháp để các doanh nghiệp tỉnh Vĩnh Long thực hiện tốt trách nhiệm xã hội”\r\nThành viên nhiệm vụ “Xây dựng Khung năng lực của Cán bộ công chức tỉnh Quảng Ngãi theo Đề án Vị trí việc làm”\r\nThành viên nhiệm vụ “Nhà ở xã hội cho công nhân ở vùng Đông Nam Bộ hiện nay”										expert/hero_avatars/TaThiPhan.jpg	
-b79cdef4-3435-4990-9252-1791aedd6d2e	f	7	2026-07-27 17:43:39.048478+07	2026-08-16 22:21:10.807976+07	Đỗ Thị Hương	o-thi-huong	TS.	Chuyên gia Phát triển bền vững	Viện Chiến lược và Chính sách Tài nguyên Môi trường		Nhà nghiên cứu về kinh tế xanh và phát triển bền vững, tư vấn cho UNDP và GIZ tại Việt Nam.				t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c		/lien-he/															
+7a442992-c910-47e8-b627-afd0e7ce4c83	t	4	2026-07-29 22:39:48.461006+07	2026-09-14 11:58:04.262296+07	Trần Lê Diễm Anh	tran-le-diem-anh	TS.DS.	Chuyên gia học tập ứng dụng	Phó Chủ tịch Hội Đồng Quản lý Viện IRDM  Viện trưởng Viện IRDM  Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	expert/avatars/TranLeDiemAnh.jpg	Nhà khoa học và chuyên gia liên ngành về quản trị y tế, sức khỏe tâm thần và phát triển hệ thống Y tế – Giáo dục	TS.DS. Trần Lê Diễm Anh là nhà khoa học và chuyên gia liên ngành tập trung vào quản trị y tế, sức khỏe tâm thần và phát triển hệ thống Y tế – Giáo dục từ góc nhìn xã hội học và phát triển con người. TS. DS. Diễm Anh hiện là Viện trưởng IRDM, đồng thời tham gia nghiên cứu, đào tạo và phát triển các sáng kiến liên ngành hướng tới wellbeing và phát triển bền vững			t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Y tế & quản trị y tế; AI, dữ liệu & chuyển đổi số; Giáo dục & phát triển năng lực; Tâm lý & sức khỏe tâm thần; Xã hội học & chính sách công; Quản trị nhân sự & tổ chức; Quản trị kinh tế & tác động xã	/lien-he/	Quản trị và phát triển hệ thống Y tế;\r\nSức khỏe tâm thần học đường;\r\nNghiên cứu và phát triển chính sách xã hội sức khỏe.\r\nLeadership & wellbeing cho nhân sự Y tế;\r\nPhát triển năng lực liên ngành;	Hơn 22 năm kinh nghiệm trong lĩnh vực dược phẩm, chăm sóc sức khỏe và phát triển hệ thống Y tế. Từng đảm nhiệm các vị trí lãnh đạo cấp cao tại Roche, Johnson & Johnson, MSD/Merck, Menarini và Chemo Iberica SA. Giảng viên đồng thỉnh giảng Trường Dược – Đại học Y Dược TP.HCM. Tác giả và đồng tác giả nhiều nghiên cứu về sức khỏe tâm thần, xã hội học sức khỏe và phát triển hệ thống Y tế – Giáo dục. Chủ trì và tham gia các sáng kiến nghiên cứu ứng dụng, chuyển đổi số và phát triển năng lực trong lĩnh vực Y tế – Giáo dục.		Chủ trì và phát triển các nghiên cứu về sức khỏe tâm thần sinh viên khối ngành Y tế từ góc nhìn xã hội học.\r\nTham gia nhiệm vụ khoa học công nghệ “Ứng dụng chuyển đổi số trong quản lý, phê duyệt, giám sát hoạt động khoa học công nghệ ngành Y tế tại TP.HCM” (2024–2025).\r\nPhát triển các chương trình leadership và wellbeing cho nhân sự Y tế trong bối cảnh hậu COVID-19.\r\nTriển khai các sáng kiến liên ngành về xã hội học sức khỏe, phát triển hệ thống Y tế bền vững và nâng cao năng lực nguồn nhân lực Y tế – Giáo dục.\r\nCó sáng kiến và triển khai các nhiệm vụ ứng dụng AI trong hỗ trợ chẩn đoán, quản lý, phòng ngừa và dự báo bệnh tật.	Phó Chủ tịch Hội Đồng Quản lý Viện IRDM\r\nViện trưởng Viện IRDM\r\nNhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	Năm kinh nghiệm	22+					QUẢN TRỊ ĐẠI HỌC ❖ ĐẢM BẢO CHẤT LƯỢNG ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG ❖ QUẢN LÝ MÔI TRƯỜNG			
+04752e52-8b5d-4379-80ba-efa6089aa752	t	8	2026-08-09 20:59:39.483692+07	2026-09-23 12:25:48.059938+07	Trịnh Hải Linh	trinh-hai-linh	THS.			expert/avatars/TrinhHaiLinh.jpg		ThS. Trịnh Hải Linh là chuyên gia về tâm lý giáo dục, phát triển con người và thiết kế chương trình học tập ứng dụng. Bà tốt nghiệp Thạc sĩ Kinh tế chuyên ngành Ngân hàng – Tài chính tại Paris Dauphine University và ESCP Europe, đồng thời hoàn thành chương trình sau đại học về khoa học tâm lý tại Arden University, Vương quốc Anh. Sau hơn một thập kỷ làm việc trong lĩnh vực tài chính – đầu tư, bà chuyển hướng sang tâm lý và giáo dục, tập trung vào hướng nghiệp, sức khỏe tinh thần, phát triển năng lực cá nhân và kỹ năng cảm xúc – xã hội. Với nền tảng liên ngành giữa tài chính, tâm lý và giáo dục, bà đồng hành cùng người học và tổ chức trong việc xây dựng các chương trình phát triển con người có chiều sâu, phù hợp với bối cảnh thực tế và hướng đến sự phát triển bền vững.			t	f	f	0122e571-d2d9-4085-81ac-6cce3df19edf	Giáo dục & phát triển năng lực; Tâm lý & sức khỏe tâm thần	/lien-he/	Tâm lý giáo dục và phát triển người học\r\nHướng nghiệp và ra quyết định nghề nghiệp\r\nNhận diện giá trị cá nhân và định hướng phát triển bản thân\r\nNâng cao năng lực tự nhận thức và khả năng thích ứng\r\nKết nối tâm lý học với giáo dục và phát triển nghề nghiệp\r\nSức khỏe tinh thần trong học tập và công việc\r\nPhát triển kỹ năng cảm xúc – xã hội\r\nThiết kế chương trình giáo dục khai phóng\r\nPhát triển năng lực cho học sinh, sinh viên và người đi làm	Được đào tạo sau đại học trong các lĩnh vực ngân hàng – tài chính và khoa học tâm lý tại Pháp và Vương quốc Anh.\r\nCó hơn một thập kỷ kinh nghiệm làm việc tại các tổ chức tài chính và đầu tư như Standard Chartered Bank, Indochina Capital và Vietcombank Securities.\r\nTừng đảm nhiệm các vị trí quản lý trong lĩnh vực vận hành tài chính, đầu tư và quản trị doanh nghiệp.\r\nCó hơn 12 năm hoạt động trong lĩnh vực tâm lý giáo dục và phát triển con người.\r\nLà Chủ tịch kiêm Đồng sáng lập Talent Edu.\r\nCó kinh nghiệm thiết kế và triển khai các chương trình về hướng nghiệp, sức khỏe tinh thần, phát triển năng lực cá nhân và kỹ năng cảm xúc – xã hội cho học sinh, sinh viên và người đi làm.		Đồng sáng lập và điều hành Talent Edu, tổ chức phát triển các chương trình tâm lý giáo dục và phát triển con người.\r\nThiết kế và triển khai các chương trình hướng nghiệp, hỗ trợ người học nhận diện năng lực, giá trị cá nhân và lựa chọn định hướng phù hợp.\r\nXây dựng các chương trình về sức khỏe tinh thần, kỹ năng cảm xúc – xã hội và phát triển bản thân cho học sinh, sinh viên và người đi làm.\r\nPhát triển các hoạt động giáo dục khai phóng nhằm tăng cường khả năng tự nhận thức, kết nối nội tại và năng lực ra quyết định.\r\nTham gia chia sẻ, đào tạo và đồng hành trong các chương trình phát triển năng lực cá nhân và nghề nghiệp.	Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	Năm kinh nghiệm	12+					QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/TrinhHaiLinh.jpg	Chuyên gia tâm lý giáo dục và phát triển con người với nền tảng liên ngành về tài chính, hướng nghiệp, sức khỏe tinh thần và năng lực cảm xúc – xã hội.
+77df01e0-f60e-4ddc-8a92-9786fcb9b30b	t	7	2026-08-09 22:34:50.918946+07	2026-09-23 12:25:48.066602+07	Trần Thị Thể Thanh	trn-th-th-thanh	MS.			expert/avatars/TranThiTheThanh.jpg		Ms. Trần Thị Thể Thanh là chuyên gia về quản trị nhân sự, phát triển tổ chức và phát triển năng lực lãnh đạo với hơn 20 năm kinh nghiệm tại các tập đoàn đa quốc gia. Hoạt động chuyên môn của bà tập trung vào xây dựng chiến lược nhân sự, phát triển đội ngũ kế thừa, đào tạo lãnh đạo và phát triển văn hóa tổ chức. Với nền tảng đào tạo quốc tế cùng kinh nghiệm triển khai các chương trình phát triển năng lực trong nhiều ngành nghề, bà đồng hành cùng doanh nghiệp và tổ chức trong việc xây dựng đội ngũ lãnh đạo, nâng cao năng lực quản trị và phát triển nguồn nhân lực theo hướng bền vững.			t	f	f	07ba59c7-7723-41bc-8673-77c08c791b6c		/lien-he/	Xây dựng chiến lược nhân sự và phát triển tổ chức\r\nCoaching và phát triển năng lực quản lý\r\nQuản trị nhân tài và phát triển nghề nghiệp\r\nLãnh đạo trong bối cảnh chuyển đổi tổ chức\r\nPhát triển lãnh đạo và đội ngũ kế thừa\r\nXây dựng văn hóa doanh nghiệp và gắn kết nhân viên\r\nThiết kế chương trình đào tạo và phát triển năng lực\r\nPhát triển nguồn nhân lực cho ngành dịch vụ, khách sạn và du lịch	Hơn 20 năm kinh nghiệm quản trị nhân sự tại các tập đoàn đa quốc gia trong lĩnh vực khách sạn, dược phẩm và hàng tiêu dùng nhanh.\r\nTừng đảm nhiệm các vị trí lãnh đạo cấp cao về nhân sự và phát triển tổ chức.\r\nTham gia các dự án phát triển năng lực nghề nghiệp cùng Tổng cục Du lịch Việt Nam trong lĩnh vực du lịch và khách sạn.\r\nHoàn thành nhiều chương trình đào tạo quốc tế về quản trị nhân sự, phát triển lãnh đạo và phát triển tổ chức tại American Hotel & Lodging Association, Eliza Business School (Đại học Melbourne), Corporate Executive Board, Designed Learning Institute và Center for Creative Leadership (CCL).\r\nLà giảng viên được chứng nhận cho các chương trình phát triển lãnh đạo của Development Dimensions International (DDI) và Emergenetics® Profile.		Đồng hành xây dựng và triển khai các chương trình phát triển lãnh đạo và phát triển nguồn nhân lực tại các tập đoàn đa quốc gia trong lĩnh vực khách sạn, dược phẩm và FMCG.\r\nHợp tác với Tổng cục Du lịch Việt Nam trong các chương trình phát triển kỹ năng dành cho đội ngũ hướng dẫn viên và chuyên gia ngành du lịch – khách sạn.\r\nTriển khai các chương trình đào tạo, coaching và phát triển đội ngũ quản lý dựa trên các phương pháp của Development Dimensions International (DDI) và Emergenetics®.\r\nThiết kế và dẫn dắt các chương trình phát triển lãnh đạo, nâng cao năng lực quản lý và xây dựng đội ngũ kế thừa trong doanh nghiệp.\r\nTư vấn xây dựng văn hóa tổ chức, phát triển nhân tài và nâng cao hiệu quả quản trị nguồn nhân lực.	Nhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	Năm kinh nghiệm	20+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/TranThiTheThanh.jpg	Chuyên gia phát triển nguồn nhân lực và lãnh đạo với hơn 20 năm kinh nghiệm trong các tập đoàn đa quốc gia thuộc lĩnh vực khách sạn, dược phẩm và hàng tiêu dùng nhanh.
+5e834e6b-7d63-4416-b323-80a1758300b1	t	0	2026-07-29 22:39:48.44205+07	2026-09-23 12:25:48.070998+07	Phạm Lê An	pham-le-an	GS.TS.BS.	Y tế & quản trị y tế		expert/avatars/PhamLeAn.png	Nhà khoa học và chuyên gia cao cấp về Y học gia đình, sức khỏe cộng đồng và phát triển hệ thống Y tế – Giáo dục	GS.TS.BS. Phạm Lê An là chuyên gia hàng đầu trong lĩnh vực Y học gia đình, y tế cộng đồng và giáo dục y khoa tại Việt Nam. Với định hướng tiếp cận hệ thống và chăm sóc toàn diện, ông tập trung thúc đẩy các mô hình chăm sóc sức khỏe ban đầu, phát triển năng lực nhân lực y tế và kết nối liên ngành giữa Y tế – Giáo dục – Xã hội trong bối cảnh phát triển bền vững và hậu đại dịch.			t	f	f	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Y tế & quản trị y tế	/lien-he/	Phát triển mô hình Y học gia đình và chăm sóc sức khỏe ban đầu\r\nSức khỏe cộng đồng và sức khỏe môi trường\r\nThiết kế và đánh giá dịch vụ Y tế\r\nGiáo dục y khoa và phát triển năng lực nhân lực Y tế\r\nSức khỏe tâm thần học đường và cộng đồng\r\nChính sách y tế và phát triển hệ thống chăm sóc toàn diện	Hơn 30 năm kinh nghiệm trong giảng dạy, nghiên cứu và phát triển hệ thống Y tế. Giáo sư Nhi khoa, Đại học Y Dược TP.HCM. Từng giữ nhiều vai trò lãnh đạo tại Đại học Y Dược TP.HCM như Trưởng Trung tâm Y học Gia đình, Phó Phòng Sau đại học và phụ trách Trung tâm Hỗ trợ dự án & đổi mới sáng tạo. Cố vấn chuyên môn và nghiên cứu khoa học tại IRDM từ năm 2022. Chủ biên nhiều giáo trình nền tảng cho đào tạo bác sĩ gia đình và nhân lực y tế tuyến đầu.		Chủ trì và tham gia các nghiên cứu về sức khỏe cộng đồng, sức khỏe hô hấp và sức khỏe tâm thần tại Việt Nam.\r\nDự án FRESH AIR (EU) về can thiệp hô hấp trong bối cảnh thiếu nguồn lực.\r\nDự án giảm ô nhiễm không khí và tăng cường sức khỏe trẻ em TP.HCM hợp tác với Đại học Purdue (Mỹ).\r\nNghiên cứu phát triển mô hình hỗ trợ tâm lý học đường và chăm sóc liên tục từ gia đình – nhà trường – y tế.\r\nCông bố hơn 150 bài báo khoa học, trong đó có hơn 50 bài quốc tế thuộc hệ thống ISI/Scopus.		Năm kinh nghiệm	30+			Phạm vi nghiên cứu và hợp tác quốc tế	Quốc tế	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG			
+81d5f380-1962-4904-bd36-7b02753156b3	t	0	2026-07-29 22:39:48.524025+07	2026-09-23 12:25:48.074882+07	Phan Thị Mai Hương	phan-thi-mai-huong	PGS.TS.	Nhà khoa học/chuyên gia; Giảng viên & chuyên gia học tập ứng dụng		expert/avatars/PhanThiMaiHuong.png	Nghiên cứu và ứng dụng tâm lý học trong phát triển con người và wellbeing.	PGS.TS. Phan Thị Mai Hương là nhà nghiên cứu tâm lý học với hơn 30 năm kinh nghiệm trong nghiên cứu, giảng dạy và hướng dẫn khoa học. Các hướng nghiên cứu nổi bật của bà tập trung vào cảm xúc, trí tuệ cảm xúc, hạnh phúc, wellbeing, tâm lý học lao động và những yếu tố tâm lý ảnh hưởng đến học tập, công việc và chất lượng cuộc sống. Tại IRDM, bà tham gia với vai trò chuyên gia nghiên cứu, đóng góp chuyên môn trong thiết kế nghiên cứu và phản biện khoa học cho các sáng kiến về sức khỏe tâm thần và phát triển con người.			t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b	Tâm lý & sức khỏe tâm thần	/lien-he/	Đánh giá sức khỏe tinh thần và wellbeing trong trường học, tổ chức và cộng đồng\r\nHạnh phúc học đường và trải nghiệm tâm lý của người học\r\nKiệt sức nghề nghiệp và chất lượng cuộc sống trong công việc\r\nTrí tuệ cảm xúc và hành vi xã hội của thanh thiếu niên\r\nCảm xúc, sự hài lòng và hiệu quả làm việc của người lao động\r\nThiết kế nghiên cứu, xây dựng thang đo và công cụ đánh giá tâm lý	Được công nhận học hàm Phó Giáo sư năm 2009 và nhận học vị Tiến sĩ Tâm lý học năm 2002.\r\nCó nền tảng đào tạo chuyên sâu về Tâm lý học tại Trường Đại học Tổng hợp Quốc gia Leningrad, Đại học Quốc gia Seoul và Viện Tâm lý học – Viện Khoa học Xã hội Việt Nam.\r\nCó nhiều năm giảng dạy và hướng dẫn khoa học tại Trường Đại học KHXH&NV Hà Nội, Học viện Khoa học Xã hội, Trường Đại học Sư phạm Hà Nội và Trường Đại học Sư phạm TP.HCM.\r\nLà chuyên gia nghiên cứu tại Viện IRDM từ năm 2022.\r\nChủ trì và tham gia nhiều nhiệm vụ khoa học cấp Nhà nước, cấp Bộ về trí tuệ cảm xúc, cảm xúc trong công việc, hạnh phúc học đường, đổi mới giáo dục và chất lượng cuộc sống nghề nghiệp.		Chủ trì đề tài cấp Nhà nước về trí tuệ cảm xúc và mối quan hệ với hành vi xã hội của thanh thiếu niên, góp phần làm rõ vai trò của năng lực cảm xúc trong quá trình phát triển và thích ứng xã hội của người trẻ.\r\nChủ trì đề tài cấp Bộ về cảm xúc tại nơi làm việc và ảnh hưởng đến hành vi thực hiện công việc của người lao động, kết nối nghiên cứu tâm lý với các vấn đề hiệu quả làm việc và chất lượng môi trường tổ chức.\r\nChủ trì đề tài cấp Bộ về tâm thế của giáo viên phổ thông đối với đổi mới giáo dục, đồng thời phát triển thang đo phục vụ nghiên cứu và đánh giá thực tiễn.\r\nThực hiện chuỗi nghiên cứu về hạnh phúc học đường, bao gồm cảm nhận hạnh phúc của học sinh và các yếu tố trường học có khả năng dự báo trải nghiệm tích cực của trẻ khi đến trường.\r\nĐồng thực hiện các nghiên cứu về kiệt sức làm cha mẹ trong đại dịch COVID-19, cung cấp bằng chứng về áp lực tâm lý và những yếu tố liên quan đến wellbeing của gia đình trong bối cảnh khủng hoảng.\r\nCông bố các chuyên khảo và tài liệu như Cảm xúc tại nơi làm việc, Phương pháp nghiên cứu trong Tâm lý học và các nghiên cứu về tâm lý người lao động, cư dân ven đô và cộng đồng trong quá trình đô thị hóa.		Năm kinh nghiệm	30+			Phạm vi nghiên cứu và hợp tác quốc tế	Việt Nam	QUẢN TRỊ ĐẠI HỌC ❖ CHÍNH SÁCH CÔNG ❖ PHÁT TRIỂN BỀN VỮNG		expert/hero_avatars/PhanThiMaiHuong.png	Nhà khoa học và chuyên gia cao cấp về tâm lý học, cảm xúc, wellbeing và sức khỏe tinh thần trong giáo dục và môi trường làm việc.
+0320a7f6-ea8e-434e-b1b5-b1492092aff7	t	0	2026-07-29 22:39:48.49661+07	2026-09-23 12:32:11.868896+07	Lê Quang Minh	le-quang-minh	PGS.TS.	Nhà khoa học giáo dục	Thành viên Hội đồng quản lý IRDM	expert/avatars/PGS_LeQuangMinh.jpg	Đồng hành định hướng học thuật và phát triển năng lực trong giáo dục đại học	PGS.TS. Lê Quang Minh là chuyên gia hàng đầu trong lĩnh vực quản trị đại học, đảm bảo chất lượng Giáo dục, phát triển chính sách công và quản lý môi trường. Với hơn 40 năm kinh nghiệm nghiên cứu, giảng dạy và điều hành tại các cơ sở Giáo dục lớn của Việt Nam, ông từng giữ nhiều vị trí lãnh đạo trọng yếu như Hiệu trưởng Đại học Cần Thơ, Phó Giám đốc ĐHQG TP.HCM và Kiểm định viên trưởng AUN-QA. Ông đồng thời là chuyên gia tư vấn cho nhiều chương trình hợp tác quốc tế về phát triển Giáo dục, quản trị đại học và phát triển bền vững tại khu vực ASEAN.			t	t	t	0b2c289e-a16f-495e-9b56-9ec3a1a0be5b		/lien-he/	Chiến lược phát triển Giáo dục đại học\r\nPhát triển chương trình đào tạo theo chuẩn đầu ra và OBE\r\nChính sách công về Giáo dục và phát triển nguồn nhân lực\r\nThiết kế hệ thống đảm bảo chất lượng và kiểm định Giáo dục\r\nQuản trị đại học và phát triển lãnh đạo Giáo dục\r\nQuản lý môi trường, biến đổi khí hậu và phát triển bền vững	Nguyên Hiệu trưởng Đại học Cần Thơ; nguyên Phó Giám đốc ĐHQG TP.HCM.\r\nChủ tịch Hội đồng Đảm bảo Chất lượng ĐHQG TP.HCM và Kiểm định viên trưởng AUN-QA.\r\nHơn 40 năm kinh nghiệm trong quản trị đại học, phát triển chương trình đào tạo và hợp tác quốc tế.\r\nChủ trì nhiều dự án quốc tế quy mô lớn với tổng ngân sách hàng chục triệu Euro và Dollar từ Hà Lan, Bỉ, Canada và các tổ chức quốc tế.\r\nĐại biểu Quốc hội khóa X, XI; cố vấn cao cấp cho UB Văn hóa – Giáo dục Quốc hội và ĐHQG TP.HCM.	Thành viên Hội đồng quản lý IRDM\r\nNhà khoa học/chuyên gia; Giảng viên & Chuyên gia học tập ứng dụng	Chủ nhiệm các dự án phát triển đại học quốc tế như VLIR (Bỉ), MHO (Hà Lan), VSEP (Canada).\r\nThiết kế và triển khai chương trình Thạc sĩ Quản lý Môi trường và Biến đổi khí hậu hợp tác với Đại học Aarhus (Đan Mạch) và Đại học Duke (Hoa Kỳ).\r\nĐồng thiết kế và huấn luyện triển khai mô hình đào tạo Outcome-Based Education cho nhiều trường đại học trong ASEAN.\r\nTư vấn và đào tạo xây dựng hệ thống đảm bảo chất lượng nội bộ cho hơn 100 trường đại học và cao đẳng tại Việt Nam.\r\nChủ trì và tham gia nhiều nghiên cứu về quản lý tài nguyên nước, cải tạo đất phèn, phát triển bền vững vùng Đồng bằng sông Cửu Long.		Năm kinh nghiệm	40+	Trường đại học tư vấn	100+	Phạm vi nghiên cứu và hợp tác quốc tế	ASEAN				Chuyên gia cao cấp về quản trị đại học, kiểm định chất lượng Giáo dục và phát triển chính sách công – môi trường tại Việt Nam và ASEAN
 \.
 
 
 --
--- TOC entry 6412 (class 0 OID 312440)
--- Dependencies: 284
+-- TOC entry 6498 (class 0 OID 727509)
+-- Dependencies: 288
 -- Data for Name: expert_expert_engagement_types; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.expert_expert_engagement_types (id, expert_id, engagementtype_id) FROM stdin;
-1	cc2c8d15-3a91-4485-81ef-8fcef5ea4a25	25654b63-9bd8-4585-ac38-867279f6512b
-2	cc2c8d15-3a91-4485-81ef-8fcef5ea4a25	a01de170-27f6-477c-a710-00a7d6f68268
-3	4bfedb13-2989-40cb-a435-0c3314c0f5c3	c34213a5-00ad-42b1-85ab-f30fce3f6ad5
-4	4bfedb13-2989-40cb-a435-0c3314c0f5c3	2d4498c3-376d-475d-a425-65caf86d6db5
-5	162d63f1-2d74-436c-b497-12b6f71fd9f7	25654b63-9bd8-4585-ac38-867279f6512b
-6	162d63f1-2d74-436c-b497-12b6f71fd9f7	23c2da6d-8f55-4c2d-8146-fea61be96edb
 7	5e834e6b-7d63-4416-b323-80a1758300b1	c34213a5-00ad-42b1-85ab-f30fce3f6ad5
 8	5e834e6b-7d63-4416-b323-80a1758300b1	23c2da6d-8f55-4c2d-8146-fea61be96edb
 9	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	25654b63-9bd8-4585-ac38-867279f6512b
@@ -5526,50 +5907,26 @@ COPY public.expert_expert_engagement_types (id, expert_id, engagementtype_id) FR
 70	77df01e0-f60e-4ddc-8a92-9786fcb9b30b	c34213a5-00ad-42b1-85ab-f30fce3f6ad5
 71	1548f376-7bd3-455c-a18c-6ae017a08383	25654b63-9bd8-4585-ac38-867279f6512b
 72	1548f376-7bd3-455c-a18c-6ae017a08383	c34213a5-00ad-42b1-85ab-f30fce3f6ad5
+73	7a442992-c910-47e8-b627-afd0e7ce4c83	25654b63-9bd8-4585-ac38-867279f6512b
+74	7a442992-c910-47e8-b627-afd0e7ce4c83	0ced2aa4-0552-48ad-9af6-bf3d771c50d3
+75	7a442992-c910-47e8-b627-afd0e7ce4c83	2d4498c3-376d-475d-a425-65caf86d6db5
+76	7a442992-c910-47e8-b627-afd0e7ce4c83	23c2da6d-8f55-4c2d-8146-fea61be96edb
+77	7a442992-c910-47e8-b627-afd0e7ce4c83	c34213a5-00ad-42b1-85ab-f30fce3f6ad5
+78	7a442992-c910-47e8-b627-afd0e7ce4c83	a01de170-27f6-477c-a710-00a7d6f68268
+79	7a442992-c910-47e8-b627-afd0e7ce4c83	828b7678-6bbb-4201-9e24-5d3db24a4dcd
 \.
 
 
 --
--- TOC entry 6414 (class 0 OID 312447)
--- Dependencies: 286
+-- TOC entry 6500 (class 0 OID 727516)
+-- Dependencies: 290
 -- Data for Name: expert_expert_knowledge_topics; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.expert_expert_knowledge_topics (id, expert_id, knowledgetopic_id) FROM stdin;
-1	cc2c8d15-3a91-4485-81ef-8fcef5ea4a25	8440df2b-91f6-475c-b4bc-14579c6e67dc
-2	cc2c8d15-3a91-4485-81ef-8fcef5ea4a25	88f1757b-c60b-4d56-bc82-7281e375b2df
-5	4bfedb13-2989-40cb-a435-0c3314c0f5c3	2d7bdbd6-befc-47c3-980f-fd44685e42ca
-6	4bfedb13-2989-40cb-a435-0c3314c0f5c3	31fa99d3-215a-4f3b-a9ff-776756a9b901
-9	162d63f1-2d74-436c-b497-12b6f71fd9f7	31fa99d3-215a-4f3b-a9ff-776756a9b901
-11	8b00b6e5-4263-492f-9dde-866efa62f049	8440df2b-91f6-475c-b4bc-14579c6e67dc
-12	8b00b6e5-4263-492f-9dde-866efa62f049	88f1757b-c60b-4d56-bc82-7281e375b2df
-15	5bcb6772-6263-4add-a5f3-95054fd00246	2374e014-73a2-434c-bc38-b8de2f6a5d13
-17	82f35f80-7d8e-4b7c-9dfc-e0c27c6abf22	61814c89-4232-48f6-9bc4-8d4895a0d775
-19	b79cdef4-3435-4990-9252-1791aedd6d2e	8440df2b-91f6-475c-b4bc-14579c6e67dc
-20	b79cdef4-3435-4990-9252-1791aedd6d2e	88f1757b-c60b-4d56-bc82-7281e375b2df
-23	e2f886bb-a017-458f-b4f8-311f0d800fee	31fa99d3-215a-4f3b-a9ff-776756a9b901
 25	b9ff32bd-2aa8-49e7-9586-379c75f33e28	2374e014-73a2-434c-bc38-b8de2f6a5d13
 26	b9ff32bd-2aa8-49e7-9586-379c75f33e28	61814c89-4232-48f6-9bc4-8d4895a0d775
-29	88999316-8f8d-4ca0-9438-82d9df238d59	88f1757b-c60b-4d56-bc82-7281e375b2df
-31	95eef455-b009-4c6f-907e-91673dd3f1a8	8440df2b-91f6-475c-b4bc-14579c6e67dc
-32	95eef455-b009-4c6f-907e-91673dd3f1a8	88f1757b-c60b-4d56-bc82-7281e375b2df
 35	a502b2c7-b3b8-4383-a12e-9c069de367c9	31fa99d3-215a-4f3b-a9ff-776756a9b901
-37	d53433ba-b9d8-4441-83e8-14f9693736b5	61814c89-4232-48f6-9bc4-8d4895a0d775
-38	d53433ba-b9d8-4441-83e8-14f9693736b5	8440df2b-91f6-475c-b4bc-14579c6e67dc
-41	7c089591-38b6-43a5-a990-f7b03c9d6d21	2d7bdbd6-befc-47c3-980f-fd44685e42ca
-42	7c089591-38b6-43a5-a990-f7b03c9d6d21	31fa99d3-215a-4f3b-a9ff-776756a9b901
-45	eb7bef3e-f94f-49f9-87f3-37f367ab994e	2374e014-73a2-434c-bc38-b8de2f6a5d13
-47	e661b4e7-3380-4305-9404-c2f437fe1aba	61814c89-4232-48f6-9bc4-8d4895a0d775
-48	e661b4e7-3380-4305-9404-c2f437fe1aba	8440df2b-91f6-475c-b4bc-14579c6e67dc
-51	06f55fd9-7ccb-4bda-83d3-8d96d3ac8a69	31fa99d3-215a-4f3b-a9ff-776756a9b901
-53	a77bf886-849b-455b-852a-2df8b6b58fa0	8440df2b-91f6-475c-b4bc-14579c6e67dc
-54	a77bf886-849b-455b-852a-2df8b6b58fa0	88f1757b-c60b-4d56-bc82-7281e375b2df
-57	2664691b-c5df-4ae9-b521-0185b31cce4d	61814c89-4232-48f6-9bc4-8d4895a0d775
-58	2664691b-c5df-4ae9-b521-0185b31cce4d	88f1757b-c60b-4d56-bc82-7281e375b2df
-61	f545466a-f5e5-4312-b277-5beb577cfa3d	2d7bdbd6-befc-47c3-980f-fd44685e42ca
-62	f545466a-f5e5-4312-b277-5beb577cfa3d	88f1757b-c60b-4d56-bc82-7281e375b2df
-65	d37db12f-a3b6-4dc9-aa60-b475590ed25f	2d7bdbd6-befc-47c3-980f-fd44685e42ca
-66	d37db12f-a3b6-4dc9-aa60-b475590ed25f	61814c89-4232-48f6-9bc4-8d4895a0d775
 69	96d80975-dbfe-4f48-95df-2d31e6cc6ede	31fa99d3-215a-4f3b-a9ff-776756a9b901
 71	0dac0759-934b-4704-97eb-527515f578ea	2374e014-73a2-434c-bc38-b8de2f6a5d13
 73	a7438e8f-5301-453e-b2be-212f786a8802	31fa99d3-215a-4f3b-a9ff-776756a9b901
@@ -5863,55 +6220,31 @@ COPY public.expert_expert_knowledge_topics (id, expert_id, knowledgetopic_id) FR
 598	1548f376-7bd3-455c-a18c-6ae017a08383	28838538-aa47-465f-ba5f-9a5a3cd37eb5
 599	1548f376-7bd3-455c-a18c-6ae017a08383	41c78ac1-77b8-40a2-a72b-c0b36614d1bb
 600	1548f376-7bd3-455c-a18c-6ae017a08383	be3a9b66-a72a-4f9c-9187-087576e141e6
+601	7a442992-c910-47e8-b627-afd0e7ce4c83	bb801df2-6e64-448e-8b00-98f47e38ae64
+602	7a442992-c910-47e8-b627-afd0e7ce4c83	b4dbe7bf-429a-434f-be05-e2e575d3c07d
+603	7a442992-c910-47e8-b627-afd0e7ce4c83	dd8d69c2-9e51-4151-bdc7-c254d47f4f6c
+604	7a442992-c910-47e8-b627-afd0e7ce4c83	488642b9-e9d2-4d1e-84b1-248ea22aea91
+605	7a442992-c910-47e8-b627-afd0e7ce4c83	bfa765cd-e586-4d16-abbe-dfe50a1a9b79
+606	7a442992-c910-47e8-b627-afd0e7ce4c83	d969d581-da40-48d7-a534-b7c15c849e9e
+607	7a442992-c910-47e8-b627-afd0e7ce4c83	1d3d6e49-b2f1-4d82-9433-e97d69324db7
+608	7a442992-c910-47e8-b627-afd0e7ce4c83	450e69ac-698c-4a0e-9912-a566376e412e
+609	7a442992-c910-47e8-b627-afd0e7ce4c83	35a93874-2fb1-4a80-8d93-b77080532f25
+610	7a442992-c910-47e8-b627-afd0e7ce4c83	74a1f848-c854-4ffa-adaa-d0621ca98f09
+611	7a442992-c910-47e8-b627-afd0e7ce4c83	1f0e3ce8-3d01-4db5-b1b7-8f4d0e4be2a8
 \.
 
 
 --
--- TOC entry 6416 (class 0 OID 312454)
--- Dependencies: 288
+-- TOC entry 6502 (class 0 OID 727523)
+-- Dependencies: 292
 -- Data for Name: expert_expert_research_areas; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.expert_expert_research_areas (id, expert_id, researcharea_id) FROM stdin;
-1	cc2c8d15-3a91-4485-81ef-8fcef5ea4a25	90153c0d-0e83-4a93-8396-7b10fc3a4054
-2	cc2c8d15-3a91-4485-81ef-8fcef5ea4a25	34eaf735-6af7-46b6-95ad-b817ca2c8556
-3	4bfedb13-2989-40cb-a435-0c3314c0f5c3	0abb7a07-8b4d-42c6-b3b2-cfb87c47e73b
-4	4bfedb13-2989-40cb-a435-0c3314c0f5c3	ec6f9c69-fd83-47c7-9f15-c5ca7897823d
-5	162d63f1-2d74-436c-b497-12b6f71fd9f7	803303a1-5704-4823-a8b3-6b1b91efb7b5
-6	162d63f1-2d74-436c-b497-12b6f71fd9f7	ec6f9c69-fd83-47c7-9f15-c5ca7897823d
-7	8b00b6e5-4263-492f-9dde-866efa62f049	bf821fe1-65a6-4b88-b9d7-7b5eb938e41b
-8	8b00b6e5-4263-492f-9dde-866efa62f049	34eaf735-6af7-46b6-95ad-b817ca2c8556
-9	5bcb6772-6263-4add-a5f3-95054fd00246	6ddddd4a-fd62-4fe2-9c9d-a8c8cc740a08
-10	82f35f80-7d8e-4b7c-9dfc-e0c27c6abf22	df5fd549-8bbe-4ced-80e8-ff28b3f80acf
-11	b79cdef4-3435-4990-9252-1791aedd6d2e	bf821fe1-65a6-4b88-b9d7-7b5eb938e41b
-12	b79cdef4-3435-4990-9252-1791aedd6d2e	90153c0d-0e83-4a93-8396-7b10fc3a4054
-13	e2f886bb-a017-458f-b4f8-311f0d800fee	803303a1-5704-4823-a8b3-6b1b91efb7b5
-14	e2f886bb-a017-458f-b4f8-311f0d800fee	ec6f9c69-fd83-47c7-9f15-c5ca7897823d
 15	b9ff32bd-2aa8-49e7-9586-379c75f33e28	df5fd549-8bbe-4ced-80e8-ff28b3f80acf
 16	b9ff32bd-2aa8-49e7-9586-379c75f33e28	90153c0d-0e83-4a93-8396-7b10fc3a4054
-17	88999316-8f8d-4ca0-9438-82d9df238d59	90153c0d-0e83-4a93-8396-7b10fc3a4054
-18	88999316-8f8d-4ca0-9438-82d9df238d59	34eaf735-6af7-46b6-95ad-b817ca2c8556
-19	95eef455-b009-4c6f-907e-91673dd3f1a8	bf821fe1-65a6-4b88-b9d7-7b5eb938e41b
-20	95eef455-b009-4c6f-907e-91673dd3f1a8	34eaf735-6af7-46b6-95ad-b817ca2c8556
 21	a502b2c7-b3b8-4383-a12e-9c069de367c9	803303a1-5704-4823-a8b3-6b1b91efb7b5
 22	a502b2c7-b3b8-4383-a12e-9c069de367c9	ec6f9c69-fd83-47c7-9f15-c5ca7897823d
-23	d53433ba-b9d8-4441-83e8-14f9693736b5	bf821fe1-65a6-4b88-b9d7-7b5eb938e41b
-24	d53433ba-b9d8-4441-83e8-14f9693736b5	df5fd549-8bbe-4ced-80e8-ff28b3f80acf
-25	7c089591-38b6-43a5-a990-f7b03c9d6d21	0abb7a07-8b4d-42c6-b3b2-cfb87c47e73b
-26	7c089591-38b6-43a5-a990-f7b03c9d6d21	ec6f9c69-fd83-47c7-9f15-c5ca7897823d
-27	eb7bef3e-f94f-49f9-87f3-37f367ab994e	6ddddd4a-fd62-4fe2-9c9d-a8c8cc740a08
-28	e661b4e7-3380-4305-9404-c2f437fe1aba	bf821fe1-65a6-4b88-b9d7-7b5eb938e41b
-29	e661b4e7-3380-4305-9404-c2f437fe1aba	df5fd549-8bbe-4ced-80e8-ff28b3f80acf
-30	06f55fd9-7ccb-4bda-83d3-8d96d3ac8a69	803303a1-5704-4823-a8b3-6b1b91efb7b5
-31	06f55fd9-7ccb-4bda-83d3-8d96d3ac8a69	ec6f9c69-fd83-47c7-9f15-c5ca7897823d
-32	a77bf886-849b-455b-852a-2df8b6b58fa0	bf821fe1-65a6-4b88-b9d7-7b5eb938e41b
-33	a77bf886-849b-455b-852a-2df8b6b58fa0	90153c0d-0e83-4a93-8396-7b10fc3a4054
-34	2664691b-c5df-4ae9-b521-0185b31cce4d	df5fd549-8bbe-4ced-80e8-ff28b3f80acf
-35	2664691b-c5df-4ae9-b521-0185b31cce4d	34eaf735-6af7-46b6-95ad-b817ca2c8556
-36	f545466a-f5e5-4312-b277-5beb577cfa3d	0abb7a07-8b4d-42c6-b3b2-cfb87c47e73b
-37	f545466a-f5e5-4312-b277-5beb577cfa3d	90153c0d-0e83-4a93-8396-7b10fc3a4054
-38	d37db12f-a3b6-4dc9-aa60-b475590ed25f	df5fd549-8bbe-4ced-80e8-ff28b3f80acf
-39	d37db12f-a3b6-4dc9-aa60-b475590ed25f	0abb7a07-8b4d-42c6-b3b2-cfb87c47e73b
 40	96d80975-dbfe-4f48-95df-2d31e6cc6ede	803303a1-5704-4823-a8b3-6b1b91efb7b5
 41	96d80975-dbfe-4f48-95df-2d31e6cc6ede	34eaf735-6af7-46b6-95ad-b817ca2c8556
 42	0dac0759-934b-4704-97eb-527515f578ea	6ddddd4a-fd62-4fe2-9c9d-a8c8cc740a08
@@ -5961,9 +6294,6 @@ COPY public.expert_expert_research_areas (id, expert_id, researcharea_id) FROM s
 134	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	1780795b-b3c0-4b13-8fdd-a89e298c0f1e
 135	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	11e1b709-54e6-4319-b847-713d7c5054d2
 136	97f9bd96-bca8-4cd9-8b4c-dc62c3b1d81e	5d84a13c-abd5-4b17-b1f3-1a25ee853642
-137	7a442992-c910-47e8-b627-afd0e7ce4c83	2787d14e-fde3-4220-a181-ac7a878f6626
-138	7a442992-c910-47e8-b627-afd0e7ce4c83	7a09b2e0-85f3-42ab-9981-fc0d72083993
-139	7a442992-c910-47e8-b627-afd0e7ce4c83	882a1399-69c4-47ab-86a2-32a120af5c39
 140	5e834e6b-7d63-4416-b323-80a1758300b1	87104716-3c20-40b8-80b1-b0e8cc93b6e6
 141	5e834e6b-7d63-4416-b323-80a1758300b1	3fe7dd74-a8c3-4a2d-8c56-99a9f6252a62
 142	5e834e6b-7d63-4416-b323-80a1758300b1	882a1399-69c4-47ab-86a2-32a120af5c39
@@ -5998,12 +6328,19 @@ COPY public.expert_expert_research_areas (id, expert_id, researcharea_id) FROM s
 174	04752e52-8b5d-4379-80ba-efa6089aa752	4620940e-0da6-4724-8a33-0e0d24163b90
 175	b2f5c1ea-5835-4c1e-9c29-805b2c2d322b	e1001ed3-66d1-46ef-81b0-128d1856740d
 176	77df01e0-f60e-4ddc-8a92-9786fcb9b30b	3fe7dd74-a8c3-4a2d-8c56-99a9f6252a62
+177	7a442992-c910-47e8-b627-afd0e7ce4c83	e1001ed3-66d1-46ef-81b0-128d1856740d
+178	7a442992-c910-47e8-b627-afd0e7ce4c83	4620940e-0da6-4724-8a33-0e0d24163b90
+179	7a442992-c910-47e8-b627-afd0e7ce4c83	9851d2de-686d-4b59-aacd-29292ca7f013
+181	7a442992-c910-47e8-b627-afd0e7ce4c83	e795f2fe-d973-400a-84ae-4567b5cbcfbf
+182	7a442992-c910-47e8-b627-afd0e7ce4c83	5b525573-2282-4e28-99b2-6973ee6a5fb5
+183	7a442992-c910-47e8-b627-afd0e7ce4c83	5cb2ba38-6f48-4a25-9983-1a89f5b2fa9c
+184	7a442992-c910-47e8-b627-afd0e7ce4c83	5802b75c-5a77-46f7-8684-f47d383d86e8
 \.
 
 
 --
--- TOC entry 6418 (class 0 OID 312461)
--- Dependencies: 290
+-- TOC entry 6504 (class 0 OID 727530)
+-- Dependencies: 294
 -- Data for Name: expert_expertgroup; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6019,8 +6356,8 @@ f5b73ea9-c9e3-4f8a-908f-e725e2123cba	t	2	2026-07-27 17:43:38.922118+07	2026-07-2
 
 
 --
--- TOC entry 6419 (class 0 OID 312475)
--- Dependencies: 291
+-- TOC entry 6505 (class 0 OID 727544)
+-- Dependencies: 295
 -- Data for Name: expert_expertlistingpage; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6030,8 +6367,8 @@ ff2599d0-4f06-4a6e-80fd-2d8586b722f7	t	0	2026-07-27 17:43:38.909609+07	2026-08-1
 
 
 --
--- TOC entry 6420 (class 0 OID 312540)
--- Dependencies: 292
+-- TOC entry 6506 (class 0 OID 727609)
+-- Dependencies: 296
 -- Data for Name: expert_infogroup; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6045,8 +6382,8 @@ e23ebc4e-6d8d-4070-b204-51f85793e29e	t	5	2026-07-29 23:47:53.564619+07	2026-08-0
 
 
 --
--- TOC entry 6421 (class 0 OID 312563)
--- Dependencies: 293
+-- TOC entry 6507 (class 0 OID 727632)
+-- Dependencies: 297
 -- Data for Name: expert_infogroup_expert_direct_members; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6060,8 +6397,8 @@ COPY public.expert_infogroup_expert_direct_members (id, infogroup_id, expert_id)
 
 
 --
--- TOC entry 6423 (class 0 OID 312570)
--- Dependencies: 295
+-- TOC entry 6509 (class 0 OID 727639)
+-- Dependencies: 299
 -- Data for Name: expert_infogroup_expert_research_areas; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6078,8 +6415,8 @@ COPY public.expert_infogroup_expert_research_areas (id, infogroup_id, researchar
 
 
 --
--- TOC entry 6425 (class 0 OID 312577)
--- Dependencies: 297
+-- TOC entry 6511 (class 0 OID 727646)
+-- Dependencies: 301
 -- Data for Name: expert_infogroupblock; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6097,8 +6434,8 @@ e67973f3-edaa-498b-b9f0-2a12588aa8ad	t	0	2026-07-29 21:43:53.49947+07	2026-07-29
 
 
 --
--- TOC entry 6426 (class 0 OID 312595)
--- Dependencies: 298
+-- TOC entry 6512 (class 0 OID 727664)
+-- Dependencies: 302
 -- Data for Name: expert_infogroupmember; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6109,8 +6446,8 @@ c20f0113-5972-409c-8c61-8fd8d6190b3a	t	2	2026-07-29 16:48:47.093901+07	2026-08-1
 
 
 --
--- TOC entry 6427 (class 0 OID 312615)
--- Dependencies: 299
+-- TOC entry 6513 (class 0 OID 727684)
+-- Dependencies: 303
 -- Data for Name: expert_knowledgetopic; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6344,12 +6681,18 @@ c0f12626-e9d0-4b04-ac9d-c79da4bdbcb6	f	0	2026-08-09 22:35:08.109001+07	2026-08-0
 7f2618b3-c1f9-48a6-a25d-23d021448572	f	0	2026-08-09 22:35:41.524567+07	2026-08-09 22:35:41.524575+07	Leadership Development	leadership-development	Leadership Development				
 be3a9b66-a72a-4f9c-9187-087576e141e6	t	0	2026-08-09 22:42:50.728222+07	2026-08-09 22:42:50.72823+07	Đào tạo lãnh đạo	djao-to-lanh-djo	Đào tạo lãnh đạo				
 41c78ac1-77b8-40a2-a72b-c0b36614d1bb	f	0	2026-08-09 22:43:03.72406+07	2026-08-09 22:43:03.724071+07	Employee Experience	employee-experience	Employee Experience				
+a6963f56-9ff9-42bb-a9cb-6f0101a8ff69	f	0	2026-09-12 23:24:05.6129+07	2026-09-12 23:24:05.612909+07	Thiết kế nghiên cứu	thit-k-nghien-cu	Thiết kế nghiên cứu				
+488642b9-e9d2-4d1e-84b1-248ea22aea91	f	0	2026-09-12 23:25:44.746376+07	2026-09-12 23:25:44.746385+07	Y tế	y-t	Y tế				
+1f0e3ce8-3d01-4db5-b1b7-8f4d0e4be2a8	t	0	2026-09-13 00:06:29.999627+07	2026-09-13 00:06:29.999643+07	Xã hội học sức khỏe	xa-hi-hc-sc-khe	Xã hội học sức khỏe				
+35a93874-2fb1-4a80-8d93-b77080532f25	f	0	2026-09-13 00:07:01.663025+07	2026-09-13 00:07:01.663035+07	Giáo dục	giao-dc	Giáo dục				
+74a1f848-c854-4ffa-adaa-d0621ca98f09	f	0	2026-09-13 00:07:31.247342+07	2026-09-13 00:07:31.247351+07	Nghiên cứu ứng dụng	nghien-cu-ng-dng	Nghiên cứu ứng dụng				
+450e69ac-698c-4a0e-9912-a566376e412e	f	0	2026-09-13 00:07:59.782564+07	2026-09-13 00:07:59.782591+07	Healthcare Transformation	healthcare-transformation	Healthcare Transformation				
 \.
 
 
 --
--- TOC entry 6428 (class 0 OID 312633)
--- Dependencies: 300
+-- TOC entry 6514 (class 0 OID 727702)
+-- Dependencies: 304
 -- Data for Name: expert_orgnode; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6366,8 +6709,8 @@ c2faf6f8-2701-434b-bd1e-99988baf0e39	t	6	2026-07-29 16:05:09.829384+07	2026-07-2
 
 
 --
--- TOC entry 6429 (class 0 OID 312651)
--- Dependencies: 301
+-- TOC entry 6515 (class 0 OID 727720)
+-- Dependencies: 305
 -- Data for Name: expert_processstep; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6380,8 +6723,8 @@ dbf12b34-93a5-4e52-80ec-e27f43d4eece	t	3	2026-07-28 23:36:07.6349+07	2026-07-28 
 
 
 --
--- TOC entry 6430 (class 0 OID 312667)
--- Dependencies: 302
+-- TOC entry 6516 (class 0 OID 727736)
+-- Dependencies: 306
 -- Data for Name: expert_researcharea; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6428,8 +6771,8 @@ e795f2fe-d973-400a-84ae-4567b5cbcfbf	t	8	2026-07-29 22:39:48.433255+07	2026-07-2
 
 
 --
--- TOC entry 6431 (class 0 OID 312687)
--- Dependencies: 303
+-- TOC entry 6517 (class 0 OID 727756)
+-- Dependencies: 307
 -- Data for Name: home_audiencesectionheader; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6439,23 +6782,23 @@ COPY public.home_audiencesectionheader (id, is_active, display_order, created_at
 
 
 --
--- TOC entry 6432 (class 0 OID 312703)
--- Dependencies: 304
+-- TOC entry 6518 (class 0 OID 727772)
+-- Dependencies: 308
 -- Data for Name: home_audiencesegment; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.home_audiencesegment (id, is_active, display_order, created_at, updated_at, icon, title, description, cta_label, cta_url, image, icon_image) FROM stdin;
-271e7b1e-4949-47d2-935b-8c749d75114d	t	10	2026-07-03 22:44:05.486596+07	2026-07-07 21:15:44.202906+07	building-office	Cơ quan quản lý & Chính sách	Cung cố căn cứ khoa học, dữ liệu và cơ chế phối hợp cho các chương trình, dự án và nhiệm vụ KHCN & MST.	Khám phá Giải pháp	/giai-phap/co-quan-quan-ly/	home/audience/home/audience/271e7b1e-4949-47d2-935b-8c749d75114d.png	
 77a8ffff-bff5-4c7c-849e-bdde84c827c7	t	20	2026-07-03 22:44:05.490145+07	2026-07-07 21:15:44.212538+07	heart	Hệ thống y tế	Làm rõ bài toán ưu tiên, dữ liệu sẵn có và lộ trình thí điểm phù hợp để hỗ trợ quản trị, chất lượng dịch vụ, phát triển năng lực.	Khám phá Giải pháp	/giai-phap/he-thong-y-te/	home/audience/home/audience/77a8ffff-bff5-4c7c-849e-bdde84c827c7.png	
 ffb74786-3469-45ab-a810-239becf719f8	t	30	2026-07-03 22:44:05.491944+07	2026-07-07 21:15:44.221224+07	academic-cap	Trường Đại học & Giáo dục	Hỗ trợ nhà trường đổi mới chương trình, phát triển người học, khai thác dữ liệu giáo dục và xây dựng môi trường học tập.	Khám phá Giải pháp	/giai-phap/giao-duc/	home/audience/home/audience/ffb74786-3469-45ab-a810-239becf719f8.png	
 9315c568-4567-4428-a483-a624cb63ca9d	t	40	2026-07-03 22:44:05.494825+07	2026-07-07 21:15:44.229422+07	briefcase	Doanh nghiệp	Thiết kế các sáng kiến phát triển con người, năng lực làm việc, văn hóa phối hợp và trách nhiệm xã hội gắn với mục tiêu.	Khám phá Giải pháp	/giai-phap/doanh-nghiep/	home/audience/home/audience/9315c568-4567-4428-a483-a624cb63ca9d.png	
 9dda942c-a236-460b-8f44-5d3bd17feea8	t	50	2026-07-03 22:44:05.497141+07	2026-07-07 21:15:44.237638+07	globe-alt	Tổ chức quốc tế	Kết nối tri thức quốc tế với bối cảnh Việt Nam để thiết kế, triển khai và đánh giá các sáng kiến liên ngành có khả năng nhân rộng.	Khám phá Giải pháp	/giai-phap/to-chuc-quoc-te/	home/audience/home/audience/9dda942c-a236-460b-8f44-5d3bd17feea8.png	
+271e7b1e-4949-47d2-935b-8c749d75114d	t	10	2026-07-03 22:44:05.486596+07	2026-09-23 22:28:18.145469+07	building-office	Cơ quan quản lý & Chính sách	Cung cố căn cứ khoa học, dữ liệu và cơ chế phối hợp cho các chương trình, dự án và nhiệm vụ KHCN & MST.	Khám phá Giải pháp	/giai-phap/co-quan-quan-ly-va-chinh-sach/	home/audience/home/audience/271e7b1e-4949-47d2-935b-8c749d75114d.png	
 \.
 
 
 --
--- TOC entry 6433 (class 0 OID 312721)
--- Dependencies: 305
+-- TOC entry 6519 (class 0 OID 727790)
+-- Dependencies: 309
 -- Data for Name: home_audiencetag; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6485,8 +6828,8 @@ b2f51988-8efc-4bfa-a794-984c40755088	t	100	2026-07-03 22:44:05.497477+07	2026-07
 
 
 --
--- TOC entry 6434 (class 0 OID 312732)
--- Dependencies: 306
+-- TOC entry 6520 (class 0 OID 727801)
+-- Dependencies: 310
 -- Data for Name: home_capabilitiessectionheader; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6496,8 +6839,8 @@ c9ba92b7-14e9-47bc-94cc-f044694b1508	t	0	2026-07-03 22:44:05.506391+07	2026-07-0
 
 
 --
--- TOC entry 6435 (class 0 OID 312748)
--- Dependencies: 307
+-- TOC entry 6521 (class 0 OID 727817)
+-- Dependencies: 311
 -- Data for Name: home_corecapability; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6513,8 +6856,8 @@ f313a59b-0682-463d-97d0-98e0fb34f673	t	20	2026-07-03 22:44:05.50924+07	2026-07-1
 
 
 --
--- TOC entry 6436 (class 0 OID 312765)
--- Dependencies: 308
+-- TOC entry 6522 (class 0 OID 727834)
+-- Dependencies: 312
 -- Data for Name: home_ctabanner; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6524,8 +6867,8 @@ COPY public.home_ctabanner (id, is_active, display_order, created_at, updated_at
 
 
 --
--- TOC entry 6437 (class 0 OID 312782)
--- Dependencies: 309
+-- TOC entry 6523 (class 0 OID 727851)
+-- Dependencies: 313
 -- Data for Name: home_evidencesectionheader; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6535,8 +6878,8 @@ COPY public.home_evidencesectionheader (id, is_active, display_order, created_at
 
 
 --
--- TOC entry 6438 (class 0 OID 312799)
--- Dependencies: 310
+-- TOC entry 6524 (class 0 OID 727868)
+-- Dependencies: 314
 -- Data for Name: home_featuredsectionconfig; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6545,8 +6888,8 @@ COPY public.home_featuredsectionconfig (id, is_active, display_order, created_at
 
 
 --
--- TOC entry 6439 (class 0 OID 312816)
--- Dependencies: 311
+-- TOC entry 6525 (class 0 OID 727885)
+-- Dependencies: 315
 -- Data for Name: home_heropilltag; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6559,8 +6902,8 @@ ad840739-8ba7-4e60-8a94-c1cec8bc1802	t	40	2026-07-11 21:48:51.229891+07	2026-07-
 
 
 --
--- TOC entry 6440 (class 0 OID 312827)
--- Dependencies: 312
+-- TOC entry 6526 (class 0 OID 727896)
+-- Dependencies: 316
 -- Data for Name: home_herosection; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6570,33 +6913,33 @@ COPY public.home_herosection (id, is_active, display_order, created_at, updated_
 
 
 --
--- TOC entry 6441 (class 0 OID 312851)
--- Dependencies: 313
+-- TOC entry 6527 (class 0 OID 727920)
+-- Dependencies: 317
 -- Data for Name: home_knowledgecategory; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.home_knowledgecategory (id, is_active, display_order, created_at, updated_at, icon, category_label, title, cta_label, cta_url, image) FROM stdin;
-39cdc344-cf89-4053-b28b-e6903c1a62bb	t	10	2026-07-03 22:44:05.53784+07	2026-07-07 21:15:44.34119+07	document-text	XUẤT BẢN & TÀI LIỆU	Bài viết, báo cáo & policy brief	Xem tài liệu	/tri-thuc/tai-lieu/	home/knowledge/home/knowledge/39cdc344-cf89-4053-b28b-e6903c1a62bb.png
-012a8f47-c9ba-47cd-9be5-9ea4371025a5	t	20	2026-07-03 22:44:05.540859+07	2026-07-07 21:15:44.348252+07	calendar	SỰ KIỆN & DIỄN ĐÀN	Hội thảo, tọa đàm & diễn đàn chuyên môn	Xem sự kiện	/tri-thuc/su-kien/	home/knowledge/home/knowledge/012a8f47-c9ba-47cd-9be5-9ea4371025a5.png
-56ee9c96-4a13-488c-bd10-ebd170c665f4	t	30	2026-07-03 22:44:05.541487+07	2026-07-07 21:15:44.354451+07	chat-bubble-left-ellipsis	GÓC NHÌN TỪ ĐỐI TÁC	Cảm nhận từ đối tác & người học	Đọc chia sẻ	/tri-thuc/doi-tac/	home/knowledge/home/knowledge/56ee9c96-4a13-488c-bd10-ebd170c665f4.png
-04601715-d68b-41cf-92be-418fa35245f8	t	40	2026-07-03 22:44:05.542068+07	2026-07-07 21:15:44.361069+07	newspaper	TRUYỀN THÔNG	Báo chí & diễn đàn chuyên môn	Xem trên báo chí	/tri-thuc/truyen-thong/	home/knowledge/home/knowledge/04601715-d68b-41cf-92be-418fa35245f8.png
+39cdc344-cf89-4053-b28b-e6903c1a62bb	t	10	2026-07-03 22:44:05.53784+07	2026-09-23 21:13:20.572525+07	document-text	XUẤT BẢN & TÀI LIỆU	Bài viết, báo cáo & policy brief	Xem tài liệu	/tri-thuc-goc-nhin/?ctype=bao-cao-tai-lieu	home/knowledge/home/knowledge/39cdc344-cf89-4053-b28b-e6903c1a62bb.png
+012a8f47-c9ba-47cd-9be5-9ea4371025a5	t	20	2026-07-03 22:44:05.540859+07	2026-09-23 21:15:26.653806+07	calendar	SỰ KIỆN & DIỄN ĐÀN	Hội thảo, tọa đàm & diễn đàn chuyên môn	Xem sự kiện	/tri-thuc-goc-nhin/#tin-tuc-su-kien	home/knowledge/home/knowledge/012a8f47-c9ba-47cd-9be5-9ea4371025a5.png
+56ee9c96-4a13-488c-bd10-ebd170c665f4	t	30	2026-07-03 22:44:05.541487+07	2026-09-23 21:29:44.636991+07	chat-bubble-left-ellipsis	GÓC NHÌN TỪ ĐỐI TÁC	Cảm nhận từ đối tác & người học	Đọc chia sẻ	/tri-thuc-goc-nhin/?search=&partner=co-quan-quan-ly&partner=he-thong-y-te&partner=truong-dai-hoc&partner=doanh-nghiep&partner=to-chuc-quoc-te	home/knowledge/home/knowledge/56ee9c96-4a13-488c-bd10-ebd170c665f4.png
+04601715-d68b-41cf-92be-418fa35245f8	t	40	2026-07-03 22:44:05.542068+07	2026-09-23 21:43:41.138454+07	newspaper	TRUYỀN THÔNG	Báo chí & diễn đàn chuyên môn	Xem trên báo chí	/tri-thuc-goc-nhin/#bao-chi-dien-dan	home/knowledge/home/knowledge/04601715-d68b-41cf-92be-418fa35245f8.png
 \.
 
 
 --
--- TOC entry 6442 (class 0 OID 312868)
--- Dependencies: 314
+-- TOC entry 6528 (class 0 OID 727937)
+-- Dependencies: 318
 -- Data for Name: home_knowledgesectionheader; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.home_knowledgesectionheader (id, is_active, display_order, created_at, updated_at, section_label, heading, description, cta_label, cta_url) FROM stdin;
-49d8dbf2-a4c1-4da5-86b8-88a9d1b57aa3	t	0	2026-07-03 22:44:05.535795+07	2026-07-03 22:44:05.535799+07	TRI THỨC & GÓC NHÌN	Tri thức & Diễn đàn chuyên môn	Viện IRDM tham gia các diễn đàn chuyên môn, hội thảo và hoạt động phổ biến tri thức với vai trò tổ chức chủ trì nghiên cứu và ứng dụng.	Xem Tri thức & Góc nhìn	/tri-thuc/
+49d8dbf2-a4c1-4da5-86b8-88a9d1b57aa3	t	0	2026-07-03 22:44:05.535795+07	2026-09-23 21:07:14.271142+07	TRI THỨC & GÓC NHÌN	Tri thức & Diễn đàn chuyên môn	Viện IRDM tham gia các diễn đàn chuyên môn, hội thảo và hoạt động phổ biến tri thức với vai trò tổ chức chủ trì nghiên cứu và ứng dụng.	Xem Tri thức & Góc nhìn	/tri-thuc-goc-nhin/
 \.
 
 
 --
--- TOC entry 6443 (class 0 OID 312884)
--- Dependencies: 315
+-- TOC entry 6529 (class 0 OID 727953)
+-- Dependencies: 319
 -- Data for Name: home_methodologysectionheader; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6606,8 +6949,8 @@ c964b47d-24b2-416d-972b-a2a8de64c3cd	t	0	2026-07-03 22:44:05.50001+07	2026-07-04
 
 
 --
--- TOC entry 6444 (class 0 OID 312900)
--- Dependencies: 316
+-- TOC entry 6530 (class 0 OID 727969)
+-- Dependencies: 320
 -- Data for Name: home_methodologystep; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6621,8 +6964,22 @@ ece16e5a-4e7f-4fd1-80ab-530b8896b5a5	t	40	2026-07-03 22:44:05.504223+07	2026-07-
 
 
 --
--- TOC entry 6445 (class 0 OID 312916)
--- Dependencies: 317
+-- TOC entry 6531 (class 0 OID 727985)
+-- Dependencies: 321
+-- Data for Name: home_partnercooperationitem; Type: TABLE DATA; Schema: public; Owner: irdm_user
+--
+
+COPY public.home_partnercooperationitem (id, is_active, display_order, created_at, updated_at, number, title, description, page_id) FROM stdin;
+b15c343f-439f-421f-8da4-a1e62024fff6	t	10	2026-09-23 23:30:25.949042+07	2026-09-23 23:30:25.949048+07	1	Nghiên cứu ứng dụng	Khảo sát, phân tích dữ liệu và xây dựng bằng chứng phục vụ hoạch định và ra quyết định.	06ff68fd-0cd3-4477-a988-d677fef2f065
+dd62afa6-56b6-4261-9b3c-60a154906d8b	t	20	2026-09-23 23:30:25.949969+07	2026-09-23 23:30:25.949974+07	2	Tư vấn và thiết kế giải pháp	Đồng thiết kế chương trình, mô hình và lộ trình phù hợp với bối cảnh vận hành của tổ chức.	06ff68fd-0cd3-4477-a988-d677fef2f065
+3d75dfee-fdb9-4821-8335-143fcfe07ed4	t	30	2026-09-23 23:30:25.950323+07	2026-09-23 23:30:25.950328+07	3	Đào tạo và phát triển năng lực	Xây dựng năng lực đội ngũ thông qua đào tạo, tập huấn và đồng hành triển khai tại đơn vị.	06ff68fd-0cd3-4477-a988-d677fef2f065
+2244e050-8b1e-4e12-9702-72f14ddd1fc3	t	40	2026-09-23 23:30:25.950589+07	2026-09-23 23:30:25.950593+07	4	Kết nối chuyên gia	Kết nối tri thức liên ngành và mạng lưới chuyên gia cho các sáng kiến cần chiều sâu chuyên môn.	06ff68fd-0cd3-4477-a988-d677fef2f065
+\.
+
+
+--
+-- TOC entry 6532 (class 0 OID 728001)
+-- Dependencies: 322
 -- Data for Name: home_partnerlogo; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6639,12 +6996,67 @@ d551796c-2130-4e33-8321-428b82d6a8ac	t	90	2026-07-03 22:44:05.528557+07	2026-07-
 8220b688-c7de-4f13-a041-5e6905845ed4	t	100	2026-07-03 22:44:05.529212+07	2026-07-07 21:15:44.315473+07	TalentNet	home/partners/home/partners/8220b688-c7de-4f13-a041-5e6905845ed4.png	
 12f085a0-3fcd-43a7-94fc-a8367498f5f2	t	110	2026-07-03 22:44:05.529771+07	2026-07-07 21:15:44.321589+07	Sanofi	home/partners/home/partners/12f085a0-3fcd-43a7-94fc-a8367498f5f2.png	
 78092e47-8f06-4c30-adae-60b015e090e1	t	120	2026-07-07 21:15:44.323232+07	2026-07-07 21:15:44.329468+07	Merit Medica	home/partners/home/partners/78092e47-8f06-4c30-adae-60b015e090e1.png	
+16d11c46-9090-47c7-b1b2-81d204aaf8c2	t	130	2026-09-24 20:53:53.831542+07	2026-09-24 20:53:53.831562+07	Bệnh viện Ung bướu TP.HCM	home/partners/LOGOBVUB-D.png	https://benhvienungbuou.vn/
+8b89afb1-c381-4e2e-9c10-bfff8b34f3d1	t	140	2026-09-24 21:01:20.730661+07	2026-09-24 21:01:20.73068+07	Bệnh viện Nhân dân Gia Định	home/partners/logo1.png	https://bvndgiadinh.org.vn/
+b613700e-6889-4561-b893-7877fefb04d5	t	150	2026-09-24 21:02:33.733533+07	2026-09-24 21:02:33.733573+07	Bệnh viện Đa Khoa Khánh Hội	home/partners/dkkhanhhoi.png	https://bvkhanhhoi.vn/
+0ab82382-8f19-4bb9-9adc-1d1fe4b68899	t	160	2026-09-24 21:06:03.173273+07	2026-09-24 21:06:03.17331+07	Bệnh viện Từ Dũ	home/partners/logo_BVTuDu.png	https://www.tudu.com.vn/
+5f452290-466a-4861-98ff-50b2b181297c	t	170	2026-09-24 21:08:10.928315+07	2026-09-24 21:08:10.92835+07	Bệnh viện 115	home/partners/logo_BV115.png	https://benhviennhandan115.com/
+2a94ec06-fbde-4b97-91c3-16e334babc94	t	180	2026-09-24 21:12:01.974372+07	2026-09-24 21:12:01.974404+07	Bệnh viện Răng Hàm Mặt Trung Ương	home/partners/logo_BVRHMTW.jpg	https://benhvienranghammat.vn/
+481b87ea-e909-40cf-92a0-0b4c733de454	t	190	2026-09-24 21:14:01.959417+07	2026-09-24 21:14:01.959442+07	Bệnh viện Hùng Vương	home/partners/logo_BVHV.png	https://bvhungvuong.vn/
+7d66b010-daf1-4d98-ad02-84d4b2230cc3	t	200	2026-09-24 21:14:57.177224+07	2026-09-24 21:14:57.177259+07	Bệnh viện Bệnh Nhiệt đới	home/partners/Logo-BVBND-1861.png	https://bvbnd.vn/
 \.
 
 
 --
--- TOC entry 6446 (class 0 OID 312930)
--- Dependencies: 318
+-- TOC entry 6533 (class 0 OID 728015)
+-- Dependencies: 323
+-- Data for Name: home_partnerpageconfig; Type: TABLE DATA; Schema: public; Owner: irdm_user
+--
+
+COPY public.home_partnerpageconfig (id, is_active, display_order, created_at, updated_at, meta_title, meta_description, hero_label, hero_heading, hero_description, hero_note, partners_label, partners_heading, partners_description, cooperation_label, cooperation_heading, cooperation_description, cta_label, cta_heading, cta_description, cta_button_label, cta_button_url) FROM stdin;
+06ff68fd-0cd3-4477-a988-d677fef2f065	t	0	2026-09-23 23:30:25.937921+07	2026-09-23 23:30:25.937932+07	Đối tác	Mạng lưới cơ quan quản lý, tổ chức y tế, trường đại học và doanh nghiệp đã đồng hành cùng Viện IRDM.	BẰNG CHỨNG NĂNG LỰC	Các tổ chức IRDM đã đồng hành	Viện IRDM đã đồng hành cùng cơ quan quản lý, tổ chức y tế, trường đại học, doanh nghiệp và đối tác trong các bài toán thực tiễn.	Mỗi quan hệ hợp tác được xây dựng trên sự thấu hiểu bối cảnh, mục tiêu rõ ràng và cam kết tạo ra kết quả có thể ứng dụng.	ĐỐI TÁC TIÊU BIỂU	Một mạng lưới đa ngành, cùng chung mục tiêu phát triển	IRDM trân trọng sự tin tưởng của các cơ quan, cơ sở y tế, trường đại học và doanh nghiệp trong những chương trình nghiên cứu và phát triển năng lực.	CÁCH THỨC ĐỒNG HÀNH	Hợp tác từ bài toán thực tiễn	IRDM cùng đối tác làm rõ nhu cầu, thiết kế hướng tiếp cận và chuyển hóa kết quả thành giải pháp có thể triển khai.	CÙNG IRDM TẠO GIÁ TRỊ	Bạn đang tìm kiếm một đối tác chuyên môn phù hợp?	Hãy chia sẻ bài toán của tổ chức để cùng xác định hướng hợp tác thiết thực.	Trao đổi cùng IRDM	/lien-he/
+\.
+
+
+--
+-- TOC entry 6534 (class 0 OID 728043)
+-- Dependencies: 324
+-- Data for Name: home_partnerpageconfig_partner_logos; Type: TABLE DATA; Schema: public; Owner: irdm_user
+--
+
+COPY public.home_partnerpageconfig_partner_logos (id, partnerpageconfig_id, partnerlogo_id) FROM stdin;
+1	06ff68fd-0cd3-4477-a988-d677fef2f065	9dfb65cb-737e-4c2b-b382-414f11f1b47d
+2	06ff68fd-0cd3-4477-a988-d677fef2f065	78092e47-8f06-4c30-adae-60b015e090e1
+3	06ff68fd-0cd3-4477-a988-d677fef2f065	6df033ec-6c90-4561-8f67-00576b79be1e
+4	06ff68fd-0cd3-4477-a988-d677fef2f065	617a2af1-cb28-4c2a-a1c2-03c737990c7a
+5	06ff68fd-0cd3-4477-a988-d677fef2f065	7782fe92-1575-4cc1-906d-8aaa8ffcd07f
+6	06ff68fd-0cd3-4477-a988-d677fef2f065	8220b688-c7de-4f13-a041-5e6905845ed4
+7	06ff68fd-0cd3-4477-a988-d677fef2f065	5439b661-a4ab-40a9-bc39-46e6f69942f0
+8	06ff68fd-0cd3-4477-a988-d677fef2f065	26c465da-1188-4c5a-8df2-7e685e87c534
+9	06ff68fd-0cd3-4477-a988-d677fef2f065	12f085a0-3fcd-43a7-94fc-a8367498f5f2
+10	06ff68fd-0cd3-4477-a988-d677fef2f065	bed15543-e156-4f9d-9c69-91b8cd55fbbd
+11	06ff68fd-0cd3-4477-a988-d677fef2f065	bde0d51c-78c2-4293-bc9f-dc391731940f
+12	06ff68fd-0cd3-4477-a988-d677fef2f065	d551796c-2130-4e33-8321-428b82d6a8ac
+\.
+
+
+--
+-- TOC entry 6536 (class 0 OID 728050)
+-- Dependencies: 326
+-- Data for Name: home_partnerpagestatistic; Type: TABLE DATA; Schema: public; Owner: irdm_user
+--
+
+COPY public.home_partnerpagestatistic (id, is_active, display_order, created_at, updated_at, value, label, page_id) FROM stdin;
+3c33c693-2569-4cb3-9c01-9c9494d0be1c	t	10	2026-09-23 23:30:25.946919+07	2026-09-23 23:30:25.946928+07	11+	Đối tác & tổ chức	06ff68fd-0cd3-4477-a988-d677fef2f065
+1941da16-7595-42e0-80e7-232b9c1dadf6	t	20	2026-09-23 23:30:25.947948+07	2026-09-23 23:30:25.947954+07	5+	Lĩnh vực chuyên môn	06ff68fd-0cd3-4477-a988-d677fef2f065
+5c87dd46-3778-460b-8105-3c2490439136	t	30	2026-09-23 23:30:25.948298+07	2026-09-23 23:30:25.948305+07	7	Năng lực cốt lõi	06ff68fd-0cd3-4477-a988-d677fef2f065
+734388a1-2c38-4559-9bb3-2fb81fa899fb	t	40	2026-09-23 23:30:25.94866+07	2026-09-23 23:30:25.948665+07	TP.HCM	Trụ sở chính	06ff68fd-0cd3-4477-a988-d677fef2f065
+\.
+
+
+--
+-- TOC entry 6537 (class 0 OID 728062)
+-- Dependencies: 327
 -- Data for Name: home_philosophyprinciple; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6657,8 +7069,8 @@ df5c164e-628e-4433-86cc-08589109c8c9	t	30	2026-07-03 22:44:05.518603+07	2026-07-
 
 
 --
--- TOC entry 6447 (class 0 OID 312946)
--- Dependencies: 319
+-- TOC entry 6538 (class 0 OID 728078)
+-- Dependencies: 328
 -- Data for Name: home_philosophysectionheader; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6668,8 +7080,8 @@ e29b148f-c0bd-41de-b2da-92d1d2f12f48	t	0	2026-07-03 22:44:05.51505+07	2026-07-03
 
 
 --
--- TOC entry 6448 (class 0 OID 312960)
--- Dependencies: 320
+-- TOC entry 6539 (class 0 OID 728092)
+-- Dependencies: 329
 -- Data for Name: home_statisticitem; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6682,8 +7094,8 @@ c2efee3b-804d-4ef8-989d-a59fdaa440bf	t	30	2026-07-03 22:44:05.533571+07	2026-07-
 
 
 --
--- TOC entry 6449 (class 0 OID 312975)
--- Dependencies: 321
+-- TOC entry 6540 (class 0 OID 728107)
+-- Dependencies: 330
 -- Data for Name: knowledge_knowledgeaccordionitem; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6696,8 +7108,8 @@ cac295bb-b75d-487b-882c-dd9dcad2a312	t	1	2026-07-19 16:16:15.740914+07	2026-07-1
 
 
 --
--- TOC entry 6450 (class 0 OID 312990)
--- Dependencies: 322
+-- TOC entry 6541 (class 0 OID 728122)
+-- Dependencies: 331
 -- Data for Name: knowledge_knowledgeactivitynews; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6706,40 +7118,78 @@ COPY public.knowledge_knowledgeactivitynews (id, is_active, display_order, creat
 26647418-7fef-46f7-9f99-41299c2613e8	t	2	2026-07-19 16:16:15.683131+07	2026-08-15 22:39:36.684786+07	knowledge/activity_news/IRDM_ký_kết_hợp_tác_với_Đại_học_Y_Dược_TP.HCM_trong_nghiên_cứu_ứng_dụng.png	IRDM ký kết hợp tác với Đại học Y Dược TP.HCM trong nghiên cứu ứng dụng	Phối hợp triển khai các nghiên cứu về sức khỏe cộng đồng và chuyển đổi số.	2024-05-10	Xem chi tiết	arrow-right		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_self	irdm-ky-ket-hop-tac-voi-ai-hoc-y-duoc-tphcm-trong-nghien-cuu-ung-dung				3		
 e6a0b4c2-12cc-47b2-9f51-a2231dff61a5	t	3	2026-07-19 16:16:15.687075+07	2026-08-15 22:39:30.017488+07	knowledge/activity_news/Tóm_lược_Hội_thảo_Wellbeing_trong_y_tế_và_giáo_dục_2024.png	Tóm lược Hội thảo Wellbeing trong y tế và giáo dục 2024	Những phát hiện chính và khuyến nghị từ 3 phiên thảo luận chuyên sâu.	2024-04-20	Xem chi tiết	arrow-right		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_self	tom-luoc-hoi-thao-wellbeing-trong-y-te-va-giao-duc-2024				3		
 0445a5d0-22a4-46ee-8624-26753b5d1e44	t	4	2026-07-19 16:16:15.689903+07	2026-08-15 22:39:44.360894+07	knowledge/activity_news/IRDM_hoàn_thành_báo_cáo_đánh_giá_nhu_cầu_năng_lực_nhân_lực_y_6P9vNaJ.HCM.png	IRDM hoàn thành báo cáo đánh giá nhu cầu năng lực nhân lực y tế TP.HCM	Kết quả phân tích từ khảo sát 420 nhân viên y tế tại 8 bệnh viện.	2024-05-28	Xem chi tiết	arrow-right		t	ac329527-ac0d-4f05-bf29-4d96a03f54c9	_self	irdm-hoan-thanh-bao-cao-anh-gia-nhu-cau-nang-luc-nhan-luc-y-te-tphcm				3		
+49ba24be-3bc5-4500-af47-42388c2376cc	t	7	2026-09-14 12:06:06.098759+07	2026-09-17 12:21:06.438609+07	knowledge/activity_news/3._Giaoduc_phattriennangluc_1.png	IRDM TỔ CHỨC KHÓA ĐÀO TẠO “NGHIỆP VỤ THƯ KÝ KHOA HỌC ĐỀ TÀI KHOA HỌC VÀ CÔNG NGHỆ CẤP TỈNH/THÀNH PHỐ”	<p>Khóa đào tạo trang bị kiến thức, kỹ năng và kinh nghiệm thực tiễn về xây dựng, quản lý hồ sơ, điều phối và hỗ trợ triển khai nhiệm vụ KH&amp;CN cấp tỉnh/thành phố</p><p>Tags: Nguồn nhân lực | Cơ quan quản lý | Trường đại học | Hệ thống y tế</p><p>Ngày: 13–15/05/2026 và 10–12/06/2026</p><p>Địa điểm: Viện Nghiên cứu Phát triển Nguồn lực Việt | Trực tiếp</p>	2026-09-14	Xem chi tiết	arrow-right		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_self	irdm-t-chc-khoa-djao-to-nghip-v-th-ky-khoa-hc-dj-tai-khoa-hc-va-cong-ngh-cp-tnhthanh-ph		<p>Trong tháng 5 và tháng 6/2026, Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) đã tổ chức hai khóa đào tạo “Nghiệp vụ Thư ký khoa học đề tài khoa học và công nghệ cấp tỉnh/thành phố” tại trụ sở Viện IRDM, số 8C Trần Huy Liệu, Phường Phú Nhuận, TP.HCM.</p><p>Khóa 1 diễn ra từ ngày 13 đến ngày 15/05/2026; Khóa 2 được tổ chức từ ngày 10 đến ngày 12/06/2026. Trong ba ngày học của mỗi khóa, học viên được tiếp cận kiến thức, quy trình và kinh nghiệm thực tiễn liên quan đến việc xây dựng, quản lý và hỗ trợ triển khai nhiệm vụ khoa học và công nghệ.</p><p>[ẢNH TOÀN CẢNH LỚP HỌC]</p><figure class=""><table><tbody><tr><td><figure class="image image-style-align-left"><img height="465" src="/media/knowledge/articles/body/3.%20Giaoduc_phattriennangluc_2.png" width="723"></figure></td><td><figure class="image image-style-align-left"><img height="464" src="/media/knowledge/articles/body/3.%20Giaoduc_phattriennangluc_3.png" width="619"></figure></td></tr></tbody></table></figure><p>Chương trình có sự đồng hành của&nbsp;<strong>ThS. Hồng Phấn</strong>, giảng viên có nhiều năm kinh nghiệm trong tư vấn, giảng dạy và điều phối các dự án khoa học và công nghệ cấp tỉnh/thành phố. Với phương pháp trình bày hệ thống, gần gũi và gắn với các tình huống thực tế, giảng viên đã giúp học viên hiểu rõ hơn những yêu cầu chuyên môn và nghiệp vụ trong toàn bộ quá trình triển khai một nhiệm vụ khoa học và công nghệ.</p><p>Nội dung đào tạo tập trung vào các chủ đề trọng tâm:</p><ul><li>Quy trình quản lý đề tài khoa học và công nghệ cấp tỉnh/thành phố.&nbsp;</li><li>Xây dựng hồ sơ đề xuất nhiệm vụ và hồ sơ tham gia đấu thầu.&nbsp;</li><li>Xây dựng hồ sơ sở hữu trí tuệ đối với sản phẩm khoa học và công nghệ.&nbsp;</li><li>Soạn thảo, kiểm soát, quản lý và lưu trữ hồ sơ trong quá trình triển khai đề tài.&nbsp;</li><li>Các lưu ý pháp lý và kinh nghiệm thực tiễn khi tổ chức thực hiện nhiệm vụ khoa học và công nghệ.&nbsp;</li></ul><figure class=""><table><tbody><tr><td><figure class="image"><img height="708" src="/media/knowledge/articles/body/3.%20Giaoduc_phattriennangluc_4.png" width="933"></figure></td></tr></tbody></table></figure><p>[ẢNH GIẢNG VIÊN TRÌNH BÀY]</p><p>&nbsp;</p><p>Bên cạnh kiến thức nền tảng, chương trình chú trọng phân tích hồ sơ, biểu mẫu và những vấn đề thường phát sinh trong thực tế. Học viên được trực tiếp trao đổi với giảng viên, chia sẻ khó khăn tại đơn vị và cùng thảo luận những phương án xử lý phù hợp.</p><p>Khóa học thu hút sự tham gia của các nhà nghiên cứu, nghiên cứu viên, giảng viên và những cá nhân đang xây dựng, triển khai hoặc quan tâm đến nhiệm vụ khoa học và công nghệ cấp tỉnh/thành phố. Sự đa dạng về chuyên môn và môi trường công tác đã tạo nên không gian học tập cởi mở, với nhiều câu hỏi thực tế và góc nhìn đa chiều.</p><p>[ẢNH HỌC VIÊN TRAO ĐỔI, THẢO LUẬN HOẶC THỰC HÀNH TẠI LỚP]</p><figure class=""><table><tbody><tr><td><figure class="image image-style-align-left"><img height="490" src="/media/knowledge/articles/body/3_M8D2cpL.%20Giaoduc_phattriennangluc_5.png" width="653"></figure></td><td><figure class="image image-style-align-left"><img height="470" src="/media/knowledge/articles/body/3_41m9f1y.%20Giaoduc_phattriennangluc_6.png" width="670"></figure></td></tr></tbody></table></figure><p>Thông qua chương trình, học viên có điều kiện hiểu rõ hơn vai trò của thư ký khoa học trong quá trình triển khai nhiệm vụ. Thư ký khoa học không chỉ hỗ trợ công tác hành chính, mà còn tham gia kết nối và phối hợp giữa chủ nhiệm nhiệm vụ, tổ chức chủ trì, cơ quan quản lý, chuyên gia và các bên liên quan. Việc nắm vững quy trình, hồ sơ và yêu cầu pháp lý là cơ sở quan trọng để hỗ trợ nhiệm vụ được triển khai đúng tiến độ, đúng quy định và hạn chế những thiếu sót phát sinh.</p><p>Khóa đào tạo là một phần trong định hướng của IRDM về chuyển hóa tri thức chuyên môn thành chương trình học tập có cấu trúc, gắn với tình huống thực tế và nhu cầu phát triển năng lực của người học.</p><p>IRDM trân trọng cảm ơn&nbsp;<strong>ThS. Hồng Phấn</strong>&nbsp;đã đồng hành cùng chương trình bằng kinh nghiệm thực tiễn, sự tận tâm và tinh thần trách nhiệm. Viện cũng trân trọng cảm ơn Quý Anh/Chị học viên đã tham gia với tinh thần nghiêm túc, chủ động và cởi mở, góp phần tạo nên hai hành trình học tập thiết thực và giàu giá trị ứng dụng.</p><p>Trong thời gian tới, IRDM dự kiến tiếp tục phát triển các chương trình chuyên sâu về nghiệp vụ thư ký khoa học và quản lý nhiệm vụ khoa học và công nghệ, tăng cường nội dung thực hành, xử lý tình huống và kết nối cộng đồng những cá nhân đang nghiên cứu, công tác trong lĩnh vực này.</p><p>[ẢNH TẬP THỂ GIẢNG VIÊN VÀ HỌC VIÊN CUỐI KHÓA</p><figure class=""><table><tbody><tr><td><figure class="image image-style-align-left"><img height="555" src="/media/knowledge/articles/body/3_jPi1CO1.%20Giaoduc_phattriennangluc_7.png" width="740"></figure></td></tr><tr><td><figure class="image"><img height="551" src="/media/knowledge/articles/body/3_eSs6ZF7.%20Giaoduc_phattriennangluc_8.png" width="992"></figure></td></tr></tbody></table></figure><p>#IRDM #GiaoDucVaPhatTrienNangLuc #KhoaHocCongNghe #ThuKyKhoaHoc #DeTaiKHCN #NghienCuuKhoaHoc #DoiMoiSangTao</p>	Nguyễn Yến Nhi	6		
+8044006a-9b23-40bf-9b48-b70473cac5f1	t	5	2026-09-17 12:20:38.085484+07	2026-09-17 12:35:50.759125+07	knowledge/activity_news/1._Nangluc_NCKH_ungdung_1.png	IRDM báo cáo nghiệm thu nhiệm vụ chuyển đổi số trong quản lý hoạt động khoa học và công nghệ ngành Y tế TP.HCM	<p>Nhiệm vụ do IRDM chủ trì chuyển hóa bài toán quản lý khoa học và công nghệ ngành y tế thành quy trình, hệ thống ứng dụng phục vụ phê duyệt, giám sát và quản trị thống nhất.</p><p>Tags: Nghiên cứu ứng dụng | Khoa học dữ liệu | Y tế | Cơ quan quản lý | Hệ thống y tế</p><p>Ngày: 03/04/2026</p><p>Địa điểm: Hội trường Sở Khoa học và Công nghệ TP.HCM</p>	2026-09-17	Xem chi tiết	arrow-right		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_self	irdm-bao-cao-nghim-thu-nhim-v-chuyn-dji-s-trong-qun-ly-hot-djng-khoa-hc-va-cong-ngh-nganh-y-t-tphcm		<p>IRDM BÁO CÁO NGHIỆM THU NHIỆM VỤ KHOA HỌC VÀ CÔNG NGHỆ CẤP THÀNH PHỐ: “ỨNG DỤNG CHUYỂN ĐỔI SỐ TRONG QUẢN LÝ, PHÊ DUYỆT, GIÁM SÁT HOẠT ĐỘNG KHOA HỌC CÔNG NGHỆ NGÀNH Y TẾ TẠI THÀNH PHỐ HỒ CHÍ MINH”</p><p>Ngày 03/04/2026, tại Hội trường Sở Khoa học và Công nghệ TP.HCM, Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) đã có buổi báo cáo nghiệm thu nhiệm vụ khoa học và công nghệ cấp thành phố: <strong>“Ứng dụng chuyển đổi số trong quản lý, phê duyệt, giám sát hoạt động khoa học công nghệ ngành Y tế tại Thành phố Hồ Chí Minh” </strong>, do IRDM là đơn vị chủ trì và thực hiện nhiệm vụ khoa học, Sở Y tế TP.HCM là đơn vị đặt hàng và tiếp nhận sử dụng hệ thống. Đến nay, hệ thống đã được Ủy ban nhân dân TP.HCM bình chọn là một trong những sản phẩm chuyển đổi số xuất sắc của Thành phố.</p><figure class=""><table><tbody><tr><td><figure class="image image-style-align-center"><img height="644" src="/media/knowledge/articles/body/1.%20Nangluc_NCKH_ungdung_1.png" width="858"></figure></td></tr></tbody></table></figure><p>[ẢNH TOÀN CẢNH BUỔI NGHIỆM THU]</p><p>Nhiệm vụ được triển khai trong bối cảnh ngành y tế TP.HCM đang đẩy mạnh chuyển đổi số và từng bước chuẩn hóa hoạt động quản lý khoa học công nghệ trong toàn ngành. Buổi báo cáo nghiệm thu có sự tham gia của đại diện Sở Khoa học và Công nghệ TP.HCM, Sở Y tế TP.HCM, Hội đồng chuyên gia phản biện, các chuyên gia công nghệ cùng nhóm nghiên cứu thực hiện nhiệm vụ.</p><figure class=""><table><tbody><tr><td><figure class="image image-style-align-center"><img height="661" src="/media/knowledge/articles/body/1.%20Nangluc_NCKH_ungdung_2.png" width="1176"></figure></td></tr></tbody></table></figure><p>[ẢNH NHÓM NGHIÊN CỨU TRÌNH BÀY]</p><p>Tại buổi nghiệm thu, nhóm nghiên cứu đã báo cáo kết quả thực hiện nhiệm vụ và trình bày các sản phẩm đã hoàn thành trong khuôn khổ đề tài. Sau phần trình bày, Hội đồng chuyên gia phản biện và các đại biểu tham dự đã tiến hành trao đổi, góp ý và đánh giá các nội dung chuyên môn của nhiệm vụ. Nhiều ý kiến tập trung vào tính ứng dụng thực tiễn, khả năng mở rộng triển khai cũng như định hướng tiếp tục hoàn thiện mô hình quản lý khoa học công nghệ theo hướng đồng bộ, số hóa và phù hợp với nhu cầu quản lý của ngành y tế trong giai đoạn hiện nay.</p><p>Trên cơ sở kết quả báo cáo và ý kiến đánh giá của Hội đồng, nhiệm vụ được công nhận hoàn thành, ghi nhận những đóng góp của nhóm nghiên cứu trong việc xây dựng giải pháp hỗ trợ chuyển đổi số hoạt động khoa học công nghệ ngành y tế TP.HCM.</p><figure class=""><table><tbody><tr><td><figure class="image image-style-align-center"><img height="390" src="/media/knowledge/articles/body/1.%20Nangluc_NCKH_ungdung_3.png" width="693"></figure></td><td><figure class="image image-style-align-left"><img height="1106" src="/media/knowledge/articles/body/1.%20Nangluc_NCKH_ungdung_4.png" width="1474"></figure></td></tr></tbody></table></figure><p>[ẢNH HỘI ĐỒNG PHẢN BIỆN &amp; THẢO LUẬN]</p><p>Thông qua nhiệm vụ này, IRDM mong muốn tiếp tục đồng hành cùng các cơ quan quản lý, bệnh viện và đơn vị y tế trong việc xây dựng các giải pháp khoa học – công nghệ có tính ứng dụng cao, góp phần nâng cao hiệu quả quản trị và thúc đẩy đổi mới sáng tạo trong lĩnh vực y tế.</p><p>IRDM trân trọng cảm ơn Sở Khoa học và Công nghệ TP.HCM, Sở Y tế TP.HCM, Hội đồng chuyên gia cùng các đơn vị phối hợp đã đồng hành, hỗ trợ và đóng góp nhiều ý kiến chuyên môn giá trị trong quá trình triển khai nhiệm vụ.</p><figure class=""><table><tbody><tr><td><figure class="image image-style-align-center"><img height="728" src="/media/knowledge/articles/body/1.%20Nangluc_NCKH_ungdung_5.png" width="546"></figure></td><td><figure class="image image-style-align-center"><img height="723" src="/media/knowledge/articles/body/1.%20Nangluc_NCKH_ungdung_6.png" width="542"></figure></td></tr></tbody></table></figure><p>#IRDM #KhoaHocCongNghe #ChuyenDoiSo #SoYTeTPHCM #SoKhoaHocCongNghe</p>	Nguyễn Yến Nhi	6		
+93f7dd11-256f-4775-8020-2c292277a178	t	6	2026-09-17 12:37:15.491728+07	2026-09-17 12:46:56.941746+07	knowledge/activity_news/2._Congnghe_AI_Yteso_1.png	IRDM ký kết hợp tác với Bệnh viện Răng Hàm Mặt TP.HCM thúc đẩy hoạt động khoa học công nghệ, đổi mới sáng tạo và chuyển đổi số	<p>IRDM và Bệnh viện Răng Hàm Mặt TP.HCM ký kết hợp tác về nghiên cứu khoa học, chuyển đổi số, AI, quản trị dựa trên dữ liệu và phát triển năng lực đội ngũ, hướng đến xây dựng mô hình bệnh viện thông minh.</p><p>Tags: Y tế | AI, dữ liệu &amp; chuyển đổi số | Khoa học công nghệ | Hệ thống y tế | Nguồn nhân lực</p><p>Ngày: 21/07/2026</p><p>Địa điểm: Bệnh viện Răng Hàm Mặt TP.HCM</p>	2026-09-17	Xem chi tiết	arrow-right		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_self	irdm-ky-kt-hp-tac-vi-bnh-vin-rang-ham-mt-tphcm-thuc-djy-hot-djng-khoa-hc-cong-ngh-dji-mi-sang-to-va-chuyn-dji-s		<p>IRDM KÝ KẾT HỢP TÁC VỚI BỆNH VIỆN RĂNG HÀM MẶT TP.HCM, THÚC ĐẨY KHOA HỌC CÔNG NGHỆ, ĐỔI MỚI SÁNG TẠO VÀ CHUYỂN ĐỔI SỐ</p><p>Ngày 21/07/2026, tại Bệnh viện Răng Hàm Mặt TP.HCM, Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) và Bệnh viện Răng Hàm Mặt TP.HCM đã chính thức ký kết Biên bản ghi nhớ hợp tác trong nghiên cứu khoa học, đổi mới sáng tạo, chuyển đổi số và nâng cao hiệu quả quản trị bệnh viện.</p><p>Lễ ký kết đánh dấu một giai đoạn đồng hành mới giữa hai đơn vị, hướng đến phát huy thế mạnh chuyên môn, kết nối nguồn lực và từng bước đưa các thành tựu khoa học – công nghệ vào thực tiễn hoạt động y tế. Trọng tâm hợp tác là xây dựng các giải pháp phù hợp với nhu cầu vận hành của bệnh viện, hướng đến mô hình quản trị hiện đại, lấy dữ liệu và công nghệ làm nền tảng.</p><p>[ẢNH TOÀN CẢNH LỄ KÝ KẾT]</p><figure class=""><table><tbody><tr><td><figure class="image"><img height="538" src="/media/knowledge/articles/body/2.%20Congnghe_AI_Yteso_1.png" width="538"></figure></td></tr></tbody></table></figure><p>Trên tinh thần tin cậy – minh bạch – bình đẳng – cùng phát triển, IRDM và Bệnh viện Răng Hàm Mặt TP.HCM thống nhất tập trung hợp tác trên các nội dung trọng tâm:</p><ul><li>Phối hợp nghiên cứu, xây dựng và đề xuất các nhiệm vụ khoa học và công nghệ cấp Thành phố, đặc biệt trong lĩnh vực quản lý, giám sát hoạt động khoa học công nghệ và đổi mới sáng tạo tại bệnh viện.&nbsp;</li><li>Nghiên cứu và ứng dụng các công nghệ mới, ưu tiên giải pháp chuyển đổi số, trí tuệ nhân tạo và nền tảng số phục vụ công tác quản trị, điều hành và nâng cao chất lượng dịch vụ y tế.&nbsp;</li><li>Xây dựng hệ thống quản trị hiệu suất, bộ chỉ số đánh giá hiệu quả công việc và mô hình quản trị dựa trên dữ liệu.&nbsp;</li><li>Tổ chức các chương trình đào tạo, tập huấn và phát triển nguồn nhân lực.&nbsp;</li></ul><figure class=""><table><tbody><tr><td><figure class="image"><img height="657" src="/media/knowledge/articles/body/2.%20Congnghe_AI_Yteso_2.png" width="657"></figure></td><td><figure class="image"><img height="657" src="/media/knowledge/articles/body/2.%20Congnghe_AI_Yteso_3.png" width="657"></figure></td></tr></tbody></table></figure><p>[ẢNH ĐẠI DIỆN HAI ĐƠN VỊ KÝ VÀ TRAO BIÊN BẢN GHI NHỚ]</p><p>Tại buổi lễ, đại diện lãnh đạo hai đơn vị đã chia sẻ định hướng hợp tác và thống nhất chủ động phối hợp, từng bước cụ thể hóa các nội dung trong Biên bản ghi nhớ bằng những kế hoạch và chương trình phù hợp với nhu cầu thực tiễn của Bệnh viện Răng Hàm Mặt TP.HCM.</p><p>ThS.BSCKII. Nguyễn Đức Minh – Giám đốc Bệnh viện Răng Hàm Mặt TP.HCM – nhấn mạnh việc hợp tác với IRDM là bước đi chiến lược nhằm hiện thực hóa mục tiêu xây dựng bệnh viện thông minh, trong đó khoa học công nghệ, đổi mới sáng tạo và chuyển đổi số đóng vai trò là những động lực quan trọng.</p><p>Đại diện IRDM, TS. Trần Lê Diễm Anh – Phó Chủ tịch Hội đồng Quản lý, Viện trưởng – khẳng định IRDM sẽ đồng hành cùng Bệnh viện bằng đội ngũ chuyên gia, nhà khoa học và các nguồn lực phù hợp, hướng đến tạo ra những giá trị thiết thực trong quản trị bệnh viện, nghiên cứu khoa học, đổi mới sáng tạo và ứng dụng công nghệ.</p><figure class=""><table><tbody><tr><td><figure class="image"><img height="834" src="/media/knowledge/articles/body/2.%20Congnghe_AI_Yteso_4.png" width="1245"></figure></td></tr></tbody></table></figure><p>[ẢNH TẬP THỂ ĐẠI DIỆN HAI ĐƠN VỊ SAU LỄ KÝ KẾT]</p><p>Sự hợp tác giữa IRDM và Bệnh viện Răng Hàm Mặt TP.HCM được kỳ vọng góp phần thúc đẩy đổi mới quản trị, nâng cao chất lượng dịch vụ y tế và từng bước hiện thực hóa mục tiêu xây dựng bệnh viện hiện đại, thông minh, lấy dữ liệu và công nghệ làm nền tảng.</p><p>IRDM trân trọng cảm ơn Ban Giám đốc và đội ngũ Bệnh viện Răng Hàm Mặt TP.HCM đã tin tưởng, phối hợp và cùng thống nhất các định hướng hợp tác trong nghiên cứu khoa học, đổi mới sáng tạo, chuyển đổi số, quản trị bệnh viện và phát triển nguồn nhân lực.</p><p>#IRDM #HopTac #KhoaHocCongNghe #DoiMoiSangTao #ChuyenDoiSo #YTeSo&nbsp;</p>	Nguyễn Yến Nhi	3		
+ab012c19-4394-4286-89a6-a0697a33a045	t	8	2026-09-17 12:53:38.118107+07	2026-09-17 13:08:27.072403+07	knowledge/activity_news/4._Wellbeing_1.png	IRDM phối hợp Sở Y tế TP.HCM tổ chức khóa học Search Inside Yourself cho đội ngũ lãnh đạo ngành Y tế TP.HCM	<p>Khóa học giúp hơn 50 cán bộ, nhân viên giữ vai trò lãnh đạo trong ngành y tế tiếp cận trí tuệ cảm xúc dựa trên khoa học não bộ và thực hành tỉnh thức.</p><p>Tags: Sức khỏe tâm thần &amp; wellbeing | Y tế | Nguồn nhân lực | Hệ thống y tế</p><p>Ngày: 18–19/11/2022</p><p>Địa điểm: Bình Châu, Vũng Tàu | Trực tiếp</p>	2026-09-17	Xem chi tiết	arrow-right		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_self	irdm-phi-hp-s-y-t-tphcm-t-chc-khoa-hc-search-inside-yourself-cho-dji-ng-lanh-djo-nganh-y-t-tphcm		<p>IRDM PHỐI HỢP SỞ Y TẾ TP.HCM TỔ CHỨC KHÓA HỌC “TÌM TRONG CHÍNH MÌNH – SEARCH INSIDE YOURSELF” CHO ĐỘI NGŨ LÃNH ĐẠO NGÀNH Y TẾ TP.HCM</p><p>Trong hai ngày 18–19/11/2022, tại Bình Châu, Vũng Tàu, Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) đã kết nối giảng viên được chứng nhận toàn cầu của chương trình Search Inside Yourself và phối hợp cùng Sở Y tế TP.HCM tổ chức khóa học “Tìm Trong Chính Mình – Search Inside Yourself: Phát huy trí tuệ cảm xúc dựa trên khoa học não bộ và thực hành tỉnh thức”.</p><p>Chương trình có sự tham gia của hơn 50 cán bộ, nhân viên giữ vai trò lãnh đạo tại các bệnh viện, trung tâm và viện trực thuộc Sở Y tế TP.HCM. Khóa học nằm trong định hướng nâng cao sức khỏe tâm thần và wellbeing cho đội ngũ cán bộ, nhân viên y tế của Thành phố.</p><figure class=""><table><tbody><tr><td><figure class="image"><img height="528" src="/media/knowledge/articles/body/4.%20Wellbeing_2.png" width="705"></figure></td><td><figure class="image"><img height="530" src="/media/knowledge/articles/body/4.%20Wellbeing_3.png" width="796"></figure></td></tr></tbody></table></figure><p>[ẢNH TOÀN CẢNH KHÓA HỌC]</p><p>Thông qua nội dung kết hợp giữa khoa học não bộ, trí tuệ cảm xúc và thực hành tỉnh thức, chương trình tạo điều kiện để người tham dự dành thời gian quan sát bản thân, nhận diện cảm xúc và tiếp cận những phương pháp hỗ trợ sự bình an từ bên trong.</p><p>Trong môi trường y tế có cường độ công việc cao, đội ngũ lãnh đạo không chỉ cần năng lực chuyên môn và quản trị, mà còn cần khả năng nhận diện cảm xúc, duy trì sự ổn định và kết nối hiệu quả với đồng nghiệp. Việc chăm sóc sức khỏe tinh thần vì vậy không nên chỉ được nhìn như một nhu cầu cá nhân, mà còn có ý nghĩa đối với chất lượng phối hợp, khả năng dẫn dắt và môi trường làm việc của tổ chức.</p><figure class=""><table><tbody><tr><td><figure class="image"><img height="592" src="/media/knowledge/articles/body/4.%20Wellbeing_4.png" width="888"></figure></td></tr></tbody></table></figure><p>[ẢNH GIẢNG VIÊN CHIA SẺ NỘI DUNG]</p><p>Trong suốt hai ngày, học viên được tham gia các phần chia sẻ, thực hành và trải nghiệm trực tiếp. Cách tiếp cận của chương trình giúp những nội dung về trí tuệ cảm xúc và tỉnh thức trở nên gần gũi hơn, đồng thời khuyến khích người học liên hệ với những tình huống thường gặp trong công việc và đời sống.</p><p>Các hoạt động thực hành tạo không gian để người tham dự tạm dừng, quan sát trạng thái của mình và trải nghiệm những phương pháp hỗ trợ quản lý cảm xúc, nâng cao sự tập trung và củng cố khả năng phục hồi trước áp lực.</p><p>[ẢNH HỌC VIÊN THAM GIA HOẠT ĐỘNG THỰC HÀNH]</p><figure class=""><table><tbody><tr><td><figure class="image"><img height="778" src="/media/knowledge/articles/body/4.%20Wellbeing_5.png" width="1038"></figure></td></tr></tbody></table></figure><p>Kết thúc khóa học, IRDM nhận được những phản hồi tích cực từ đối tác và các cán bộ, nhân viên trực tiếp tham gia chương trình. Nhiều học viên ghi nhận giá trị của việc được trải nghiệm những phương pháp giúp tạo dựng sự bình an, kết nối với bản thân và nhìn nhận rõ hơn cách cảm xúc ảnh hưởng đến công việc và các mối quan hệ.</p><p>Những phản hồi này cho thấy nhu cầu phát triển các chương trình hỗ trợ sức khỏe tâm thần và wellbeing cho đội ngũ y tế, đặc biệt là những nhóm đang đảm nhiệm vai trò lãnh đạo và làm việc trong môi trường có áp lực cao.</p><p>[ẢNH HỌC VIÊN TRAO ĐỔI HOẶC CHIA SẺ]</p><figure class=""><table><tbody><tr><td><figure class="image"><img height="539" src="/media/knowledge/articles/body/4.%20Wellbeing_6.png" width="808"></figure></td></tr></tbody></table></figure><p>Thông qua chương trình, IRDM mong muốn góp phần mở rộng cách tiếp cận sức khỏe tâm thần trong ngành y tế theo hướng phòng ngừa, phát triển năng lực và xây dựng môi trường làm việc có tính nâng đỡ. Việc phát triển trí tuệ cảm xúc và thực hành tỉnh thức có thể hỗ trợ mỗi cá nhân chăm sóc bản thân tốt hơn, đồng thời tạo nền tảng cho sự thấu cảm, kết nối và phối hợp trong tổ chức.</p><p>Khóa học cũng mở ra cơ hội phát triển những chương trình tương tự dành cho nhân viên y tế — một trong những nhóm đối tượng trọng tâm trong định hướng hoạt động của IRDM về sức khỏe tâm thần và wellbeing.</p><p>IRDM trân trọng cảm ơn Sở Y tế TP.HCM, giảng viên chương trình Search Inside Yourself và toàn thể học viên đã đồng hành, tham gia và đóng góp vào hành trình học tập giàu trải nghiệm này.</p><figure class=""><table><tbody><tr><td><figure class="image"><img height="470" src="/media/knowledge/articles/body/4.%20Wellbeing_7.png" width="779"></figure></td><td><figure class="image"><img height="467" src="/media/knowledge/articles/body/4.%20Wellbeing_8.png" width="623"></figure></td></tr></tbody></table></figure><p>[ẢNH TẬP THỂ GIẢNG VIÊN VÀ HỌC VIÊN CUỐI KHÓA]</p><p>#IRDM #SucKhoeTamThan #Wellbeing #SearchInsideYourself #TriTueCamXuc #TinhThuc #NhanVienYTe #PhatTrienNguonNhanLuc</p>	Nguyễn Yến Nhi	3		
+52768a3a-de8e-4495-8ea3-280daab55772	t	10	2026-09-17 13:06:36.928565+07	2026-09-23 12:17:42.041047+07	knowledge/activity_news/6._Truyenthong_trithuc_1.png	IRDM tổ chức talkshow học thuật “Công bố khoa học: Thước đo năng lực hay áp lực học thuật?”	<p>Talkshow tạo không gian trao đổi về vai trò, áp lực và hành trình công bố khoa học, đồng thời kết nối giảng viên, nhà nghiên cứu và người học trong cộng đồng học thuật liên ngành.</p><p>Tags: Giáo dục | Nguồn nhân lực | Trường đại học</p><p>Ngày: 15/03/2026</p><p>Địa điểm: Viện Nghiên cứu Phát triển Nguồn lực Việt – IRDM | Trực tiếp</p>	2026-09-17	Xem chi tiết	arrow-right		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_self	irdm-t-chc-talkshow-hc-thut-cong-b-khoa-hc-thc-djo-nang-lc-hay-ap-lc-hc-thut		<p>TALKSHOW HỌC THUẬT: “CÔNG BỐ KHOA HỌC: THƯỚC ĐO NĂNG LỰC HAY ÁP LỰC HỌC THUẬT?” [15/03/2026]</p><p>Sáng ngày 15/03/2026, Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) đã tổ chức talkshow học thuật với chủ đề <strong>“Công bố khoa học: Thước đo năng lực hay áp lực học thuật?”.</strong> Chương trình được tổ chức nhằm tạo ra không gian trao đổi cởi mở dành cho các giảng viên, nghiên cứu sinh, học viên cao học và những người quan tâm đến nghiên cứu khoa học cùng nhìn nhận về vai trò của công bố khoa học trong môi trường học thuật hiện nay.</p><figure class=""><table><tbody><tr><td><figure class="image"><img height="1098" src="/media/knowledge/articles/body/6.%20Truyenthong_trithuc_1.png" width="2052"></figure></td></tr></tbody></table></figure><p>[ẢNH TOÀN CẢNH TALKSHOW]</p><p>Buổi Talkshow đã diễn ra với sự tham gia của các giảng viên, nhà nghiên cứu, học viên và sinh viên đến từ các lĩnh vực khác nhau. Không chỉ tập trung vào góc nhìn học thuật, chương trình còn hướng đến việc chia sẻ những trải nghiệm thực tế trong hành trình nghiên cứu và công bố khoa học, từ đó góp phần kết nối cộng đồng nghiên cứu liên ngành và lan tỏa tinh thần học thuật tích cực.</p><p>Đồng hành cùng buổi Talkshow là các Thầy/ Cô diễn giả tâm huyết với sự nghiệp nghiên cứu khoa học thông qua các nội dung chia sẻ chính sau:</p><figure class=""><table><tbody><tr><td><figure class="image image-style-align-center"><img height="433" src="/media/knowledge/articles/body/6.%20Truyenthong_trithuc_2.png" width="650"></figure><p>Bối cảnh công bố khoa học - vai trò của công bố trong hệ sinh thái học thuật</p><p>NCS.DS. Trần Lê Diễm Anh chia sẻ</p></td><td><figure class="image"><img height="433" src="/media/knowledge/articles/body/6.%20Truyenthong_trithuc_3.png" width="650"></figure><p>Công bố khoa học như một “thước đo năng lực nghiên cứu”</p><p>TS. Trần Thanh Tâm chia sẻ</p></td></tr><tr><td><figure class="image"><img height="433" src="/media/knowledge/articles/body/6.%20Truyenthong_trithuc_4.png" width="650"></figure><p>Áp lực công bố trong môi trường học thuật</p><p>TS. Võ Thị Kim Khuyên chia sẻ</p></td><td><figure class="image"><img height="433" src="/media/knowledge/articles/body/6.%20Truyenthong_trithuc_5.png" width="650"></figure><p>Chuyển hóa áp lực thành động lực phát triển nghiên cứu bền vững</p><p>ThS. Hồng Phấn chia sẻ</p></td></tr></tbody></table></figure><p>IRDM tin rằng nghiên cứu khoa học không chỉ là hành trình tạo ra tri thức, mà còn là hành trình của sự học hỏi, kết nối và phát triển bền vững trong cộng đồng học thuật. Thông qua chương trình, IRDM mong muốn tiếp tục lan tỏa tinh thần nghiên cứu tích cực, thúc đẩy kết nối liên ngành và góp phần xây dựng cộng đồng học thuật cởi mở, chia sẻ và đồng hành cùng nhau.</p><p>IRDM trân trọng cảm ơn Quý diễn giả, khách mời và toàn thể Anh/Chị đã dành thời gian tham dự và đồng hành cùng chương trình. Hy vọng rằng những trao đổi tại talkshow sẽ tiếp tục mở ra nhiều kết nối học thuật ý nghĩa và tạo thêm động lực cho hành trình nghiên cứu của mỗi người trong thời gian tới.</p><figure class=""><table><tbody><tr><td><figure class="image"><img height="433" src="/media/knowledge/articles/body/6.%20Truyenthong_trithuc_6.png" width="649"></figure></td><td><figure class="image image-style-align-right"><img height="3344" src="/media/knowledge/articles/body/6.%20Truyenthong_trithuc_7.jpg" width="5016"></figure></td></tr></tbody></table></figure><p><strong>Tài liệu đính kèm: </strong><a href="https://irdmvietnam.sharepoint.com/:b:/s/IRDMVietnam/IQBdusXXVtknSKJ-GdIPfyTWARYnrZcroDfe8-vOY5_AqPs?e=dKkiiG" rel="noopener noreferrer"><strong>eBook – “Từ bản thảo đến tạp chí – Hệ thống giúp bạn tự tin gửi bài”</strong></a></p><p>&nbsp;</p><p>#IRDM #CongBoKhoaHoc #NghienCuuKhoaHoc #IRDMResearchCommunity #CongBoQuocTe #TalkshowHocThuat</p>	Nguyễn Yến Nhi	3		
+f32aad52-f97c-4d90-bd97-770a9058eb12	t	20	2026-09-25 13:25:53.315358+07	2026-09-25 13:25:53.315396+07		KỶ YẾU - HỘI THẢO QUỐC TẾ VỀ TÂM LÝ HỌC TRƯỜNG HỌC LẦN THỨ 7	<p>Sức khoẻ tâm thần cộng đồng đang là một vấn đề báo động, nhất là trong bối</p><p>cảnh hậu COVID-19, trong đó học sinh, sinh viên là một trong các nhóm dễ bị tổn</p><p>thương bởi sức khoẻ tâm thần nhất. Theo nghiên cứu của Polanczyk (2015) khoảng</p><p>15%, tức khoảng 1/7 trẻ vị thành niên trên khắp thế giới gặp các vấn đề về sức khỏe</p><p>tâm thần. Điều đó cũng có nghĩa là có khoảng 175 triệu trẻ em và thanh thiếu niên gặp</p><p>các vấn đề về hành vi, cảm xúc và điều này đẩy họ vào các nguy cơ cao hơn về vấn đề</p><p>xã hội, học tập và mối quan hệ trong thời điểm quan trọng nhất của cuộc đời.</p>	2026-09-25	Xem chi tiết	arrow-right		t	80fcf6b0-7ae7-445f-a184-0cbbd5672330	_self	k-yu-hi-tho-quc-t-v-tam-ly-hc-trng-hc-ln-th-7		<p>hai Hội thảo quốc tế về Tâm lý trường học lần thứ 7, Ban Nội dung của hội</p><p>thảo đã nhận được gần 100 bài báo khoa học của các tác giả trong và ngoài nước gửi</p><p>về. Chủ đề chính của các bài báo tập trung nhiều vào kết quả nghiên cứu lý luận và</p><p>thực tiễn về: Thực trạng một số vấn đề thường gặp và các yếu tố ảnh hưởng đến sức</p><p>khỏe tâm thần tại trường học; Các dịch vụ chăm sóc sức khoẻ tâm thần tại Việt Nam;</p><p>Xây dựng trường học hạnh phúc; Vai trò của gia đình, trường học cũng như công tác</p><p>thực hành đánh giá và can thiệp sức khoẻ tâm thần cho học sinh tại trường học. Sau</p><p>quá trình phản biện độc lập, có 65 bài tham luận đã được Ban Biên tập của Hội thảo</p><p>lựa chọn xuất bản trong Kỷ yếu, trong đó, có 18 bài tiếng Anh và 47 bài tiếng Việt và</p><p>được phân bổ thành 03 phần chính:</p><p>Phần 1. Sức khỏe tâm thần của học sinh, sinh viên và giáo viên.</p><p>Phần 2. Ảnh hưởng của môi trường gia đình, trường học và công nghệ đến sức</p><p>khỏe tâm thần của học sinh, sinh viên.</p><p>Phần 3. Thúc đẩy sức khỏe tâm thần của học sinh tại trường học</p><p>Chúng tôi tin rằng, hội thảo và kỷ yếu Hội thảo quốc tế về Tâm lý trường học lần</p><p>thứ 7 sẽ mang đến nhiều giá trị tích cực cho người tham dự, các nhà nghiên cứu và học</p><p>viên, sinh viên trong các lĩnh vực chăm sóc sức khoẻ tâm thần và tâm lý trường học.</p><p>Kỷ yếu của hội thảo cũng sẽ lan toả đến các thầy cô giáo, các bậc cha mẹ trong việc</p><p>thấu hiểu và chăm sóc sức khoẻ tâm thần cho trẻ em và chính bản thân mình. Chúng</p><p>tôi cũng hy vọng, kỷ yếu hội thảo sẽ mang đến nhiều dữ liệu trong kiến nghị chính</p><p>sách chăm sóc sức khoẻ tâm thần cho học sinh, sinh viên và công tác tư vấn tâm lý</p><p>trường học tại Việt Nam.</p><p>Với ý nghĩa đó, chúng tôi xin trân trọng giới thiệu cuốn <strong>Kỷ yếu Hội thảo quốc tế</strong></p><p><strong>về Tâm lý học trường học lần thứ 7 “Thúc đẩy sức khỏe tâm thần tại trường học”</strong>.</p><p>Chúng tôi cũng rất mong nhận được trao đổi, chia sẻ, góp ý của quý đồng nghiệp trong</p><p>và ngoài nước để chúng tôi hoàn thiện hơn kỷ yếu cũng như công tác tổ chức hội thảo.</p><p>Mọi liên lạc xin gửi về Trung tâm Nghiên cứu và Hỗ trợ Sức khoẻ tinh thần, email:</p><p>mhrs@hcmussh.edu.vn.</p><p>Trân trọng!</p><p>&nbsp;</p><p>Để biết thêm chi tiết xin hãy đăng ký tải tài liệu với đường link như sau: <a href="https://irdmvietnam.sharepoint.com/:b:/r/sites/IRDMVietnam/Shared%20Documents/04.%20MKT%20Com/Website/2026_Website%20CORE%20content/Cong%20bo/2025_Kyyeu_HT_SKTT.2024.pdf?d=w0da0b7f0ad324196a4617d2ab942aaba&amp;csf=1&amp;web=1&amp;e=PbjEbr" rel="noopener noreferrer">Tài liệu tải về</a>.</p>	Nhiều Tác giả	3		
 \.
 
 
 --
--- TOC entry 6451 (class 0 OID 313009)
--- Dependencies: 323
+-- TOC entry 6542 (class 0 OID 728149)
+-- Dependencies: 332
 -- Data for Name: knowledge_knowledgearticle; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.knowledge_knowledgearticle (id, is_active, display_order, created_at, updated_at, title, slug, summary, body, thumbnail, hero_image, author_name, published_date, read_time, is_featured, is_published, meta_title, meta_description, meta_keywords, category_id) FROM stdin;
-d3fbc854-e31d-45db-98f9-21759ab402ca	t	4	2026-07-07 21:16:06.825114+07	2026-07-19 16:16:15.57094+07	Các sự kiện chuyên môn sắp diễn ra tại Viện IRDM	cac-su-kien-chuyen-mon-sap-dien-ra-irdm	Tổng hợp các hội thảo, tọa đàm và chương trình đào tạo sắp diễn ra tại Viện IRDM trong quý III/2024.	Viện IRDM sẽ tổ chức loạt sự kiện chuyên môn nhằm kết nối các chuyên gia trong lĩnh vực y tế và giáo dục...	knowledge/articles/thumbnails/knowledge/articles/thumbnails/cac-su-kien-chuyen-mon-sap-d_37R8jBC.png		Ban Truyền thông IRDM	2024-07-01	5	t	t				0cb0cf05-8816-4776-a57c-860432aa5fac
-87f80728-6318-4325-90b7-3d3085207709	t	1	2026-07-07 21:16:06.836267+07	2026-07-19 16:16:15.573581+07	Cải cách hệ thống bảo hiểm y tế: Bài học từ các mô hình quốc tế	cai-cach-he-thong-bao-hiem-y-te-bai-hoc-quoc-te	Phân tích so sánh mô hình bảo hiểm y tế của Hàn Quốc, Đài Loan và Singapore, rút ra bài học cho Việt Nam.	Hệ thống bảo hiểm y tế toàn dân là nền tảng của hệ thống y tế hiện đại...	knowledge/articles/thumbnails/knowledge/articles/thumbnails/cai-cach-he-thong-bao-hiem-y_EwMf92v.png		TS. Phạm Đức Mạnh	2024-04-05	15	f	t				2677a27f-169f-4749-816c-234a8075dd0b
-e0fa3f97-31a5-4353-8a38-93e86d8673fb	t	2	2026-07-07 21:16:06.874347+07	2026-07-19 16:16:15.575859+07	Thiết kế chương trình đào tạo năng lực lãnh đạo y tế theo chuẩn năng lực	thiet-ke-chuong-trinh-dao-tao-nang-luc-lanh-dao-y-te	Quy trình 6 bước thiết kế chương trình đào tạo dựa trên khung năng lực lãnh đạo y tế quốc tế.	Năng lực lãnh đạo là yếu tố quyết định thành công của hệ thống y tế...	knowledge/articles/thumbnails/knowledge/articles/thumbnails/thiet-ke-chuong-trinh-dao-ta_qmXV43b.png		TS. Bùi Thị Mai	2024-03-15	14	f	t				ac329527-ac0d-4f05-bf29-4d96a03f54c9
-389fa27c-7c15-4291-8002-0302395a8c3b	t	2	2026-07-07 21:16:06.951538+07	2026-07-19 16:16:15.581167+07	Nhân lực y tế tương lai: Kỹ năng cần thiết trong thời đại chuyển đổi số	nhan-luc-y-te-tuong-lai-ky-nang-can-thiet	Phác thảo bộ năng lực cần thiết cho nhân viên y tế trong thập kỷ tới, theo góc nhìn chính sách và thực tiễn.	Cuộc cách mạng công nghiệp lần thứ tư đang đặt ra những yêu cầu mới cho lực lượng lao động y tế...	knowledge/articles/thumbnails/knowledge/articles/thumbnails/nhan-luc-y-te-tuong-lai-ky-n_TVaVYfH.png		TS. Lê Văn Khoa	2024-05-18	11	f	t				2677a27f-169f-4749-816c-234a8075dd0b
-a2a9cac5-e458-400b-b88f-5c23309f1e3e	t	1	2026-07-07 21:16:06.762967+07	2026-07-19 16:16:15.554695+07	Vì sao dữ liệu bệnh viện chưa dễ chuyển thành nhiệm vụ KH,CN&ĐMST?	vi-sao-du-lieu-benh-vien-chua-de-chuyen-thanh-khcn	Phân tích rào cản chuyển đổi dữ liệu bệnh viện thành nhiệm vụ khoa học, công nghệ và đổi mới sáng tạo trong bối cảnh y tế số.	Dữ liệu bệnh viện ngày càng phong phú nhưng khoảng cách giữa dữ liệu thô và ứng dụng thực tiễn vẫn còn rất lớn...	knowledge/articles/thumbnails/knowledge/articles/thumbnails/vi-sao-du-lieu-benh-vien-chu_wpvDTcX.png		TS. Nguyễn Minh Tuấn	2024-05-10	8	t	t				ac329527-ac0d-4f05-bf29-4d96a03f54c9
-cdbceec4-6019-4f66-9d47-1bc5bed11fc9	t	3	2026-07-07 21:16:06.815062+07	2026-07-19 16:16:15.567616+07	Green University và Green Hospital: từ định hướng xanh đến mô hình quản trị bền vững	green-university-green-hospital-quan-tri-ben-vung	Khung tư duy và lộ trình thực tiễn để các trường đại học và bệnh viện chuyển đổi sang mô hình quản trị xanh và bền vững.	Phong trào Green University và Green Hospital không chỉ là xu hướng mà là tất yếu trong bối cảnh biến đổi khí hậu...	knowledge/articles/thumbnails/knowledge/articles/thumbnails/green-university-green-hospi_0EgmJyW.png		ThS. Trần Thị Hoa	2024-06-01	12	t	t				cb345c35-f226-4e3b-9c82-a18d41ea53cb
-4a490da7-6e24-4ae9-a381-1d4d4bc8ed2a	t	2	2026-07-07 21:16:06.913645+07	2026-07-19 16:16:15.578251+07	AI trong chẩn đoán hình ảnh y tế: Tiềm năng và thách thức triển khai	ai-trong-chan-doan-hinh-anh-y-te	Đánh giá các mô hình AI hiện tại trong chẩn đoán X-quang, MRI và siêu âm, cùng rào cản triển khai thực tế.	Trí tuệ nhân tạo đang cách mạng hóa chẩn đoán hình ảnh y tế trên toàn cầu...	knowledge/articles/thumbnails/knowledge/articles/thumbnails/ai-trong-chan-doan-hinh-anh-_egzBmUY.png		ThS. Nguyễn Văn Hiếu	2024-06-20	12	f	t				cb345c35-f226-4e3b-9c82-a18d41ea53cb
-eca018e3-78a1-43e5-b5ef-6bd8cd5d8c04	t	2	2026-07-07 21:16:06.77607+07	2026-08-09 23:11:30.013081+07	Sức khỏe tâm thần nhân viên y tế: khi "chịu đựng tốt" không còn là chiến lược bền vững	suc-khoe-tam-than-nhan-vien-y-te-chiu-dung-khong-ben-vung	Nghiên cứu về tình trạng kiệt sức và sức khỏe tâm thần của nhân viên y tế sau đại dịch — và tại sao cần thay đổi tư duy quản lý.	Sau nhiều năm làm việc trong môi trường áp lực cao, nhân viên y tế đang đối mặt với khủng hoảng sức khỏe tâm thần nghiêm trọng...	knowledge/articles/thumbnails/Sức_khỏe_tâm_thần_nhân_viên_y_tế__khi_chịu_đựng_tốt_không__VQftZQg.png	knowledge/articles/hero/Sức_khỏe_tâm_thần_nhân_viên_y_tế__khi_chịu_đựng_tốt_không_còn_là_NnfTw5s.png	PGS.TS. Đinh Thị Lan	2024-04-22	10	t	t				cb345c35-f226-4e3b-9c82-a18d41ea53cb
+a2a9cac5-e458-400b-b88f-5c23309f1e3e	t	1	2026-07-07 21:16:06.762967+07	2026-09-13 21:33:05.798102+07	Vì sao dữ liệu bệnh viện chưa dễ chuyển thành nhiệm vụ KH,CN&ĐMST?	vi-sao-du-lieu-benh-vien-chua-de-chuyen-thanh-khcn	Phân tích rào cản chuyển đổi dữ liệu bệnh viện thành nhiệm vụ khoa học, công nghệ và đổi mới sáng tạo trong bối cảnh y tế số.	<p><strong>Dữ liệu bệnh viện chưa dễ dàng chuyển thành các nhiệm vụ Khoa học, Công nghệ và Đổi mới sáng tạo (KH,CN&amp;ĐMST)</strong> xuất phát từ bốn rào cản cốt lõi sau đây:</p><p><strong>1. Tính pháp lý và bảo mật dữ liệu nhạy cảm</strong></p><p>Dữ liệu bệnh viện chứa thông tin y tế, hồ sơ bệnh án và tình trạng sức khỏe của bệnh nhân. Đây là <strong>dữ liệu cá nhân nhạy cảm</strong> được bảo vệ nghiêm ngặt bởi pháp luật. Việc chia sẻ, liên thông dữ liệu giữa bệnh viện với các tổ chức nghiên cứu bên ngoài thường vướng phải các rào cản pháp lý và đạo đức y sinh. Quy trình xin phê duyệt quyền tiếp cận dữ liệu phục vụ nghiên cứu rất phức tạp để tránh rủi ro lộ lọt thông tin cá nhân. [<a href="https://tamri.vn/bai-viet/doi-moi-sang-tao/" rel="noopener noreferrer">1</a>, <a href="https://hmplaw.vn/vi/benh-vien-lung-tung-trong-viec-bao-ve-du-lieu-benh-nhan" rel="noopener noreferrer">2</a>]</p><p><strong>2. Sự thiếu đồng bộ và chuẩn hóa (Dữ liệu rác)</strong></p><p>Mặc dù nhiều bệnh viện đang tích cực chuyển đổi số và áp dụng bệnh án điện tử (EMR), cấu trúc dữ liệu ở mỗi cơ sở y tế vẫn chưa đồng nhất. Dữ liệu lâm sàng bị phân mảnh, thiếu một <strong>"ngôn ngữ dữ liệu thống nhất"</strong> trên quy mô toàn quốc. Khi dữ liệu chưa được làm sạch, chuẩn hóa và gắn nhãn chính xác, máy tính hoặc các hệ thống trí tuệ nhân tạo (AI) không thể khai thác, phân tích để biến chúng thành các đề tài, sáng kiến cải tiến. [<a href="https://vjst.vn/du-lieu-y-te-dung-chung-nen-tang-phat-trien-y-te-thong-minh-tai-nghe-an-86958.html" rel="noopener noreferrer">1</a>, <a href="https://baohaiphong.vn/day-manh-lien-thong-du-lieu-huong-toi-lap-kho-du-lieu-kham-chua-benh-cua-ca-nuoc-538577.html" rel="noopener noreferrer">2</a>, <a href="https://baotintuc.vn/chuyen-doi-so-nham-thay-doi-cach-ket-noi-quan-ly-de-phuc-vu-nguoi-benh-tot-hon-post544752.html" rel="noopener noreferrer">3</a>, <a href="https://huph.edu.vn/post/khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-y-te-dong-luc-chien-luoc-de-kien-tao-nen-y-te-hien-dai" rel="noopener noreferrer">4</a>, <a href="https://chinhsachcuocsong.vnanet.vn/chuan-hoa-du-lieu-ve-suc-khoe-tren-vneid/92313.html" rel="noopener noreferrer">5</a>, <a href="https://tapchidieuduong.vn/bo-y-te-day-manh-cai-cach-thu-tuc-hanh-chinh-chuan-hoa-du-lieu-phuc-vu-chuyen-doi-so-y-te-8481.html" rel="noopener noreferrer">6</a>, <a href="https://tamri.vn/bai-viet/doi-moi-sang-tao/" rel="noopener noreferrer">7</a>]</p><p><strong>3. Thiếu hạ tầng công nghệ và chi phí đầu tư</strong></p><p>Để duy trì, lưu trữ lâu dài và vận hành các bộ dữ liệu lớn (Big Data) đòi hỏi hệ thống máy chủ, giải pháp lưu trữ đám mây (Cloud) và các yêu cầu bảo mật cấp độ cao rất tốn kém. Phần lớn ngân sách của bệnh viện tập trung vào hoạt động khám chữa bệnh cơ bản, dẫn đến tình trạng <strong>thiếu kinh phí đầu tư hạ tầng CNTT</strong> chuyên sâu phục vụ riêng cho hoạt động R&amp;D (Nghiên cứu và Phát triển). [<a href="https://fpt-is.com/goc-nhin-so/gns_1_nen-tang-quan-tri-du-lieu-y-te-hdmp/" rel="noopener noreferrer">1</a>, <a href="https://suckhoedoisong.vn/nhieu-benh-vien-o-tphcm-gap-kho-khan-khi-chuyen-doi-so-169230329160120139.htm" rel="noopener noreferrer">2</a>]</p><p><strong>4. Khoảng cách về nhân lực chuyên trách</strong></p><p>Bác sĩ và nhân viên y tế thường bị quá tải bởi công việc lâm sàng hàng ngày. Trong khi đó, các nhiệm vụ KH,CN&amp;ĐMST lại đòi hỏi đội ngũ chuyên gia liên ngành: vừa hiểu sâu về y khoa, vừa thành thạo về khoa học dữ liệu, AI và công nghệ số. Sự <strong>thiếu hụt nhân lực chuyên trách</strong> đóng vai trò "cầu nối" này khiến kho dữ liệu thực tế tại bệnh viện bị đóng băng, chưa thể chuyển hóa thành các công trình khoa học có giá trị thực tiễn cao. [<a href="https://bvbnd.vn/hoi-nghi-khoa-hoc-ung-dung-tri-tue-nhan-tao-va-du-lieu-lon-trong-thuc-hanh-lam-sang-benh-truyen-nhiem-cau-noi-giua-y-hoc-truyen-thong-va-cong-nghe-hien-dai/" rel="noopener noreferrer">1</a>, <a href="https://baotintuc.vn/chuyen-doi-so-nham-thay-doi-cach-ket-noi-quan-ly-de-phuc-vu-nguoi-benh-tot-hon-post544752.html" rel="noopener noreferrer">2</a>, <a href="https://vjst.vn/du-lieu-y-te-dung-chung-nen-tang-phat-trien-y-te-thong-minh-tai-nghe-an-86958.html" rel="noopener noreferrer">3</a>, <a href="https://nhandan.vn/thuc-day-benh-vien-thong-minh-tu-nen-tang-du-lieu-y-te-so-post976021.html" rel="noopener noreferrer">4</a>, <a href="https://suckhoedoisong.vn/nhieu-benh-vien-o-tphcm-gap-kho-khan-khi-chuyen-doi-so-169230329160120139.htm" rel="noopener noreferrer">5</a>]</p>	knowledge/articles/thumbnails/knowledge/articles/thumbnails/vi-sao-du-lieu-benh-vien-chu_wpvDTcX.png		TS. Nguyễn Minh Tuấn	2024-05-10	8	t	t				ac329527-ac0d-4f05-bf29-4d96a03f54c9
+87f80728-6318-4325-90b7-3d3085207709	t	1	2026-07-07 21:16:06.836267+07	2026-09-13 21:34:10.743714+07	Cải cách hệ thống bảo hiểm y tế: Bài học từ các mô hình quốc tế	cai-cach-he-thong-bao-hiem-y-te-bai-hoc-quoc-te	Phân tích so sánh mô hình bảo hiểm y tế của Hàn Quốc, Đài Loan và Singapore, rút ra bài học cho Việt Nam.	<p>Cải cách hệ thống bảo hiểm y tế (BHYT) tại Việt Nam có thể học hỏi nhiều bài học quan trọng về cơ chế chi trả, tài chính y tế và bảo hiểm bổ sung từ các mô hình quốc tế thành công. [<a href="https://tapchicongthuong.vn/kinh-nghiem-phat-trien-bao-hiem-y-te-bo-sung-tu-cac-quoc-gia-tren-the-gioi-va-bai-hoc-cho-viet-nam-141750.htm" rel="noopener noreferrer">1</a>, <a href="https://www.studocu.vn/vn/document/truong-dai-hoc-su-pham-ky-thuat-thanh-pho-ho-chi-minh/truong-dai-hoc-su-pham-ky-thuat-thanh-pho-ho-chi-minh/so-sanh-bhyt-viet-nam-va-mo-hinh-bhyt-quoc-te-bai-hoc-va-thuc-tien/141052492" rel="noopener noreferrer">2</a>]</p><p><strong>Bài học từ cơ chế chi trả và quản lý quốc tế</strong></p><ul><li><p><strong>Áp dụng phương thức thanh toán tiên tiến:</strong> Nhiều nước sử dụng hình thức thanh toán theo nhóm chẩn đoán (DRGs) thay vì đếm dịch vụ riêng lẻ, giúp kiểm soát chi phí hiệu quả. [<a href="https://danang.baohiemxahoi.gov.vn/Pages/trao-doi-nghien-cuu.aspx?CateID=0&amp;ItemID=17315" rel="noopener noreferrer">1</a>]</p></li><li><p><strong>Phát triển bảo hiểm y tế bổ sung:</strong> Theo Cổng Thông tin điện tử Chính phủ, việc triển khai loại hình bảo hiểm này giúp người dân đóng thêm chi phí hợp lý để tiếp cận dịch vụ cao cấp hơn và giảm gánh nặng tự chi trả. [<a href="https://baochinhphu.vn/tham-khao-kinh-nghiem-quoc-te-de-sua-doi-luat-bao-hiem-y-te-102220407185236674.htm" rel="noopener noreferrer">1</a>, <a href="https://tapchicongthuong.vn/kinh-nghiem-phat-trien-bao-hiem-y-te-bo-sung-tu-cac-quoc-gia-tren-the-gioi-va-bai-hoc-cho-viet-nam-141750.htm" rel="noopener noreferrer">2</a>]</p></li><li><p><strong>Chuyển dịch tài chính chủ động:</strong> Định hướng nguồn lực từ điều trị sang phòng bệnh và củng cố y tế cơ sở là xu hướng bền vững được ghi nhận qua các phân tích chiến lược y tế. [<a href="https://huengaynay.vn/y-te-suc-khoe/chien-luoc-va-lo-trinh-cho-he-thong-y-te-ben-vung-169694.html" rel="noopener noreferrer">1</a>]</p></li></ul><p><strong>Định hướng cho Việt Nam</strong></p><ul><li><p><strong>Mở rộng bao phủ và chất lượng:</strong> Đảm bảo công bằng trong chăm sóc sức khỏe, nâng cao năng lực quản lý quỹ BHYT.</p></li><li><p><strong>Huy động nguồn lực công - tư:</strong> Tận dụng không gian tài khóa và hợp tác công-tư để cải thiện danh mục chi trả thuốc mới và kỹ thuật cao. [<a href="https://www.studocu.vn/vn/document/truong-dai-hoc-su-pham-ky-thuat-thanh-pho-ho-chi-minh/truong-dai-hoc-su-pham-ky-thuat-thanh-pho-ho-chi-minh/so-sanh-bhyt-viet-nam-va-mo-hinh-bhyt-quoc-te-bai-hoc-va-thuc-tien/141052492" rel="noopener noreferrer">1</a>, <a href="https://huengaynay.vn/y-te-suc-khoe/chien-luoc-va-lo-trinh-cho-he-thong-y-te-ben-vung-169694.html" rel="noopener noreferrer">2</a>]</p></li></ul>	knowledge/articles/thumbnails/knowledge/articles/thumbnails/cai-cach-he-thong-bao-hiem-y_EwMf92v.png		TS. Phạm Đức Mạnh	2024-04-05	15	f	t				2677a27f-169f-4749-816c-234a8075dd0b
+eca018e3-78a1-43e5-b5ef-6bd8cd5d8c04	t	2	2026-07-07 21:16:06.77607+07	2026-09-13 21:34:55.226792+07	Sức khỏe tâm thần nhân viên y tế: khi "chịu đựng tốt" không còn là chiến lược bền vững	suc-khoe-tam-than-nhan-vien-y-te-chiu-dung-khong-ben-vung	Nghiên cứu về tình trạng kiệt sức và sức khỏe tâm thần của nhân viên y tế sau đại dịch — và tại sao cần thay đổi tư duy quản lý.	<p>Sức khỏe tâm thần của nhân viên y tế đang đối mặt với khủng hoảng trầm trọng khi áp lực công việc vượt quá giới hạn "chịu đựng".</p><p><strong>Thực trạng áp lực và kiệt sức (Burnout)</strong></p><ul><li><p><strong>Khối lượng công việc quá tải:</strong> Nhân viên y tế thường trực trong môi trường áp lực cao, thời gian làm việc kéo dài và thiếu ngủ thường xuyên.</p></li><li><p><strong>Áp lực tâm lý nặng nề:</strong> Họ phải đối mặt với nỗi đau, sự mất mát của bệnh nhân và kỳ vọng lớn từ xã hội.</p></li><li><p><strong>Hội chứng kiệt sức:</strong> Việc liên tục "gồng mình" và nén cảm xúc dẫn đến suy kiệt cả về thể chất lẫn tinh thần.</p></li></ul><p><strong>Vì sao "chịu đựng tốt" không còn là chiến lược bền vững?</strong></p><ul><li><p><strong>Ngộ nhận về sự kiên cường:</strong> Coi khả năng chịu đựng là cách duy nhất giúp che giấu tổn thương tâm lý lâu dần sẽ gây nổ tung cảm xúc. [<a href="https://www.facebook.com/linhphan09/posts/t%C3%B4i-kh%C3%B4ng-bi%E1%BA%BFt-%C4%91i%E1%BB%81u-n%C3%A0y-c%C3%B3-ph%E1%BB%95-bi%E1%BA%BFn-kh%C3%B4ng-nh%C6%B0ng-t%C3%B4i-g%E1%BA%B7p-nh%E1%BB%AFng-c%C3%B4-b%C3%A1c-trong-th%E1%BA%BF-h/945662674467941/" rel="noopener noreferrer">1</a>]</p></li><li><p><strong>Suy giảm chất lượng chuyên môn:</strong> Tình trạng mệt mỏi kéo dài làm giảm sự tập trung, tăng nguy cơ sai sót y khoa và ảnh hưởng đến an toàn người bệnh. [<a href="https://www.studocu.vn/vn/document/truong-dai-hoc-sai-gon/tam-ly-hoc-tham-van/quan-ly-1-pham-chat-va-nang-luc-cua-nha-lanh-dao/133657772" rel="noopener noreferrer">1</a>]</p></li><li><p><strong>Tổn thương nội tâm sâu sắc:</strong> Việc ép bản thân chịu đựng mà không có sự hỗ trợ tâm lý hay công cụ giải tỏa sẽ dẫn đến trầm cảm và bỏ nghề. [<a href="https://www.facebook.com/linhphan09/posts/t%C3%B4i-kh%C3%B4ng-bi%E1%BA%BFt-%C4%91i%E1%BB%81u-n%C3%A0y-c%C3%B3-ph%E1%BB%95-bi%E1%BA%BFn-kh%C3%B4ng-nh%C6%B0ng-t%C3%B4i-g%E1%BA%B7p-nh%E1%BB%AFng-c%C3%B4-b%C3%A1c-trong-th%E1%BA%BF-h/945662674467941/" rel="noopener noreferrer">1</a>]</p></li></ul><p><strong>Giải pháp hướng tới sự bền vững thực sự</strong></p><ul><li><p><strong>Xây dựng không gian an toàn:</strong> Tạo môi trường làm việc nơi nhân viên y tế dám nói lên khó khăn mà không sợ bị phán xét hay kỳ thị.</p></li><li><p><strong>Cung cấp công cụ hỗ trợ:</strong> Thiết lập các dịch vụ tham vấn tâm lý và chăm sóc sức khỏe tinh thần chủ động ngay tại cơ sở y tế.</p></li><li><p><strong>Thay đổi văn hóa quản lý:</strong> Chuyển từ việc "vắt kiệt sức lao động" sang tối ưu hóa quy trình làm việc và phân bổ nhân lực hợp lý. [<a href="https://vn.linkedin.com/pulse/importance-employee-wellness-workplace-emergent-africa-talxf?tl=vi" rel="noopener noreferrer">1</a>, <a href="https://www.facebook.com/linhphan09/posts/t%C3%B4i-kh%C3%B4ng-bi%E1%BA%BFt-%C4%91i%E1%BB%81u-n%C3%A0y-c%C3%B3-ph%E1%BB%95-bi%E1%BA%BFn-kh%C3%B4ng-nh%C6%B0ng-t%C3%B4i-g%E1%BA%B7p-nh%E1%BB%AFng-c%C3%B4-b%C3%A1c-trong-th%E1%BA%BF-h/945662674467941/" rel="noopener noreferrer">2</a>]</p></li></ul>	knowledge/articles/thumbnails/Sức_khỏe_tâm_thần_nhân_viên_y_tế__khi_chịu_đựng_tốt_không__VQftZQg.png	knowledge/articles/hero/Sức_khỏe_tâm_thần_nhân_viên_y_tế__khi_chịu_đựng_tốt_không_còn_là_NnfTw5s.png	PGS.TS. Đinh Thị Lan	2024-04-22	10	t	t				cb345c35-f226-4e3b-9c82-a18d41ea53cb
+4a490da7-6e24-4ae9-a381-1d4d4bc8ed2a	t	2	2026-07-07 21:16:06.913645+07	2026-07-19 16:16:15.578251+07	AI trong chẩn đoán hình ảnh y tế: Tiềm năng và thách thức triển khai	ai-trong-chan-doan-hinh-anh-y-te	Đánh giá các mô hình AI hiện tại trong chẩn đoán X-quang, MRI và siêu âm, cùng rào cản triển khai thực tế.	<p>Trí tuệ nhân tạo đang cách mạng hóa chẩn đoán hình ảnh y tế trên toàn cầu...</p>	knowledge/articles/thumbnails/knowledge/articles/thumbnails/ai-trong-chan-doan-hinh-anh-_egzBmUY.png		ThS. Nguyễn Văn Hiếu	2024-06-20	12	f	t				cb345c35-f226-4e3b-9c82-a18d41ea53cb
+389fa27c-7c15-4291-8002-0302395a8c3b	t	2	2026-07-07 21:16:06.951538+07	2026-07-19 16:16:15.581167+07	Nhân lực y tế tương lai: Kỹ năng cần thiết trong thời đại chuyển đổi số	nhan-luc-y-te-tuong-lai-ky-nang-can-thiet	Phác thảo bộ năng lực cần thiết cho nhân viên y tế trong thập kỷ tới, theo góc nhìn chính sách và thực tiễn.	<p>Cuộc cách mạng công nghiệp lần thứ tư đang đặt ra những yêu cầu mới cho lực lượng lao động y tế...</p>	knowledge/articles/thumbnails/knowledge/articles/thumbnails/nhan-luc-y-te-tuong-lai-ky-n_TVaVYfH.png		TS. Lê Văn Khoa	2024-05-18	11	f	t				2677a27f-169f-4749-816c-234a8075dd0b
+cdbceec4-6019-4f66-9d47-1bc5bed11fc9	t	3	2026-07-07 21:16:06.815062+07	2026-07-19 16:16:15.567616+07	Green University và Green Hospital: từ định hướng xanh đến mô hình quản trị bền vững	green-university-green-hospital-quan-tri-ben-vung	Khung tư duy và lộ trình thực tiễn để các trường đại học và bệnh viện chuyển đổi sang mô hình quản trị xanh và bền vững.	<p>Phong trào Green University và Green Hospital không chỉ là xu hướng mà là tất yếu trong bối cảnh biến đổi khí hậu...</p>	knowledge/articles/thumbnails/knowledge/articles/thumbnails/green-university-green-hospi_0EgmJyW.png		ThS. Trần Thị Hoa	2024-06-01	12	t	t				cb345c35-f226-4e3b-9c82-a18d41ea53cb
+e0fa3f97-31a5-4353-8a38-93e86d8673fb	t	2	2026-07-07 21:16:06.874347+07	2026-09-13 21:35:51.565466+07	Thiết kế chương trình đào tạo năng lực lãnh đạo y tế theo chuẩn năng lực	thiet-ke-chuong-trinh-dao-tao-nang-luc-lanh-dao-y-te	Quy trình 6 bước thiết kế chương trình đào tạo dựa trên khung năng lực lãnh đạo y tế quốc tế.	<p>Chương trình đào tạo năng lực lãnh đạo y tế theo chuẩn năng lực cần được thiết kế dựa trên các khung chuẩn của Bộ Y tế như <a href="https://thuvienphapluat.vn/van-ban/Bo-may-hanh-chinh/Quyet-dinh-3762-QD-BYT-2017-dao-tao-lanh-dao-quan-ly-So-Y-te-tinh-thanh-pho-thuoc-Trung-uong-360428.aspx" rel="noopener noreferrer">Quyết định 3762/QĐ-BYT 2017</a> hoặc các mô hình hiện đại <a href="https://pmed.vn/ebook-mo-hinh-phat-trien-khung-nang-luc-lanh-dao-y-khoa-4-0.html/" rel="noopener noreferrer">Mô hình phát triển khung năng lực lãnh đạo Y Khoa 4.0</a>. [<a href="https://thuvienphapluat.vn/van-ban/Bo-may-hanh-chinh/Quyet-dinh-3762-QD-BYT-2017-dao-tao-lanh-dao-quan-ly-So-Y-te-tinh-thanh-pho-thuoc-Trung-uong-360428.aspx" rel="noopener noreferrer">1</a>, <a href="https://pmed.vn/ebook-mo-hinh-phat-trien-khung-nang-luc-lanh-dao-y-khoa-4-0.html/" rel="noopener noreferrer">2</a>]</p><p><strong>1. Xác định Mục tiêu và Đối tượng</strong></p><ul><li><p><strong>Mục tiêu:</strong> Trang bị tư duy chiến lược, kỹ năng quản trị nguồn lực, tài chính, chất lượng dịch vụ y tế và chuyển đổi số cho đội ngũ quản lý y tế.</p></li><li><p><strong>Đối tượng:</strong> Giám đốc/Phó Giám đốc bệnh viện, trưởng khoa/phòng, và cán bộ quy hoạch nguồn lực lãnh đạo ngành y tế.</p></li></ul><p><strong>2. Xây dựng Khung Năng lực Cốt lõi</strong></p><ul><li><p><strong>Định hướng chiến lược:</strong> Khả năng lập kế hoạch, tầm nhìn dài hạn và phát triển hệ thống y tế bền vững.</p></li><li><p><strong>Quản trị nguồn lực:</strong> Quản lý nhân sự y tế, tài chính bệnh viện, trang thiết bị và cơ sở hạ tầng.</p></li><li><p><strong>Quản lý chất lượng &amp; An toàn người bệnh:</strong> Chuẩn hóa quy trình khám chữa bệnh, giảm thiểu rủi ro y khoa.</p></li><li><p><strong>Kỹ năng mềm &amp; Lãnh đạo con người:</strong> Giao tiếp hiệu quả, giải quyết xung đột, ra quyết định và thúc đẩy đổi mới sáng tạo (chuyển đổi số y tế).</p></li></ul><p><strong>3. Cấu trúc Nội dung Chương trình</strong></p><ul><li><p><strong>Phần 1: Tư duy chiến lược và Quản lý nhà nước về y tế</strong></p><ul><li><p>Pháp luật và chính sách y tế hiện hành.</p></li><li><p>Xây dựng và triển khai kế hoạch y tế định hướng dài hạn.</p></li></ul></li><li><p><strong>Phần 2: Quản trị vận hành và Tài chính y tế</strong></p><ul><li><p>Quản lý tài chính, tự chủ bệnh viện và đấu thầu mua sắm.</p></li><li><p>Ứng dụng công nghệ thông tin và chuyển đổi số trong quản lý bệnh viện.</p></li></ul></li><li><p><strong>Phần 3: Quản lý chất lượng và An toàn người bệnh</strong></p><ul><li><p>Các bộ tiêu chí chất lượng bệnh viện.</p></li><li><p>Quản trị rủi ro và cải tiến chất lượng liên tục (CQI).</p></li></ul></li><li><p><strong>Phần 4: Nghệ thuật lãnh đạo và Phát triển nhân sự</strong></p><ul><li><p>Phong cách lãnh đạo trong ngành y.</p></li><li><p>Đào tạo, giữ chân nhân tài và xây dựng văn hóa tổ chức.</p></li></ul></li></ul><p><strong>4. Phương pháp Đào tạo và Đánh giá</strong></p><ul><li><p><strong>Phương pháp:</strong> Kết hợp lý thuyết thực chiến, thảo luận tình huống thực tế (case study), đóng vai và coaching 1-1.</p></li><li><p><strong>Đánh giá:</strong> Đo lường năng lực trước và sau khóa học thông qua bài tập tình huống, dự án cải tiến thực tế tại đơn vị công tác.</p></li></ul><p>&nbsp;</p>	knowledge/articles/thumbnails/knowledge/articles/thumbnails/thiet-ke-chuong-trinh-dao-ta_qmXV43b.png		TS. Bùi Thị Mai	2024-03-15	14	f	t				ac329527-ac0d-4f05-bf29-4d96a03f54c9
+37d45d12-b396-4917-9c48-51d30da8c35f	t	1	2026-09-18 11:36:44.332096+07	2026-09-18 12:08:02.881005+07	Sơ đồ chùm bài đề xuất	s-dj-chum-bai-dj-xut	<p>SERIES MẸ</p><p>Sức khỏe tâm thần sinh viên khối y tế:</p><p>Từ chịu đựng cá nhân đến năng lực hỗ trợ của hệ sinh thái đào tạo</p>	<p>SERIES MẸ</p><p>Sức khỏe tâm thần sinh viên khối y tế:</p><p>Từ chịu đựng cá nhân đến năng lực hỗ trợ của hệ sinh thái đào tạo</p><p>&nbsp;</p><p>│</p><p>├── CHÙM 1. Đặt lại cách nhìn vấn đề</p><p>│ &nbsp; ├── Bài 1. Sinh viên khối y tế không chỉ “áp lực hơn”: họ đang học trong một hệ sinh thái căng thẳng</p><p>│ &nbsp; ├── Bài 2. Vì sao sức khỏe tâm thần sinh viên y dược không thể chỉ đọc bằng triệu chứng?</p><p>│ &nbsp; └── Bài 3. Khi “chịu đựng tốt” trở thành chuẩn đầu ra ngầm của đào tạo y khoa</p><p>│</p><p>├── CHÙM 2. Đọc dữ liệu sức khỏe tâm thần đúng hơn</p><p>│ &nbsp; ├── Bài 4. Một sinh viên có thể không trầm cảm nhưng vẫn không thật sự khỏe mạnh</p><p>│ &nbsp; ├── Bài 5. WHO-5 và GHQ-12: vì sao cần đo cả wellbeing và distress?</p><p>│ &nbsp; └── Bài 6. Nhóm nguy cơ trong sinh viên khối y tế: ngành học, giới và điều kiện kinh tế nói gì?</p><p>│</p><p>├── CHÙM 3. Các yếu tố xã hội tạo áp lực</p><p>│ &nbsp; ├── Bài 7. Áp lực học tập trong trường y: khi chương trình đào tạo trở thành yếu tố sức khỏe</p><p>│ &nbsp; ├── Bài 8. Khó khăn tài chính không chỉ là chuyện học phí</p><p>│ &nbsp; └── Bài 9. Kỳ vọng nghề nghiệp, gia đình và văn hóa “ngành cao quý”: áp lực vô hình của sinh viên y dược</p><p>│</p><p>├── CHÙM 4. Nguồn lực bảo vệ trong môi trường học thuật</p><p>│ &nbsp; ├── Bài 10. Hỗ trợ bạn bè: lớp bảo vệ gần nhất của wellbeing sinh viên y dược</p><p>│ &nbsp; ├── Bài 11. Quan hệ giảng viên – sinh viên: một yếu tố sức khỏe tâm thần ít được gọi tên</p><p>│ &nbsp; └── Bài 12. Dịch vụ tư vấn trong trường đại học: có dịch vụ chưa chắc đã có tiếp cận</p><p>│</p><p>├── CHÙM 5. Từ dữ liệu đến thiết kế can thiệp</p><p>│ &nbsp; ├── Bài 13. Từ tư vấn cá nhân đến hệ thống hỗ trợ đa tầng cho sinh viên khối y tế</p><p>│ &nbsp; ├── Bài 14. Can thiệp theo nhóm nguy cơ: vì sao không thể dùng một mô hình chung cho mọi sinh viên?</p><p>│ &nbsp; └── Bài 15. Peer support, mentoring và cộng đồng sinh viên: thiết kế hỗ trợ từ bên trong nhà trường</p><p>│</p><p>└── CHÙM 6. Góc nhìn hệ thống và IRDM</p><p>&nbsp; &nbsp; ├── Bài 16. Sức khỏe tâm thần sinh viên là chỉ báo về chất lượng môi trường đào tạo</p><p>&nbsp; &nbsp; ├── Bài 17. Nhà trường cần dashboard wellbeing hay cần năng lực đọc dữ liệu người học?</p><p>&nbsp; &nbsp; └── Bài 18. Chăm sóc sinh viên khối y tế là đầu tư cho chất lượng nhân lực y tế tương lai</p><p>&nbsp;</p><h2><strong>Bản đồ từng chùm bài</strong></h2><figure class=""><table><tbody><tr><td><strong>Chùm bài</strong></td><td><strong>Vai trò trong series</strong></td><td><strong>Luận điểm trung tâm</strong></td><td><strong>Nguồn chính có thể dùng</strong></td></tr><tr><td><strong>Chùm 1. Đặt lại cách nhìn vấn đề</strong></td><td>Mở series, tạo góc nhìn chuyên gia</td><td>Không nên xem sức khỏe tâm thần sinh viên khối y tế là vấn đề chịu đựng cá nhân; cần đọc như vấn đề hệ sinh thái đào tạo</td><td>Tổng quan nghiên cứu chỉ ra khoảng trống xã hội học và sự thống trị của tiếp cận tâm lý/y học.&nbsp;</td></tr><tr><td><strong>Chùm 2. Đọc dữ liệu đúng hơn</strong></td><td>Giải thích cách đo và cách hiểu dữ liệu</td><td>Wellbeing và distress không phải một trục đơn giản; sinh viên có thể vừa có dấu hiệu đau khổ tâm lý vừa vẫn duy trì chức năng học tập</td><td>Nghiên cứu 525 sinh viên tại TP.HCM dùng WHO-5 và GHQ-12, ghi nhận 56,4% khỏe mạnh tinh thần và 59,8% có nguy cơ đau khổ tâm lý.&nbsp;</td></tr><tr><td><strong>Chùm 3. Yếu tố xã hội tạo áp lực</strong></td><td>Phân tích nguyên nhân hệ thống</td><td>Áp lực học tập, tài chính, kỳ vọng xã hội và đào tạo lâm sàng là các yếu tố xã hội có thể làm suy giảm sức khỏe tâm thần</td><td>Nghiên cứu “Mental Health under Social Strain” và publication về chương trình phòng ngừa cho sinh viên ngành sức khỏe.&nbsp;</td></tr><tr><td><strong>Chùm 4. Nguồn lực bảo vệ</strong></td><td>Chuyển từ nguy cơ sang nguồn lực</td><td>Hỗ trợ bạn bè, gia đình, giảng viên, nhận biết dịch vụ tư vấn và tham gia học đường có thể là lớp bảo vệ quan trọng</td><td>Nghiên cứu cho thấy peer support duy trì wellbeing, family support giảm distress, còn quan hệ giảng viên, nhận biết tư vấn và engagement có vai trò bảo vệ có điều kiện.&nbsp;</td></tr><tr><td><strong>Chùm 5. Thiết kế can thiệp</strong></td><td>Chuyển bằng chứng thành hành động</td><td>Can thiệp không nên chỉ là tư vấn cá nhân, mà cần mô hình đa tầng: phòng ngừa, hỗ trợ sớm, can thiệp, phục hồi và chuyển tuyến</td><td>Publication về chương trình chăm sóc sức khỏe tâm thần toàn diện nêu các thành phần như giáo dục sức khỏe tâm thần, giảm kỳ thị, resilience training, peer support và hỗ trợ số.&nbsp;</td></tr><tr><td><strong>Chùm 6. Hệ thống và IRDM</strong></td><td>Kết nối với quản trị nhà trường và năng lực IRDM</td><td>Dữ liệu sức khỏe tâm thần sinh viên cần trở thành căn cứ cho quản trị người học, phát triển năng lực và cải thiện môi trường đào tạo</td><td>Dựa trên toàn bộ chuỗi publication và góc nhìn IRDM về nghiên cứu ứng dụng, dữ liệu, wellbeing và giáo dục phát triển năng lực.</td></tr></tbody></table></figure>			Đang cập nhật	2026-09-18	5	t	t				cb345c35-f226-4e3b-9c82-a18d41ea53cb
+d3fbc854-e31d-45db-98f9-21759ab402ca	t	4	2026-07-07 21:16:06.825114+07	2026-09-23 14:09:47.420085+07	Các sự kiện chuyên môn sắp diễn ra tại Viện IRDM	cac-su-kien-chuyen-mon-sap-dien-ra-irdm	<p>Tổng hợp các hội thảo, tọa đàm và chương trình đào tạo sắp diễn ra tại Viện IRDM trong quý III/2024.</p>	<p>Viện IRDM sẽ tổ chức loạt sự kiện chuyên môn nhằm kết nối các chuyên gia trong lĩnh vực y tế và giáo dục...</p>	knowledge/articles/thumbnails/knowledge/articles/thumbnails/cac-su-kien-chuyen-mon-sap-d_37R8jBC.png		Ban Truyền thông IRDM	2024-07-01	5	t	t				0cb0cf05-8816-4776-a57c-860432aa5fac
+679ec873-53fd-4b3f-bd58-2480e813aa95	t	20	2026-09-25 13:29:13.826516+07	2026-10-01 22:16:46.517443+07	KỶ YẾU - HỘI THẢO QUỐC TẾ VỀ TÂM LÝ HỌC TRƯỜNG HỌC LẦN THỨ 7	k-yu-hi-tho-quc-t-v-tam-ly-hc-trng-hc-ln-th-7	<p class="text-align-justify">Sức khoẻ tâm thần cộng đồng đang là một vấn đề báo động, nhất là trong bối cảnh hậu COVID-19, trong đó học sinh, sinh viên là một trong các nhóm dễ bị tổn thương bởi sức khoẻ tâm thần nhất. Theo nghiên cứu của Polanczyk (2015) khoảng 15%, tức khoảng 1/7 trẻ vị thành niên trên khắp thế giới gặp các vấn đề về sức khỏe tâm thần. Điều đó cũng có nghĩa là có khoảng 175 triệu trẻ em và thanh thiếu niên gặp các vấn đề về hành vi, cảm xúc và điều này đẩy họ vào các nguy cơ cao hơn về vấn đề xã hội, học tập và mối quan hệ trong thời điểm quan trọng nhất của cuộc đời.</p>	<figure class="table"><table><tbody><tr><td><p class="text-align-justify">Sức khoẻ tâm thần cộng đồng đang là một vấn đề báo động, nhất là trong bối</p><p class="text-align-justify">cảnh hậu COVID-19, trong đó học sinh, sinh viên là một trong các nhóm dễ bị tổn</p><p class="text-align-justify">thương bởi sức khoẻ tâm thần nhất. Theo nghiên cứu của Polanczyk (2015) khoảng</p><p class="text-align-justify">15%, tức khoảng 1/7 trẻ vị thành niên trên khắp thế giới gặp các vấn đề về sức khỏe</p><p class="text-align-justify">tâm thần. Điều đó cũng có nghĩa là có khoảng 175 triệu trẻ em và thanh thiếu niên gặp</p><p class="text-align-justify">các vấn đề về hành vi, cảm xúc và điều này đẩy họ vào các nguy cơ cao hơn về vấn đề</p><p class="text-align-justify">xã hội, học tập và mối quan hệ trong thời điểm quan trọng nhất của cuộc đời.</p></td></tr></tbody></table></figure><p>&nbsp;</p><p>Các vấn đề sức khỏe tâm thần phổ biến ở trẻ em và thanh thiếu niên bao gồm trầm cảm, lo âu và rối loạn hành vi. Báo cáo của WHO (2014), trên toàn thế giới, trầm cảm là nguyên nhân đứng hàng thứ tư gây ra bệnh tật và tàn tật ở trẻ vị thành niên từ 15-19 tuổi và thứ mười lăm đối với những người từ 10-14 tuổi. Báo cáo UNICEF (2022) cho thấy rằng dường như tất cả trẻ em và vị thành niên đều có thể rơi vào trạng thái căng thẳng, khủng hoảng, điều này làm cho họ rất khó khăn trong tham gia vào các hoạt động ở trường, duy trì mối quan hệ tích cực với gia đình, bạn bè. Tình trạng trầm cảm ở trẻ em và thanh thiếu niên nếu không được điều trị sớm, có thể dẫn tới nhiều nguy cơ đáng tiếc như bỏ học, thất nghiệp khi trưởng thành, lạm dụng chất kích thích, mang thai/làm cha mẹ sớm và duy trì tình trạng trầm cảm trầm trọng hơn khi trưởng thành. Trong những trường hợp nghiêm trọng, trầm cảm có thể dẫn đến tự tử. Tại Đông Nam Á, một báo cáo phân tích hệ thống vào năm 2022 cho thấy có khoảng 1/5 học sinh, sinh viên có các rối loạn tâm thần kéo dài trong 12 tháng. Trong đó, tỷ lệ phổ biến các rối loạn tâm thần ở sinh viên bao gồm trầm cảm (29,4%), rối loạn lo âu (42,4%), stress hậu sang chấn (PTSD, 13,9%), rối loạn ăn uống, nguy cơ và hành vi tự sát (từ 7 - 8%). Tuy các vấn đề sức khoẻ tâm thần có tỷ lệ rất cao, nhưng nguồn lực cho sức khoẻ tâm thần còn rất hạn chế và các dịch vụ hỗ trợ sức khoẻ tâm thần không được thiết lập thường xuyên tại các trường (Dessauvagie, A.S., et al., 2022). Nhiều báo cáo khác tại Việt Nam cho thấy có khoảng từ 8% - 29% trẻ vị thành niên gặp các vấn đề về sức khỏe tâm thần, chủ yếu là các vấn đề cảm xúc như lo âu và trầm cảm (Weiss et al., 2014; UNICEF, 2018), tuy nhiên chỉ có khoảng 12,5% trong số đó tìm kiếm dịch vụ chăm sóc sức khoẻ tâm thần (Linh, N.H.T et al., 2021).</p><p>Sau đại dịch COVID-19, tình trạng sức khoẻ tâm thần của người dân tăng lên nhanh chóng, trong đó có trẻ em và thanh thiếu niên. Theo báo cáo của UNICEF (2022) cho thấy có khoảng 26% học sinh vị thành niên có nguy cơ trung bình hoặc cao đối với các vấn đề sức khỏe tâm thần. Các vấn đề với bạn đồng trang lứa (bao gồm cả trải nghiệm bị bắt nạt) và các vấn đề về cảm xúc (các triệu chứng trầm cảm và lo âu) là những vấn đề phổ biến nhất với tỷ lệ lần lượt là 32% và 31%. Khoảng 14% học sinh <strong>THÚC ĐẨY SỨC KHỎE TÂM THẦN TẠI TRƯỜNG HỌC</strong></p><p>- 6 -</p><p>Kỷ yếu Hội thảo quốc tế về Tâm lý học trường học lần thứ 7 báo cáo các triệu chứng của chứng tăng động – giảm chú ý và 11% học sinh báo cáo các vấn đề về hành vi cảm xúc. Tuy vậy, cha mẹ và giáo viên thường thiếu kiến thức về các vấn đề tâm lý và sức khỏe tâm thần của trẻ, đồng thời rất thờ ơ với các thông tin về sức khoẻ tâm thần. Tất cả những dữ liệu trên cho thấy, việc chăm sóc sức khoẻ tâm thần cho học sinh, sinh viên trong bối cảnh hiện nay đã trở thành một vấn đề cấp bách và cực kỳ cần thiết. Tại Việt Nam, việc đẩy mạnh các hoạt động tâm lý trong trường học để hỗ trợ sức khoẻ tâm thần của học sinh, sinh viên đã được Nhà nước và Chính phủ quan tâm, chỉ đạo trong suốt những năm vừa qua. Gần đây nhất, Thủ tướng Chính phủ đã có Quyết định số 1895/QĐ-TTg ngày 11/11/2021 về phê duyệt Chương trình “Tăng cường giáo dục lý tưởng cách mạng, đạo đức, lối sống và khơi dậy khát vọng cống hiến cho thanh niên, thiếu niên, nhi đồng giai đoạn 2021 - 2030”, trong đó nêu rõ “tổ chức các hoạt động tư vấn tâm lý và giáo dục kỹ năng sống, giá trị sống, văn hoá ứng xử cho thanh niên, thiếu niên, nhi đồng”; Bộ Giáo dục và Đào tạo ban hành Kế hoạch số 353/KH-BGDĐT ngày 29/3/2022 về thích ứng với tình hình dịch COVID-19, bảo đảm tổ chức dạy và học an toàn, chất lượng có nêu rõ “tổ chức hỗ trợ, tư vấn tâm lý cho trẻ em, học sinh, sinh viên bị ảnh hưởng của đại dịch COVID-19”, hoặc văn bản số 4252/BGDĐT-GDCTHSSV ngày 31/08/2022 về tăng cường triển khai hỗ trợ, tư vấn tâm lý cho học sinh. Đặc biệt, ngày 03/08/2022, Bộ GD&amp;ĐT đã ban hành Quyết định 2138/QĐ-BGDĐT về Kế hoạch giáo dục sức khỏe tâm thần cho trẻ em, học sinh giai đoạn 2022 - 2025. Trong thực hành, nhiều trường đã bắt đầu xây dựng và đẩy mạnh các hoạt động tâm lý trường học, đặc biệt là các trường thuộc khối ngoài công lập. Mặc dù vậy, công tác tư vấn tâm lý trường học, hỗ trợ sức khoẻ tâm thần cho học sinh, sinh viên vẫn chưa thực sự nhận được sự quan tâm và đầu tư tương xứng của nhà nước và xã hội. Điều này một phần là do nhận thức về sức khoẻ tâm thần chưa cao,</p><p>thiếu nguồn lực (cả nguồn lực về nhân sự và tài chính, cơ sở vật chất) cho việc triển khai các hoạt động và đặc biệt các chính sách, hướng dẫn chưa được cụ thể và thực hiện nghiêm túc. Chính vì thế, thực trạng sức khoẻ tâm thần của học sinh, sinh viên vẫn còn nhiều bất cập như tình trạng tự sát trong học sinh, sinh viên, các rối loạn tâm thần gia tăng như trầm cảm, lo âu, stress, PTSD, rối loạn giấc ngủ,… Trong bối cảnh như vậy, Trường Đại học KHXH&amp;NV, ĐHQG-HCM (trực tiếp là Trung tâm Nghiên cứu và Hỗ trợ Sức khoẻ Tinh thần) phối hợp cùng Liên hiệp Phát triển Tâm lý Trường học Quốc tế (CASP – I) và Hội Khoa học Tâm lý – Giáo dục Việt Nam tổ chức <strong>Hội thảo quốc tế về Tâm lý học trường học lần thứ 7 </strong>với chủ đề <strong>“Thúc đẩy sức khỏe tâm thần tại trường học”</strong>. Hội thảo Quốc tế về Tâm lý trường học là một diễn đàn học thuật chuyên sâu về lĩnh vực tâm lý học trường học, sức khoẻ tâm thần trẻ em và thanh thiếu niên giữa các chuyên gia, nhà nghiên cứu trong và ngoài nước, hội thảo thường được tổ chức định kỳ hàng năm hoặc 2 năm một lần. Trong quá <strong>PROMOTING MENTAL WELL-BEING IN SCHOOLS</strong></p><p>- 7 -</p><p>Proceedings</p><p>The 7th International Conference on School Psychology trình triển khai Hội thảo quốc tế về Tâm lý trường học lần thứ 7, Ban Nội dung của hội thảo đã nhận được gần 100 bài báo khoa học của các tác giả trong và ngoài nước gửi về. Chủ đề chính của các bài báo tập trung nhiều vào kết quả nghiên cứu lý luận và thực tiễn về: Thực trạng một số vấn đề thường gặp và các yếu tố ảnh hưởng đến sức khỏe tâm thần tại trường học; Các dịch vụ chăm sóc sức khoẻ tâm thần tại Việt Nam; Xây dựng trường học hạnh phúc; Vai trò của gia đình, trường học cũng như công tác thực hành đánh giá và can thiệp sức khoẻ tâm thần cho học sinh tại trường học. Sau quá trình phản biện độc lập, có 65 bài tham luận đã được Ban Biên tập của Hội thảo lựa chọn xuất bản trong Kỷ yếu, trong đó, có 18 bài tiếng Anh và 47 bài tiếng Việt và được phân bổ thành 03 phần chính: Phần 1. Sức khỏe tâm thần của học sinh, sinh viên và giáo viên. Phần 2. Ảnh hưởng của môi trường gia đình, trường học và công nghệ đến sức khỏe tâm thần của học sinh, sinh viên.</p><p>&nbsp;</p><p>Phần 3. Thúc đẩy sức khỏe tâm thần của học sinh tại trường học Chúng tôi tin rằng, hội thảo và kỷ yếu Hội thảo quốc tế về Tâm lý trường học lần thứ 7 sẽ mang đến nhiều giá trị tích cực cho người tham dự, các nhà nghiên cứu và học viên, sinh viên trong các lĩnh vực chăm sóc sức khoẻ tâm thần và tâm lý trường học. Kỷ yếu của hội thảo cũng sẽ lan toả đến các thầy cô giáo, các bậc cha mẹ trong việc thấu hiểu và chăm sóc sức khoẻ tâm thần cho trẻ em và chính bản thân mình. Chúng tôi cũng hy vọng, kỷ yếu hội thảo sẽ mang đến nhiều dữ liệu trong kiến nghị chính sách chăm sóc sức khoẻ tâm thần cho học sinh, sinh viên và công tác tư vấn tâm lý trường học tại Việt Nam. Với ý nghĩa đó, chúng tôi xin trân trọng giới thiệu cuốn <strong>Kỷ yếu Hội thảo quốc tế về Tâm lý học trường học lần thứ 7 “Thúc đẩy sức khỏe tâm thần tại trường học”</strong>. Chúng tôi cũng rất mong nhận được trao đổi, chia sẻ, góp ý của quý đồng nghiệp trong và ngoài nước để chúng tôi hoàn thiện hơn kỷ yếu cũng như công tác tổ chức hội thảo.&nbsp;</p><p>&nbsp;</p><p>Mọi liên lạc xin gửi về Trung tâm Nghiên cứu và Hỗ trợ Sức khoẻ tinh thần, email: mhrs@hcmussh.edu.vn.</p><p>Trân trọng!</p><p>&nbsp;</p><p>Để biết thêm chi tiết xin hãy đăng ký tải tài liệu với đường link như sau: <a href="https://irdmvietnam.sharepoint.com/:b:/r/sites/IRDMVietnam/Shared%20Documents/04.%20MKT%20Com/Website/2026_Website%20CORE%20content/Cong%20bo/2025_Kyyeu_HT_SKTT.2024.pdf?d=w0da0b7f0ad324196a4617d2ab942aaba&amp;csf=1&amp;web=1&amp;e=PbjEbr" rel="noopener noreferrer">Tài liệu tải về</a>.</p>			NHIỀU TÁC GIẢ	2026-09-25	6	t	t				80fcf6b0-7ae7-445f-a184-0cbbd5672330
 \.
 
 
 --
--- TOC entry 6452 (class 0 OID 313034)
--- Dependencies: 324
+-- TOC entry 6543 (class 0 OID 728174)
+-- Dependencies: 333
+-- Data for Name: knowledge_knowledgearticle_partner_groups; Type: TABLE DATA; Schema: public; Owner: irdm_user
+--
+
+COPY public.knowledge_knowledgearticle_partner_groups (id, knowledgearticle_id, knowledgepartnergroup_id) FROM stdin;
+1	a2a9cac5-e458-400b-b88f-5c23309f1e3e	3319a7a8-454f-4624-b965-d506c4740f39
+2	a2a9cac5-e458-400b-b88f-5c23309f1e3e	959a6b39-63e1-4dfd-8d48-bc4e1a5d2b95
+3	eca018e3-78a1-43e5-b5ef-6bd8cd5d8c04	3319a7a8-454f-4624-b965-d506c4740f39
+4	cdbceec4-6019-4f66-9d47-1bc5bed11fc9	0be8b975-134d-43de-b462-cf2b28df8388
+5	cdbceec4-6019-4f66-9d47-1bc5bed11fc9	3319a7a8-454f-4624-b965-d506c4740f39
+6	d3fbc854-e31d-45db-98f9-21759ab402ca	0be8b975-134d-43de-b462-cf2b28df8388
+7	d3fbc854-e31d-45db-98f9-21759ab402ca	1c87c404-698c-4616-9cfa-8637625fc33e
+8	d3fbc854-e31d-45db-98f9-21759ab402ca	c2540c09-5070-44c5-bab3-11e546b217fe
+9	d3fbc854-e31d-45db-98f9-21759ab402ca	959a6b39-63e1-4dfd-8d48-bc4e1a5d2b95
+10	87f80728-6318-4325-90b7-3d3085207709	1c87c404-698c-4616-9cfa-8637625fc33e
+11	87f80728-6318-4325-90b7-3d3085207709	3319a7a8-454f-4624-b965-d506c4740f39
+12	87f80728-6318-4325-90b7-3d3085207709	959a6b39-63e1-4dfd-8d48-bc4e1a5d2b95
+13	e0fa3f97-31a5-4353-8a38-93e86d8673fb	0be8b975-134d-43de-b462-cf2b28df8388
+14	e0fa3f97-31a5-4353-8a38-93e86d8673fb	3319a7a8-454f-4624-b965-d506c4740f39
+15	4a490da7-6e24-4ae9-a381-1d4d4bc8ed2a	3319a7a8-454f-4624-b965-d506c4740f39
+16	4a490da7-6e24-4ae9-a381-1d4d4bc8ed2a	c2540c09-5070-44c5-bab3-11e546b217fe
+17	389fa27c-7c15-4291-8002-0302395a8c3b	0be8b975-134d-43de-b462-cf2b28df8388
+18	389fa27c-7c15-4291-8002-0302395a8c3b	3319a7a8-454f-4624-b965-d506c4740f39
+\.
+
+
+--
+-- TOC entry 6545 (class 0 OID 728181)
+-- Dependencies: 335
 -- Data for Name: knowledge_knowledgearticle_related_capabilities; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.knowledge_knowledgearticle_related_capabilities (id, knowledgearticle_id, capability_id) FROM stdin;
+1	37d45d12-b396-4917-9c48-51d30da8c35f	5ab16d24-513c-49d2-b2d8-4e63575d6ca5
+2	37d45d12-b396-4917-9c48-51d30da8c35f	5c66a894-c096-431f-812d-5700d3c94cc7
 \.
 
 
 --
--- TOC entry 6454 (class 0 OID 313041)
--- Dependencies: 326
+-- TOC entry 6547 (class 0 OID 728188)
+-- Dependencies: 337
 -- Data for Name: knowledge_knowledgearticle_topics; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6759,12 +7209,15 @@ COPY public.knowledge_knowledgearticle_topics (id, knowledgearticle_id, knowledg
 13	4a490da7-6e24-4ae9-a381-1d4d4bc8ed2a	15beced7-8d20-4c4a-89c6-fc013e2bed92
 14	389fa27c-7c15-4291-8002-0302395a8c3b	d0266422-5241-4b31-b70d-c90025cd6417
 15	389fa27c-7c15-4291-8002-0302395a8c3b	79293fb2-e89e-43ad-831c-dd7b7206411b
+17	37d45d12-b396-4917-9c48-51d30da8c35f	84998d33-9fbb-486f-b6be-7bea52ca274e
+18	37d45d12-b396-4917-9c48-51d30da8c35f	762639d2-de93-496a-9b79-305f6d775c9d
+19	d3fbc854-e31d-45db-98f9-21759ab402ca	84998d33-9fbb-486f-b6be-7bea52ca274e
 \.
 
 
 --
--- TOC entry 6456 (class 0 OID 313048)
--- Dependencies: 328
+-- TOC entry 6549 (class 0 OID 728195)
+-- Dependencies: 339
 -- Data for Name: knowledge_knowledgecategory; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6774,12 +7227,13 @@ ac329527-ac0d-4f05-bf29-4d96a03f54c9	t	1	2026-07-07 21:16:06.513091+07	2026-07-1
 cb345c35-f226-4e3b-9c82-a18d41ea53cb	t	2	2026-07-07 21:16:06.580561+07	2026-07-19 16:16:15.545492+07	Góc nhìn ngành	goc-nhin-nganh	Góc nhìn ngành	Phân tích, bình luận chuyên môn về xu hướng y tế, giáo dục và phát triển nguồn lực.		knowledge/categories/knowledge/categories/goc-nhin-nganh_Du1HsMb.png	t
 2677a27f-169f-4749-816c-234a8075dd0b	t	3	2026-07-07 21:16:06.638753+07	2026-07-19 16:16:15.546913+07	Tóm lược chính sách	tom-luoc-chinh-sach	Tóm lược chính sách	Tóm tắt và phân tích các chính sách y tế, giáo dục và phát triển bền vững.		knowledge/categories/knowledge/categories/tom-luoc-chinh-sach_piPEtAn.png	t
 0cb0cf05-8816-4776-a57c-860432aa5fac	t	4	2026-07-07 21:16:06.703553+07	2026-07-19 16:16:15.548277+07	Tin IRDM	tin-irdm	Tin tức IRDM	Hoạt động, hợp tác và sự kiện từ Viện IRDM.		knowledge/categories/knowledge/categories/tin-irdm_cjlzsbS.png	t
+80fcf6b0-7ae7-445f-a184-0cbbd5672330	t	0	2026-09-25 13:06:09.254801+07	2026-09-25 13:06:09.254821+07	Báo cáo & tài liệu	bao-cao-tai-liu	Báo cáo & tài liệu	Báo cáo & tài liệu			t
 \.
 
 
 --
--- TOC entry 6457 (class 0 OID 313066)
--- Dependencies: 329
+-- TOC entry 6550 (class 0 OID 728213)
+-- Dependencies: 340
 -- Data for Name: knowledge_knowledgecontenttypecard; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6794,8 +7248,8 @@ COPY public.knowledge_knowledgecontenttypecard (id, is_active, display_order, cr
 
 
 --
--- TOC entry 6458 (class 0 OID 313085)
--- Dependencies: 330
+-- TOC entry 6551 (class 0 OID 728232)
+-- Dependencies: 341
 -- Data for Name: knowledge_knowledgecontenttypecard_tags; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6827,8 +7281,8 @@ COPY public.knowledge_knowledgecontenttypecard_tags (id, knowledgecontenttypecar
 
 
 --
--- TOC entry 6460 (class 0 OID 313092)
--- Dependencies: 332
+-- TOC entry 6553 (class 0 OID 728239)
+-- Dependencies: 343
 -- Data for Name: knowledge_knowledgectabutton; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6840,8 +7294,8 @@ f45d91ac-b850-4de4-927c-269855c2d978	t	2	2026-07-20 00:33:51.817612+07	2026-07-2
 
 
 --
--- TOC entry 6461 (class 0 OID 313110)
--- Dependencies: 333
+-- TOC entry 6554 (class 0 OID 728257)
+-- Dependencies: 344
 -- Data for Name: knowledge_knowledgedownload; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6854,8 +7308,8 @@ a67bdcda-5056-4e73-9b35-8b98c2e43e47	t	4	2026-07-07 21:16:07.037902+07	2026-07-1
 
 
 --
--- TOC entry 6462 (class 0 OID 313129)
--- Dependencies: 334
+-- TOC entry 6555 (class 0 OID 728276)
+-- Dependencies: 345
 -- Data for Name: knowledge_knowledgedownloadrequest; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6865,8 +7319,8 @@ COPY public.knowledge_knowledgedownloadrequest (id, full_name, organization, ema
 
 
 --
--- TOC entry 6464 (class 0 OID 313141)
--- Dependencies: 336
+-- TOC entry 6557 (class 0 OID 728288)
+-- Dependencies: 347
 -- Data for Name: knowledge_knowledgeevent; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6878,8 +7332,8 @@ a952651c-b31c-4b57-a587-7b2cf01781c4	t	3	2026-07-19 16:16:15.731706+07	2026-07-1
 
 
 --
--- TOC entry 6465 (class 0 OID 313162)
--- Dependencies: 337
+-- TOC entry 6558 (class 0 OID 728309)
+-- Dependencies: 348
 -- Data for Name: knowledge_knowledgeevent_tags; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6900,8 +7354,8 @@ COPY public.knowledge_knowledgeevent_tags (id, knowledgeevent_id, knowledgeevent
 
 
 --
--- TOC entry 6467 (class 0 OID 313169)
--- Dependencies: 339
+-- TOC entry 6560 (class 0 OID 728316)
+-- Dependencies: 350
 -- Data for Name: knowledge_knowledgeeventtag; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6916,8 +7370,8 @@ edb0e9e5-ac73-4b81-80e4-f7150eb5a23c	t	5	2026-07-19 16:16:15.7086+07	2026-07-19 
 
 
 --
--- TOC entry 6468 (class 0 OID 313181)
--- Dependencies: 340
+-- TOC entry 6561 (class 0 OID 728328)
+-- Dependencies: 351
 -- Data for Name: knowledge_knowledgefeaturedarticle; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6930,8 +7384,8 @@ fd945536-f5b0-4a50-8610-3c9ad4691718	t	4	2026-07-18 10:09:12.729468+07	2026-07-1
 
 
 --
--- TOC entry 6469 (class 0 OID 313198)
--- Dependencies: 341
+-- TOC entry 6562 (class 0 OID 728345)
+-- Dependencies: 352
 -- Data for Name: knowledge_knowledgefiltergroup; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6943,8 +7397,8 @@ ab2a1c92-e3a1-48d5-92b6-3ee7fc3abecc	t	3	2026-07-18 00:14:28.593139+07	2026-07-1
 
 
 --
--- TOC entry 6470 (class 0 OID 313209)
--- Dependencies: 342
+-- TOC entry 6563 (class 0 OID 728356)
+-- Dependencies: 353
 -- Data for Name: knowledge_knowledgefilteritem; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6970,8 +7424,8 @@ b1343bc9-df2a-4fe6-9db7-810979b112e4	t	3	2026-07-18 00:14:28.5964+07	2026-07-19 
 
 
 --
--- TOC entry 6471 (class 0 OID 313223)
--- Dependencies: 343
+-- TOC entry 6564 (class 0 OID 728370)
+-- Dependencies: 354
 -- Data for Name: knowledge_knowledgelistingpage; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -6981,26 +7435,42 @@ COPY public.knowledge_knowledgelistingpage (id, is_active, display_order, create
 
 
 --
--- TOC entry 6472 (class 0 OID 313328)
--- Dependencies: 344
+-- TOC entry 6565 (class 0 OID 728475)
+-- Dependencies: 355
 -- Data for Name: knowledge_knowledgenewsitem; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
 COPY public.knowledge_knowledgenewsitem (id, is_active, display_order, created_at, updated_at, title, slug, summary, thumbnail, published_date, source_url, is_published, category_id, cta_target, cta_text, is_press_article) FROM stdin;
-3d230c3c-c03d-4c9c-9b47-9775c2d958bd	t	2	2026-07-07 21:16:07.057952+07	2026-07-19 16:16:15.64723+07	IRDM hoàn thành báo cáo đánh giá nhu cầu năng lực nhân lực y tế TP.HCM	irdm-hoan-thanh-bao-cao-nhu-cau-nhan-luc-y-te-tphcm	Báo cáo đánh giá toàn diện về nhu cầu đào tạo và phát triển năng lực nhân lực y tế tại TP.HCM giai đoạn 2024-2030.	knowledge/news/knowledge/news/irdm-hoan-thanh-bao-cao-nhu-cau-nhan-luc-y-te-tphcm_5IYk1DH.png	2024-05-28		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	f
-d4855ea0-1c40-4055-8dd9-51ccb89e7278	t	3	2026-07-07 21:16:07.068232+07	2026-07-19 16:16:15.650876+07	IRDM ký kết hợp tác với Đại học Y Dược TP.HCM trong nghiên cứu ứng dụng	irdm-ky-ket-hop-tac-dai-hoc-y-duoc-tphcm	Lễ ký kết biên bản ghi nhớ hợp tác nghiên cứu ứng dụng giữa Viện IRDM và Đại học Y Dược TP.HCM.	knowledge/news/knowledge/news/irdm-ky-ket-hop-tac-dai-hoc-y-duoc-tphcm_Rde4Etn.png	2024-05-10		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	f
-decc660b-f349-42ec-bc0e-5728e6535406	t	4	2026-07-07 21:16:07.077347+07	2026-07-19 16:16:15.655644+07	Tóm lược Hội thảo Wellbeing trong y tế và giáo dục 2024	tom-luoc-hoi-thao-wellbeing-y-te-giao-duc-2024	Những điểm nhấn từ hội thảo quốc gia về wellbeing nhân viên y tế và giáo dục, tổ chức tháng 4/2024.	knowledge/news/knowledge/news/tom-luoc-hoi-thao-wellbeing-y-te-giao-duc-2024_KdcqKeq.png	2024-04-20		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	f
-fa1b9905-6cd4-4427-801c-25f714eaab59	t	5	2026-07-07 21:16:07.089805+07	2026-07-19 16:16:15.659678+07	Chuyên gia IRDM: 'Wellbeing không phải là phúc lợi, mà là đầu tư cho năng lực phục hồi'	chuyen-gia-irdm-wellbeing-dau-tu-nang-luc-phuc-hoi	Phỏng vấn chuyên gia IRDM về tầm quan trọng của wellbeing trong tổ chức y tế và giáo dục.	knowledge/news/knowledge/news/chuyen-gia-irdm-wellbeing-dau-tu-nang-luc-phuc-hoi_SSOsAbx.png	2024-06-05		t	cb345c35-f226-4e3b-9c82-a18d41ea53cb	_blank	Xem chi tiết	f
-84afad0a-d000-4281-b03f-25edb954ebbf	t	6	2026-07-07 21:16:07.100533+07	2026-07-19 16:16:15.663442+07	Dữ liệu bệnh viện và bài toán chuyển đổi số: góc nhìn từ nghiên cứu ứng dụng	du-lieu-benh-vien-bai-toan-chuyen-doi-so-nghien-cuu-ung-dung	Bài viết trên diễn đàn chuyên môn về hành trình chuyển đổi số dữ liệu bệnh viện từ góc nhìn nghiên cứu ứng dụng.	knowledge/news/knowledge/news/du-lieu-benh-vien-bai-toan-chuyen-doi-so-nghien-cuu-ung-du_rKpm2q1.png	2024-05-25		t	ac329527-ac0d-4f05-bf29-4d96a03f54c9	_blank	Xem chi tiết	f
-dce5f7ee-1332-46b0-9f2a-3b0166a10add	t	7	2026-07-07 21:16:07.109641+07	2026-07-19 16:16:15.667008+07	IRDM tham luận tại Hội nghị Quốc gia về đổi mới sáng tạo trong y tế và giáo dục 2024	irdm-tham-luan-hoi-nghi-quoc-gia-doi-moi-sang-tao-2024	Đại diện Viện IRDM trình bày tham luận về ứng dụng nghiên cứu và đổi mới sáng tạo trong phát triển hệ thống y tế.	knowledge/news/knowledge/news/irdm-tham-luan-hoi-nghi-quoc-gia-doi-moi-sang-tao-2024_MkWeoy9.png	2024-05-12		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	f
-8ac83a5a-2b90-4c83-a261-72149d2e553f	t	8	2026-07-07 21:16:07.119831+07	2026-07-19 16:16:15.670795+07	Báo cáo mới về xu hướng ESG tại Việt Nam 2024	bao-cao-moi-esg-viet-nam-2024	Tổng quan các xu hướng ESG đang định hình hoạt động của tổ chức y tế và doanh nghiệp tại Việt Nam.	knowledge/news/knowledge/news/bao-cao-moi-esg-viet-nam-2024_5Z8hDt0.png	2024-04-30		t	2677a27f-169f-4749-816c-234a8075dd0b	_blank	Xem chi tiết	f
-b9110896-1e6c-4526-9d67-3c981c4b3e91	t	1	2026-07-07 21:16:07.045782+07	2026-08-15 22:15:42.754579+07	IRDM cung cấp dịch vụ thư ký khoa học cho Bệnh viện Nguyễn Tri Phương	irdm-cung-cap-dich-vu-thu-ky-khoa-hoc-nguyen-tri-phuong	Viện IRDM ký kết hợp đồng cung cấp dịch vụ thư ký khoa học, hỗ trợ nghiên cứu và quản lý tri thức tại Bệnh viện Nguyễn Tri Phương.	knowledge/news/IRDM_cung_cấp_dịch_vụ_thư_ký_khoa_học_cho_Bệnh_viện_Nguyễn_Tri_Phương.png	2024-06-15		t	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	f
+b9110896-1e6c-4526-9d67-3c981c4b3e91	t	1	2026-07-07 21:16:07.045782+07	2026-09-13 09:15:34.825086+07	IRDM cung cấp dịch vụ thư ký khoa học cho Bệnh viện Nguyễn Tri Phương	irdm-cung-cap-dich-vu-thu-ky-khoa-hoc-nguyen-tri-phuong	Viện IRDM ký kết hợp đồng cung cấp dịch vụ thư ký khoa học, hỗ trợ nghiên cứu và quản lý tri thức tại Bệnh viện Nguyễn Tri Phương.	knowledge/news/IRDM_cung_cấp_dịch_vụ_thư_ký_khoa_học_cho_Bệnh_viện_Nguyễn_Tri_Phương.png	2024-06-15		f	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	f
+3d230c3c-c03d-4c9c-9b47-9775c2d958bd	t	2	2026-07-07 21:16:07.057952+07	2026-09-13 09:15:34.827479+07	IRDM hoàn thành báo cáo đánh giá nhu cầu năng lực nhân lực y tế TP.HCM	irdm-hoan-thanh-bao-cao-nhu-cau-nhan-luc-y-te-tphcm	Báo cáo đánh giá toàn diện về nhu cầu đào tạo và phát triển năng lực nhân lực y tế tại TP.HCM giai đoạn 2024-2030.	knowledge/news/knowledge/news/irdm-hoan-thanh-bao-cao-nhu-cau-nhan-luc-y-te-tphcm_5IYk1DH.png	2024-05-28		f	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	f
+d4855ea0-1c40-4055-8dd9-51ccb89e7278	t	3	2026-07-07 21:16:07.068232+07	2026-09-13 09:15:34.828529+07	IRDM ký kết hợp tác với Đại học Y Dược TP.HCM trong nghiên cứu ứng dụng	irdm-ky-ket-hop-tac-dai-hoc-y-duoc-tphcm	Lễ ký kết biên bản ghi nhớ hợp tác nghiên cứu ứng dụng giữa Viện IRDM và Đại học Y Dược TP.HCM.	knowledge/news/knowledge/news/irdm-ky-ket-hop-tac-dai-hoc-y-duoc-tphcm_Rde4Etn.png	2024-05-10		f	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	f
+decc660b-f349-42ec-bc0e-5728e6535406	t	4	2026-07-07 21:16:07.077347+07	2026-09-13 09:15:34.829482+07	Tóm lược Hội thảo Wellbeing trong y tế và giáo dục 2024	tom-luoc-hoi-thao-wellbeing-y-te-giao-duc-2024	Những điểm nhấn từ hội thảo quốc gia về wellbeing nhân viên y tế và giáo dục, tổ chức tháng 4/2024.	knowledge/news/knowledge/news/tom-luoc-hoi-thao-wellbeing-y-te-giao-duc-2024_KdcqKeq.png	2024-04-20		f	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	f
+dd2574c1-19ff-4f8e-902f-04feff7bd480	t	1	2026-09-13 09:14:19.783787+07	2026-09-13 09:31:24.69128+07	FPT IS cùng IRDM ứng dụng công nghệ tối ưu hóa hoạt động giảng dạy	fpt-is-cung-irdm-ng-dng-cong-ngh-ti-u-hoa-hot-djng-ging-dy	Viện Nghiên cứu Phát triển nguồn lực Việt (IRDM) vừa cùng FPT IS công bố khai trương Nền tảng tự học thông minh (IRDM Smart Learning).		2026-09-13	https://chungta.vn/cong-nghe/fpt-is-cung-irdm-ung-dung-cong-nghe-toi-uu-hoa-hoat-dong-giang-day-1138074.html?utm_source=chatgpt.com	t	\N	_blank	Xem chi tiết	t
+c898ff66-dc82-4d6f-80c8-8310f4a629ee	t	5	2026-09-13 09:12:07.039722+07	2026-09-13 09:31:24.695796+07	Viện Nghiên cứu Phát triển nguồn lực Việt nâng cao chất lượng nguồn nhân lực trẻ	vin-nghien-cu-phat-trin-ngun-lc-vit-nang-cao-cht-lng-ngun-nhan-lc-tr	Ngày 17/12/2023, Viện Nghiên cứu Phát triển nguồn lực Việt (IRDM) tổ chức Lễ kỷ niệm 5 năm thành lập, định hướng “Hành trình trao giá trị” (2020-2023) và chính thức triển khai chương trình “Phổ cập kỹ năng tương tác xã hội và kỹ năng làm việc trong môi trường chuyên nghiệp” trên nền tảng tự học thông minh - IRDM Smart Learning		2026-09-13	https://doanhnghieptiepthi.vn/vien-nghien-cuu-phat-trien-nguon-luc-viet-nang-cao-chat-luong-nguon-nhan-luc-tre-161231218113717179.htm?utm_source=chatgpt.com	t	\N	_blank	Xem chi tiết	t
+fba3b5d1-c948-4b39-89ff-cc6cc8069107	t	0	2026-09-13 09:03:49.464241+07	2026-09-13 09:31:24.696561+07	Viện phát triển nguồn nhân lực IRDM nâng tầm nguồn lực Việt	vin-phat-trin-ngun-nhan-lc-irdm-nang-tm-ngun-lc-vit	IRDM nghiên cứu, triển khai các dịch vụ khoa học & công nghệ và hợp tác với các tổ chức cá nhân trong và ngoài nước trong các lĩnh vực giáo dục, y tế và môi trường		2026-09-13	https://tuoitre.vn/plo/vien-phat-trien-nguon-nhan-luc-irdm-nang-tam-nguon-luc-viet-109645787.htm	t	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	t
+fa1b9905-6cd4-4427-801c-25f714eaab59	t	5	2026-07-07 21:16:07.089805+07	2026-09-13 09:15:34.83072+07	Chuyên gia IRDM: 'Wellbeing không phải là phúc lợi, mà là đầu tư cho năng lực phục hồi'	chuyen-gia-irdm-wellbeing-dau-tu-nang-luc-phuc-hoi	Phỏng vấn chuyên gia IRDM về tầm quan trọng của wellbeing trong tổ chức y tế và giáo dục.	knowledge/news/knowledge/news/chuyen-gia-irdm-wellbeing-dau-tu-nang-luc-phuc-hoi_SSOsAbx.png	2024-06-05		f	cb345c35-f226-4e3b-9c82-a18d41ea53cb	_blank	Xem chi tiết	f
+84afad0a-d000-4281-b03f-25edb954ebbf	t	6	2026-07-07 21:16:07.100533+07	2026-09-13 09:15:34.833272+07	Dữ liệu bệnh viện và bài toán chuyển đổi số: góc nhìn từ nghiên cứu ứng dụng	du-lieu-benh-vien-bai-toan-chuyen-doi-so-nghien-cuu-ung-dung	Bài viết trên diễn đàn chuyên môn về hành trình chuyển đổi số dữ liệu bệnh viện từ góc nhìn nghiên cứu ứng dụng.	knowledge/news/knowledge/news/du-lieu-benh-vien-bai-toan-chuyen-doi-so-nghien-cuu-ung-du_rKpm2q1.png	2024-05-25		f	ac329527-ac0d-4f05-bf29-4d96a03f54c9	_blank	Xem chi tiết	f
+dce5f7ee-1332-46b0-9f2a-3b0166a10add	t	7	2026-07-07 21:16:07.109641+07	2026-09-13 09:15:34.834116+07	IRDM tham luận tại Hội nghị Quốc gia về đổi mới sáng tạo trong y tế và giáo dục 2024	irdm-tham-luan-hoi-nghi-quoc-gia-doi-moi-sang-tao-2024	Đại diện Viện IRDM trình bày tham luận về ứng dụng nghiên cứu và đổi mới sáng tạo trong phát triển hệ thống y tế.	knowledge/news/knowledge/news/irdm-tham-luan-hoi-nghi-quoc-gia-doi-moi-sang-tao-2024_MkWeoy9.png	2024-05-12		f	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	f
+8ac83a5a-2b90-4c83-a261-72149d2e553f	t	8	2026-07-07 21:16:07.119831+07	2026-09-13 09:15:34.834744+07	Báo cáo mới về xu hướng ESG tại Việt Nam 2024	bao-cao-moi-esg-viet-nam-2024	Tổng quan các xu hướng ESG đang định hình hoạt động của tổ chức y tế và doanh nghiệp tại Việt Nam.	knowledge/news/knowledge/news/bao-cao-moi-esg-viet-nam-2024_5Z8hDt0.png	2024-04-30		f	2677a27f-169f-4749-816c-234a8075dd0b	_blank	Xem chi tiết	f
+a6b5ae10-69cf-4ae1-bca6-84f7961820ad	t	2	2026-09-13 09:19:14.493022+07	2026-09-13 09:31:24.693351+07	IRDM cùng FPT IS vận hành Nền tảng tự học thông minh IRDM Smart Learning	irdm-cung-fpt-is-vn-hanh-nn-tng-t-hc-thong-minh-irdm-smart-learning	IRDM Smart Learning mang lại nhiều tiện ích linh hoạt, giúp người học có công cụ tiếp cận nội dung bất kỳ khi nào, ở bất kỳ đâu có kết nối internet, tăng tính chủ động và cá nhân hóa cho từng học viên…		2026-09-13	https://vietnamnet.vn/irdm-cung-fpt-is-van-hanh-nen-tang-tu-hoc-thong-minh-irdm-smart-learning-2228751.html	t	\N	_blank	Xem chi tiết	t
+9042ce97-eb9a-45a2-84f1-c1b22a575e7f	t	3	2026-09-13 09:21:58.8852+07	2026-09-13 09:31:24.694211+07	IRDM cùng FPT IS triển khai nền tảng tự học thông minh	irdm-cung-fpt-is-trin-khai-nn-tng-t-hc-thong-minh	Viện nghiên cứu Phát triển nguồn lực Việt (IRDM) cùng FPT IS ra mắt nền tảng tự học thông minh (IRDM Smart Learning), tiến tới số hóa chương trình giảng dạy.		\N	https://vnexpress.net/irdm-cung-fpt-is-trien-khai-nen-tang-tu-hoc-thong-minh-4690878.html?utm_source=chatgpt.com	t	\N	_blank	Xem chi tiết	t
+3974a581-0aab-4735-9ad8-89aeee5bdb62	t	4	2026-09-13 09:28:00.961025+07	2026-09-13 09:32:30.847411+07	Nâng cao chất lượng nguồn nhân lực trẻ Việt Nam trong giai đoạn “vàng”	nang-cao-cht-lng-ngun-nhan-lc-tr-vit-nam-trong-giai-djon-vang	Ngày 17/12, Viện Nghiên cứu Phát triển nguồn lực Việt (IRDM) tổ chức Lễ Tổng kết kỷ niệm 5 năm thành lập và chính thức đi vào hoạt động Chương trình “Phổ cập kỹ năng tương tác xã hội và kỹ năng làm việc trong môi trường chuyên nghiệp” trên nền tảng tự học thông minh - IRDM Smart Learning tại TP.HCM.		2026-09-13	https://baodautu.vn/nang-cao-chat-luong-nguon-nhan-luc-tre-viet-nam-trong-giai-doan-vang-d205357.html?utm_source=chatgpt.com	t	\N	_blank	Xem chi tiết	t
+d30797e2-ab0e-42a3-88c4-440d3cd8db07	t	0	2026-09-13 09:39:48.647278+07	2026-09-13 09:39:48.647291+07	Talkshow Làm chủ thời gian làm chủ cuộc đời	talkshow-lam-ch-thi-gian-lam-ch-cuc-dji	Nằm trong chương trình của Tuần sinh hoạt công dân, sinh viên năm học 2020 – 2021 cho sinh viên khóa 2019 trở về trước theo thông báo của Phòng Công tác sinh viên. Talkshow "Làm chủ thời gian - làm chủ cuộc đời" sẽ diễn ra vào lúc 08h00 đến 10h00 ngày 26/8/2020.		2026-09-13	https://ump.edu.vn/tin-tuc-su-kien/tin-tuc/talkshow-lam-chu-thoi-gian-lam-chu-cuoc-doi/2251	t	\N	_blank	Xem chi tiết	t
+73edc6d1-919c-49cc-b411-e99b097edbe7	t	0	2026-09-13 09:42:30.277946+07	2026-09-13 09:42:30.277957+07	HỘI THẢO “VỮNG NỘI LỰC – CHẠM ĐÍCH ĐẾN” DÀNH CHO SINH VIÊN TRƯỜNG ĐẠI HỌC Y KHOA PHẠM NGỌC THẠCH	hi-tho-vng-ni-lc-chm-djich-djn-danh-cho-sinh-vien-trng-dji-hc-y-khoa-phm-ngc-thch	Với định hướng tăng cường hoạt động chăm sóc sức khỏe tinh thần cho sinh viên, vào ngày 25/10/2024 tại cơ sở 1, lầu 1, khu A1, Trường Đại học Y khoa Phạm Ngọc Thạch đã tổ chức hội thảo “Vững nội lực – Chạm đích đến” dành cho sinh viên tất cả các khóa của Trường.	knowledge/news/image001.jpg	2026-09-13	https://www.pnt.edu.vn/vi/su-kien-hoat-dong/hoi-thao-vung-noi-luc-cham-dich-den-danh-cho-sinh-vien-truong-dai-hoc-y-khoa-pham-ngoc-thach-4249?utm_source=chatgpt.com	t	\N	_blank	Xem chi tiết	t
+37e0f9a7-05a9-4c9d-ad24-573caee4b79a	t	0	2026-09-13 09:48:31.284157+07	2026-09-13 09:48:31.284173+07	Hội thảo “Kiên định với mục tiêu nghề nghiệp và phát triển kỹ năng kiên cường trong kỷ nguyên công nghệ và AI”	hi-tho-kien-djnh-vi-mc-tieu-ngh-nghip-va-phat-trin-k-nang-kien-cng-trong-k-nguyen-cong-ngh-va-ai	Nhân kỷ niệm 70 năm Ngày Thầy thuốc Việt Nam, Trường Đại học Y khoa Phạm Ngọc Thạch tổ chức hội thảo “Kiên định với mục tiêu nghề nghiệp và phát triển kỹ năng kiên cường trong kỷ nguyên công nghệ và AI”. Chương trình thu hút sự tham gia của hơn 300 sinh viên từ năm 1 đến năm 6, cùng các đại diện từ nhà trường và Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM).	knowledge/news/image005.jpg	\N	https://ky.pnt.edu.vn/vi/hoat-dong-cap-truong/hoi-thao-kien-dinh-voi-muc-tieu-nghe-nghiep-va-phat-trien-ky-nang-kien-cuong-trong-ky-nguyen-cong-nghe-va-ai?utm_source=chatgpt.com	t	\N	_blank	Xem chi tiết	t
+8a1bb945-3c44-44b2-8d35-f2aca3ab81c3	t	0	2026-09-13 09:51:46.320023+07	2026-09-13 09:51:46.320033+07	BLOOMHUB – Mô hình học tập và đổi mới tích hợp	bloomhub-mo-hinh-hc-tp-va-dji-mi-tich-hp	TP. Hồ Chí Minh, ngày 09 tháng 8 năm 2025, Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) chính thức khai trương BloomHub – một khu phức hợp học tập, chia sẻ và đổi mới do IRDM kiến tạo, dành riêng cho thế hệ trẻ Việt Nam. Sự kiện này đánh dấu cột mốc 5 năm nỗ lực thực hiện sứ mệnh “Nâng tầm nguồn lực trẻ Việt Nam – Đổi mới, sáng tạo, bền vững” của Viện. Buổi lễ có sự hiện diện của đại diện các cơ quan nhà nước, doanh nghiệp đối tác, chuyên gia, giảng viên, nhà nghiên cứu và cộng đồng học viên IRDM	knowledge/news/1-5-1024x683.jpg	\N	https://tapchikhqlgd.edu.vn/2025/08/09/bloomhub-mo-hinh-hoc-tap-va-doi-moi-tich-hop/?utm_source=chatgpt.com	t	\N	_blank	Xem chi tiết	t
+43f46c48-a63f-44c2-a156-7fefd004adb4	t	0	2026-09-13 09:56:59.559579+07	2026-09-13 09:56:59.559586+07	Viện Nghiên cứu Phát triển Nguồn lực Việt ra mắt mô hình BloomHub, thúc đẩy học tập và đổi mới sáng tạo	vin-nghien-cu-phat-trin-ngun-lc-vit-ra-mt-mo-hinh-bloomhub-thuc-djy-hc-tp-va-dji-mi-sang-to	Ngày 9/8/2025 tại TP. Hồ Chí Minh – Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) chính thức khai trương BloomHub – một khu phức hợp học tập, chia sẻ và đổi mới do IRDM kiến tạo, dành riêng cho thế hệ trẻ Việt Nam. Sự kiện này đánh dấu cột mốc 5 năm nỗ lực thực hiện sứ mệnh “Nâng tầm nguồn lực trẻ Việt Nam – Đổi mới, Sáng tạo, Bền vững” của Viện. Buổi lễ có sự hiện diện của đại diện các cơ quan nhà nước, doanh nghiệp đối tác, chuyên gia, giảng viên, nhà nghiên cứu và cộng đồng học viên IRDM.		2026-09-13	https://doanhnghiepmanh.vn/vien-nghien-cuu-phat-trien-nguon-luc-viet-ra-mat-mo-hinh-bloomhub-thuc-day-hoc-tap-va-doi-moi-sang-tao-3624/?utm_source=chatgpt.com	t	\N	_blank	Xem chi tiết	t
+6ef20b0e-2233-456c-99b7-94cbf4a657ac	t	0	2026-09-13 09:59:06.370494+07	2026-09-13 09:59:06.370509+07	Khai trương BloomHub - khu phức hợp học tập dành cho thế hệ trẻ Việt Nam	khai-trng-bloomhub-khu-phc-hp-hc-tp-danh-cho-th-h-tr-vit-nam	Ngày 9-8, Viện Nghiên cứu phát triển nguồn lực Việt (IRDM) chính thức khai trương BloomHub – một khu phức hợp học tập, chia sẻ và đổi mới dành riêng cho thế hệ trẻ Việt Nam.	knowledge/news/ra-mat-1.jpg	2026-09-13	https://tuoitre.vn/giaoduc/khai-truong-bloomhub-khu-phuc-hop-hoc-tap-danh-cho-the-he-tre-viet-nam-108903797.htm	t	\N	_blank	Xem chi tiết	t
+27897682-97f9-42ea-b061-44848a1c22a0	t	0	2026-09-13 10:00:31.258141+07	2026-09-13 10:00:31.258158+07	Ra mắt BloomHub-mô hình học tập đổi mới tích hợp	ra-mt-bloomhub-mo-hinh-hc-tp-dji-mi-tich-hp	Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) chính thức ra mắt BloomHub - một khu phức hợp học tập, chia sẻ và đổi mới do IRDM kiến tạo, dành riêng cho thế hệ trẻ Việt Nam tại số 8C Trần Huy Liệu, phường Phú Nhuận, TP.HCM.		2026-09-13	https://baodautu.vn/ra-mat-bloomhub-mo-hinh-hoc-tap-doi-moi-tich-hop-d355277.html?utm_source=chatgpt.com	t	\N	_blank	Xem chi tiết	t
+78b12f50-0269-4c40-a95b-e3d7edfd02b0	t	0	2026-09-13 10:01:33.199185+07	2026-09-13 10:01:33.199195+07	Ra mắt BloomHub - mô hình học tập đột phá với công nghệ tích hợp tiên tiến	ra-mt-bloomhub-mo-hinh-hc-tp-djt-pha-vi-cong-ngh-tich-hp-tien-tin	VOH - Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) chính thức ra mắt BloomHub - một khu phức hợp học tập, chia sẻ và đổi mới do IRDM kiến tạo, dành riêng cho thế hệ trẻ Việt Nam.		2026-09-13	https://voh.com.vn/giao-duc/ra-mat-bloomhub-mo-hinh-hoc-tap-dot-pha-voi-cong-nghe-tich-hop-tien-tien-609990.html?utm_source=chatgpt.com	t	\N	_blank	Xem chi tiết	t
+8301a70a-9509-4939-a755-783be50ae00c	t	0	2026-09-13 10:02:34.689728+07	2026-09-13 10:02:34.689738+07	Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) ra mắt khu phức hợp học tập, chia sẻ và đổi mới BloomHub	vin-nghien-cu-phat-trin-ngun-lc-vit-irdm-ra-mt-khu-phc-hp-hc-tp-chia-s-va-dji-mi-bloomhub	Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) trung tuần tháng 8 vừa qua chính thức ra mắt BloomHub – một khu phức hợp học tập, chia sẻ và đổi mới do IRDM kiến tạo, dành riêng cho thế hệ trẻ Việt Nam. Sự kiện này đánh dấu cột mốc 5 năm nỗ lực thực hiện sứ mệnh “Nâng tầm nguồn lực trẻ Việt Nam – Đổi mới, Sáng tạo, Bền vững” của Viện. Buổi lễ có sự hiện diện của đại diện các cơ quan nhà nước, doanh nghiệp đối tác, chuyên gia, giảng viên, nhà nghiên cứu và cộng đồng học viên IRDM.	knowledge/news/z6916137959568_fac522d97f5b54504b2a8ed8955d6a6c.jpg	2026-09-13		t	\N	_blank	Xem chi tiết	t
+94922265-aba4-4be9-8057-a744b4f97ace	t	0	2026-09-13 09:54:17.371677+07	2026-09-23 14:28:34.015474+07	BloomHub - Mô hình học tập và đổi mới tích hợp	bloomhub-mo-hinh-hc-tp-va-dji-mi-tich-hp22	<p>Ngày 09/8, Viện Nghiên cứu Phát triển Nguồn lực Việt (IRDM) chính thức khai trương BloomHub – một khu phức hợp học tập, chia sẻ và đổi mới do IRDM kiến tạo, dành riêng cho thế hệ trẻ Việt Nam. Sự kiện này đánh dấu cột mốc 5 năm nỗ lực thực hiện sứ mệnh “Nâng tầm nguồn lực trẻ Việt Nam – Đổi mới, Sáng tạo, Bền vững” của Viện.</p>	knowledge/news/z6889926896838_b6bc4266b3cdd4c3a73b8eea9e077d651.jpg	2026-09-13	https://tuoitre.vn/khoahocphothong/bloomhub-mo-hinh-hoc-tap-va-doi-moi-tich-hop-104260788.htm	t	0cb0cf05-8816-4776-a57c-860432aa5fac	_blank	Xem chi tiết	t
 \.
 
 
 --
--- TOC entry 6473 (class 0 OID 313348)
--- Dependencies: 345
+-- TOC entry 6566 (class 0 OID 728495)
+-- Dependencies: 356
 -- Data for Name: knowledge_knowledgenewsitem_topics; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7017,12 +7487,47 @@ COPY public.knowledge_knowledgenewsitem_topics (id, knowledgenewsitem_id, knowle
 10	dce5f7ee-1332-46b0-9f2a-3b0166a10add	d0266422-5241-4b31-b70d-c90025cd6417
 11	dce5f7ee-1332-46b0-9f2a-3b0166a10add	15beced7-8d20-4c4a-89c6-fc013e2bed92
 12	8ac83a5a-2b90-4c83-a261-72149d2e553f	c9824ad1-b71a-4d6d-a839-0bd628e3819f
+13	fba3b5d1-c948-4b39-89ff-cc6cc8069107	15beced7-8d20-4c4a-89c6-fc013e2bed92
+14	c898ff66-dc82-4d6f-80c8-8310f4a629ee	66c6582a-7970-4996-9f05-9d788cdec6cb
+15	dd2574c1-19ff-4f8e-902f-04feff7bd480	d0266422-5241-4b31-b70d-c90025cd6417
+16	dd2574c1-19ff-4f8e-902f-04feff7bd480	66c6582a-7970-4996-9f05-9d788cdec6cb
+17	9042ce97-eb9a-45a2-84f1-c1b22a575e7f	d0266422-5241-4b31-b70d-c90025cd6417
+18	c898ff66-dc82-4d6f-80c8-8310f4a629ee	d0266422-5241-4b31-b70d-c90025cd6417
+19	d30797e2-ab0e-42a3-88c4-440d3cd8db07	d0266422-5241-4b31-b70d-c90025cd6417
+20	d30797e2-ab0e-42a3-88c4-440d3cd8db07	c9824ad1-b71a-4d6d-a839-0bd628e3819f
+21	73edc6d1-919c-49cc-b411-e99b097edbe7	d0266422-5241-4b31-b70d-c90025cd6417
+22	73edc6d1-919c-49cc-b411-e99b097edbe7	15beced7-8d20-4c4a-89c6-fc013e2bed92
+23	37e0f9a7-05a9-4c9d-ad24-573caee4b79a	d0266422-5241-4b31-b70d-c90025cd6417
+24	37e0f9a7-05a9-4c9d-ad24-573caee4b79a	66c6582a-7970-4996-9f05-9d788cdec6cb
+25	8a1bb945-3c44-44b2-8d35-f2aca3ab81c3	d0266422-5241-4b31-b70d-c90025cd6417
+26	94922265-aba4-4be9-8057-a744b4f97ace	d0266422-5241-4b31-b70d-c90025cd6417
+27	6ef20b0e-2233-456c-99b7-94cbf4a657ac	d0266422-5241-4b31-b70d-c90025cd6417
+28	27897682-97f9-42ea-b061-44848a1c22a0	d0266422-5241-4b31-b70d-c90025cd6417
+29	78b12f50-0269-4c40-a95b-e3d7edfd02b0	d0266422-5241-4b31-b70d-c90025cd6417
+30	8301a70a-9509-4939-a755-783be50ae00c	d0266422-5241-4b31-b70d-c90025cd6417
+31	94922265-aba4-4be9-8057-a744b4f97ace	84998d33-9fbb-486f-b6be-7bea52ca274e
+32	94922265-aba4-4be9-8057-a744b4f97ace	15beced7-8d20-4c4a-89c6-fc013e2bed92
 \.
 
 
 --
--- TOC entry 6475 (class 0 OID 313355)
--- Dependencies: 347
+-- TOC entry 6568 (class 0 OID 728502)
+-- Dependencies: 358
+-- Data for Name: knowledge_knowledgepartnergroup; Type: TABLE DATA; Schema: public; Owner: irdm_user
+--
+
+COPY public.knowledge_knowledgepartnergroup (id, is_active, display_order, created_at, updated_at, label, slug) FROM stdin;
+959a6b39-63e1-4dfd-8d48-bc4e1a5d2b95	t	1	2026-09-23 22:59:31.266539+07	2026-09-23 22:59:31.26655+07	Cơ quan quản lý	co-quan-quan-ly
+3319a7a8-454f-4624-b965-d506c4740f39	t	2	2026-09-23 22:59:31.268179+07	2026-09-23 22:59:31.268185+07	Hệ thống y tế	he-thong-y-te
+0be8b975-134d-43de-b462-cf2b28df8388	t	3	2026-09-23 22:59:31.26959+07	2026-09-23 22:59:31.269596+07	Trường đại học	truong-dai-hoc
+c2540c09-5070-44c5-bab3-11e546b217fe	t	4	2026-09-23 22:59:31.270679+07	2026-09-23 22:59:31.270686+07	Doanh nghiệp	doanh-nghiep
+1c87c404-698c-4616-9cfa-8637625fc33e	t	5	2026-09-23 22:59:31.271609+07	2026-09-23 22:59:31.271616+07	Tổ chức quốc tế	to-chuc-quoc-te
+\.
+
+
+--
+-- TOC entry 6569 (class 0 OID 728513)
+-- Dependencies: 359
 -- Data for Name: knowledge_knowledgetopic; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7038,8 +7543,8 @@ c9824ad1-b71a-4d6d-a839-0bd628e3819f	t	3	2026-07-07 21:16:06.476832+07	2026-07-1
 
 
 --
--- TOC entry 6476 (class 0 OID 313372)
--- Dependencies: 348
+-- TOC entry 6570 (class 0 OID 728530)
+-- Dependencies: 360
 -- Data for Name: knowledge_knowledgetopiccard; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7054,8 +7559,8 @@ df11e1bf-9dd1-47df-8ef2-2184eb5eafc0	t	6	2026-07-18 23:57:04.849992+07	2026-08-0
 
 
 --
--- TOC entry 6477 (class 0 OID 313392)
--- Dependencies: 349
+-- TOC entry 6571 (class 0 OID 728550)
+-- Dependencies: 361
 -- Data for Name: knowledge_knowledgetopiccard_tags; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7090,8 +7595,8 @@ COPY public.knowledge_knowledgetopiccard_tags (id, knowledgetopiccard_id, knowle
 
 
 --
--- TOC entry 6479 (class 0 OID 313399)
--- Dependencies: 351
+-- TOC entry 6573 (class 0 OID 728557)
+-- Dependencies: 363
 -- Data for Name: knowledge_knowledgetopiccardtag; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7110,8 +7615,8 @@ dfd31bbc-b89f-4fd7-9d98-a1400b77e725	t	6	2026-07-18 23:57:04.830031+07	2026-07-1
 
 
 --
--- TOC entry 6480 (class 0 OID 313411)
--- Dependencies: 352
+-- TOC entry 6574 (class 0 OID 728569)
+-- Dependencies: 364
 -- Data for Name: solution_solution; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7125,8 +7630,8 @@ b1610548-78b7-41e9-94e5-5aeccd0cb124	t	1	2026-07-05 00:28:32.935264+07	2026-08-1
 
 
 --
--- TOC entry 6481 (class 0 OID 313445)
--- Dependencies: 353
+-- TOC entry 6575 (class 0 OID 728603)
+-- Dependencies: 365
 -- Data for Name: solution_solution_related_capabilities; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7150,8 +7655,8 @@ COPY public.solution_solution_related_capabilities (id, solution_id, capability_
 
 
 --
--- TOC entry 6483 (class 0 OID 313452)
--- Dependencies: 355
+-- TOC entry 6577 (class 0 OID 728610)
+-- Dependencies: 367
 -- Data for Name: solution_solutionapproachstep; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7165,8 +7670,8 @@ COPY public.solution_solutionapproachstep (id, is_active, display_order, created
 
 
 --
--- TOC entry 6484 (class 0 OID 313468)
--- Dependencies: 356
+-- TOC entry 6578 (class 0 OID 728626)
+-- Dependencies: 368
 -- Data for Name: solution_solutionchallenge; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7199,8 +7704,8 @@ e415b2b9-dbee-4f32-bd84-7cc3fe81e315	t	4	2026-07-11 15:18:09.351754+07	2026-07-1
 
 
 --
--- TOC entry 6485 (class 0 OID 313483)
--- Dependencies: 357
+-- TOC entry 6579 (class 0 OID 728641)
+-- Dependencies: 369
 -- Data for Name: solution_solutionfeature; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7230,8 +7735,8 @@ d5b5dbed-8c8f-48f8-b3d1-609820585354	t	4	2026-07-11 15:18:09.349943+07	2026-07-1
 
 
 --
--- TOC entry 6486 (class 0 OID 313494)
--- Dependencies: 358
+-- TOC entry 6580 (class 0 OID 728652)
+-- Dependencies: 370
 -- Data for Name: solution_solutionlistingpage; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7241,8 +7746,8 @@ COPY public.solution_solutionlistingpage (id, is_active, display_order, created_
 
 
 --
--- TOC entry 6487 (class 0 OID 313520)
--- Dependencies: 359
+-- TOC entry 6581 (class 0 OID 728678)
+-- Dependencies: 371
 -- Data for Name: solution_solutionmethodologystep; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7275,8 +7780,8 @@ b22fa384-f550-4dbc-97fc-bdc9c3be8166	t	5	2026-07-11 15:18:09.176671+07	2026-07-1
 
 
 --
--- TOC entry 6488 (class 0 OID 313535)
--- Dependencies: 360
+-- TOC entry 6582 (class 0 OID 728693)
+-- Dependencies: 372
 -- Data for Name: solution_solutionoutput; Type: TABLE DATA; Schema: public; Owner: irdm_user
 --
 
@@ -7313,7 +7818,7 @@ da55ad77-bd87-49e7-b6e0-90bdb67d35c0	t	5	2026-07-11 15:18:09.356032+07	2026-07-1
 
 
 --
--- TOC entry 6498 (class 0 OID 0)
+-- TOC entry 6590 (class 0 OID 0)
 -- Dependencies: 251
 -- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
@@ -7322,7 +7827,7 @@ SELECT pg_catalog.setval('public.auth_group_id_seq', 1, false);
 
 
 --
--- TOC entry 6499 (class 0 OID 0)
+-- TOC entry 6591 (class 0 OID 0)
 -- Dependencies: 253
 -- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
@@ -7331,16 +7836,16 @@ SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 1, false);
 
 
 --
--- TOC entry 6500 (class 0 OID 0)
+-- TOC entry 6592 (class 0 OID 0)
 -- Dependencies: 255
 -- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.auth_permission_id_seq', 428, true);
+SELECT pg_catalog.setval('public.auth_permission_id_seq', 448, true);
 
 
 --
--- TOC entry 6501 (class 0 OID 0)
+-- TOC entry 6593 (class 0 OID 0)
 -- Dependencies: 258
 -- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
@@ -7349,7 +7854,7 @@ SELECT pg_catalog.setval('public.auth_user_groups_id_seq', 1, false);
 
 
 --
--- TOC entry 6502 (class 0 OID 0)
+-- TOC entry 6594 (class 0 OID 0)
 -- Dependencies: 259
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
@@ -7358,7 +7863,7 @@ SELECT pg_catalog.setval('public.auth_user_id_seq', 1, true);
 
 
 --
--- TOC entry 6503 (class 0 OID 0)
+-- TOC entry 6595 (class 0 OID 0)
 -- Dependencies: 261
 -- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
@@ -7367,8 +7872,8 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 
 
 --
--- TOC entry 6504 (class 0 OID 0)
--- Dependencies: 361
+-- TOC entry 6596 (class 0 OID 0)
+-- Dependencies: 271
 -- Name: contact_contactrequest_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
@@ -7376,62 +7881,71 @@ SELECT pg_catalog.setval('public.contact_contactrequest_id_seq', 1, true);
 
 
 --
--- TOC entry 6505 (class 0 OID 0)
--- Dependencies: 275
+-- TOC entry 6597 (class 0 OID 0)
+-- Dependencies: 273
+-- Name: contact_emailsettings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
+--
+
+SELECT pg_catalog.setval('public.contact_emailsettings_id_seq', 1, false);
+
+
+--
+-- TOC entry 6598 (class 0 OID 0)
+-- Dependencies: 279
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 658, true);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 809, true);
 
 
 --
--- TOC entry 6506 (class 0 OID 0)
--- Dependencies: 277
+-- TOC entry 6599 (class 0 OID 0)
+-- Dependencies: 281
 -- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.django_content_type_id_seq', 107, true);
+SELECT pg_catalog.setval('public.django_content_type_id_seq', 112, true);
 
 
 --
--- TOC entry 6507 (class 0 OID 0)
--- Dependencies: 279
+-- TOC entry 6600 (class 0 OID 0)
+-- Dependencies: 283
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 98, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 109, true);
 
 
 --
--- TOC entry 6508 (class 0 OID 0)
--- Dependencies: 285
+-- TOC entry 6601 (class 0 OID 0)
+-- Dependencies: 289
 -- Name: expert_expert_engagement_types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.expert_expert_engagement_types_id_seq', 72, true);
+SELECT pg_catalog.setval('public.expert_expert_engagement_types_id_seq', 79, true);
 
 
 --
--- TOC entry 6509 (class 0 OID 0)
--- Dependencies: 287
+-- TOC entry 6602 (class 0 OID 0)
+-- Dependencies: 291
 -- Name: expert_expert_knowledge_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.expert_expert_knowledge_topics_id_seq', 600, true);
+SELECT pg_catalog.setval('public.expert_expert_knowledge_topics_id_seq', 611, true);
 
 
 --
--- TOC entry 6510 (class 0 OID 0)
--- Dependencies: 289
+-- TOC entry 6603 (class 0 OID 0)
+-- Dependencies: 293
 -- Name: expert_expert_research_areas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.expert_expert_research_areas_id_seq', 176, true);
+SELECT pg_catalog.setval('public.expert_expert_research_areas_id_seq', 184, true);
 
 
 --
--- TOC entry 6511 (class 0 OID 0)
--- Dependencies: 294
+-- TOC entry 6604 (class 0 OID 0)
+-- Dependencies: 298
 -- Name: expert_infogroup_expert_direct_members_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
@@ -7439,8 +7953,8 @@ SELECT pg_catalog.setval('public.expert_infogroup_expert_direct_members_id_seq',
 
 
 --
--- TOC entry 6512 (class 0 OID 0)
--- Dependencies: 296
+-- TOC entry 6605 (class 0 OID 0)
+-- Dependencies: 300
 -- Name: expert_infogroup_expert_research_areas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
@@ -7448,26 +7962,44 @@ SELECT pg_catalog.setval('public.expert_infogroup_expert_research_areas_id_seq',
 
 
 --
--- TOC entry 6513 (class 0 OID 0)
+-- TOC entry 6606 (class 0 OID 0)
 -- Dependencies: 325
+-- Name: home_partnerpageconfig_partner_logos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
+--
+
+SELECT pg_catalog.setval('public.home_partnerpageconfig_partner_logos_id_seq', 12, true);
+
+
+--
+-- TOC entry 6607 (class 0 OID 0)
+-- Dependencies: 334
+-- Name: knowledge_knowledgearticle_partner_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
+--
+
+SELECT pg_catalog.setval('public.knowledge_knowledgearticle_partner_groups_id_seq', 18, true);
+
+
+--
+-- TOC entry 6608 (class 0 OID 0)
+-- Dependencies: 336
 -- Name: knowledge_knowledgearticle_related_capabilities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.knowledge_knowledgearticle_related_capabilities_id_seq', 1, false);
+SELECT pg_catalog.setval('public.knowledge_knowledgearticle_related_capabilities_id_seq', 2, true);
 
 
 --
--- TOC entry 6514 (class 0 OID 0)
--- Dependencies: 327
+-- TOC entry 6609 (class 0 OID 0)
+-- Dependencies: 338
 -- Name: knowledge_knowledgearticle_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.knowledge_knowledgearticle_topics_id_seq', 16, true);
+SELECT pg_catalog.setval('public.knowledge_knowledgearticle_topics_id_seq', 19, true);
 
 
 --
--- TOC entry 6515 (class 0 OID 0)
--- Dependencies: 331
+-- TOC entry 6610 (class 0 OID 0)
+-- Dependencies: 342
 -- Name: knowledge_knowledgecontenttypecard_tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
@@ -7475,8 +8007,8 @@ SELECT pg_catalog.setval('public.knowledge_knowledgecontenttypecard_tags_id_seq'
 
 
 --
--- TOC entry 6516 (class 0 OID 0)
--- Dependencies: 335
+-- TOC entry 6611 (class 0 OID 0)
+-- Dependencies: 346
 -- Name: knowledge_knowledgedownloadrequest_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
@@ -7484,8 +8016,8 @@ SELECT pg_catalog.setval('public.knowledge_knowledgedownloadrequest_id_seq', 1, 
 
 
 --
--- TOC entry 6517 (class 0 OID 0)
--- Dependencies: 338
+-- TOC entry 6612 (class 0 OID 0)
+-- Dependencies: 349
 -- Name: knowledge_knowledgeevent_tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
@@ -7493,17 +8025,17 @@ SELECT pg_catalog.setval('public.knowledge_knowledgeevent_tags_id_seq', 12, true
 
 
 --
--- TOC entry 6518 (class 0 OID 0)
--- Dependencies: 346
+-- TOC entry 6613 (class 0 OID 0)
+-- Dependencies: 357
 -- Name: knowledge_knowledgenewsitem_topics_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
-SELECT pg_catalog.setval('public.knowledge_knowledgenewsitem_topics_id_seq', 12, true);
+SELECT pg_catalog.setval('public.knowledge_knowledgenewsitem_topics_id_seq', 32, true);
 
 
 --
--- TOC entry 6519 (class 0 OID 0)
--- Dependencies: 350
+-- TOC entry 6614 (class 0 OID 0)
+-- Dependencies: 362
 -- Name: knowledge_knowledgetopiccard_tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
@@ -7511,8 +8043,8 @@ SELECT pg_catalog.setval('public.knowledge_knowledgetopiccard_tags_id_seq', 26, 
 
 
 --
--- TOC entry 6520 (class 0 OID 0)
--- Dependencies: 354
+-- TOC entry 6615 (class 0 OID 0)
+-- Dependencies: 366
 -- Name: solution_solution_related_capabilities_id_seq; Type: SEQUENCE SET; Schema: public; Owner: irdm_user
 --
 
@@ -7520,7 +8052,7 @@ SELECT pg_catalog.setval('public.solution_solution_related_capabilities_id_seq',
 
 
 --
--- TOC entry 5480 (class 2606 OID 313601)
+-- TOC entry 5519 (class 2606 OID 728799)
 -- Name: about_aboutcapabilityecosystem about_aboutcapabilityecosystem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7529,7 +8061,7 @@ ALTER TABLE ONLY public.about_aboutcapabilityecosystem
 
 
 --
--- TOC entry 5484 (class 2606 OID 313603)
+-- TOC entry 5523 (class 2606 OID 728801)
 -- Name: about_aboutcontactbanner about_aboutcontactbanner_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7538,7 +8070,7 @@ ALTER TABLE ONLY public.about_aboutcontactbanner
 
 
 --
--- TOC entry 5489 (class 2606 OID 313605)
+-- TOC entry 5528 (class 2606 OID 728803)
 -- Name: about_aboutcontactbannerstat about_aboutcontactbannerstat_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7547,7 +8079,7 @@ ALTER TABLE ONLY public.about_aboutcontactbannerstat
 
 
 --
--- TOC entry 5493 (class 2606 OID 313607)
+-- TOC entry 5532 (class 2606 OID 728805)
 -- Name: about_aboutcorevalue about_aboutcorevalue_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7556,7 +8088,7 @@ ALTER TABLE ONLY public.about_aboutcorevalue
 
 
 --
--- TOC entry 5497 (class 2606 OID 313609)
+-- TOC entry 5536 (class 2606 OID 728807)
 -- Name: about_aboutcorevaluesection about_aboutcorevaluesection_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7565,7 +8097,7 @@ ALTER TABLE ONLY public.about_aboutcorevaluesection
 
 
 --
--- TOC entry 5501 (class 2606 OID 313611)
+-- TOC entry 5540 (class 2606 OID 728809)
 -- Name: about_aboutctabanner about_aboutctabanner_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7574,7 +8106,7 @@ ALTER TABLE ONLY public.about_aboutctabanner
 
 
 --
--- TOC entry 5506 (class 2606 OID 313613)
+-- TOC entry 5545 (class 2606 OID 728811)
 -- Name: about_aboutecosystempartnergroup about_aboutecosystempartnergroup_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7583,7 +8115,7 @@ ALTER TABLE ONLY public.about_aboutecosystempartnergroup
 
 
 --
--- TOC entry 5511 (class 2606 OID 313615)
+-- TOC entry 5550 (class 2606 OID 728813)
 -- Name: about_aboutecosystempartneritem about_aboutecosystempartneritem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7592,7 +8124,7 @@ ALTER TABLE ONLY public.about_aboutecosystempartneritem
 
 
 --
--- TOC entry 5516 (class 2606 OID 313617)
+-- TOC entry 5555 (class 2606 OID 728815)
 -- Name: about_aboutecosystemstatistic about_aboutecosystemstatistic_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7601,7 +8133,7 @@ ALTER TABLE ONLY public.about_aboutecosystemstatistic
 
 
 --
--- TOC entry 5520 (class 2606 OID 313619)
+-- TOC entry 5559 (class 2606 OID 728817)
 -- Name: about_abouthero about_abouthero_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7610,7 +8142,7 @@ ALTER TABLE ONLY public.about_abouthero
 
 
 --
--- TOC entry 5525 (class 2606 OID 313621)
+-- TOC entry 5564 (class 2606 OID 728819)
 -- Name: about_aboutherostatistic about_aboutherostatistic_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7619,7 +8151,7 @@ ALTER TABLE ONLY public.about_aboutherostatistic
 
 
 --
--- TOC entry 5530 (class 2606 OID 313623)
+-- TOC entry 5569 (class 2606 OID 728821)
 -- Name: about_abouthighlightcard about_abouthighlightcard_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7628,7 +8160,7 @@ ALTER TABLE ONLY public.about_abouthighlightcard
 
 
 --
--- TOC entry 5534 (class 2606 OID 313625)
+-- TOC entry 5573 (class 2606 OID 728823)
 -- Name: about_aboutintroduction about_aboutintroduction_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7637,7 +8169,7 @@ ALTER TABLE ONLY public.about_aboutintroduction
 
 
 --
--- TOC entry 5539 (class 2606 OID 313627)
+-- TOC entry 5578 (class 2606 OID 728825)
 -- Name: about_aboutlegalbadge about_aboutlegalbadge_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7646,7 +8178,7 @@ ALTER TABLE ONLY public.about_aboutlegalbadge
 
 
 --
--- TOC entry 5543 (class 2606 OID 313629)
+-- TOC entry 5582 (class 2606 OID 728827)
 -- Name: about_aboutlegalinfo about_aboutlegalinfo_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7655,7 +8187,7 @@ ALTER TABLE ONLY public.about_aboutlegalinfo
 
 
 --
--- TOC entry 5548 (class 2606 OID 313631)
+-- TOC entry 5587 (class 2606 OID 728829)
 -- Name: about_aboutlegalorgattribute about_aboutlegalorgattribute_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7664,7 +8196,7 @@ ALTER TABLE ONLY public.about_aboutlegalorgattribute
 
 
 --
--- TOC entry 5553 (class 2606 OID 313633)
+-- TOC entry 5592 (class 2606 OID 728831)
 -- Name: about_aboutlegaltimelineitem about_aboutlegaltimelineitem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7673,7 +8205,7 @@ ALTER TABLE ONLY public.about_aboutlegaltimelineitem
 
 
 --
--- TOC entry 5557 (class 2606 OID 313635)
+-- TOC entry 5596 (class 2606 OID 728833)
 -- Name: about_aboutnetworksectionheader about_aboutnetworksectionheader_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7682,7 +8214,7 @@ ALTER TABLE ONLY public.about_aboutnetworksectionheader
 
 
 --
--- TOC entry 5562 (class 2606 OID 313637)
+-- TOC entry 5601 (class 2606 OID 728835)
 -- Name: about_aboutorgstructurebulletitem about_aboutorgstructurebulletitem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7691,7 +8223,7 @@ ALTER TABLE ONLY public.about_aboutorgstructurebulletitem
 
 
 --
--- TOC entry 5566 (class 2606 OID 313639)
+-- TOC entry 5605 (class 2606 OID 728837)
 -- Name: about_aboutorgstructurecard about_aboutorgstructurecard_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7700,7 +8232,7 @@ ALTER TABLE ONLY public.about_aboutorgstructurecard
 
 
 --
--- TOC entry 5571 (class 2606 OID 313641)
+-- TOC entry 5610 (class 2606 OID 728839)
 -- Name: about_aboutorgstructuresection about_aboutorgstructuresection_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7709,7 +8241,7 @@ ALTER TABLE ONLY public.about_aboutorgstructuresection
 
 
 --
--- TOC entry 5575 (class 2606 OID 313643)
+-- TOC entry 5614 (class 2606 OID 728841)
 -- Name: about_aboutpageseo about_aboutpageseo_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7718,7 +8250,7 @@ ALTER TABLE ONLY public.about_aboutpageseo
 
 
 --
--- TOC entry 5579 (class 2606 OID 313645)
+-- TOC entry 5618 (class 2606 OID 728843)
 -- Name: about_aboutpartnerbenefit about_aboutpartnerbenefit_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7727,7 +8259,7 @@ ALTER TABLE ONLY public.about_aboutpartnerbenefit
 
 
 --
--- TOC entry 5584 (class 2606 OID 313647)
+-- TOC entry 5623 (class 2606 OID 728845)
 -- Name: about_aboutpartnerbenefitsection about_aboutpartnerbenefitsection_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7736,7 +8268,7 @@ ALTER TABLE ONLY public.about_aboutpartnerbenefitsection
 
 
 --
--- TOC entry 5588 (class 2606 OID 313649)
+-- TOC entry 5627 (class 2606 OID 728847)
 -- Name: about_aboutprofessionalnetwork about_aboutprofessionalnetwork_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7745,7 +8277,7 @@ ALTER TABLE ONLY public.about_aboutprofessionalnetwork
 
 
 --
--- TOC entry 5592 (class 2606 OID 313651)
+-- TOC entry 5631 (class 2606 OID 728849)
 -- Name: about_aboutpurpose about_aboutpurpose_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7754,7 +8286,7 @@ ALTER TABLE ONLY public.about_aboutpurpose
 
 
 --
--- TOC entry 5596 (class 2606 OID 313653)
+-- TOC entry 5635 (class 2606 OID 728851)
 -- Name: about_abouttargetaudience about_abouttargetaudience_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7763,7 +8295,7 @@ ALTER TABLE ONLY public.about_abouttargetaudience
 
 
 --
--- TOC entry 5601 (class 2606 OID 313655)
+-- TOC entry 5640 (class 2606 OID 728853)
 -- Name: about_abouttargetaudiencesection about_abouttargetaudiencesection_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7772,7 +8304,7 @@ ALTER TABLE ONLY public.about_abouttargetaudiencesection
 
 
 --
--- TOC entry 5605 (class 2606 OID 313657)
+-- TOC entry 5644 (class 2606 OID 728855)
 -- Name: about_aboutvisionmission about_aboutvisionmission_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7781,7 +8313,7 @@ ALTER TABLE ONLY public.about_aboutvisionmission
 
 
 --
--- TOC entry 5609 (class 2606 OID 313659)
+-- TOC entry 5648 (class 2606 OID 728857)
 -- Name: about_aboutvisionmissioncard about_aboutvisionmissioncard_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7790,7 +8322,7 @@ ALTER TABLE ONLY public.about_aboutvisionmissioncard
 
 
 --
--- TOC entry 5614 (class 2606 OID 313661)
+-- TOC entry 5653 (class 2606 OID 728859)
 -- Name: about_aboutvisionmissionicon about_aboutvisionmissionicon_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7799,7 +8331,7 @@ ALTER TABLE ONLY public.about_aboutvisionmissionicon
 
 
 --
--- TOC entry 5618 (class 2606 OID 313663)
+-- TOC entry 5657 (class 2606 OID 728861)
 -- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7808,7 +8340,7 @@ ALTER TABLE ONLY public.auth_group
 
 
 --
--- TOC entry 5623 (class 2606 OID 313665)
+-- TOC entry 5662 (class 2606 OID 728863)
 -- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7817,7 +8349,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- TOC entry 5626 (class 2606 OID 313667)
+-- TOC entry 5665 (class 2606 OID 728865)
 -- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7826,7 +8358,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- TOC entry 5620 (class 2606 OID 313669)
+-- TOC entry 5659 (class 2606 OID 728867)
 -- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7835,7 +8367,7 @@ ALTER TABLE ONLY public.auth_group
 
 
 --
--- TOC entry 5629 (class 2606 OID 313671)
+-- TOC entry 5668 (class 2606 OID 728869)
 -- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7844,7 +8376,7 @@ ALTER TABLE ONLY public.auth_permission
 
 
 --
--- TOC entry 5631 (class 2606 OID 313673)
+-- TOC entry 5670 (class 2606 OID 728871)
 -- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7853,7 +8385,7 @@ ALTER TABLE ONLY public.auth_permission
 
 
 --
--- TOC entry 5639 (class 2606 OID 313675)
+-- TOC entry 5678 (class 2606 OID 728873)
 -- Name: auth_user_groups auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7862,7 +8394,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- TOC entry 5642 (class 2606 OID 313677)
+-- TOC entry 5681 (class 2606 OID 728875)
 -- Name: auth_user_groups auth_user_groups_user_id_group_id_94350c0c_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7871,7 +8403,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- TOC entry 5633 (class 2606 OID 313679)
+-- TOC entry 5672 (class 2606 OID 728877)
 -- Name: auth_user auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7880,7 +8412,7 @@ ALTER TABLE ONLY public.auth_user
 
 
 --
--- TOC entry 5645 (class 2606 OID 313681)
+-- TOC entry 5684 (class 2606 OID 728879)
 -- Name: auth_user_user_permissions auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7889,7 +8421,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- TOC entry 5648 (class 2606 OID 313683)
+-- TOC entry 5687 (class 2606 OID 728881)
 -- Name: auth_user_user_permissions auth_user_user_permissions_user_id_permission_id_14a6b632_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7898,7 +8430,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- TOC entry 5636 (class 2606 OID 313685)
+-- TOC entry 5675 (class 2606 OID 728883)
 -- Name: auth_user auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7907,7 +8439,7 @@ ALTER TABLE ONLY public.auth_user
 
 
 --
--- TOC entry 5653 (class 2606 OID 313687)
+-- TOC entry 5692 (class 2606 OID 728885)
 -- Name: capability_capability capability_capability_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7916,7 +8448,7 @@ ALTER TABLE ONLY public.capability_capability
 
 
 --
--- TOC entry 5656 (class 2606 OID 313689)
+-- TOC entry 5695 (class 2606 OID 728887)
 -- Name: capability_capability capability_capability_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7925,7 +8457,7 @@ ALTER TABLE ONLY public.capability_capability
 
 
 --
--- TOC entry 5661 (class 2606 OID 313691)
+-- TOC entry 5700 (class 2606 OID 728889)
 -- Name: capability_capabilitycasestudy capability_capabilitycasestudy_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7934,7 +8466,7 @@ ALTER TABLE ONLY public.capability_capabilitycasestudy
 
 
 --
--- TOC entry 5666 (class 2606 OID 313693)
+-- TOC entry 5705 (class 2606 OID 728891)
 -- Name: capability_capabilitycasestudytag capability_capabilitycasestudytag_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7943,7 +8475,7 @@ ALTER TABLE ONLY public.capability_capabilitycasestudytag
 
 
 --
--- TOC entry 5671 (class 2606 OID 313695)
+-- TOC entry 5710 (class 2606 OID 728893)
 -- Name: capability_capabilityfeature capability_capabilityfeature_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7952,7 +8484,7 @@ ALTER TABLE ONLY public.capability_capabilityfeature
 
 
 --
--- TOC entry 5676 (class 2606 OID 313697)
+-- TOC entry 5715 (class 2606 OID 728895)
 -- Name: capability_capabilityhowstep capability_capabilityhowstep_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7961,7 +8493,7 @@ ALTER TABLE ONLY public.capability_capabilityhowstep
 
 
 --
--- TOC entry 5680 (class 2606 OID 313699)
+-- TOC entry 5719 (class 2606 OID 728897)
 -- Name: capability_capabilitylistingpage capability_capabilitylistingpage_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7970,7 +8502,7 @@ ALTER TABLE ONLY public.capability_capabilitylistingpage
 
 
 --
--- TOC entry 5685 (class 2606 OID 313701)
+-- TOC entry 5724 (class 2606 OID 728899)
 -- Name: capability_capabilityneeditem capability_capabilityneeditem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7979,7 +8511,7 @@ ALTER TABLE ONLY public.capability_capabilityneeditem
 
 
 --
--- TOC entry 5690 (class 2606 OID 313703)
+-- TOC entry 5729 (class 2606 OID 728901)
 -- Name: capability_capabilityoutput capability_capabilityoutput_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7988,7 +8520,7 @@ ALTER TABLE ONLY public.capability_capabilityoutput
 
 
 --
--- TOC entry 6116 (class 2606 OID 334711)
+-- TOC entry 5734 (class 2606 OID 728903)
 -- Name: contact_contactrequest contact_contactrequest_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -7997,7 +8529,16 @@ ALTER TABLE ONLY public.contact_contactrequest
 
 
 --
--- TOC entry 5694 (class 2606 OID 313705)
+-- TOC entry 5738 (class 2606 OID 728905)
+-- Name: contact_emailsettings contact_emailsettings_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.contact_emailsettings
+    ADD CONSTRAINT contact_emailsettings_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 5742 (class 2606 OID 728907)
 -- Name: core_footerlink core_footerlink_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8006,7 +8547,7 @@ ALTER TABLE ONLY public.core_footerlink
 
 
 --
--- TOC entry 5699 (class 2606 OID 313707)
+-- TOC entry 5747 (class 2606 OID 728909)
 -- Name: core_footersection core_footersection_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8015,7 +8556,7 @@ ALTER TABLE ONLY public.core_footersection
 
 
 --
--- TOC entry 5706 (class 2606 OID 313709)
+-- TOC entry 5754 (class 2606 OID 728911)
 -- Name: core_menuitem core_menuitem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8024,7 +8565,7 @@ ALTER TABLE ONLY public.core_menuitem
 
 
 --
--- TOC entry 5710 (class 2606 OID 313711)
+-- TOC entry 5758 (class 2606 OID 728913)
 -- Name: core_sitesettings core_sitesettings_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8033,7 +8574,7 @@ ALTER TABLE ONLY public.core_sitesettings
 
 
 --
--- TOC entry 5713 (class 2606 OID 313713)
+-- TOC entry 5761 (class 2606 OID 728915)
 -- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8042,7 +8583,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 
 --
--- TOC entry 5716 (class 2606 OID 313715)
+-- TOC entry 5764 (class 2606 OID 728917)
 -- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8051,7 +8592,7 @@ ALTER TABLE ONLY public.django_content_type
 
 
 --
--- TOC entry 5718 (class 2606 OID 313717)
+-- TOC entry 5766 (class 2606 OID 728919)
 -- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8060,7 +8601,7 @@ ALTER TABLE ONLY public.django_content_type
 
 
 --
--- TOC entry 5720 (class 2606 OID 313719)
+-- TOC entry 5768 (class 2606 OID 728921)
 -- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8069,7 +8610,7 @@ ALTER TABLE ONLY public.django_migrations
 
 
 --
--- TOC entry 5723 (class 2606 OID 313721)
+-- TOC entry 5771 (class 2606 OID 728923)
 -- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8078,7 +8619,7 @@ ALTER TABLE ONLY public.django_session
 
 
 --
--- TOC entry 5729 (class 2606 OID 313723)
+-- TOC entry 5777 (class 2606 OID 728925)
 -- Name: expert_association expert_association_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8087,7 +8628,7 @@ ALTER TABLE ONLY public.expert_association
 
 
 --
--- TOC entry 5733 (class 2606 OID 313725)
+-- TOC entry 5781 (class 2606 OID 728927)
 -- Name: expert_engagementtype expert_engagementtype_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8096,7 +8637,7 @@ ALTER TABLE ONLY public.expert_engagementtype
 
 
 --
--- TOC entry 5736 (class 2606 OID 313727)
+-- TOC entry 5784 (class 2606 OID 728929)
 -- Name: expert_engagementtype expert_engagementtype_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8105,7 +8646,7 @@ ALTER TABLE ONLY public.expert_engagementtype
 
 
 --
--- TOC entry 5749 (class 2606 OID 313729)
+-- TOC entry 5797 (class 2606 OID 728931)
 -- Name: expert_expert_engagement_types expert_expert_engagement_expert_id_engagementtype_d56e81b9_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8114,7 +8655,7 @@ ALTER TABLE ONLY public.expert_expert_engagement_types
 
 
 --
--- TOC entry 5753 (class 2606 OID 313731)
+-- TOC entry 5801 (class 2606 OID 728933)
 -- Name: expert_expert_engagement_types expert_expert_engagement_types_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8123,7 +8664,7 @@ ALTER TABLE ONLY public.expert_expert_engagement_types
 
 
 --
--- TOC entry 5755 (class 2606 OID 313733)
+-- TOC entry 5803 (class 2606 OID 728935)
 -- Name: expert_expert_knowledge_topics expert_expert_knowledge__expert_id_knowledgetopic_a7909b1f_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8132,7 +8673,7 @@ ALTER TABLE ONLY public.expert_expert_knowledge_topics
 
 
 --
--- TOC entry 5759 (class 2606 OID 313735)
+-- TOC entry 5807 (class 2606 OID 728937)
 -- Name: expert_expert_knowledge_topics expert_expert_knowledge_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8141,7 +8682,7 @@ ALTER TABLE ONLY public.expert_expert_knowledge_topics
 
 
 --
--- TOC entry 5744 (class 2606 OID 313737)
+-- TOC entry 5792 (class 2606 OID 728939)
 -- Name: expert_expert expert_expert_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8150,7 +8691,7 @@ ALTER TABLE ONLY public.expert_expert
 
 
 --
--- TOC entry 5761 (class 2606 OID 313739)
+-- TOC entry 5809 (class 2606 OID 728941)
 -- Name: expert_expert_research_areas expert_expert_research_a_expert_id_researcharea_i_b978855d_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8159,7 +8700,7 @@ ALTER TABLE ONLY public.expert_expert_research_areas
 
 
 --
--- TOC entry 5764 (class 2606 OID 313741)
+-- TOC entry 5812 (class 2606 OID 728943)
 -- Name: expert_expert_research_areas expert_expert_research_areas_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8168,7 +8709,7 @@ ALTER TABLE ONLY public.expert_expert_research_areas
 
 
 --
--- TOC entry 5747 (class 2606 OID 313743)
+-- TOC entry 5795 (class 2606 OID 728945)
 -- Name: expert_expert expert_expert_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8177,7 +8718,7 @@ ALTER TABLE ONLY public.expert_expert
 
 
 --
--- TOC entry 5769 (class 2606 OID 313745)
+-- TOC entry 5817 (class 2606 OID 728947)
 -- Name: expert_expertgroup expert_expertgroup_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8186,7 +8727,7 @@ ALTER TABLE ONLY public.expert_expertgroup
 
 
 --
--- TOC entry 5772 (class 2606 OID 313747)
+-- TOC entry 5820 (class 2606 OID 728949)
 -- Name: expert_expertgroup expert_expertgroup_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8195,7 +8736,7 @@ ALTER TABLE ONLY public.expert_expertgroup
 
 
 --
--- TOC entry 5776 (class 2606 OID 313749)
+-- TOC entry 5824 (class 2606 OID 728951)
 -- Name: expert_expertlistingpage expert_expertlistingpage_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8204,7 +8745,7 @@ ALTER TABLE ONLY public.expert_expertlistingpage
 
 
 --
--- TOC entry 5785 (class 2606 OID 313751)
+-- TOC entry 5833 (class 2606 OID 728953)
 -- Name: expert_infogroup_expert_direct_members expert_infogroup_expert__infogroup_id_expert_id_575ed38e_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8213,7 +8754,7 @@ ALTER TABLE ONLY public.expert_infogroup_expert_direct_members
 
 
 --
--- TOC entry 5791 (class 2606 OID 313753)
+-- TOC entry 5839 (class 2606 OID 728955)
 -- Name: expert_infogroup_expert_research_areas expert_infogroup_expert__infogroup_id_researchare_2e26b323_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8222,7 +8763,7 @@ ALTER TABLE ONLY public.expert_infogroup_expert_research_areas
 
 
 --
--- TOC entry 5789 (class 2606 OID 313755)
+-- TOC entry 5837 (class 2606 OID 728957)
 -- Name: expert_infogroup_expert_direct_members expert_infogroup_expert_direct_members_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8231,7 +8772,7 @@ ALTER TABLE ONLY public.expert_infogroup_expert_direct_members
 
 
 --
--- TOC entry 5794 (class 2606 OID 313757)
+-- TOC entry 5842 (class 2606 OID 728959)
 -- Name: expert_infogroup_expert_research_areas expert_infogroup_expert_research_areas_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8240,7 +8781,7 @@ ALTER TABLE ONLY public.expert_infogroup_expert_research_areas
 
 
 --
--- TOC entry 5780 (class 2606 OID 313759)
+-- TOC entry 5828 (class 2606 OID 728961)
 -- Name: expert_infogroup expert_infogroup_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8249,7 +8790,7 @@ ALTER TABLE ONLY public.expert_infogroup
 
 
 --
--- TOC entry 5783 (class 2606 OID 313761)
+-- TOC entry 5831 (class 2606 OID 728963)
 -- Name: expert_infogroup expert_infogroup_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8258,7 +8799,7 @@ ALTER TABLE ONLY public.expert_infogroup
 
 
 --
--- TOC entry 5800 (class 2606 OID 313763)
+-- TOC entry 5848 (class 2606 OID 728965)
 -- Name: expert_infogroupblock expert_infogroupblock_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8267,7 +8808,7 @@ ALTER TABLE ONLY public.expert_infogroupblock
 
 
 --
--- TOC entry 5805 (class 2606 OID 313765)
+-- TOC entry 5853 (class 2606 OID 728967)
 -- Name: expert_infogroupmember expert_infogroupmember_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8276,7 +8817,7 @@ ALTER TABLE ONLY public.expert_infogroupmember
 
 
 --
--- TOC entry 5809 (class 2606 OID 313767)
+-- TOC entry 5857 (class 2606 OID 728969)
 -- Name: expert_knowledgetopic expert_knowledgetopic_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8285,7 +8826,7 @@ ALTER TABLE ONLY public.expert_knowledgetopic
 
 
 --
--- TOC entry 5812 (class 2606 OID 313769)
+-- TOC entry 5860 (class 2606 OID 728971)
 -- Name: expert_knowledgetopic expert_knowledgetopic_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8294,7 +8835,7 @@ ALTER TABLE ONLY public.expert_knowledgetopic
 
 
 --
--- TOC entry 5818 (class 2606 OID 313771)
+-- TOC entry 5866 (class 2606 OID 728973)
 -- Name: expert_orgnode expert_orgnode_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8303,7 +8844,7 @@ ALTER TABLE ONLY public.expert_orgnode
 
 
 --
--- TOC entry 5822 (class 2606 OID 313773)
+-- TOC entry 5870 (class 2606 OID 728975)
 -- Name: expert_processstep expert_processstep_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8312,7 +8853,7 @@ ALTER TABLE ONLY public.expert_processstep
 
 
 --
--- TOC entry 5826 (class 2606 OID 313775)
+-- TOC entry 5874 (class 2606 OID 728977)
 -- Name: expert_researcharea expert_researcharea_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8321,7 +8862,7 @@ ALTER TABLE ONLY public.expert_researcharea
 
 
 --
--- TOC entry 5829 (class 2606 OID 313777)
+-- TOC entry 5877 (class 2606 OID 728979)
 -- Name: expert_researcharea expert_researcharea_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8330,7 +8871,7 @@ ALTER TABLE ONLY public.expert_researcharea
 
 
 --
--- TOC entry 5833 (class 2606 OID 313779)
+-- TOC entry 5881 (class 2606 OID 728981)
 -- Name: home_audiencesectionheader home_audiencesectionheader_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8339,7 +8880,7 @@ ALTER TABLE ONLY public.home_audiencesectionheader
 
 
 --
--- TOC entry 5837 (class 2606 OID 313781)
+-- TOC entry 5885 (class 2606 OID 728983)
 -- Name: home_audiencesegment home_audiencesegment_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8348,7 +8889,7 @@ ALTER TABLE ONLY public.home_audiencesegment
 
 
 --
--- TOC entry 5841 (class 2606 OID 313783)
+-- TOC entry 5889 (class 2606 OID 728985)
 -- Name: home_audiencetag home_audiencetag_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8357,7 +8898,7 @@ ALTER TABLE ONLY public.home_audiencetag
 
 
 --
--- TOC entry 5846 (class 2606 OID 313785)
+-- TOC entry 5894 (class 2606 OID 728987)
 -- Name: home_capabilitiessectionheader home_capabilitiessectionheader_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8366,7 +8907,7 @@ ALTER TABLE ONLY public.home_capabilitiessectionheader
 
 
 --
--- TOC entry 5850 (class 2606 OID 313787)
+-- TOC entry 5898 (class 2606 OID 728989)
 -- Name: home_corecapability home_corecapability_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8375,7 +8916,7 @@ ALTER TABLE ONLY public.home_corecapability
 
 
 --
--- TOC entry 5854 (class 2606 OID 313789)
+-- TOC entry 5902 (class 2606 OID 728991)
 -- Name: home_ctabanner home_ctabanner_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8384,7 +8925,7 @@ ALTER TABLE ONLY public.home_ctabanner
 
 
 --
--- TOC entry 5858 (class 2606 OID 313791)
+-- TOC entry 5906 (class 2606 OID 728993)
 -- Name: home_evidencesectionheader home_evidencesectionheader_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8393,7 +8934,7 @@ ALTER TABLE ONLY public.home_evidencesectionheader
 
 
 --
--- TOC entry 5862 (class 2606 OID 313793)
+-- TOC entry 5910 (class 2606 OID 728995)
 -- Name: home_featuredsectionconfig home_featuredsectionconfig_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8402,7 +8943,7 @@ ALTER TABLE ONLY public.home_featuredsectionconfig
 
 
 --
--- TOC entry 5865 (class 2606 OID 313795)
+-- TOC entry 5913 (class 2606 OID 728997)
 -- Name: home_featuredsectionconfig home_featuredsectionconfig_section_key_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8411,7 +8952,7 @@ ALTER TABLE ONLY public.home_featuredsectionconfig
 
 
 --
--- TOC entry 5870 (class 2606 OID 313797)
+-- TOC entry 5918 (class 2606 OID 728999)
 -- Name: home_heropilltag home_heropilltag_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8420,7 +8961,7 @@ ALTER TABLE ONLY public.home_heropilltag
 
 
 --
--- TOC entry 5874 (class 2606 OID 313799)
+-- TOC entry 5922 (class 2606 OID 729001)
 -- Name: home_herosection home_herosection_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8429,7 +8970,7 @@ ALTER TABLE ONLY public.home_herosection
 
 
 --
--- TOC entry 5878 (class 2606 OID 313801)
+-- TOC entry 5926 (class 2606 OID 729003)
 -- Name: home_knowledgecategory home_knowledgecategory_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8438,7 +8979,7 @@ ALTER TABLE ONLY public.home_knowledgecategory
 
 
 --
--- TOC entry 5882 (class 2606 OID 313803)
+-- TOC entry 5930 (class 2606 OID 729005)
 -- Name: home_knowledgesectionheader home_knowledgesectionheader_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8447,7 +8988,7 @@ ALTER TABLE ONLY public.home_knowledgesectionheader
 
 
 --
--- TOC entry 5886 (class 2606 OID 313805)
+-- TOC entry 5934 (class 2606 OID 729007)
 -- Name: home_methodologysectionheader home_methodologysectionheader_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8456,7 +8997,7 @@ ALTER TABLE ONLY public.home_methodologysectionheader
 
 
 --
--- TOC entry 5890 (class 2606 OID 313807)
+-- TOC entry 5938 (class 2606 OID 729009)
 -- Name: home_methodologystep home_methodologystep_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8465,7 +9006,16 @@ ALTER TABLE ONLY public.home_methodologystep
 
 
 --
--- TOC entry 5894 (class 2606 OID 313809)
+-- TOC entry 5943 (class 2606 OID 729011)
+-- Name: home_partnercooperationitem home_partnercooperationitem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.home_partnercooperationitem
+    ADD CONSTRAINT home_partnercooperationitem_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 5947 (class 2606 OID 729013)
 -- Name: home_partnerlogo home_partnerlogo_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8474,7 +9024,43 @@ ALTER TABLE ONLY public.home_partnerlogo
 
 
 --
--- TOC entry 5898 (class 2606 OID 313811)
+-- TOC entry 5953 (class 2606 OID 729015)
+-- Name: home_partnerpageconfig_partner_logos home_partnerpageconfig_p_partnerpageconfig_id_par_ca3c1af1_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.home_partnerpageconfig_partner_logos
+    ADD CONSTRAINT home_partnerpageconfig_p_partnerpageconfig_id_par_ca3c1af1_uniq UNIQUE (partnerpageconfig_id, partnerlogo_id);
+
+
+--
+-- TOC entry 5957 (class 2606 OID 729017)
+-- Name: home_partnerpageconfig_partner_logos home_partnerpageconfig_partner_logos_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.home_partnerpageconfig_partner_logos
+    ADD CONSTRAINT home_partnerpageconfig_partner_logos_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 5951 (class 2606 OID 729019)
+-- Name: home_partnerpageconfig home_partnerpageconfig_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.home_partnerpageconfig
+    ADD CONSTRAINT home_partnerpageconfig_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 5962 (class 2606 OID 729021)
+-- Name: home_partnerpagestatistic home_partnerpagestatistic_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.home_partnerpagestatistic
+    ADD CONSTRAINT home_partnerpagestatistic_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 5966 (class 2606 OID 729023)
 -- Name: home_philosophyprinciple home_philosophyprinciple_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8483,7 +9069,7 @@ ALTER TABLE ONLY public.home_philosophyprinciple
 
 
 --
--- TOC entry 5902 (class 2606 OID 313813)
+-- TOC entry 5970 (class 2606 OID 729025)
 -- Name: home_philosophysectionheader home_philosophysectionheader_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8492,7 +9078,7 @@ ALTER TABLE ONLY public.home_philosophysectionheader
 
 
 --
--- TOC entry 5906 (class 2606 OID 313815)
+-- TOC entry 5974 (class 2606 OID 729027)
 -- Name: home_statisticitem home_statisticitem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8501,7 +9087,7 @@ ALTER TABLE ONLY public.home_statisticitem
 
 
 --
--- TOC entry 5913 (class 2606 OID 313817)
+-- TOC entry 5981 (class 2606 OID 729029)
 -- Name: knowledge_knowledgeaccordionitem knowledge_knowledgeaccordionitem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8510,7 +9096,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeaccordionitem
 
 
 --
--- TOC entry 5919 (class 2606 OID 313819)
+-- TOC entry 5987 (class 2606 OID 729031)
 -- Name: knowledge_knowledgeactivitynews knowledge_knowledgeactivitynews_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8519,7 +9105,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeactivitynews
 
 
 --
--- TOC entry 5922 (class 2606 OID 374447)
+-- TOC entry 5990 (class 2606 OID 729033)
 -- Name: knowledge_knowledgeactivitynews knowledge_knowledgeactivitynews_slug_f7e0456e_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8528,7 +9114,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeactivitynews
 
 
 --
--- TOC entry 5934 (class 2606 OID 313821)
+-- TOC entry 6008 (class 2606 OID 729035)
 -- Name: knowledge_knowledgearticle_related_capabilities knowledge_knowledgeartic_knowledgearticle_id_capa_ff7ea31f_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8537,7 +9123,16 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle_related_capabilities
 
 
 --
--- TOC entry 5940 (class 2606 OID 313823)
+-- TOC entry 6002 (class 2606 OID 729037)
+-- Name: knowledge_knowledgearticle_partner_groups knowledge_knowledgeartic_knowledgearticle_id_know_f3f551c6_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.knowledge_knowledgearticle_partner_groups
+    ADD CONSTRAINT knowledge_knowledgeartic_knowledgearticle_id_know_f3f551c6_uniq UNIQUE (knowledgearticle_id, knowledgepartnergroup_id);
+
+
+--
+-- TOC entry 6014 (class 2606 OID 729039)
 -- Name: knowledge_knowledgearticle_topics knowledge_knowledgeartic_knowledgearticle_id_know_f8ce21d1_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8546,7 +9141,16 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle_topics
 
 
 --
--- TOC entry 5929 (class 2606 OID 313825)
+-- TOC entry 6006 (class 2606 OID 729041)
+-- Name: knowledge_knowledgearticle_partner_groups knowledge_knowledgearticle_partner_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.knowledge_knowledgearticle_partner_groups
+    ADD CONSTRAINT knowledge_knowledgearticle_partner_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 5997 (class 2606 OID 729043)
 -- Name: knowledge_knowledgearticle knowledge_knowledgearticle_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8555,7 +9159,7 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle
 
 
 --
--- TOC entry 5938 (class 2606 OID 313827)
+-- TOC entry 6012 (class 2606 OID 729045)
 -- Name: knowledge_knowledgearticle_related_capabilities knowledge_knowledgearticle_related_capabilities_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8564,7 +9168,7 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle_related_capabilities
 
 
 --
--- TOC entry 5932 (class 2606 OID 313829)
+-- TOC entry 6000 (class 2606 OID 729047)
 -- Name: knowledge_knowledgearticle knowledge_knowledgearticle_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8573,7 +9177,7 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle
 
 
 --
--- TOC entry 5944 (class 2606 OID 313831)
+-- TOC entry 6018 (class 2606 OID 729049)
 -- Name: knowledge_knowledgearticle_topics knowledge_knowledgearticle_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8582,7 +9186,7 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle_topics
 
 
 --
--- TOC entry 5949 (class 2606 OID 313833)
+-- TOC entry 6023 (class 2606 OID 729051)
 -- Name: knowledge_knowledgecategory knowledge_knowledgecategory_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8591,7 +9195,7 @@ ALTER TABLE ONLY public.knowledge_knowledgecategory
 
 
 --
--- TOC entry 5952 (class 2606 OID 313835)
+-- TOC entry 6026 (class 2606 OID 729053)
 -- Name: knowledge_knowledgecategory knowledge_knowledgecategory_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8600,7 +9204,7 @@ ALTER TABLE ONLY public.knowledge_knowledgecategory
 
 
 --
--- TOC entry 5961 (class 2606 OID 313837)
+-- TOC entry 6035 (class 2606 OID 729055)
 -- Name: knowledge_knowledgecontenttypecard_tags knowledge_knowledgeconte_knowledgecontenttypecard_0adae4b8_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8609,7 +9213,7 @@ ALTER TABLE ONLY public.knowledge_knowledgecontenttypecard_tags
 
 
 --
--- TOC entry 5959 (class 2606 OID 313839)
+-- TOC entry 6033 (class 2606 OID 729057)
 -- Name: knowledge_knowledgecontenttypecard knowledge_knowledgecontenttypecard_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8618,7 +9222,7 @@ ALTER TABLE ONLY public.knowledge_knowledgecontenttypecard
 
 
 --
--- TOC entry 5965 (class 2606 OID 313841)
+-- TOC entry 6039 (class 2606 OID 729059)
 -- Name: knowledge_knowledgecontenttypecard_tags knowledge_knowledgecontenttypecard_tags_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8627,7 +9231,7 @@ ALTER TABLE ONLY public.knowledge_knowledgecontenttypecard_tags
 
 
 --
--- TOC entry 5971 (class 2606 OID 313843)
+-- TOC entry 6045 (class 2606 OID 729061)
 -- Name: knowledge_knowledgectabutton knowledge_knowledgectabutton_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8636,7 +9240,7 @@ ALTER TABLE ONLY public.knowledge_knowledgectabutton
 
 
 --
--- TOC entry 5977 (class 2606 OID 313845)
+-- TOC entry 6051 (class 2606 OID 729063)
 -- Name: knowledge_knowledgedownload knowledge_knowledgedownload_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8645,7 +9249,7 @@ ALTER TABLE ONLY public.knowledge_knowledgedownload
 
 
 --
--- TOC entry 5980 (class 2606 OID 313847)
+-- TOC entry 6054 (class 2606 OID 729065)
 -- Name: knowledge_knowledgedownload knowledge_knowledgedownload_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8654,7 +9258,7 @@ ALTER TABLE ONLY public.knowledge_knowledgedownload
 
 
 --
--- TOC entry 5982 (class 2606 OID 313849)
+-- TOC entry 6056 (class 2606 OID 729067)
 -- Name: knowledge_knowledgedownloadrequest knowledge_knowledgedownloadrequest_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8663,7 +9267,7 @@ ALTER TABLE ONLY public.knowledge_knowledgedownloadrequest
 
 
 --
--- TOC entry 5990 (class 2606 OID 313851)
+-- TOC entry 6064 (class 2606 OID 729069)
 -- Name: knowledge_knowledgeevent_tags knowledge_knowledgeevent_knowledgeevent_id_knowle_14189bdc_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8672,7 +9276,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeevent_tags
 
 
 --
--- TOC entry 5988 (class 2606 OID 313853)
+-- TOC entry 6062 (class 2606 OID 729071)
 -- Name: knowledge_knowledgeevent knowledge_knowledgeevent_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8681,7 +9285,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeevent
 
 
 --
--- TOC entry 5994 (class 2606 OID 313855)
+-- TOC entry 6068 (class 2606 OID 729073)
 -- Name: knowledge_knowledgeevent_tags knowledge_knowledgeevent_tags_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8690,7 +9294,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeevent_tags
 
 
 --
--- TOC entry 5998 (class 2606 OID 313857)
+-- TOC entry 6072 (class 2606 OID 729075)
 -- Name: knowledge_knowledgeeventtag knowledge_knowledgeeventtag_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8699,7 +9303,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeeventtag
 
 
 --
--- TOC entry 6001 (class 2606 OID 313859)
+-- TOC entry 6075 (class 2606 OID 729077)
 -- Name: knowledge_knowledgeeventtag knowledge_knowledgeeventtag_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8708,7 +9312,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeeventtag
 
 
 --
--- TOC entry 6003 (class 2606 OID 313861)
+-- TOC entry 6077 (class 2606 OID 729079)
 -- Name: knowledge_knowledgefeaturedarticle knowledge_knowledgefeatu_listing_page_id_article__50aa8b9c_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8717,7 +9321,7 @@ ALTER TABLE ONLY public.knowledge_knowledgefeaturedarticle
 
 
 --
--- TOC entry 6009 (class 2606 OID 313863)
+-- TOC entry 6083 (class 2606 OID 729081)
 -- Name: knowledge_knowledgefeaturedarticle knowledge_knowledgefeaturedarticle_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8726,7 +9330,7 @@ ALTER TABLE ONLY public.knowledge_knowledgefeaturedarticle
 
 
 --
--- TOC entry 6014 (class 2606 OID 313865)
+-- TOC entry 6088 (class 2606 OID 729083)
 -- Name: knowledge_knowledgefiltergroup knowledge_knowledgefiltergroup_param_key_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8735,7 +9339,7 @@ ALTER TABLE ONLY public.knowledge_knowledgefiltergroup
 
 
 --
--- TOC entry 6016 (class 2606 OID 313867)
+-- TOC entry 6090 (class 2606 OID 729085)
 -- Name: knowledge_knowledgefiltergroup knowledge_knowledgefiltergroup_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8744,7 +9348,7 @@ ALTER TABLE ONLY public.knowledge_knowledgefiltergroup
 
 
 --
--- TOC entry 6020 (class 2606 OID 313869)
+-- TOC entry 6094 (class 2606 OID 729087)
 -- Name: knowledge_knowledgefilteritem knowledge_knowledgefilteritem_group_id_value_29c1b284_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8753,7 +9357,7 @@ ALTER TABLE ONLY public.knowledge_knowledgefilteritem
 
 
 --
--- TOC entry 6023 (class 2606 OID 313871)
+-- TOC entry 6097 (class 2606 OID 729089)
 -- Name: knowledge_knowledgefilteritem knowledge_knowledgefilteritem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8762,7 +9366,7 @@ ALTER TABLE ONLY public.knowledge_knowledgefilteritem
 
 
 --
--- TOC entry 6027 (class 2606 OID 313873)
+-- TOC entry 6101 (class 2606 OID 729091)
 -- Name: knowledge_knowledgelistingpage knowledge_knowledgelistingpage_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8771,7 +9375,7 @@ ALTER TABLE ONLY public.knowledge_knowledgelistingpage
 
 
 --
--- TOC entry 6039 (class 2606 OID 313875)
+-- TOC entry 6113 (class 2606 OID 729093)
 -- Name: knowledge_knowledgenewsitem_topics knowledge_knowledgenewsi_knowledgenewsitem_id_kno_86634e0c_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8780,7 +9384,7 @@ ALTER TABLE ONLY public.knowledge_knowledgenewsitem_topics
 
 
 --
--- TOC entry 6034 (class 2606 OID 313877)
+-- TOC entry 6108 (class 2606 OID 729095)
 -- Name: knowledge_knowledgenewsitem knowledge_knowledgenewsitem_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8789,7 +9393,7 @@ ALTER TABLE ONLY public.knowledge_knowledgenewsitem
 
 
 --
--- TOC entry 6037 (class 2606 OID 313879)
+-- TOC entry 6111 (class 2606 OID 729097)
 -- Name: knowledge_knowledgenewsitem knowledge_knowledgenewsitem_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8798,7 +9402,7 @@ ALTER TABLE ONLY public.knowledge_knowledgenewsitem
 
 
 --
--- TOC entry 6043 (class 2606 OID 313881)
+-- TOC entry 6117 (class 2606 OID 729099)
 -- Name: knowledge_knowledgenewsitem_topics knowledge_knowledgenewsitem_topics_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8807,7 +9411,25 @@ ALTER TABLE ONLY public.knowledge_knowledgenewsitem_topics
 
 
 --
--- TOC entry 6060 (class 2606 OID 313883)
+-- TOC entry 6121 (class 2606 OID 729101)
+-- Name: knowledge_knowledgepartnergroup knowledge_knowledgepartnergroup_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.knowledge_knowledgepartnergroup
+    ADD CONSTRAINT knowledge_knowledgepartnergroup_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 6124 (class 2606 OID 729103)
+-- Name: knowledge_knowledgepartnergroup knowledge_knowledgepartnergroup_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.knowledge_knowledgepartnergroup
+    ADD CONSTRAINT knowledge_knowledgepartnergroup_slug_key UNIQUE (slug);
+
+
+--
+-- TOC entry 6141 (class 2606 OID 729105)
 -- Name: knowledge_knowledgetopiccard_tags knowledge_knowledgetopic_knowledgetopiccard_id_kn_f430a879_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8816,7 +9438,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopiccard_tags
 
 
 --
--- TOC entry 6048 (class 2606 OID 313885)
+-- TOC entry 6129 (class 2606 OID 729107)
 -- Name: knowledge_knowledgetopic knowledge_knowledgetopic_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8825,7 +9447,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopic
 
 
 --
--- TOC entry 6051 (class 2606 OID 313887)
+-- TOC entry 6132 (class 2606 OID 729109)
 -- Name: knowledge_knowledgetopic knowledge_knowledgetopic_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8834,7 +9456,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopic
 
 
 --
--- TOC entry 6057 (class 2606 OID 313889)
+-- TOC entry 6138 (class 2606 OID 729111)
 -- Name: knowledge_knowledgetopiccard knowledge_knowledgetopiccard_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8843,7 +9465,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopiccard
 
 
 --
--- TOC entry 6064 (class 2606 OID 313891)
+-- TOC entry 6145 (class 2606 OID 729113)
 -- Name: knowledge_knowledgetopiccard_tags knowledge_knowledgetopiccard_tags_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8852,7 +9474,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopiccard_tags
 
 
 --
--- TOC entry 6068 (class 2606 OID 313893)
+-- TOC entry 6149 (class 2606 OID 729115)
 -- Name: knowledge_knowledgetopiccardtag knowledge_knowledgetopiccardtag_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8861,7 +9483,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopiccardtag
 
 
 --
--- TOC entry 6071 (class 2606 OID 313895)
+-- TOC entry 6152 (class 2606 OID 729117)
 -- Name: knowledge_knowledgetopiccardtag knowledge_knowledgetopiccardtag_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8870,7 +9492,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopiccardtag
 
 
 --
--- TOC entry 6076 (class 2606 OID 313897)
+-- TOC entry 6157 (class 2606 OID 729119)
 -- Name: solution_solution solution_solution_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8879,7 +9501,7 @@ ALTER TABLE ONLY public.solution_solution
 
 
 --
--- TOC entry 6081 (class 2606 OID 313899)
+-- TOC entry 6162 (class 2606 OID 729121)
 -- Name: solution_solution_related_capabilities solution_solution_relate_solution_id_capability_i_3aafcdf0_uniq; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8888,7 +9510,7 @@ ALTER TABLE ONLY public.solution_solution_related_capabilities
 
 
 --
--- TOC entry 6084 (class 2606 OID 313901)
+-- TOC entry 6165 (class 2606 OID 729123)
 -- Name: solution_solution_related_capabilities solution_solution_related_capabilities_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8897,7 +9519,7 @@ ALTER TABLE ONLY public.solution_solution_related_capabilities
 
 
 --
--- TOC entry 6079 (class 2606 OID 313903)
+-- TOC entry 6160 (class 2606 OID 729125)
 -- Name: solution_solution solution_solution_slug_key; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8906,7 +9528,7 @@ ALTER TABLE ONLY public.solution_solution
 
 
 --
--- TOC entry 6089 (class 2606 OID 313905)
+-- TOC entry 6170 (class 2606 OID 729127)
 -- Name: solution_solutionapproachstep solution_solutionapproachstep_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8915,7 +9537,7 @@ ALTER TABLE ONLY public.solution_solutionapproachstep
 
 
 --
--- TOC entry 6093 (class 2606 OID 313907)
+-- TOC entry 6174 (class 2606 OID 729129)
 -- Name: solution_solutionchallenge solution_solutionchallenge_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8924,7 +9546,7 @@ ALTER TABLE ONLY public.solution_solutionchallenge
 
 
 --
--- TOC entry 6098 (class 2606 OID 313909)
+-- TOC entry 6179 (class 2606 OID 729131)
 -- Name: solution_solutionfeature solution_solutionfeature_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8933,7 +9555,7 @@ ALTER TABLE ONLY public.solution_solutionfeature
 
 
 --
--- TOC entry 6103 (class 2606 OID 313911)
+-- TOC entry 6184 (class 2606 OID 729133)
 -- Name: solution_solutionlistingpage solution_solutionlistingpage_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8942,7 +9564,7 @@ ALTER TABLE ONLY public.solution_solutionlistingpage
 
 
 --
--- TOC entry 6107 (class 2606 OID 313913)
+-- TOC entry 6188 (class 2606 OID 729135)
 -- Name: solution_solutionmethodologystep solution_solutionmethodologystep_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8951,7 +9573,7 @@ ALTER TABLE ONLY public.solution_solutionmethodologystep
 
 
 --
--- TOC entry 6112 (class 2606 OID 313915)
+-- TOC entry 6193 (class 2606 OID 729137)
 -- Name: solution_solutionoutput solution_solutionoutput_pkey; Type: CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -8960,7 +9582,7 @@ ALTER TABLE ONLY public.solution_solutionoutput
 
 
 --
--- TOC entry 5477 (class 1259 OID 313916)
+-- TOC entry 5516 (class 1259 OID 729138)
 -- Name: about_aboutcapabilityecosystem_display_order_9752ab22; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -8968,7 +9590,7 @@ CREATE INDEX about_aboutcapabilityecosystem_display_order_9752ab22 ON public.abo
 
 
 --
--- TOC entry 5478 (class 1259 OID 313917)
+-- TOC entry 5517 (class 1259 OID 729139)
 -- Name: about_aboutcapabilityecosystem_is_active_27d7d8a6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -8976,7 +9598,7 @@ CREATE INDEX about_aboutcapabilityecosystem_is_active_27d7d8a6 ON public.about_a
 
 
 --
--- TOC entry 5481 (class 1259 OID 313918)
+-- TOC entry 5520 (class 1259 OID 729140)
 -- Name: about_aboutcontactbanner_display_order_578cdcd6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -8984,7 +9606,7 @@ CREATE INDEX about_aboutcontactbanner_display_order_578cdcd6 ON public.about_abo
 
 
 --
--- TOC entry 5482 (class 1259 OID 313919)
+-- TOC entry 5521 (class 1259 OID 729141)
 -- Name: about_aboutcontactbanner_is_active_9ad21cc5; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -8992,7 +9614,7 @@ CREATE INDEX about_aboutcontactbanner_is_active_9ad21cc5 ON public.about_aboutco
 
 
 --
--- TOC entry 5485 (class 1259 OID 313920)
+-- TOC entry 5524 (class 1259 OID 729142)
 -- Name: about_aboutcontactbannerstat_banner_id_0d445c9d; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9000,7 +9622,7 @@ CREATE INDEX about_aboutcontactbannerstat_banner_id_0d445c9d ON public.about_abo
 
 
 --
--- TOC entry 5486 (class 1259 OID 313921)
+-- TOC entry 5525 (class 1259 OID 729143)
 -- Name: about_aboutcontactbannerstat_display_order_fc3a1776; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9008,7 +9630,7 @@ CREATE INDEX about_aboutcontactbannerstat_display_order_fc3a1776 ON public.about
 
 
 --
--- TOC entry 5487 (class 1259 OID 313922)
+-- TOC entry 5526 (class 1259 OID 729144)
 -- Name: about_aboutcontactbannerstat_is_active_cba9ebe9; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9016,7 +9638,7 @@ CREATE INDEX about_aboutcontactbannerstat_is_active_cba9ebe9 ON public.about_abo
 
 
 --
--- TOC entry 5490 (class 1259 OID 313923)
+-- TOC entry 5529 (class 1259 OID 729145)
 -- Name: about_aboutcorevalue_display_order_9fb59176; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9024,7 +9646,7 @@ CREATE INDEX about_aboutcorevalue_display_order_9fb59176 ON public.about_aboutco
 
 
 --
--- TOC entry 5491 (class 1259 OID 313924)
+-- TOC entry 5530 (class 1259 OID 729146)
 -- Name: about_aboutcorevalue_is_active_7281b5cb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9032,7 +9654,7 @@ CREATE INDEX about_aboutcorevalue_is_active_7281b5cb ON public.about_aboutcoreva
 
 
 --
--- TOC entry 5494 (class 1259 OID 313925)
+-- TOC entry 5533 (class 1259 OID 729147)
 -- Name: about_aboutcorevaluesection_display_order_99c337d7; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9040,7 +9662,7 @@ CREATE INDEX about_aboutcorevaluesection_display_order_99c337d7 ON public.about_
 
 
 --
--- TOC entry 5495 (class 1259 OID 313926)
+-- TOC entry 5534 (class 1259 OID 729148)
 -- Name: about_aboutcorevaluesection_is_active_c20ae892; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9048,7 +9670,7 @@ CREATE INDEX about_aboutcorevaluesection_is_active_c20ae892 ON public.about_abou
 
 
 --
--- TOC entry 5498 (class 1259 OID 313927)
+-- TOC entry 5537 (class 1259 OID 729149)
 -- Name: about_aboutctabanner_display_order_c3a28273; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9056,7 +9678,7 @@ CREATE INDEX about_aboutctabanner_display_order_c3a28273 ON public.about_aboutct
 
 
 --
--- TOC entry 5499 (class 1259 OID 313928)
+-- TOC entry 5538 (class 1259 OID 729150)
 -- Name: about_aboutctabanner_is_active_3a51609e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9064,7 +9686,7 @@ CREATE INDEX about_aboutctabanner_is_active_3a51609e ON public.about_aboutctaban
 
 
 --
--- TOC entry 5502 (class 1259 OID 313929)
+-- TOC entry 5541 (class 1259 OID 729151)
 -- Name: about_aboutecosystempartnergroup_display_order_33e8c629; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9072,7 +9694,7 @@ CREATE INDEX about_aboutecosystempartnergroup_display_order_33e8c629 ON public.a
 
 
 --
--- TOC entry 5503 (class 1259 OID 313930)
+-- TOC entry 5542 (class 1259 OID 729152)
 -- Name: about_aboutecosystempartnergroup_ecosystem_id_eff726e8; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9080,7 +9702,7 @@ CREATE INDEX about_aboutecosystempartnergroup_ecosystem_id_eff726e8 ON public.ab
 
 
 --
--- TOC entry 5504 (class 1259 OID 313931)
+-- TOC entry 5543 (class 1259 OID 729153)
 -- Name: about_aboutecosystempartnergroup_is_active_67a4bc33; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9088,7 +9710,7 @@ CREATE INDEX about_aboutecosystempartnergroup_is_active_67a4bc33 ON public.about
 
 
 --
--- TOC entry 5507 (class 1259 OID 313932)
+-- TOC entry 5546 (class 1259 OID 729154)
 -- Name: about_aboutecosystempartneritem_display_order_eac074cb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9096,7 +9718,7 @@ CREATE INDEX about_aboutecosystempartneritem_display_order_eac074cb ON public.ab
 
 
 --
--- TOC entry 5508 (class 1259 OID 313933)
+-- TOC entry 5547 (class 1259 OID 729155)
 -- Name: about_aboutecosystempartneritem_group_id_4a0d4b4e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9104,7 +9726,7 @@ CREATE INDEX about_aboutecosystempartneritem_group_id_4a0d4b4e ON public.about_a
 
 
 --
--- TOC entry 5509 (class 1259 OID 313934)
+-- TOC entry 5548 (class 1259 OID 729156)
 -- Name: about_aboutecosystempartneritem_is_active_6a536e9b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9112,7 +9734,7 @@ CREATE INDEX about_aboutecosystempartneritem_is_active_6a536e9b ON public.about_
 
 
 --
--- TOC entry 5512 (class 1259 OID 313935)
+-- TOC entry 5551 (class 1259 OID 729157)
 -- Name: about_aboutecosystemstatistic_display_order_48f2c0eb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9120,7 +9742,7 @@ CREATE INDEX about_aboutecosystemstatistic_display_order_48f2c0eb ON public.abou
 
 
 --
--- TOC entry 5513 (class 1259 OID 313936)
+-- TOC entry 5552 (class 1259 OID 729158)
 -- Name: about_aboutecosystemstatistic_ecosystem_id_dbb1def4; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9128,7 +9750,7 @@ CREATE INDEX about_aboutecosystemstatistic_ecosystem_id_dbb1def4 ON public.about
 
 
 --
--- TOC entry 5514 (class 1259 OID 313937)
+-- TOC entry 5553 (class 1259 OID 729159)
 -- Name: about_aboutecosystemstatistic_is_active_c01d19ac; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9136,7 +9758,7 @@ CREATE INDEX about_aboutecosystemstatistic_is_active_c01d19ac ON public.about_ab
 
 
 --
--- TOC entry 5517 (class 1259 OID 313938)
+-- TOC entry 5556 (class 1259 OID 729160)
 -- Name: about_abouthero_display_order_f752da4c; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9144,7 +9766,7 @@ CREATE INDEX about_abouthero_display_order_f752da4c ON public.about_abouthero US
 
 
 --
--- TOC entry 5518 (class 1259 OID 313939)
+-- TOC entry 5557 (class 1259 OID 729161)
 -- Name: about_abouthero_is_active_f626dc40; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9152,7 +9774,7 @@ CREATE INDEX about_abouthero_is_active_f626dc40 ON public.about_abouthero USING 
 
 
 --
--- TOC entry 5521 (class 1259 OID 313940)
+-- TOC entry 5560 (class 1259 OID 729162)
 -- Name: about_aboutherostatistic_display_order_43299ee0; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9160,7 +9782,7 @@ CREATE INDEX about_aboutherostatistic_display_order_43299ee0 ON public.about_abo
 
 
 --
--- TOC entry 5522 (class 1259 OID 313941)
+-- TOC entry 5561 (class 1259 OID 729163)
 -- Name: about_aboutherostatistic_hero_id_f3dd3aef; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9168,7 +9790,7 @@ CREATE INDEX about_aboutherostatistic_hero_id_f3dd3aef ON public.about_abouthero
 
 
 --
--- TOC entry 5523 (class 1259 OID 313942)
+-- TOC entry 5562 (class 1259 OID 729164)
 -- Name: about_aboutherostatistic_is_active_fda64fc3; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9176,7 +9798,7 @@ CREATE INDEX about_aboutherostatistic_is_active_fda64fc3 ON public.about_abouthe
 
 
 --
--- TOC entry 5526 (class 1259 OID 313943)
+-- TOC entry 5565 (class 1259 OID 729165)
 -- Name: about_abouthighlightcard_display_order_8b33e1ad; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9184,7 +9806,7 @@ CREATE INDEX about_abouthighlightcard_display_order_8b33e1ad ON public.about_abo
 
 
 --
--- TOC entry 5527 (class 1259 OID 313944)
+-- TOC entry 5566 (class 1259 OID 729166)
 -- Name: about_abouthighlightcard_intro_id_9883885b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9192,7 +9814,7 @@ CREATE INDEX about_abouthighlightcard_intro_id_9883885b ON public.about_abouthig
 
 
 --
--- TOC entry 5528 (class 1259 OID 313945)
+-- TOC entry 5567 (class 1259 OID 729167)
 -- Name: about_abouthighlightcard_is_active_31a0e107; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9200,7 +9822,7 @@ CREATE INDEX about_abouthighlightcard_is_active_31a0e107 ON public.about_abouthi
 
 
 --
--- TOC entry 5531 (class 1259 OID 313946)
+-- TOC entry 5570 (class 1259 OID 729168)
 -- Name: about_aboutintroduction_display_order_85117433; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9208,7 +9830,7 @@ CREATE INDEX about_aboutintroduction_display_order_85117433 ON public.about_abou
 
 
 --
--- TOC entry 5532 (class 1259 OID 313947)
+-- TOC entry 5571 (class 1259 OID 729169)
 -- Name: about_aboutintroduction_is_active_e81caa92; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9216,7 +9838,7 @@ CREATE INDEX about_aboutintroduction_is_active_e81caa92 ON public.about_aboutint
 
 
 --
--- TOC entry 5535 (class 1259 OID 313948)
+-- TOC entry 5574 (class 1259 OID 729170)
 -- Name: about_aboutlegalbadge_display_order_fcb4cc6a; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9224,7 +9846,7 @@ CREATE INDEX about_aboutlegalbadge_display_order_fcb4cc6a ON public.about_aboutl
 
 
 --
--- TOC entry 5536 (class 1259 OID 313949)
+-- TOC entry 5575 (class 1259 OID 729171)
 -- Name: about_aboutlegalbadge_is_active_9d11a65c; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9232,7 +9854,7 @@ CREATE INDEX about_aboutlegalbadge_is_active_9d11a65c ON public.about_aboutlegal
 
 
 --
--- TOC entry 5537 (class 1259 OID 313950)
+-- TOC entry 5576 (class 1259 OID 729172)
 -- Name: about_aboutlegalbadge_legal_info_id_97d065ff; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9240,7 +9862,7 @@ CREATE INDEX about_aboutlegalbadge_legal_info_id_97d065ff ON public.about_aboutl
 
 
 --
--- TOC entry 5540 (class 1259 OID 313951)
+-- TOC entry 5579 (class 1259 OID 729173)
 -- Name: about_aboutlegalinfo_display_order_80c423ea; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9248,7 +9870,7 @@ CREATE INDEX about_aboutlegalinfo_display_order_80c423ea ON public.about_aboutle
 
 
 --
--- TOC entry 5541 (class 1259 OID 313952)
+-- TOC entry 5580 (class 1259 OID 729174)
 -- Name: about_aboutlegalinfo_is_active_371d1b63; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9256,7 +9878,7 @@ CREATE INDEX about_aboutlegalinfo_is_active_371d1b63 ON public.about_aboutlegali
 
 
 --
--- TOC entry 5544 (class 1259 OID 313953)
+-- TOC entry 5583 (class 1259 OID 729175)
 -- Name: about_aboutlegalorgattribute_display_order_ef4bf721; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9264,7 +9886,7 @@ CREATE INDEX about_aboutlegalorgattribute_display_order_ef4bf721 ON public.about
 
 
 --
--- TOC entry 5545 (class 1259 OID 313954)
+-- TOC entry 5584 (class 1259 OID 729176)
 -- Name: about_aboutlegalorgattribute_is_active_745d7472; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9272,7 +9894,7 @@ CREATE INDEX about_aboutlegalorgattribute_is_active_745d7472 ON public.about_abo
 
 
 --
--- TOC entry 5546 (class 1259 OID 313955)
+-- TOC entry 5585 (class 1259 OID 729177)
 -- Name: about_aboutlegalorgattribute_legal_info_id_4f81322e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9280,7 +9902,7 @@ CREATE INDEX about_aboutlegalorgattribute_legal_info_id_4f81322e ON public.about
 
 
 --
--- TOC entry 5549 (class 1259 OID 313956)
+-- TOC entry 5588 (class 1259 OID 729178)
 -- Name: about_aboutlegaltimelineitem_display_order_4252c0ee; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9288,7 +9910,7 @@ CREATE INDEX about_aboutlegaltimelineitem_display_order_4252c0ee ON public.about
 
 
 --
--- TOC entry 5550 (class 1259 OID 313957)
+-- TOC entry 5589 (class 1259 OID 729179)
 -- Name: about_aboutlegaltimelineitem_is_active_8a0a1294; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9296,7 +9918,7 @@ CREATE INDEX about_aboutlegaltimelineitem_is_active_8a0a1294 ON public.about_abo
 
 
 --
--- TOC entry 5551 (class 1259 OID 313958)
+-- TOC entry 5590 (class 1259 OID 729180)
 -- Name: about_aboutlegaltimelineitem_legal_info_id_74ca4891; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9304,7 +9926,7 @@ CREATE INDEX about_aboutlegaltimelineitem_legal_info_id_74ca4891 ON public.about
 
 
 --
--- TOC entry 5554 (class 1259 OID 313959)
+-- TOC entry 5593 (class 1259 OID 729181)
 -- Name: about_aboutnetworksectionheader_display_order_cade681b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9312,7 +9934,7 @@ CREATE INDEX about_aboutnetworksectionheader_display_order_cade681b ON public.ab
 
 
 --
--- TOC entry 5555 (class 1259 OID 313960)
+-- TOC entry 5594 (class 1259 OID 729182)
 -- Name: about_aboutnetworksectionheader_is_active_b7f06c43; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9320,7 +9942,7 @@ CREATE INDEX about_aboutnetworksectionheader_is_active_b7f06c43 ON public.about_
 
 
 --
--- TOC entry 5558 (class 1259 OID 313961)
+-- TOC entry 5597 (class 1259 OID 729183)
 -- Name: about_aboutorgstructurebulletitem_card_id_d4db7d74; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9328,7 +9950,7 @@ CREATE INDEX about_aboutorgstructurebulletitem_card_id_d4db7d74 ON public.about_
 
 
 --
--- TOC entry 5559 (class 1259 OID 313962)
+-- TOC entry 5598 (class 1259 OID 729184)
 -- Name: about_aboutorgstructurebulletitem_display_order_e683edfb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9336,7 +9958,7 @@ CREATE INDEX about_aboutorgstructurebulletitem_display_order_e683edfb ON public.
 
 
 --
--- TOC entry 5560 (class 1259 OID 313963)
+-- TOC entry 5599 (class 1259 OID 729185)
 -- Name: about_aboutorgstructurebulletitem_is_active_6cea388a; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9344,7 +9966,7 @@ CREATE INDEX about_aboutorgstructurebulletitem_is_active_6cea388a ON public.abou
 
 
 --
--- TOC entry 5563 (class 1259 OID 313964)
+-- TOC entry 5602 (class 1259 OID 729186)
 -- Name: about_aboutorgstructurecard_display_order_0532fcbc; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9352,7 +9974,7 @@ CREATE INDEX about_aboutorgstructurecard_display_order_0532fcbc ON public.about_
 
 
 --
--- TOC entry 5564 (class 1259 OID 313965)
+-- TOC entry 5603 (class 1259 OID 729187)
 -- Name: about_aboutorgstructurecard_is_active_27ff6307; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9360,7 +9982,7 @@ CREATE INDEX about_aboutorgstructurecard_is_active_27ff6307 ON public.about_abou
 
 
 --
--- TOC entry 5567 (class 1259 OID 313966)
+-- TOC entry 5606 (class 1259 OID 729188)
 -- Name: about_aboutorgstructurecard_section_id_987f12ed; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9368,7 +9990,7 @@ CREATE INDEX about_aboutorgstructurecard_section_id_987f12ed ON public.about_abo
 
 
 --
--- TOC entry 5568 (class 1259 OID 313967)
+-- TOC entry 5607 (class 1259 OID 729189)
 -- Name: about_aboutorgstructuresection_display_order_40cea073; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9376,7 +9998,7 @@ CREATE INDEX about_aboutorgstructuresection_display_order_40cea073 ON public.abo
 
 
 --
--- TOC entry 5569 (class 1259 OID 313968)
+-- TOC entry 5608 (class 1259 OID 729190)
 -- Name: about_aboutorgstructuresection_is_active_0e6e8ddd; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9384,7 +10006,7 @@ CREATE INDEX about_aboutorgstructuresection_is_active_0e6e8ddd ON public.about_a
 
 
 --
--- TOC entry 5572 (class 1259 OID 313969)
+-- TOC entry 5611 (class 1259 OID 729191)
 -- Name: about_aboutpageseo_display_order_5a956ee7; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9392,7 +10014,7 @@ CREATE INDEX about_aboutpageseo_display_order_5a956ee7 ON public.about_aboutpage
 
 
 --
--- TOC entry 5573 (class 1259 OID 313970)
+-- TOC entry 5612 (class 1259 OID 729192)
 -- Name: about_aboutpageseo_is_active_58d59959; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9400,7 +10022,7 @@ CREATE INDEX about_aboutpageseo_is_active_58d59959 ON public.about_aboutpageseo 
 
 
 --
--- TOC entry 5576 (class 1259 OID 313971)
+-- TOC entry 5615 (class 1259 OID 729193)
 -- Name: about_aboutpartnerbenefit_display_order_26704928; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9408,7 +10030,7 @@ CREATE INDEX about_aboutpartnerbenefit_display_order_26704928 ON public.about_ab
 
 
 --
--- TOC entry 5577 (class 1259 OID 313972)
+-- TOC entry 5616 (class 1259 OID 729194)
 -- Name: about_aboutpartnerbenefit_is_active_2bb931e2; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9416,7 +10038,7 @@ CREATE INDEX about_aboutpartnerbenefit_is_active_2bb931e2 ON public.about_aboutp
 
 
 --
--- TOC entry 5580 (class 1259 OID 313973)
+-- TOC entry 5619 (class 1259 OID 729195)
 -- Name: about_aboutpartnerbenefit_section_id_0b56fc40; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9424,7 +10046,7 @@ CREATE INDEX about_aboutpartnerbenefit_section_id_0b56fc40 ON public.about_about
 
 
 --
--- TOC entry 5581 (class 1259 OID 313974)
+-- TOC entry 5620 (class 1259 OID 729196)
 -- Name: about_aboutpartnerbenefitsection_display_order_c093c79f; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9432,7 +10054,7 @@ CREATE INDEX about_aboutpartnerbenefitsection_display_order_c093c79f ON public.a
 
 
 --
--- TOC entry 5582 (class 1259 OID 313975)
+-- TOC entry 5621 (class 1259 OID 729197)
 -- Name: about_aboutpartnerbenefitsection_is_active_d11cce30; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9440,7 +10062,7 @@ CREATE INDEX about_aboutpartnerbenefitsection_is_active_d11cce30 ON public.about
 
 
 --
--- TOC entry 5585 (class 1259 OID 313976)
+-- TOC entry 5624 (class 1259 OID 729198)
 -- Name: about_aboutprofessionalnetwork_display_order_9fa187e9; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9448,7 +10070,7 @@ CREATE INDEX about_aboutprofessionalnetwork_display_order_9fa187e9 ON public.abo
 
 
 --
--- TOC entry 5586 (class 1259 OID 313977)
+-- TOC entry 5625 (class 1259 OID 729199)
 -- Name: about_aboutprofessionalnetwork_is_active_04fdcaf2; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9456,7 +10078,7 @@ CREATE INDEX about_aboutprofessionalnetwork_is_active_04fdcaf2 ON public.about_a
 
 
 --
--- TOC entry 5589 (class 1259 OID 313978)
+-- TOC entry 5628 (class 1259 OID 729200)
 -- Name: about_aboutpurpose_display_order_2ab0d8db; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9464,7 +10086,7 @@ CREATE INDEX about_aboutpurpose_display_order_2ab0d8db ON public.about_aboutpurp
 
 
 --
--- TOC entry 5590 (class 1259 OID 313979)
+-- TOC entry 5629 (class 1259 OID 729201)
 -- Name: about_aboutpurpose_is_active_c4d3ece4; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9472,7 +10094,7 @@ CREATE INDEX about_aboutpurpose_is_active_c4d3ece4 ON public.about_aboutpurpose 
 
 
 --
--- TOC entry 5593 (class 1259 OID 313980)
+-- TOC entry 5632 (class 1259 OID 729202)
 -- Name: about_abouttargetaudience_display_order_e55d0925; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9480,7 +10102,7 @@ CREATE INDEX about_abouttargetaudience_display_order_e55d0925 ON public.about_ab
 
 
 --
--- TOC entry 5594 (class 1259 OID 313981)
+-- TOC entry 5633 (class 1259 OID 729203)
 -- Name: about_abouttargetaudience_is_active_5cc9d88c; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9488,7 +10110,7 @@ CREATE INDEX about_abouttargetaudience_is_active_5cc9d88c ON public.about_aboutt
 
 
 --
--- TOC entry 5597 (class 1259 OID 313982)
+-- TOC entry 5636 (class 1259 OID 729204)
 -- Name: about_abouttargetaudience_section_id_a00fd946; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9496,7 +10118,7 @@ CREATE INDEX about_abouttargetaudience_section_id_a00fd946 ON public.about_about
 
 
 --
--- TOC entry 5598 (class 1259 OID 313983)
+-- TOC entry 5637 (class 1259 OID 729205)
 -- Name: about_abouttargetaudiencesection_display_order_df654245; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9504,7 +10126,7 @@ CREATE INDEX about_abouttargetaudiencesection_display_order_df654245 ON public.a
 
 
 --
--- TOC entry 5599 (class 1259 OID 313984)
+-- TOC entry 5638 (class 1259 OID 729206)
 -- Name: about_abouttargetaudiencesection_is_active_d853e085; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9512,7 +10134,7 @@ CREATE INDEX about_abouttargetaudiencesection_is_active_d853e085 ON public.about
 
 
 --
--- TOC entry 5602 (class 1259 OID 313985)
+-- TOC entry 5641 (class 1259 OID 729207)
 -- Name: about_aboutvisionmission_display_order_6501e99d; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9520,7 +10142,7 @@ CREATE INDEX about_aboutvisionmission_display_order_6501e99d ON public.about_abo
 
 
 --
--- TOC entry 5603 (class 1259 OID 313986)
+-- TOC entry 5642 (class 1259 OID 729208)
 -- Name: about_aboutvisionmission_is_active_28bc70b5; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9528,7 +10150,7 @@ CREATE INDEX about_aboutvisionmission_is_active_28bc70b5 ON public.about_aboutvi
 
 
 --
--- TOC entry 5606 (class 1259 OID 313987)
+-- TOC entry 5645 (class 1259 OID 729209)
 -- Name: about_aboutvisionmissioncard_display_order_9fb3aef6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9536,7 +10158,7 @@ CREATE INDEX about_aboutvisionmissioncard_display_order_9fb3aef6 ON public.about
 
 
 --
--- TOC entry 5607 (class 1259 OID 313988)
+-- TOC entry 5646 (class 1259 OID 729210)
 -- Name: about_aboutvisionmissioncard_is_active_bd685573; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9544,7 +10166,7 @@ CREATE INDEX about_aboutvisionmissioncard_is_active_bd685573 ON public.about_abo
 
 
 --
--- TOC entry 5610 (class 1259 OID 313989)
+-- TOC entry 5649 (class 1259 OID 729211)
 -- Name: about_aboutvisionmissioncard_section_id_5cdaaa96; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9552,7 +10174,7 @@ CREATE INDEX about_aboutvisionmissioncard_section_id_5cdaaa96 ON public.about_ab
 
 
 --
--- TOC entry 5611 (class 1259 OID 313990)
+-- TOC entry 5650 (class 1259 OID 729212)
 -- Name: about_aboutvisionmissionicon_display_order_cea2acbc; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9560,7 +10182,7 @@ CREATE INDEX about_aboutvisionmissionicon_display_order_cea2acbc ON public.about
 
 
 --
--- TOC entry 5612 (class 1259 OID 313991)
+-- TOC entry 5651 (class 1259 OID 729213)
 -- Name: about_aboutvisionmissionicon_is_active_2aa7a9d8; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9568,7 +10190,7 @@ CREATE INDEX about_aboutvisionmissionicon_is_active_2aa7a9d8 ON public.about_abo
 
 
 --
--- TOC entry 5615 (class 1259 OID 313992)
+-- TOC entry 5654 (class 1259 OID 729214)
 -- Name: about_aboutvisionmissionicon_section_id_01e59c26; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9576,7 +10198,7 @@ CREATE INDEX about_aboutvisionmissionicon_section_id_01e59c26 ON public.about_ab
 
 
 --
--- TOC entry 5616 (class 1259 OID 313993)
+-- TOC entry 5655 (class 1259 OID 729215)
 -- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9584,7 +10206,7 @@ CREATE INDEX auth_group_name_a6ea08ec_like ON public.auth_group USING btree (nam
 
 
 --
--- TOC entry 5621 (class 1259 OID 313994)
+-- TOC entry 5660 (class 1259 OID 729216)
 -- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9592,7 +10214,7 @@ CREATE INDEX auth_group_permissions_group_id_b120cbf9 ON public.auth_group_permi
 
 
 --
--- TOC entry 5624 (class 1259 OID 313995)
+-- TOC entry 5663 (class 1259 OID 729217)
 -- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9600,7 +10222,7 @@ CREATE INDEX auth_group_permissions_permission_id_84c5c92e ON public.auth_group_
 
 
 --
--- TOC entry 5627 (class 1259 OID 313996)
+-- TOC entry 5666 (class 1259 OID 729218)
 -- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9608,7 +10230,7 @@ CREATE INDEX auth_permission_content_type_id_2f476e4b ON public.auth_permission 
 
 
 --
--- TOC entry 5637 (class 1259 OID 313997)
+-- TOC entry 5676 (class 1259 OID 729219)
 -- Name: auth_user_groups_group_id_97559544; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9616,7 +10238,7 @@ CREATE INDEX auth_user_groups_group_id_97559544 ON public.auth_user_groups USING
 
 
 --
--- TOC entry 5640 (class 1259 OID 313998)
+-- TOC entry 5679 (class 1259 OID 729220)
 -- Name: auth_user_groups_user_id_6a12ed8b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9624,7 +10246,7 @@ CREATE INDEX auth_user_groups_user_id_6a12ed8b ON public.auth_user_groups USING 
 
 
 --
--- TOC entry 5643 (class 1259 OID 313999)
+-- TOC entry 5682 (class 1259 OID 729221)
 -- Name: auth_user_user_permissions_permission_id_1fbb5f2c; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9632,7 +10254,7 @@ CREATE INDEX auth_user_user_permissions_permission_id_1fbb5f2c ON public.auth_us
 
 
 --
--- TOC entry 5646 (class 1259 OID 314000)
+-- TOC entry 5685 (class 1259 OID 729222)
 -- Name: auth_user_user_permissions_user_id_a95ead1b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9640,7 +10262,7 @@ CREATE INDEX auth_user_user_permissions_user_id_a95ead1b ON public.auth_user_use
 
 
 --
--- TOC entry 5634 (class 1259 OID 314001)
+-- TOC entry 5673 (class 1259 OID 729223)
 -- Name: auth_user_username_6821ab7c_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9648,7 +10270,7 @@ CREATE INDEX auth_user_username_6821ab7c_like ON public.auth_user USING btree (u
 
 
 --
--- TOC entry 5649 (class 1259 OID 314002)
+-- TOC entry 5688 (class 1259 OID 729224)
 -- Name: capability_capability_display_order_faf49b0b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9656,7 +10278,7 @@ CREATE INDEX capability_capability_display_order_faf49b0b ON public.capability_c
 
 
 --
--- TOC entry 5650 (class 1259 OID 314003)
+-- TOC entry 5689 (class 1259 OID 729225)
 -- Name: capability_capability_is_active_63b1f1c8; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9664,7 +10286,7 @@ CREATE INDEX capability_capability_is_active_63b1f1c8 ON public.capability_capab
 
 
 --
--- TOC entry 5651 (class 1259 OID 314004)
+-- TOC entry 5690 (class 1259 OID 729226)
 -- Name: capability_capability_is_published_aac414a6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9672,7 +10294,7 @@ CREATE INDEX capability_capability_is_published_aac414a6 ON public.capability_ca
 
 
 --
--- TOC entry 5654 (class 1259 OID 314005)
+-- TOC entry 5693 (class 1259 OID 729227)
 -- Name: capability_capability_slug_81eb597b_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9680,7 +10302,7 @@ CREATE INDEX capability_capability_slug_81eb597b_like ON public.capability_capab
 
 
 --
--- TOC entry 5657 (class 1259 OID 314006)
+-- TOC entry 5696 (class 1259 OID 729228)
 -- Name: capability_capabilitycasestudy_capability_id_22efefff; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9688,7 +10310,7 @@ CREATE INDEX capability_capabilitycasestudy_capability_id_22efefff ON public.cap
 
 
 --
--- TOC entry 5658 (class 1259 OID 314007)
+-- TOC entry 5697 (class 1259 OID 729229)
 -- Name: capability_capabilitycasestudy_display_order_491c7812; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9696,7 +10318,7 @@ CREATE INDEX capability_capabilitycasestudy_display_order_491c7812 ON public.cap
 
 
 --
--- TOC entry 5659 (class 1259 OID 314008)
+-- TOC entry 5698 (class 1259 OID 729230)
 -- Name: capability_capabilitycasestudy_is_active_f0629aad; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9704,7 +10326,7 @@ CREATE INDEX capability_capabilitycasestudy_is_active_f0629aad ON public.capabil
 
 
 --
--- TOC entry 5662 (class 1259 OID 314009)
+-- TOC entry 5701 (class 1259 OID 729231)
 -- Name: capability_capabilitycasestudytag_case_study_id_b5ed7f46; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9712,7 +10334,7 @@ CREATE INDEX capability_capabilitycasestudytag_case_study_id_b5ed7f46 ON public.
 
 
 --
--- TOC entry 5663 (class 1259 OID 314010)
+-- TOC entry 5702 (class 1259 OID 729232)
 -- Name: capability_capabilitycasestudytag_display_order_cdf23478; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9720,7 +10342,7 @@ CREATE INDEX capability_capabilitycasestudytag_display_order_cdf23478 ON public.
 
 
 --
--- TOC entry 5664 (class 1259 OID 314011)
+-- TOC entry 5703 (class 1259 OID 729233)
 -- Name: capability_capabilitycasestudytag_is_active_44c1f9be; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9728,7 +10350,7 @@ CREATE INDEX capability_capabilitycasestudytag_is_active_44c1f9be ON public.capa
 
 
 --
--- TOC entry 5667 (class 1259 OID 314012)
+-- TOC entry 5706 (class 1259 OID 729234)
 -- Name: capability_capabilityfeature_capability_id_2e9982e2; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9736,7 +10358,7 @@ CREATE INDEX capability_capabilityfeature_capability_id_2e9982e2 ON public.capab
 
 
 --
--- TOC entry 5668 (class 1259 OID 314013)
+-- TOC entry 5707 (class 1259 OID 729235)
 -- Name: capability_capabilityfeature_display_order_a311821f; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9744,7 +10366,7 @@ CREATE INDEX capability_capabilityfeature_display_order_a311821f ON public.capab
 
 
 --
--- TOC entry 5669 (class 1259 OID 314014)
+-- TOC entry 5708 (class 1259 OID 729236)
 -- Name: capability_capabilityfeature_is_active_812b04b6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9752,7 +10374,7 @@ CREATE INDEX capability_capabilityfeature_is_active_812b04b6 ON public.capabilit
 
 
 --
--- TOC entry 5672 (class 1259 OID 314015)
+-- TOC entry 5711 (class 1259 OID 729237)
 -- Name: capability_capabilityhowstep_capability_id_bd6ae428; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9760,7 +10382,7 @@ CREATE INDEX capability_capabilityhowstep_capability_id_bd6ae428 ON public.capab
 
 
 --
--- TOC entry 5673 (class 1259 OID 314016)
+-- TOC entry 5712 (class 1259 OID 729238)
 -- Name: capability_capabilityhowstep_display_order_fa19b685; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9768,7 +10390,7 @@ CREATE INDEX capability_capabilityhowstep_display_order_fa19b685 ON public.capab
 
 
 --
--- TOC entry 5674 (class 1259 OID 314017)
+-- TOC entry 5713 (class 1259 OID 729239)
 -- Name: capability_capabilityhowstep_is_active_98e4eb2b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9776,7 +10398,7 @@ CREATE INDEX capability_capabilityhowstep_is_active_98e4eb2b ON public.capabilit
 
 
 --
--- TOC entry 5677 (class 1259 OID 314018)
+-- TOC entry 5716 (class 1259 OID 729240)
 -- Name: capability_capabilitylistingpage_display_order_d692357d; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9784,7 +10406,7 @@ CREATE INDEX capability_capabilitylistingpage_display_order_d692357d ON public.c
 
 
 --
--- TOC entry 5678 (class 1259 OID 314019)
+-- TOC entry 5717 (class 1259 OID 729241)
 -- Name: capability_capabilitylistingpage_is_active_a91726ef; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9792,7 +10414,7 @@ CREATE INDEX capability_capabilitylistingpage_is_active_a91726ef ON public.capab
 
 
 --
--- TOC entry 5681 (class 1259 OID 314020)
+-- TOC entry 5720 (class 1259 OID 729242)
 -- Name: capability_capabilityneeditem_capability_id_7930787f; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9800,7 +10422,7 @@ CREATE INDEX capability_capabilityneeditem_capability_id_7930787f ON public.capa
 
 
 --
--- TOC entry 5682 (class 1259 OID 314021)
+-- TOC entry 5721 (class 1259 OID 729243)
 -- Name: capability_capabilityneeditem_display_order_a0342fdd; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9808,7 +10430,7 @@ CREATE INDEX capability_capabilityneeditem_display_order_a0342fdd ON public.capa
 
 
 --
--- TOC entry 5683 (class 1259 OID 314022)
+-- TOC entry 5722 (class 1259 OID 729244)
 -- Name: capability_capabilityneeditem_is_active_4b53d1c6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9816,7 +10438,7 @@ CREATE INDEX capability_capabilityneeditem_is_active_4b53d1c6 ON public.capabili
 
 
 --
--- TOC entry 5686 (class 1259 OID 314023)
+-- TOC entry 5725 (class 1259 OID 729245)
 -- Name: capability_capabilityoutput_capability_id_5aa8adef; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9824,7 +10446,7 @@ CREATE INDEX capability_capabilityoutput_capability_id_5aa8adef ON public.capabi
 
 
 --
--- TOC entry 5687 (class 1259 OID 314024)
+-- TOC entry 5726 (class 1259 OID 729246)
 -- Name: capability_capabilityoutput_display_order_b7fd4799; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9832,7 +10454,7 @@ CREATE INDEX capability_capabilityoutput_display_order_b7fd4799 ON public.capabi
 
 
 --
--- TOC entry 5688 (class 1259 OID 314025)
+-- TOC entry 5727 (class 1259 OID 729247)
 -- Name: capability_capabilityoutput_is_active_b9652615; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9840,7 +10462,7 @@ CREATE INDEX capability_capabilityoutput_is_active_b9652615 ON public.capability
 
 
 --
--- TOC entry 6114 (class 1259 OID 334714)
+-- TOC entry 5730 (class 1259 OID 729248)
 -- Name: contact_contactrequest_created_at_4f5f86cd; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9848,7 +10470,23 @@ CREATE INDEX contact_contactrequest_created_at_4f5f86cd ON public.contact_contac
 
 
 --
--- TOC entry 6117 (class 1259 OID 334712)
+-- TOC entry 5731 (class 1259 OID 729249)
+-- Name: contact_contactrequest_notification_status_a2b24493; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX contact_contactrequest_notification_status_a2b24493 ON public.contact_contactrequest USING btree (notification_status);
+
+
+--
+-- TOC entry 5732 (class 1259 OID 729250)
+-- Name: contact_contactrequest_notification_status_a2b24493_like; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX contact_contactrequest_notification_status_a2b24493_like ON public.contact_contactrequest USING btree (notification_status varchar_pattern_ops);
+
+
+--
+-- TOC entry 5735 (class 1259 OID 729251)
 -- Name: contact_contactrequest_status_ee27ac89; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9856,7 +10494,7 @@ CREATE INDEX contact_contactrequest_status_ee27ac89 ON public.contact_contactreq
 
 
 --
--- TOC entry 6118 (class 1259 OID 334713)
+-- TOC entry 5736 (class 1259 OID 729252)
 -- Name: contact_contactrequest_status_ee27ac89_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9864,7 +10502,7 @@ CREATE INDEX contact_contactrequest_status_ee27ac89_like ON public.contact_conta
 
 
 --
--- TOC entry 5691 (class 1259 OID 314026)
+-- TOC entry 5739 (class 1259 OID 729253)
 -- Name: core_footerlink_display_order_cc07f3b0; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9872,7 +10510,7 @@ CREATE INDEX core_footerlink_display_order_cc07f3b0 ON public.core_footerlink US
 
 
 --
--- TOC entry 5692 (class 1259 OID 314027)
+-- TOC entry 5740 (class 1259 OID 729254)
 -- Name: core_footerlink_is_active_dfa5d4c1; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9880,7 +10518,7 @@ CREATE INDEX core_footerlink_is_active_dfa5d4c1 ON public.core_footerlink USING 
 
 
 --
--- TOC entry 5695 (class 1259 OID 314028)
+-- TOC entry 5743 (class 1259 OID 729255)
 -- Name: core_footerlink_section_id_0235b1ac; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9888,7 +10526,7 @@ CREATE INDEX core_footerlink_section_id_0235b1ac ON public.core_footerlink USING
 
 
 --
--- TOC entry 5696 (class 1259 OID 314029)
+-- TOC entry 5744 (class 1259 OID 729256)
 -- Name: core_footersection_display_order_81fc76ff; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9896,7 +10534,7 @@ CREATE INDEX core_footersection_display_order_81fc76ff ON public.core_footersect
 
 
 --
--- TOC entry 5697 (class 1259 OID 314030)
+-- TOC entry 5745 (class 1259 OID 729257)
 -- Name: core_footersection_is_active_af5e957b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9904,7 +10542,7 @@ CREATE INDEX core_footersection_is_active_af5e957b ON public.core_footersection 
 
 
 --
--- TOC entry 5700 (class 1259 OID 314031)
+-- TOC entry 5748 (class 1259 OID 729258)
 -- Name: core_menuitem_display_order_9005eaf1; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9912,7 +10550,7 @@ CREATE INDEX core_menuitem_display_order_9005eaf1 ON public.core_menuitem USING 
 
 
 --
--- TOC entry 5701 (class 1259 OID 314032)
+-- TOC entry 5749 (class 1259 OID 729259)
 -- Name: core_menuitem_is_active_a5782edb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9920,7 +10558,7 @@ CREATE INDEX core_menuitem_is_active_a5782edb ON public.core_menuitem USING btre
 
 
 --
--- TOC entry 5702 (class 1259 OID 314033)
+-- TOC entry 5750 (class 1259 OID 729260)
 -- Name: core_menuitem_menu_ce4244ba; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9928,7 +10566,7 @@ CREATE INDEX core_menuitem_menu_ce4244ba ON public.core_menuitem USING btree (me
 
 
 --
--- TOC entry 5703 (class 1259 OID 314034)
+-- TOC entry 5751 (class 1259 OID 729261)
 -- Name: core_menuitem_menu_ce4244ba_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9936,7 +10574,7 @@ CREATE INDEX core_menuitem_menu_ce4244ba_like ON public.core_menuitem USING btre
 
 
 --
--- TOC entry 5704 (class 1259 OID 314035)
+-- TOC entry 5752 (class 1259 OID 729262)
 -- Name: core_menuitem_parent_id_dd02175c; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9944,7 +10582,7 @@ CREATE INDEX core_menuitem_parent_id_dd02175c ON public.core_menuitem USING btre
 
 
 --
--- TOC entry 5707 (class 1259 OID 314036)
+-- TOC entry 5755 (class 1259 OID 729263)
 -- Name: core_sitesettings_display_order_7c3f9215; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9952,7 +10590,7 @@ CREATE INDEX core_sitesettings_display_order_7c3f9215 ON public.core_sitesetting
 
 
 --
--- TOC entry 5708 (class 1259 OID 314037)
+-- TOC entry 5756 (class 1259 OID 729264)
 -- Name: core_sitesettings_is_active_82c8469a; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9960,7 +10598,7 @@ CREATE INDEX core_sitesettings_is_active_82c8469a ON public.core_sitesettings US
 
 
 --
--- TOC entry 5711 (class 1259 OID 314038)
+-- TOC entry 5759 (class 1259 OID 729265)
 -- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9968,7 +10606,7 @@ CREATE INDEX django_admin_log_content_type_id_c4bce8eb ON public.django_admin_lo
 
 
 --
--- TOC entry 5714 (class 1259 OID 314039)
+-- TOC entry 5762 (class 1259 OID 729266)
 -- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9976,7 +10614,7 @@ CREATE INDEX django_admin_log_user_id_c564eba6 ON public.django_admin_log USING 
 
 
 --
--- TOC entry 5721 (class 1259 OID 314040)
+-- TOC entry 5769 (class 1259 OID 729267)
 -- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9984,7 +10622,7 @@ CREATE INDEX django_session_expire_date_a5c62663 ON public.django_session USING 
 
 
 --
--- TOC entry 5724 (class 1259 OID 314041)
+-- TOC entry 5772 (class 1259 OID 729268)
 -- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -9992,7 +10630,7 @@ CREATE INDEX django_session_session_key_c0390e0f_like ON public.django_session U
 
 
 --
--- TOC entry 5725 (class 1259 OID 314042)
+-- TOC entry 5773 (class 1259 OID 729269)
 -- Name: expert_association_display_order_b18f81a0; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10000,7 +10638,7 @@ CREATE INDEX expert_association_display_order_b18f81a0 ON public.expert_associat
 
 
 --
--- TOC entry 5726 (class 1259 OID 314043)
+-- TOC entry 5774 (class 1259 OID 729270)
 -- Name: expert_association_info_group_id_564b3e24; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10008,7 +10646,7 @@ CREATE INDEX expert_association_info_group_id_564b3e24 ON public.expert_associat
 
 
 --
--- TOC entry 5727 (class 1259 OID 314044)
+-- TOC entry 5775 (class 1259 OID 729271)
 -- Name: expert_association_is_active_aa5788bc; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10016,7 +10654,7 @@ CREATE INDEX expert_association_is_active_aa5788bc ON public.expert_association 
 
 
 --
--- TOC entry 5730 (class 1259 OID 314045)
+-- TOC entry 5778 (class 1259 OID 729272)
 -- Name: expert_engagementtype_display_order_54365722; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10024,7 +10662,7 @@ CREATE INDEX expert_engagementtype_display_order_54365722 ON public.expert_engag
 
 
 --
--- TOC entry 5731 (class 1259 OID 314046)
+-- TOC entry 5779 (class 1259 OID 729273)
 -- Name: expert_engagementtype_is_active_b3426735; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10032,7 +10670,7 @@ CREATE INDEX expert_engagementtype_is_active_b3426735 ON public.expert_engagemen
 
 
 --
--- TOC entry 5734 (class 1259 OID 314047)
+-- TOC entry 5782 (class 1259 OID 729274)
 -- Name: expert_engagementtype_slug_4b93110f_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10040,7 +10678,7 @@ CREATE INDEX expert_engagementtype_slug_4b93110f_like ON public.expert_engagemen
 
 
 --
--- TOC entry 5737 (class 1259 OID 314048)
+-- TOC entry 5785 (class 1259 OID 729275)
 -- Name: expert_expert_display_order_0b5b2872; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10048,7 +10686,7 @@ CREATE INDEX expert_expert_display_order_0b5b2872 ON public.expert_expert USING 
 
 
 --
--- TOC entry 5750 (class 1259 OID 314049)
+-- TOC entry 5798 (class 1259 OID 729276)
 -- Name: expert_expert_engagement_types_engagementtype_id_9803c021; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10056,7 +10694,7 @@ CREATE INDEX expert_expert_engagement_types_engagementtype_id_9803c021 ON public
 
 
 --
--- TOC entry 5751 (class 1259 OID 314050)
+-- TOC entry 5799 (class 1259 OID 729277)
 -- Name: expert_expert_engagement_types_expert_id_7187dd67; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10064,7 +10702,7 @@ CREATE INDEX expert_expert_engagement_types_expert_id_7187dd67 ON public.expert_
 
 
 --
--- TOC entry 5738 (class 1259 OID 314051)
+-- TOC entry 5786 (class 1259 OID 729278)
 -- Name: expert_expert_group_id_408c0f52; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10072,7 +10710,7 @@ CREATE INDEX expert_expert_group_id_408c0f52 ON public.expert_expert USING btree
 
 
 --
--- TOC entry 5739 (class 1259 OID 314052)
+-- TOC entry 5787 (class 1259 OID 729279)
 -- Name: expert_expert_is_active_66e67f5f; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10080,7 +10718,7 @@ CREATE INDEX expert_expert_is_active_66e67f5f ON public.expert_expert USING btre
 
 
 --
--- TOC entry 5740 (class 1259 OID 314053)
+-- TOC entry 5788 (class 1259 OID 729280)
 -- Name: expert_expert_is_featured_71e79ae4; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10088,7 +10726,7 @@ CREATE INDEX expert_expert_is_featured_71e79ae4 ON public.expert_expert USING bt
 
 
 --
--- TOC entry 5741 (class 1259 OID 314054)
+-- TOC entry 5789 (class 1259 OID 729281)
 -- Name: expert_expert_is_published_21303545; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10096,7 +10734,7 @@ CREATE INDEX expert_expert_is_published_21303545 ON public.expert_expert USING b
 
 
 --
--- TOC entry 5742 (class 1259 OID 314055)
+-- TOC entry 5790 (class 1259 OID 729282)
 -- Name: expert_expert_is_senior_fd0aebf8; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10104,7 +10742,7 @@ CREATE INDEX expert_expert_is_senior_fd0aebf8 ON public.expert_expert USING btre
 
 
 --
--- TOC entry 5756 (class 1259 OID 314056)
+-- TOC entry 5804 (class 1259 OID 729283)
 -- Name: expert_expert_knowledge_topics_expert_id_2618f145; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10112,7 +10750,7 @@ CREATE INDEX expert_expert_knowledge_topics_expert_id_2618f145 ON public.expert_
 
 
 --
--- TOC entry 5757 (class 1259 OID 314057)
+-- TOC entry 5805 (class 1259 OID 729284)
 -- Name: expert_expert_knowledge_topics_knowledgetopic_id_93810fe6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10120,7 +10758,7 @@ CREATE INDEX expert_expert_knowledge_topics_knowledgetopic_id_93810fe6 ON public
 
 
 --
--- TOC entry 5762 (class 1259 OID 314058)
+-- TOC entry 5810 (class 1259 OID 729285)
 -- Name: expert_expert_research_areas_expert_id_831a3435; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10128,7 +10766,7 @@ CREATE INDEX expert_expert_research_areas_expert_id_831a3435 ON public.expert_ex
 
 
 --
--- TOC entry 5765 (class 1259 OID 314059)
+-- TOC entry 5813 (class 1259 OID 729286)
 -- Name: expert_expert_research_areas_researcharea_id_49d98efd; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10136,7 +10774,7 @@ CREATE INDEX expert_expert_research_areas_researcharea_id_49d98efd ON public.exp
 
 
 --
--- TOC entry 5745 (class 1259 OID 314060)
+-- TOC entry 5793 (class 1259 OID 729287)
 -- Name: expert_expert_slug_1c4843b2_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10144,7 +10782,7 @@ CREATE INDEX expert_expert_slug_1c4843b2_like ON public.expert_expert USING btre
 
 
 --
--- TOC entry 5766 (class 1259 OID 314061)
+-- TOC entry 5814 (class 1259 OID 729288)
 -- Name: expert_expertgroup_display_order_c0c2e92e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10152,7 +10790,7 @@ CREATE INDEX expert_expertgroup_display_order_c0c2e92e ON public.expert_expertgr
 
 
 --
--- TOC entry 5767 (class 1259 OID 314062)
+-- TOC entry 5815 (class 1259 OID 729289)
 -- Name: expert_expertgroup_is_active_517d5be6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10160,7 +10798,7 @@ CREATE INDEX expert_expertgroup_is_active_517d5be6 ON public.expert_expertgroup 
 
 
 --
--- TOC entry 5770 (class 1259 OID 314063)
+-- TOC entry 5818 (class 1259 OID 729290)
 -- Name: expert_expertgroup_slug_93ff080d_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10168,7 +10806,7 @@ CREATE INDEX expert_expertgroup_slug_93ff080d_like ON public.expert_expertgroup 
 
 
 --
--- TOC entry 5773 (class 1259 OID 314064)
+-- TOC entry 5821 (class 1259 OID 729291)
 -- Name: expert_expertlistingpage_display_order_1d8e5d64; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10176,7 +10814,7 @@ CREATE INDEX expert_expertlistingpage_display_order_1d8e5d64 ON public.expert_ex
 
 
 --
--- TOC entry 5774 (class 1259 OID 314065)
+-- TOC entry 5822 (class 1259 OID 729292)
 -- Name: expert_expertlistingpage_is_active_c1337610; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10184,7 +10822,7 @@ CREATE INDEX expert_expertlistingpage_is_active_c1337610 ON public.expert_expert
 
 
 --
--- TOC entry 5777 (class 1259 OID 314066)
+-- TOC entry 5825 (class 1259 OID 729293)
 -- Name: expert_infogroup_display_order_1de19fdb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10192,7 +10830,7 @@ CREATE INDEX expert_infogroup_display_order_1de19fdb ON public.expert_infogroup 
 
 
 --
--- TOC entry 5786 (class 1259 OID 314067)
+-- TOC entry 5834 (class 1259 OID 729294)
 -- Name: expert_infogroup_expert_direct_members_expert_id_f966e1c1; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10200,7 +10838,7 @@ CREATE INDEX expert_infogroup_expert_direct_members_expert_id_f966e1c1 ON public
 
 
 --
--- TOC entry 5787 (class 1259 OID 314068)
+-- TOC entry 5835 (class 1259 OID 729295)
 -- Name: expert_infogroup_expert_direct_members_infogroup_id_2938bdfb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10208,7 +10846,7 @@ CREATE INDEX expert_infogroup_expert_direct_members_infogroup_id_2938bdfb ON pub
 
 
 --
--- TOC entry 5792 (class 1259 OID 314069)
+-- TOC entry 5840 (class 1259 OID 729296)
 -- Name: expert_infogroup_expert_research_areas_infogroup_id_c40d69e0; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10216,7 +10854,7 @@ CREATE INDEX expert_infogroup_expert_research_areas_infogroup_id_c40d69e0 ON pub
 
 
 --
--- TOC entry 5795 (class 1259 OID 314070)
+-- TOC entry 5843 (class 1259 OID 729297)
 -- Name: expert_infogroup_expert_research_areas_researcharea_id_86c2644b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10224,7 +10862,7 @@ CREATE INDEX expert_infogroup_expert_research_areas_researcharea_id_86c2644b ON 
 
 
 --
--- TOC entry 5778 (class 1259 OID 314071)
+-- TOC entry 5826 (class 1259 OID 729298)
 -- Name: expert_infogroup_is_active_5a32389b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10232,7 +10870,7 @@ CREATE INDEX expert_infogroup_is_active_5a32389b ON public.expert_infogroup USIN
 
 
 --
--- TOC entry 5781 (class 1259 OID 314072)
+-- TOC entry 5829 (class 1259 OID 729299)
 -- Name: expert_infogroup_slug_0e935619_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10240,7 +10878,7 @@ CREATE INDEX expert_infogroup_slug_0e935619_like ON public.expert_infogroup USIN
 
 
 --
--- TOC entry 5796 (class 1259 OID 314073)
+-- TOC entry 5844 (class 1259 OID 729300)
 -- Name: expert_infogroupblock_display_order_bc6585d7; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10248,7 +10886,7 @@ CREATE INDEX expert_infogroupblock_display_order_bc6585d7 ON public.expert_infog
 
 
 --
--- TOC entry 5797 (class 1259 OID 314074)
+-- TOC entry 5845 (class 1259 OID 729301)
 -- Name: expert_infogroupblock_info_group_id_4584e64b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10256,7 +10894,7 @@ CREATE INDEX expert_infogroupblock_info_group_id_4584e64b ON public.expert_infog
 
 
 --
--- TOC entry 5798 (class 1259 OID 314075)
+-- TOC entry 5846 (class 1259 OID 729302)
 -- Name: expert_infogroupblock_is_active_0d60ecec; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10264,7 +10902,7 @@ CREATE INDEX expert_infogroupblock_is_active_0d60ecec ON public.expert_infogroup
 
 
 --
--- TOC entry 5801 (class 1259 OID 314076)
+-- TOC entry 5849 (class 1259 OID 729303)
 -- Name: expert_infogroupmember_display_order_b6f66193; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10272,7 +10910,7 @@ CREATE INDEX expert_infogroupmember_display_order_b6f66193 ON public.expert_info
 
 
 --
--- TOC entry 5802 (class 1259 OID 314077)
+-- TOC entry 5850 (class 1259 OID 729304)
 -- Name: expert_infogroupmember_info_group_id_584f052e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10280,7 +10918,7 @@ CREATE INDEX expert_infogroupmember_info_group_id_584f052e ON public.expert_info
 
 
 --
--- TOC entry 5803 (class 1259 OID 314078)
+-- TOC entry 5851 (class 1259 OID 729305)
 -- Name: expert_infogroupmember_is_active_51074184; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10288,7 +10926,7 @@ CREATE INDEX expert_infogroupmember_is_active_51074184 ON public.expert_infogrou
 
 
 --
--- TOC entry 5806 (class 1259 OID 314079)
+-- TOC entry 5854 (class 1259 OID 729306)
 -- Name: expert_knowledgetopic_display_order_ffcb38e9; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10296,7 +10934,7 @@ CREATE INDEX expert_knowledgetopic_display_order_ffcb38e9 ON public.expert_knowl
 
 
 --
--- TOC entry 5807 (class 1259 OID 314080)
+-- TOC entry 5855 (class 1259 OID 729307)
 -- Name: expert_knowledgetopic_is_active_4910a82c; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10304,7 +10942,7 @@ CREATE INDEX expert_knowledgetopic_is_active_4910a82c ON public.expert_knowledge
 
 
 --
--- TOC entry 5810 (class 1259 OID 314081)
+-- TOC entry 5858 (class 1259 OID 729308)
 -- Name: expert_knowledgetopic_slug_49b0e2f1_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10312,7 +10950,7 @@ CREATE INDEX expert_knowledgetopic_slug_49b0e2f1_like ON public.expert_knowledge
 
 
 --
--- TOC entry 5813 (class 1259 OID 314082)
+-- TOC entry 5861 (class 1259 OID 729309)
 -- Name: expert_orgnode_display_order_0e9471f7; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10320,7 +10958,7 @@ CREATE INDEX expert_orgnode_display_order_0e9471f7 ON public.expert_orgnode USIN
 
 
 --
--- TOC entry 5814 (class 1259 OID 314083)
+-- TOC entry 5862 (class 1259 OID 729310)
 -- Name: expert_orgnode_info_group_id_ef0cf562; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10328,7 +10966,7 @@ CREATE INDEX expert_orgnode_info_group_id_ef0cf562 ON public.expert_orgnode USIN
 
 
 --
--- TOC entry 5815 (class 1259 OID 314084)
+-- TOC entry 5863 (class 1259 OID 729311)
 -- Name: expert_orgnode_is_active_2fe39e91; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10336,7 +10974,7 @@ CREATE INDEX expert_orgnode_is_active_2fe39e91 ON public.expert_orgnode USING bt
 
 
 --
--- TOC entry 5816 (class 1259 OID 314085)
+-- TOC entry 5864 (class 1259 OID 729312)
 -- Name: expert_orgnode_parent_id_064f017a; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10344,7 +10982,7 @@ CREATE INDEX expert_orgnode_parent_id_064f017a ON public.expert_orgnode USING bt
 
 
 --
--- TOC entry 5819 (class 1259 OID 314086)
+-- TOC entry 5867 (class 1259 OID 729313)
 -- Name: expert_processstep_display_order_74217dbb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10352,7 +10990,7 @@ CREATE INDEX expert_processstep_display_order_74217dbb ON public.expert_processs
 
 
 --
--- TOC entry 5820 (class 1259 OID 314087)
+-- TOC entry 5868 (class 1259 OID 729314)
 -- Name: expert_processstep_is_active_f4333711; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10360,7 +10998,7 @@ CREATE INDEX expert_processstep_is_active_f4333711 ON public.expert_processstep 
 
 
 --
--- TOC entry 5823 (class 1259 OID 314088)
+-- TOC entry 5871 (class 1259 OID 729315)
 -- Name: expert_researcharea_display_order_4f4cbdb6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10368,7 +11006,7 @@ CREATE INDEX expert_researcharea_display_order_4f4cbdb6 ON public.expert_researc
 
 
 --
--- TOC entry 5824 (class 1259 OID 314089)
+-- TOC entry 5872 (class 1259 OID 729316)
 -- Name: expert_researcharea_is_active_ecbce1bc; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10376,7 +11014,7 @@ CREATE INDEX expert_researcharea_is_active_ecbce1bc ON public.expert_researchare
 
 
 --
--- TOC entry 5827 (class 1259 OID 314090)
+-- TOC entry 5875 (class 1259 OID 729317)
 -- Name: expert_researcharea_slug_2916cc06_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10384,7 +11022,7 @@ CREATE INDEX expert_researcharea_slug_2916cc06_like ON public.expert_researchare
 
 
 --
--- TOC entry 5830 (class 1259 OID 314091)
+-- TOC entry 5878 (class 1259 OID 729318)
 -- Name: home_audiencesectionheader_display_order_992efedd; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10392,7 +11030,7 @@ CREATE INDEX home_audiencesectionheader_display_order_992efedd ON public.home_au
 
 
 --
--- TOC entry 5831 (class 1259 OID 314092)
+-- TOC entry 5879 (class 1259 OID 729319)
 -- Name: home_audiencesectionheader_is_active_82f02d39; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10400,7 +11038,7 @@ CREATE INDEX home_audiencesectionheader_is_active_82f02d39 ON public.home_audien
 
 
 --
--- TOC entry 5834 (class 1259 OID 314093)
+-- TOC entry 5882 (class 1259 OID 729320)
 -- Name: home_audiencesegment_display_order_f4271ee6; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10408,7 +11046,7 @@ CREATE INDEX home_audiencesegment_display_order_f4271ee6 ON public.home_audience
 
 
 --
--- TOC entry 5835 (class 1259 OID 314094)
+-- TOC entry 5883 (class 1259 OID 729321)
 -- Name: home_audiencesegment_is_active_331818e5; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10416,7 +11054,7 @@ CREATE INDEX home_audiencesegment_is_active_331818e5 ON public.home_audiencesegm
 
 
 --
--- TOC entry 5838 (class 1259 OID 314095)
+-- TOC entry 5886 (class 1259 OID 729322)
 -- Name: home_audiencetag_display_order_e01b9461; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10424,7 +11062,7 @@ CREATE INDEX home_audiencetag_display_order_e01b9461 ON public.home_audiencetag 
 
 
 --
--- TOC entry 5839 (class 1259 OID 314096)
+-- TOC entry 5887 (class 1259 OID 729323)
 -- Name: home_audiencetag_is_active_9345e3a0; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10432,7 +11070,7 @@ CREATE INDEX home_audiencetag_is_active_9345e3a0 ON public.home_audiencetag USIN
 
 
 --
--- TOC entry 5842 (class 1259 OID 314097)
+-- TOC entry 5890 (class 1259 OID 729324)
 -- Name: home_audiencetag_segment_id_1ca1acab; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10440,7 +11078,7 @@ CREATE INDEX home_audiencetag_segment_id_1ca1acab ON public.home_audiencetag USI
 
 
 --
--- TOC entry 5843 (class 1259 OID 314098)
+-- TOC entry 5891 (class 1259 OID 729325)
 -- Name: home_capabilitiessectionheader_display_order_4a034369; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10448,7 +11086,7 @@ CREATE INDEX home_capabilitiessectionheader_display_order_4a034369 ON public.hom
 
 
 --
--- TOC entry 5844 (class 1259 OID 314099)
+-- TOC entry 5892 (class 1259 OID 729326)
 -- Name: home_capabilitiessectionheader_is_active_f65dca5b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10456,7 +11094,7 @@ CREATE INDEX home_capabilitiessectionheader_is_active_f65dca5b ON public.home_ca
 
 
 --
--- TOC entry 5847 (class 1259 OID 314100)
+-- TOC entry 5895 (class 1259 OID 729327)
 -- Name: home_corecapability_display_order_15bbb423; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10464,7 +11102,7 @@ CREATE INDEX home_corecapability_display_order_15bbb423 ON public.home_corecapab
 
 
 --
--- TOC entry 5848 (class 1259 OID 314101)
+-- TOC entry 5896 (class 1259 OID 729328)
 -- Name: home_corecapability_is_active_2f8148e8; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10472,7 +11110,7 @@ CREATE INDEX home_corecapability_is_active_2f8148e8 ON public.home_corecapabilit
 
 
 --
--- TOC entry 5851 (class 1259 OID 314102)
+-- TOC entry 5899 (class 1259 OID 729329)
 -- Name: home_ctabanner_display_order_d953d423; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10480,7 +11118,7 @@ CREATE INDEX home_ctabanner_display_order_d953d423 ON public.home_ctabanner USIN
 
 
 --
--- TOC entry 5852 (class 1259 OID 314103)
+-- TOC entry 5900 (class 1259 OID 729330)
 -- Name: home_ctabanner_is_active_3c81ffe4; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10488,7 +11126,7 @@ CREATE INDEX home_ctabanner_is_active_3c81ffe4 ON public.home_ctabanner USING bt
 
 
 --
--- TOC entry 5855 (class 1259 OID 314104)
+-- TOC entry 5903 (class 1259 OID 729331)
 -- Name: home_evidencesectionheader_display_order_0662424e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10496,7 +11134,7 @@ CREATE INDEX home_evidencesectionheader_display_order_0662424e ON public.home_ev
 
 
 --
--- TOC entry 5856 (class 1259 OID 314105)
+-- TOC entry 5904 (class 1259 OID 729332)
 -- Name: home_evidencesectionheader_is_active_18099b39; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10504,7 +11142,7 @@ CREATE INDEX home_evidencesectionheader_is_active_18099b39 ON public.home_eviden
 
 
 --
--- TOC entry 5859 (class 1259 OID 314106)
+-- TOC entry 5907 (class 1259 OID 729333)
 -- Name: home_featuredsectionconfig_display_order_f673ca39; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10512,7 +11150,7 @@ CREATE INDEX home_featuredsectionconfig_display_order_f673ca39 ON public.home_fe
 
 
 --
--- TOC entry 5860 (class 1259 OID 314107)
+-- TOC entry 5908 (class 1259 OID 729334)
 -- Name: home_featuredsectionconfig_is_active_609b0412; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10520,7 +11158,7 @@ CREATE INDEX home_featuredsectionconfig_is_active_609b0412 ON public.home_featur
 
 
 --
--- TOC entry 5863 (class 1259 OID 314108)
+-- TOC entry 5911 (class 1259 OID 729335)
 -- Name: home_featuredsectionconfig_section_key_92d898bb_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10528,7 +11166,7 @@ CREATE INDEX home_featuredsectionconfig_section_key_92d898bb_like ON public.home
 
 
 --
--- TOC entry 5866 (class 1259 OID 314109)
+-- TOC entry 5914 (class 1259 OID 729336)
 -- Name: home_heropilltag_display_order_333635c7; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10536,7 +11174,7 @@ CREATE INDEX home_heropilltag_display_order_333635c7 ON public.home_heropilltag 
 
 
 --
--- TOC entry 5867 (class 1259 OID 314110)
+-- TOC entry 5915 (class 1259 OID 729337)
 -- Name: home_heropilltag_hero_id_a05a5c49; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10544,7 +11182,7 @@ CREATE INDEX home_heropilltag_hero_id_a05a5c49 ON public.home_heropilltag USING 
 
 
 --
--- TOC entry 5868 (class 1259 OID 314111)
+-- TOC entry 5916 (class 1259 OID 729338)
 -- Name: home_heropilltag_is_active_b8c8ceed; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10552,7 +11190,7 @@ CREATE INDEX home_heropilltag_is_active_b8c8ceed ON public.home_heropilltag USIN
 
 
 --
--- TOC entry 5871 (class 1259 OID 314112)
+-- TOC entry 5919 (class 1259 OID 729339)
 -- Name: home_herosection_display_order_24446dd2; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10560,7 +11198,7 @@ CREATE INDEX home_herosection_display_order_24446dd2 ON public.home_herosection 
 
 
 --
--- TOC entry 5872 (class 1259 OID 314113)
+-- TOC entry 5920 (class 1259 OID 729340)
 -- Name: home_herosection_is_active_ee7f22b1; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10568,7 +11206,7 @@ CREATE INDEX home_herosection_is_active_ee7f22b1 ON public.home_herosection USIN
 
 
 --
--- TOC entry 5875 (class 1259 OID 314114)
+-- TOC entry 5923 (class 1259 OID 729341)
 -- Name: home_knowledgecategory_display_order_81457722; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10576,7 +11214,7 @@ CREATE INDEX home_knowledgecategory_display_order_81457722 ON public.home_knowle
 
 
 --
--- TOC entry 5876 (class 1259 OID 314115)
+-- TOC entry 5924 (class 1259 OID 729342)
 -- Name: home_knowledgecategory_is_active_d14be25e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10584,7 +11222,7 @@ CREATE INDEX home_knowledgecategory_is_active_d14be25e ON public.home_knowledgec
 
 
 --
--- TOC entry 5879 (class 1259 OID 314116)
+-- TOC entry 5927 (class 1259 OID 729343)
 -- Name: home_knowledgesectionheader_display_order_130c3e5d; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10592,7 +11230,7 @@ CREATE INDEX home_knowledgesectionheader_display_order_130c3e5d ON public.home_k
 
 
 --
--- TOC entry 5880 (class 1259 OID 314117)
+-- TOC entry 5928 (class 1259 OID 729344)
 -- Name: home_knowledgesectionheader_is_active_a7560480; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10600,7 +11238,7 @@ CREATE INDEX home_knowledgesectionheader_is_active_a7560480 ON public.home_knowl
 
 
 --
--- TOC entry 5883 (class 1259 OID 314118)
+-- TOC entry 5931 (class 1259 OID 729345)
 -- Name: home_methodologysectionheader_display_order_8a6a881e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10608,7 +11246,7 @@ CREATE INDEX home_methodologysectionheader_display_order_8a6a881e ON public.home
 
 
 --
--- TOC entry 5884 (class 1259 OID 314119)
+-- TOC entry 5932 (class 1259 OID 729346)
 -- Name: home_methodologysectionheader_is_active_0f99654e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10616,7 +11254,7 @@ CREATE INDEX home_methodologysectionheader_is_active_0f99654e ON public.home_met
 
 
 --
--- TOC entry 5887 (class 1259 OID 314120)
+-- TOC entry 5935 (class 1259 OID 729347)
 -- Name: home_methodologystep_display_order_c609ac4f; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10624,7 +11262,7 @@ CREATE INDEX home_methodologystep_display_order_c609ac4f ON public.home_methodol
 
 
 --
--- TOC entry 5888 (class 1259 OID 314121)
+-- TOC entry 5936 (class 1259 OID 729348)
 -- Name: home_methodologystep_is_active_499a44e3; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10632,7 +11270,31 @@ CREATE INDEX home_methodologystep_is_active_499a44e3 ON public.home_methodologys
 
 
 --
--- TOC entry 5891 (class 1259 OID 314122)
+-- TOC entry 5939 (class 1259 OID 729349)
+-- Name: home_partnercooperationitem_display_order_f15ff5b5; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX home_partnercooperationitem_display_order_f15ff5b5 ON public.home_partnercooperationitem USING btree (display_order);
+
+
+--
+-- TOC entry 5940 (class 1259 OID 729350)
+-- Name: home_partnercooperationitem_is_active_45bf2c4a; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX home_partnercooperationitem_is_active_45bf2c4a ON public.home_partnercooperationitem USING btree (is_active);
+
+
+--
+-- TOC entry 5941 (class 1259 OID 729351)
+-- Name: home_partnercooperationitem_page_id_30478d17; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX home_partnercooperationitem_page_id_30478d17 ON public.home_partnercooperationitem USING btree (page_id);
+
+
+--
+-- TOC entry 5944 (class 1259 OID 729352)
 -- Name: home_partnerlogo_display_order_da766da5; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10640,7 +11302,7 @@ CREATE INDEX home_partnerlogo_display_order_da766da5 ON public.home_partnerlogo 
 
 
 --
--- TOC entry 5892 (class 1259 OID 314123)
+-- TOC entry 5945 (class 1259 OID 729353)
 -- Name: home_partnerlogo_is_active_31663fec; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10648,7 +11310,63 @@ CREATE INDEX home_partnerlogo_is_active_31663fec ON public.home_partnerlogo USIN
 
 
 --
--- TOC entry 5895 (class 1259 OID 314124)
+-- TOC entry 5948 (class 1259 OID 729354)
+-- Name: home_partnerpageconfig_display_order_eca8a2ea; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX home_partnerpageconfig_display_order_eca8a2ea ON public.home_partnerpageconfig USING btree (display_order);
+
+
+--
+-- TOC entry 5949 (class 1259 OID 729355)
+-- Name: home_partnerpageconfig_is_active_a2b5878b; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX home_partnerpageconfig_is_active_a2b5878b ON public.home_partnerpageconfig USING btree (is_active);
+
+
+--
+-- TOC entry 5954 (class 1259 OID 729356)
+-- Name: home_partnerpageconfig_par_partnerpageconfig_id_ec71a36e; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX home_partnerpageconfig_par_partnerpageconfig_id_ec71a36e ON public.home_partnerpageconfig_partner_logos USING btree (partnerpageconfig_id);
+
+
+--
+-- TOC entry 5955 (class 1259 OID 729357)
+-- Name: home_partnerpageconfig_partner_logos_partnerlogo_id_60b6627e; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX home_partnerpageconfig_partner_logos_partnerlogo_id_60b6627e ON public.home_partnerpageconfig_partner_logos USING btree (partnerlogo_id);
+
+
+--
+-- TOC entry 5958 (class 1259 OID 729358)
+-- Name: home_partnerpagestatistic_display_order_1310342c; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX home_partnerpagestatistic_display_order_1310342c ON public.home_partnerpagestatistic USING btree (display_order);
+
+
+--
+-- TOC entry 5959 (class 1259 OID 729359)
+-- Name: home_partnerpagestatistic_is_active_82fa3bde; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX home_partnerpagestatistic_is_active_82fa3bde ON public.home_partnerpagestatistic USING btree (is_active);
+
+
+--
+-- TOC entry 5960 (class 1259 OID 729360)
+-- Name: home_partnerpagestatistic_page_id_748bb172; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX home_partnerpagestatistic_page_id_748bb172 ON public.home_partnerpagestatistic USING btree (page_id);
+
+
+--
+-- TOC entry 5963 (class 1259 OID 729361)
 -- Name: home_philosophyprinciple_display_order_16df7b50; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10656,7 +11374,7 @@ CREATE INDEX home_philosophyprinciple_display_order_16df7b50 ON public.home_phil
 
 
 --
--- TOC entry 5896 (class 1259 OID 314125)
+-- TOC entry 5964 (class 1259 OID 729362)
 -- Name: home_philosophyprinciple_is_active_90a39d1f; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10664,7 +11382,7 @@ CREATE INDEX home_philosophyprinciple_is_active_90a39d1f ON public.home_philosop
 
 
 --
--- TOC entry 5899 (class 1259 OID 314126)
+-- TOC entry 5967 (class 1259 OID 729363)
 -- Name: home_philosophysectionheader_display_order_301f8070; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10672,7 +11390,7 @@ CREATE INDEX home_philosophysectionheader_display_order_301f8070 ON public.home_
 
 
 --
--- TOC entry 5900 (class 1259 OID 314127)
+-- TOC entry 5968 (class 1259 OID 729364)
 -- Name: home_philosophysectionheader_is_active_3d34de78; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10680,7 +11398,7 @@ CREATE INDEX home_philosophysectionheader_is_active_3d34de78 ON public.home_phil
 
 
 --
--- TOC entry 5903 (class 1259 OID 314128)
+-- TOC entry 5971 (class 1259 OID 729365)
 -- Name: home_statisticitem_display_order_4efacabb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10688,7 +11406,7 @@ CREATE INDEX home_statisticitem_display_order_4efacabb ON public.home_statistici
 
 
 --
--- TOC entry 5904 (class 1259 OID 314129)
+-- TOC entry 5972 (class 1259 OID 729366)
 -- Name: home_statisticitem_is_active_e2554d40; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10696,7 +11414,7 @@ CREATE INDEX home_statisticitem_is_active_e2554d40 ON public.home_statisticitem 
 
 
 --
--- TOC entry 5907 (class 1259 OID 314130)
+-- TOC entry 5975 (class 1259 OID 729367)
 -- Name: knowledge_knowledgeaccordionitem_accordion_type_08644d11; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10704,7 +11422,7 @@ CREATE INDEX knowledge_knowledgeaccordionitem_accordion_type_08644d11 ON public.
 
 
 --
--- TOC entry 5908 (class 1259 OID 314131)
+-- TOC entry 5976 (class 1259 OID 729368)
 -- Name: knowledge_knowledgeaccordionitem_accordion_type_08644d11_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10712,7 +11430,7 @@ CREATE INDEX knowledge_knowledgeaccordionitem_accordion_type_08644d11_like ON pu
 
 
 --
--- TOC entry 5909 (class 1259 OID 314132)
+-- TOC entry 5977 (class 1259 OID 729369)
 -- Name: knowledge_knowledgeaccordionitem_display_order_9a66f800; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10720,7 +11438,7 @@ CREATE INDEX knowledge_knowledgeaccordionitem_display_order_9a66f800 ON public.k
 
 
 --
--- TOC entry 5910 (class 1259 OID 314133)
+-- TOC entry 5978 (class 1259 OID 729370)
 -- Name: knowledge_knowledgeaccordionitem_is_active_6b30eae5; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10728,7 +11446,7 @@ CREATE INDEX knowledge_knowledgeaccordionitem_is_active_6b30eae5 ON public.knowl
 
 
 --
--- TOC entry 5911 (class 1259 OID 314134)
+-- TOC entry 5979 (class 1259 OID 729371)
 -- Name: knowledge_knowledgeaccordionitem_is_published_e7b920f9; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10736,7 +11454,7 @@ CREATE INDEX knowledge_knowledgeaccordionitem_is_published_e7b920f9 ON public.kn
 
 
 --
--- TOC entry 5914 (class 1259 OID 314135)
+-- TOC entry 5982 (class 1259 OID 729372)
 -- Name: knowledge_knowledgeactivitynews_category_id_9e6da811; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10744,7 +11462,7 @@ CREATE INDEX knowledge_knowledgeactivitynews_category_id_9e6da811 ON public.know
 
 
 --
--- TOC entry 5915 (class 1259 OID 314136)
+-- TOC entry 5983 (class 1259 OID 729373)
 -- Name: knowledge_knowledgeactivitynews_display_order_432c651b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10752,7 +11470,7 @@ CREATE INDEX knowledge_knowledgeactivitynews_display_order_432c651b ON public.kn
 
 
 --
--- TOC entry 5916 (class 1259 OID 314137)
+-- TOC entry 5984 (class 1259 OID 729374)
 -- Name: knowledge_knowledgeactivitynews_is_active_eafd1a8a; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10760,7 +11478,7 @@ CREATE INDEX knowledge_knowledgeactivitynews_is_active_eafd1a8a ON public.knowle
 
 
 --
--- TOC entry 5917 (class 1259 OID 314138)
+-- TOC entry 5985 (class 1259 OID 729375)
 -- Name: knowledge_knowledgeactivitynews_is_published_78b1ef02; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10768,7 +11486,7 @@ CREATE INDEX knowledge_knowledgeactivitynews_is_published_78b1ef02 ON public.kno
 
 
 --
--- TOC entry 5920 (class 1259 OID 374448)
+-- TOC entry 5988 (class 1259 OID 729376)
 -- Name: knowledge_knowledgeactivitynews_slug_f7e0456e_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10776,7 +11494,7 @@ CREATE INDEX knowledge_knowledgeactivitynews_slug_f7e0456e_like ON public.knowle
 
 
 --
--- TOC entry 5935 (class 1259 OID 314139)
+-- TOC entry 6009 (class 1259 OID 729377)
 -- Name: knowledge_knowledgearticle_capability_id_6f2a8481; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10784,7 +11502,7 @@ CREATE INDEX knowledge_knowledgearticle_capability_id_6f2a8481 ON public.knowled
 
 
 --
--- TOC entry 5923 (class 1259 OID 314140)
+-- TOC entry 5991 (class 1259 OID 729378)
 -- Name: knowledge_knowledgearticle_category_id_cde9c6bb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10792,7 +11510,7 @@ CREATE INDEX knowledge_knowledgearticle_category_id_cde9c6bb ON public.knowledge
 
 
 --
--- TOC entry 5924 (class 1259 OID 314141)
+-- TOC entry 5992 (class 1259 OID 729379)
 -- Name: knowledge_knowledgearticle_display_order_e5e4e749; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10800,7 +11518,7 @@ CREATE INDEX knowledge_knowledgearticle_display_order_e5e4e749 ON public.knowled
 
 
 --
--- TOC entry 5925 (class 1259 OID 314142)
+-- TOC entry 5993 (class 1259 OID 729380)
 -- Name: knowledge_knowledgearticle_is_active_8900c0f7; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10808,7 +11526,7 @@ CREATE INDEX knowledge_knowledgearticle_is_active_8900c0f7 ON public.knowledge_k
 
 
 --
--- TOC entry 5926 (class 1259 OID 314143)
+-- TOC entry 5994 (class 1259 OID 729381)
 -- Name: knowledge_knowledgearticle_is_featured_72c72547; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10816,7 +11534,7 @@ CREATE INDEX knowledge_knowledgearticle_is_featured_72c72547 ON public.knowledge
 
 
 --
--- TOC entry 5927 (class 1259 OID 314144)
+-- TOC entry 5995 (class 1259 OID 729382)
 -- Name: knowledge_knowledgearticle_is_published_60ac4714; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10824,7 +11542,7 @@ CREATE INDEX knowledge_knowledgearticle_is_published_60ac4714 ON public.knowledg
 
 
 --
--- TOC entry 5936 (class 1259 OID 314145)
+-- TOC entry 6010 (class 1259 OID 729383)
 -- Name: knowledge_knowledgearticle_knowledgearticle_id_b93df845; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10832,7 +11550,23 @@ CREATE INDEX knowledge_knowledgearticle_knowledgearticle_id_b93df845 ON public.k
 
 
 --
--- TOC entry 5930 (class 1259 OID 314146)
+-- TOC entry 6003 (class 1259 OID 729384)
+-- Name: knowledge_knowledgearticle_knowledgearticle_id_dd3d9928; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX knowledge_knowledgearticle_knowledgearticle_id_dd3d9928 ON public.knowledge_knowledgearticle_partner_groups USING btree (knowledgearticle_id);
+
+
+--
+-- TOC entry 6004 (class 1259 OID 729385)
+-- Name: knowledge_knowledgearticle_knowledgepartnergroup_id_cd882bb7; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX knowledge_knowledgearticle_knowledgepartnergroup_id_cd882bb7 ON public.knowledge_knowledgearticle_partner_groups USING btree (knowledgepartnergroup_id);
+
+
+--
+-- TOC entry 5998 (class 1259 OID 729386)
 -- Name: knowledge_knowledgearticle_slug_023d0590_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10840,7 +11574,7 @@ CREATE INDEX knowledge_knowledgearticle_slug_023d0590_like ON public.knowledge_k
 
 
 --
--- TOC entry 5941 (class 1259 OID 314147)
+-- TOC entry 6015 (class 1259 OID 729387)
 -- Name: knowledge_knowledgearticle_topics_knowledgearticle_id_2f40aa64; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10848,7 +11582,7 @@ CREATE INDEX knowledge_knowledgearticle_topics_knowledgearticle_id_2f40aa64 ON p
 
 
 --
--- TOC entry 5942 (class 1259 OID 314148)
+-- TOC entry 6016 (class 1259 OID 729388)
 -- Name: knowledge_knowledgearticle_topics_knowledgetopic_id_11d44026; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10856,7 +11590,7 @@ CREATE INDEX knowledge_knowledgearticle_topics_knowledgetopic_id_11d44026 ON pub
 
 
 --
--- TOC entry 5945 (class 1259 OID 314149)
+-- TOC entry 6019 (class 1259 OID 729389)
 -- Name: knowledge_knowledgecategory_display_order_9ac47539; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10864,7 +11598,7 @@ CREATE INDEX knowledge_knowledgecategory_display_order_9ac47539 ON public.knowle
 
 
 --
--- TOC entry 5946 (class 1259 OID 314150)
+-- TOC entry 6020 (class 1259 OID 729390)
 -- Name: knowledge_knowledgecategory_is_active_e4178ae1; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10872,7 +11606,7 @@ CREATE INDEX knowledge_knowledgecategory_is_active_e4178ae1 ON public.knowledge_
 
 
 --
--- TOC entry 5947 (class 1259 OID 314151)
+-- TOC entry 6021 (class 1259 OID 729391)
 -- Name: knowledge_knowledgecategory_is_published_ae29ad54; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10880,7 +11614,7 @@ CREATE INDEX knowledge_knowledgecategory_is_published_ae29ad54 ON public.knowled
 
 
 --
--- TOC entry 5950 (class 1259 OID 314152)
+-- TOC entry 6024 (class 1259 OID 729392)
 -- Name: knowledge_knowledgecategory_slug_c01ef440_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10888,7 +11622,7 @@ CREATE INDEX knowledge_knowledgecategory_slug_c01ef440_like ON public.knowledge_
 
 
 --
--- TOC entry 5962 (class 1259 OID 314153)
+-- TOC entry 6036 (class 1259 OID 729393)
 -- Name: knowledge_knowledgecontent_knowledgecontenttypecard_i_be26cef3; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10896,7 +11630,7 @@ CREATE INDEX knowledge_knowledgecontent_knowledgecontenttypecard_i_be26cef3 ON p
 
 
 --
--- TOC entry 5963 (class 1259 OID 314154)
+-- TOC entry 6037 (class 1259 OID 729394)
 -- Name: knowledge_knowledgecontent_knowledgetopic_id_92a945b3; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10904,7 +11638,7 @@ CREATE INDEX knowledge_knowledgecontent_knowledgetopic_id_92a945b3 ON public.kno
 
 
 --
--- TOC entry 5953 (class 1259 OID 314155)
+-- TOC entry 6027 (class 1259 OID 729395)
 -- Name: knowledge_knowledgecontenttypecard_category_id_b2aad8c3; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10912,7 +11646,7 @@ CREATE INDEX knowledge_knowledgecontenttypecard_category_id_b2aad8c3 ON public.k
 
 
 --
--- TOC entry 5954 (class 1259 OID 314156)
+-- TOC entry 6028 (class 1259 OID 729396)
 -- Name: knowledge_knowledgecontenttypecard_display_order_c563fc4d; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10920,7 +11654,7 @@ CREATE INDEX knowledge_knowledgecontenttypecard_display_order_c563fc4d ON public
 
 
 --
--- TOC entry 5955 (class 1259 OID 314157)
+-- TOC entry 6029 (class 1259 OID 729397)
 -- Name: knowledge_knowledgecontenttypecard_is_active_557de55b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10928,7 +11662,7 @@ CREATE INDEX knowledge_knowledgecontenttypecard_is_active_557de55b ON public.kno
 
 
 --
--- TOC entry 5956 (class 1259 OID 314158)
+-- TOC entry 6030 (class 1259 OID 729398)
 -- Name: knowledge_knowledgecontenttypecard_is_published_93a47da4; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10936,7 +11670,7 @@ CREATE INDEX knowledge_knowledgecontenttypecard_is_published_93a47da4 ON public.
 
 
 --
--- TOC entry 5957 (class 1259 OID 314159)
+-- TOC entry 6031 (class 1259 OID 729399)
 -- Name: knowledge_knowledgecontenttypecard_listing_page_id_4d3fdbee; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10944,7 +11678,7 @@ CREATE INDEX knowledge_knowledgecontenttypecard_listing_page_id_4d3fdbee ON publ
 
 
 --
--- TOC entry 5966 (class 1259 OID 314160)
+-- TOC entry 6040 (class 1259 OID 729400)
 -- Name: knowledge_knowledgectabutton_display_order_787ba060; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10952,7 +11686,7 @@ CREATE INDEX knowledge_knowledgectabutton_display_order_787ba060 ON public.knowl
 
 
 --
--- TOC entry 5967 (class 1259 OID 314161)
+-- TOC entry 6041 (class 1259 OID 729401)
 -- Name: knowledge_knowledgectabutton_is_active_f164a180; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10960,7 +11694,7 @@ CREATE INDEX knowledge_knowledgectabutton_is_active_f164a180 ON public.knowledge
 
 
 --
--- TOC entry 5968 (class 1259 OID 314162)
+-- TOC entry 6042 (class 1259 OID 729402)
 -- Name: knowledge_knowledgectabutton_is_published_243a3933; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10968,7 +11702,7 @@ CREATE INDEX knowledge_knowledgectabutton_is_published_243a3933 ON public.knowle
 
 
 --
--- TOC entry 5969 (class 1259 OID 314163)
+-- TOC entry 6043 (class 1259 OID 729403)
 -- Name: knowledge_knowledgectabutton_listing_page_id_0cbdee2f; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10976,7 +11710,7 @@ CREATE INDEX knowledge_knowledgectabutton_listing_page_id_0cbdee2f ON public.kno
 
 
 --
--- TOC entry 5972 (class 1259 OID 314164)
+-- TOC entry 6046 (class 1259 OID 729404)
 -- Name: knowledge_knowledgedownload_category_id_5dab7adf; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10984,7 +11718,7 @@ CREATE INDEX knowledge_knowledgedownload_category_id_5dab7adf ON public.knowledg
 
 
 --
--- TOC entry 5973 (class 1259 OID 314165)
+-- TOC entry 6047 (class 1259 OID 729405)
 -- Name: knowledge_knowledgedownload_display_order_2659f7d9; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -10992,7 +11726,7 @@ CREATE INDEX knowledge_knowledgedownload_display_order_2659f7d9 ON public.knowle
 
 
 --
--- TOC entry 5974 (class 1259 OID 314166)
+-- TOC entry 6048 (class 1259 OID 729406)
 -- Name: knowledge_knowledgedownload_is_active_e8feb603; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11000,7 +11734,7 @@ CREATE INDEX knowledge_knowledgedownload_is_active_e8feb603 ON public.knowledge_
 
 
 --
--- TOC entry 5975 (class 1259 OID 314167)
+-- TOC entry 6049 (class 1259 OID 729407)
 -- Name: knowledge_knowledgedownload_is_published_7d7fb9a3; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11008,7 +11742,7 @@ CREATE INDEX knowledge_knowledgedownload_is_published_7d7fb9a3 ON public.knowled
 
 
 --
--- TOC entry 5978 (class 1259 OID 314168)
+-- TOC entry 6052 (class 1259 OID 729408)
 -- Name: knowledge_knowledgedownload_slug_6d53ef3e_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11016,7 +11750,7 @@ CREATE INDEX knowledge_knowledgedownload_slug_6d53ef3e_like ON public.knowledge_
 
 
 --
--- TOC entry 5983 (class 1259 OID 314169)
+-- TOC entry 6057 (class 1259 OID 729409)
 -- Name: knowledge_knowledgeevent_category_id_7a9a9ee5; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11024,7 +11758,7 @@ CREATE INDEX knowledge_knowledgeevent_category_id_7a9a9ee5 ON public.knowledge_k
 
 
 --
--- TOC entry 5984 (class 1259 OID 314170)
+-- TOC entry 6058 (class 1259 OID 729410)
 -- Name: knowledge_knowledgeevent_display_order_6bb6ef06; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11032,7 +11766,7 @@ CREATE INDEX knowledge_knowledgeevent_display_order_6bb6ef06 ON public.knowledge
 
 
 --
--- TOC entry 5985 (class 1259 OID 314171)
+-- TOC entry 6059 (class 1259 OID 729411)
 -- Name: knowledge_knowledgeevent_is_active_f1bea6ee; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11040,7 +11774,7 @@ CREATE INDEX knowledge_knowledgeevent_is_active_f1bea6ee ON public.knowledge_kno
 
 
 --
--- TOC entry 5986 (class 1259 OID 314172)
+-- TOC entry 6060 (class 1259 OID 729412)
 -- Name: knowledge_knowledgeevent_is_published_81a3c716; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11048,7 +11782,7 @@ CREATE INDEX knowledge_knowledgeevent_is_published_81a3c716 ON public.knowledge_
 
 
 --
--- TOC entry 5991 (class 1259 OID 314173)
+-- TOC entry 6065 (class 1259 OID 729413)
 -- Name: knowledge_knowledgeevent_tags_knowledgeevent_id_889fd720; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11056,7 +11790,7 @@ CREATE INDEX knowledge_knowledgeevent_tags_knowledgeevent_id_889fd720 ON public.
 
 
 --
--- TOC entry 5992 (class 1259 OID 314174)
+-- TOC entry 6066 (class 1259 OID 729414)
 -- Name: knowledge_knowledgeevent_tags_knowledgeeventtag_id_0bd45ac8; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11064,7 +11798,7 @@ CREATE INDEX knowledge_knowledgeevent_tags_knowledgeeventtag_id_0bd45ac8 ON publ
 
 
 --
--- TOC entry 5995 (class 1259 OID 314175)
+-- TOC entry 6069 (class 1259 OID 729415)
 -- Name: knowledge_knowledgeeventtag_display_order_d4bcec33; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11072,7 +11806,7 @@ CREATE INDEX knowledge_knowledgeeventtag_display_order_d4bcec33 ON public.knowle
 
 
 --
--- TOC entry 5996 (class 1259 OID 314176)
+-- TOC entry 6070 (class 1259 OID 729416)
 -- Name: knowledge_knowledgeeventtag_is_active_a299cdbb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11080,7 +11814,7 @@ CREATE INDEX knowledge_knowledgeeventtag_is_active_a299cdbb ON public.knowledge_
 
 
 --
--- TOC entry 5999 (class 1259 OID 314177)
+-- TOC entry 6073 (class 1259 OID 729417)
 -- Name: knowledge_knowledgeeventtag_slug_99732860_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11088,7 +11822,7 @@ CREATE INDEX knowledge_knowledgeeventtag_slug_99732860_like ON public.knowledge_
 
 
 --
--- TOC entry 6004 (class 1259 OID 314178)
+-- TOC entry 6078 (class 1259 OID 729418)
 -- Name: knowledge_knowledgefeaturedarticle_article_id_a55826cd; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11096,7 +11830,7 @@ CREATE INDEX knowledge_knowledgefeaturedarticle_article_id_a55826cd ON public.kn
 
 
 --
--- TOC entry 6005 (class 1259 OID 314179)
+-- TOC entry 6079 (class 1259 OID 729419)
 -- Name: knowledge_knowledgefeaturedarticle_display_order_f990d1dc; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11104,7 +11838,7 @@ CREATE INDEX knowledge_knowledgefeaturedarticle_display_order_f990d1dc ON public
 
 
 --
--- TOC entry 6006 (class 1259 OID 314180)
+-- TOC entry 6080 (class 1259 OID 729420)
 -- Name: knowledge_knowledgefeaturedarticle_is_active_e7cb7cb3; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11112,7 +11846,7 @@ CREATE INDEX knowledge_knowledgefeaturedarticle_is_active_e7cb7cb3 ON public.kno
 
 
 --
--- TOC entry 6007 (class 1259 OID 314181)
+-- TOC entry 6081 (class 1259 OID 729421)
 -- Name: knowledge_knowledgefeaturedarticle_listing_page_id_262b7926; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11120,7 +11854,7 @@ CREATE INDEX knowledge_knowledgefeaturedarticle_listing_page_id_262b7926 ON publ
 
 
 --
--- TOC entry 6010 (class 1259 OID 314182)
+-- TOC entry 6084 (class 1259 OID 729422)
 -- Name: knowledge_knowledgefiltergroup_display_order_8ae04e78; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11128,7 +11862,7 @@ CREATE INDEX knowledge_knowledgefiltergroup_display_order_8ae04e78 ON public.kno
 
 
 --
--- TOC entry 6011 (class 1259 OID 314183)
+-- TOC entry 6085 (class 1259 OID 729423)
 -- Name: knowledge_knowledgefiltergroup_is_active_dac83aeb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11136,7 +11870,7 @@ CREATE INDEX knowledge_knowledgefiltergroup_is_active_dac83aeb ON public.knowled
 
 
 --
--- TOC entry 6012 (class 1259 OID 314184)
+-- TOC entry 6086 (class 1259 OID 729424)
 -- Name: knowledge_knowledgefiltergroup_param_key_df9c58fb_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11144,7 +11878,7 @@ CREATE INDEX knowledge_knowledgefiltergroup_param_key_df9c58fb_like ON public.kn
 
 
 --
--- TOC entry 6017 (class 1259 OID 314185)
+-- TOC entry 6091 (class 1259 OID 729425)
 -- Name: knowledge_knowledgefilteritem_display_order_24386067; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11152,7 +11886,7 @@ CREATE INDEX knowledge_knowledgefilteritem_display_order_24386067 ON public.know
 
 
 --
--- TOC entry 6018 (class 1259 OID 314186)
+-- TOC entry 6092 (class 1259 OID 729426)
 -- Name: knowledge_knowledgefilteritem_group_id_b1476659; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11160,7 +11894,7 @@ CREATE INDEX knowledge_knowledgefilteritem_group_id_b1476659 ON public.knowledge
 
 
 --
--- TOC entry 6021 (class 1259 OID 314187)
+-- TOC entry 6095 (class 1259 OID 729427)
 -- Name: knowledge_knowledgefilteritem_is_active_b925e117; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11168,7 +11902,7 @@ CREATE INDEX knowledge_knowledgefilteritem_is_active_b925e117 ON public.knowledg
 
 
 --
--- TOC entry 6024 (class 1259 OID 314188)
+-- TOC entry 6098 (class 1259 OID 729428)
 -- Name: knowledge_knowledgelistingpage_display_order_657f23ab; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11176,7 +11910,7 @@ CREATE INDEX knowledge_knowledgelistingpage_display_order_657f23ab ON public.kno
 
 
 --
--- TOC entry 6025 (class 1259 OID 314189)
+-- TOC entry 6099 (class 1259 OID 729429)
 -- Name: knowledge_knowledgelistingpage_is_active_e24a29c8; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11184,7 +11918,7 @@ CREATE INDEX knowledge_knowledgelistingpage_is_active_e24a29c8 ON public.knowled
 
 
 --
--- TOC entry 6040 (class 1259 OID 314190)
+-- TOC entry 6114 (class 1259 OID 729430)
 -- Name: knowledge_knowledgenewsite_knowledgenewsitem_id_ae8c12ce; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11192,7 +11926,7 @@ CREATE INDEX knowledge_knowledgenewsite_knowledgenewsitem_id_ae8c12ce ON public.
 
 
 --
--- TOC entry 6028 (class 1259 OID 314191)
+-- TOC entry 6102 (class 1259 OID 729431)
 -- Name: knowledge_knowledgenewsitem_category_id_92082a2e; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11200,7 +11934,7 @@ CREATE INDEX knowledge_knowledgenewsitem_category_id_92082a2e ON public.knowledg
 
 
 --
--- TOC entry 6029 (class 1259 OID 314192)
+-- TOC entry 6103 (class 1259 OID 729432)
 -- Name: knowledge_knowledgenewsitem_display_order_9d73b5f8; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11208,7 +11942,7 @@ CREATE INDEX knowledge_knowledgenewsitem_display_order_9d73b5f8 ON public.knowle
 
 
 --
--- TOC entry 6030 (class 1259 OID 314193)
+-- TOC entry 6104 (class 1259 OID 729433)
 -- Name: knowledge_knowledgenewsitem_is_active_f0a92b42; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11216,7 +11950,7 @@ CREATE INDEX knowledge_knowledgenewsitem_is_active_f0a92b42 ON public.knowledge_
 
 
 --
--- TOC entry 6031 (class 1259 OID 314194)
+-- TOC entry 6105 (class 1259 OID 729434)
 -- Name: knowledge_knowledgenewsitem_is_press_article_ed757942; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11224,7 +11958,7 @@ CREATE INDEX knowledge_knowledgenewsitem_is_press_article_ed757942 ON public.kno
 
 
 --
--- TOC entry 6032 (class 1259 OID 314195)
+-- TOC entry 6106 (class 1259 OID 729435)
 -- Name: knowledge_knowledgenewsitem_is_published_5885af4a; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11232,7 +11966,7 @@ CREATE INDEX knowledge_knowledgenewsitem_is_published_5885af4a ON public.knowled
 
 
 --
--- TOC entry 6035 (class 1259 OID 314196)
+-- TOC entry 6109 (class 1259 OID 729436)
 -- Name: knowledge_knowledgenewsitem_slug_1c0b517f_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11240,7 +11974,7 @@ CREATE INDEX knowledge_knowledgenewsitem_slug_1c0b517f_like ON public.knowledge_
 
 
 --
--- TOC entry 6041 (class 1259 OID 314197)
+-- TOC entry 6115 (class 1259 OID 729437)
 -- Name: knowledge_knowledgenewsitem_topics_knowledgetopic_id_30491943; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11248,7 +11982,31 @@ CREATE INDEX knowledge_knowledgenewsitem_topics_knowledgetopic_id_30491943 ON pu
 
 
 --
--- TOC entry 6044 (class 1259 OID 314198)
+-- TOC entry 6118 (class 1259 OID 729438)
+-- Name: knowledge_knowledgepartnergroup_display_order_2118c117; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX knowledge_knowledgepartnergroup_display_order_2118c117 ON public.knowledge_knowledgepartnergroup USING btree (display_order);
+
+
+--
+-- TOC entry 6119 (class 1259 OID 729439)
+-- Name: knowledge_knowledgepartnergroup_is_active_0d71c93e; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX knowledge_knowledgepartnergroup_is_active_0d71c93e ON public.knowledge_knowledgepartnergroup USING btree (is_active);
+
+
+--
+-- TOC entry 6122 (class 1259 OID 729440)
+-- Name: knowledge_knowledgepartnergroup_slug_9ef73b05_like; Type: INDEX; Schema: public; Owner: irdm_user
+--
+
+CREATE INDEX knowledge_knowledgepartnergroup_slug_9ef73b05_like ON public.knowledge_knowledgepartnergroup USING btree (slug varchar_pattern_ops);
+
+
+--
+-- TOC entry 6125 (class 1259 OID 729441)
 -- Name: knowledge_knowledgetopic_display_order_6e8da450; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11256,7 +12014,7 @@ CREATE INDEX knowledge_knowledgetopic_display_order_6e8da450 ON public.knowledge
 
 
 --
--- TOC entry 6045 (class 1259 OID 314199)
+-- TOC entry 6126 (class 1259 OID 729442)
 -- Name: knowledge_knowledgetopic_is_active_5c3ab6f0; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11264,7 +12022,7 @@ CREATE INDEX knowledge_knowledgetopic_is_active_5c3ab6f0 ON public.knowledge_kno
 
 
 --
--- TOC entry 6046 (class 1259 OID 314200)
+-- TOC entry 6127 (class 1259 OID 729443)
 -- Name: knowledge_knowledgetopic_is_published_b99c8d58; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11272,7 +12030,7 @@ CREATE INDEX knowledge_knowledgetopic_is_published_b99c8d58 ON public.knowledge_
 
 
 --
--- TOC entry 6049 (class 1259 OID 314201)
+-- TOC entry 6130 (class 1259 OID 729444)
 -- Name: knowledge_knowledgetopic_slug_450203fb_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11280,7 +12038,7 @@ CREATE INDEX knowledge_knowledgetopic_slug_450203fb_like ON public.knowledge_kno
 
 
 --
--- TOC entry 6061 (class 1259 OID 314202)
+-- TOC entry 6142 (class 1259 OID 729445)
 -- Name: knowledge_knowledgetopicca_knowledgetopiccard_id_447e1f0b; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11288,7 +12046,7 @@ CREATE INDEX knowledge_knowledgetopicca_knowledgetopiccard_id_447e1f0b ON public
 
 
 --
--- TOC entry 6062 (class 1259 OID 314203)
+-- TOC entry 6143 (class 1259 OID 729446)
 -- Name: knowledge_knowledgetopicca_knowledgetopiccardtag_id_dd80eb8d; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11296,7 +12054,7 @@ CREATE INDEX knowledge_knowledgetopicca_knowledgetopiccardtag_id_dd80eb8d ON pub
 
 
 --
--- TOC entry 6052 (class 1259 OID 314204)
+-- TOC entry 6133 (class 1259 OID 729447)
 -- Name: knowledge_knowledgetopiccard_display_order_947d2111; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11304,7 +12062,7 @@ CREATE INDEX knowledge_knowledgetopiccard_display_order_947d2111 ON public.knowl
 
 
 --
--- TOC entry 6053 (class 1259 OID 314205)
+-- TOC entry 6134 (class 1259 OID 729448)
 -- Name: knowledge_knowledgetopiccard_is_active_fcafb769; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11312,7 +12070,7 @@ CREATE INDEX knowledge_knowledgetopiccard_is_active_fcafb769 ON public.knowledge
 
 
 --
--- TOC entry 6054 (class 1259 OID 314206)
+-- TOC entry 6135 (class 1259 OID 729449)
 -- Name: knowledge_knowledgetopiccard_is_published_2f0108fd; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11320,7 +12078,7 @@ CREATE INDEX knowledge_knowledgetopiccard_is_published_2f0108fd ON public.knowle
 
 
 --
--- TOC entry 6055 (class 1259 OID 314207)
+-- TOC entry 6136 (class 1259 OID 729450)
 -- Name: knowledge_knowledgetopiccard_listing_page_id_f79e2065; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11328,7 +12086,7 @@ CREATE INDEX knowledge_knowledgetopiccard_listing_page_id_f79e2065 ON public.kno
 
 
 --
--- TOC entry 6058 (class 1259 OID 314208)
+-- TOC entry 6139 (class 1259 OID 729451)
 -- Name: knowledge_knowledgetopiccard_topic_id_d0ee58f7; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11336,7 +12094,7 @@ CREATE INDEX knowledge_knowledgetopiccard_topic_id_d0ee58f7 ON public.knowledge_
 
 
 --
--- TOC entry 6065 (class 1259 OID 314209)
+-- TOC entry 6146 (class 1259 OID 729452)
 -- Name: knowledge_knowledgetopiccardtag_display_order_d6f8cc9d; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11344,7 +12102,7 @@ CREATE INDEX knowledge_knowledgetopiccardtag_display_order_d6f8cc9d ON public.kn
 
 
 --
--- TOC entry 6066 (class 1259 OID 314210)
+-- TOC entry 6147 (class 1259 OID 729453)
 -- Name: knowledge_knowledgetopiccardtag_is_active_8d7d01cb; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11352,7 +12110,7 @@ CREATE INDEX knowledge_knowledgetopiccardtag_is_active_8d7d01cb ON public.knowle
 
 
 --
--- TOC entry 6069 (class 1259 OID 314211)
+-- TOC entry 6150 (class 1259 OID 729454)
 -- Name: knowledge_knowledgetopiccardtag_slug_d21f808b_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11360,7 +12118,7 @@ CREATE INDEX knowledge_knowledgetopiccardtag_slug_d21f808b_like ON public.knowle
 
 
 --
--- TOC entry 6072 (class 1259 OID 314212)
+-- TOC entry 6153 (class 1259 OID 729455)
 -- Name: solution_solution_display_order_25e6795f; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11368,7 +12126,7 @@ CREATE INDEX solution_solution_display_order_25e6795f ON public.solution_solutio
 
 
 --
--- TOC entry 6073 (class 1259 OID 314213)
+-- TOC entry 6154 (class 1259 OID 729456)
 -- Name: solution_solution_is_active_50d5dbcf; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11376,7 +12134,7 @@ CREATE INDEX solution_solution_is_active_50d5dbcf ON public.solution_solution US
 
 
 --
--- TOC entry 6074 (class 1259 OID 314214)
+-- TOC entry 6155 (class 1259 OID 729457)
 -- Name: solution_solution_is_published_9f5bbfaa; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11384,7 +12142,7 @@ CREATE INDEX solution_solution_is_published_9f5bbfaa ON public.solution_solution
 
 
 --
--- TOC entry 6082 (class 1259 OID 314215)
+-- TOC entry 6163 (class 1259 OID 729458)
 -- Name: solution_solution_related_capabilities_capability_id_cc9faac4; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11392,7 +12150,7 @@ CREATE INDEX solution_solution_related_capabilities_capability_id_cc9faac4 ON pu
 
 
 --
--- TOC entry 6085 (class 1259 OID 314216)
+-- TOC entry 6166 (class 1259 OID 729459)
 -- Name: solution_solution_related_capabilities_solution_id_4a542fb4; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11400,7 +12158,7 @@ CREATE INDEX solution_solution_related_capabilities_solution_id_4a542fb4 ON publ
 
 
 --
--- TOC entry 6077 (class 1259 OID 314217)
+-- TOC entry 6158 (class 1259 OID 729460)
 -- Name: solution_solution_slug_f375a902_like; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11408,7 +12166,7 @@ CREATE INDEX solution_solution_slug_f375a902_like ON public.solution_solution US
 
 
 --
--- TOC entry 6086 (class 1259 OID 314218)
+-- TOC entry 6167 (class 1259 OID 729461)
 -- Name: solution_solutionapproachstep_display_order_e0a7c3f7; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11416,7 +12174,7 @@ CREATE INDEX solution_solutionapproachstep_display_order_e0a7c3f7 ON public.solu
 
 
 --
--- TOC entry 6087 (class 1259 OID 314219)
+-- TOC entry 6168 (class 1259 OID 729462)
 -- Name: solution_solutionapproachstep_is_active_1ff807f1; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11424,7 +12182,7 @@ CREATE INDEX solution_solutionapproachstep_is_active_1ff807f1 ON public.solution
 
 
 --
--- TOC entry 6090 (class 1259 OID 314220)
+-- TOC entry 6171 (class 1259 OID 729463)
 -- Name: solution_solutionchallenge_display_order_37f07761; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11432,7 +12190,7 @@ CREATE INDEX solution_solutionchallenge_display_order_37f07761 ON public.solutio
 
 
 --
--- TOC entry 6091 (class 1259 OID 314221)
+-- TOC entry 6172 (class 1259 OID 729464)
 -- Name: solution_solutionchallenge_is_active_c73d3473; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11440,7 +12198,7 @@ CREATE INDEX solution_solutionchallenge_is_active_c73d3473 ON public.solution_so
 
 
 --
--- TOC entry 6094 (class 1259 OID 314222)
+-- TOC entry 6175 (class 1259 OID 729465)
 -- Name: solution_solutionchallenge_solution_id_4408bc1c; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11448,7 +12206,7 @@ CREATE INDEX solution_solutionchallenge_solution_id_4408bc1c ON public.solution_
 
 
 --
--- TOC entry 6095 (class 1259 OID 314223)
+-- TOC entry 6176 (class 1259 OID 729466)
 -- Name: solution_solutionfeature_display_order_f7d17d44; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11456,7 +12214,7 @@ CREATE INDEX solution_solutionfeature_display_order_f7d17d44 ON public.solution_
 
 
 --
--- TOC entry 6096 (class 1259 OID 314224)
+-- TOC entry 6177 (class 1259 OID 729467)
 -- Name: solution_solutionfeature_is_active_9eff11ae; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11464,7 +12222,7 @@ CREATE INDEX solution_solutionfeature_is_active_9eff11ae ON public.solution_solu
 
 
 --
--- TOC entry 6099 (class 1259 OID 314225)
+-- TOC entry 6180 (class 1259 OID 729468)
 -- Name: solution_solutionfeature_solution_id_46dcdb74; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11472,7 +12230,7 @@ CREATE INDEX solution_solutionfeature_solution_id_46dcdb74 ON public.solution_so
 
 
 --
--- TOC entry 6100 (class 1259 OID 314226)
+-- TOC entry 6181 (class 1259 OID 729469)
 -- Name: solution_solutionlistingpage_display_order_2348f5bc; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11480,7 +12238,7 @@ CREATE INDEX solution_solutionlistingpage_display_order_2348f5bc ON public.solut
 
 
 --
--- TOC entry 6101 (class 1259 OID 314227)
+-- TOC entry 6182 (class 1259 OID 729470)
 -- Name: solution_solutionlistingpage_is_active_6ad94301; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11488,7 +12246,7 @@ CREATE INDEX solution_solutionlistingpage_is_active_6ad94301 ON public.solution_
 
 
 --
--- TOC entry 6104 (class 1259 OID 314228)
+-- TOC entry 6185 (class 1259 OID 729471)
 -- Name: solution_solutionmethodologystep_display_order_6e16e23f; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11496,7 +12254,7 @@ CREATE INDEX solution_solutionmethodologystep_display_order_6e16e23f ON public.s
 
 
 --
--- TOC entry 6105 (class 1259 OID 314229)
+-- TOC entry 6186 (class 1259 OID 729472)
 -- Name: solution_solutionmethodologystep_is_active_4e0f8377; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11504,7 +12262,7 @@ CREATE INDEX solution_solutionmethodologystep_is_active_4e0f8377 ON public.solut
 
 
 --
--- TOC entry 6108 (class 1259 OID 314230)
+-- TOC entry 6189 (class 1259 OID 729473)
 -- Name: solution_solutionmethodologystep_solution_id_c607d630; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11512,7 +12270,7 @@ CREATE INDEX solution_solutionmethodologystep_solution_id_c607d630 ON public.sol
 
 
 --
--- TOC entry 6109 (class 1259 OID 314231)
+-- TOC entry 6190 (class 1259 OID 729474)
 -- Name: solution_solutionoutput_display_order_0075fac8; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11520,7 +12278,7 @@ CREATE INDEX solution_solutionoutput_display_order_0075fac8 ON public.solution_s
 
 
 --
--- TOC entry 6110 (class 1259 OID 314232)
+-- TOC entry 6191 (class 1259 OID 729475)
 -- Name: solution_solutionoutput_is_active_c1ab63c5; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11528,7 +12286,7 @@ CREATE INDEX solution_solutionoutput_is_active_c1ab63c5 ON public.solution_solut
 
 
 --
--- TOC entry 6113 (class 1259 OID 314233)
+-- TOC entry 6194 (class 1259 OID 729476)
 -- Name: solution_solutionoutput_solution_id_134a7a75; Type: INDEX; Schema: public; Owner: irdm_user
 --
 
@@ -11536,7 +12294,7 @@ CREATE INDEX solution_solutionoutput_solution_id_134a7a75 ON public.solution_sol
 
 
 --
--- TOC entry 6119 (class 2606 OID 314234)
+-- TOC entry 6195 (class 2606 OID 729477)
 -- Name: about_aboutcontactbannerstat about_aboutcontactba_banner_id_0d445c9d_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11545,7 +12303,7 @@ ALTER TABLE ONLY public.about_aboutcontactbannerstat
 
 
 --
--- TOC entry 6122 (class 2606 OID 314239)
+-- TOC entry 6198 (class 2606 OID 729482)
 -- Name: about_aboutecosystemstatistic about_aboutecosystem_ecosystem_id_dbb1def4_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11554,7 +12312,7 @@ ALTER TABLE ONLY public.about_aboutecosystemstatistic
 
 
 --
--- TOC entry 6120 (class 2606 OID 314244)
+-- TOC entry 6196 (class 2606 OID 729487)
 -- Name: about_aboutecosystempartnergroup about_aboutecosystem_ecosystem_id_eff726e8_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11563,7 +12321,7 @@ ALTER TABLE ONLY public.about_aboutecosystempartnergroup
 
 
 --
--- TOC entry 6121 (class 2606 OID 314249)
+-- TOC entry 6197 (class 2606 OID 729492)
 -- Name: about_aboutecosystempartneritem about_aboutecosystem_group_id_4a0d4b4e_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11572,7 +12330,7 @@ ALTER TABLE ONLY public.about_aboutecosystempartneritem
 
 
 --
--- TOC entry 6123 (class 2606 OID 314254)
+-- TOC entry 6199 (class 2606 OID 729497)
 -- Name: about_aboutherostatistic about_aboutherostatistic_hero_id_f3dd3aef_fk_about_abouthero_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11581,7 +12339,7 @@ ALTER TABLE ONLY public.about_aboutherostatistic
 
 
 --
--- TOC entry 6124 (class 2606 OID 314259)
+-- TOC entry 6200 (class 2606 OID 729502)
 -- Name: about_abouthighlightcard about_abouthighlight_intro_id_9883885b_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11590,7 +12348,7 @@ ALTER TABLE ONLY public.about_abouthighlightcard
 
 
 --
--- TOC entry 6125 (class 2606 OID 314264)
+-- TOC entry 6201 (class 2606 OID 729507)
 -- Name: about_aboutlegalbadge about_aboutlegalbadg_legal_info_id_97d065ff_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11599,7 +12357,7 @@ ALTER TABLE ONLY public.about_aboutlegalbadge
 
 
 --
--- TOC entry 6126 (class 2606 OID 314269)
+-- TOC entry 6202 (class 2606 OID 729512)
 -- Name: about_aboutlegalorgattribute about_aboutlegalorga_legal_info_id_4f81322e_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11608,7 +12366,7 @@ ALTER TABLE ONLY public.about_aboutlegalorgattribute
 
 
 --
--- TOC entry 6127 (class 2606 OID 314274)
+-- TOC entry 6203 (class 2606 OID 729517)
 -- Name: about_aboutlegaltimelineitem about_aboutlegaltime_legal_info_id_74ca4891_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11617,7 +12375,7 @@ ALTER TABLE ONLY public.about_aboutlegaltimelineitem
 
 
 --
--- TOC entry 6128 (class 2606 OID 314279)
+-- TOC entry 6204 (class 2606 OID 729522)
 -- Name: about_aboutorgstructurebulletitem about_aboutorgstruct_card_id_d4db7d74_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11626,7 +12384,7 @@ ALTER TABLE ONLY public.about_aboutorgstructurebulletitem
 
 
 --
--- TOC entry 6129 (class 2606 OID 314284)
+-- TOC entry 6205 (class 2606 OID 729527)
 -- Name: about_aboutorgstructurecard about_aboutorgstruct_section_id_987f12ed_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11635,7 +12393,7 @@ ALTER TABLE ONLY public.about_aboutorgstructurecard
 
 
 --
--- TOC entry 6130 (class 2606 OID 314289)
+-- TOC entry 6206 (class 2606 OID 729532)
 -- Name: about_aboutpartnerbenefit about_aboutpartnerbe_section_id_0b56fc40_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11644,7 +12402,7 @@ ALTER TABLE ONLY public.about_aboutpartnerbenefit
 
 
 --
--- TOC entry 6131 (class 2606 OID 314294)
+-- TOC entry 6207 (class 2606 OID 729537)
 -- Name: about_abouttargetaudience about_abouttargetaud_section_id_a00fd946_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11653,7 +12411,7 @@ ALTER TABLE ONLY public.about_abouttargetaudience
 
 
 --
--- TOC entry 6133 (class 2606 OID 314299)
+-- TOC entry 6209 (class 2606 OID 729542)
 -- Name: about_aboutvisionmissionicon about_aboutvisionmis_section_id_01e59c26_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11662,7 +12420,7 @@ ALTER TABLE ONLY public.about_aboutvisionmissionicon
 
 
 --
--- TOC entry 6132 (class 2606 OID 314304)
+-- TOC entry 6208 (class 2606 OID 729547)
 -- Name: about_aboutvisionmissioncard about_aboutvisionmis_section_id_5cdaaa96_fk_about_abo; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11671,7 +12429,7 @@ ALTER TABLE ONLY public.about_aboutvisionmissioncard
 
 
 --
--- TOC entry 6134 (class 2606 OID 314309)
+-- TOC entry 6210 (class 2606 OID 729552)
 -- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11680,7 +12438,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- TOC entry 6135 (class 2606 OID 314314)
+-- TOC entry 6211 (class 2606 OID 729557)
 -- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11689,7 +12447,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- TOC entry 6136 (class 2606 OID 314319)
+-- TOC entry 6212 (class 2606 OID 729562)
 -- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11698,7 +12456,7 @@ ALTER TABLE ONLY public.auth_permission
 
 
 --
--- TOC entry 6137 (class 2606 OID 314324)
+-- TOC entry 6213 (class 2606 OID 729567)
 -- Name: auth_user_groups auth_user_groups_group_id_97559544_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11707,7 +12465,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- TOC entry 6138 (class 2606 OID 314329)
+-- TOC entry 6214 (class 2606 OID 729572)
 -- Name: auth_user_groups auth_user_groups_user_id_6a12ed8b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11716,7 +12474,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- TOC entry 6139 (class 2606 OID 314334)
+-- TOC entry 6215 (class 2606 OID 729577)
 -- Name: auth_user_user_permissions auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11725,7 +12483,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- TOC entry 6140 (class 2606 OID 314339)
+-- TOC entry 6216 (class 2606 OID 729582)
 -- Name: auth_user_user_permissions auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11734,7 +12492,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- TOC entry 6141 (class 2606 OID 314344)
+-- TOC entry 6217 (class 2606 OID 729587)
 -- Name: capability_capabilitycasestudy capability_capabilit_capability_id_22efefff_fk_capabilit; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11743,7 +12501,7 @@ ALTER TABLE ONLY public.capability_capabilitycasestudy
 
 
 --
--- TOC entry 6143 (class 2606 OID 314349)
+-- TOC entry 6219 (class 2606 OID 729592)
 -- Name: capability_capabilityfeature capability_capabilit_capability_id_2e9982e2_fk_capabilit; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11752,7 +12510,7 @@ ALTER TABLE ONLY public.capability_capabilityfeature
 
 
 --
--- TOC entry 6146 (class 2606 OID 314354)
+-- TOC entry 6222 (class 2606 OID 729597)
 -- Name: capability_capabilityoutput capability_capabilit_capability_id_5aa8adef_fk_capabilit; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11761,7 +12519,7 @@ ALTER TABLE ONLY public.capability_capabilityoutput
 
 
 --
--- TOC entry 6145 (class 2606 OID 314359)
+-- TOC entry 6221 (class 2606 OID 729602)
 -- Name: capability_capabilityneeditem capability_capabilit_capability_id_7930787f_fk_capabilit; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11770,7 +12528,7 @@ ALTER TABLE ONLY public.capability_capabilityneeditem
 
 
 --
--- TOC entry 6144 (class 2606 OID 314364)
+-- TOC entry 6220 (class 2606 OID 729607)
 -- Name: capability_capabilityhowstep capability_capabilit_capability_id_bd6ae428_fk_capabilit; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11779,7 +12537,7 @@ ALTER TABLE ONLY public.capability_capabilityhowstep
 
 
 --
--- TOC entry 6142 (class 2606 OID 314369)
+-- TOC entry 6218 (class 2606 OID 729612)
 -- Name: capability_capabilitycasestudytag capability_capabilit_case_study_id_b5ed7f46_fk_capabilit; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11788,7 +12546,7 @@ ALTER TABLE ONLY public.capability_capabilitycasestudytag
 
 
 --
--- TOC entry 6147 (class 2606 OID 314374)
+-- TOC entry 6223 (class 2606 OID 729617)
 -- Name: core_footerlink core_footerlink_section_id_0235b1ac_fk_core_footersection_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11797,7 +12555,7 @@ ALTER TABLE ONLY public.core_footerlink
 
 
 --
--- TOC entry 6148 (class 2606 OID 314379)
+-- TOC entry 6224 (class 2606 OID 729622)
 -- Name: core_menuitem core_menuitem_parent_id_dd02175c_fk_core_menuitem_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11806,7 +12564,7 @@ ALTER TABLE ONLY public.core_menuitem
 
 
 --
--- TOC entry 6149 (class 2606 OID 314384)
+-- TOC entry 6225 (class 2606 OID 729627)
 -- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11815,7 +12573,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 
 --
--- TOC entry 6150 (class 2606 OID 314389)
+-- TOC entry 6226 (class 2606 OID 729632)
 -- Name: django_admin_log django_admin_log_user_id_c564eba6_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11824,7 +12582,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 
 --
--- TOC entry 6151 (class 2606 OID 314394)
+-- TOC entry 6227 (class 2606 OID 729637)
 -- Name: expert_association expert_association_info_group_id_564b3e24_fk_expert_in; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11833,7 +12591,7 @@ ALTER TABLE ONLY public.expert_association
 
 
 --
--- TOC entry 6153 (class 2606 OID 314399)
+-- TOC entry 6229 (class 2606 OID 729642)
 -- Name: expert_expert_engagement_types expert_expert_engage_engagementtype_id_9803c021_fk_expert_en; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11842,7 +12600,7 @@ ALTER TABLE ONLY public.expert_expert_engagement_types
 
 
 --
--- TOC entry 6154 (class 2606 OID 314404)
+-- TOC entry 6230 (class 2606 OID 729647)
 -- Name: expert_expert_engagement_types expert_expert_engage_expert_id_7187dd67_fk_expert_ex; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11851,7 +12609,7 @@ ALTER TABLE ONLY public.expert_expert_engagement_types
 
 
 --
--- TOC entry 6152 (class 2606 OID 314409)
+-- TOC entry 6228 (class 2606 OID 729652)
 -- Name: expert_expert expert_expert_group_id_408c0f52_fk_expert_expertgroup_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11860,7 +12618,7 @@ ALTER TABLE ONLY public.expert_expert
 
 
 --
--- TOC entry 6155 (class 2606 OID 314414)
+-- TOC entry 6231 (class 2606 OID 729657)
 -- Name: expert_expert_knowledge_topics expert_expert_knowle_expert_id_2618f145_fk_expert_ex; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11869,7 +12627,7 @@ ALTER TABLE ONLY public.expert_expert_knowledge_topics
 
 
 --
--- TOC entry 6156 (class 2606 OID 314419)
+-- TOC entry 6232 (class 2606 OID 729662)
 -- Name: expert_expert_knowledge_topics expert_expert_knowle_knowledgetopic_id_93810fe6_fk_expert_kn; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11878,7 +12636,7 @@ ALTER TABLE ONLY public.expert_expert_knowledge_topics
 
 
 --
--- TOC entry 6157 (class 2606 OID 314424)
+-- TOC entry 6233 (class 2606 OID 729667)
 -- Name: expert_expert_research_areas expert_expert_resear_expert_id_831a3435_fk_expert_ex; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11887,7 +12645,7 @@ ALTER TABLE ONLY public.expert_expert_research_areas
 
 
 --
--- TOC entry 6158 (class 2606 OID 314429)
+-- TOC entry 6234 (class 2606 OID 729672)
 -- Name: expert_expert_research_areas expert_expert_resear_researcharea_id_49d98efd_fk_expert_re; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11896,7 +12654,7 @@ ALTER TABLE ONLY public.expert_expert_research_areas
 
 
 --
--- TOC entry 6159 (class 2606 OID 314434)
+-- TOC entry 6235 (class 2606 OID 729677)
 -- Name: expert_infogroup_expert_direct_members expert_infogroup_exp_expert_id_f966e1c1_fk_expert_ex; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11905,7 +12663,7 @@ ALTER TABLE ONLY public.expert_infogroup_expert_direct_members
 
 
 --
--- TOC entry 6160 (class 2606 OID 314439)
+-- TOC entry 6236 (class 2606 OID 729682)
 -- Name: expert_infogroup_expert_direct_members expert_infogroup_exp_infogroup_id_2938bdfb_fk_expert_in; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11914,7 +12672,7 @@ ALTER TABLE ONLY public.expert_infogroup_expert_direct_members
 
 
 --
--- TOC entry 6161 (class 2606 OID 314444)
+-- TOC entry 6237 (class 2606 OID 729687)
 -- Name: expert_infogroup_expert_research_areas expert_infogroup_exp_infogroup_id_c40d69e0_fk_expert_in; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11923,7 +12681,7 @@ ALTER TABLE ONLY public.expert_infogroup_expert_research_areas
 
 
 --
--- TOC entry 6162 (class 2606 OID 314449)
+-- TOC entry 6238 (class 2606 OID 729692)
 -- Name: expert_infogroup_expert_research_areas expert_infogroup_exp_researcharea_id_86c2644b_fk_expert_re; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11932,7 +12690,7 @@ ALTER TABLE ONLY public.expert_infogroup_expert_research_areas
 
 
 --
--- TOC entry 6163 (class 2606 OID 314454)
+-- TOC entry 6239 (class 2606 OID 729697)
 -- Name: expert_infogroupblock expert_infogroupbloc_info_group_id_4584e64b_fk_expert_in; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11941,7 +12699,7 @@ ALTER TABLE ONLY public.expert_infogroupblock
 
 
 --
--- TOC entry 6164 (class 2606 OID 314459)
+-- TOC entry 6240 (class 2606 OID 729702)
 -- Name: expert_infogroupmember expert_infogroupmemb_info_group_id_584f052e_fk_expert_in; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11950,7 +12708,7 @@ ALTER TABLE ONLY public.expert_infogroupmember
 
 
 --
--- TOC entry 6165 (class 2606 OID 314464)
+-- TOC entry 6241 (class 2606 OID 729707)
 -- Name: expert_orgnode expert_orgnode_info_group_id_ef0cf562_fk_expert_infogroup_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11959,7 +12717,7 @@ ALTER TABLE ONLY public.expert_orgnode
 
 
 --
--- TOC entry 6166 (class 2606 OID 314469)
+-- TOC entry 6242 (class 2606 OID 729712)
 -- Name: expert_orgnode expert_orgnode_parent_id_064f017a_fk_expert_orgnode_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11968,7 +12726,7 @@ ALTER TABLE ONLY public.expert_orgnode
 
 
 --
--- TOC entry 6167 (class 2606 OID 314474)
+-- TOC entry 6243 (class 2606 OID 729717)
 -- Name: home_audiencetag home_audiencetag_segment_id_1ca1acab_fk_home_audiencesegment_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11977,7 +12735,7 @@ ALTER TABLE ONLY public.home_audiencetag
 
 
 --
--- TOC entry 6168 (class 2606 OID 314479)
+-- TOC entry 6244 (class 2606 OID 729722)
 -- Name: home_heropilltag home_heropilltag_hero_id_a05a5c49_fk_home_herosection_id; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11986,7 +12744,43 @@ ALTER TABLE ONLY public.home_heropilltag
 
 
 --
--- TOC entry 6171 (class 2606 OID 314484)
+-- TOC entry 6245 (class 2606 OID 729727)
+-- Name: home_partnercooperationitem home_partnercooperat_page_id_30478d17_fk_home_part; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.home_partnercooperationitem
+    ADD CONSTRAINT home_partnercooperat_page_id_30478d17_fk_home_part FOREIGN KEY (page_id) REFERENCES public.home_partnerpageconfig(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 6246 (class 2606 OID 729732)
+-- Name: home_partnerpageconfig_partner_logos home_partnerpageconf_partnerlogo_id_60b6627e_fk_home_part; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.home_partnerpageconfig_partner_logos
+    ADD CONSTRAINT home_partnerpageconf_partnerlogo_id_60b6627e_fk_home_part FOREIGN KEY (partnerlogo_id) REFERENCES public.home_partnerlogo(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 6247 (class 2606 OID 729737)
+-- Name: home_partnerpageconfig_partner_logos home_partnerpageconf_partnerpageconfig_id_ec71a36e_fk_home_part; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.home_partnerpageconfig_partner_logos
+    ADD CONSTRAINT home_partnerpageconf_partnerpageconfig_id_ec71a36e_fk_home_part FOREIGN KEY (partnerpageconfig_id) REFERENCES public.home_partnerpageconfig(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 6248 (class 2606 OID 729742)
+-- Name: home_partnerpagestatistic home_partnerpagestat_page_id_748bb172_fk_home_part; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.home_partnerpagestatistic
+    ADD CONSTRAINT home_partnerpagestat_page_id_748bb172_fk_home_part FOREIGN KEY (page_id) REFERENCES public.home_partnerpageconfig(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 6253 (class 2606 OID 729747)
 -- Name: knowledge_knowledgearticle_related_capabilities knowledge_knowledgea_capability_id_6f2a8481_fk_capabilit; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -11995,7 +12789,7 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle_related_capabilities
 
 
 --
--- TOC entry 6169 (class 2606 OID 314489)
+-- TOC entry 6249 (class 2606 OID 729752)
 -- Name: knowledge_knowledgeactivitynews knowledge_knowledgea_category_id_9e6da811_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12004,7 +12798,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeactivitynews
 
 
 --
--- TOC entry 6170 (class 2606 OID 314494)
+-- TOC entry 6250 (class 2606 OID 729757)
 -- Name: knowledge_knowledgearticle knowledge_knowledgea_category_id_cde9c6bb_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12013,7 +12807,7 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle
 
 
 --
--- TOC entry 6173 (class 2606 OID 314499)
+-- TOC entry 6255 (class 2606 OID 729762)
 -- Name: knowledge_knowledgearticle_topics knowledge_knowledgea_knowledgearticle_id_2f40aa64_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12022,7 +12816,7 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle_topics
 
 
 --
--- TOC entry 6172 (class 2606 OID 314504)
+-- TOC entry 6254 (class 2606 OID 729767)
 -- Name: knowledge_knowledgearticle_related_capabilities knowledge_knowledgea_knowledgearticle_id_b93df845_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12031,7 +12825,25 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle_related_capabilities
 
 
 --
--- TOC entry 6174 (class 2606 OID 314509)
+-- TOC entry 6251 (class 2606 OID 729772)
+-- Name: knowledge_knowledgearticle_partner_groups knowledge_knowledgea_knowledgearticle_id_dd3d9928_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.knowledge_knowledgearticle_partner_groups
+    ADD CONSTRAINT knowledge_knowledgea_knowledgearticle_id_dd3d9928_fk_knowledge FOREIGN KEY (knowledgearticle_id) REFERENCES public.knowledge_knowledgearticle(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 6252 (class 2606 OID 729777)
+-- Name: knowledge_knowledgearticle_partner_groups knowledge_knowledgea_knowledgepartnergrou_cd882bb7_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
+--
+
+ALTER TABLE ONLY public.knowledge_knowledgearticle_partner_groups
+    ADD CONSTRAINT knowledge_knowledgea_knowledgepartnergrou_cd882bb7_fk_knowledge FOREIGN KEY (knowledgepartnergroup_id) REFERENCES public.knowledge_knowledgepartnergroup(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- TOC entry 6256 (class 2606 OID 729782)
 -- Name: knowledge_knowledgearticle_topics knowledge_knowledgea_knowledgetopic_id_11d44026_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12040,7 +12852,7 @@ ALTER TABLE ONLY public.knowledge_knowledgearticle_topics
 
 
 --
--- TOC entry 6175 (class 2606 OID 314514)
+-- TOC entry 6257 (class 2606 OID 729787)
 -- Name: knowledge_knowledgecontenttypecard knowledge_knowledgec_category_id_b2aad8c3_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12049,7 +12861,7 @@ ALTER TABLE ONLY public.knowledge_knowledgecontenttypecard
 
 
 --
--- TOC entry 6177 (class 2606 OID 314519)
+-- TOC entry 6259 (class 2606 OID 729792)
 -- Name: knowledge_knowledgecontenttypecard_tags knowledge_knowledgec_knowledgecontenttype_be26cef3_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12058,7 +12870,7 @@ ALTER TABLE ONLY public.knowledge_knowledgecontenttypecard_tags
 
 
 --
--- TOC entry 6178 (class 2606 OID 314524)
+-- TOC entry 6260 (class 2606 OID 729797)
 -- Name: knowledge_knowledgecontenttypecard_tags knowledge_knowledgec_knowledgetopic_id_92a945b3_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12067,7 +12879,7 @@ ALTER TABLE ONLY public.knowledge_knowledgecontenttypecard_tags
 
 
 --
--- TOC entry 6179 (class 2606 OID 314529)
+-- TOC entry 6261 (class 2606 OID 729802)
 -- Name: knowledge_knowledgectabutton knowledge_knowledgec_listing_page_id_0cbdee2f_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12076,7 +12888,7 @@ ALTER TABLE ONLY public.knowledge_knowledgectabutton
 
 
 --
--- TOC entry 6176 (class 2606 OID 314534)
+-- TOC entry 6258 (class 2606 OID 729807)
 -- Name: knowledge_knowledgecontenttypecard knowledge_knowledgec_listing_page_id_4d3fdbee_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12085,7 +12897,7 @@ ALTER TABLE ONLY public.knowledge_knowledgecontenttypecard
 
 
 --
--- TOC entry 6180 (class 2606 OID 314539)
+-- TOC entry 6262 (class 2606 OID 729812)
 -- Name: knowledge_knowledgedownload knowledge_knowledged_category_id_5dab7adf_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12094,7 +12906,7 @@ ALTER TABLE ONLY public.knowledge_knowledgedownload
 
 
 --
--- TOC entry 6181 (class 2606 OID 314544)
+-- TOC entry 6263 (class 2606 OID 729817)
 -- Name: knowledge_knowledgeevent knowledge_knowledgee_category_id_7a9a9ee5_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12103,7 +12915,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeevent
 
 
 --
--- TOC entry 6182 (class 2606 OID 314549)
+-- TOC entry 6264 (class 2606 OID 729822)
 -- Name: knowledge_knowledgeevent_tags knowledge_knowledgee_knowledgeevent_id_889fd720_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12112,7 +12924,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeevent_tags
 
 
 --
--- TOC entry 6183 (class 2606 OID 314554)
+-- TOC entry 6265 (class 2606 OID 729827)
 -- Name: knowledge_knowledgeevent_tags knowledge_knowledgee_knowledgeeventtag_id_0bd45ac8_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12121,7 +12933,7 @@ ALTER TABLE ONLY public.knowledge_knowledgeevent_tags
 
 
 --
--- TOC entry 6184 (class 2606 OID 314559)
+-- TOC entry 6266 (class 2606 OID 729832)
 -- Name: knowledge_knowledgefeaturedarticle knowledge_knowledgef_article_id_a55826cd_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12130,7 +12942,7 @@ ALTER TABLE ONLY public.knowledge_knowledgefeaturedarticle
 
 
 --
--- TOC entry 6186 (class 2606 OID 314564)
+-- TOC entry 6268 (class 2606 OID 729837)
 -- Name: knowledge_knowledgefilteritem knowledge_knowledgef_group_id_b1476659_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12139,7 +12951,7 @@ ALTER TABLE ONLY public.knowledge_knowledgefilteritem
 
 
 --
--- TOC entry 6185 (class 2606 OID 314569)
+-- TOC entry 6267 (class 2606 OID 729842)
 -- Name: knowledge_knowledgefeaturedarticle knowledge_knowledgef_listing_page_id_262b7926_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12148,7 +12960,7 @@ ALTER TABLE ONLY public.knowledge_knowledgefeaturedarticle
 
 
 --
--- TOC entry 6187 (class 2606 OID 314574)
+-- TOC entry 6269 (class 2606 OID 729847)
 -- Name: knowledge_knowledgenewsitem knowledge_knowledgen_category_id_92082a2e_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12157,7 +12969,7 @@ ALTER TABLE ONLY public.knowledge_knowledgenewsitem
 
 
 --
--- TOC entry 6188 (class 2606 OID 314579)
+-- TOC entry 6270 (class 2606 OID 729852)
 -- Name: knowledge_knowledgenewsitem_topics knowledge_knowledgen_knowledgenewsitem_id_ae8c12ce_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12166,7 +12978,7 @@ ALTER TABLE ONLY public.knowledge_knowledgenewsitem_topics
 
 
 --
--- TOC entry 6189 (class 2606 OID 314584)
+-- TOC entry 6271 (class 2606 OID 729857)
 -- Name: knowledge_knowledgenewsitem_topics knowledge_knowledgen_knowledgetopic_id_30491943_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12175,7 +12987,7 @@ ALTER TABLE ONLY public.knowledge_knowledgenewsitem_topics
 
 
 --
--- TOC entry 6192 (class 2606 OID 314589)
+-- TOC entry 6274 (class 2606 OID 729862)
 -- Name: knowledge_knowledgetopiccard_tags knowledge_knowledget_knowledgetopiccard_i_447e1f0b_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12184,7 +12996,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopiccard_tags
 
 
 --
--- TOC entry 6193 (class 2606 OID 314594)
+-- TOC entry 6275 (class 2606 OID 729867)
 -- Name: knowledge_knowledgetopiccard_tags knowledge_knowledget_knowledgetopiccardta_dd80eb8d_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12193,7 +13005,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopiccard_tags
 
 
 --
--- TOC entry 6190 (class 2606 OID 314599)
+-- TOC entry 6272 (class 2606 OID 729872)
 -- Name: knowledge_knowledgetopiccard knowledge_knowledget_listing_page_id_f79e2065_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12202,7 +13014,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopiccard
 
 
 --
--- TOC entry 6191 (class 2606 OID 314604)
+-- TOC entry 6273 (class 2606 OID 729877)
 -- Name: knowledge_knowledgetopiccard knowledge_knowledget_topic_id_d0ee58f7_fk_knowledge; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12211,7 +13023,7 @@ ALTER TABLE ONLY public.knowledge_knowledgetopiccard
 
 
 --
--- TOC entry 6194 (class 2606 OID 314609)
+-- TOC entry 6276 (class 2606 OID 729882)
 -- Name: solution_solution_related_capabilities solution_solution_re_capability_id_cc9faac4_fk_capabilit; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12220,7 +13032,7 @@ ALTER TABLE ONLY public.solution_solution_related_capabilities
 
 
 --
--- TOC entry 6195 (class 2606 OID 314614)
+-- TOC entry 6277 (class 2606 OID 729887)
 -- Name: solution_solution_related_capabilities solution_solution_re_solution_id_4a542fb4_fk_solution_; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12229,7 +13041,7 @@ ALTER TABLE ONLY public.solution_solution_related_capabilities
 
 
 --
--- TOC entry 6196 (class 2606 OID 314619)
+-- TOC entry 6278 (class 2606 OID 729892)
 -- Name: solution_solutionchallenge solution_solutioncha_solution_id_4408bc1c_fk_solution_; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12238,7 +13050,7 @@ ALTER TABLE ONLY public.solution_solutionchallenge
 
 
 --
--- TOC entry 6197 (class 2606 OID 314624)
+-- TOC entry 6279 (class 2606 OID 729897)
 -- Name: solution_solutionfeature solution_solutionfea_solution_id_46dcdb74_fk_solution_; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12247,7 +13059,7 @@ ALTER TABLE ONLY public.solution_solutionfeature
 
 
 --
--- TOC entry 6198 (class 2606 OID 314629)
+-- TOC entry 6280 (class 2606 OID 729902)
 -- Name: solution_solutionmethodologystep solution_solutionmet_solution_id_c607d630_fk_solution_; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12256,7 +13068,7 @@ ALTER TABLE ONLY public.solution_solutionmethodologystep
 
 
 --
--- TOC entry 6199 (class 2606 OID 314634)
+-- TOC entry 6281 (class 2606 OID 729907)
 -- Name: solution_solutionoutput solution_solutionout_solution_id_134a7a75_fk_solution_; Type: FK CONSTRAINT; Schema: public; Owner: irdm_user
 --
 
@@ -12265,7 +13077,7 @@ ALTER TABLE ONLY public.solution_solutionoutput
 
 
 --
--- TOC entry 6497 (class 0 OID 0)
+-- TOC entry 6589 (class 0 OID 0)
 -- Dependencies: 5
 -- Name: SCHEMA public; Type: ACL; Schema: -; Owner: irdm_user
 --
@@ -12273,11 +13085,11 @@ ALTER TABLE ONLY public.solution_solutionoutput
 REVOKE USAGE ON SCHEMA public FROM PUBLIC;
 
 
--- Completed on 2026-08-16 23:12:51
+-- Completed on 2026-10-01 23:26:58
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict R1bcdK2TnROP4sbPkNmoXj1bhLga3r4gdQA7nI7h5aQoPfl5IAepaoazu1lxpfo
+\unrestrict fR0Pv30U09DTARHuRWZ3D0Hc9zEFDrRDDAybgHt119WWkrXuMTgzXGUhEhmYF8Y
 

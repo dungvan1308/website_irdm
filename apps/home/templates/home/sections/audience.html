@@ -10,7 +10,7 @@
             {{ audience_header.section_label }}
           </p>
         {% endif %}
-        <h2 id="audience-heading" class="font-utm-banque font-normal text-[40px] leading-[56px] tracking-normal uppercase text-[#094977]">
+        <h2 id="audience-heading" class="font-utm-banque font-normal text-[28px] leading-[40px] sm:text-[40px] sm:leading-[56px] tracking-normal uppercase text-[#094977] break-words">
           {% if audience_header %}{{ audience_header.heading }}{% else %}{% trans "Who does IRDM serve?" %}{% endif %}
         </h2>
         {% if audience_header and audience_header.description %}

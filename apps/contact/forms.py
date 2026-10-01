@@ -7,7 +7,7 @@ from .services import encrypt_password
 
 
 INPUT_CLASSES = (
-	"w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm "
+	"w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base sm:text-sm "
 	"text-slate-800 placeholder:text-slate-400 focus:border-primary-500 "
 	"focus:outline-none focus:ring-2 focus:ring-primary-200"
 )

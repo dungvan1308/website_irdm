@@ -56,7 +56,7 @@
 
       {# Desktop Navigation #}
 
-      <nav class="hidden lg:flex items-center gap-0.5" role="navigation" aria-label="{% trans 'Primary navigation' %}">
+      <nav class="hidden xl:flex items-center gap-0.5" role="navigation" aria-label="{% trans 'Primary navigation' %}">
 
         {% for item in header_menu %}
 
@@ -168,7 +168,7 @@
 
       {# Right-side actions #}
 
-      <div class="hidden lg:flex items-center gap-3">
+      <div class="hidden xl:flex items-center gap-3">
 
         {# Search icon #}
 
@@ -244,7 +244,7 @@
 
         @click="mobileOpen = !mobileOpen"
 
-        class="lg:hidden p-2 rounded-md text-gray-600 hover:text-primary-700 hover:bg-primary-50 transition-colors"
+        class="xl:hidden p-2 rounded-md text-gray-600 hover:text-primary-700 hover:bg-primary-50 transition-colors"
 
         :aria-expanded="mobileOpen.toString()"
 
@@ -292,7 +292,7 @@
 
     x-transition:leave-end="opacity-0 -translate-y-2"
 
-    class="lg:hidden bg-white border-t border-gray-100 shadow-lg"
+    class="xl:hidden max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain bg-white border-t border-gray-100 shadow-lg"
 
     role="navigation"
 
@@ -300,7 +300,7 @@
 
   >
 
-    <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-1">
 
       {% for item in header_menu %}
 
@@ -314,11 +314,35 @@
 
         </a>
 
+        {% for child in item.children.all %}
+          <a href="{{ child.url }}"
+             {% if child.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+             class="block pl-8 pr-4 py-2.5 text-sm text-gray-600 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors">
+            {{ child.label }}
+          </a>
+        {% endfor %}
+
       {% endfor %}
 
-      <div class="pt-4 border-t border-gray-100">
+      <div class="pt-4 border-t border-gray-100 space-y-3">
 
-        <a href="/lien-he/"
+        {% get_current_language as MOBILE_LANGUAGE %}
+        {% get_available_languages as MOBILE_LANGUAGES %}
+        <div class="flex items-center justify-center gap-1 rounded-full border border-gray-200 px-1 py-1 w-fit mx-auto">
+          {% for lang_code, lang_name in MOBILE_LANGUAGES %}
+            <form action="{% url 'set_language' %}" method="post" class="inline">
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ request.path }}" />
+              <input type="hidden" name="language" value="{{ lang_code }}" />
+              <button type="submit"
+                      class="px-4 py-2 text-xs font-semibold rounded-full transition-colors duration-150 {% if lang_code == MOBILE_LANGUAGE %}bg-primary-700 text-white{% else %}text-gray-500 hover:text-primary-700{% endif %}">
+                {{ lang_code|upper }}
+              </button>
+            </form>
+          {% endfor %}
+        </div>
+
+        <a href="{% url 'contact:index' %}"
 
            class="block text-center px-5 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-colors">
 

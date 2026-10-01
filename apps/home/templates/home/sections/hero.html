@@ -1,6 +1,6 @@
 {% load i18n %}
 <section
-  class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 min-h-[864px]"
+  class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 min-h-[640px] sm:min-h-[760px] lg:min-h-[864px]"
   aria-label="{% trans 'Hero' %}"
 >
   {# Hero illustration — absolute inset-0, fill full section (width + height) #}
@@ -8,11 +8,12 @@
     <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
       <img src="{{ hero.hero_image.url }}" alt=""
            class="h-full w-full object-cover object-right" />
+      <div class="absolute inset-0 bg-white/70 lg:hidden"></div>
     </div>
   {% endif %}
 
   {# Content — left side, max 640px, vertically centred #}
-  <div class="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 flex items-center min-h-[864px]">
+  <div class="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-20 flex items-center min-h-[640px] sm:min-h-[760px] lg:min-h-[864px]">
     <div class="w-full lg:max-w-[640px] py-20 sm:py-28 lg:py-[160px]">
         {% if hero %}
           {# Eyebrow pill #}
@@ -29,7 +30,7 @@
           {% endif %}
 
           {# Heading — line 1 dark blue, lines 2-3 orange (Figma spec) #}
-          <h1 class="font-utm-banque font-normal text-[40px] lg:text-[48px] leading-[1.5] lg:leading-[72px] tracking-normal uppercase mb-6">
+          <h1 class="font-utm-banque font-normal text-[30px] sm:text-[40px] lg:text-[48px] leading-[1.4] sm:leading-[1.5] lg:leading-[72px] tracking-normal uppercase break-words mb-6">
             <span class="block text-[#094977]">{{ hero.heading }}</span>
             {% if hero.heading_accent %}
               <span class="text-[#EC6D29]">{{ hero.heading_accent }}</span>
@@ -92,7 +93,7 @@
             <span class="w-2 h-2 rounded-full bg-primary-600 flex-shrink-0" aria-hidden="true"></span>
             <span class="text-primary-800 text-xs font-semibold uppercase tracking-wider">{% trans "Research · Science · Technology · Innovation" %}</span>
           </div>
-          <h1 class="font-utm-banque font-normal text-[40px] lg:text-[48px] leading-[1.5] lg:leading-[72px] tracking-normal uppercase mb-6">
+          <h1 class="font-utm-banque font-normal text-[30px] sm:text-[40px] lg:text-[48px] leading-[1.4] sm:leading-[1.5] lg:leading-[72px] tracking-normal uppercase break-words mb-6">
             <span class="block text-[#094977]">{% trans "BUILDING SOLUTIONS FROM" %}</span>
             <span class="text-[#EC6D29]">{% trans "RESEARCH, DATA AND INTERDISCIPLINARY KNOWLEDGE" %}</span>
           </h1>
