@@ -176,9 +176,15 @@ CKEDITOR_5_CONFIGS = {
         "language": ["en", "vi"],
         "toolbar": {
             "items": [
-                "undo", "redo", "|", "heading", "|", "bold", "italic", "underline",
-                "link", "|", "bulletedList", "numberedList", "blockQuote", "|",
-                "insertImage", "insertTable", "horizontalLine", "removeFormat",
+                "undo", "redo", "|", "heading", "|",
+                "fontFamily", "fontSize", "fontColor", "fontBackgroundColor", "highlight", "|",
+                "bold", "italic", "underline", "strikethrough", "subscript", "superscript",
+                "code", "removeFormat", "|",
+                "alignment", "|",
+                "bulletedList", "numberedList", "outdent", "indent", "|",
+                "link", "blockQuote", "insertImage", "insertTable", "horizontalLine",
+                "specialCharacters", "codeBlock", "|",
+                "findAndReplace", "sourceEditing",
             ],
             "shouldNotGroupWhenFull": True,
         },
@@ -190,6 +196,72 @@ CKEDITOR_5_CONFIGS = {
                 {"model": "heading4", "view": "h4", "title": "Tiêu đề 4", "class": "ck-heading_heading4"},
             ],
         },
+        # Mọi giá trị dưới đây phải khớp whitelist trong apps/knowledge/rich_text.py.
+        "alignment": {
+            "options": [
+                {"name": "left", "className": "text-align-left"},
+                {"name": "center", "className": "text-align-center"},
+                {"name": "right", "className": "text-align-right"},
+                {"name": "justify", "className": "text-align-justify"},
+            ],
+        },
+        "indentBlock": {"classes": [f"indent-{level}" for level in range(1, 6)]},
+        "fontSize": {
+            "options": ["tiny", "small", "default", "big", "huge"],
+            "supportAllValues": False,
+        },
+        "fontFamily": {
+            "options": [
+                "default",
+                "Arial, Helvetica, sans-serif",
+                "Tahoma, Geneva, sans-serif",
+                "Verdana, Geneva, sans-serif",
+                "Georgia, serif",
+                "Times New Roman, Times, serif",
+                "Courier New, Courier, monospace",
+            ],
+            "supportAllValues": False,
+        },
+        "fontColor": {
+            "colors": [
+                {"color": "#094977", "label": "Xanh IRDM"},
+                {"color": "#ec6d29", "label": "Cam IRDM"},
+                {"color": "#1565c0", "label": "Xanh liên kết"},
+                {"color": "#1f2937", "label": "Đen xám"},
+                {"color": "#475569", "label": "Xám"},
+                {"color": "#dc2626", "label": "Đỏ"},
+                {"color": "#16a34a", "label": "Xanh lá"},
+                {"color": "#ffffff", "label": "Trắng"},
+            ],
+            "columns": 4,
+            "documentColors": 0,
+        },
+        "fontBackgroundColor": {
+            "colors": [
+                {"color": "#e0f2fe", "label": "Xanh nhạt"},
+                {"color": "#fff7ed", "label": "Cam nhạt"},
+                {"color": "#fef9c3", "label": "Vàng nhạt"},
+                {"color": "#dcfce7", "label": "Xanh lá nhạt"},
+                {"color": "#fee2e2", "label": "Đỏ nhạt"},
+                {"color": "#f1f5f9", "label": "Xám nhạt"},
+                {"color": "#094977", "label": "Xanh IRDM"},
+                {"color": "#ec6d29", "label": "Cam IRDM"},
+            ],
+            "columns": 4,
+            "documentColors": 0,
+        },
+        "codeBlock": {
+            "languages": [
+                {"language": "plaintext", "label": "Văn bản thuần"},
+                {"language": "html", "label": "HTML"},
+                {"language": "css", "label": "CSS"},
+                {"language": "javascript", "label": "JavaScript"},
+                {"language": "python", "label": "Python"},
+                {"language": "sql", "label": "SQL"},
+                {"language": "json", "label": "JSON"},
+                {"language": "bash", "label": "Bash"},
+            ],
+        },
         "image": {
             "toolbar": [
                 "imageTextAlternative", "toggleImageCaption", "|",
@@ -197,7 +269,10 @@ CKEDITOR_5_CONFIGS = {
             ],
         },
         "table": {
-            "contentToolbar": ["tableColumn", "tableRow", "mergeTableCells"],
+            "contentToolbar": [
+                "tableColumn", "tableRow", "mergeTableCells", "|",
+                "tableProperties", "tableCellProperties", "toggleTableCaption",
+            ],
         },
     },
 }
