@@ -334,7 +334,7 @@ class KnowledgeActivityNewsDetailTests(TestCase):
 		self.assertContains(response, f'href="{self.activity.get_absolute_url()}"', count=3)
 		self.assertContains(
 			response,
-			'class="flex-shrink-0 w-36 h-24 rounded-lg overflow-hidden bg-slate-100 block"',
+			'class="flex-shrink-0 w-full h-44 sm:w-36 sm:h-24 rounded-lg overflow-hidden bg-slate-100 block"',
 		)
 
 

@@ -18,7 +18,7 @@
 {# ═══════════════════════════════════════════════════════════════════════════ #}
 {#  HERO — Light 2-column: text+CTAs left | illustration right                #}
 {# ═══════════════════════════════════════════════════════════════════════════ #}
-<section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 min-h-[864px] lg:min-h-[700px]"
+<section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-slate-50 to-blue-100 min-h-[600px] lg:min-h-[700px]"
          aria-label="{% trans 'Knowledge hero' %}">
 
   {# Hero image — fills full section as background, object-position: right center #}
@@ -41,7 +41,7 @@
         </div>
       {% endif %}
 
-      <h1 class="font-utm-banque text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight mb-6">
+      <h1 class="font-utm-banque text-[28px] sm:text-5xl lg:text-6xl font-extrabold text-primary-900 uppercase tracking-tight leading-tight break-words mb-6">
         {% if listing_page %}{{ listing_page.heading }}{% else %}{% trans "Tri thức & Góc nhìn ngành" %}{% endif %}
       </h1>
 
@@ -351,7 +351,7 @@
         <a href="{{ listing_page.content_type_section_cta_url }}"
            class="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-orange-500
                   hover:bg-orange-400 text-white font-semibold rounded-lg shadow-md
-                  hover:shadow-lg hover:-translate-y-0.5 transition-all text-sm whitespace-nowrap">
+                  hover:shadow-lg hover:-translate-y-0.5 transition-all text-sm sm:whitespace-nowrap">
           {% if listing_page.content_type_section_cta_text %}{{ listing_page.content_type_section_cta_text }}{% else %}{% trans "Xem tất cả nội dung" %}{% endif %}
           {% if listing_page.content_type_section_cta_icon == "external" %}
             <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -555,7 +555,7 @@
       {# ════════════════════════════════════════════════════════════════════ #}
       {# LEFT — Form card                                                    #}
       {# ════════════════════════════════════════════════════════════════════ #}
-      <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-8 lg:p-10">
+      <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-5 sm:p-8 lg:p-10">
 
         {% if pub_form_success %}
           {# ── Success state ─────────────────────────────────────────────── #}
@@ -603,7 +603,7 @@
                      name="full_name"
                      value="{{ pub_form.full_name.value|default:'' }}"
                      placeholder="{{ listing_page.pub_form_name_placeholder|default:"Nhập họ và tên của bạn" }}"
-                     class="w-full border rounded-lg px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400
+                     class="w-full border rounded-lg px-4 py-2.5 text-base sm:text-sm text-slate-700 placeholder-slate-400
                             focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-400
                             transition-colors {% if pub_form.full_name.errors %}border-red-400 bg-red-50{% else %}border-slate-200{% endif %}"
                      required />
@@ -624,7 +624,7 @@
                      name="organization"
                      value="{{ pub_form.organization.value|default:'' }}"
                      placeholder="{{ listing_page.pub_form_org_placeholder|default:"Tên cơ quan, tổ chức, trường, bệnh viện hoặc doanh nghiệp" }}"
-                     class="w-full border rounded-lg px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400
+                     class="w-full border rounded-lg px-4 py-2.5 text-base sm:text-sm text-slate-700 placeholder-slate-400
                             focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-400
                             transition-colors {% if pub_form.organization.errors %}border-red-400 bg-red-50{% else %}border-slate-200{% endif %}"
                      required />
@@ -645,7 +645,7 @@
                      name="email"
                      value="{{ pub_form.email.value|default:'' }}"
                      placeholder="{{ listing_page.pub_form_email_placeholder|default:"Nhập email nhận tài liệu" }}"
-                     class="w-full border rounded-lg px-4 py-2.5 text-sm text-slate-700 placeholder-slate-400
+                     class="w-full border rounded-lg px-4 py-2.5 text-base sm:text-sm text-slate-700 placeholder-slate-400
                             focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-400
                             transition-colors {% if pub_form.email.errors %}border-red-400 bg-red-50{% else %}border-slate-200{% endif %}"
                      required />
@@ -664,7 +664,7 @@
                         name="note"
                         rows="4"
                         placeholder="{{ listing_page.pub_form_note_placeholder|default:"Bạn có thể ghi loại tài liệu muốn nhận, lĩnh vực quan tâm hoặc lời nhắn cho Viện IRDM" }}"
-                        class="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-700
+                        class="w-full border border-slate-200 rounded-lg px-4 py-2.5 text-base sm:text-sm text-slate-700
                                placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-300
                                focus:border-primary-400 transition-colors resize-none">{{ pub_form.note.value|default:'' }}</textarea>
             </div>
@@ -677,9 +677,9 @@
             {% endif %}
 
             {# Submit button #}
-            <div class="flex justify-end">
+            <div class="flex sm:justify-end">
               <button type="submit"
-                      class="inline-flex items-center gap-2 px-8 py-3 bg-orange-500 hover:bg-orange-400
+                      class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-3 bg-orange-500 hover:bg-orange-400
                              text-white font-semibold text-sm rounded-lg transition-all shadow-md
                              hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0">
                 {{ listing_page.pub_form_button_text|default:"Gửi yêu cầu" }}
@@ -881,11 +881,11 @@
 
         <div class="flex flex-col divide-y divide-slate-100">
           {% for item in activity_news %}
-          <article class="group flex gap-5 py-5 first:pt-0">
+          <article class="group flex flex-col sm:flex-row gap-3 sm:gap-5 py-5 first:pt-0">
 
             {# Thumbnail — 140×104 with rounded-xl #}
             <a href="{{ item.get_cta_url }}"
-               class="flex-shrink-0 w-36 h-24 rounded-lg overflow-hidden bg-slate-100 block">
+               class="flex-shrink-0 w-full h-44 sm:w-36 sm:h-24 rounded-lg overflow-hidden bg-slate-100 block">
               {% if item.thumbnail %}
                 <img src="{{ item.thumbnail.url }}" alt="{{ item.title }}"
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -1282,7 +1282,7 @@
         {% for btn in ready_section_buttons %}
           <a href="{{ btn.url|default:'#' }}"
              target="{{ btn.target|default:'_self' }}"
-             class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-sm whitespace-nowrap transition-all duration-200
+             class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-sm text-center sm:whitespace-nowrap transition-all duration-200
                     {% if btn.style == 'primary' %}bg-orange-500 text-white hover:bg-orange-600 shadow-lg
                     {% elif btn.style == 'secondary' %}bg-white/10 text-white hover:bg-white/20 border border-white/20
                     {% else %}border-2 border-white/60 text-white hover:bg-white/10{% endif %}">

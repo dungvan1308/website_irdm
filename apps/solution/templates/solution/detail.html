@@ -274,7 +274,7 @@
           <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             {% if solution.cta_primary_label and solution.cta_primary_url %}
               <a href="{{ solution.cta_primary_url }}"
-                 class="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-400 text-white font-semibold rounded-lg transition-all duration-150 shadow-md hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap">
+                 class="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-400 text-white font-semibold rounded-lg transition-all duration-150 shadow-md hover:shadow-lg hover:-translate-y-0.5 justify-center text-center sm:whitespace-nowrap">
                 {{ solution.cta_primary_label }}
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -283,7 +283,7 @@
             {% endif %}
             {% if solution.cta_secondary_label and solution.cta_secondary_url %}
               <a href="{{ solution.cta_secondary_url }}"
-                 class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/50 hover:border-white text-white font-semibold rounded-lg transition-all duration-150 hover:bg-white/10 whitespace-nowrap">
+                 class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/50 hover:border-white text-white font-semibold rounded-lg transition-all duration-150 hover:bg-white/10 justify-center text-center sm:whitespace-nowrap">
                 {{ solution.cta_secondary_label }}
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
