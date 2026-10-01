@@ -21,6 +21,9 @@ class KnowledgeArticleAdminForm(RichBodyAdminFormMixin, forms.ModelForm):
         except RichTextImageError as exc:
             raise ValidationError(str(exc)) from exc
 
+    class Media:
+        css = {"all": ("css/article-content.css",)}
+
     class Meta:
         model = KnowledgeArticle
         fields = "__all__"
@@ -48,6 +51,9 @@ class KnowledgeActivityNewsAdminForm(RichBodyAdminFormMixin, forms.ModelForm):
             return normalize_rich_text(self.cleaned_data.get("summary", ""))
         except RichTextImageError as exc:
             raise ValidationError(str(exc)) from exc
+
+    class Media:
+        css = {"all": ("css/article-content.css",)}
 
     class Meta:
         model = KnowledgeActivityNews

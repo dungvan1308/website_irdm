@@ -5,6 +5,7 @@ from __future__ import annotations
 import base64
 import binascii
 import ipaddress
+import re
 import socket
 from html import escape
 from io import BytesIO
@@ -30,19 +31,46 @@ ALLOWED_IMAGE_FORMATS = {
 }
 ALLOWED_TAGS = {
     "a", "blockquote", "br", "caption", "code", "em", "figcaption", "figure",
-    "h2", "h3", "h4", "hr", "img", "li", "ol", "p", "pre", "s", "strong",
-    "sub", "sup", "table", "tbody", "td", "th", "thead", "tr", "u", "ul",
+    "h2", "h3", "h4", "hr", "img", "li", "mark", "ol", "p", "pre", "s", "span",
+    "strong", "sub", "sup", "table", "tbody", "td", "th", "thead", "tr", "u", "ul",
 }
 ALLOWED_ATTRIBUTES = {
     "a": {"href", "target", "title"},
+    "figure": {"style"},
     "img": {"alt", "height", "src", "title", "width"},
     "ol": {"reversed", "start"},
-    "td": {"colspan", "rowspan"},
-    "th": {"colspan", "rowspan", "scope"},
+    "span": {"style"},
+    "table": {"style"},
+    "td": {"colspan", "rowspan", "style"},
+    "th": {"colspan", "rowspan", "scope", "style"},
 }
+_TEXT_ALIGN_CLASSES = {"text-align-left", "text-align-center", "text-align-right", "text-align-justify"}
+_INDENT_CLASSES = {f"indent-{level}" for level in range(1, 6)}
+_BLOCK_CLASSES = _TEXT_ALIGN_CLASSES | _INDENT_CLASSES
+CODE_LANGUAGES = ("plaintext", "html", "css", "javascript", "python", "sql", "json", "bash")
 ALLOWED_CLASSES = {
-    "figure": {"image", "image-style-align-center", "image-style-align-left", "image-style-align-right", "image-style-side"},
+    "figure": {
+        "image", "image-style-align-center", "image-style-align-left", "image-style-align-right",
+        "image-style-side", "table",
+    },
+    "p": _BLOCK_CLASSES,
+    "h2": _BLOCK_CLASSES,
+    "h3": _BLOCK_CLASSES,
+    "h4": _BLOCK_CLASSES,
+    "li": _TEXT_ALIGN_CLASSES,
+    "td": _TEXT_ALIGN_CLASSES,
+    "th": _TEXT_ALIGN_CLASSES,
+    "span": {"text-tiny", "text-small", "text-big", "text-huge"},
+    "mark": {"marker-yellow", "marker-green", "marker-pink", "marker-blue", "pen-red", "pen-green"},
+    "code": {f"language-{language}" for language in CODE_LANGUAGES},
 }
+_ALLOWED_STYLE_PROPERTIES = {
+    "background-color", "border", "border-color", "border-style", "border-width", "color",
+    "float", "font-family", "height", "margin-left", "margin-right", "padding", "text-align",
+    "vertical-align", "width",
+}
+_SAFE_STYLE_VALUE = re.compile(r"^[\w\s#%.,()'\"-]+$")
+_UNSAFE_STYLE_VALUE = re.compile(r"url|expression|javascript|var\(|@", re.IGNORECASE)
 
 
 class RichTextImageError(ValueError):
@@ -177,6 +205,24 @@ def normalize_rich_text(value: str) -> str:
     return sanitize_rich_text(str(soup))
 
 
+def _filter_attribute(tag: str, attribute: str, value: str) -> str | None:
+    """Keep only whitelisted CSS declarations with safe values in style attributes."""
+    if attribute != "style":
+        return value
+    declarations = []
+    for part in value.split(";"):
+        name, separator, raw_value = part.partition(":")
+        name, raw_value = name.strip().lower(), raw_value.strip()
+        if (
+            separator
+            and name in _ALLOWED_STYLE_PROPERTIES
+            and _SAFE_STYLE_VALUE.match(raw_value)
+            and not _UNSAFE_STYLE_VALUE.search(raw_value)
+        ):
+            declarations.append(f"{name}:{raw_value}")
+    return ";".join(declarations) or None
+
+
 def sanitize_rich_text(value: str) -> str:
     """Sanitize stored rich text again before public rendering."""
     value = value or ""
@@ -186,6 +232,7 @@ def sanitize_rich_text(value: str) -> str:
         value,
         tags=ALLOWED_TAGS,
         attributes=ALLOWED_ATTRIBUTES,
+        attribute_filter=_filter_attribute,
         allowed_classes=ALLOWED_CLASSES,
         url_schemes={"http", "https", "mailto"},
     )

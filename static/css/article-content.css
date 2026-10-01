@@ -56,6 +56,79 @@
   max-width: 100%;
 }
 
+.ck-content p,
+.ck-content li { text-align: justify; }
+
+.ck-content .text-align-left { text-align: left; }
+.ck-content .text-align-center { text-align: center; }
+.ck-content .text-align-right { text-align: right; }
+.ck-content .text-align-justify { text-align: justify; }
+
+.ck-content .text-tiny { font-size: 0.7em; }
+.ck-content .text-small { font-size: 0.85em; }
+.ck-content .text-big { font-size: 1.4em; }
+.ck-content .text-huge { font-size: 1.8em; }
+
+.ck-content .marker-yellow { background-color: #fdfd77; color: inherit; }
+.ck-content .marker-green { background-color: #62f962; color: inherit; }
+.ck-content .marker-pink { background-color: #fc7499; color: inherit; }
+.ck-content .marker-blue { background-color: #72ccfd; color: inherit; }
+.ck-content .pen-red { background-color: transparent; color: #e71313; }
+.ck-content .pen-green { background-color: transparent; color: #128a00; }
+
+.ck-content .indent-1 { margin-inline-start: 2em; }
+.ck-content .indent-2 { margin-inline-start: 4em; }
+.ck-content .indent-3 { margin-inline-start: 6em; }
+.ck-content .indent-4 { margin-inline-start: 8em; }
+.ck-content .indent-5 { margin-inline-start: 10em; }
+
+.article-content hr {
+  border: 0;
+  border-top: 1px solid #cbd5e1;
+  margin: 2rem 0;
+}
+
+.article-content code {
+  background: #f1f5f9;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+}
+
+.article-content pre {
+  background: #0f172a;
+  border-radius: 0.5rem;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.article-content pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.article-content::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.article-content figure.table {
+  display: table;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+.article-content figure.table > table {
+  display: table;
+  width: 100%;
+}
+
 .article-content figcaption {
   color: #475569;
   font-size: 0.9375rem;
@@ -68,6 +141,7 @@
 .article-content table {
   border-collapse: collapse;
   display: block;
+  margin-inline: auto;
   max-width: 100%;
   overflow-x: auto;
   width: max-content;
@@ -92,4 +166,9 @@
 
   .article-content h2 { font-size: 1.5rem; }
   .article-content h3 { font-size: 1.25rem; }
+
+  .article-content figure.table {
+    float: none !important;
+    margin: 1.5rem auto !important;
+  }
 }

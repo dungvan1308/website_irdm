@@ -81,6 +81,47 @@ class RichTextNormalizationTests(TestCase):
 		self.assertNotIn("onclick", result)
 		self.assertNotIn("javascript:", result)
 
+	def test_editor_formatting_classes_are_preserved(self):
+		html = (
+			'<p class="text-align-center indent-2">Căn giữa</p>'
+			'<p><span class="text-big">Chữ lớn</span> <mark class="marker-yellow">nổi bật</mark></p>'
+			'<pre><code class="language-python">print(1)</code></pre>'
+			'<p><s>gạch</s> H<sub>2</sub>O x<sup>2</sup></p>'
+		)
+
+		self.assertEqual(sanitize_rich_text(html), html)
+
+	def test_allowed_inline_styles_are_preserved(self):
+		html = (
+			'<p><span style="color:#094977;background-color:#e0f2fe;font-family:Arial, Helvetica, sans-serif">Màu</span></p>'
+			'<figure class="table"><table style="width:50%;border:1px solid #ccc">'
+			'<tbody><tr><td style="text-align:center;vertical-align:top">Ô</td></tr></tbody></table></figure>'
+		)
+
+		self.assertEqual(sanitize_rich_text(html), html)
+
+	def test_table_alignment_styles_are_preserved(self):
+		html = (
+			'<figure class="table" style="float:left"><table><tbody><tr><td>A</td></tr></tbody></table></figure>'
+			'<figure class="table" style="margin-left:auto;margin-right:auto"><table><tbody><tr><td>B</td></tr></tbody></table></figure>'
+		)
+
+		self.assertEqual(sanitize_rich_text(html), html)
+
+	def test_unsafe_inline_styles_are_removed(self):
+		result = sanitize_rich_text(
+			'<p style="color:red">A</p>'
+			'<span style="color:red;position:fixed;background-color:url(javascript:alert(1));width:expression(alert(1))">B</span>'
+			'<span class="evil text-big">C</span>'
+		)
+
+		self.assertIn("<p>A</p>", result)
+		self.assertIn('<span style="color:red">B</span>', result)
+		self.assertIn('<span class="text-big">C</span>', result)
+		self.assertNotIn("position", result)
+		self.assertNotIn("javascript", result)
+		self.assertNotIn("expression", result)
+
 	def test_clipboard_image_is_saved_to_media(self):
 		buffer = BytesIO()
 		Image.new("RGB", (2, 2), "red").save(buffer, format="PNG")
