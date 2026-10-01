@@ -16,6 +16,7 @@ from .forms import KnowledgeActivityNewsAdminForm, KnowledgeArticleAdminForm, Kn
 from .models import (
 	KnowledgeArticle,
 	KnowledgeActivityNews,
+	KnowledgeCategory,
 	KnowledgeContentTypeCard,
 	KnowledgeDownloadRequest,
 	KnowledgeListingPage,
@@ -46,6 +47,19 @@ class KnowledgePartnerFilterTests(TestCase):
 		results = KnowledgeService.filter_articles_multi({"partner": ["doanh-nghiep"]})
 
 		self.assertFalse(results.exists())
+
+	def test_filter_by_content_type_matches_label_when_slug_lost_diacritics(self):
+		category = KnowledgeCategory.objects.create(
+			label="Báo cáo & tài liệu", slug="bo-co-ti-liu", is_published=True, is_active=True,
+		)
+		article = KnowledgeArticle.objects.create(
+			title="Kỷ yếu hội thảo", slug="ky-yeu-hoi-thao", category=category,
+			is_published=True, is_active=True,
+		)
+
+		results = KnowledgeService.filter_articles_multi({"ctype": ["bao-cao-tai-lieu"]})
+
+		self.assertQuerySetEqual(results, [article])
 
 
 @override_settings(
