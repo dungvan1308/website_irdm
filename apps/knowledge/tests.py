@@ -370,6 +370,17 @@ class KnowledgeDownloadRequestTests(TestCase):
 		self.assertContains(response, 'id="kham-pha-loai-noi-dung"', count=1)
 		self.assertNotContains(response, 'href="#featured"')
 
+	def test_search_renders_results_section_with_scroll_target(self):
+		response = self.client.get(reverse("knowledge:listing"), {"search": "báo cáo"})
+
+		self.assertContains(response, 'id="ket-qua-tim-kiem"', count=1)
+		self.assertContains(response, "scrollIntoView")
+
+	def test_listing_without_filter_has_no_results_scroll_target(self):
+		response = self.client.get(reverse("knowledge:listing"))
+
+		self.assertNotContains(response, 'id="ket-qua-tim-kiem"')
+
 	def test_download_cta_targets_publication_section(self):
 		response = self.client.get(reverse("knowledge:listing"))
 

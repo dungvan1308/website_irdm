@@ -173,7 +173,7 @@
 {#  SEARCH / FILTER RESULTS                                                   #}
 {# ═══════════════════════════════════════════════════════════════════════════ #}
 {% if search_results is not None %}
-<section class="bg-slate-50 py-14" aria-label="{% trans 'Search results' %}">
+<section id="ket-qua-tim-kiem" class="bg-slate-50 py-14 scroll-mt-24" aria-label="{% trans 'Search results' %}">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div class="mb-8">
@@ -202,6 +202,11 @@
 
   </div>
 </section>
+<script>
+  window.addEventListener('load', function () {
+    document.getElementById('ket-qua-tim-kiem').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
 
 {% else %}
 
