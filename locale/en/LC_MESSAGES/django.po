@@ -33,7 +33,7 @@ msgid "Giá trị"
 msgstr "Value"
 
 msgid "Giải pháp"
-msgstr "Solution"
+msgstr "Solutions"
 
 msgid "Giờ làm việc"
 msgstr "Business hours"
@@ -313,3 +313,636 @@ msgstr "Thumbnail"
 
 msgid "Ảnh đầu ra"
 msgstr "Output image"
+
+msgid "& CHUYÊN GIA LIÊN NGÀNH"
+msgstr "& INTERDISCIPLINARY EXPERTS"
+
+msgid "& Lĩnh vực chuyên sâu"
+msgstr "& Areas of expertise"
+
+msgid "About IRDM hero"
+msgstr "About IRDM hero"
+
+msgid "Activity news content"
+msgstr "Activity news content"
+
+msgid "Activity news detail"
+msgstr "Activity news detail"
+
+msgid "All solutions navigation"
+msgstr "All solutions navigation"
+
+msgid "Article body"
+msgstr "Article body"
+
+msgid "Article hero"
+msgstr "Article hero"
+
+msgid "BUILDING SOLUTIONS FROM"
+msgstr "BUILDING SOLUTIONS FROM"
+
+msgid "Breadcrumb"
+msgstr "Breadcrumb"
+
+msgid "Bài viết liên quan"
+msgstr "Related articles"
+
+msgid "Bạn đang quan tâm điều gì?"
+msgstr "What are you interested in?"
+
+msgid "Bạn đang tìm kiếm một đối tác chuyên môn phù hợp?"
+msgstr "Looking for the right professional partner?"
+
+msgid "BẢN ĐỒ CHUYÊN MÔN LIÊN NGÀNH"
+msgstr "INTERDISCIPLINARY EXPERTISE MAP"
+
+msgid "Bộ lọc chuyên gia"
+msgstr "Expert filters"
+
+msgid ""
+"Bộ lọc giúp người đọc tìm nhanh nội dung theo mục đích sử dụng, chủ đề quan "
+"tâm và nhóm đối tác liên quan."
+msgstr ""
+"Filters help readers quickly find content by purpose, topic of interest, and"
+" relevant partner group."
+
+msgid "CHUYÊN GIA CAO CẤP CỦA VIỆN IRDM"
+msgstr "SENIOR EXPERTS AT IRDM"
+
+msgid "CTA"
+msgstr "CTA"
+
+msgid "Call to action"
+msgstr "Call to action"
+
+msgid "Capabilities grid"
+msgstr "Capabilities grid"
+
+msgid "Capability hero"
+msgstr "Capability hero"
+
+msgid "Capability listing hero"
+msgstr "Capability listing hero"
+
+msgid ""
+"Chia sẻ bài toán của tổ chức bạn. IRDM sẽ kết nối đúng năng lực chuyên môn "
+"và phản hồi hướng trao đổi phù hợp."
+msgstr ""
+"Share your organisation’s challenge. IRDM will connect you with the right "
+"expertise and suggest a suitable way forward."
+
+msgid "Chuyên gia"
+msgstr "Experts"
+
+msgid "Chuyên gia liên quan"
+msgstr "Related experts"
+
+msgid "Chưa có bước nào."
+msgstr "No steps have been added yet."
+
+msgid "Chưa có chuyên gia trong chủ đề này."
+msgstr "No experts are available for this topic yet."
+
+msgid "Chưa có thách thức nào."
+msgstr "No challenges have been added yet."
+
+msgid "Chủ đề & Từ khóa"
+msgstr "Topics & Keywords"
+
+msgid "Contact IRDM"
+msgstr "Contact IRDM"
+
+msgid "Content coming soon."
+msgstr "Content coming soon."
+
+msgid "Copyright by"
+msgstr "Copyright by"
+
+msgid "Core Capabilities"
+msgstr "Core Capabilities"
+
+msgid "CÁC NHÓM THÔNG TIN CHUYÊN MÔN"
+msgstr "PROFESSIONAL INFORMATION"
+
+msgid "Các chủ đề có thể đồng hành"
+msgstr "Topics we can support"
+
+msgid "Các nhóm giải pháp khác"
+msgstr "Other solution groups"
+
+msgid "Các năng lực IRDM"
+msgstr "IRDM capabilities"
+
+msgid "Cách thức đồng hành"
+msgstr "Ways to work together"
+
+msgid "Có thể đồng hành"
+msgstr "Areas of collaboration"
+
+msgid "Công bố hợp tác"
+msgstr "Partnership announcement"
+
+msgid "Công trình tiêu biểu"
+msgstr "Selected work"
+
+msgid "Cùng IRDM tạo giá trị"
+msgstr "Create value with IRDM"
+
+msgid "Cùng bắt đầu một cuộc trao đổi có giá trị"
+msgstr "Start a meaningful conversation"
+
+msgid "Cùng tạo nên những thay đổi có giá trị"
+msgstr "Create meaningful change together"
+
+msgid ""
+"Cảm ơn bạn đã kết nối. Đội ngũ IRDM sẽ xem xét nội dung và phản hồi qua "
+"thông tin liên hệ bạn cung cấp."
+msgstr ""
+"Thank you for reaching out. The IRDM team will review your message and "
+"respond using the contact details you provided."
+
+msgid "Cảm ơn! Viện IRDM đã nhận được yêu cầu của bạn."
+msgstr "Thank you! IRDM has received your request."
+
+msgid "Dự án / Công trình / Chương trình tiêu biểu"
+msgstr "Selected projects / research / programmes"
+
+msgid "Expert CTA"
+msgstr "Expert CTA"
+
+msgid "Expert listing hero"
+msgstr "Expert listing hero"
+
+msgid "Explore"
+msgstr "Explore"
+
+msgid "Explore Solutions"
+msgstr "Explore Solutions"
+
+msgid "Filter content"
+msgstr "Filter content"
+
+msgid "GIÁ TRỊ CỐT LÕI"
+msgstr "CORE VALUES"
+
+msgid "Ghi nhận bối cảnh và mục tiêu ưu tiên."
+msgstr "Understand the context and priorities."
+
+msgid "Giá trị đối tác"
+msgstr "Partner value"
+
+msgid "Giải pháp của IRDM"
+msgstr "IRDM solutions"
+
+msgid "Go to homepage"
+msgstr "Go to homepage"
+
+msgid "Gửi một yêu cầu khác"
+msgstr "Send another request"
+
+msgid "Gửi yêu cầu"
+msgstr "Submit request"
+
+msgid "Gửi yêu cầu hợp tác"
+msgstr "Send a partnership request"
+
+msgid "Hero"
+msgstr "Hero"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "How IRDM Creates Impact"
+msgstr "How IRDM Creates Impact"
+
+msgid ""
+"Hãy chia sẻ bài toán của tổ chức để cùng xác định hướng hợp tác thiết thực."
+msgstr ""
+"Share your organisation’s challenge so we can identify a practical way to "
+"work together."
+
+msgid "Hãy thử từ khoá khác hoặc chọn nhóm khác."
+msgstr "Try another keyword or choose a different group."
+
+msgid "Hình thức đồng hành"
+msgstr "Engagement model"
+
+msgid "Hướng tiếp cận"
+msgstr "Our approach"
+
+msgid "Hợp tác từ bài toán thực tiễn"
+msgstr "Collaboration grounded in real-world challenges"
+
+msgid "IRDM"
+msgstr "IRDM"
+
+msgid ""
+"IRDM chỉ sử dụng thông tin để phản hồi yêu cầu trao đổi và không chia sẻ cho"
+" bên thứ ba."
+msgstr ""
+"IRDM will use your information only to respond to your enquiry and will not "
+"share it with third parties."
+
+msgid ""
+"IRDM có thể kết nối mạng lưới nhà khoa học và chuyên gia phù hợp để đồng "
+"hành từ tư vấn, nghiên cứu, đào tạo đến triển khai giải pháp."
+msgstr ""
+"IRDM can connect you with a network of scientists and experts for "
+"consulting, research, training, and solution implementation."
+
+msgid ""
+"IRDM cùng đối tác làm rõ nhu cầu, thiết kế hướng tiếp cận và chuyển hóa kết "
+"quả thành giải pháp có thể triển khai."
+msgstr ""
+"IRDM works with partners to clarify needs, shape an approach, and turn "
+"results into practical solutions."
+
+msgid ""
+"IRDM kết nối năng lực nghiên cứu, tư vấn và đào tạo với nhu cầu thực tiễn "
+"của từng tổ chức."
+msgstr ""
+"IRDM connects research, consulting, and training expertise with each "
+"organisation’s practical needs."
+
+msgid "IRDM location map"
+msgstr "IRDM location map"
+
+msgid "IRDM office location on Google Maps"
+msgstr "IRDM office location on Google Maps"
+
+msgid ""
+"IRDM trân trọng sự tin tưởng của các cơ quan, cơ sở y tế, trường đại học và "
+"doanh nghiệp trong những chương trình nghiên cứu và phát triển năng lực."
+msgstr ""
+"IRDM values the trust of public agencies, healthcare providers, "
+"universities, and businesses in research and capacity-building programmes."
+
+msgid "IRDM đã nhận được thông tin"
+msgstr "IRDM has received your information"
+
+msgid "Key statistics"
+msgstr "Key statistics"
+
+msgid "Khám phá"
+msgstr "Explore"
+
+msgid "Khám phá Giải pháp"
+msgstr "Explore solutions"
+
+msgid "Khám phá Tri thức & Góc nhìn"
+msgstr "Explore knowledge & insights"
+
+msgid "Khám phá theo Chủ đề"
+msgstr "Explore by topic"
+
+msgid "Khám phá theo Loại Nội Dung"
+msgstr "Explore by content type"
+
+msgid "Khám phá thêm"
+msgstr "Explore more"
+
+msgid ""
+"Khám phá thêm các nhóm thông tin về cơ cấu tổ chức, hội đồng khoa học, nhà "
+"khoa học/chuyên gia và mạng lưới chuyên môn của Viện IRDM."
+msgstr ""
+"Explore more about IRDM’s organisational structure, scientific council, "
+"experts, and professional network."
+
+msgid "Khám phá thêm năng lực"
+msgstr "Explore more capabilities"
+
+msgid "Không tìm thấy bài viết phù hợp."
+msgstr "No matching articles found."
+
+msgid "Không tìm thấy chuyên gia phù hợp."
+msgstr "No matching experts found."
+
+msgid "Không tìm thấy nội dung"
+msgstr "No content found"
+
+msgid "Kinh nghiệm"
+msgstr "Experience"
+
+msgid "Kinh nghiệm nổi bật"
+msgstr "Selected experience"
+
+msgid "Knowledge & Insights"
+msgstr "Knowledge & Insights"
+
+msgid "Knowledge & Professional Forums"
+msgstr "Knowledge & Professional Forums"
+
+msgid "Knowledge hero"
+msgstr "Knowledge hero"
+
+msgid "Kết nối chuyên môn"
+msgstr "Connect with expertise"
+
+msgid "Kết nối với IRDM"
+msgstr "Connect with IRDM"
+
+msgid "Kết nối với IRDM để tìm đúng chuyên gia cho bài toán của tổ chức"
+msgstr ""
+"Connect with IRDM to find the right expert for your organisation’s challenge"
+
+msgid ""
+"Kết nối với Viện IRDM để trao đổi về nghiên cứu, tư vấn, đào tạo và hợp tác "
+"chuyên môn."
+msgstr ""
+"Contact IRDM to discuss research, consulting, training, and professional "
+"collaboration."
+
+msgid ""
+"Kết nối với chuyên gia để trao đổi về bài toán, chương trình hoặc hợp tác "
+"của tổ chức bạn."
+msgstr ""
+"Connect with an expert to discuss your organisation’s challenge, programme, "
+"or potential collaboration."
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Liên hệ"
+msgstr "Contact"
+
+msgid "Liên hệ hợp tác"
+msgstr "Partnership enquiry"
+
+msgid "Liên hệ ngay"
+msgstr "Contact us"
+
+msgid "Lĩnh vực chuyên môn"
+msgstr "Areas of expertise"
+
+msgid "Mini Case Tiêu Biểu"
+msgstr "Selected case studies"
+
+msgid "Mobile navigation"
+msgstr "Mobile navigation"
+
+msgid "MẠNG LƯỚI NHÀ KHOA HỌC"
+msgstr "SCIENTIFIC NETWORK"
+
+msgid "MẠNG LƯỚI ĐỐI TÁC"
+msgstr "PARTNER NETWORK"
+
+msgid "Mạng lưới hợp tác"
+msgstr "Collaboration network"
+
+msgid ""
+"Mỗi quan hệ hợp tác được xây dựng trên sự thấu hiểu bối cảnh, mục tiêu rõ "
+"ràng và cam kết tạo ra kết quả có thể ứng dụng."
+msgstr ""
+"Every partnership is built on understanding the context, setting clear "
+"goals, and delivering practical results."
+
+msgid "Một mạng lưới đa ngành, cùng chung mục tiêu phát triển"
+msgstr "An interdisciplinary network united by shared development goals"
+
+msgid "No capabilities found."
+msgstr "No capabilities found."
+
+msgid "Năng lực cốt lõi"
+msgstr "Core Capabilities"
+
+msgid ""
+"Nội dung bạn đang tìm kiếm có thể chưa được công bố, đã được di chuyển hoặc "
+"không còn tồn tại."
+msgstr ""
+"The content you are looking for may not have been published, may have moved,"
+" or may no longer exist."
+
+msgid "Nội dung bạn đang tìm kiếm hiện chưa khả dụng."
+msgstr "The content you are looking for is currently unavailable."
+
+msgid "Nội dung hiện chưa khả dụng"
+msgstr "This content is currently unavailable"
+
+msgid "Nội dung nổi bật"
+msgstr "Featured content"
+
+msgid "Organisations IRDM has partnered with"
+msgstr "Organisations IRDM has partnered with"
+
+msgid "Partners and clients"
+msgstr "Partners and clients"
+
+msgid "Primary navigation"
+msgstr "Primary navigation"
+
+msgid "Quay lại Tin tức & Sự kiện"
+msgstr "Back to News & Events"
+
+msgid "Quy trình trao đổi"
+msgstr "How we work together"
+
+msgid "RESEARCH, DATA AND INTERDISCIPLINARY KNOWLEDGE"
+msgstr "RESEARCH, DATA AND INTERDISCIPLINARY KNOWLEDGE"
+
+msgid "Research · Science · Technology · Innovation"
+msgstr "Research · Science · Technology · Innovation"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Search results"
+msgstr "Search results"
+
+msgid "Send test email"
+msgstr "Send test email"
+
+msgid "Site search"
+msgstr "Site search"
+
+msgid "Solution hero"
+msgstr "Solution hero"
+
+msgid "Solutions"
+msgstr "Solutions"
+
+msgid "Solutions hero"
+msgstr "Solutions hero"
+
+msgid "Sẵn sàng trao đổi?"
+msgstr "Ready to talk?"
+
+msgid "Sự kiện sắp diễn ra"
+msgstr "Upcoming events"
+
+msgid "THEO HÌNH THỨC ĐỒNG HÀNH"
+msgstr "BY ENGAGEMENT MODEL"
+
+msgid "THEO LĨNH VỰC CHUYÊN MÔN"
+msgstr "BY AREA OF EXPERTISE"
+
+msgid "THEO VAI TRÒ"
+msgstr "BY ROLE"
+
+msgid "Test SMTP connection"
+msgstr "Test SMTP connection"
+
+msgid "Thu gọn"
+msgstr "Show less"
+
+msgid ""
+"Thông tin bạn cung cấp giúp đội ngũ IRDM chuẩn bị tốt hơn trước khi liên hệ "
+"lại."
+msgstr ""
+"The information you provide helps the IRDM team prepare before contacting "
+"you."
+
+msgid "Thông tin liên hệ"
+msgstr "Contact information"
+
+msgid "Thông tin đối tác đang được cập nhật."
+msgstr "Partner information is being updated."
+
+msgid "Thống nhất phạm vi và bước làm việc tiếp theo."
+msgstr "Agree on the scope and next steps."
+
+msgid "Thời gian làm việc"
+msgstr "Business hours"
+
+msgid "Tin hoạt động IRDM"
+msgstr "IRDM updates"
+
+msgid "Tin liên quan"
+msgstr "Related news"
+
+msgid "Tin tức & Sự kiện"
+msgstr "News & Events"
+
+msgid "Tiếp nhận"
+msgstr "Intake"
+
+msgid "Toggle mobile menu"
+msgstr "Toggle mobile menu"
+
+msgid "Trang chủ"
+msgstr "Home"
+
+msgid "Trao đổi cùng IRDM"
+msgstr "Talk with IRDM"
+
+msgid "Trao đổi hướng đi"
+msgstr "Discuss the way forward"
+
+msgid "Tri thức & Góc nhìn"
+msgstr "Knowledge & Insights"
+
+msgid "Tri thức & Góc nhìn ngành"
+msgstr "Industry knowledge & insights"
+
+msgid "Tri thức & góc nhìn"
+msgstr "Knowledge & insights"
+
+msgid "Trusted by leading organisations"
+msgstr "Trusted by leading organisations"
+
+msgid "TÌM NHÀ KHOA HỌC/CHUYÊN GIA"
+msgstr "FIND A SCIENTIST / EXPERT"
+
+msgid "Tìm kiếm"
+msgstr "Search"
+
+msgid "Tìm kiếm bài viết, báo cáo, chủ đề..."
+msgstr "Search articles, reports, and topics..."
+
+msgid "Tìm kiếm chuyên gia"
+msgstr "Search experts"
+
+msgid "Tìm nội dung phù hợp với nhu cầu của bạn"
+msgstr "Find content that meets your needs"
+
+msgid "Tìm theo tên, lĩnh vực, chủ đề hoặc hình thức đồng hành..."
+msgstr "Search by name, expertise, topic, or engagement model..."
+
+msgid "Tải thêm chuyên gia"
+msgstr "Load more experts"
+
+msgid "Tất cả"
+msgstr "All"
+
+msgid "Tất cả Giải pháp"
+msgstr "All solutions"
+
+msgid "Tất cả nhóm giải pháp"
+msgstr "All solution groups"
+
+msgid "Tất cả năng lực"
+msgstr "All capabilities"
+
+msgid "Tổng hợp sau sự kiện"
+msgstr "Event recap"
+
+msgid "Từ nhu cầu đến hướng hợp tác"
+msgstr "From needs to collaboration"
+
+msgid "VIỆN IRDM KẾT NỐI CHUYÊN GIA NHƯ THẾ NÀO?"
+msgstr "HOW DOES IRDM CONNECT YOU WITH EXPERTS?"
+
+msgid "View IRDM Capabilities"
+msgstr "View IRDM Capabilities"
+
+msgid "Văn phòng"
+msgstr "Office"
+
+msgid "Về IRDM"
+msgstr "About IRDM"
+
+msgid "Về trang chủ"
+msgstr "Back to home"
+
+msgid "Vị trí văn phòng IRDM"
+msgstr "IRDM office location"
+
+msgid "Who does IRDM serve?"
+msgstr "Who does IRDM serve?"
+
+msgid "Xem hồ sơ chuyên môn"
+msgstr "View expert profile"
+
+msgid "Xem nội dung liên quan"
+msgstr "View related content"
+
+msgid "Xem thêm thách thức"
+msgstr "View more challenges"
+
+msgid "Xem tất cả chuyên gia"
+msgstr "View all experts"
+
+msgid "Xem tất cả nội dung"
+msgstr "View all content"
+
+msgid "Xác định năng lực và chuyên gia phù hợp."
+msgstr "Identify the right expertise and experts."
+
+msgid "Xóa"
+msgstr "Clear"
+
+msgid "Xóa bộ lọc"
+msgstr "Clear filters"
+
+msgid "chuyên gia"
+msgstr "experts"
+
+msgid "phút đọc"
+msgstr "min read"
+
+msgid "Điều hướng nhanh"
+msgstr "Quick navigation"
+
+msgid "Điện thoại"
+msgstr "Phone"
+
+msgid "Đọc bài viết"
+msgstr "Read article"
+
+msgid "Đối tác"
+msgstr "Partners"
+
+msgid "Đối tác tiêu biểu"
+msgstr "Featured partners"
+
+msgid "Đội ngũ chuyên gia"
+msgstr "Expert Team"

@@ -78,7 +78,7 @@
 
               >
 
-                {{ item.label }}
+                {% translate item.label %}
 
                 <svg class="w-4 h-4 transition-transform duration-200" :class="{'rotate-180': open}" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
 
@@ -120,7 +120,7 @@
 
                      role="menuitem">
 
-                    {{ child.label }}
+                    {% translate child.label %}
 
                   </a>
 
@@ -140,7 +140,7 @@
 
                  class="px-3 py-2 text-sm font-semibold text-primary-700 bg-primary-50 rounded-full transition-colors duration-150 whitespace-nowrap">
 
-                {{ item.label }}
+                {% translate item.label %}
 
               </a>
 
@@ -152,7 +152,7 @@
 
                  class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-700 hover:bg-primary-50 rounded-full transition-colors duration-150 whitespace-nowrap">
 
-                {{ item.label }}
+                {% translate item.label %}
 
               </a>
 
@@ -310,7 +310,7 @@
 
            class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors">
 
-          {{ item.label }}
+          {% translate item.label %}
 
         </a>
 
@@ -318,7 +318,7 @@
           <a href="{{ child.url }}"
              {% if child.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
              class="block pl-8 pr-4 py-2.5 text-sm text-gray-600 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors">
-            {{ child.label }}
+            {% translate child.label %}
           </a>
         {% endfor %}
 
