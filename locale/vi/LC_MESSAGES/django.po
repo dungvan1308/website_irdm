@@ -900,13 +900,13 @@ msgid "Link"
 msgstr "Liên kết"
 
 msgid "Hero"
-msgstr "Banner chính"
+msgstr "Phần đầu trang"
 
 msgid "Hero / Listing"
 msgstr "Banner / Danh sách"
 
 msgid "CTA"
-msgstr "Kêu gọi hành động (CTA)"
+msgstr "Kêu gọi hành động"
 
 msgid "CTAs"
 msgstr "Các nút CTA"
@@ -2338,3 +2338,631 @@ msgstr "Nhãn trường ghi chú"
 
 msgid "note field placeholder"
 msgstr "Placeholder trường ghi chú"
+
+msgid "& CHUYÊN GIA LIÊN NGÀNH"
+msgstr "& CHUYÊN GIA LIÊN NGÀNH"
+
+msgid "& Lĩnh vực chuyên sâu"
+msgstr "& Lĩnh vực chuyên sâu"
+
+msgid "About IRDM hero"
+msgstr "Phần giới thiệu Viện IRDM"
+
+msgid "Activity news content"
+msgstr "Nội dung tin hoạt động"
+
+msgid "Activity news detail"
+msgstr "Chi tiết tin hoạt động"
+
+msgid "All solutions navigation"
+msgstr "Điều hướng tất cả giải pháp"
+
+msgid "Article body"
+msgstr "Nội dung bài viết"
+
+msgid "Article hero"
+msgstr "Ảnh bìa bài viết"
+
+msgid "BUILDING SOLUTIONS FROM"
+msgstr "KIẾN TẠO GIẢI PHÁP TỪ"
+
+msgid "Breadcrumb"
+msgstr "Đường dẫn điều hướng"
+
+msgid "Bài viết liên quan"
+msgstr "Bài viết liên quan"
+
+msgid "Bạn đang quan tâm điều gì?"
+msgstr "Bạn đang quan tâm điều gì?"
+
+msgid "Bạn đang tìm kiếm một đối tác chuyên môn phù hợp?"
+msgstr "Bạn đang tìm kiếm một đối tác chuyên môn phù hợp?"
+
+msgid "BẢN ĐỒ CHUYÊN MÔN LIÊN NGÀNH"
+msgstr "BẢN ĐỒ CHUYÊN MÔN LIÊN NGÀNH"
+
+msgid "Bộ lọc chuyên gia"
+msgstr "Bộ lọc chuyên gia"
+
+msgid ""
+"Bộ lọc giúp người đọc tìm nhanh nội dung theo mục đích sử dụng, chủ đề quan "
+"tâm và nhóm đối tác liên quan."
+msgstr ""
+"Bộ lọc giúp người đọc tìm nhanh nội dung theo mục đích sử dụng, chủ đề quan "
+"tâm và nhóm đối tác liên quan."
+
+msgid "CHUYÊN GIA CAO CẤP CỦA VIỆN IRDM"
+msgstr "CHUYÊN GIA CAO CẤP CỦA VIỆN IRDM"
+
+msgid "Call to action"
+msgstr "Kêu gọi hành động"
+
+msgid "Capabilities grid"
+msgstr "Danh sách năng lực"
+
+msgid "Capability hero"
+msgstr "Phần đầu trang năng lực"
+
+msgid "Capability listing hero"
+msgstr "Phần đầu trang danh sách năng lực"
+
+msgid ""
+"Chia sẻ bài toán của tổ chức bạn. IRDM sẽ kết nối đúng năng lực chuyên môn "
+"và phản hồi hướng trao đổi phù hợp."
+msgstr ""
+"Chia sẻ bài toán của tổ chức bạn. IRDM sẽ kết nối đúng năng lực chuyên môn "
+"và phản hồi hướng trao đổi phù hợp."
+
+msgid "Chuyên gia"
+msgstr "Chuyên gia"
+
+msgid "Chuyên gia liên quan"
+msgstr "Chuyên gia liên quan"
+
+msgid "Chưa có bước nào."
+msgstr "Chưa có bước nào."
+
+msgid "Chưa có chuyên gia trong chủ đề này."
+msgstr "Chưa có chuyên gia trong chủ đề này."
+
+msgid "Chưa có thách thức nào."
+msgstr "Chưa có thách thức nào."
+
+msgid "Chủ đề & Từ khóa"
+msgstr "Chủ đề & Từ khóa"
+
+msgid "Contact IRDM"
+msgstr "Liên hệ Viện IRDM"
+
+msgid "Content coming soon."
+msgstr "Nội dung sẽ sớm được cập nhật."
+
+msgid "Copyright by"
+msgstr "Bản quyền thuộc về"
+
+msgid "Core Capabilities"
+msgstr "Năng lực cốt lõi"
+
+msgid "CÁC NHÓM THÔNG TIN CHUYÊN MÔN"
+msgstr "CÁC NHÓM THÔNG TIN CHUYÊN MÔN"
+
+msgid "Các chủ đề có thể đồng hành"
+msgstr "Các chủ đề có thể đồng hành"
+
+msgid "Các nhóm giải pháp khác"
+msgstr "Các nhóm giải pháp khác"
+
+msgid "Các năng lực IRDM"
+msgstr "Các năng lực IRDM"
+
+msgid "Cách thức đồng hành"
+msgstr "Cách thức đồng hành"
+
+msgid "Có thể đồng hành"
+msgstr "Có thể đồng hành"
+
+msgid "Công bố hợp tác"
+msgstr "Công bố hợp tác"
+
+msgid "Công trình tiêu biểu"
+msgstr "Công trình tiêu biểu"
+
+msgid "Cùng IRDM tạo giá trị"
+msgstr "Cùng IRDM tạo giá trị"
+
+msgid "Cùng bắt đầu một cuộc trao đổi có giá trị"
+msgstr "Cùng bắt đầu một cuộc trao đổi có giá trị"
+
+msgid "Cùng tạo nên những thay đổi có giá trị"
+msgstr "Cùng tạo nên những thay đổi có giá trị"
+
+msgid ""
+"Cảm ơn bạn đã kết nối. Đội ngũ IRDM sẽ xem xét nội dung và phản hồi qua "
+"thông tin liên hệ bạn cung cấp."
+msgstr ""
+"Cảm ơn bạn đã kết nối. Đội ngũ IRDM sẽ xem xét nội dung và phản hồi qua "
+"thông tin liên hệ bạn cung cấp."
+
+msgid "Cảm ơn! Viện IRDM đã nhận được yêu cầu của bạn."
+msgstr "Cảm ơn! Viện IRDM đã nhận được yêu cầu của bạn."
+
+msgid "Dự án / Công trình / Chương trình tiêu biểu"
+msgstr "Dự án / Công trình / Chương trình tiêu biểu"
+
+msgid "Expert CTA"
+msgstr "Kêu gọi kết nối chuyên gia"
+
+msgid "Expert listing hero"
+msgstr "Phần đầu trang danh sách chuyên gia"
+
+msgid "Explore"
+msgstr "Khám phá"
+
+msgid "Explore Solutions"
+msgstr "Khám phá giải pháp"
+
+msgid "Filter content"
+msgstr "Lọc nội dung"
+
+msgid "GIÁ TRỊ CỐT LÕI"
+msgstr "Giá trị cốt lõi"
+
+msgid "Ghi nhận bối cảnh và mục tiêu ưu tiên."
+msgstr "Ghi nhận bối cảnh và mục tiêu ưu tiên."
+
+msgid "Giá trị đối tác"
+msgstr "Giá trị đối tác"
+
+msgid "Giải pháp của IRDM"
+msgstr "Giải pháp của IRDM"
+
+msgid "Go to homepage"
+msgstr "Về trang chủ"
+
+msgid "Gửi một yêu cầu khác"
+msgstr "Gửi một yêu cầu khác"
+
+msgid "Gửi yêu cầu"
+msgstr "Gửi yêu cầu"
+
+msgid "Gửi yêu cầu hợp tác"
+msgstr "Gửi yêu cầu hợp tác"
+
+msgid "Home"
+msgstr "Trang chủ"
+
+msgid "How IRDM Creates Impact"
+msgstr "IRDM tạo tác động như thế nào"
+
+msgid ""
+"Hãy chia sẻ bài toán của tổ chức để cùng xác định hướng hợp tác thiết thực."
+msgstr ""
+"Hãy chia sẻ bài toán của tổ chức để cùng xác định hướng hợp tác thiết thực."
+
+msgid "Hãy thử từ khoá khác hoặc chọn nhóm khác."
+msgstr "Hãy thử từ khoá khác hoặc chọn nhóm khác."
+
+msgid "Hình thức đồng hành"
+msgstr "Hình thức đồng hành"
+
+msgid "Hướng tiếp cận"
+msgstr "Hướng tiếp cận"
+
+msgid "Hợp tác từ bài toán thực tiễn"
+msgstr "Hợp tác từ bài toán thực tiễn"
+
+msgid "IRDM"
+msgstr "Viện IRDM"
+
+msgid ""
+"IRDM chỉ sử dụng thông tin để phản hồi yêu cầu trao đổi và không chia sẻ cho"
+" bên thứ ba."
+msgstr ""
+"IRDM chỉ sử dụng thông tin để phản hồi yêu cầu trao đổi và không chia sẻ cho"
+" bên thứ ba."
+
+msgid ""
+"IRDM có thể kết nối mạng lưới nhà khoa học và chuyên gia phù hợp để đồng "
+"hành từ tư vấn, nghiên cứu, đào tạo đến triển khai giải pháp."
+msgstr ""
+"IRDM có thể kết nối mạng lưới nhà khoa học và chuyên gia phù hợp để đồng "
+"hành từ tư vấn, nghiên cứu, đào tạo đến triển khai giải pháp."
+
+msgid ""
+"IRDM cùng đối tác làm rõ nhu cầu, thiết kế hướng tiếp cận và chuyển hóa kết "
+"quả thành giải pháp có thể triển khai."
+msgstr ""
+"IRDM cùng đối tác làm rõ nhu cầu, thiết kế hướng tiếp cận và chuyển hóa kết "
+"quả thành giải pháp có thể triển khai."
+
+msgid ""
+"IRDM kết nối năng lực nghiên cứu, tư vấn và đào tạo với nhu cầu thực tiễn "
+"của từng tổ chức."
+msgstr ""
+"IRDM kết nối năng lực nghiên cứu, tư vấn và đào tạo với nhu cầu thực tiễn "
+"của từng tổ chức."
+
+msgid "IRDM location map"
+msgstr "Bản đồ vị trí Viện IRDM"
+
+msgid "IRDM office location on Google Maps"
+msgstr "Vị trí văn phòng IRDM trên Google Maps"
+
+msgid ""
+"IRDM trân trọng sự tin tưởng của các cơ quan, cơ sở y tế, trường đại học và "
+"doanh nghiệp trong những chương trình nghiên cứu và phát triển năng lực."
+msgstr ""
+"IRDM trân trọng sự tin tưởng của các cơ quan, cơ sở y tế, trường đại học và "
+"doanh nghiệp trong những chương trình nghiên cứu và phát triển năng lực."
+
+msgid "IRDM đã nhận được thông tin"
+msgstr "IRDM đã nhận được thông tin"
+
+msgid "Key statistics"
+msgstr "Số liệu nổi bật"
+
+msgid "Khám phá"
+msgstr "Khám phá"
+
+msgid "Khám phá Giải pháp"
+msgstr "Khám phá Giải pháp"
+
+msgid "Khám phá Tri thức & Góc nhìn"
+msgstr "Khám phá Tri thức & Góc nhìn"
+
+msgid "Khám phá theo Chủ đề"
+msgstr "Khám phá theo Chủ đề"
+
+msgid "Khám phá theo Loại Nội Dung"
+msgstr "Khám phá theo Loại Nội Dung"
+
+msgid "Khám phá thêm"
+msgstr "Khám phá thêm"
+
+msgid ""
+"Khám phá thêm các nhóm thông tin về cơ cấu tổ chức, hội đồng khoa học, nhà "
+"khoa học/chuyên gia và mạng lưới chuyên môn của Viện IRDM."
+msgstr ""
+"Khám phá thêm các nhóm thông tin về cơ cấu tổ chức, hội đồng khoa học, nhà "
+"khoa học/chuyên gia và mạng lưới chuyên môn của Viện IRDM."
+
+msgid "Khám phá thêm năng lực"
+msgstr "Khám phá thêm năng lực"
+
+msgid "Không tìm thấy bài viết phù hợp."
+msgstr "Không tìm thấy bài viết phù hợp."
+
+msgid "Không tìm thấy chuyên gia phù hợp."
+msgstr "Không tìm thấy chuyên gia phù hợp."
+
+msgid "Không tìm thấy nội dung"
+msgstr "Không tìm thấy nội dung"
+
+msgid "Kinh nghiệm"
+msgstr "Kinh nghiệm"
+
+msgid "Kinh nghiệm nổi bật"
+msgstr "Kinh nghiệm nổi bật"
+
+msgid "Knowledge & Professional Forums"
+msgstr "Tri thức & Diễn đàn chuyên môn"
+
+msgid "Knowledge hero"
+msgstr "Phần đầu trang tri thức"
+
+msgid "Kết nối chuyên môn"
+msgstr "Kết nối chuyên môn"
+
+msgid "Kết nối với IRDM"
+msgstr "Kết nối với IRDM"
+
+msgid "Kết nối với IRDM để tìm đúng chuyên gia cho bài toán của tổ chức"
+msgstr "Kết nối với IRDM để tìm đúng chuyên gia cho bài toán của tổ chức"
+
+msgid ""
+"Kết nối với Viện IRDM để trao đổi về nghiên cứu, tư vấn, đào tạo và hợp tác "
+"chuyên môn."
+msgstr ""
+"Kết nối với Viện IRDM để trao đổi về nghiên cứu, tư vấn, đào tạo và hợp tác "
+"chuyên môn."
+
+msgid ""
+"Kết nối với chuyên gia để trao đổi về bài toán, chương trình hoặc hợp tác "
+"của tổ chức bạn."
+msgstr ""
+"Kết nối với chuyên gia để trao đổi về bài toán, chương trình hoặc hợp tác "
+"của tổ chức bạn."
+
+msgid "Liên hệ"
+msgstr "Liên hệ"
+
+msgid "Liên hệ hợp tác"
+msgstr "Liên hệ hợp tác"
+
+msgid "Liên hệ ngay"
+msgstr "Liên hệ ngay"
+
+msgid "Lĩnh vực chuyên môn"
+msgstr "Lĩnh vực chuyên môn"
+
+msgid "Mini Case Tiêu Biểu"
+msgstr "Mini Case Tiêu Biểu"
+
+msgid "Mobile navigation"
+msgstr "Điều hướng trên thiết bị di động"
+
+msgid "MẠNG LƯỚI NHÀ KHOA HỌC"
+msgstr "MẠNG LƯỚI NHÀ KHOA HỌC"
+
+msgid "MẠNG LƯỚI ĐỐI TÁC"
+msgstr "MẠNG LƯỚI ĐỐI TÁC"
+
+msgid "Mạng lưới hợp tác"
+msgstr "Mạng lưới hợp tác"
+
+msgid ""
+"Mỗi quan hệ hợp tác được xây dựng trên sự thấu hiểu bối cảnh, mục tiêu rõ "
+"ràng và cam kết tạo ra kết quả có thể ứng dụng."
+msgstr ""
+"Mỗi quan hệ hợp tác được xây dựng trên sự thấu hiểu bối cảnh, mục tiêu rõ "
+"ràng và cam kết tạo ra kết quả có thể ứng dụng."
+
+msgid "Một mạng lưới đa ngành, cùng chung mục tiêu phát triển"
+msgstr "Một mạng lưới đa ngành, cùng chung mục tiêu phát triển"
+
+msgid "No capabilities found."
+msgstr "Không tìm thấy năng lực phù hợp."
+
+msgid "Năng lực"
+msgstr "Năng lực"
+
+msgid "Năng lực cốt lõi"
+msgstr "Năng lực cốt lõi"
+
+msgid "Năng lực liên quan"
+msgstr "Năng lực liên quan"
+
+msgid "Nổi bật"
+msgstr "Nổi bật"
+
+msgid ""
+"Nội dung bạn đang tìm kiếm có thể chưa được công bố, đã được di chuyển hoặc "
+"không còn tồn tại."
+msgstr ""
+"Nội dung bạn đang tìm kiếm có thể chưa được công bố, đã được di chuyển hoặc "
+"không còn tồn tại."
+
+msgid "Nội dung bạn đang tìm kiếm hiện chưa khả dụng."
+msgstr "Nội dung bạn đang tìm kiếm hiện chưa khả dụng."
+
+msgid "Nội dung hiện chưa khả dụng"
+msgstr "Nội dung hiện chưa khả dụng"
+
+msgid "Nội dung nổi bật"
+msgstr "Nội dung nổi bật"
+
+msgid "Organisations IRDM has partnered with"
+msgstr "Các tổ chức đã hợp tác với Viện IRDM"
+
+msgid "Partners and clients"
+msgstr "Đối tác và khách hàng"
+
+msgid "Primary navigation"
+msgstr "Điều hướng chính"
+
+msgid "Quay lại Tin tức & Sự kiện"
+msgstr "Quay lại Tin tức & Sự kiện"
+
+msgid "Quy trình trao đổi"
+msgstr "Quy trình trao đổi"
+
+msgid "RESEARCH, DATA AND INTERDISCIPLINARY KNOWLEDGE"
+msgstr "NGHIÊN CỨU, DỮ LIỆU VÀ TRI THỨC LIÊN NGÀNH"
+
+msgid "Research · Science · Technology · Innovation"
+msgstr "Research · Science · Technology · Innovation"
+
+msgid "Search"
+msgstr "Tìm kiếm"
+
+msgid "Search results"
+msgstr "Kết quả tìm kiếm"
+
+msgid "Send test email"
+msgstr "Gửi email kiểm tra"
+
+msgid "Site search"
+msgstr "Tìm kiếm trên website"
+
+msgid "Solution hero"
+msgstr "Phần đầu trang giải pháp"
+
+msgid "Solutions hero"
+msgstr "Phần đầu trang giải pháp"
+
+msgid "Sẵn sàng trao đổi?"
+msgstr "Sẵn sàng trao đổi?"
+
+msgid "Sự kiện sắp diễn ra"
+msgstr "Sự kiện sắp diễn ra"
+
+msgid "THEO HÌNH THỨC ĐỒNG HÀNH"
+msgstr "THEO HÌNH THỨC ĐỒNG HÀNH"
+
+msgid "THEO LĨNH VỰC CHUYÊN MÔN"
+msgstr "THEO LĨNH VỰC CHUYÊN MÔN"
+
+msgid "THEO VAI TRÒ"
+msgstr "THEO VAI TRÒ"
+
+msgid "Test SMTP connection"
+msgstr "Kiểm tra kết nối SMTP"
+
+msgid "Thu gọn"
+msgstr "Thu gọn"
+
+msgid ""
+"Thông tin bạn cung cấp giúp đội ngũ IRDM chuẩn bị tốt hơn trước khi liên hệ "
+"lại."
+msgstr ""
+"Thông tin bạn cung cấp giúp đội ngũ IRDM chuẩn bị tốt hơn trước khi liên hệ "
+"lại."
+
+msgid "Thông tin liên hệ"
+msgstr "Thông tin liên hệ"
+
+msgid "Thông tin đối tác đang được cập nhật."
+msgstr "Thông tin đối tác đang được cập nhật."
+
+msgid "Thống nhất phạm vi và bước làm việc tiếp theo."
+msgstr "Thống nhất phạm vi và bước làm việc tiếp theo."
+
+msgid "Thời gian làm việc"
+msgstr "Thời gian làm việc"
+
+msgid "Tin hoạt động IRDM"
+msgstr "Tin hoạt động IRDM"
+
+msgid "Tin liên quan"
+msgstr "Tin liên quan"
+
+msgid "Tin tức & Sự kiện"
+msgstr "Tin tức & Sự kiện"
+
+msgid "Tiếp nhận"
+msgstr "Tiếp nhận"
+
+msgid "Toggle mobile menu"
+msgstr "Mở hoặc đóng menu trên thiết bị di động"
+
+msgid "Trang chủ"
+msgstr "Trang chủ"
+
+msgid "Trao đổi cùng IRDM"
+msgstr "Trao đổi cùng IRDM"
+
+msgid "Trao đổi hướng đi"
+msgstr "Trao đổi hướng đi"
+
+msgid "Tri thức & Góc nhìn"
+msgstr "Tri thức & Góc nhìn"
+
+msgid "Tri thức & Góc nhìn ngành"
+msgstr "Tri thức & Góc nhìn ngành"
+
+msgid "Tri thức & góc nhìn"
+msgstr "Tri thức & góc nhìn"
+
+msgid "Trusted by leading organisations"
+msgstr "Được tin tưởng bởi các tổ chức hàng đầu"
+
+msgid "TÌM NHÀ KHOA HỌC/CHUYÊN GIA"
+msgstr "TÌM NHÀ KHOA HỌC/CHUYÊN GIA"
+
+msgid "Tìm kiếm"
+msgstr "Tìm kiếm"
+
+msgid "Tìm kiếm bài viết, báo cáo, chủ đề..."
+msgstr "Tìm kiếm bài viết, báo cáo, chủ đề..."
+
+msgid "Tìm kiếm chuyên gia"
+msgstr "Tìm kiếm chuyên gia"
+
+msgid "Tìm nội dung phù hợp với nhu cầu của bạn"
+msgstr "Tìm nội dung phù hợp với nhu cầu của bạn"
+
+msgid "Tìm theo tên, lĩnh vực, chủ đề hoặc hình thức đồng hành..."
+msgstr "Tìm theo tên, lĩnh vực, chủ đề hoặc hình thức đồng hành..."
+
+msgid "Tải thêm chuyên gia"
+msgstr "Tải thêm chuyên gia"
+
+msgid "Tất cả"
+msgstr "Tất cả"
+
+msgid "Tất cả Giải pháp"
+msgstr "Tất cả Giải pháp"
+
+msgid "Tất cả nhóm giải pháp"
+msgstr "Tất cả nhóm giải pháp"
+
+msgid "Tất cả năng lực"
+msgstr "Tất cả năng lực"
+
+msgid "Tổng hợp sau sự kiện"
+msgstr "Tổng hợp sau sự kiện"
+
+msgid "Từ nhu cầu đến hướng hợp tác"
+msgstr "Từ nhu cầu đến hướng hợp tác"
+
+msgid "VIỆN IRDM KẾT NỐI CHUYÊN GIA NHƯ THẾ NÀO?"
+msgstr "VIỆN IRDM KẾT NỐI CHUYÊN GIA NHƯ THẾ NÀO?"
+
+msgid "View IRDM Capabilities"
+msgstr "Xem năng lực của Viện IRDM"
+
+msgid "Văn phòng"
+msgstr "Văn phòng"
+
+msgid "Về IRDM"
+msgstr "Về IRDM"
+
+msgid "Về trang chủ"
+msgstr "Về trang chủ"
+
+msgid "Vị trí văn phòng IRDM"
+msgstr "Vị trí văn phòng IRDM"
+
+msgid "Who does IRDM serve?"
+msgstr "IRDM đồng hành cùng những ai?"
+
+msgid "Xem hồ sơ chuyên môn"
+msgstr "Xem hồ sơ chuyên môn"
+
+msgid "Xem nội dung liên quan"
+msgstr "Xem nội dung liên quan"
+
+msgid "Xem thêm thách thức"
+msgstr "Xem thêm thách thức"
+
+msgid "Xem tất cả chuyên gia"
+msgstr "Xem tất cả chuyên gia"
+
+msgid "Xem tất cả nội dung"
+msgstr "Xem tất cả nội dung"
+
+msgid "Xác định năng lực và chuyên gia phù hợp."
+msgstr "Xác định năng lực và chuyên gia phù hợp."
+
+msgid "Xóa"
+msgstr "Xóa"
+
+msgid "Xóa bộ lọc"
+msgstr "Xóa bộ lọc"
+
+msgid "chuyên gia"
+msgstr "chuyên gia"
+
+msgid "phút đọc"
+msgstr "phút đọc"
+
+msgid "Điều hướng nhanh"
+msgstr "Điều hướng nhanh"
+
+msgid "Điện thoại"
+msgstr "Điện thoại"
+
+msgid "Đọc bài viết"
+msgstr "Đọc bài viết"
+
+msgid "Đối tác"
+msgstr "Đối tác"
+
+msgid "Đối tác tiêu biểu"
+msgstr "Đối tác tiêu biểu"
+
+msgid "Đội ngũ chuyên gia"
+msgstr "Đội ngũ chuyên gia"
+
+msgid "Giải pháp"
+msgstr "Giải pháp"
